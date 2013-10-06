@@ -1,0 +1,684 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_camera_position" kind="class" prot="public">
+    <compoundname>idCameraPosition</compoundname>
+    <basecompoundref refid="classid_point_list_interface" prot="public" virt="non-virtual">idPointListInterface</basecompoundref>
+    <derivedcompoundref refid="classid_fixed_position" prot="public" virt="non-virtual">idFixedPosition</derivedcompoundref>
+    <derivedcompoundref refid="classid_interpolated_position" prot="public" virt="non-virtual">idInterpolatedPosition</derivedcompoundref>
+    <derivedcompoundref refid="classid_spline_position" prot="public" virt="non-virtual">idSplinePosition</derivedcompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classid_camera_position_1a6929dc519f8a0622bbdf57540fcfd0f9" prot="public" static="no">
+        <name>positionType</name>
+        <enumvalue id="classid_camera_position_1a6929dc519f8a0622bbdf57540fcfd0f9adc899bc571e2112f3048df63f8e16dbc" prot="public">
+          <name>FIXED</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_camera_position_1a6929dc519f8a0622bbdf57540fcfd0f9a6f1486815507acbffa2233ac46352dae" prot="public">
+          <name>INTERPOLATED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_camera_position_1a6929dc519f8a0622bbdf57540fcfd0f9a51cba3fefa78cf1525483f7e1dbaa79b" prot="public">
+          <name>SPLINE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_camera_position_1a6929dc519f8a0622bbdf57540fcfd0f9af7b56b16860971fb1b6b4bb690a7f41b" prot="public">
+          <name>POSITION_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="154" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="154" bodyend="159"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classid_camera_position_1af57ac3b87e506a0fd414f4d522835336" prot="protected" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char * idCameraPosition::positionStr</definition>
+        <argsstring>[POSITION_COUNT]</argsstring>
+        <name>positionStr</name>
+        <initializer>= {
+	&quot;Fixed&quot;,
+	&quot;Interpolated&quot;,
+	&quot;Spline&quot;,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="183" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classid_camera_position_1ae304c815097b25b95882f8be3af7ac9b" prot="protected" static="no" mutable="no">
+        <type>long</type>
+        <definition>long idCameraPosition::startTime</definition>
+        <argsstring></argsstring>
+        <name>startTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="184" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_camera_position_1ac9f57850bb739f584ee68391bc9ee91c" prot="protected" static="no" mutable="no">
+        <type>long</type>
+        <definition>long idCameraPosition::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="185" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_camera_position_1a1f1f9f460ba07af2d531181034627a60" prot="protected" static="no" mutable="no">
+        <type>positionType</type>
+        <definition>positionType idCameraPosition::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="186" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_camera_position_1a472cd3f818acd17e2de22f1a7d2b73e6" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_str" kindref="compound">idStr</ref></type>
+        <definition>idStr idCameraPosition::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="187" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_camera_position_1a3a337cd344b6e6a9dc7c46dcc52ccc65" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idCameraPosition::editMode</definition>
+        <argsstring></argsstring>
+        <name>editMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="188" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_camera_position_1a93aafda6da74df711b2133c3ebdd2569" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_list" kindref="compound">idList</ref>&lt; <ref refid="structid_velocity" kindref="compound">idVelocity</ref> * &gt;</type>
+        <definition>idList&lt;idVelocity*&gt; idCameraPosition::velocities</definition>
+        <argsstring></argsstring>
+        <name>velocities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="189" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_camera_position_1aef2738f521a9081efd05f4b865cf24b4" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idCameraPosition::baseVelocity</definition>
+        <argsstring></argsstring>
+        <name>baseVelocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="190" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_camera_position_1af79e64f1402fec0726eede93385ace63" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>idCameraPosition::idCameraPosition</definition>
+        <argsstring>()</argsstring>
+        <name>idCameraPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="146" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="146" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1ae562bf433b8efde6712a251fba4b6348" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>idCameraPosition::idCameraPosition</definition>
+        <argsstring>(const char *p)</argsstring>
+        <name>idCameraPosition</name>
+        <param>
+          <type>const char *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="147" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="147" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a7943e6c31fd7738566069dbc76f0132e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>idCameraPosition::idCameraPosition</definition>
+        <argsstring>(long t)</argsstring>
+        <name>idCameraPosition</name>
+        <param>
+          <type>long</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="148" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a800064259106e3ff9c9b78c104949483" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual idCameraPosition::~idCameraPosition</definition>
+        <argsstring>()</argsstring>
+        <name>~idCameraPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="149" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="149" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a91bee64c0dc8646ca83e7181b3ce2d6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idCameraPosition::clearVelocities</definition>
+        <argsstring>()</argsstring>
+        <name>clearVelocities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="161" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.cpp" bodystart="1513" bodyend="1519"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1aee080fe58d32f092331a8e65bc680eff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void idCameraPosition::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="162" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="162" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a38b93d21c753b489644146454d9557a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void idCameraPosition::start</definition>
+        <argsstring>(long t)</argsstring>
+        <name>start</name>
+        <reimplementedby refid="classid_interpolated_position_1acfb266aa32ab29546307fb870fcc018c">start</reimplementedby>
+        <reimplementedby refid="classid_spline_position_1a9d165987bf3c3716b03c5fda2e5a715a">start</reimplementedby>
+        <param>
+          <type>long</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="163" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="163" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a4af835071c49d4b6f2c372a3d1e971b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long idCameraPosition::getTime</definition>
+        <argsstring>()</argsstring>
+        <name>getTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="164" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="164" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1ad25338bca13bb89a46b39ad7b093f311" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void idCameraPosition::setTime</definition>
+        <argsstring>(long t)</argsstring>
+        <name>setTime</name>
+        <param>
+          <type>long</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="165" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="165" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a8bcd3f83f9ff4c64ad90fd5cc5fbd1f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float idCameraPosition::getVelocity</definition>
+        <argsstring>(long t)</argsstring>
+        <name>getVelocity</name>
+        <param>
+          <type>long</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="166" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.cpp" bodystart="1526" bodyend="1534"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1af4e1b1fdc8d2ce768ac5650834d48499" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float idCameraPosition::getBaseVelocity</definition>
+        <argsstring>()</argsstring>
+        <name>getBaseVelocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="167" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="167" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a15de4e32ed5d5b61a533594361153735" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCameraPosition::addVelocity</definition>
+        <argsstring>(long start, long duration, float speed)</argsstring>
+        <name>addVelocity</name>
+        <param>
+          <type>long</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>duration</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="168" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="168" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a608af6e69ad66e26051fcd7734b87653" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> *</type>
+        <definition>virtual const idVec3* idCameraPosition::getPosition</definition>
+        <argsstring>(long t)</argsstring>
+        <name>getPosition</name>
+        <reimplementedby refid="classid_fixed_position_1a889054dd699c6bc998a6526bd6d5239d">getPosition</reimplementedby>
+        <reimplementedby refid="classid_interpolated_position_1a55f045edd0e6d21e171cff55c401c7fd">getPosition</reimplementedby>
+        <reimplementedby refid="classid_spline_position_1a5430ede5ecfb0a3fb4bc7729da065d6d">getPosition</reimplementedby>
+        <param>
+          <type>long</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="169" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="169" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1adc3681606db13c4c8aa48dd10a0a89e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void idCameraPosition::draw</definition>
+        <argsstring>(bool editMode)</argsstring>
+        <name>draw</name>
+        <reimplementedby refid="classid_fixed_position_1ac57f39e65fc0e47c00ca550ee48d83e4">draw</reimplementedby>
+        <reimplementedby refid="classid_interpolated_position_1a710af447080c632b0575dca6e98dea6f">draw</reimplementedby>
+        <reimplementedby refid="classid_spline_position_1a7061b7c5b4993bacc99aa77d1e6a8d4f">draw</reimplementedby>
+        <param>
+          <type>bool</type>
+          <declname>editMode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="170" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="170" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a8e382ac5177a164f38f4eaa547bafb8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void idCameraPosition::parse</definition>
+        <argsstring>(idParser *src)</argsstring>
+        <name>parse</name>
+        <reimplementedby refid="classid_fixed_position_1a483e5ae5184cc13cd7114cb0e1440d85">parse</reimplementedby>
+        <reimplementedby refid="classid_interpolated_position_1aefaae6a8740a524a172978c884566f33">parse</reimplementedby>
+        <reimplementedby refid="classid_spline_position_1ae67e2ab792e630c2073b09072b992d72">parse</reimplementedby>
+        <param>
+          <type><ref refid="classid_parser" kindref="compound">idParser</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="171" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="171" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a693cbf5c5ad5318b302ce4f11c7444c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idCameraPosition::write</definition>
+        <argsstring>(idFile *f, const char *name)</argsstring>
+        <name>write</name>
+        <reimplementedby refid="classid_fixed_position_1a1ae357bd7b3ac98b6b6677195d849d60">write</reimplementedby>
+        <reimplementedby refid="classid_interpolated_position_1ade035e39566b06ea283a4a704034bac0">write</reimplementedby>
+        <reimplementedby refid="classid_spline_position_1a19e6792061fb7d046b78a7c3eb655d57">write</reimplementedby>
+        <param>
+          <type><ref refid="classid_file" kindref="compound">idFile</ref> *</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="172" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.cpp" bodystart="1583" bodyend="1591"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a9c62f16526a9894d7a9001c8c32687d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool idCameraPosition::parseToken</definition>
+        <argsstring>(const idStr &amp;key, idParser *src)</argsstring>
+        <name>parseToken</name>
+        <param>
+          <type>const <ref refid="classid_str" kindref="compound">idStr</ref> &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_parser" kindref="compound">idParser</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="173" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.cpp" bodystart="1541" bodyend="1576"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a90c2965582f96f54cc44fa084c060650" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* idCameraPosition::getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="174" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="174" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a86fddd5cb64d307c8c7a0a903e4b4cc0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCameraPosition::setName</definition>
+        <argsstring>(const char *p)</argsstring>
+        <name>setName</name>
+        <param>
+          <type>const char *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="175" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="175" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a5476caf6539fc2d7b67430e54346a90d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void idCameraPosition::startEdit</definition>
+        <argsstring>()</argsstring>
+        <name>startEdit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="176" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="176" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a1a9974f554fd36007d45102f8f17d7c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void idCameraPosition::stopEdit</definition>
+        <argsstring>()</argsstring>
+        <name>stopEdit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="177" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="177" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a1cb9fa15f58a1a001912a4de6eb148e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void idCameraPosition::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="178" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="178" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1aa2d9d4016a882ba4aa7f89e0c9384c45" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* idCameraPosition::typeStr</definition>
+        <argsstring>()</argsstring>
+        <name>typeStr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="179" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="179" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_camera_position_1a30cd4462a9982b721df5ce0877965073" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCameraPosition::calcVelocity</definition>
+        <argsstring>(float distance)</argsstring>
+        <name>calcVelocity</name>
+        <param>
+          <type>float</type>
+          <declname>distance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="180" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="180" bodyend="180"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="22664">
+        <label>idCameraPosition</label>
+        <link refid="classid_camera_position"/>
+        <childnode refid="22665" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22668">
+        <label>idSplinePosition</label>
+        <link refid="classid_spline_position"/>
+        <childnode refid="22664" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22667">
+        <label>idInterpolatedPosition</label>
+        <link refid="classid_interpolated_position"/>
+        <childnode refid="22664" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22665">
+        <label>idPointListInterface</label>
+        <link refid="classid_point_list_interface"/>
+      </node>
+      <node id="22666">
+        <label>idFixedPosition</label>
+        <link refid="classid_fixed_position"/>
+        <childnode refid="22664" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="22669">
+        <label>idCameraPosition</label>
+        <link refid="classid_camera_position"/>
+        <childnode refid="22670" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22672" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="22673" relation="usage">
+          <edgelabel>velocities</edgelabel>
+        </childnode>
+      </node>
+      <node id="22670">
+        <label>idPointListInterface</label>
+        <link refid="classid_point_list_interface"/>
+        <childnode refid="22671" relation="usage">
+          <edgelabel>selectedPoints</edgelabel>
+        </childnode>
+      </node>
+      <node id="22671">
+        <label>idList&lt; int &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="22672">
+        <label>idStr</label>
+        <link refid="classid_str"/>
+      </node>
+      <node id="22673">
+        <label>idList&lt; idVelocity * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" line="143" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/radiant/splines.h" bodystart="143" bodyend="191"/>
+    <listofallmembers>
+      <member refid="classid_point_list_interface_1aa3ab5b95b84165e5e57b4d6161a5c7f4" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>addPoint</name></member>
+      <member refid="classid_point_list_interface_1a0208ab11100d0c8bcff59a68a6c44d8c" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>addPoint</name></member>
+      <member refid="classid_camera_position_1a15de4e32ed5d5b61a533594361153735" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>addVelocity</name></member>
+      <member refid="classid_camera_position_1aef2738f521a9081efd05f4b865cf24b4" prot="protected" virt="non-virtual"><scope>idCameraPosition</scope><name>baseVelocity</name></member>
+      <member refid="classid_camera_position_1a30cd4462a9982b721df5ce0877965073" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>calcVelocity</name></member>
+      <member refid="classid_camera_position_1aee080fe58d32f092331a8e65bc680eff" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>clear</name></member>
+      <member refid="classid_camera_position_1a91bee64c0dc8646ca83e7181b3ce2d6c" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>clearVelocities</name></member>
+      <member refid="classid_point_list_interface_1a866c75d7ec97822ad440953926c70d2c" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>deselectAll</name></member>
+      <member refid="classid_camera_position_1adc3681606db13c4c8aa48dd10a0a89e3" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>draw</name></member>
+      <member refid="classid_camera_position_1a1cb9fa15f58a1a001912a4de6eb148e1" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>draw</name></member>
+      <member refid="classid_point_list_interface_1acf46e36506a64125ba232a9a5c9bfc3f" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>drawSelection</name></member>
+      <member refid="classid_camera_position_1a3a337cd344b6e6a9dc7c46dcc52ccc65" prot="protected" virt="non-virtual"><scope>idCameraPosition</scope><name>editMode</name></member>
+      <member refid="classid_camera_position_1a6929dc519f8a0622bbdf57540fcfd0f9adc899bc571e2112f3048df63f8e16dbc" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>FIXED</name></member>
+      <member refid="classid_camera_position_1af4e1b1fdc8d2ce768ac5650834d48499" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>getBaseVelocity</name></member>
+      <member refid="classid_camera_position_1a90c2965582f96f54cc44fa084c060650" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>getName</name></member>
+      <member refid="classid_point_list_interface_1a8629c62fedbd469b38b10804caef445c" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>getPoint</name></member>
+      <member refid="classid_camera_position_1a608af6e69ad66e26051fcd7734b87653" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>getPosition</name></member>
+      <member refid="classid_point_list_interface_1a662424ded1441105557773fd6798cd45" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>getSelectedPoint</name></member>
+      <member refid="classid_camera_position_1a4af835071c49d4b6f2c372a3d1e971b8" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>getTime</name></member>
+      <member refid="classid_camera_position_1a8bcd3f83f9ff4c64ad90fd5cc5fbd1f0" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>getVelocity</name></member>
+      <member refid="classid_camera_position_1af79e64f1402fec0726eede93385ace63" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>idCameraPosition</name></member>
+      <member refid="classid_camera_position_1ae562bf433b8efde6712a251fba4b6348" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>idCameraPosition</name></member>
+      <member refid="classid_camera_position_1a7943e6c31fd7738566069dbc76f0132e" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>idCameraPosition</name></member>
+      <member refid="classid_point_list_interface_1ae25a705448fd6444c8fd04604d2ee5bc" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>idPointListInterface</name></member>
+      <member refid="classid_camera_position_1a6929dc519f8a0622bbdf57540fcfd0f9a6f1486815507acbffa2233ac46352dae" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>INTERPOLATED</name></member>
+      <member refid="classid_point_list_interface_1aaac039eef086920eb93b2fbe9227e7e2" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>isPointSelected</name></member>
+      <member refid="classid_camera_position_1a472cd3f818acd17e2de22f1a7d2b73e6" prot="protected" virt="non-virtual"><scope>idCameraPosition</scope><name>name</name></member>
+      <member refid="classid_point_list_interface_1a972a9ba64dd69d8d1326b82eb4fbd57f" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>numPoints</name></member>
+      <member refid="classid_point_list_interface_1ad09b6ee8e5bb215e4e65f4046714bfa0" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>numSelectedPoints</name></member>
+      <member refid="classid_camera_position_1a8e382ac5177a164f38f4eaa547bafb8a" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>parse</name></member>
+      <member refid="classid_camera_position_1a9c62f16526a9894d7a9001c8c32687d2" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>parseToken</name></member>
+      <member refid="classid_camera_position_1a6929dc519f8a0622bbdf57540fcfd0f9af7b56b16860971fb1b6b4bb690a7f41b" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>POSITION_COUNT</name></member>
+      <member refid="classid_camera_position_1af57ac3b87e506a0fd414f4d522835336" prot="protected" virt="non-virtual"><scope>idCameraPosition</scope><name>positionStr</name></member>
+      <member refid="classid_camera_position_1a6929dc519f8a0622bbdf57540fcfd0f9" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>positionType</name></member>
+      <member refid="classid_point_list_interface_1ad18991bfc4755e4f2dbe825f58ef7507" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>removePoint</name></member>
+      <member refid="classid_point_list_interface_1af1b7825acb5c146e608ee867bd74c650" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>selectAll</name></member>
+      <member refid="classid_point_list_interface_1abf7a8d987ca255d5fc277446efa66abc" prot="protected" virt="non-virtual"><scope>idCameraPosition</scope><name>selectedPoints</name></member>
+      <member refid="classid_point_list_interface_1a28c73dcee93c09e8e4c2448af719da98" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>selectPoint</name></member>
+      <member refid="classid_point_list_interface_1a3285b3aff2d36e91bd3277522140d128" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>selectPointByRay</name></member>
+      <member refid="classid_camera_position_1a86fddd5cb64d307c8c7a0a903e4b4cc0" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>setName</name></member>
+      <member refid="classid_camera_position_1ad25338bca13bb89a46b39ad7b093f311" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>setTime</name></member>
+      <member refid="classid_camera_position_1a6929dc519f8a0622bbdf57540fcfd0f9a51cba3fefa78cf1525483f7e1dbaa79b" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>SPLINE</name></member>
+      <member refid="classid_camera_position_1a38b93d21c753b489644146454d9557a9" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>start</name></member>
+      <member refid="classid_camera_position_1a5476caf6539fc2d7b67430e54346a90d" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>startEdit</name></member>
+      <member refid="classid_camera_position_1ae304c815097b25b95882f8be3af7ac9b" prot="protected" virt="non-virtual"><scope>idCameraPosition</scope><name>startTime</name></member>
+      <member refid="classid_camera_position_1a1a9974f554fd36007d45102f8f17d7c2" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>stopEdit</name></member>
+      <member refid="classid_camera_position_1ac9f57850bb739f584ee68391bc9ee91c" prot="protected" virt="non-virtual"><scope>idCameraPosition</scope><name>time</name></member>
+      <member refid="classid_camera_position_1a1f1f9f460ba07af2d531181034627a60" prot="protected" virt="non-virtual"><scope>idCameraPosition</scope><name>type</name></member>
+      <member refid="classid_camera_position_1aa2d9d4016a882ba4aa7f89e0c9384c45" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>typeStr</name></member>
+      <member refid="classid_point_list_interface_1aae68653e38735a4ff727d239d3e6583d" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>updateSelection</name></member>
+      <member refid="classid_camera_position_1a93aafda6da74df711b2133c3ebdd2569" prot="protected" virt="non-virtual"><scope>idCameraPosition</scope><name>velocities</name></member>
+      <member refid="classid_camera_position_1a693cbf5c5ad5318b302ce4f11c7444c6" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>write</name></member>
+      <member refid="classid_camera_position_1a800064259106e3ff9c9b78c104949483" prot="public" virt="virtual"><scope>idCameraPosition</scope><name>~idCameraPosition</name></member>
+      <member refid="classid_point_list_interface_1ab3fd8b42ade80e915d9e16712a48a55f" prot="public" virt="non-virtual"><scope>idCameraPosition</scope><name>~idPointListInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

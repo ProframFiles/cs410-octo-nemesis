@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="structopt_tri__s" kind="struct" prot="public">
+    <compoundname>optTri_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structopt_tri__s_1af86cb84417a6f722b06fe3123281e5d3" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structopt_tri__s" kindref="compound">optTri_s</ref> *</type>
+        <definition>struct optTri_s* optTri_s::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/dmap.h" line="432" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/dmap.h" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopt_tri__s_1a7adbe49aed749942013c216deff5089b" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_vec3" kindref="compound">idVec3</ref></type>
+        <definition>idVec3 optTri_s::midpoint</definition>
+        <argsstring></argsstring>
+        <name>midpoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/dmap.h" line="433" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/dmap.h" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopt_tri__s_1ac4a30532ede11edeef3d05deff7f5b18" prot="public" static="no" mutable="no">
+        <type><ref refid="structopt_vertex__s" kindref="compound">optVertex_t</ref> *</type>
+        <definition>optVertex_t* optTri_s::v[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>v</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/dmap.h" line="434" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/dmap.h" bodystart="434" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structopt_tri__s_1a56cbc517e868fc3548f0a6e98d8cabc5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool optTri_s::filled</definition>
+        <argsstring></argsstring>
+        <name>filled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/dmap.h" line="435" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/dmap.h" bodystart="435" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="31242">
+        <label>idDrawVert</label>
+        <link refid="classid_draw_vert"/>
+        <childnode refid="31243" relation="usage">
+          <edgelabel>st</edgelabel>
+        </childnode>
+        <childnode refid="31239" relation="usage">
+          <edgelabel>xyz</edgelabel>
+          <edgelabel>normal</edgelabel>
+          <edgelabel>tangents</edgelabel>
+        </childnode>
+      </node>
+      <node id="31241">
+        <label>optEdge_s</label>
+        <link refid="structopt_edge__s"/>
+        <childnode refid="31241" relation="usage">
+          <edgelabel>v1link</edgelabel>
+          <edgelabel>v2link</edgelabel>
+          <edgelabel>islandLink</edgelabel>
+        </childnode>
+        <childnode refid="31238" relation="usage">
+          <edgelabel>backTri</edgelabel>
+          <edgelabel>frontTri</edgelabel>
+        </childnode>
+        <childnode refid="31240" relation="usage">
+          <edgelabel>v2</edgelabel>
+          <edgelabel>v1</edgelabel>
+        </childnode>
+      </node>
+      <node id="31240">
+        <label>optVertex_s</label>
+        <link refid="structopt_vertex__s"/>
+        <childnode refid="31241" relation="usage">
+          <edgelabel>edges</edgelabel>
+        </childnode>
+        <childnode refid="31239" relation="usage">
+          <edgelabel>pv</edgelabel>
+        </childnode>
+        <childnode refid="31242" relation="usage">
+          <edgelabel>v</edgelabel>
+        </childnode>
+        <childnode refid="31240" relation="usage">
+          <edgelabel>islandLink</edgelabel>
+        </childnode>
+      </node>
+      <node id="31238">
+        <label>optTri_s</label>
+        <link refid="structopt_tri__s"/>
+        <childnode refid="31239" relation="usage">
+          <edgelabel>midpoint</edgelabel>
+        </childnode>
+        <childnode refid="31240" relation="usage">
+          <edgelabel>v</edgelabel>
+        </childnode>
+        <childnode refid="31238" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="31243">
+        <label>idVec2</label>
+        <link refid="classid_vec2"/>
+      </node>
+      <node id="31239">
+        <label>idVec3</label>
+        <link refid="classid_vec3"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/dmap.h" line="431" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/dmap.h" bodystart="431" bodyend="436"/>
+    <listofallmembers>
+      <member refid="structopt_tri__s_1a56cbc517e868fc3548f0a6e98d8cabc5" prot="public" virt="non-virtual"><scope>optTri_s</scope><name>filled</name></member>
+      <member refid="structopt_tri__s_1a7adbe49aed749942013c216deff5089b" prot="public" virt="non-virtual"><scope>optTri_s</scope><name>midpoint</name></member>
+      <member refid="structopt_tri__s_1af86cb84417a6f722b06fe3123281e5d3" prot="public" virt="non-virtual"><scope>optTri_s</scope><name>next</name></member>
+      <member refid="structopt_tri__s_1ac4a30532ede11edeef3d05deff7f5b18" prot="public" virt="non-virtual"><scope>optTri_s</scope><name>v</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

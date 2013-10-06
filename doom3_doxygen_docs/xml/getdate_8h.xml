@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="getdate_8h" kind="file">
+    <compoundname>getdate.h</compoundname>
+    <includes refid="lib_2setup_8h" local="yes">setup.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">time.h</includes>
+    <includedby refid="cookie_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/cookie.c</includedby>
+    <includedby refid="getdate_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/getdate.c</includedby>
+    <includedby refid="transfer_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/transfer.c</includedby>
+    <incdepgraph>
+      <node id="290">
+        <label>E:/sources/3rd_party/DOOM/neo/curl/lib/getdate.h</label>
+        <link refid="getdate.h"/>
+        <childnode refid="291" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+      </node>
+      <node id="291">
+        <label>sys/types.h</label>
+      </node>
+      <node id="292">
+        <label>time.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="getdate_8h_1a034cc06fea5f2d7c02ff3ab62929336e" prot="public" static="no">
+        <name>PARAMS</name>
+        <param><defname>Args</defname></param>
+        <initializer>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/getdate.h" line="16" column="13" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/getdate.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="getdate_8h_1ad431f838cfabf8fe8f34fd6721056389" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t curl_getdate</definition>
+        <argsstring>()</argsstring>
+        <name>curl_getdate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/getdate.h" line="37" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">**<sp/><sp/>Originally<sp/>written<sp/>by<sp/>Steven<sp/>M.<sp/>Bellovin<sp/>&lt;smb@research.att.com&gt;<sp/>while</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">**<sp/><sp/>at<sp/>the<sp/>University<sp/>of<sp/>North<sp/>Carolina<sp/>at<sp/>Chapel<sp/>Hill.<sp/><sp/>Later<sp/>tweaked<sp/>by</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">**<sp/><sp/>a<sp/>couple<sp/>of<sp/>people<sp/>on<sp/>Usenet.<sp/><sp/>Completely<sp/>overhauled<sp/>by<sp/>Rich<sp/>$alz</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">**<sp/><sp/>&lt;rsalz@bbn.com&gt;<sp/>and<sp/>Jim<sp/>Berets<sp/>&lt;jberets@bbn.com&gt;<sp/>in<sp/>August,<sp/>1990.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">**<sp/><sp/>This<sp/>code<sp/>is<sp/>in<sp/>the<sp/>public<sp/>domain<sp/>and<sp/>has<sp/>no<sp/>copyright.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&quot;setup.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PARAMS</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>if<sp/>defined<sp/>PROTOTYPES<sp/>||<sp/>(defined<sp/>__STDC__<sp/>&amp;&amp;<sp/>__STDC__)</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>PARAMS(Args)<sp/>Args</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>else</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>PARAMS(Args)<sp/>()</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>endif</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>vms</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>if<sp/>TIME_WITH_SYS_TIME</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;sys/time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>else</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>if<sp/>HAVE_SYS_TIME_H</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&lt;sys/time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>else</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>endif</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>endif</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>defined<sp/>(vms)<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">time_t<sp/>curl_getdate<sp/>PARAMS<sp/>((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*p,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_t<sp/>*now));</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/getdate.h"/>
+  </compounddef>
+</doxygen>

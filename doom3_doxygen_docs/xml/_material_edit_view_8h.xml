@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_material_edit_view_8h" kind="file">
+    <compoundname>MaterialEditView.h</compoundname>
+    <includes refid="_material_editor_8h" local="yes">MaterialEditor.h</includes>
+    <includes refid="_material_prop_tree_view_8h" local="yes">MaterialPropTreeView.h</includes>
+    <includes refid="_stage_view_8h" local="yes">StageView.h</includes>
+    <includes refid="_c_syntax_rich_edit_ctrl_8h" local="yes">../comafx/CSyntaxRichEditCtrl.h</includes>
+    <includedby refid="_m_e_main_frame_8h" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MEMainFrame.h</includedby>
+    <includedby refid="_material_edit_view_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialEditView.cpp</includedby>
+    <innerclass refid="class_material_edit_view" prot="public">MaterialEditView</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MaterialEditor.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MaterialPropTreeView.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;StageView.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../comafx/CSyntaxRichEditCtrl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="36"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">*<sp/>View<sp/>that<sp/>contains<sp/>the<sp/>material<sp/>edit<sp/>controls.<sp/>These<sp/>controls<sp/>include</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">*<sp/>the<sp/>stage<sp/>view,<sp/>the<sp/>properties<sp/>view<sp/>and<sp/>the<sp/>source<sp/>view.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_material_edit_view" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_material_edit_view" kindref="compound">MaterialEditView</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>CFormView,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_material_view" kindref="compound">MaterialView</ref>,<sp/><ref refid="class_source_modify_owner" kindref="compound">SourceModifyOwner</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal">{<sp/>IDD<sp/>=<sp/>IDD_MATERIALEDIT_FORM<sp/>};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>CEdit<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_nameEdit;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>CSplitterWnd<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_editSplitter;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_stage_view" kindref="compound">StageView</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_stageView;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_prop_tree_view" kindref="compound">MaterialPropTreeView</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_materialPropertyView;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>CTabCtrl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tabs;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_c_syntax_rich_edit_ctrl" kindref="compound">CSyntaxRichEditCtrl</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_textView;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view_1a0580a20bdf9c9263031d203534d8ae63" kindref="member">~MaterialEditView</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//MaterialView<sp/>Interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view_1ae43ea2b9baada9af74f1f896913c37ea" kindref="member">MV_OnMaterialSelectionChange</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view_1adec7dc511f6b99e76fd2ad7039a59dca" kindref="member">MV_OnMaterialNameChanged</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>oldName);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SourceModifyOwner<sp/>Interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/><ref refid="class_material_edit_view_1a9d97a3f21e0751d1bd63e5607dca10dc" kindref="member">GetSourceText</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view" kindref="compound">MaterialEditView</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>DECLARE_DYNCREATE(<ref refid="class_material_edit_view" kindref="compound">MaterialEditView</ref>)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetMaterialSource();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view_1a82a62a066c2f85e5bb52a0e1086683f5" kindref="member">ApplyMaterialSource</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//CFormView<sp/>Overrides</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view_1a19ed8c745063402350b191ed4120721f" kindref="member">DoDataExchange</ref>(CDataExchange*<sp/>pDX);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view_1a62c189a40bc2b9925fd433af604a1251" kindref="member">OnInitialUpdate</ref>();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Message<sp/>Handlers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>afx_msg<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view_1ac3d84d7b2f89bed64600dda8a0f64081" kindref="member">OnCreate</ref>(LPCREATESTRUCT<sp/>lpCreateStruct);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>afx_msg<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view_1a75e95b06090d8fabcdd0d3876150f25e" kindref="member">OnSize</ref>(UINT<sp/>nType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cy);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>afx_msg<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view_1a6295e7f50837b7e4f21b783237696e52" kindref="member">OnTcnSelChange</ref>(NMHDR<sp/>*pNMHDR,<sp/>LRESULT<sp/>*pResult);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>afx_msg<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_edit_view_1af30e9e09c1d454b229f0e6ccb17a4868" kindref="member">OnEnChangeEdit</ref>(<sp/>NMHDR<sp/>*pNMHDR,<sp/>LRESULT<sp/>*pResult<sp/>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>DECLARE_MESSAGE_MAP()<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initHack;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sourceInit;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>sourceChanged;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/><sp/><sp/>currentMaterialName;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialEditView.h"/>
+  </compounddef>
+</doxygen>

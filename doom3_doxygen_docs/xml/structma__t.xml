@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="structma__t" kind="struct" prot="public">
+    <compoundname>ma_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structma__t_1ac8d572d1b90db629526a0b91e5d25f76" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ma_t::verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Model_ma.cpp" line="47" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Model_ma.cpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structma__t_1a72827081eaa7988a49c0c7cb85f07bb2" prot="public" static="no" mutable="no">
+        <type><ref refid="structma_model__s" kindref="compound">maModel_t</ref> *</type>
+        <definition>maModel_t* ma_t::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Model_ma.cpp" line="48" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Model_ma.cpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structma__t_1aec3036471671fa42a1be03c5f5ce00c5" prot="public" static="no" mutable="no">
+        <type><ref refid="structma_object__t" kindref="compound">maObject_t</ref> *</type>
+        <definition>maObject_t* ma_t::currentObject</definition>
+        <argsstring></argsstring>
+        <name>currentObject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Model_ma.cpp" line="49" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Model_ma.cpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="30152">
+        <label>maObject_t</label>
+        <link refid="structma_object__t"/>
+        <childnode refid="30153" relation="usage">
+          <edgelabel>mesh</edgelabel>
+        </childnode>
+      </node>
+      <node id="30149">
+        <label>idHashTable&lt; maTransform_s * &gt;</label>
+        <link refid="classid_hash_table"/>
+      </node>
+      <node id="30151">
+        <label>idList&lt; maObject_t * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="30154">
+        <label>maFace_t</label>
+        <link refid="structma_face__t"/>
+        <childnode refid="30155" relation="usage">
+          <edgelabel>vertexNormals</edgelabel>
+        </childnode>
+      </node>
+      <node id="30156">
+        <label>maTransform_s</label>
+        <link refid="structma_transform__s"/>
+        <childnode refid="30156" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="30155" relation="usage">
+          <edgelabel>scale</edgelabel>
+          <edgelabel>rotate</edgelabel>
+          <edgelabel>translate</edgelabel>
+        </childnode>
+      </node>
+      <node id="30146">
+        <label>maModel_s</label>
+        <link refid="structma_model__s"/>
+        <childnode refid="30147" relation="usage">
+          <edgelabel>materialNodes</edgelabel>
+        </childnode>
+        <childnode refid="30148" relation="usage">
+          <edgelabel>materials</edgelabel>
+        </childnode>
+        <childnode refid="30149" relation="usage">
+          <edgelabel>transforms</edgelabel>
+        </childnode>
+        <childnode refid="30150" relation="usage">
+          <edgelabel>fileNodes</edgelabel>
+        </childnode>
+        <childnode refid="30151" relation="usage">
+          <edgelabel>objects</edgelabel>
+        </childnode>
+      </node>
+      <node id="30147">
+        <label>idHashTable&lt; maMaterialNode_s * &gt;</label>
+        <link refid="classid_hash_table"/>
+      </node>
+      <node id="30145">
+        <label>ma_t</label>
+        <link refid="structma__t"/>
+        <childnode refid="30146" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+        <childnode refid="30152" relation="usage">
+          <edgelabel>currentObject</edgelabel>
+        </childnode>
+      </node>
+      <node id="30148">
+        <label>idList&lt; maMaterial_t * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="30153">
+        <label>maMesh_t</label>
+        <link refid="structma_mesh__t"/>
+        <childnode refid="30154" relation="usage">
+          <edgelabel>faces</edgelabel>
+        </childnode>
+        <childnode refid="30156" relation="usage">
+          <edgelabel>transform</edgelabel>
+        </childnode>
+        <childnode refid="30157" relation="usage">
+          <edgelabel>tvertexes</edgelabel>
+        </childnode>
+        <childnode refid="30155" relation="usage">
+          <edgelabel>normals</edgelabel>
+          <edgelabel>vertexes</edgelabel>
+          <edgelabel>edges</edgelabel>
+        </childnode>
+        <childnode refid="30158" relation="usage">
+          <edgelabel>vertTransforms</edgelabel>
+        </childnode>
+      </node>
+      <node id="30157">
+        <label>idVec2</label>
+        <link refid="classid_vec2"/>
+      </node>
+      <node id="30155">
+        <label>idVec3</label>
+        <link refid="classid_vec3"/>
+      </node>
+      <node id="30158">
+        <label>idVec4</label>
+        <link refid="classid_vec4"/>
+      </node>
+      <node id="30150">
+        <label>idHashTable&lt; maFileNode_t * &gt;</label>
+        <link refid="classid_hash_table"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/Model_ma.cpp" line="46" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Model_ma.cpp" bodystart="46" bodyend="50"/>
+    <listofallmembers>
+      <member refid="structma__t_1aec3036471671fa42a1be03c5f5ce00c5" prot="public" virt="non-virtual"><scope>ma_t</scope><name>currentObject</name></member>
+      <member refid="structma__t_1a72827081eaa7988a49c0c7cb85f07bb2" prot="public" virt="non-virtual"><scope>ma_t</scope><name>model</name></member>
+      <member refid="structma__t_1ac8d572d1b90db629526a0b91e5d25f76" prot="public" virt="non-virtual"><scope>ma_t</scope><name>verbose</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

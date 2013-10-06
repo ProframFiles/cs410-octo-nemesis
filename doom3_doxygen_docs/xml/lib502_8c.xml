@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="lib502_8c" kind="file">
+    <compoundname>lib502.c</compoundname>
+    <includes refid="test_8h" local="yes">test.h</includes>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="lib502_8c_1a9e699fe9161c9d812566449797c97c2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int test</definition>
+        <argsstring>(char *URL)</argsstring>
+        <name>test</name>
+        <param>
+          <type>char *</type>
+          <declname>URL</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/tests/libtest/lib502.c" line="7" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/tests/libtest/lib502.c" bodystart="7" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;test.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Get<sp/>a<sp/>single<sp/>URL<sp/>without<sp/>select().</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>test(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*URL)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>CURL<sp/>*c;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>CURLM<sp/>*m;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/>CURLMcode<sp/>res;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>running=1;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>curl_global_init(CURL_GLOBAL_ALL);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>c<sp/>=<sp/>curl_easy_init();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>curl_easy_setopt(c,<sp/>CURLOPT_URL,<sp/>URL);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>m<sp/>=<sp/>curl_multi_init();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>res<sp/>=<sp/>curl_multi_add_handle(m,<sp/>c);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(running)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>curl_multi_perform(m,<sp/>&amp;running);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(running<sp/>&lt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;nothing<sp/>left<sp/>running.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>curl_multi_remove_handle(m,<sp/>c);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>curl_easy_cleanup(c);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>curl_multi_cleanup(m);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>res;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/curl/tests/libtest/lib502.c"/>
+  </compounddef>
+</doxygen>

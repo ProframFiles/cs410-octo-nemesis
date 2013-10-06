@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_material_def_8h" kind="file">
+    <compoundname>MaterialDef.h</compoundname>
+    <includedby refid="_material_doc_8h" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDoc.h</includedby>
+    <includedby refid="_material_prop_tree_view_8h" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPropTreeView.h</includedby>
+    <includedby refid="_material_def_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.cpp</includedby>
+    <includedby refid="_m_e_main_frame_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MEMainFrame.cpp</includedby>
+    <innerclass refid="class_material_def" prot="public">MaterialDef</innerclass>
+    <innerclass refid="class_material_def_manager" prot="public">MaterialDefManager</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_material_def_8h_1acdbb355336eaaeb431ac3db21b736f11" prot="public" static="no">
+        <type><ref refid="classid_list" kindref="compound">idList</ref>&lt; <ref refid="class_material_def" kindref="compound">MaterialDef</ref> * &gt;</type>
+        <definition>typedef idList&lt;MaterialDef*&gt; MaterialDefList</definition>
+        <argsstring></argsstring>
+        <name>MaterialDefList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A list of material attributes. Material, stage, and special stage attributes are grouped together during the load process for use by the different view and <ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" line="71" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="30"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">*<sp/>Represents<sp/>a<sp/>single<sp/>attribute<sp/>in<sp/>a<sp/>material.<sp/>Represents<sp/>material,<sp/>stage</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">*<sp/>and<sp/>special<sp/>stage<sp/>attributes.<sp/>The<sp/>MaterialDef<sp/>manager<sp/>loads<sp/>these</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">*<sp/>definitions<sp/>from<sp/>the<sp/>material<sp/>definition<sp/>file<sp/>as<sp/>the<sp/>editor</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">*<sp/>is<sp/>being<sp/>initialized.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_material_def" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_material_def" kindref="compound">MaterialDef</ref><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Defines<sp/>possible<sp/>attribute<sp/>types.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MATERIAL_DEF_TYPE_GROUP,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MATERIAL_DEF_TYPE_BOOL,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MATERIAL_DEF_TYPE_STRING,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MATERIAL_DEF_TYPE_FLOAT,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MATERIAL_DEF_TYPE_INT</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dictName;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayName;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayInfo;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>quotes;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_hash_table" kindref="compound">idHashTable&lt;DWORD&gt;</ref><sp/><sp/>viewData;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_def_1a14f7023e4d2afa5889682c2556a14683" kindref="member">MaterialDef</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_material_def_1a337da4929e62f0d2108611fba354d46b" kindref="member">~MaterialDef</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>DWORD<sp/><sp/><sp/><ref refid="class_material_def_1ae64fe9660e2f6ee29f207bd6ab0497c9" kindref="member">GetViewData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>viewName);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_def_1a13bd9e2352f616e556cc05473ae3f7c2" kindref="member">SetViewData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>viewName,<sp/>DWORD<sp/>value);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="67"><highlight class="comment">*<sp/>A<sp/>list<sp/>of<sp/>material<sp/>attributes.<sp/>Material,<sp/>stage,<sp/>and<sp/>special<sp/>stage<sp/>attributes</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">*<sp/>are<sp/>grouped<sp/>together<sp/>during<sp/>the<sp/>load<sp/>process<sp/>for<sp/>use<sp/>by<sp/>the<sp/>different<sp/>view<sp/>and</highlight></codeline>
+<codeline lineno="69"><highlight class="comment">*<sp/>MaterialDoc.</highlight></codeline>
+<codeline lineno="70"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classid_list" kindref="compound">idList&lt;MaterialDef*&gt;</ref><sp/><ref refid="classid_list" kindref="compound">MaterialDefList</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="73"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="74"><highlight class="comment">*<sp/>This<sp/>class<sp/>contains<sp/>static<sp/>utility<sp/>functions<sp/>that<sp/>view<sp/>and<sp/>MaterialDoc<sp/>use</highlight></codeline>
+<codeline lineno="75"><highlight class="comment">*<sp/>to<sp/>access<sp/>the<sp/>MaterialDef<sp/>and<sp/>MaterialDefList<sp/>data<sp/>that<sp/>is<sp/>loaded.<sp/>This<sp/>class</highlight></codeline>
+<codeline lineno="76"><highlight class="comment">*<sp/>is<sp/>also<sp/>responsible<sp/>for<sp/>loading<sp/>and<sp/>destroying<sp/>the<sp/>MaterialDef<sp/>instances.</highlight></codeline>
+<codeline lineno="77"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="class_material_def_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_material_def_manager" kindref="compound">MaterialDefManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Defines<sp/>the<sp/>groupings<sp/>of<sp/>material<sp/>attributes.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MATERIAL_DEF_MATERIAL<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MATERIAL_DEF_STAGE,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MATERIAL_DEF_SPECIAL_STAGE,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MATERIAL_DEF_NUM</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_def_manager_1a747fd10854d6d4ce696a28ae1a1c8f84" kindref="member">InitializeMaterialDefLists</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_def_manager_1a5deb5395be5dcd781e2773cea919dc41" kindref="member">InitializeMaterialDefList</ref>(<ref refid="classid_lexer" kindref="compound">idLexer</ref>*<sp/>src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>typeName,<sp/><ref refid="classid_list" kindref="compound">MaterialDefList</ref>*<sp/>list);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_def_manager_1af559b941c95d1dd11a7dd85b4d3a82fe" kindref="member">DestroyMaterialDefLists</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classid_list" kindref="compound">MaterialDefList</ref>*<sp/><sp/><sp/><sp/><sp/><ref refid="class_material_def_manager_1a515b972ee6ccf5d9251b2ee00fa2c653" kindref="member">GetMaterialDefs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classid_list" kindref="compound">MaterialDefList</ref><sp/><sp/><sp/><sp/><sp/><sp/>materialDefs[MATERIAL_DEF_NUM];<sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h"/>
+  </compounddef>
+</doxygen>

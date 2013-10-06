@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="gdefs_8h" kind="file">
+    <compoundname>gdefs.h</compoundname>
+    <includedby refid="tools_2compilers_2roqvq_2codec_8h" local="yes">E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/codec.h</includedby>
+    <includedby refid="roq_8h" local="yes">E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/roq.h</includedby>
+    <includedby refid="roq_param_8h" local="yes">E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/roqParam.h</includedby>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="gdefs_8h_1aa49e2ce1c069000ebdec64482c991362" prot="public" static="no">
+        <name>dabs</name>
+        <param><defname>a</defname></param>
+        <initializer>(((a)&lt;0) ? -(a) : (a))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="39" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1ae34ffec09813c3b81c6b91df2946895b" prot="public" static="no">
+        <name>CLAMP</name>
+        <param><defname>v</defname></param>
+        <param><defname>l</defname></param>
+        <param><defname>h</defname></param>
+        <initializer>((v)&lt;(l) ? (l) : (v)&gt;(h) ? (h) : v)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="40" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1a42f2bdf7ba8343845a7b220111ee4ec3" prot="public" static="no">
+        <name>xswap</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>{ a^=b; b^=a; a^=b; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="41" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1adac5b8f9b64cc5d1b3445111677f099e" prot="public" static="no">
+        <name>lum</name>
+        <param><defname>a</defname></param>
+        <initializer>( 0.2990*(a&gt;&gt;16) + 0.5870*((a&gt;&gt;8)&amp;0xff) + 0.1140*(a&amp;0xff) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="42" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1ac8100593b2116aa901cd34439d529f10" prot="public" static="no">
+        <name>gsign</name>
+        <param><defname>a</defname></param>
+        <initializer>((a) &lt; 0 ? -1 : 1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="43" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1adb124917641ed2df9f0dbc4b5657ca53" prot="public" static="no">
+        <name>mnint</name>
+        <param><defname>a</defname></param>
+        <initializer>((a) &lt; 0 ? (int)(a - 0.5) : (int)(a + 0.5))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="44" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1a9493c4e06606c94612e05c772d5c9b2a" prot="public" static="no">
+        <name>mmax</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>((a) &gt; (b) ? (a) : (b))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="45" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1ad7cf61b6843c3ed06b7b1399d5e2fd21" prot="public" static="no">
+        <name>mmin</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>((a) &lt; (b) ? (a) : (b))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="46" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1ad466ae9b873fc2709f00861526176c1f" prot="public" static="no">
+        <name>RGBDIST</name>
+        <param><defname>src0</defname></param>
+        <param><defname>src1</defname></param>
+        <initializer>( ((src0[0]-src1[0])*(src0[0]-src1[0])) + \
+								((src0[1]-src1[1])*(src0[1]-src1[1])) + \
+								((src0[2]-src1[2])*(src0[2]-src1[2])) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="47" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1a60b3f169e68be6fa08e2afd0a2d1360e" prot="public" static="no">
+        <name>RGBADIST</name>
+        <param><defname>src0</defname></param>
+        <param><defname>src1</defname></param>
+        <initializer>( ((src0[0]-src1[0])*(src0[0]-src1[0])) + \
+								 ((src0[1]-src1[1])*(src0[1]-src1[1])) + \
+								 ((src0[2]-src1[2])*(src0[2]-src1[2])) + \
+								 ((src0[3]-src1[3])*(src0[3]-src1[3])) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="51" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1aff175c6ca1b79f83c17dbb1aff1eccf8" prot="public" static="no">
+        <name>RMULT</name>
+        <initializer>0.2990f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="57" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1a59f08ce75ef240f94644970c7bacdce6" prot="public" static="no">
+        <name>GMULT</name>
+        <initializer>0.5870f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="58" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1a77e782da053bcebac1f06ab987be5aac" prot="public" static="no">
+        <name>BMULT</name>
+        <initializer>0.1140f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="59" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1a2f93b25d374b234c0dc11af4d1b79a2c" prot="public" static="no">
+        <name>RIEMULT</name>
+        <initializer>-0.16874f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="61" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1a9c3574d30fdd2d3de820e1fdfc0acf4e" prot="public" static="no">
+        <name>RQEMULT</name>
+        <initializer>0.50000f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="62" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1a377cd7cbe66f6dda0e19d6c70c88c8e7" prot="public" static="no">
+        <name>GIEMULT</name>
+        <initializer>-0.33126f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="63" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1ae7002d53f3c5902301d9da2697fed61d" prot="public" static="no">
+        <name>GQEMULT</name>
+        <initializer>-0.41869f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="64" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1a8098df7ad1f6f2c0228113ca9463279e" prot="public" static="no">
+        <name>BIEMULT</name>
+        <initializer>0.50000f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="65" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gdefs_8h_1a9d3b9cd6daabcf7eac66be80803e968c" prot="public" static="no">
+        <name>BQEMULT</name>
+        <initializer>-0.08131f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="66" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="gdefs_8h_1a0c8186d9b9b7880309c27230bbb5e69d" prot="public" static="no">
+        <type>unsigned char</type>
+        <definition>typedef unsigned char byte</definition>
+        <argsstring></argsstring>
+        <name>byte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="35" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="gdefs_8h_1a285e72252c100e2508e4e933a0738f2b" prot="public" static="no">
+        <type>unsigned short</type>
+        <definition>typedef unsigned short word</definition>
+        <argsstring></argsstring>
+        <name>word</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" line="36" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__gdefs_h__</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__gdefs_h__</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*==================*</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>TYPE<sp/>DEFINITIONS<sp/>*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*==================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>byte;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>word;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>dabs(a)<sp/>(((a)&lt;0)<sp/>?<sp/>-(a)<sp/>:<sp/>(a))</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>CLAMP(v,l,h)<sp/>((v)&lt;(l)<sp/>?<sp/>(l)<sp/>:<sp/>(v)&gt;(h)<sp/>?<sp/>(h)<sp/>:<sp/>v)</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>xswap(a,b)<sp/>{<sp/>a^=b;<sp/>b^=a;<sp/>a^=b;<sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>lum(a)<sp/>(<sp/>0.2990*(a&gt;&gt;16)<sp/>+<sp/>0.5870*((a&gt;&gt;8)&amp;0xff)<sp/>+<sp/>0.1140*(a&amp;0xff)<sp/>)</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>gsign(a)<sp/><sp/><sp/><sp/>((a)<sp/>&lt;<sp/>0<sp/>?<sp/>-1<sp/>:<sp/>1)</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>mnint(a)<sp/><sp/><sp/><sp/>((a)<sp/>&lt;<sp/>0<sp/>?<sp/>(int)(a<sp/>-<sp/>0.5)<sp/>:<sp/>(int)(a<sp/>+<sp/>0.5))</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>mmax(a,<sp/>b)<sp/><sp/><sp/><sp/><sp/><sp/>((a)<sp/>&gt;<sp/>(b)<sp/>?<sp/>(a)<sp/>:<sp/>(b))</highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>mmin(a,<sp/>b)<sp/><sp/><sp/><sp/><sp/><sp/>((a)<sp/>&lt;<sp/>(b)<sp/>?<sp/>(a)<sp/>:<sp/>(b))</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>RGBDIST(<sp/>src0,<sp/>src1<sp/>)<sp/>(<sp/>((src0[0]-src1[0])*(src0[0]-src1[0]))<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((src0[1]-src1[1])*(src0[1]-src1[1]))<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((src0[2]-src1[2])*(src0[2]-src1[2]))<sp/>)</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RGBADIST(<sp/>src0,<sp/>src1<sp/>)<sp/>(<sp/>((src0[0]-src1[0])*(src0[0]-src1[0]))<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((src0[1]-src1[1])*(src0[1]-src1[1]))<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((src0[2]-src1[2])*(src0[2]-src1[2]))<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((src0[3]-src1[3])*(src0[3]-src1[3]))<sp/>)</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RMULT<sp/>0.2990f<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>use<sp/>these<sp/>for<sp/>televisions</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>GMULT<sp/>0.5870f<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>BMULT<sp/>0.1140f</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RIEMULT<sp/>-0.16874f</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>RQEMULT<sp/><sp/>0.50000f</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>GIEMULT<sp/>-0.33126f</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>GQEMULT<sp/>-0.41869f</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>BIEMULT<sp/><sp/>0.50000f</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>BQEMULT<sp/>-0.08131f</highlight></codeline>
+<codeline lineno="67"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>gdefs</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/roqvq/gdefs.h"/>
+  </compounddef>
+</doxygen>

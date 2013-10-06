@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_prop_tree_item_check_8cpp" kind="file">
+    <compoundname>PropTreeItemCheck.cpp</compoundname>
+    <includes refid="precompiled_8h" local="yes">../../../idlib/precompiled.h</includes>
+    <includes refid="_prop_tree_8h" local="yes">proptree.h</includes>
+    <includes refid="_prop_tree_item_check_8h" local="yes">PropTreeItemCheck.h</includes>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_prop_tree_item_check_8cpp_1a5e93a3d883c04fea0fca5a307b9da02e" prot="public" static="no">
+        <name>CHECK_BOX_SIZE</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/common/PropTree/PropTreeItemCheck.cpp" line="32" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/common/PropTree/PropTreeItemCheck.cpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_prop_tree_item_check_8cpp_1a539933f6e484d663d93247ee99348209" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BEGIN_MESSAGE_MAP</definition>
+        <argsstring>(CPropTreeItemCheck, CButton) ON_CONTROL_REFLECT(BN_KILLFOCUS</argsstring>
+        <name>BEGIN_MESSAGE_MAP</name>
+        <param>
+          <type><ref refid="class_c_prop_tree_item_check" kindref="compound">CPropTreeItemCheck</ref></type>
+        </param>
+        <param>
+          <type>CButton</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/common/PropTree/PropTreeItemCheck.cpp" line="47" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_prop_tree_item_check_8cpp_1a6e5b8b2ac2d76533e5fc58f0f12a9a2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>OnBnKillfocus</type>
+        <definition>OnBnKillfocus ON_CONTROL_REFLECT</definition>
+        <argsstring>(BN_CLICKED, OnBnClicked) END_MESSAGE_MAP() void CPropTreeItemCheck</argsstring>
+        <name>ON_CONTROL_REFLECT</name>
+        <param>
+          <type>BN_CLICKED</type>
+        </param>
+        <param>
+          <type>OnBnClicked</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/common/PropTree/PropTreeItemCheck.cpp" line="51" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/common/PropTree/PropTreeItemCheck.cpp" bodystart="51" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>PropTreeItemCheck.cpp<sp/>:<sp/>implementation<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>(C)<sp/>1998-2001<sp/>Scott<sp/>Ramsay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>sramsay@gonavi.com</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>http://www.gonavi.com</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>This<sp/>material<sp/>is<sp/>provided<sp/>&quot;as<sp/>is&quot;,<sp/>with<sp/>absolutely<sp/>no<sp/>warranty<sp/>expressed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>or<sp/>implied.<sp/>Any<sp/>use<sp/>is<sp/>at<sp/>your<sp/>own<sp/>risk.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Permission<sp/>to<sp/>use<sp/>or<sp/>copy<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose<sp/>is<sp/>hereby<sp/>granted<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>without<sp/>fee,<sp/>provided<sp/>the<sp/>above<sp/>notices<sp/>are<sp/>retained<sp/>on<sp/>all<sp/>copies.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Permission<sp/>to<sp/>modify<sp/>the<sp/>code<sp/>and<sp/>to<sp/>distribute<sp/>modified<sp/>code<sp/>is<sp/>granted,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>provided<sp/>the<sp/>above<sp/>notices<sp/>are<sp/>retained,<sp/>and<sp/>a<sp/>notice<sp/>that<sp/>the<sp/>code<sp/>was</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>modified<sp/>is<sp/>included<sp/>with<sp/>the<sp/>above<sp/>copyright<sp/>notice.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>If<sp/>you<sp/>use<sp/>this<sp/>code,<sp/>drop<sp/>me<sp/>an<sp/>email.<sp/><sp/>I&apos;d<sp/>like<sp/>to<sp/>know<sp/>if<sp/>you<sp/>find<sp/>the<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>useful.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;stdafx.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../idlib/precompiled.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>hdrstop</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;proptree.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;PropTreeItemCheck.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_DEBUG</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>new<sp/>DEBUG_NEW</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#undef<sp/>THIS_FILE</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>THIS_FILE[]<sp/>=<sp/>__FILE__;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHECK_BOX_SIZE<sp/>14</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="34"><highlight class="comment">/////////////////////////////////////////////////////////////////////////////</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"></highlight><highlight class="comment">//<sp/>CPropTreeItemCheck</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">CPropTreeItemCheck::CPropTreeItemCheck()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>checkState<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">CPropTreeItemCheck::~CPropTreeItemCheck()</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">BEGIN_MESSAGE_MAP(<ref refid="class_c_prop_tree_item_check" kindref="compound">CPropTreeItemCheck</ref>,<sp/>CButton)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//{{AFX_MSG_MAP(CPropTreeItemCheck)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}}AFX_MSG_MAP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>ON_CONTROL_REFLECT(BN_KILLFOCUS,<sp/>OnBnKillfocus)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>ON_CONTROL_REFLECT(BN_CLICKED,<sp/>OnBnClicked)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">END_MESSAGE_MAP()</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment">/////////////////////////////////////////////////////////////////////////////</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"></highlight><highlight class="comment">//<sp/>CPropTreeItemCheck<sp/>message<sp/>handlers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_c_prop_tree_item_check" kindref="compound">CPropTreeItemCheck</ref>::DrawAttribute(CDC*<sp/>pDC,<sp/>const<sp/>RECT&amp;<sp/>rc)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT(m_pProp!=NULL);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>verify<sp/>the<sp/>window<sp/>has<sp/>been<sp/>created</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!IsWindow(m_hWnd))</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TRACE0(</highlight><highlight class="stringliteral">&quot;CPropTreeItemCombo::DrawAttribute()<sp/>-<sp/>The<sp/>window<sp/>has<sp/>not<sp/>been<sp/>created\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>checkRect.left<sp/>=<sp/>m_rc.left;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>checkRect.top<sp/>=<sp/>m_rc.top<sp/>+<sp/>((m_rc.bottom<sp/>-<sp/>m_rc.top)/2)-CHECK_BOX_SIZE/2;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>checkRect.right<sp/>=<sp/>checkRect.left<sp/>+<sp/>CHECK_BOX_SIZE;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>checkRect.bottom<sp/>=<sp/>checkRect.top<sp/>+<sp/>CHECK_BOX_SIZE;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!m_bActivated)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDC-&gt;DrawFrameControl(&amp;checkRect,<sp/>DFC_BUTTON,<sp/>DFCS_BUTTONCHECK<sp/>|<sp/>DFCS_FLAT<sp/>|(checkState<sp/>?<sp/>DFCS_CHECKED<sp/>:<sp/>0));</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemCheck::SetCheckState(BOOL<sp/>state)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/>{<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>checkState<sp/>=<sp/>state;<sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>SetCheck(checkState<sp/>?<sp/>BST_CHECKED<sp/>:<sp/>BST_UNCHECKED);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><ref refid="class_c_prop_tree_item" kindref="compound">LPARAM</ref><sp/>CPropTreeItemCheck::GetItemValue()</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="class_c_prop_tree_item" kindref="compound">LPARAM</ref>)GetCheckState();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemCheck::SetItemValue(<ref refid="class_c_prop_tree_item" kindref="compound">LPARAM</ref><sp/>lParam)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>SetCheckState((BOOL)lParam);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemCheck::OnMove()</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IsWindow(m_hWnd))</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWindowPos(NULL,<sp/>m_rc.left,<sp/>m_rc.top,<sp/>m_rc.Width(),<sp/>m_rc.Height(),<sp/>SWP_NOZORDER|SWP_NOACTIVATE);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemCheck::OnRefresh()</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemCheck::OnCommit()</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>ShowWindow(SW_HIDE);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemCheck::OnActivate(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>activateType,<sp/>CPoint<sp/>point)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(activateType<sp/>==<sp/>CPropTreeItem::ACTIVATE_TYPE_MOUSE)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Check<sp/>where<sp/>the<sp/>user<sp/>clicked</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(point.x<sp/>&lt;<sp/>m_rc.left<sp/>+<sp/>CHECK_BOX_SIZE)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetCheckState(!GetCheckState());</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CommitChanges();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWindowPos(NULL,<sp/>m_rc.left,<sp/>m_rc.top,<sp/>m_rc.Width(),<sp/>m_rc.Height(),<sp/>SWP_NOZORDER|SWP_SHOWWINDOW);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetFocus();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetWindowPos(NULL,<sp/>m_rc.left,<sp/>m_rc.top,<sp/>m_rc.Width(),<sp/>m_rc.Height(),<sp/>SWP_NOZORDER|SWP_SHOWWINDOW);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetFocus();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>CPropTreeItemCheck::CreateCheckBox()<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT(m_pProp!=NULL);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IsWindow(m_hWnd))</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DestroyWindow();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>DWORD<sp/>dwStyle<sp/>=<sp/>(WS_CHILD|BS_CHECKBOX|BS_NOTIFY|BS_FLAT<sp/>);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!Create(NULL,<sp/>dwStyle,<sp/>CRect(0,0,0,0),<sp/>m_pProp-&gt;GetCtrlParent(),<sp/>GetCtrlID()))</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TRACE0(</highlight><highlight class="stringliteral">&quot;CPropTreeItemCombo::CreateComboBox()<sp/>-<sp/>failed<sp/>to<sp/>create<sp/>combo<sp/>box\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TRUE;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemCheck::OnBnKillfocus()</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>CommitChanges();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemCheck::OnBnClicked()</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state<sp/>=<sp/>GetCheck();</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>SetCheckState(GetCheck()<sp/>==<sp/>BST_CHECKED<sp/>?<sp/>FALSE<sp/>:<sp/>TRUE);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>CommitChanges();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/common/PropTree/PropTreeItemCheck.cpp"/>
+  </compounddef>
+</doxygen>

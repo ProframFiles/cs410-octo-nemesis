@@ -1,0 +1,1206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="game_2script_2_script___compiler_8h" kind="file">
+    <compoundname>Script_Compiler.h</compoundname>
+    <includedby refid="game_2_game__local_8h" local="yes">E:/sources/3rd_party/DOOM/neo/game/Game_local.h</includedby>
+    <includedby refid="_debugger_server_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp</includedby>
+    <innerclass refid="structopcode__s" prot="public">opcode_s</innerclass>
+    <innerclass refid="classid_compiler" prot="public">idCompiler</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80" prot="public" static="no">
+        <name>@80</name>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ad436c18b194473f5ec64c28b774e41b3" prot="public">
+          <name>OP_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a5ba20e3af9ab17b4fe31087afc908300" prot="public">
+          <name>OP_UINC_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a47ba886b48d73cd9ee5edd1691e93998" prot="public">
+          <name>OP_UINCP_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ab2b15f5fbe049459d70faa9547be322e" prot="public">
+          <name>OP_UDEC_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a84e877cce48e1888ab906a5557108807" prot="public">
+          <name>OP_UDECP_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ae115a2d1f871a99f2948775c94bb1516" prot="public">
+          <name>OP_COMP_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80afa9c58730be43b4ac3563f98e0e5f7d0" prot="public">
+          <name>OP_MUL_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ac7bde212df5fd9261ca254ee9c1cc5b7" prot="public">
+          <name>OP_MUL_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a74235d93aef757cee31bdaa3a6c67b5d" prot="public">
+          <name>OP_MUL_FV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a3281ea78f54d46fc19f45e417d7809b3" prot="public">
+          <name>OP_MUL_VF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a380a3be772323c8545c120b23a2805ec" prot="public">
+          <name>OP_DIV_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a92cb6d41f5dfa769de64de7cddd053ec" prot="public">
+          <name>OP_MOD_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a8c3d28fa87a050ed5ee58d8d668a5bb9" prot="public">
+          <name>OP_ADD_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a4594dca44969e6c28160097ae303ceed" prot="public">
+          <name>OP_ADD_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80afa24fcc013adab2e81ebb260685d6926" prot="public">
+          <name>OP_ADD_S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a21242c62678dcaa30d918a53ea4aa983" prot="public">
+          <name>OP_ADD_FS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a2708128055c9ac4d82f643cb958468f0" prot="public">
+          <name>OP_ADD_SF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a1d76f80ad9c112b48b534c4f5b49a4bf" prot="public">
+          <name>OP_ADD_VS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ad831d69aaf2b1efe86be7d05f29cf0ac" prot="public">
+          <name>OP_ADD_SV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a1ab64905391cd25cd005531a72bba177" prot="public">
+          <name>OP_SUB_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a5aac16012294a30ae3e09c1caeec4729" prot="public">
+          <name>OP_SUB_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ada6b9c87ddc7bd8a921e5e8a17f9ebf2" prot="public">
+          <name>OP_EQ_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a80f1a9a92aadb24b79d1149bb6514132" prot="public">
+          <name>OP_EQ_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ae32cba6ad88848a707d3ebf548a97557" prot="public">
+          <name>OP_EQ_S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ab09152687b7b007da452e4d68298262c" prot="public">
+          <name>OP_EQ_E</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80aeff00c9114a062f6b5dbb654795de652" prot="public">
+          <name>OP_EQ_EO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80af5f674efb0b0aa4faaae1a8c5e753348" prot="public">
+          <name>OP_EQ_OE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80af431322c11e810b5592ec748214266b7" prot="public">
+          <name>OP_EQ_OO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80aab9b10cac822c9a5cad81494c82344cd" prot="public">
+          <name>OP_NE_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a799a5909d808374f6ad382159b4e3778" prot="public">
+          <name>OP_NE_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a528a78be0049375f3b4b48778903be84" prot="public">
+          <name>OP_NE_S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a037be49f48f25fe400d94a6112b72e97" prot="public">
+          <name>OP_NE_E</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a7b4e2a82af53760eb1f9eae440820904" prot="public">
+          <name>OP_NE_EO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a8e1f1600b3b0db364404195301c30745" prot="public">
+          <name>OP_NE_OE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ac2f8523e05a7873bfa0c6ff92e42b68c" prot="public">
+          <name>OP_NE_OO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80acef6e71b662db063ff532d89500bb0c0" prot="public">
+          <name>OP_LE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a2c757131e6e1c94b27f44f7303697c29" prot="public">
+          <name>OP_GE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a7d5ed006824d331041dad8486e52df50" prot="public">
+          <name>OP_LT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ac15bc31f8120c2dd6379564f0c163028" prot="public">
+          <name>OP_GT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a7b32062116b966021568b9d4e8f0b499" prot="public">
+          <name>OP_INDIRECT_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ae91dc82569514aa3f48b210460109c7c" prot="public">
+          <name>OP_INDIRECT_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80abe7a3691d7fac0c38e689a7db11ad78c" prot="public">
+          <name>OP_INDIRECT_S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a8b729360e72000cc3416bc774b54e0f1" prot="public">
+          <name>OP_INDIRECT_ENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a04cb5cdd3c7320a2e54a94d1c5c57da8" prot="public">
+          <name>OP_INDIRECT_BOOL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a6f71d9c72e1b6c341d4f284a7bd707c1" prot="public">
+          <name>OP_INDIRECT_OBJ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ad6488047c2a34a0f2e288925c400c335" prot="public">
+          <name>OP_ADDRESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80af08212ba08297401facb4b22192a3d2b" prot="public">
+          <name>OP_EVENTCALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a35f581d694f80bf60d79b98662e4d439" prot="public">
+          <name>OP_OBJECTCALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a7eb66758365ab1145745c67a50475fa5" prot="public">
+          <name>OP_SYSCALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80aff3bfb0f286e6670311615cffdea182f" prot="public">
+          <name>OP_STORE_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a121bbd71edb7e2a3c506b0f703047966" prot="public">
+          <name>OP_STORE_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80aabf6b203cb43185537c5603947b38671" prot="public">
+          <name>OP_STORE_S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a82c7f584478cde7f4300cdc5dd2fc8e5" prot="public">
+          <name>OP_STORE_ENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80aea573294afe8f5d06e2d0d6a2b5d71dc" prot="public">
+          <name>OP_STORE_BOOL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a6a2ca6092d8c250af240465400ad0913" prot="public">
+          <name>OP_STORE_OBJENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80af0edc2c2f41edd4d5335d7fee8067969" prot="public">
+          <name>OP_STORE_OBJ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a0eead3c31d9cf422cdd37bec503a5d7d" prot="public">
+          <name>OP_STORE_ENTOBJ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a9eb6cec065e0b1256648d042e2e1049c" prot="public">
+          <name>OP_STORE_FTOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a2ba065c36de0db5fa37c73346ee35e48" prot="public">
+          <name>OP_STORE_BTOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ac1e51c349203fb125a681623f4011cf7" prot="public">
+          <name>OP_STORE_VTOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a9125062e32bc3c44762f463a15f7da06" prot="public">
+          <name>OP_STORE_FTOBOOL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a2a333d0589e508a55ed0bfb96357b5ec" prot="public">
+          <name>OP_STORE_BOOLTOF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ab3af67675044d5b353c8a0100fc2ae95" prot="public">
+          <name>OP_STOREP_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a2a4c493a0ce58d679492b7ca1e24867a" prot="public">
+          <name>OP_STOREP_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a028aa431428a6db28b6ee6647cca40f1" prot="public">
+          <name>OP_STOREP_S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a4b4c6ca81d9e5f50dc2366f3df1d8829" prot="public">
+          <name>OP_STOREP_ENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a71c23edf4023edf2a43ee39218eda3a8" prot="public">
+          <name>OP_STOREP_FLD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a8a249e91b4e14e736282aaa4155ad82e" prot="public">
+          <name>OP_STOREP_BOOL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80afd9ac3a335bc0b6031859db0a4233f88" prot="public">
+          <name>OP_STOREP_OBJ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a6ef4e42abddb18b262546911e986711a" prot="public">
+          <name>OP_STOREP_OBJENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a0cd8a379790ea5f922f2b964a31e7370" prot="public">
+          <name>OP_STOREP_FTOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a0f472c55ee50dc87ca73a66e0f49c344" prot="public">
+          <name>OP_STOREP_BTOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80abc0e2f7c54ecd43a925bd82b565c2b61" prot="public">
+          <name>OP_STOREP_VTOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a6a423d8bbf4741855c5a25a0e1c7fbdf" prot="public">
+          <name>OP_STOREP_FTOBOOL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ad03575aa0df655696ae666c7659ea5c5" prot="public">
+          <name>OP_STOREP_BOOLTOF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a6153dfac97ae633b617577a1b6d0f751" prot="public">
+          <name>OP_UMUL_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ae7820c2eafe24c8137d6d7a29b94a45f" prot="public">
+          <name>OP_UMUL_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80afaf60f15bb0a80835c7170f4b0d406b0" prot="public">
+          <name>OP_UDIV_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a28d914901b0a130357b167f47f3dd418" prot="public">
+          <name>OP_UDIV_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a907644949c170b7a2524639612ac129e" prot="public">
+          <name>OP_UMOD_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a54155707fad36721e1037416fa86a29c" prot="public">
+          <name>OP_UADD_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a47bd66634c29d13b5849e9d375b5dba9" prot="public">
+          <name>OP_UADD_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ac570c6db89784a736924307e7b0ebbb9" prot="public">
+          <name>OP_USUB_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80abea30ac2e05df4dd3186afda967160ac" prot="public">
+          <name>OP_USUB_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a62dc063de08b490ba9c22fc16909b6b5" prot="public">
+          <name>OP_UAND_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ae61b3334e87fd0de9acd65d0d9699a2f" prot="public">
+          <name>OP_UOR_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80af2c31f78696d1303101c6556cfbef838" prot="public">
+          <name>OP_NOT_BOOL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80aabd8ba1ed8873ac575ccb8559d734002" prot="public">
+          <name>OP_NOT_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80adb7c36a10422387c825cd4bc27fd96a7" prot="public">
+          <name>OP_NOT_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80afbc1120398a11643512f8259ba205135" prot="public">
+          <name>OP_NOT_S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a602d7a48980d71fb982693d9e5c8a3d4" prot="public">
+          <name>OP_NOT_ENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a919ee76583e78538e96ba273d66ccea9" prot="public">
+          <name>OP_NEG_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a5fa26a4d1d5a76f42a6dc17c496d866f" prot="public">
+          <name>OP_NEG_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a9b8dda5f863db3bf0859d935ae29792f" prot="public">
+          <name>OP_INT_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a25d6de8236cc98dc5620b85681bf3727" prot="public">
+          <name>OP_IF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80affc79a48c05a7c12d7eade14d168a4ff" prot="public">
+          <name>OP_IFNOT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a098bbeea13096667b102f7fd90cbe38f" prot="public">
+          <name>OP_CALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ac13394c798a308afd5c30e30a21c01e6" prot="public">
+          <name>OP_THREAD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a2b6b23e5b2a1f7d2ed9fc049b0e2df5b" prot="public">
+          <name>OP_OBJTHREAD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a6d9944f97986d858972381c4f4487cae" prot="public">
+          <name>OP_PUSH_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a4dac6ccc71935f7537a552300ba1b201" prot="public">
+          <name>OP_PUSH_V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ae0d5868877a5d9462b557a9675f4d6e6" prot="public">
+          <name>OP_PUSH_S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a8de6729920f46a6c793c724688fde49f" prot="public">
+          <name>OP_PUSH_ENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a718abfb626077effa097884be73ef954" prot="public">
+          <name>OP_PUSH_OBJ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ac07c8912512a57abf25e731b12ba8fc6" prot="public">
+          <name>OP_PUSH_OBJENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a3b04f4ba22236acd555a2aef88729aae" prot="public">
+          <name>OP_PUSH_FTOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a2abf6c9ed3da0e3b69bfd86066657b2a" prot="public">
+          <name>OP_PUSH_BTOF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a53288e73d67cb6441a9950d19b9c1746" prot="public">
+          <name>OP_PUSH_FTOB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a4dcd64859350553547d8a198ac03f9f4" prot="public">
+          <name>OP_PUSH_VTOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a39218ea7db5b8ac07b4f5c175eaefe98" prot="public">
+          <name>OP_PUSH_BTOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80aeeb288b7f2ed283ff2d7f73725c9991a" prot="public">
+          <name>OP_GOTO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ae2310d00f26e94b32317ecd168fb7e18" prot="public">
+          <name>OP_AND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ad4e58b19a730e76abc223c2a0d9b651a" prot="public">
+          <name>OP_AND_BOOLF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a031886ba0ce13f4a3de5d74d2a19dc85" prot="public">
+          <name>OP_AND_FBOOL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a2c7f01e3ac4709b6fb34dfa8e98730db" prot="public">
+          <name>OP_AND_BOOLBOOL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80af317be3def89f5f66558bbc402291176" prot="public">
+          <name>OP_OR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80aa9f15e2599c744308d2731e93d0064b3" prot="public">
+          <name>OP_OR_BOOLF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a89fba1b6c8711b047809594857f46fa8" prot="public">
+          <name>OP_OR_FBOOL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a333757a8ca934f220f42d7fb882fd6d9" prot="public">
+          <name>OP_OR_BOOLBOOL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ae7c9d9485073923393a9774b3e1aa29c" prot="public">
+          <name>OP_BITAND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80ae594ec1632fdff1ac5d8840404c02677" prot="public">
+          <name>OP_BITOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a659d1744821f380b92f2d19b7ed86a1f" prot="public">
+          <name>OP_BREAK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a1ebcc963378cf41414673812dfaa5cab" prot="public">
+          <name>OP_CONTINUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___compiler_8h_1a4b4213b1f9d54da7c7e36bde32fc7c80a651b0c36ed607dce8bad88cae12e783b" prot="public">
+          <name>NUM_OPCODES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="47" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" bodystart="47" bodyend="195"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="game_2script_2_script___compiler_8h_1af948cd99ce5c3309982f5bf6ecabefc7" prot="public" static="no">
+        <type>struct <ref refid="structopcode__s" kindref="compound">opcode_s</ref></type>
+        <definition>typedef struct opcode_s  opcode_t</definition>
+        <argsstring></argsstring>
+        <name>opcode_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="41" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="game_2script_2_script___compiler_8h_1a59e55b86d4645d7d887ec591d2312930" prot="public" static="no" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const RESULT_STRING</definition>
+        <argsstring></argsstring>
+        <name>RESULT_STRING</name>
+        <initializer>= &quot;&lt;RESULT&gt;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="31" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__SCRIPT_COMPILER_H__</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__SCRIPT_COMPILER_H__</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>RESULT_STRING<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&lt;RESULT&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structopcode__s" kindref="compound">opcode_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*name;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*opname;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>priority;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightAssociative;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>*type_a;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>*type_b;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>*type_c;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}<sp/><ref refid="structopcode__s" kindref="compound">opcode_t</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>These<sp/>opcodes<sp/>are<sp/>no<sp/>longer<sp/>necessary:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">//<sp/>OP_PUSH_OBJ:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">//<sp/>OP_PUSH_OBJENT:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_RETURN,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UINC_F,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UINCP_F,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UDEC_F,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UDECP_F,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_COMP_F,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_MUL_F,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_MUL_V,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_MUL_FV,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_MUL_VF,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_DIV_F,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_MOD_F,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_ADD_F,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_ADD_V,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_ADD_S,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_ADD_FS,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_ADD_SF,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_ADD_VS,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_ADD_SV,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_SUB_F,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_SUB_V,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_EQ_F,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_EQ_V,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_EQ_S,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_EQ_E,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_EQ_EO,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_EQ_OE,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_EQ_OO,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NE_F,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NE_V,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NE_S,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NE_E,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NE_EO,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NE_OE,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NE_OO,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_LE,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_GE,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_LT,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_GT,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_INDIRECT_F,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_INDIRECT_V,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_INDIRECT_S,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_INDIRECT_ENT,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_INDIRECT_BOOL,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_INDIRECT_OBJ,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_ADDRESS,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_EVENTCALL,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_OBJECTCALL,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_SYSCALL,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_F,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_V,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_S,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_ENT,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_BOOL,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_OBJENT,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_OBJ,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_ENTOBJ,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_FTOS,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_BTOS,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_VTOS,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_FTOBOOL,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STORE_BOOLTOF,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_F,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_V,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_S,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_ENT,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_FLD,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_BOOL,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_OBJ,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_OBJENT,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_FTOS,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_BTOS,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_VTOS,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_FTOBOOL,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_STOREP_BOOLTOF,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UMUL_F,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UMUL_V,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UDIV_F,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UDIV_V,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UMOD_F,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UADD_F,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UADD_V,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_USUB_F,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_USUB_V,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UAND_F,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_UOR_F,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NOT_BOOL,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NOT_F,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NOT_V,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NOT_S,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NOT_ENT,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NEG_F,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_NEG_V,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_INT_F,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_IF,</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_IFNOT,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_CALL,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_THREAD,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_OBJTHREAD,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_F,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_V,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_S,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_ENT,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_OBJ,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_OBJENT,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_FTOS,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_BTOF,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_FTOB,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_VTOS,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_PUSH_BTOS,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_GOTO,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_AND,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_AND_BOOLF,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_AND_FBOOL,</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_AND_BOOLBOOL,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_OR,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_OR_BOOLF,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_OR_FBOOL,</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_OR_BOOLBOOL,</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_BITAND,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_BITOR,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_BREAK,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>placeholder<sp/>op.<sp/><sp/>not<sp/>used<sp/>in<sp/>final<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>OP_CONTINUE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>placeholder<sp/>op.<sp/><sp/>not<sp/>used<sp/>in<sp/>final<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>NUM_OPCODES</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_compiler" kindref="compound">idCompiler</ref><sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>punctuationValid[<sp/>256<sp/>];</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*punctuation[];</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_parser" kindref="compound">idParser</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parser;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_parser" kindref="compound">idParser</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*parserPtr;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_token" kindref="compound">idToken</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>token;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*immediateType;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="unioneval__s" kindref="compound">eval_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>immediate;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eof;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>console;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callthread;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>braceDepth;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loopDepth;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentLineNumber;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentFileNumber;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>errorCount;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*scope;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>function<sp/>being<sp/>parsed,<sp/>or<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/>*basetype;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>accessing<sp/>fields</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Divide(<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>numerator,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>denominator<sp/>);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Error(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*error,<sp/>...<sp/>)<sp/>const<sp/>id_attribute((format(printf,2,3)));</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Warning(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*message,<sp/>...<sp/>)<sp/>const<sp/>id_attribute((format(printf,2,3)));</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*OptimizeOpcode(<sp/>const<sp/><ref refid="structopcode__s" kindref="compound">opcode_t</ref><sp/>*op,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*var_a,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*var_b<sp/>);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*EmitOpcode(<sp/>const<sp/><ref refid="structopcode__s" kindref="compound">opcode_t</ref><sp/>*op,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*var_a,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*var_b<sp/>);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*EmitOpcode(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>op,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*var_a,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*var_b<sp/>);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EmitPush(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*expression,<sp/>const<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*funcArg<sp/>);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NextToken(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExpectToken(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CheckToken(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseName(<sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/>&amp;name<sp/>);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SkipOutOfFunction(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SkipToSemicolon(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*CheckType(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ParseType(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*FindImmediate(<sp/>const<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type,<sp/>const<sp/><ref refid="unioneval__s" kindref="compound">eval_t</ref><sp/>*eval,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>)<sp/>const;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetImmediate(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type,<sp/>const<sp/><ref refid="unioneval__s" kindref="compound">eval_t</ref><sp/>*eval,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*VirtualFunctionConstant(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*func<sp/>);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*SizeConstant(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size<sp/>);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*JumpConstant(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value<sp/>);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*JumpDef(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jumpfrom,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jumpto<sp/>);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*JumpTo(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jumpto<sp/>);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*JumpFrom(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jumpfrom<sp/>);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ParseImmediate(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*EmitFunctionParms(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>op,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*func,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>startarg,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>startsize,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ParseFunctionCall(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*func<sp/>);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ParseObjectCall(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*func<sp/>);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ParseEventCall(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*func<sp/>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ParseSysObjectCall(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*func<sp/>);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*LookupDef(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/>const<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*baseobj<sp/>);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ParseValue(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetTerm(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TypeMatches(<sp/>etype_t<sp/>type1,<sp/>etype_t<sp/>type2<sp/>)<sp/>const;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetExpression(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority<sp/>);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetTypeForEventArg(<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>argType<sp/>);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PatchLoop(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>start,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>continuePos<sp/>);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseReturnStatement(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseWhileStatement(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseForStatement(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseDoWhileStatement(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseIfStatement(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseStatement(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseObjectDef(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*objname<sp/>);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ParseFunction(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*returnType,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseFunctionDef(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*returnType,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseVariableDef(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseEventDef(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseDefs(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParseNamespace(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*newScope<sp/>);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">public<sp/>:</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>static<sp/><ref refid="structopcode__s" kindref="compound">opcode_t</ref><sp/>opcodes[];</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_compiler" kindref="compound">idCompiler</ref>();</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CompileFile(<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>console<sp/>);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!__SCRIPT_COMPILER_H__<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h"/>
+  </compounddef>
+</doxygen>

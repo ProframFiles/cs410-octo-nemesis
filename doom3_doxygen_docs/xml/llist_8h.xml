@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="llist_8h" kind="file">
+    <compoundname>llist.h</compoundname>
+    <includes refid="lib_2setup_8h" local="yes">setup.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includedby refid="hash_8h" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h</includedby>
+    <includedby refid="hash_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/hash.c</includedby>
+    <includedby refid="llist_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/llist.c</includedby>
+    <incdepgraph>
+      <node id="398">
+        <label>E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h</label>
+        <link refid="llist.h"/>
+        <childnode refid="399" relation="include">
+        </childnode>
+      </node>
+      <node id="399">
+        <label>stddef.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct__curl__llist__element" prot="public">_curl_llist_element</innerclass>
+    <innerclass refid="struct__curl__llist" prot="public">_curl_llist</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="llist_8h_1a6f00da9b968c39cd25f264b2a085fc5a" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* curl_llist_dtor)(void *, void *)</definition>
+        <argsstring>)(void *, void *)</argsstring>
+        <name>curl_llist_dtor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="29" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="llist_8h_1ac6d1422727a63b0f92cfb0c05693102e" prot="public" static="no">
+        <type>struct <ref refid="struct__curl__llist__element" kindref="compound">_curl_llist_element</ref></type>
+        <definition>typedef struct _curl_llist_element  curl_llist_element</definition>
+        <argsstring></argsstring>
+        <name>curl_llist_element</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="36" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="llist_8h_1a1dc60f65ca85de6fffc0e546a8cfa482" prot="public" static="no">
+        <type>struct <ref refid="struct__curl__llist" kindref="compound">_curl_llist</ref></type>
+        <definition>typedef struct _curl_llist  curl_llist</definition>
+        <argsstring></argsstring>
+        <name>curl_llist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="45" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="llist_8h_1a6ed87869a538a12bf30c98c99c84d5d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_llist_init</definition>
+        <argsstring>(curl_llist *, curl_llist_dtor)</argsstring>
+        <name>Curl_llist_init</name>
+        <param>
+          <type><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref> *</type>
+        </param>
+        <param>
+          <type>curl_llist_dtor</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="47" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.c" bodystart="36" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="llist_8h_1a003dff70b0bf170f84de46385efd992e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref> *</type>
+        <definition>curl_llist* Curl_llist_alloc</definition>
+        <argsstring>(curl_llist_dtor)</argsstring>
+        <name>Curl_llist_alloc</name>
+        <param>
+          <type>curl_llist_dtor</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="48" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.c" bodystart="45" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="llist_8h_1aecb4591be2e38f66865f4d33d231ca7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Curl_llist_insert_next</definition>
+        <argsstring>(curl_llist *, curl_llist_element *, const void *)</argsstring>
+        <name>Curl_llist_insert_next</name>
+        <param>
+          <type><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref> *</type>
+        </param>
+        <param>
+          <type>const void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="49" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.c" bodystart="59" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="llist_8h_1afddade16f62e447d0dfc85462eabe2f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Curl_llist_insert_prev</definition>
+        <argsstring>(curl_llist *, curl_llist_element *, const void *)</argsstring>
+        <name>Curl_llist_insert_prev</name>
+        <param>
+          <type><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref> *</type>
+        </param>
+        <param>
+          <type>const void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="50" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="llist_8h_1acdb337e5dc2d8d963adc5f8278a483fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Curl_llist_remove</definition>
+        <argsstring>(curl_llist *, curl_llist_element *, void *)</argsstring>
+        <name>Curl_llist_remove</name>
+        <param>
+          <type><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref> *</type>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="51" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.c" bodystart="116" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="llist_8h_1a6a51f849663c0423ae9d4dcee67f7c8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Curl_llist_remove_next</definition>
+        <argsstring>(curl_llist *, curl_llist_element *, void *)</argsstring>
+        <name>Curl_llist_remove_next</name>
+        <param>
+          <type><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref> *</type>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="52" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="llist_8h_1a8b2ec6a229a57d645d58339d356f0fca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Curl_llist_count</definition>
+        <argsstring>(curl_llist *)</argsstring>
+        <name>Curl_llist_count</name>
+        <param>
+          <type><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="llist_8h_1accbf481aae9078dde337ff448ef9f366" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_llist_destroy</definition>
+        <argsstring>(curl_llist *, void *)</argsstring>
+        <name>Curl_llist_destroy</name>
+        <param>
+          <type><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref> *</type>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h" line="54" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.c" bodystart="164" bodyend="172"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__LLIST_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__LLIST_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="comment">/***************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_<sp/><sp/><sp/>_<sp/>____<sp/><sp/>_<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>Project<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>___|<sp/>|<sp/>|<sp/>|<sp/><sp/>_<sp/>\|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>__|<sp/>|<sp/>|<sp/>|<sp/>|_)<sp/>|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(__|<sp/>|_|<sp/>|<sp/><sp/>_<sp/>&lt;|<sp/>|___<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\___|\___/|_|<sp/>\_\_____|</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998<sp/>-<sp/>2004,<sp/>Daniel<sp/>Stenberg,<sp/>&lt;daniel@haxx.se&gt;,<sp/>et<sp/>al.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>licensed<sp/>as<sp/>described<sp/>in<sp/>the<sp/>file<sp/>COPYING,<sp/>which</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>you<sp/>should<sp/>have<sp/>received<sp/>as<sp/>part<sp/>of<sp/>this<sp/>distribution.<sp/>The<sp/>terms</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>are<sp/>also<sp/>available<sp/>at<sp/>http://curl.haxx.se/docs/copyright.html.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>opt<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute<sp/>and/or<sp/>sell</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>COPYING<sp/>file.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>basis,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>$Id:<sp/>llist.h,v<sp/>1.7<sp/>2004/01/07<sp/>09:19:35<sp/>bagder<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;setup.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*curl_llist_dtor)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="struct__curl__llist__element" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__curl__llist__element" kindref="compound">_curl_llist_element</ref><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ptr;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__curl__llist__element" kindref="compound">_curl_llist_element</ref><sp/>*prev;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__curl__llist__element" kindref="compound">_curl_llist_element</ref><sp/>*next;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}<sp/><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="struct__curl__llist" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__curl__llist" kindref="compound">_curl_llist</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref><sp/>*head;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref><sp/>*tail;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>curl_llist_dtor<sp/>dtor;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_llist_init(<ref refid="struct__curl__llist" kindref="compound">curl_llist</ref><sp/>*,<sp/>curl_llist_dtor);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref><sp/>*Curl_llist_alloc(curl_llist_dtor);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Curl_llist_insert_next(<ref refid="struct__curl__llist" kindref="compound">curl_llist</ref><sp/>*,<sp/><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Curl_llist_insert_prev(<ref refid="struct__curl__llist" kindref="compound">curl_llist</ref><sp/>*,<sp/><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Curl_llist_remove(<ref refid="struct__curl__llist" kindref="compound">curl_llist</ref><sp/>*,<sp/><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Curl_llist_remove_next(<ref refid="struct__curl__llist" kindref="compound">curl_llist</ref><sp/>*,<sp/><ref refid="struct__curl__llist__element" kindref="compound">curl_llist_element</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Curl_llist_count(<ref refid="struct__curl__llist" kindref="compound">curl_llist</ref><sp/>*);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_llist_destroy(<ref refid="struct__curl__llist" kindref="compound">curl_llist</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/llist.h"/>
+  </compounddef>
+</doxygen>

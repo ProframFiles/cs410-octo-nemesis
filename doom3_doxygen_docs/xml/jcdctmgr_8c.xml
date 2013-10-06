@@ -1,0 +1,563 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jcdctmgr_8c" kind="file">
+    <compoundname>jcdctmgr.c</compoundname>
+    <includes refid="jinclude_8h" local="yes">jinclude.h</includes>
+    <includes refid="jpeglib_8h" local="yes">jpeglib.h</includes>
+    <includes refid="jdct_8h" local="yes">jdct.h</includes>
+    <innerclass refid="structmy__fdct__controller" prot="public">my_fdct_controller</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jcdctmgr_8c_1ad5c3cdfae3019b8223973041a2a1304b" prot="public" static="no">
+        <name>JPEG_INTERNALS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" line="14" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jcdctmgr_8c_1a2efd7f4ce9eb698ae746441e3f082845" prot="public" static="no">
+        <name>DIVIDE_BY</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>if (a &gt;= b) a /= b; else a = 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" line="250" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="jcdctmgr_8c_1a9e7aec0e2b06789bfe367a5ce366f482" prot="public" static="no">
+        <type><ref refid="structmy__fdct__controller" kindref="compound">my_fdct_controller</ref> *</type>
+        <definition>typedef my_fdct_controller* my_fdct_ptr</definition>
+        <argsstring></argsstring>
+        <name>my_fdct_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" line="42" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jcdctmgr_8c_1a3f2ad23ad8a3ddfa992f8536eba6f198" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void start_pass_fdctmgr</definition>
+        <argsstring>(j_compress_ptr cinfo)</argsstring>
+        <name>start_pass_fdctmgr</name>
+        <param>
+          <type><ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" line="55" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" bodystart="55" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="jcdctmgr_8c_1a39d8f6eb32f2a56a760f29f9abd8ac6d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void forward_DCT</definition>
+        <argsstring>(j_compress_ptr cinfo, jpeg_component_info *compptr, JSAMPARRAY sample_data, JBLOCKROW coef_blocks, JDIMENSION start_row, JDIMENSION start_col, JDIMENSION num_blocks)</argsstring>
+        <name>forward_DCT</name>
+        <param>
+          <type><ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref> *</type>
+          <declname>compptr</declname>
+        </param>
+        <param>
+          <type>JSAMPARRAY</type>
+          <declname>sample_data</declname>
+        </param>
+        <param>
+          <type>JBLOCKROW</type>
+          <declname>coef_blocks</declname>
+        </param>
+        <param>
+          <type>JDIMENSION</type>
+          <declname>start_row</declname>
+        </param>
+        <param>
+          <type>JDIMENSION</type>
+          <declname>start_col</declname>
+        </param>
+        <param>
+          <type>JDIMENSION</type>
+          <declname>num_blocks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" line="181" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" bodystart="181" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="jcdctmgr_8c_1a26aeaaf03590d2048679d679efd51eb5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void forward_DCT_float</definition>
+        <argsstring>(j_compress_ptr cinfo, jpeg_component_info *compptr, JSAMPARRAY sample_data, JBLOCKROW coef_blocks, JDIMENSION start_row, JDIMENSION start_col, JDIMENSION num_blocks)</argsstring>
+        <name>forward_DCT_float</name>
+        <param>
+          <type><ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref> *</type>
+          <declname>compptr</declname>
+        </param>
+        <param>
+          <type>JSAMPARRAY</type>
+          <declname>sample_data</declname>
+        </param>
+        <param>
+          <type>JBLOCKROW</type>
+          <declname>coef_blocks</declname>
+        </param>
+        <param>
+          <type>JDIMENSION</type>
+          <declname>start_row</declname>
+        </param>
+        <param>
+          <type>JDIMENSION</type>
+          <declname>start_col</declname>
+        </param>
+        <param>
+          <type>JDIMENSION</type>
+          <declname>num_blocks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" line="271" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" bodystart="271" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="jcdctmgr_8c_1a321a0f461503678870a0cdb1e3ee7131" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jinit_forward_dct</definition>
+        <argsstring>(j_compress_ptr cinfo)</argsstring>
+        <name>jinit_forward_dct</name>
+        <param>
+          <type><ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" line="346" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c" bodystart="346" bodyend="388"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jcdctmgr.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1994-1995,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>the<sp/>forward-DCT<sp/>management<sp/>logic.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>code<sp/>selects<sp/>a<sp/>particular<sp/>DCT<sp/>implementation<sp/>to<sp/>be<sp/>used,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>and<sp/>it<sp/>performs<sp/>related<sp/>housekeeping<sp/>chores<sp/>including<sp/>coefficient</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>quantization.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JPEG_INTERNALS</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;jinclude.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jpeglib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jdct.h&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Private<sp/>declarations<sp/>for<sp/>DCT<sp/>subsystem<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>subobject<sp/>for<sp/>this<sp/>module<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="structmy__fdct__controller" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structjpeg__forward__dct" kindref="compound">jpeg_forward_dct</ref><sp/>pub;<sp/><sp/></highlight><highlight class="comment">/*<sp/>public<sp/>fields<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Pointer<sp/>to<sp/>the<sp/>DCT<sp/>routine<sp/>actually<sp/>in<sp/>use<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>forward_DCT_method_ptr<sp/>do_dct;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>actual<sp/>post-DCT<sp/>divisors<sp/>---<sp/>not<sp/>identical<sp/>to<sp/>the<sp/>quant<sp/>table</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/>*<sp/>entries,<sp/>because<sp/>of<sp/>scaling<sp/>(especially<sp/>for<sp/>an<sp/>unnormalized<sp/>DCT).</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Each<sp/>table<sp/>is<sp/>given<sp/>in<sp/>normal<sp/>array<sp/>order;<sp/>note<sp/>that<sp/>this<sp/>must</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/><sp/>*<sp/>be<sp/>converted<sp/>from<sp/>the<sp/>zigzag<sp/>order<sp/>of<sp/>the<sp/>quantization<sp/>tables.</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>DCTELEM<sp/>*<sp/>divisors[NUM_QUANT_TBLS];</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DCT_FLOAT_SUPPORTED</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Same<sp/>as<sp/>above<sp/>for<sp/>the<sp/>floating-point<sp/>case.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>float_DCT_method_ptr<sp/>do_float_dct;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>FAST_FLOAT<sp/>*<sp/>float_divisors[NUM_QUANT_TBLS];</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="normal">}<sp/><ref refid="structmy__fdct__controller" kindref="compound">my_fdct_controller</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structmy__fdct__controller" kindref="compound">my_fdct_controller</ref><sp/>*<sp/><ref refid="structmy__fdct__controller" kindref="compound">my_fdct_ptr</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>Initialize<sp/>for<sp/>a<sp/>processing<sp/>pass.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>Verify<sp/>that<sp/>all<sp/>referenced<sp/>Q-tables<sp/>are<sp/>present,<sp/>and<sp/>set<sp/>up</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>the<sp/>divisor<sp/>table<sp/>for<sp/>each<sp/>one.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>In<sp/>the<sp/>current<sp/>implementation,<sp/>DCT<sp/>of<sp/>all<sp/>components<sp/>is<sp/>done<sp/>during</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>the<sp/>first<sp/>pass,<sp/>even<sp/>if<sp/>only<sp/>some<sp/>components<sp/>will<sp/>be<sp/>output<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>first<sp/>scan.<sp/><sp/>Hence<sp/>all<sp/>components<sp/>should<sp/>be<sp/>examined<sp/>here.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">start_pass_fdctmgr<sp/>(<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref><sp/>cinfo)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><ref refid="structmy__fdct__controller" kindref="compound">my_fdct_ptr</ref><sp/>fdct<sp/>=<sp/>(<ref refid="structmy__fdct__controller" kindref="compound">my_fdct_ptr</ref>)<sp/>cinfo-&gt;fdct;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ci,<sp/>qtblno,<sp/>i;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref><sp/>*compptr;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><ref refid="struct_j_q_u_a_n_t___t_b_l" kindref="compound">JQUANT_TBL</ref><sp/>*<sp/>qtbl;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//DCTELEM<sp/>*<sp/>dtbl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>for<sp/>(ci<sp/>=<sp/>0,<sp/>compptr<sp/>=<sp/>cinfo-&gt;comp_info;<sp/>ci<sp/>&lt;<sp/>cinfo-&gt;num_components;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ci++,<sp/>compptr++)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>qtblno<sp/>=<sp/>compptr-&gt;quant_tbl_no;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Make<sp/>sure<sp/>specified<sp/>quantization<sp/>table<sp/>is<sp/>present<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(qtblno<sp/>&lt;<sp/>0<sp/>||<sp/>qtblno<sp/>&gt;=<sp/>NUM_QUANT_TBLS<sp/>||</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;quant_tbl_ptrs[qtblno]<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ERREXIT1(cinfo,<sp/>JERR_NO_QUANT_TABLE,<sp/>qtblno);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>qtbl<sp/>=<sp/>cinfo-&gt;quant_tbl_ptrs[qtblno];</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Compute<sp/>divisors<sp/>for<sp/>this<sp/>quant<sp/>table<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>may<sp/>do<sp/>this<sp/>more<sp/>than<sp/>once<sp/>for<sp/>same<sp/>table,<sp/>but<sp/>it&apos;s<sp/>not<sp/>a<sp/>big<sp/>deal<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(cinfo-&gt;dct_method)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DCT_ISLOW_SUPPORTED</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>JDCT_ISLOW:</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>LL&amp;M<sp/>IDCT<sp/>method,<sp/>divisors<sp/>are<sp/>equal<sp/>to<sp/>raw<sp/>quantization</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>coefficients<sp/>multiplied<sp/>by<sp/>8<sp/>(to<sp/>counteract<sp/>scaling).</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fdct-&gt;divisors[qtblno]<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>fdct-&gt;divisors[qtblno]<sp/>=<sp/>(DCTELEM<sp/>*)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(*cinfo-&gt;mem-&gt;alloc_small)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo,<sp/>JPOOL_IMAGE,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DCTSIZE2<sp/>*<sp/>SIZEOF(DCTELEM));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>dtbl<sp/>=<sp/>fdct-&gt;divisors[qtblno];</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>DCTSIZE2;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>dtbl[i]<sp/>=<sp/>((DCTELEM)<sp/>qtbl-&gt;quantval[jpeg_zigzag_order[i]])<sp/>&lt;&lt;<sp/>3;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#ifdef<sp/>DCT_IFAST_SUPPORTED</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>JDCT_IFAST:</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>AA&amp;N<sp/>IDCT<sp/>method,<sp/>divisors<sp/>are<sp/>equal<sp/>to<sp/>quantization</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>coefficients<sp/>scaled<sp/>by<sp/>scalefactor[row]*scalefactor[col],<sp/>where</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/>scalefactor[0]<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/>scalefactor[k]<sp/>=<sp/>cos(k*PI/16)<sp/>*<sp/>sqrt(2)<sp/><sp/><sp/><sp/>for<sp/>k=1..7</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>We<sp/>apply<sp/>a<sp/>further<sp/>scale<sp/>factor<sp/>of<sp/>8.</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONST_BITS<sp/>14</highlight></codeline>
+<codeline lineno="100"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>INT16<sp/>aanscales[DCTSIZE2]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>precomputed<sp/>values<sp/>scaled<sp/>up<sp/>by<sp/>14<sp/>bits:<sp/>in<sp/>natural<sp/>order<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>16384,<sp/>22725,<sp/>21407,<sp/>19266,<sp/>16384,<sp/>12873,<sp/><sp/>8867,<sp/><sp/>4520,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>22725,<sp/>31521,<sp/>29692,<sp/>26722,<sp/>22725,<sp/>17855,<sp/>12299,<sp/><sp/>6270,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>21407,<sp/>29692,<sp/>27969,<sp/>25172,<sp/>21407,<sp/>16819,<sp/>11585,<sp/><sp/>5906,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>19266,<sp/>26722,<sp/>25172,<sp/>22654,<sp/>19266,<sp/>15137,<sp/>10426,<sp/><sp/>5315,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>16384,<sp/>22725,<sp/>21407,<sp/>19266,<sp/>16384,<sp/>12873,<sp/><sp/>8867,<sp/><sp/>4520,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>12873,<sp/>17855,<sp/>16819,<sp/>15137,<sp/>12873,<sp/>10114,<sp/><sp/>6967,<sp/><sp/>3552,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8867,<sp/>12299,<sp/>11585,<sp/>10426,<sp/><sp/>8867,<sp/><sp/>6967,<sp/><sp/>4799,<sp/><sp/>2446,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4520,<sp/><sp/>6270,<sp/><sp/>5906,<sp/><sp/>5315,<sp/><sp/>4520,<sp/><sp/>3552,<sp/><sp/>2446,<sp/><sp/>1247</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>SHIFT_TEMPS</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fdct-&gt;divisors[qtblno]<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fdct-&gt;divisors[qtblno]<sp/>=<sp/>(DCTELEM<sp/>*)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*cinfo-&gt;mem-&gt;alloc_small)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo,<sp/>JPOOL_IMAGE,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DCTSIZE2<sp/>*<sp/>SIZEOF(DCTELEM));</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>dtbl<sp/>=<sp/>fdct-&gt;divisors[qtblno];</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>DCTSIZE2;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>dtbl[i]<sp/>=<sp/>(DCTELEM)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DESCALE(MULTIPLY16V16((INT32)<sp/>qtbl-&gt;quantval[jpeg_zigzag_order[i]],</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(INT32)<sp/>aanscales[i]),</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CONST_BITS-3);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="128"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#ifdef<sp/>DCT_FLOAT_SUPPORTED</highlight></codeline>
+<codeline lineno="129"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>JDCT_FLOAT:</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>float<sp/>AA&amp;N<sp/>IDCT<sp/>method,<sp/>divisors<sp/>are<sp/>equal<sp/>to<sp/>quantization</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>coefficients<sp/>scaled<sp/>by<sp/>scalefactor[row]*scalefactor[col],<sp/>where</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/>scalefactor[0]<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/>scalefactor[k]<sp/>=<sp/>cos(k*PI/16)<sp/>*<sp/>sqrt(2)<sp/><sp/><sp/><sp/>for<sp/>k=1..7</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>We<sp/>apply<sp/>a<sp/>further<sp/>scale<sp/>factor<sp/>of<sp/>8.</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>What&apos;s<sp/>actually<sp/>stored<sp/>is<sp/>1/divisor<sp/>so<sp/>that<sp/>the<sp/>inner<sp/>loop<sp/>can</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>use<sp/>a<sp/>multiplication<sp/>rather<sp/>than<sp/>a<sp/>division.</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>FAST_FLOAT<sp/>*<sp/>fdtbl;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row,<sp/>col;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aanscalefactor[DCTSIZE]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>1.0,<sp/>1.387039845,<sp/>1.306562965,<sp/>1.175875602,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>1.0,<sp/>0.785694958,<sp/>0.541196100,<sp/>0.275899379</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fdct-&gt;float_divisors[qtblno]<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fdct-&gt;float_divisors[qtblno]<sp/>=<sp/>(FAST_FLOAT<sp/>*)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*cinfo-&gt;mem-&gt;alloc_small)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo,<sp/>JPOOL_IMAGE,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DCTSIZE2<sp/>*<sp/>SIZEOF(FAST_FLOAT));</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>fdtbl<sp/>=<sp/>fdct-&gt;float_divisors[qtblno];</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(row<sp/>=<sp/>0;<sp/>row<sp/>&lt;<sp/>DCTSIZE;<sp/>row++)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(col<sp/>=<sp/>0;<sp/>col<sp/>&lt;<sp/>DCTSIZE;<sp/>col++)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdtbl[i]<sp/>=<sp/>(FAST_FLOAT)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(1.0<sp/>/<sp/>(((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)<sp/>qtbl-&gt;quantval[jpeg_zigzag_order[i]]<sp/>*</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aanscalefactor[row]<sp/>*<sp/>aanscalefactor[col]<sp/>*<sp/>8.0)));</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="164"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_NOT_COMPILED);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/>Perform<sp/>forward<sp/>DCT<sp/>on<sp/>one<sp/>or<sp/>more<sp/>blocks<sp/>of<sp/>a<sp/>component.</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*<sp/>The<sp/>input<sp/>samples<sp/>are<sp/>taken<sp/>from<sp/>the<sp/>sample_data[]<sp/>array<sp/>starting<sp/>at</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/>position<sp/>start_row/start_col,<sp/>and<sp/>moving<sp/>to<sp/>the<sp/>right<sp/>for<sp/>any<sp/>additional</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*<sp/>blocks.<sp/>The<sp/>quantized<sp/>coefficients<sp/>are<sp/>returned<sp/>in<sp/>coef_blocks[].</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal">forward_DCT<sp/>(<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref><sp/>cinfo,<sp/><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref><sp/>*<sp/>compptr,</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPARRAY<sp/>sample_data,<sp/>JBLOCKROW<sp/>coef_blocks,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>start_row,<sp/>JDIMENSION<sp/>start_col,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>num_blocks)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>version<sp/>is<sp/>used<sp/>for<sp/>integer<sp/>DCT<sp/>implementations.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>routine<sp/>is<sp/>heavily<sp/>used,<sp/>so<sp/>it&apos;s<sp/>worth<sp/>coding<sp/>it<sp/>tightly.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><ref refid="structmy__fdct__controller" kindref="compound">my_fdct_ptr</ref><sp/>fdct<sp/>=<sp/>(<ref refid="structmy__fdct__controller" kindref="compound">my_fdct_ptr</ref>)<sp/>cinfo-&gt;fdct;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>forward_DCT_method_ptr<sp/>do_dct<sp/>=<sp/>fdct-&gt;do_dct;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>DCTELEM<sp/>*<sp/>divisors<sp/>=<sp/>fdct-&gt;divisors[compptr-&gt;quant_tbl_no];</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>DCTELEM<sp/>workspace[DCTSIZE2];<sp/><sp/></highlight><highlight class="comment">/*<sp/>work<sp/>area<sp/>for<sp/>FDCT<sp/>subroutine<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>JDIMENSION<sp/>bi;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>sample_data<sp/>+=<sp/>start_row;<sp/></highlight><highlight class="comment">/*<sp/>fold<sp/>in<sp/>the<sp/>vertical<sp/>offset<sp/>once<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>for<sp/>(bi<sp/>=<sp/>0;<sp/>bi<sp/>&lt;<sp/>num_blocks;<sp/>bi++,<sp/>start_col<sp/>+=<sp/>DCTSIZE)<sp/>{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Load<sp/>data<sp/>into<sp/>workspace,<sp/>applying<sp/>unsigned-&gt;signed<sp/>conversion<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>DCTELEM<sp/>*workspaceptr;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JSAMPROW<sp/>elemptr;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elemr;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>workspaceptr<sp/>=<sp/>workspace;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(elemr<sp/>=<sp/>0;<sp/>elemr<sp/>&lt;<sp/>DCTSIZE;<sp/>elemr++)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>elemptr<sp/>=<sp/>sample_data[elemr]<sp/>+<sp/>start_col;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>DCTSIZE<sp/>==<sp/>8<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>unroll<sp/>the<sp/>inner<sp/>loop<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="206"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="215"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elemc;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(elemc<sp/>=<sp/>DCTSIZE;<sp/>elemc<sp/>&gt;<sp/>0;<sp/>elemc--)<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="221"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Perform<sp/>the<sp/>DCT<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>(*do_dct)<sp/>(workspace);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Quantize/descale<sp/>the<sp/>coefficients,<sp/>and<sp/>store<sp/>into<sp/>coef_blocks[]<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>DCTELEM<sp/>temp,<sp/>qval;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JCOEFPTR<sp/>output_ptr<sp/>=<sp/>coef_blocks[bi];</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>DCTSIZE2;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>qval<sp/>=<sp/>divisors[i];</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>workspace[i];</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Divide<sp/>the<sp/>coefficient<sp/>value<sp/>by<sp/>qval,<sp/>ensuring<sp/>proper<sp/>rounding.</highlight></codeline>
+<codeline lineno="236"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Since<sp/>C<sp/>does<sp/>not<sp/>specify<sp/>the<sp/>direction<sp/>of<sp/>rounding<sp/>for<sp/>negative</highlight></codeline>
+<codeline lineno="237"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>quotients,<sp/>we<sp/>have<sp/>to<sp/>force<sp/>the<sp/>dividend<sp/>positive<sp/>for<sp/>portability.</highlight></codeline>
+<codeline lineno="238"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="239"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>In<sp/>most<sp/>files,<sp/>at<sp/>least<sp/>half<sp/>of<sp/>the<sp/>output<sp/>values<sp/>will<sp/>be<sp/>zero</highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>(at<sp/>default<sp/>quantization<sp/>settings,<sp/>more<sp/>like<sp/>three-quarters...)</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>so<sp/>we<sp/>should<sp/>ensure<sp/>that<sp/>this<sp/>case<sp/>is<sp/>fast.<sp/><sp/>On<sp/>many<sp/>machines,</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>comparison<sp/>is<sp/>enough<sp/>cheaper<sp/>than<sp/>a<sp/>divide<sp/>to<sp/>make<sp/>a<sp/>special<sp/>test</highlight></codeline>
+<codeline lineno="243"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>win.<sp/><sp/>Since<sp/>both<sp/>inputs<sp/>will<sp/>be<sp/>nonnegative,<sp/>we<sp/>need<sp/>only<sp/>test</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>for<sp/>a<sp/>&lt;<sp/>b<sp/>to<sp/>discover<sp/>whether<sp/>a/b<sp/>is<sp/>0.</highlight></codeline>
+<codeline lineno="245"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>If<sp/>your<sp/>machine&apos;s<sp/>division<sp/>is<sp/>fast<sp/>enough,<sp/>define<sp/>FAST_DIVIDE.</highlight></codeline>
+<codeline lineno="246"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FAST_DIVIDE</highlight></codeline>
+<codeline lineno="248"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DIVIDE_BY(a,b)<sp/><sp/>a<sp/>/=<sp/>b</highlight></codeline>
+<codeline lineno="249"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="250"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DIVIDE_BY(a,b)<sp/><sp/>if<sp/>(a<sp/>&gt;=<sp/>b)<sp/>a<sp/>/=<sp/>b;<sp/>else<sp/>a<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="251"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="252"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(temp<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>-temp;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>+=<sp/>qval&gt;&gt;1;<sp/><sp/></highlight><highlight class="comment">/*<sp/>for<sp/>rounding<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>DIVIDE_BY(temp,<sp/>qval);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>-temp;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>+=<sp/>qval&gt;&gt;1;<sp/><sp/></highlight><highlight class="comment">/*<sp/>for<sp/>rounding<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>DIVIDE_BY(temp,<sp/>qval);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>output_ptr[i]<sp/>=<sp/>(JCOEF)<sp/>temp;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DCT_FLOAT_SUPPORTED</highlight></codeline>
+<codeline lineno="269"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">forward_DCT_float<sp/>(<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref><sp/>cinfo,<sp/><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref><sp/>*<sp/>compptr,</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPARRAY<sp/>sample_data,<sp/>JBLOCKROW<sp/>coef_blocks,</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>start_row,<sp/>JDIMENSION<sp/>start_col,</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>num_blocks)</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>version<sp/>is<sp/>used<sp/>for<sp/>floating-point<sp/>DCT<sp/>implementations.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>routine<sp/>is<sp/>heavily<sp/>used,<sp/>so<sp/>it&apos;s<sp/>worth<sp/>coding<sp/>it<sp/>tightly.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><ref refid="structmy__fdct__controller" kindref="compound">my_fdct_ptr</ref><sp/>fdct<sp/>=<sp/>(<ref refid="structmy__fdct__controller" kindref="compound">my_fdct_ptr</ref>)<sp/>cinfo-&gt;fdct;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/>float_DCT_method_ptr<sp/>do_dct<sp/>=<sp/>fdct-&gt;do_float_dct;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/>FAST_FLOAT<sp/>*<sp/>divisors<sp/>=<sp/>fdct-&gt;float_divisors[compptr-&gt;quant_tbl_no];</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/>FAST_FLOAT<sp/>workspace[DCTSIZE2];<sp/></highlight><highlight class="comment">/*<sp/>work<sp/>area<sp/>for<sp/>FDCT<sp/>subroutine<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/>JDIMENSION<sp/>bi;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/>sample_data<sp/>+=<sp/>start_row;<sp/></highlight><highlight class="comment">/*<sp/>fold<sp/>in<sp/>the<sp/>vertical<sp/>offset<sp/>once<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/>for<sp/>(bi<sp/>=<sp/>0;<sp/>bi<sp/>&lt;<sp/>num_blocks;<sp/>bi++,<sp/>start_col<sp/>+=<sp/>DCTSIZE)<sp/>{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Load<sp/>data<sp/>into<sp/>workspace,<sp/>applying<sp/>unsigned-&gt;signed<sp/>conversion<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>FAST_FLOAT<sp/>*workspaceptr;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JSAMPROW<sp/>elemptr;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elemr;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>workspaceptr<sp/>=<sp/>workspace;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(elemr<sp/>=<sp/>0;<sp/>elemr<sp/>&lt;<sp/>DCTSIZE;<sp/>elemr++)<sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>elemptr<sp/>=<sp/>sample_data[elemr]<sp/>+<sp/>start_col;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>DCTSIZE<sp/>==<sp/>8<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>unroll<sp/>the<sp/>inner<sp/>loop<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="296"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>(FAST_FLOAT)(GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>(FAST_FLOAT)(GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>(FAST_FLOAT)(GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>(FAST_FLOAT)(GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>(FAST_FLOAT)(GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>(FAST_FLOAT)(GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>(FAST_FLOAT)(GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>(FAST_FLOAT)(GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="305"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elemc;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(elemc<sp/>=<sp/>DCTSIZE;<sp/>elemc<sp/>&gt;<sp/>0;<sp/>elemc--)<sp/>{</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*workspaceptr++<sp/>=<sp/>(FAST_FLOAT)</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(GETJSAMPLE(*elemptr++)<sp/>-<sp/>CENTERJSAMPLE);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="312"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Perform<sp/>the<sp/>DCT<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>(*do_dct)<sp/>(workspace);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Quantize/descale<sp/>the<sp/>coefficients,<sp/>and<sp/>store<sp/>into<sp/>coef_blocks[]<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>FAST_FLOAT<sp/>temp;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JCOEFPTR<sp/>output_ptr<sp/>=<sp/>coef_blocks[bi];</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>DCTSIZE2;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Apply<sp/>the<sp/>quantization<sp/>and<sp/>scaling<sp/>factor<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>workspace[i]<sp/>*<sp/>divisors[i];</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Round<sp/>to<sp/>nearest<sp/>integer.</highlight></codeline>
+<codeline lineno="327"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Since<sp/>C<sp/>does<sp/>not<sp/>specify<sp/>the<sp/>direction<sp/>of<sp/>rounding<sp/>for<sp/>negative</highlight></codeline>
+<codeline lineno="328"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>quotients,<sp/>we<sp/>have<sp/>to<sp/>force<sp/>the<sp/>dividend<sp/>positive<sp/>for<sp/>portability.</highlight></codeline>
+<codeline lineno="329"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>The<sp/>maximum<sp/>coefficient<sp/>size<sp/>is<sp/>+-16K<sp/>(for<sp/>12-bit<sp/>data),<sp/>so<sp/>this</highlight></codeline>
+<codeline lineno="330"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>code<sp/>should<sp/>work<sp/>for<sp/>either<sp/>16-bit<sp/>or<sp/>32-bit<sp/>ints.</highlight></codeline>
+<codeline lineno="331"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/>output_ptr[i]<sp/>=<sp/>(JCOEF)<sp/>((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>(temp<sp/>+<sp/>(FAST_FLOAT)<sp/>16384.5)<sp/>-<sp/>16384);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="336"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DCT_FLOAT_SUPPORTED<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="339"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="342"><highlight class="comment"><sp/>*<sp/>Initialize<sp/>FDCT<sp/>manager.</highlight></codeline>
+<codeline lineno="343"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal">jinit_forward_dct<sp/>(<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref><sp/>cinfo)</highlight></codeline>
+<codeline lineno="347"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><ref refid="structmy__fdct__controller" kindref="compound">my_fdct_ptr</ref><sp/>fdct;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/>fdct<sp/>=<sp/>(<ref refid="structmy__fdct__controller" kindref="compound">my_fdct_ptr</ref>)</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>(*cinfo-&gt;mem-&gt;alloc_small)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo,<sp/>JPOOL_IMAGE,</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIZEOF(<ref refid="structmy__fdct__controller" kindref="compound">my_fdct_controller</ref>));</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/>cinfo-&gt;fdct<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structjpeg__forward__dct" kindref="compound">jpeg_forward_dct</ref><sp/>*)<sp/>fdct;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/>fdct-&gt;pub.start_pass<sp/>=<sp/>start_pass_fdctmgr;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(cinfo-&gt;dct_method)<sp/>{</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DCT_ISLOW_SUPPORTED</highlight></codeline>
+<codeline lineno="359"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>JDCT_ISLOW:</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/>fdct-&gt;pub.forward_DCT<sp/>=<sp/>forward_DCT;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>fdct-&gt;do_dct<sp/>=<sp/>jpeg_fdct_islow;</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="364"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#ifdef<sp/>DCT_IFAST_SUPPORTED</highlight></codeline>
+<codeline lineno="365"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>JDCT_IFAST:</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/>fdct-&gt;pub.forward_DCT<sp/>=<sp/>forward_DCT;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/>fdct-&gt;do_dct<sp/>=<sp/>jpeg_fdct_ifast;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="370"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#ifdef<sp/>DCT_FLOAT_SUPPORTED</highlight></codeline>
+<codeline lineno="371"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>JDCT_FLOAT:</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/>fdct-&gt;pub.forward_DCT<sp/>=<sp/>forward_DCT_float;</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/>fdct-&gt;do_float_dct<sp/>=<sp/>jpeg_fdct_float;</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="376"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_NOT_COMPILED);</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Mark<sp/>divisor<sp/>tables<sp/>unallocated<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>NUM_QUANT_TBLS;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/>fdct-&gt;divisors[i]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DCT_FLOAT_SUPPORTED</highlight></codeline>
+<codeline lineno="385"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>fdct-&gt;float_divisors[i]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="387"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="388"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c"/>
+  </compounddef>
+</doxygen>

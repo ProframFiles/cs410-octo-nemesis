@@ -1,0 +1,505 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="extutil_8h" kind="file">
+    <compoundname>extutil.h</compoundname>
+    <includes local="no">X11/extensions/Xext.h</includes>
+    <includedby refid="_n_v_ctrl_8c" local="yes">E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c</includedby>
+    <incdepgraph>
+      <node id="2222">
+        <label>X11/extensions/Xext.h</label>
+      </node>
+      <node id="2221">
+        <label>E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h</label>
+        <link refid="extutil.h"/>
+        <childnode refid="2222" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct___x_ext_display_info" prot="public">_XExtDisplayInfo</innerclass>
+    <innerclass refid="struct___x_extension_info" prot="public">_XExtensionInfo</innerclass>
+    <innerclass refid="struct___x_extension_hooks" prot="public">_XExtensionHooks</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="extutil_8h_1a3888b4e86e068f25c5dbd81ad93880dc" prot="public" static="no">
+        <name>XextHasExtension</name>
+        <param><defname>i</defname></param>
+        <initializer>((i) &amp;&amp; ((i)-&gt;codes))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="174" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="extutil_8h_1a88f00269d82253483a6f83cc180c7b68" prot="public" static="no">
+        <name>XextCheckExtension</name>
+        <param><defname>dpy</defname></param>
+        <param><defname>i</defname></param>
+        <param><defname>name</defname></param>
+        <param><defname>val</defname></param>
+        <initializer>if (!XextHasExtension(i)) { XMissingExtension (dpy, name); return val; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="175" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="extutil_8h_1a095dded454ea9822a2d58b5bb421d4b1" prot="public" static="no">
+        <name>XextSimpleCheckExtension</name>
+        <param><defname>dpy</defname></param>
+        <param><defname>i</defname></param>
+        <param><defname>name</defname></param>
+        <initializer>if (!XextHasExtension(i)) { XMissingExtension (dpy, name); return; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="177" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="extutil_8h_1ae729a702dc9841e979e105731603b8e6" prot="public" static="no">
+        <name>XEXT_GENERATE_FIND_DISPLAY</name>
+        <param><defname>proc</defname></param>
+        <param><defname>extinfo</defname></param>
+        <param><defname>extname</defname></param>
+        <param><defname>hooks</defname></param>
+        <param><defname>nev</defname></param>
+        <param><defname>data</defname></param>
+        <initializer><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref> *proc (Display *dpy) \
+{ \
+    <ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref> *dpyinfo; \
+    if (!extinfo) { if (!(extinfo = XextCreateExtension())) return NULL; } \
+    if (!(dpyinfo = XextFindDisplay (extinfo, dpy))) \
+      dpyinfo = XextAddDisplay (extinfo,dpy,extname,hooks,nev,data); \
+    return dpyinfo; \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="187" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="extutil_8h_1ad14dabc3bcff40182dc3620d3de1db3c" prot="public" static="no">
+        <name>XEXT_FIND_DISPLAY_PROTO</name>
+        <param><defname>proc</defname></param>
+        <initializer><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref> *proc(Display *dpy)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="197" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="extutil_8h_1a248e96c59a174fe9f23c71fcfc955d15" prot="public" static="no">
+        <name>XEXT_GENERATE_CLOSE_DISPLAY</name>
+        <param><defname>proc</defname></param>
+        <param><defname>extinfo</defname></param>
+        <initializer>int proc (Display *dpy, XExtCodes *codes) \
+{ \
+    return XextRemoveDisplay (extinfo, dpy); \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="200" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="extutil_8h_1a1c38bf0b0b7cb92502aa1f6c320b72f7" prot="public" static="no">
+        <name>XEXT_CLOSE_DISPLAY_PROTO</name>
+        <param><defname>proc</defname></param>
+        <initializer>int proc(Display *dpy, XExtCodes *codes)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="206" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="extutil_8h_1ae72e9cd89e2b57082b5f88ca5c07faa7" prot="public" static="no">
+        <name>XEXT_GENERATE_ERROR_STRING</name>
+        <param><defname>proc</defname></param>
+        <param><defname>extname</defname></param>
+        <param><defname>nerr</defname></param>
+        <param><defname>errl</defname></param>
+        <initializer>char *proc (Display *dpy, int code, XExtCodes *codes, char *buf, int n) \
+{  \
+    code -= codes-&gt;first_error;  \
+    if (code &gt;= 0 &amp;&amp; code &lt; nerr) { \
+	char tmp[256]; \
+	sprintf (tmp, &quot;%s.%d&quot;, extname, code); \
+	XGetErrorDatabaseText (dpy, &quot;XProtoError&quot;, tmp, errl[code], buf, n); \
+	return buf; \
+    } \
+    return (char *)0; \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="209" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="extutil_8h_1a023120d2b50d26d232fdd38167a04a42" prot="public" static="no">
+        <name>XEXT_ERROR_STRING_PROTO</name>
+        <param><defname>proc</defname></param>
+        <initializer>char *proc(Display *dpy, int code, XExtCodes *codes, char *buf, int n)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="222" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="extutil_8h_1a81f46ab0cdc0d79d86767ade7feb6b99" prot="public" static="no">
+        <type>struct <ref refid="struct___x_ext_display_info" kindref="compound">_XExtDisplayInfo</ref></type>
+        <definition>typedef struct _XExtDisplayInfo  XExtDisplayInfo</definition>
+        <argsstring></argsstring>
+        <name>XExtDisplayInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="51" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="extutil_8h_1a00028dca44efd354acf621691a70f853" prot="public" static="no">
+        <type>struct <ref refid="struct___x_extension_info" kindref="compound">_XExtensionInfo</ref></type>
+        <definition>typedef struct _XExtensionInfo  XExtensionInfo</definition>
+        <argsstring></argsstring>
+        <name>XExtensionInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="extutil_8h_1a0364a40c870332a394622a07c414f8db" prot="public" static="no">
+        <type>struct <ref refid="struct___x_extension_hooks" kindref="compound">_XExtensionHooks</ref></type>
+        <definition>typedef struct _XExtensionHooks  XExtensionHooks</definition>
+        <argsstring></argsstring>
+        <name>XExtensionHooks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="139" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="extutil_8h_1af9cb33cfe649dc5217877fd1bcdbbbbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref> *</type>
+        <definition>XExtensionInfo* XextCreateExtension</definition>
+        <argsstring>()</argsstring>
+        <name>XextCreateExtension</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="141" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="extutil_8h_1a5ea2d4041ce271bfdca36cc2d0f91add" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XextDestroyExtension</definition>
+        <argsstring>()</argsstring>
+        <name>XextDestroyExtension</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="146" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="extutil_8h_1a006ddf98d2675f8e75a4fea8b7a814fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref> *</type>
+        <definition>XExtDisplayInfo* XextAddDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>XextAddDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="151" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="extutil_8h_1a868b29752fb9f1f2511b1e2e7cf897a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int XextRemoveDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>XextRemoveDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="161" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="extutil_8h_1a8c43cc4e274d70e3e8abb2620f386fa6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref> *</type>
+        <definition>XExtDisplayInfo* XextFindDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>XextFindDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h" line="167" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>$Xorg:<sp/>extutil.h,v<sp/>1.4<sp/>2001/02/09<sp/>02:03:24<sp/>xorgcvs<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Copyright<sp/>1989,<sp/>1998<sp/><sp/>The<sp/>Open<sp/>Group</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment">Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>distribute,<sp/>and<sp/>sell<sp/>this<sp/>software<sp/>and<sp/>its</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">documentation<sp/>for<sp/>any<sp/>purpose<sp/>is<sp/>hereby<sp/>granted<sp/>without<sp/>fee,<sp/>provided<sp/>that</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">the<sp/>above<sp/>copyright<sp/>notice<sp/>appear<sp/>in<sp/>all<sp/>copies<sp/>and<sp/>that<sp/>both<sp/>that</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>appear<sp/>in<sp/>supporting</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">documentation.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"></highlight></codeline>
+<codeline lineno="12"><highlight class="comment">The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment">THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/><sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">OPEN<sp/>GROUP<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">Except<sp/>as<sp/>contained<sp/>in<sp/>this<sp/>notice,<sp/>the<sp/>name<sp/>of<sp/>The<sp/>Open<sp/>Group<sp/>shall<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">used<sp/>in<sp/>advertising<sp/>or<sp/>otherwise<sp/>to<sp/>promote<sp/>the<sp/>sale,<sp/>use<sp/>or<sp/>other<sp/>dealings</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">in<sp/>this<sp/>Software<sp/>without<sp/>prior<sp/>written<sp/>authorization<sp/>from<sp/>The<sp/>Open<sp/>Group.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>Author:<sp/><sp/>Jim<sp/>Fulton,<sp/>MIT<sp/>The<sp/>Open<sp/>Group</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Xlib<sp/>Extension-Writing<sp/>Utilities</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>This<sp/>package<sp/>contains<sp/>utilities<sp/>for<sp/>writing<sp/>the<sp/>client<sp/>API<sp/>for<sp/>various</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>protocol<sp/>extensions.<sp/><sp/>THESE<sp/>INTERFACES<sp/>ARE<sp/>NOT<sp/>PART<sp/>OF<sp/>THE<sp/>X<sp/>STANDARD<sp/>AND</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>ARE<sp/>SUBJECT<sp/>TO<sp/>CHANGE!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$XFree86:<sp/>xc/include/extensions/extutil.h,v<sp/>1.9<sp/>2001/12/14<sp/>19:53:28<sp/>dawes<sp/>Exp<sp/>$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_EXTUTIL_H_</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_EXTUTIL_H_</highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;X11/extensions/Xext.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>We<sp/>need<sp/>to<sp/>keep<sp/>a<sp/>list<sp/>of<sp/>open<sp/>displays<sp/>since<sp/>the<sp/>Xlib<sp/>display<sp/>list<sp/>isn&apos;t</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>public.<sp/><sp/>We<sp/>also<sp/>have<sp/>to<sp/>per-display<sp/>info<sp/>in<sp/>a<sp/>separate<sp/>block<sp/>since<sp/>it<sp/>isn&apos;t</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>stored<sp/>directly<sp/>in<sp/>the<sp/>Display<sp/>structure.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="struct___x_ext_display_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct___x_ext_display_info" kindref="compound">_XExtDisplayInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct___x_ext_display_info" kindref="compound">_XExtDisplayInfo</ref><sp/>*next;<sp/><sp/></highlight><highlight class="comment">/*<sp/>keep<sp/>a<sp/>linked<sp/>list<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*display;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>which<sp/>display<sp/>this<sp/>is<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>XExtCodes<sp/>*codes;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>the<sp/>extension<sp/>protocol<sp/>codes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>XPointer<sp/>data;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>extra<sp/>data<sp/>for<sp/>extension<sp/>to<sp/>use<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}<sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="struct___x_extension_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct___x_extension_info" kindref="compound">_XExtensionInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*head;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>start<sp/>of<sp/>list<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*cur;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>most<sp/>recently<sp/>used<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ndisplays;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>number<sp/>of<sp/>displays<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}<sp/><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="struct___x_extension_hooks" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct___x_extension_hooks" kindref="compound">_XExtensionHooks</ref><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*create_gc)(</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>gc<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XExtCodes*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>codes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*copy_gc)(</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>gc<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XExtCodes*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>codes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*flush_gc)(</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>gc<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XExtCodes*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>codes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*free_gc)(</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>gc<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XExtCodes*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>codes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*create_font)(</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XFontStruct*<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>fs<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XExtCodes*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>codes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="94"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*free_font)(</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XFontStruct*<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>fs<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XExtCodes*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>codes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="101"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*close_display)(</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XExtCodes*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>codes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>Bool<sp/>(*wire_to_event)(</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XEvent*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>re<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xEvent*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>event<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="114"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>Status<sp/>(*event_to_wire)(</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="117"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XEvent*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>re<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xEvent*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>event<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="121"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*error)(</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="124"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xError*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>err<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XExtCodes*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>codes<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ret_code<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="129"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*(*error_string)(</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>NeedNestedPrototypes</highlight></codeline>
+<codeline lineno="132"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>display<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>code<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XExtCodes*<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>codes<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>buffer<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>nbytes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="138"><highlight class="preprocessor"></highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}<sp/><ref refid="struct___x_extension_hooks" kindref="compound">XExtensionHooks</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref><sp/>*XextCreateExtension(</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>NeedFunctionPrototypes</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>XextDestroyExtension(</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>NeedFunctionPrototypes</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref>*<sp/></highlight><highlight class="comment">/*<sp/>info<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*XextAddDisplay(</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>NeedFunctionPrototypes</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref>*<sp/></highlight><highlight class="comment">/*<sp/>extinfo<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>dpy<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ext_name<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_extension_hooks" kindref="compound">XExtensionHooks</ref>*<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>hooks<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>nevents<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>XPointer<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>XextRemoveDisplay(</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>NeedFunctionPrototypes</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref>*<sp/></highlight><highlight class="comment">/*<sp/>extinfo<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>dpy<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*XextFindDisplay(</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>NeedFunctionPrototypes</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref>*<sp/></highlight><highlight class="comment">/*<sp/>extinfo<sp/>*/</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>Display*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>dpy<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XextHasExtension(i)<sp/>((i)<sp/>&amp;&amp;<sp/>((i)-&gt;codes))</highlight></codeline>
+<codeline lineno="175"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>XextCheckExtension(dpy,i,name,val)<sp/>\</highlight></codeline>
+<codeline lineno="176"><highlight class="preprocessor"><sp/><sp/>if<sp/>(!XextHasExtension(i))<sp/>{<sp/>XMissingExtension<sp/>(dpy,<sp/>name);<sp/>return<sp/>val;<sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>XextSimpleCheckExtension(dpy,i,name)<sp/>\</highlight></codeline>
+<codeline lineno="178"><highlight class="preprocessor"><sp/><sp/>if<sp/>(!XextHasExtension(i))<sp/>{<sp/>XMissingExtension<sp/>(dpy,<sp/>name);<sp/>return;<sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*<sp/>helper<sp/>macros<sp/>to<sp/>generate<sp/>code<sp/>that<sp/>is<sp/>common<sp/>to<sp/>all<sp/>extensions;<sp/>caller</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*<sp/>should<sp/>prefix<sp/>it<sp/>with<sp/>static<sp/>if<sp/>extension<sp/>source<sp/>is<sp/>in<sp/>one<sp/>file;<sp/>this</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*<sp/>could<sp/>be<sp/>a<sp/>utility<sp/>function,<sp/>but<sp/>have<sp/>to<sp/>stack<sp/>6<sp/>unused<sp/>arguments<sp/>for<sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*<sp/>something<sp/>that<sp/>is<sp/>called<sp/>many,<sp/>many<sp/>times<sp/>would<sp/>be<sp/>bad.</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XEXT_GENERATE_FIND_DISPLAY(proc,extinfo,extname,hooks,nev,data)<sp/>\</highlight></codeline>
+<codeline lineno="188"><highlight class="preprocessor">XExtDisplayInfo<sp/>*proc<sp/>(Display<sp/>*dpy)<sp/>\</highlight></codeline>
+<codeline lineno="189"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
+<codeline lineno="190"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>XExtDisplayInfo<sp/>*dpyinfo;<sp/>\</highlight></codeline>
+<codeline lineno="191"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!extinfo)<sp/>{<sp/>if<sp/>(!(extinfo<sp/>=<sp/>XextCreateExtension()))<sp/>return<sp/>NULL;<sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="192"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!(dpyinfo<sp/>=<sp/>XextFindDisplay<sp/>(extinfo,<sp/>dpy)))<sp/>\</highlight></codeline>
+<codeline lineno="193"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>dpyinfo<sp/>=<sp/>XextAddDisplay<sp/>(extinfo,dpy,extname,hooks,nev,data);<sp/>\</highlight></codeline>
+<codeline lineno="194"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>dpyinfo;<sp/>\</highlight></codeline>
+<codeline lineno="195"><highlight class="preprocessor">}</highlight></codeline>
+<codeline lineno="196"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XEXT_FIND_DISPLAY_PROTO(proc)<sp/>\</highlight></codeline>
+<codeline lineno="198"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>XExtDisplayInfo<sp/>*proc(Display<sp/>*dpy)</highlight></codeline>
+<codeline lineno="199"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XEXT_GENERATE_CLOSE_DISPLAY(proc,extinfo)<sp/>\</highlight></codeline>
+<codeline lineno="201"><highlight class="preprocessor">int<sp/>proc<sp/>(Display<sp/>*dpy,<sp/>XExtCodes<sp/>*codes)<sp/>\</highlight></codeline>
+<codeline lineno="202"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
+<codeline lineno="203"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>XextRemoveDisplay<sp/>(extinfo,<sp/>dpy);<sp/>\</highlight></codeline>
+<codeline lineno="204"><highlight class="preprocessor">}</highlight></codeline>
+<codeline lineno="205"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XEXT_CLOSE_DISPLAY_PROTO(proc)<sp/>\</highlight></codeline>
+<codeline lineno="207"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>int<sp/>proc(Display<sp/>*dpy,<sp/>XExtCodes<sp/>*codes)</highlight></codeline>
+<codeline lineno="208"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XEXT_GENERATE_ERROR_STRING(proc,extname,nerr,errl)<sp/>\</highlight></codeline>
+<codeline lineno="210"><highlight class="preprocessor">char<sp/>*proc<sp/>(Display<sp/>*dpy,<sp/>int<sp/>code,<sp/>XExtCodes<sp/>*codes,<sp/>char<sp/>*buf,<sp/>int<sp/>n)<sp/>\</highlight></codeline>
+<codeline lineno="211"><highlight class="preprocessor">{<sp/><sp/>\</highlight></codeline>
+<codeline lineno="212"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>code<sp/>-=<sp/>codes-&gt;first_error;<sp/><sp/>\</highlight></codeline>
+<codeline lineno="213"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(code<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>code<sp/>&lt;<sp/>nerr)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="214"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>char<sp/>tmp[256];<sp/>\</highlight></codeline>
+<codeline lineno="215"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>sprintf<sp/>(tmp,<sp/>&quot;%s.%d&quot;,<sp/>extname,<sp/>code);<sp/>\</highlight></codeline>
+<codeline lineno="216"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>XGetErrorDatabaseText<sp/>(dpy,<sp/>&quot;XProtoError&quot;,<sp/>tmp,<sp/>errl[code],<sp/>buf,<sp/>n);<sp/>\</highlight></codeline>
+<codeline lineno="217"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>buf;<sp/>\</highlight></codeline>
+<codeline lineno="218"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="219"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>return<sp/>(char<sp/>*)0;<sp/>\</highlight></codeline>
+<codeline lineno="220"><highlight class="preprocessor">}</highlight></codeline>
+<codeline lineno="221"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XEXT_ERROR_STRING_PROTO(proc)<sp/>\</highlight></codeline>
+<codeline lineno="223"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>char<sp/>*proc(Display<sp/>*dpy,<sp/>int<sp/>code,<sp/>XExtCodes<sp/>*codes,<sp/>char<sp/>*buf,<sp/>int<sp/>n)</highlight></codeline>
+<codeline lineno="224"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/extutil.h"/>
+  </compounddef>
+</doxygen>

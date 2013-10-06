@@ -1,0 +1,525 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="sys_2linux_2_sound_8cpp" kind="file">
+    <compoundname>sound.cpp</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">fcntl.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">malloc.h</includes>
+    <includes local="no">sys/ioctl.h</includes>
+    <includes local="no">sys/mman.h</includes>
+    <includes refid="soundcard_8h" local="no">sys/soundcard.h</includes>
+    <includes refid="precompiled_8h" local="yes">../../idlib/precompiled.h</includes>
+    <includes refid="snd__local_8h" local="yes">../../sound/snd_local.h</includes>
+    <includes refid="posix__public_8h" local="yes">../posix/posix_public.h</includes>
+    <includes refid="sys_2linux_2_sound_8h" local="yes">sound.h</includes>
+    <incdepgraph>
+      <node id="1210">
+        <label>E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp</label>
+        <link refid="sys/linux/Sound.cpp"/>
+        <childnode refid="1211" relation="include">
+        </childnode>
+        <childnode refid="1212" relation="include">
+        </childnode>
+        <childnode refid="1213" relation="include">
+        </childnode>
+        <childnode refid="1214" relation="include">
+        </childnode>
+        <childnode refid="1215" relation="include">
+        </childnode>
+        <childnode refid="1216" relation="include">
+        </childnode>
+        <childnode refid="1217" relation="include">
+        </childnode>
+      </node>
+      <node id="1217">
+        <label>sys/mman.h</label>
+      </node>
+      <node id="1214">
+        <label>errno.h</label>
+      </node>
+      <node id="1213">
+        <label>fcntl.h</label>
+      </node>
+      <node id="1215">
+        <label>malloc.h</label>
+      </node>
+      <node id="1216">
+        <label>sys/ioctl.h</label>
+      </node>
+      <node id="1212">
+        <label>unistd.h</label>
+      </node>
+      <node id="1211">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="sys_2linux_2_sound_8cpp_1a1661f1742095bc6ba111d6473d19cbfd" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* s_driverArgs[]</definition>
+        <argsstring>[]</argsstring>
+        <name>s_driverArgs</name>
+        <initializer>= { &quot;best&quot;, &quot;oss&quot;, &quot;alsa&quot;, NULL }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp" line="44" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="sys_2linux_2_sound_8cpp_1adfa0934a96ba7386a3b441746990201d" prot="public" static="yes" mutable="no">
+        <type><ref refid="classid_c_var" kindref="compound">idCVar</ref></type>
+        <definition>idCVar s_driver(&quot;s_driver&quot;, s_driverArgs[0], CVAR_SYSTEM|CVAR_ARCHIVE,&quot;sound driver. &apos;best&apos; will attempt to use alsa and fallback to OSS if not available&quot;, s_driverArgs, idCmdSystem::ArgCompletion_String&lt; s_driverArgs &gt;)</definition>
+        <argsstring>(&quot;s_driver&quot;, s_driverArgs[0], CVAR_SYSTEM|CVAR_ARCHIVE,&quot;sound driver. &apos;best&apos; will attempt to use alsa and fallback to OSS if not available&quot;, s_driverArgs, idCmdSystem::ArgCompletion_String&lt; s_driverArgs &gt;)</argsstring>
+        <name>s_driver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp" line="47" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="sys_2linux_2_sound_8cpp_1aa3d3c1217de65930194506146a2bcb95" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_c_var" kindref="compound">idCVar</ref></type>
+        <definition>idCVar s_device(&quot;s_dsp&quot;,&quot;/dev/dsp&quot;, CVAR_SYSTEM|CVAR_ARCHIVE,&quot;&quot;)</definition>
+        <argsstring>(&quot;s_dsp&quot;,&quot;/dev/dsp&quot;, CVAR_SYSTEM|CVAR_ARCHIVE,&quot;&quot;)</argsstring>
+        <name>s_device</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp" line="147" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="sys_2linux_2_sound_8cpp_1abb400c911d412483456ae87efc442496" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Sys_LoadOpenAL</definition>
+        <argsstring>(void)</argsstring>
+        <name>Sys_LoadOpenAL</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp" line="396" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp" bodystart="396" bodyend="398"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fcntl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;malloc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/ioctl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/mman.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>OSS<sp/>sound<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>http://www.opensound.com/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/soundcard.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../idlib/precompiled.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../sound/snd_local.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../posix/posix_public.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sound.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>*s_driverArgs[]<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;best&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;oss&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;alsa&quot;</highlight><highlight class="normal">,<sp/>NULL<sp/>};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>NO_ALSA</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classid_c_var" kindref="compound">idCVar</ref><sp/>s_driver(<sp/></highlight><highlight class="stringliteral">&quot;s_driver&quot;</highlight><highlight class="normal">,<sp/>s_driverArgs[0],<sp/>CVAR_SYSTEM<sp/>|<sp/>CVAR_ARCHIVE,<sp/></highlight><highlight class="stringliteral">&quot;sound<sp/>driver.<sp/>&apos;best&apos;<sp/>will<sp/>attempt<sp/>to<sp/>use<sp/>alsa<sp/>and<sp/>fallback<sp/>to<sp/>OSS<sp/>if<sp/>not<sp/>available&quot;</highlight><highlight class="normal">,<sp/>s_driverArgs,<sp/>idCmdSystem::ArgCompletion_String&lt;s_driverArgs&gt;<sp/>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classid_c_var" kindref="compound">idCVar</ref><sp/>s_driver(<sp/></highlight><highlight class="stringliteral">&quot;s_driver&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;oss&quot;</highlight><highlight class="normal">,<sp/>CVAR_SYSTEM<sp/>|<sp/>CVAR_ARCHIVE<sp/>|<sp/>CVAR_ROM,<sp/></highlight><highlight class="stringliteral">&quot;sound<sp/>driver.<sp/>only<sp/>OSS<sp/>is<sp/>supported<sp/>in<sp/>this<sp/>build&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="classid_audio_hardware" kindref="compound">idAudioHardware</ref><sp/>*idAudioHardware::Alloc()<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>NO_ALSA</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!strcmp(<sp/>s_driver.GetString(),<sp/></highlight><highlight class="stringliteral">&quot;best&quot;</highlight><highlight class="normal"><sp/>)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_audio_hardware_a_l_s_a" kindref="compound">idAudioHardwareALSA</ref><sp/>*test<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classid_audio_hardware_a_l_s_a" kindref="compound">idAudioHardwareALSA</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>test-&gt;DLOpen()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;Alsa<sp/>is<sp/>available\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>test;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;Alsa<sp/>is<sp/>not<sp/>available\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>test;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classid_audio_hardware_o_s_s" kindref="compound">idAudioHardwareOSS</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!strcmp(<sp/>s_driver.GetString(),<sp/></highlight><highlight class="stringliteral">&quot;alsa&quot;</highlight><highlight class="normal"><sp/>)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classid_audio_hardware_a_l_s_a" kindref="compound">idAudioHardwareALSA</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classid_audio_hardware_o_s_s" kindref="compound">idAudioHardwareOSS</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">//<sp/>OSS<sp/>sound<sp/>----------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="75"><highlight class="comment">idAudioHardware::~idAudioHardware</highlight></codeline>
+<codeline lineno="76"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="77"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">idAudioHardware::~idAudioHardware()<sp/>{<sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="81"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="82"><highlight class="comment">idAudioHardwareOSS::~idAudioHardwareOSS</highlight></codeline>
+<codeline lineno="83"><highlight class="comment">=================<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="comment">*/</highlight><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">idAudioHardwareOSS::~idAudioHardwareOSS()<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>Release();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="90"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="91"><highlight class="comment">idAudioHardwareOSS::Release</highlight></codeline>
+<codeline lineno="92"><highlight class="comment">=================<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="comment">*/</highlight><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>idAudioHardwareOSS::Release(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bSilent<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_audio_fd)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!bSilent)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(</highlight><highlight class="stringliteral">&quot;------<sp/>OSS<sp/>Sound<sp/>Shutdown<sp/>------\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_buffer)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(<sp/>m_buffer<sp/>);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_buffer<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_buffer_size<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(</highlight><highlight class="stringliteral">&quot;close<sp/>sound<sp/>device\n&quot;</highlight><highlight class="normal">);<sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(close(m_audio_fd)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>close<sp/>sound<sp/>device:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>strerror(errno)<sp/>);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_audio_fd<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!bSilent)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(</highlight><highlight class="stringliteral">&quot;--------------------------------\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="116"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="117"><highlight class="comment">idAudioHardwareOSS::InitFailed</highlight></codeline>
+<codeline lineno="118"><highlight class="comment">=================<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="comment">*/</highlight><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>idAudioHardwareOSS::InitFailed()<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>Release(<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>cvarSystem-&gt;SetCVarBool(<sp/></highlight><highlight class="stringliteral">&quot;s_noSound&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;sound<sp/>subsystem<sp/>disabled&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;--------------------------------------\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="128"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="129"><highlight class="comment">idAudioHardwareOSS::ExtractOSSVersion</highlight></codeline>
+<codeline lineno="130"><highlight class="comment">=================<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="comment">*/</highlight><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>idAudioHardwareOSS::ExtractOSSVersion(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>version,<sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/>&amp;str<sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<sp/>str,<sp/></highlight><highlight class="stringliteral">&quot;%d.%d.%d&quot;</highlight><highlight class="normal">,<sp/>(<sp/>version<sp/>&amp;<sp/>0xFF0000<sp/>)<sp/>&gt;&gt;<sp/>16,<sp/>(<sp/>version<sp/>&amp;<sp/>0xFF00<sp/>)<sp/>&gt;&gt;<sp/>8,<sp/>version<sp/>&amp;<sp/>0xFF<sp/>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="137"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="138"><highlight class="comment">idAudioHardwareOSS::Initialize</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"></highlight></codeline>
+<codeline lineno="140"><highlight class="comment">http://www.4front-tech.com/pguide/index.html</highlight></codeline>
+<codeline lineno="141"><highlight class="comment">though<sp/>OSS<sp/>API<sp/>docs<sp/>(1.1)<sp/>advertise<sp/>AFMT_S32_LE,<sp/>AFMT_S16_LE<sp/>is<sp/>the<sp/>only<sp/>output<sp/>format<sp/>I&apos;ve<sp/>found<sp/>in<sp/>kernel<sp/>emu10k1<sp/>headers</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"></highlight></codeline>
+<codeline lineno="143"><highlight class="comment">BSD<sp/>NOTE:<sp/>With<sp/>the<sp/>GNU<sp/>library,<sp/>you<sp/>can<sp/>use<sp/>free<sp/>to<sp/>free<sp/>the<sp/>blocks<sp/>that<sp/>memalign,<sp/>posix_memalign,<sp/>and<sp/>valloc<sp/>return.</highlight></codeline>
+<codeline lineno="144"><highlight class="comment">That<sp/>does<sp/>not<sp/>work<sp/>in<sp/>BSD,<sp/>however--BSD<sp/>does<sp/>not<sp/>provide<sp/>any<sp/>way<sp/>to<sp/>free<sp/>such<sp/>blocks.</highlight></codeline>
+<codeline lineno="145"><highlight class="comment">=================<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><ref refid="classid_c_var" kindref="compound">idCVar</ref><sp/>s_device(<sp/></highlight><highlight class="stringliteral">&quot;s_dsp&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/dev/dsp&quot;</highlight><highlight class="normal">,<sp/>CVAR_SYSTEM<sp/>|<sp/>CVAR_ARCHIVE,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>idAudioHardwareOSS::Initialize(<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;Printf(</highlight><highlight class="stringliteral">&quot;------<sp/>OSS<sp/>Sound<sp/>Initialization<sp/>------\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>requested_sample_format,<sp/>caps,<sp/>oss_version;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/>s_compiled_oss_version,<sp/>s_oss_version;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__buf__info" kindref="compound">audio_buf_info</ref><sp/>info;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<sp/>&amp;info,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>info<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_audio_fd)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Release();</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>open<sp/>device<sp/>------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((m_audio_fd<sp/>=<sp/>open(<sp/>s_device.GetString(),<sp/>O_WRONLY<sp/>|<sp/>O_NONBLOCK,<sp/>0))<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_audio_fd<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>open<sp/>sound<sp/>device<sp/>&apos;%s&apos;:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>s_device.GetString(),<sp/>strerror(errno)<sp/>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>it<sp/>blocking<sp/>-<sp/>so<sp/>write<sp/>overruns<sp/>don&apos;t<sp/>fail<sp/>with<sp/>&apos;Resource<sp/>temporarily<sp/>unavailable&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<sp/>flags<sp/>=<sp/>fcntl(<sp/>m_audio_fd,<sp/>F_GETFL<sp/>)<sp/>)<sp/>==<sp/>-1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;failed<sp/>fcntl<sp/>F_GETFL<sp/>on<sp/>sound<sp/>device<sp/>&apos;%s&apos;:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>s_device.GetString(),<sp/>strerror(<sp/>errno<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>flags<sp/>&amp;=<sp/>~O_NONBLOCK;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>fcntl(<sp/>m_audio_fd,<sp/>F_SETFL,<sp/>flags<sp/>)<sp/>==<sp/>-1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>clear<sp/>O_NONBLOCK<sp/>on<sp/>sound<sp/>device<sp/>&apos;%s&apos;:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>s_device.GetString(),<sp/>strerror(<sp/>errno<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;Printf(</highlight><highlight class="stringliteral">&quot;opened<sp/>sound<sp/>device<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>s_device.GetString());</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>verify<sp/>capabilities<sp/>-----------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>may<sp/>only<sp/>be<sp/>available<sp/>starting<sp/>with<sp/>OSS<sp/>API<sp/>v4.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>http://www.fi.opensound.com/developer/SNDCTL_SYSINFO.html</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>at<sp/>OSS<sp/>API<sp/>4.0<sp/>headers,<sp/>replace<sp/>OSS_SYSINFO<sp/>with<sp/>SNDCTL_SYSINFO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structoss__sysinfo" kindref="compound">oss_sysinfo</ref><sp/>si;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>ioctl(<sp/>m_audio_fd,<sp/>OSS_SYSINFO,<sp/>&amp;si<sp/>)<sp/>==<sp/>-1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_SYSINFO<sp/>failed:<sp/>%s\nthis<sp/>ioctl<sp/>is<sp/>only<sp/>available<sp/>in<sp/>OSS/Linux<sp/>implementation.<sp/>If<sp/>you<sp/>run<sp/>OSS/Free,<sp/>don&apos;t<sp/>bother.&quot;</highlight><highlight class="normal">,<sp/>strerror(<sp/>errno<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;%s:<sp/>%s<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>s_device.GetString(),<sp/>si.product,<sp/>si.version<sp/>);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>ioctl(<sp/>m_audio_fd,<sp/>SNDCTL_DSP_GETCAPS,<sp/>&amp;caps<sp/>)<sp/>==<sp/>-1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_GETCAPS<sp/>failed<sp/>-<sp/>driver<sp/>too<sp/>old?&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;DPrintf(</highlight><highlight class="stringliteral">&quot;driver<sp/>rev<sp/>%d<sp/>-<sp/>capabilities<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>caps<sp/>&amp;<sp/>DSP_CAP_REVISION,<sp/>caps);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ioctl(<sp/>m_audio_fd,<sp/>OSS_GETVERSION,<sp/>&amp;oss_version<sp/>)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>OSS_GETVERSION<sp/>failed&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>ExtractOSSVersion(<sp/>oss_version,<sp/>s_oss_version<sp/>);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>ExtractOSSVersion(<sp/>SOUND_VERSION,<sp/>s_compiled_oss_version<sp/>);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;DPrintf(<sp/></highlight><highlight class="stringliteral">&quot;OSS<sp/>interface<sp/>version<sp/>%s<sp/>-<sp/>compile<sp/>time<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>s_oss_version.c_str(),<sp/>s_compiled_oss_version.c_str()<sp/>);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(caps<sp/>&amp;<sp/>DSP_CAP_MMAP))<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;driver<sp/>doesn&apos;t<sp/>have<sp/>DSP_CAP_MMAP<sp/>capability&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(caps<sp/>&amp;<sp/>DSP_CAP_TRIGGER))<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;driver<sp/>doesn&apos;t<sp/>have<sp/>DSP_CAP_TRIGGER<sp/>capability&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sample<sp/>format<sp/>-----------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>requested_sample_format<sp/>=<sp/>AFMT_S16_LE;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>m_sample_format<sp/>=<sp/>requested_sample_format;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ioctl(m_audio_fd,<sp/>SNDCTL_DSP_SETFMT,<sp/>&amp;m_sample_format)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_SETFMT<sp/>%d<sp/>failed:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>requested_sample_format,<sp/>strerror(errno)<sp/>);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>m_sample_format<sp/>!=<sp/>requested_sample_format<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_SETFMT<sp/>failed<sp/>to<sp/>get<sp/>the<sp/>requested<sp/>sample<sp/>format<sp/>%d,<sp/>got<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>requested_sample_format,<sp/>m_sample_format<sp/>);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>channels<sp/>----------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sanity<sp/>over<sp/>number<sp/>of<sp/>speakers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>idSoundSystemLocal::s_numberOfSpeakers.GetInteger()<sp/>!=<sp/>6<sp/>&amp;&amp;<sp/>idSoundSystemLocal::s_numberOfSpeakers.GetInteger()<sp/>!=<sp/>2<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>value<sp/>for<sp/>s_numberOfSpeakers.<sp/>Use<sp/>either<sp/>2<sp/>or<sp/>6&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idSoundSystemLocal::s_numberOfSpeakers.SetInteger(<sp/>2<sp/>);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>m_channels<sp/>=<sp/>idSoundSystemLocal::s_numberOfSpeakers.GetInteger();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>ioctl(<sp/>m_audio_fd,<sp/>SNDCTL_DSP_CHANNELS,<sp/>&amp;m_channels<sp/>)<sp/>==<sp/>-1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_CHANNELS<sp/>%d<sp/>failed:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>idSoundSystemLocal::s_numberOfSpeakers.GetInteger(),<sp/>strerror(errno)<sp/>);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>m_channels<sp/>!=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)idSoundSystemLocal::s_numberOfSpeakers.GetInteger()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_CHANNELS<sp/>failed<sp/>to<sp/>get<sp/>the<sp/>%d<sp/>requested<sp/>channels,<sp/>got<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>idSoundSystemLocal::s_numberOfSpeakers.GetInteger(),<sp/>m_channels<sp/>);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>m_channels<sp/>!=<sp/>2<sp/>&amp;&amp;<sp/>idSoundSystemLocal::s_numberOfSpeakers.GetInteger()<sp/>!=<sp/>2<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>didn&apos;t<sp/>request<sp/>2<sp/>channels,<sp/>some<sp/>drivers<sp/>reply<sp/>1<sp/>channel<sp/>on<sp/>error<sp/>but<sp/>may<sp/>still<sp/>let<sp/>us<sp/>still<sp/>get<sp/>2<sp/>if<sp/>properly<sp/>asked</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_channels<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>ioctl(<sp/>m_audio_fd,<sp/>SNDCTL_DSP_CHANNELS,<sp/>&amp;m_channels<sp/>)<sp/>==<sp/>-1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_CHANNELS<sp/>fallback<sp/>to<sp/>2<sp/>failed:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>strerror(errno)<sp/>);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>m_channels<sp/>==<sp/>2<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>tell<sp/>the<sp/>system<sp/>to<sp/>mix<sp/>2<sp/>channels</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;falling<sp/>back<sp/>to<sp/>stereo&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idSoundSystemLocal::s_numberOfSpeakers.SetInteger(<sp/>2<sp/>);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>disable<sp/>sound</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)m_channels<sp/>==<sp/>idSoundSystemLocal::s_numberOfSpeakers.GetInteger()<sp/>);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sampling<sp/>rate<sp/>------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>m_speed<sp/>=<sp/>PRIMARYFREQ;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>ioctl(<sp/>m_audio_fd,<sp/>SNDCTL_DSP_SPEED,<sp/>&amp;m_speed<sp/>)<sp/>==<sp/>-1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_SPEED<sp/>%d<sp/>failed:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>PRIMARYFREQ,<sp/>strerror(errno)<sp/>);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>instead<sp/>of<sp/>an<sp/>exact<sp/>match,<sp/>do<sp/>a<sp/>very<sp/>close<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>there<sp/>is<sp/>some<sp/>horrible<sp/>Ensonic<sp/>ES1371<sp/>which<sp/>replies<sp/>44101<sp/>for<sp/>a<sp/>44100<sp/>request</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>abs(<sp/>m_speed<sp/>-<sp/>PRIMARYFREQ<sp/>)<sp/>&gt;<sp/>5<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_SPEED<sp/>failed<sp/>to<sp/>get<sp/>the<sp/>requested<sp/>frequency<sp/>%d,<sp/>got<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>PRIMARYFREQ,<sp/>m_speed<sp/>);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;Printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>-<sp/>bit<sp/>rate:<sp/>%d,<sp/>channels:<sp/>%d,<sp/>frequency:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>s_device.GetString(),<sp/>m_sample_format,<sp/>m_channels,<sp/>m_speed);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>output<sp/>buffer<sp/>------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>allocate<sp/>a<sp/>final<sp/>buffer<sp/>target,<sp/>the<sp/>sound<sp/>engine<sp/>locks,<sp/>writes,<sp/>and<sp/>we<sp/>write<sp/>back<sp/>to<sp/>the<sp/>device</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>want<sp/>m_buffer_size<sp/>(<sp/>will<sp/>have<sp/>to<sp/>rename<sp/>those<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ROOM_SLICES_IN_BUFFER<sp/>is<sp/>fixed<sp/>(<sp/>system<sp/>default,<sp/>10<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>MIXBUFFER_SAMPLES<sp/>is<sp/>the<sp/>number<sp/>of<sp/>samples<sp/>found<sp/>in<sp/>a<sp/>slice</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>each<sp/>sample<sp/>is<sp/>m_channels<sp/>*<sp/>sizeof(<sp/>float<sp/>)<sp/>bytes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>AsyncUpdate<sp/>we<sp/>only<sp/>write<sp/>one<sp/>block<sp/>at<sp/>a<sp/>time,<sp/>so<sp/>we&apos;d<sp/>only<sp/>need<sp/>to<sp/>have<sp/>a<sp/>final<sp/>mix<sp/>buffer<sp/>sized<sp/>of<sp/>a<sp/>single<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>m_buffer_size<sp/>=<sp/>MIXBUFFER_SAMPLES<sp/>*<sp/>m_channels<sp/>*<sp/>2;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>m_buffer<sp/>=<sp/>malloc(<sp/>m_buffer_size<sp/>);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;allocated<sp/>a<sp/>mix<sp/>buffer<sp/>of<sp/>%d<sp/>bytes\n&quot;</highlight><highlight class="normal">,<sp/>m_buffer_size<sp/>);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>toggle<sp/>sound<sp/>-------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>toggle<sp/>off<sp/>before<sp/>toggling<sp/>on.<sp/>that&apos;s<sp/>what<sp/>OSS<sp/>source<sp/>code<sp/>samples<sp/>recommends</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flag<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ioctl(m_audio_fd,<sp/>SNDCTL_DSP_SETTRIGGER,<sp/>&amp;flag)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_SETTRIGGER<sp/>0<sp/>failed:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>strerror(errno)<sp/>);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>flag<sp/>=<sp/>PCM_ENABLE_OUTPUT;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ioctl(m_audio_fd,<sp/>SNDCTL_DSP_SETTRIGGER,<sp/>&amp;flag)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Warning(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_SETTRIGGER<sp/>PCM_ENABLE_OUTPUT<sp/>failed:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>strerror(errno)<sp/>);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;Printf(</highlight><highlight class="stringliteral">&quot;--------------------------------------\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="317"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="318"><highlight class="comment">idAudioHardwareOSS::Flush</highlight></codeline>
+<codeline lineno="319"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="320"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>idAudioHardwareOSS::Flush(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structaudio__buf__info" kindref="compound">audio_buf_info</ref><sp/>ospace;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>ioctl(<sp/>m_audio_fd,<sp/>SNDCTL_DSP_GETOSPACE,<sp/>&amp;ospace<sp/>)<sp/>==<sp/>-1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sys_Printf(<sp/></highlight><highlight class="stringliteral">&quot;ioctl<sp/>SNDCTL_DSP_GETOSPACE<sp/>failed:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>strerror(<sp/>errno<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>how<sp/>many<sp/>chunks<sp/>can<sp/>we<sp/>write<sp/>to<sp/>the<sp/>audio<sp/>device<sp/>right<sp/>now</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>m_freeWriteChunks<sp/>=<sp/>(<sp/>ospace.bytes<sp/>*<sp/>MIXBUFFER_CHUNKS<sp/>)<sp/>/<sp/>(<sp/>MIXBUFFER_SAMPLES<sp/>*<sp/>m_channels<sp/>*<sp/>2<sp/>);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>m_writeChunks<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>flush<sp/>out<sp/>any<sp/>remaining<sp/>chunks<sp/>we<sp/>could<sp/>now</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Write(<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/>m_freeWriteChunks<sp/>&gt;<sp/>0<sp/>);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="337"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="338"><highlight class="comment">idAudioHardwareOSS::GetMixBufferSize</highlight></codeline>
+<codeline lineno="339"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="340"><highlight class="comment">*/</highlight><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idAudioHardwareOSS::GetMixBufferSize()<sp/>{</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>return<sp/>MIXBUFFER_SAMPLES<sp/>*<sp/>2<sp/>*<sp/>m_channels;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_buffer_size;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="347"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="348"><highlight class="comment">idAudioHardwareOSS::GetMixBuffer</highlight></codeline>
+<codeline lineno="349"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="350"><highlight class="comment">*/</highlight><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight><highlight class="keywordtype">short</highlight><highlight class="normal">*<sp/>idAudioHardwareOSS::GetMixBuffer()<sp/>{</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*)m_buffer;</highlight></codeline>
+<codeline lineno="353"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="356"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="357"><highlight class="comment">idAudioHardwareOSS::Write</highlight></codeline>
+<codeline lineno="358"><highlight class="comment">rely<sp/>on<sp/>m_freeWriteChunks<sp/>which<sp/>has<sp/>been<sp/>set<sp/>in<sp/>Flush()<sp/>before<sp/>engine<sp/>did<sp/>the<sp/>mixing<sp/>for<sp/>this<sp/>MIXBUFFER_SAMPLE</highlight></codeline>
+<codeline lineno="359"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="360"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>idAudioHardwareOSS::Write(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>flushing<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>m_audio_fd<sp/>);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!flushing<sp/>&amp;&amp;<sp/>m_writeChunks<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>we<sp/>write<sp/>after<sp/>a<sp/>new<sp/>mixing<sp/>loop,<sp/>we<sp/>should<sp/>have<sp/>m_writeChunk<sp/>==<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>otherwise<sp/>that<sp/>last<sp/>remaining<sp/>chunk<sp/>that<sp/>was<sp/>never<sp/>flushed<sp/>out<sp/>to<sp/>the<sp/>audio<sp/>device<sp/>has<sp/>just<sp/>been<sp/>overwritten</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sys_Printf(<sp/></highlight><highlight class="stringliteral">&quot;idAudioHardwareOSS::Write:<sp/>%d<sp/>samples<sp/>were<sp/>overflowed<sp/>and<sp/>dropped\n&quot;</highlight><highlight class="normal">,<sp/>m_writeChunks<sp/>*<sp/>MIXBUFFER_SAMPLES<sp/>/<sp/>MIXBUFFER_CHUNKS<sp/>);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!flushing<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>running<sp/>after<sp/>the<sp/>mix<sp/>loop,<sp/>then<sp/>we<sp/>have<sp/>a<sp/>full<sp/>buffer<sp/>to<sp/>write<sp/>out</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_writeChunks<sp/>=<sp/>MIXBUFFER_CHUNKS;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>m_freeWriteChunks<sp/>==<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>what<sp/>to<sp/>write<sp/>and<sp/>how<sp/>much</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>(int)m_buffer<sp/>+<sp/>(<sp/>MIXBUFFER_CHUNKS<sp/>-<sp/>m_writeChunks<sp/>)<sp/>*<sp/>m_channels<sp/>*<sp/>2<sp/>*<sp/>MIXBUFFER_SAMPLES<sp/>/<sp/>MIXBUFFER_CHUNKS;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len<sp/>=<sp/>Min(<sp/>m_writeChunks,<sp/>m_freeWriteChunks<sp/>)<sp/>*<sp/>m_channels<sp/>*<sp/>2<sp/>*<sp/>MIXBUFFER_SAMPLES<sp/>/<sp/>MIXBUFFER_CHUNKS;</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>len<sp/>&gt;<sp/>0<sp/>);</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<sp/>ret<sp/>=<sp/>write(<sp/>m_audio_fd,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)pos,<sp/>len<sp/>)<sp/>)<sp/>==<sp/>-1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sys_Printf(<sp/></highlight><highlight class="stringliteral">&quot;write<sp/>to<sp/>audio<sp/>fd<sp/>failed:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>strerror(<sp/>errno<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>len<sp/>!=<sp/>ret<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sys_Printf(<sp/></highlight><highlight class="stringliteral">&quot;short<sp/>write<sp/>to<sp/>audio<sp/>fd:<sp/>wrote<sp/>%d<sp/>out<sp/>of<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>ret,<sp/>m_buffer_size<sp/>);</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/>m_writeChunks<sp/>-=<sp/>Min(<sp/>m_writeChunks,<sp/>m_freeWriteChunks<sp/>);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="392"><highlight class="comment"><sp/>===============</highlight></codeline>
+<codeline lineno="393"><highlight class="comment"><sp/>Sys_LoadOpenAL</highlight></codeline>
+<codeline lineno="394"><highlight class="comment"><sp/>-===============</highlight></codeline>
+<codeline lineno="395"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Sys_LoadOpenAL(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp"/>
+  </compounddef>
+</doxygen>

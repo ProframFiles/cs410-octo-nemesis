@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="share_8h" kind="file">
+    <compoundname>share.h</compoundname>
+    <includes refid="lib_2setup_8h" local="yes">setup.h</includes>
+    <includes refid="curl_8h" local="no">curl/curl.h</includes>
+    <includes refid="cookie_8h" local="yes">cookie.h</includes>
+    <includedby refid="easy_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/easy.c</includedby>
+    <includedby refid="hostip_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/hostip.c</includedby>
+    <includedby refid="http_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/http.c</includedby>
+    <includedby refid="share_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/share.c</includedby>
+    <includedby refid="transfer_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/transfer.c</includedby>
+    <includedby refid="url_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/url.c</includedby>
+    <innerclass refid="struct_curl__share" prot="public">Curl_share</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="share_8h_1a13add4ee78b8f8e097724b87cd5e90d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CURLSHcode</type>
+        <definition>CURLSHcode Curl_share_lock</definition>
+        <argsstring>(struct SessionHandle *, curl_lock_data, curl_lock_access)</argsstring>
+        <name>Curl_share_lock</name>
+        <param>
+          <type>struct <ref refid="struct_session_handle" kindref="compound">SessionHandle</ref> *</type>
+        </param>
+        <param>
+          <type>curl_lock_data</type>
+        </param>
+        <param>
+          <type>curl_lock_access</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/share.h" line="44" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/share.c" bodystart="180" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="share_8h_1a37396e9d4b8d8fefe5e364368867346b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CURLSHcode</type>
+        <definition>CURLSHcode Curl_share_unlock</definition>
+        <argsstring>(struct SessionHandle *, curl_lock_data)</argsstring>
+        <name>Curl_share_unlock</name>
+        <param>
+          <type>struct <ref refid="struct_session_handle" kindref="compound">SessionHandle</ref> *</type>
+        </param>
+        <param>
+          <type>curl_lock_data</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/share.h" line="50" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/share.c" bodystart="198" bodyend="211"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__CURL_SHARE_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__CURL_SHARE_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_<sp/><sp/><sp/>_<sp/>____<sp/><sp/>_<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>Project<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>___|<sp/>|<sp/>|<sp/>|<sp/><sp/>_<sp/>\|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>__|<sp/>|<sp/>|<sp/>|<sp/>|_)<sp/>|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(__|<sp/>|_|<sp/>|<sp/><sp/>_<sp/>&lt;|<sp/>|___<sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\___|\___/|_|<sp/>\_\_____|</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998<sp/>-<sp/>2004,<sp/>Daniel<sp/>Stenberg,<sp/>&lt;daniel@haxx.se&gt;,<sp/>et<sp/>al.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>licensed<sp/>as<sp/>described<sp/>in<sp/>the<sp/>file<sp/>COPYING,<sp/>which</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>you<sp/>should<sp/>have<sp/>received<sp/>as<sp/>part<sp/>of<sp/>this<sp/>distribution.<sp/>The<sp/>terms</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>are<sp/>also<sp/>available<sp/>at<sp/>http://curl.haxx.se/docs/copyright.html.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>opt<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute<sp/>and/or<sp/>sell</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>COPYING<sp/>file.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>basis,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>$Id:<sp/>share.h,v<sp/>1.9<sp/>2004/01/07<sp/>09:19:35<sp/>bagder<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;setup.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;curl/curl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cookie.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>this<sp/>struct<sp/>is<sp/>libcurl-private,<sp/>don&apos;t<sp/>export<sp/>details<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="struct_curl__share" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_curl__share" kindref="compound">Curl_share</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>specifier;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dirty;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>curl_lock_function<sp/>lockfunc;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>curl_unlock_function<sp/>unlockfunc;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*clientdata;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*hostcache;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_cookie_info" kindref="compound">CookieInfo</ref><sp/>*cookies;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">CURLSHcode<sp/>Curl_share_lock<sp/>(</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_session_handle" kindref="compound">SessionHandle</ref><sp/>*,<sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_lock_data,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_lock_access</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">CURLSHcode<sp/>Curl_share_unlock<sp/>(</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_session_handle" kindref="compound">SessionHandle</ref><sp/>*,<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_lock_data</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__CURL_SHARE_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/share.h"/>
+  </compounddef>
+</doxygen>

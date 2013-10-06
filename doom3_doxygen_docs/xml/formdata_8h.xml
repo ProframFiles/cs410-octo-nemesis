@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="formdata_8h" kind="file">
+    <compoundname>formdata.h</compoundname>
+    <includedby refid="urldata_8h" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/urldata.h</includedby>
+    <includedby refid="formdata_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.c</includedby>
+    <includedby refid="http_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/http.c</includedby>
+    <includedby refid="ssluse_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/ssluse.c</includedby>
+    <includedby refid="url_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/url.c</includedby>
+    <innerclass refid="struct_form_data" prot="public">FormData</innerclass>
+    <innerclass refid="struct_form" prot="public">Form</innerclass>
+    <innerclass refid="struct_form_info" prot="public">FormInfo</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="formdata_8h_1af9d82434edd16d5d3a3c678883bb3da8" prot="public" static="no">
+        <type>struct <ref refid="struct_form_info" kindref="compound">FormInfo</ref></type>
+        <definition>typedef struct FormInfo  FormInfo</definition>
+        <argsstring></argsstring>
+        <name>FormInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.h" line="53" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="formdata_8h_1a23da10a504190b233d3429289c8a31a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Curl_FormInit</definition>
+        <argsstring>(struct Form *form, struct FormData *formdata)</argsstring>
+        <name>Curl_FormInit</name>
+        <param>
+          <type>struct <ref refid="struct_form" kindref="compound">Form</ref> *</type>
+          <declname>form</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="struct_form_data" kindref="compound">FormData</ref> *</type>
+          <declname>formdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.h" line="55" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.c" bodystart="1281" bodyend="1290"/>
+      </memberdef>
+      <memberdef kind="function" id="formdata_8h_1aa0a65855efbd714f264280132980287c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CURLcode</type>
+        <definition>CURLcode Curl_getFormData</definition>
+        <argsstring>(struct FormData **, struct curl_httppost *post, curl_off_t *size)</argsstring>
+        <name>Curl_getFormData</name>
+        <param>
+          <type>struct <ref refid="struct_form_data" kindref="compound">FormData</ref> **</type>
+        </param>
+        <param>
+          <type>struct <ref refid="structcurl__httppost" kindref="compound">curl_httppost</ref> *</type>
+          <declname>post</declname>
+        </param>
+        <param>
+          <type>curl_off_t *</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.h" line="58" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.c" bodystart="1101" bodyend="1279"/>
+      </memberdef>
+      <memberdef kind="function" id="formdata_8h_1ab76f07802c2783b75c9184846b7c4e03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Curl_FormReader</definition>
+        <argsstring>(char *buffer, size_t size, size_t nitems, FILE *mydata)</argsstring>
+        <name>Curl_FormReader</name>
+        <param>
+          <type>char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nitems</declname>
+        </param>
+        <param>
+          <type>FILE *</type>
+          <declname>mydata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.h" line="63" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.c" bodystart="1293" bodyend="1336"/>
+      </memberdef>
+      <memberdef kind="function" id="formdata_8h_1aef25b26ff87b5e4f6e1415267845ad19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Curl_FormReadOneLine</definition>
+        <argsstring>(char *buffer, size_t size, size_t nitems, FILE *mydata)</argsstring>
+        <name>Curl_FormReadOneLine</name>
+        <param>
+          <type>char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nitems</declname>
+        </param>
+        <param>
+          <type>FILE *</type>
+          <declname>mydata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.h" line="69" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.c" bodystart="1339" bodyend="1380"/>
+      </memberdef>
+      <memberdef kind="function" id="formdata_8h_1a53390baaf3c318dd7188817c96567a1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* Curl_FormBoundary</definition>
+        <argsstring>(void)</argsstring>
+        <name>Curl_FormBoundary</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.h" line="74" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.c" bodystart="1031" bodyend="1057"/>
+      </memberdef>
+      <memberdef kind="function" id="formdata_8h_1ae91fe5504ac427d2e40b92e96f034e6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_formclean</definition>
+        <argsstring>(struct FormData *)</argsstring>
+        <name>Curl_formclean</name>
+        <param>
+          <type>struct <ref refid="struct_form_data" kindref="compound">FormData</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.h" line="76" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.c" bodystart="1060" bodyend="1070"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__FORMDATA_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__FORMDATA_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_<sp/><sp/><sp/>_<sp/>____<sp/><sp/>_<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>Project<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>___|<sp/>|<sp/>|<sp/>|<sp/><sp/>_<sp/>\|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>__|<sp/>|<sp/>|<sp/>|<sp/>|_)<sp/>|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(__|<sp/>|_|<sp/>|<sp/><sp/>_<sp/>&lt;|<sp/>|___<sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\___|\___/|_|<sp/>\_\_____|</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998<sp/>-<sp/>2004,<sp/>Daniel<sp/>Stenberg,<sp/>&lt;daniel@haxx.se&gt;,<sp/>et<sp/>al.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>licensed<sp/>as<sp/>described<sp/>in<sp/>the<sp/>file<sp/>COPYING,<sp/>which</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>you<sp/>should<sp/>have<sp/>received<sp/>as<sp/>part<sp/>of<sp/>this<sp/>distribution.<sp/>The<sp/>terms</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>are<sp/>also<sp/>available<sp/>at<sp/>http://curl.haxx.se/docs/copyright.html.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>opt<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute<sp/>and/or<sp/>sell</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>COPYING<sp/>file.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>basis,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>$Id:<sp/>formdata.h,v<sp/>1.19<sp/>2004/03/12<sp/>14:22:16<sp/>bagder<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>plain<sp/>and<sp/>simple<sp/>linked<sp/>list<sp/>with<sp/>lines<sp/>to<sp/>send<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="struct_form_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_form_data" kindref="compound">FormData</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_form_data" kindref="compound">FormData</ref><sp/>*next;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*line;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="struct_form" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_form" kindref="compound">Form</ref><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_form_data" kindref="compound">FormData</ref><sp/>*data;<sp/></highlight><highlight class="comment">/*<sp/>current<sp/>form<sp/>line<sp/>to<sp/>send<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sent;<sp/></highlight><highlight class="comment">/*<sp/>number<sp/>of<sp/>bytes<sp/>of<sp/>the<sp/>current<sp/>line<sp/>that<sp/>has<sp/>already</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>been<sp/>sent<sp/>in<sp/>a<sp/>previous<sp/>invoke<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>used<sp/>by<sp/>FormAdd<sp/>for<sp/>temporary<sp/>storage<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="struct_form_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_form_info" kindref="compound">FormInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>namelength;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>contentslength;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*contenttype;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>flags;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>pointer<sp/>to<sp/>existing<sp/>buffer<sp/>used<sp/>for<sp/>file<sp/>upload<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bufferlength;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*showfilename;<sp/></highlight><highlight class="comment">/*<sp/>The<sp/>file<sp/>name<sp/>to<sp/>show.<sp/>If<sp/>not<sp/>set,<sp/>the<sp/>actual</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/>name<sp/>will<sp/>be<sp/>used<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcurl__slist" kindref="compound">curl_slist</ref>*<sp/>contentheader;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_form_info" kindref="compound">FormInfo</ref><sp/>*more;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}<sp/><ref refid="struct_form_info" kindref="compound">FormInfo</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Curl_FormInit(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_form" kindref="compound">Form</ref><sp/>*form,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_form_data" kindref="compound">FormData</ref><sp/>*formdata<sp/>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">CURLcode</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">Curl_getFormData(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_form_data" kindref="compound">FormData</ref><sp/>**,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structcurl__httppost" kindref="compound">curl_httppost</ref><sp/>*post,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curl_off_t<sp/>*size);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>fread()<sp/>emulation<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Curl_FormReader(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nitems,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FILE<sp/>*mydata);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>possible<sp/>(old)<sp/>fread()<sp/>emulation<sp/>that<sp/>copies<sp/>at<sp/>most<sp/>one<sp/>line<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Curl_FormReadOneLine(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nitems,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FILE<sp/>*mydata);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*Curl_FormBoundary(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_formclean(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_form_data" kindref="compound">FormData</ref><sp/>*);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/formdata.h"/>
+  </compounddef>
+</doxygen>

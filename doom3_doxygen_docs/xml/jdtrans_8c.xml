@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jdtrans_8c" kind="file">
+    <compoundname>jdtrans.c</compoundname>
+    <includes refid="jinclude_8h" local="yes">jinclude.h</includes>
+    <includes refid="jpeglib_8h" local="yes">jpeglib.h</includes>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jdtrans_8c_1ad5c3cdfae3019b8223973041a2a1304b" prot="public" static="no">
+        <name>JPEG_INTERNALS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdtrans.c" line="13" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdtrans.c" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jdtrans_8c_1aee5a4ead5b2ed2a2a1533e92cac0f283" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void transdecode_master_selection</definition>
+        <argsstring>(j_decompress_ptr cinfo)</argsstring>
+        <name>transdecode_master_selection</name>
+        <param>
+          <type><ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdtrans.c" line="19" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdtrans.c" bodystart="79" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="jdtrans_8c_1a49e7bf4fa8e435573691d980bcc9fa2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structjvirt__barray__control" kindref="compound">jvirt_barray_ptr</ref> *</type>
+        <definition>jvirt_barray_ptr* jpeg_read_coefficients</definition>
+        <argsstring>(j_decompress_ptr cinfo)</argsstring>
+        <name>jpeg_read_coefficients</name>
+        <param>
+          <type><ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdtrans.c" line="38" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdtrans.c" bodystart="38" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jdtrans.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1995,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>library<sp/>routines<sp/>for<sp/>transcoding<sp/>decompression,</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>that<sp/>is,<sp/>reading<sp/>raw<sp/>DCT<sp/>coefficient<sp/>arrays<sp/>from<sp/>an<sp/>input<sp/>JPEG<sp/>file.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>The<sp/>routines<sp/>in<sp/>jdapimin.c<sp/>will<sp/>also<sp/>be<sp/>needed<sp/>by<sp/>a<sp/>transcoder.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JPEG_INTERNALS</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;jinclude.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jpeglib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Forward<sp/>declarations<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">LOCAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>transdecode_master_selection<sp/>JPP((<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo));</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>Read<sp/>the<sp/>coefficient<sp/>arrays<sp/>from<sp/>a<sp/>JPEG<sp/>file.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>jpeg_read_header<sp/>must<sp/>be<sp/>completed<sp/>before<sp/>calling<sp/>this.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>The<sp/>entire<sp/>image<sp/>is<sp/>read<sp/>into<sp/>a<sp/>set<sp/>of<sp/>virtual<sp/>coefficient-block<sp/>arrays,</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>one<sp/>per<sp/>component.<sp/><sp/>The<sp/>return<sp/>value<sp/>is<sp/>a<sp/>pointer<sp/>to<sp/>the<sp/>array<sp/>of</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>virtual-array<sp/>descriptors.<sp/><sp/>These<sp/>can<sp/>be<sp/>manipulated<sp/>directly<sp/>via<sp/>the</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>JPEG<sp/>memory<sp/>manager,<sp/>or<sp/>handed<sp/>off<sp/>to<sp/>jpeg_write_coefficients().</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>To<sp/>release<sp/>the<sp/>memory<sp/>occupied<sp/>by<sp/>the<sp/>virtual<sp/>arrays,<sp/>call</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>jpeg_finish_decompress()<sp/>when<sp/>done<sp/>with<sp/>the<sp/>data.</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>Returns<sp/>NULL<sp/>if<sp/>suspended.<sp/><sp/>This<sp/>case<sp/>need<sp/>be<sp/>checked<sp/>only<sp/>if</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>a<sp/>suspending<sp/>data<sp/>source<sp/>is<sp/>used.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">GLOBAL<sp/><ref refid="structjvirt__barray__control" kindref="compound">jvirt_barray_ptr</ref><sp/>*</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">jpeg_read_coefficients<sp/>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;global_state<sp/>==<sp/>DSTATE_READY)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>First<sp/>call:<sp/>initialize<sp/>active<sp/>modules<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>transdecode_master_selection(cinfo);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;global_state<sp/>=<sp/>DSTATE_RDCOEFS;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;global_state<sp/>!=<sp/>DSTATE_RDCOEFS)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT1(cinfo,<sp/>JERR_BAD_STATE,<sp/>cinfo-&gt;global_state);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Absorb<sp/>whole<sp/>file<sp/>into<sp/>the<sp/>coef<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(;;)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>retcode;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Call<sp/>progress<sp/>monitor<sp/>hook<sp/>if<sp/>present<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;progress<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(*cinfo-&gt;progress-&gt;progress_monitor)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Absorb<sp/>some<sp/>more<sp/>input<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>retcode<sp/>=<sp/>(*cinfo-&gt;inputctl-&gt;consume_input)<sp/>(cinfo);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(retcode<sp/>==<sp/>JPEG_SUSPENDED)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(retcode<sp/>==<sp/>JPEG_REACHED_EOI)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Advance<sp/>progress<sp/>counter<sp/>if<sp/>appropriate<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;progress<sp/>!=<sp/>NULL<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>(retcode<sp/>==<sp/>JPEG_ROW_COMPLETED<sp/>||<sp/>retcode<sp/>==<sp/>JPEG_REACHED_SOS))<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(++cinfo-&gt;progress-&gt;pass_counter<sp/>&gt;=<sp/>cinfo-&gt;progress-&gt;pass_limit)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>startup<sp/>underestimated<sp/>number<sp/>of<sp/>scans;<sp/>ratchet<sp/>up<sp/>one<sp/>scan<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;progress-&gt;pass_limit<sp/>+=<sp/>(long)<sp/>cinfo-&gt;total_iMCU_rows;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>state<sp/>so<sp/>that<sp/>jpeg_finish_decompress<sp/>does<sp/>the<sp/>right<sp/>thing<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>cinfo-&gt;global_state<sp/>=<sp/>DSTATE_STOPPING;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cinfo-&gt;coef-&gt;coef_arrays;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>Master<sp/>selection<sp/>of<sp/>decompression<sp/>modules<sp/>for<sp/>transcoding.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>This<sp/>substitutes<sp/>for<sp/>jdmaster.c&apos;s<sp/>initialization<sp/>of<sp/>the<sp/>full<sp/>decompressor.</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">LOCAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">transdecode_master_selection<sp/>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Entropy<sp/>decoding:<sp/>either<sp/>Huffman<sp/>or<sp/>arithmetic<sp/>coding.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;arith_code)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_ARITH_NOTIMPL);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;progressive_mode)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>D_PROGRESSIVE_SUPPORTED</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>jinit_phuff_decoder(cinfo);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_NOT_COMPILED);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>jinit_huff_decoder(cinfo);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Always<sp/>get<sp/>a<sp/>full-image<sp/>coefficient<sp/>buffer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>jinit_d_coef_controller(cinfo,<sp/>TRUE);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>can<sp/>now<sp/>tell<sp/>the<sp/>memory<sp/>manager<sp/>to<sp/>allocate<sp/>virtual<sp/>arrays.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>(*cinfo-&gt;mem-&gt;realize_virt_arrays)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>input<sp/>side<sp/>of<sp/>decompressor<sp/>to<sp/>consume<sp/>first<sp/>scan.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>(*cinfo-&gt;inputctl-&gt;start_input_pass)<sp/>(cinfo);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>progress<sp/>monitoring.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;progress<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nscans;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Estimate<sp/>number<sp/>of<sp/>scans<sp/>to<sp/>set<sp/>pass_limit.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;progressive_mode)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Arbitrarily<sp/>estimate<sp/>2<sp/>interleaved<sp/>DC<sp/>scans<sp/>+<sp/>3<sp/>AC<sp/>scans/component.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nscans<sp/>=<sp/>2<sp/>+<sp/>3<sp/>*<sp/>cinfo-&gt;num_components;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;inputctl-&gt;has_multiple_scans)<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>a<sp/>nonprogressive<sp/>multiscan<sp/>file,<sp/>estimate<sp/>1<sp/>scan<sp/>per<sp/>component.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nscans<sp/>=<sp/>cinfo-&gt;num_components;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>nscans<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;progress-&gt;pass_counter<sp/>=<sp/>0L;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;progress-&gt;pass_limit<sp/>=<sp/>(long)<sp/>cinfo-&gt;total_iMCU_rows<sp/>*<sp/>nscans;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;progress-&gt;completed_passes<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;progress-&gt;total_passes<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdtrans.c"/>
+  </compounddef>
+</doxygen>

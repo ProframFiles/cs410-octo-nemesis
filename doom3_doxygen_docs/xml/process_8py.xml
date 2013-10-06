@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="process_8py" kind="file">
+    <compoundname>process.py</compoundname>
+    <innernamespace refid="namespaceprocess">process</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">#<sp/>process<sp/>stdin<sp/>into<sp/>an<sp/>M4<sp/>macro<sp/>definition<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">#<sp/>recognize<sp/>three<sp/>keyword<sp/>qgl<sp/>qwgl<sp/>qglX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">#<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">#<sp/>global<sp/>macros<sp/>keep<sp/>track<sp/>of<sp/>the<sp/>three<sp/>intervals<sp/>for<sp/>function<sp/>types:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">#<sp/>gl_start<sp/>gl_end<sp/>wgl_start<sp/>wgl_end<sp/>glX_start<sp/>glX_end</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">#<sp/>NOTE:<sp/>will<sp/>we<sp/>need<sp/>similar<sp/>thing<sp/>for<sp/>extensions?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">#<sp/>each<sp/>function:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">#<sp/>f&lt;id&gt;_ret:<sp/>return<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">#<sp/>f&lt;id&gt;_name:<sp/>function<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">#<sp/>f&lt;id&gt;_params:<sp/>complete<sp/>params</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">#<sp/>ex:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">#<sp/>define(`f1_ret&apos;,<sp/>`void&apos;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">#<sp/>define(`f1_name&apos;,<sp/>`Accum&apos;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">#<sp/>define(`f1_params&apos;,<sp/>``GLenum<sp/>op,<sp/>GLfloat<sp/>value&apos;&apos;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys,<sp/>string</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>read<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>read_gl</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">(gl,<sp/>wgl,<sp/>glX)<sp/>=<sp/>read_gl(sys.stdin)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">sys.stdout.write(</highlight><highlight class="stringliteral">&apos;define(`gl_start\&apos;,<sp/>`0\&apos;)\n&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">sys.stdout.write(</highlight><highlight class="stringliteral">&apos;define(`gl_end\&apos;,<sp/>`%d\&apos;)\n&apos;</highlight><highlight class="normal"><sp/>%<sp/>int(len(gl)-1))</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">sys.stdout.write(</highlight><highlight class="stringliteral">&apos;define(`wgl_start\&apos;,<sp/>`%d\&apos;)\n&apos;</highlight><highlight class="normal"><sp/>%<sp/>int(len(gl)))</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">sys.stdout.write(</highlight><highlight class="stringliteral">&apos;define(`wgl_end\&apos;,<sp/>`%d\&apos;)\n&apos;</highlight><highlight class="normal"><sp/>%<sp/>int(len(gl)+len(wgl)-1))</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">sys.stdout.write(</highlight><highlight class="stringliteral">&apos;define(`glX_start\&apos;,<sp/>`%d\&apos;)\n&apos;</highlight><highlight class="normal"><sp/>%<sp/>int(len(gl)+len(wgl)))</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">sys.stdout.write(</highlight><highlight class="stringliteral">&apos;define(`glX_end\&apos;,<sp/>`%d\&apos;)\n&apos;</highlight><highlight class="normal"><sp/>%<sp/>int(len(gl)+len(wgl)+len(glX)-1))</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">i<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>l<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>(gl,<sp/>wgl,<sp/>glX):</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>t<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>l:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>process<sp/>ret<sp/>type<sp/>to<sp/>strip<sp/>trailing<sp/>spaces</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t[0]<sp/>=<sp/>string.strip(t[0])</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys.stdout.write(</highlight><highlight class="stringliteral">&apos;define(`f%d_ret\&apos;,<sp/>`%s\&apos;)\n&apos;</highlight><highlight class="normal"><sp/>%<sp/>(i,<sp/>t[0]))</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys.stdout.write(</highlight><highlight class="stringliteral">&apos;define(`f%d_name\&apos;,<sp/>`%s\&apos;)\n&apos;</highlight><highlight class="normal"><sp/>%<sp/>(i,<sp/>t[2]))</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys.stdout.write(</highlight><highlight class="stringliteral">&apos;define(`f%d_params\&apos;,<sp/>``%s\&apos;\&apos;)\n&apos;</highlight><highlight class="normal"><sp/>%<sp/>(i,<sp/>t[3]))</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>+=<sp/>1</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/process.py"/>
+  </compounddef>
+</doxygen>

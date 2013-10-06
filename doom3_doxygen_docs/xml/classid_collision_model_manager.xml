@@ -1,0 +1,624 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_collision_model_manager" kind="class" prot="public" abstract="yes">
+    <compoundname>idCollisionModelManager</compoundname>
+    <derivedcompoundref refid="classid_collision_model_manager_local" prot="public" virt="non-virtual">idCollisionModelManagerLocal</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_collision_model_manager_1adbef92ad6028f8fb63ec354547b850e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual idCollisionModelManager::~idCollisionModelManager</definition>
+        <argsstring>(void)</argsstring>
+        <name>~idCollisionModelManager</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="89" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" bodystart="89" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a796b52b7fb0d81ae43cbe5a2761db022" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idCollisionModelManager::LoadMap</definition>
+        <argsstring>(const idMapFile *mapFile)=0</argsstring>
+        <name>LoadMap</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1ab6667d07d11aa8e04efec1aec9d00f78">LoadMap</reimplementedby>
+        <param>
+          <type>const <ref refid="classid_map_file" kindref="compound">idMapFile</ref> *</type>
+          <declname>mapFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a22f043dc34c38d1b26f355de34c6ae4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idCollisionModelManager::FreeMap</definition>
+        <argsstring>(void)=0</argsstring>
+        <name>FreeMap</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a02dcb29b53af40b77c1051a07b8fcb4b">FreeMap</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="94" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a596948c39c877f332a124b5e9195b1bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>cmHandle_t</type>
+        <definition>virtual cmHandle_t idCollisionModelManager::LoadModel</definition>
+        <argsstring>(const char *modelName, const bool precache)=0</argsstring>
+        <name>LoadModel</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1aaa802807d617586dd54751b1e603a0f1">LoadModel</reimplementedby>
+        <param>
+          <type>const char *</type>
+          <declname>modelName</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>precache</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a47430354a772b2adf98bc07f54398f8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>cmHandle_t</type>
+        <definition>virtual cmHandle_t idCollisionModelManager::SetupTrmModel</definition>
+        <argsstring>(const idTraceModel &amp;trm, const idMaterial *material)=0</argsstring>
+        <name>SetupTrmModel</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a2c400d381b2d0e42242c1e2a43519e96">SetupTrmModel</reimplementedby>
+        <param>
+          <type>const <ref refid="classid_trace_model" kindref="compound">idTraceModel</ref> &amp;</type>
+          <declname>trm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_material" kindref="compound">idMaterial</ref> *</type>
+          <declname>material</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="99" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1afb2b16aae0ec5b4f97ab64587fd22897" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idCollisionModelManager::TrmFromModel</definition>
+        <argsstring>(const char *modelName, idTraceModel &amp;trm)=0</argsstring>
+        <name>TrmFromModel</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1ae9ccf4ad758559c9fd1739222bb330e8">TrmFromModel</reimplementedby>
+        <param>
+          <type>const char *</type>
+          <declname>modelName</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_trace_model" kindref="compound">idTraceModel</ref> &amp;</type>
+          <declname>trm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="101" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1af81a8e3312ad5421873edb07ef73a8b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const char *</type>
+        <definition>virtual const char* idCollisionModelManager::GetModelName</definition>
+        <argsstring>(cmHandle_t model) const =0</argsstring>
+        <name>GetModelName</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a1cd4b7972a8b444c7d7ca519fc6d8d7b">GetModelName</reimplementedby>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1aa64dd097caead54e0e23297a55477e68" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idCollisionModelManager::GetModelBounds</definition>
+        <argsstring>(cmHandle_t model, idBounds &amp;bounds) const =0</argsstring>
+        <name>GetModelBounds</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1aed6e23926b92241eb3759e4e94108f9e">GetModelBounds</reimplementedby>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_bounds" kindref="compound">idBounds</ref> &amp;</type>
+          <declname>bounds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a024e5c45b27cf1565854d8bfcc698f50" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idCollisionModelManager::GetModelContents</definition>
+        <argsstring>(cmHandle_t model, int &amp;contents) const =0</argsstring>
+        <name>GetModelContents</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a0a809756938e2be17678de4239a1df0b">GetModelContents</reimplementedby>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>contents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="108" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a991422197671c40e182f290aada1c5b2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idCollisionModelManager::GetModelVertex</definition>
+        <argsstring>(cmHandle_t model, int vertexNum, idVec3 &amp;vertex) const =0</argsstring>
+        <name>GetModelVertex</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a0932b2a9b8195eb821fa1cf0de68f97f">GetModelVertex</reimplementedby>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>vertexNum</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>vertex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="110" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a17a811d2f1d6a03c8e15f35188c073af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idCollisionModelManager::GetModelEdge</definition>
+        <argsstring>(cmHandle_t model, int edgeNum, idVec3 &amp;start, idVec3 &amp;end) const =0</argsstring>
+        <name>GetModelEdge</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a27b39cc6b1f1c22f7efd2cb46d0f4be9">GetModelEdge</reimplementedby>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>edgeNum</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="112" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1ad18b750d2002e4b57f7e7c0bfa808cfd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idCollisionModelManager::GetModelPolygon</definition>
+        <argsstring>(cmHandle_t model, int polygonNum, idFixedWinding &amp;winding) const =0</argsstring>
+        <name>GetModelPolygon</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a841e7ccd9fad7504ca475b5aadf427f6">GetModelPolygon</reimplementedby>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>polygonNum</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_fixed_winding" kindref="compound">idFixedWinding</ref> &amp;</type>
+          <declname>winding</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="114" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a5528af9cc9644e18619f02a9727b9b02" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idCollisionModelManager::Translation</definition>
+        <argsstring>(trace_t *results, const idVec3 &amp;start, const idVec3 &amp;end, const idTraceModel *trm, const idMat3 &amp;trmAxis, int contentMask, cmHandle_t model, const idVec3 &amp;modelOrigin, const idMat3 &amp;modelAxis)=0</argsstring>
+        <name>Translation</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a9afbad03f74e952d8efe7f8537485b94">Translation</reimplementedby>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> *</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_trace_model" kindref="compound">idTraceModel</ref> *</type>
+          <declname>trm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>trmAxis</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>contentMask</declname>
+        </param>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>modelOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>modelAxis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="117" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1ab5cd631b0dd195c6a2e73ed42587c35a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idCollisionModelManager::Rotation</definition>
+        <argsstring>(trace_t *results, const idVec3 &amp;start, const idRotation &amp;rotation, const idTraceModel *trm, const idMat3 &amp;trmAxis, int contentMask, cmHandle_t model, const idVec3 &amp;modelOrigin, const idMat3 &amp;modelAxis)=0</argsstring>
+        <name>Rotation</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1ab63a58c9d8fe0085cc45a990fc5a9525">Rotation</reimplementedby>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> *</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_rotation" kindref="compound">idRotation</ref> &amp;</type>
+          <declname>rotation</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_trace_model" kindref="compound">idTraceModel</ref> *</type>
+          <declname>trm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>trmAxis</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>contentMask</declname>
+        </param>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>modelOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>modelAxis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="121" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1aef3cee148889de78409118966baa1f0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int idCollisionModelManager::Contents</definition>
+        <argsstring>(const idVec3 &amp;start, const idTraceModel *trm, const idMat3 &amp;trmAxis, int contentMask, cmHandle_t model, const idVec3 &amp;modelOrigin, const idMat3 &amp;modelAxis)=0</argsstring>
+        <name>Contents</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a2a9d87194c04a0e17641b49ec4f15038">Contents</reimplementedby>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_trace_model" kindref="compound">idTraceModel</ref> *</type>
+          <declname>trm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>trmAxis</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>contentMask</declname>
+        </param>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>modelOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>modelAxis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="125" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a887fb61303147441d8aac8aa00d957a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int idCollisionModelManager::Contacts</definition>
+        <argsstring>(contactInfo_t *contacts, const int maxContacts, const idVec3 &amp;start, const idVec6 &amp;dir, const float depth, const idTraceModel *trm, const idMat3 &amp;trmAxis, int contentMask, cmHandle_t model, const idVec3 &amp;modelOrigin, const idMat3 &amp;modelAxis)=0</argsstring>
+        <name>Contacts</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1afd90fc03670603639ef3f68acd730faf">Contacts</reimplementedby>
+        <param>
+          <type><ref refid="structcontact_info__t" kindref="compound">contactInfo_t</ref> *</type>
+          <declname>contacts</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>maxContacts</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec6" kindref="compound">idVec6</ref> &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>depth</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_trace_model" kindref="compound">idTraceModel</ref> *</type>
+          <declname>trm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>trmAxis</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>contentMask</declname>
+        </param>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>modelOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>modelAxis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="129" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a2a4823a184bb5523f646772a3ecc4ef7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idCollisionModelManager::DebugOutput</definition>
+        <argsstring>(const idVec3 &amp;origin)=0</argsstring>
+        <name>DebugOutput</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1af1672103bb0a95ae863738a066a05ec9">DebugOutput</reimplementedby>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="134" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1af12c580ed4636a1806a6afc1661df4c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idCollisionModelManager::DrawModel</definition>
+        <argsstring>(cmHandle_t model, const idVec3 &amp;modelOrigin, const idMat3 &amp;modelAxis, const idVec3 &amp;viewOrigin, const float radius)=0</argsstring>
+        <name>DrawModel</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a3b5f2ac5be4eed58925be3df091305c5">DrawModel</reimplementedby>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>modelOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>modelAxis</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>viewOrigin</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="136" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a18ecdaa66517b66a87f7e16c59e2bbbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idCollisionModelManager::ModelInfo</definition>
+        <argsstring>(cmHandle_t model)=0</argsstring>
+        <name>ModelInfo</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a3cbb2f89c2a3e8d785628e9391c6c779">ModelInfo</reimplementedby>
+        <param>
+          <type>cmHandle_t</type>
+          <declname>model</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="139" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1a57b3fc02927bb5062635b6ab75feb721" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idCollisionModelManager::ListModels</definition>
+        <argsstring>(void)=0</argsstring>
+        <name>ListModels</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1a98bb7ab52787930c820ba187d2454899">ListModels</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="141" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_collision_model_manager_1ac9a964a18177d1b76786a0e42da2790e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idCollisionModelManager::WriteCollisionModelForMapEntity</definition>
+        <argsstring>(const idMapEntity *mapEnt, const char *filename, const bool testTraceModel=true)=0</argsstring>
+        <name>WriteCollisionModelForMapEntity</name>
+        <reimplementedby refid="classid_collision_model_manager_local_1aab5df427fb5259ea1c957ac27b6ac1bc">WriteCollisionModelForMapEntity</reimplementedby>
+        <param>
+          <type>const <ref refid="classid_map_entity" kindref="compound">idMapEntity</ref> *</type>
+          <declname>mapEnt</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>testTraceModel</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="143" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="22957">
+        <label>idCollisionModelManagerLocal</label>
+        <link refid="classid_collision_model_manager_local"/>
+        <childnode refid="22956" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22956">
+        <label>idCollisionModelManager</label>
+        <link refid="classid_collision_model_manager"/>
+      </node>
+    </inheritancegraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" line="87" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/cm/CollisionModel.h" bodystart="87" bodyend="144"/>
+    <listofallmembers>
+      <member refid="classid_collision_model_manager_1a887fb61303147441d8aac8aa00d957a4" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>Contacts</name></member>
+      <member refid="classid_collision_model_manager_1aef3cee148889de78409118966baa1f0b" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>Contents</name></member>
+      <member refid="classid_collision_model_manager_1a2a4823a184bb5523f646772a3ecc4ef7" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>DebugOutput</name></member>
+      <member refid="classid_collision_model_manager_1af12c580ed4636a1806a6afc1661df4c6" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>DrawModel</name></member>
+      <member refid="classid_collision_model_manager_1a22f043dc34c38d1b26f355de34c6ae4a" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>FreeMap</name></member>
+      <member refid="classid_collision_model_manager_1aa64dd097caead54e0e23297a55477e68" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>GetModelBounds</name></member>
+      <member refid="classid_collision_model_manager_1a024e5c45b27cf1565854d8bfcc698f50" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>GetModelContents</name></member>
+      <member refid="classid_collision_model_manager_1a17a811d2f1d6a03c8e15f35188c073af" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>GetModelEdge</name></member>
+      <member refid="classid_collision_model_manager_1af81a8e3312ad5421873edb07ef73a8b9" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>GetModelName</name></member>
+      <member refid="classid_collision_model_manager_1ad18b750d2002e4b57f7e7c0bfa808cfd" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>GetModelPolygon</name></member>
+      <member refid="classid_collision_model_manager_1a991422197671c40e182f290aada1c5b2" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>GetModelVertex</name></member>
+      <member refid="classid_collision_model_manager_1a57b3fc02927bb5062635b6ab75feb721" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>ListModels</name></member>
+      <member refid="classid_collision_model_manager_1a796b52b7fb0d81ae43cbe5a2761db022" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>LoadMap</name></member>
+      <member refid="classid_collision_model_manager_1a596948c39c877f332a124b5e9195b1bd" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>LoadModel</name></member>
+      <member refid="classid_collision_model_manager_1a18ecdaa66517b66a87f7e16c59e2bbbe" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>ModelInfo</name></member>
+      <member refid="classid_collision_model_manager_1ab5cd631b0dd195c6a2e73ed42587c35a" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>Rotation</name></member>
+      <member refid="classid_collision_model_manager_1a47430354a772b2adf98bc07f54398f8c" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>SetupTrmModel</name></member>
+      <member refid="classid_collision_model_manager_1a5528af9cc9644e18619f02a9727b9b02" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>Translation</name></member>
+      <member refid="classid_collision_model_manager_1afb2b16aae0ec5b4f97ab64587fd22897" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>TrmFromModel</name></member>
+      <member refid="classid_collision_model_manager_1ac9a964a18177d1b76786a0e42da2790e" prot="public" virt="pure-virtual"><scope>idCollisionModelManager</scope><name>WriteCollisionModelForMapEntity</name></member>
+      <member refid="classid_collision_model_manager_1adbef92ad6028f8fb63ec354547b850e2" prot="public" virt="virtual"><scope>idCollisionModelManager</scope><name>~idCollisionModelManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

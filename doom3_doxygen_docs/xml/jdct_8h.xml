@@ -1,0 +1,455 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jdct_8h" kind="file">
+    <compoundname>jdct.h</compoundname>
+    <includedby refid="jcdctmgr_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcdctmgr.c</includedby>
+    <includedby refid="jddctmgr_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jddctmgr.c</includedby>
+    <includedby refid="jfdctflt_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jfdctflt.c</includedby>
+    <includedby refid="jfdctfst_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jfdctfst.c</includedby>
+    <includedby refid="jfdctint_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jfdctint.c</includedby>
+    <includedby refid="jidctflt_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jidctflt.c</includedby>
+    <includedby refid="jidctfst_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jidctfst.c</includedby>
+    <includedby refid="jidctint_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jidctint.c</includedby>
+    <includedby refid="jidctred_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jidctred.c</includedby>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jdct_8h_1a6ef426e1561ed53f797f880bc1514a0b" prot="public" static="no">
+        <name>IFAST_SCALE_BITS</name>
+        <initializer>13	/* fractional bits in scale factors */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="62" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdct_8h_1acfb9cf7de6055de9ae9151bdc873128b" prot="public" static="no">
+        <name>IDCT_range_limit</name>
+        <param><defname>cinfo</defname></param>
+        <initializer>((cinfo)-&gt;sample_range_limit + CENTERJSAMPLE)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="76" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdct_8h_1a8e0972b97d5a5839a16ac9da1f021f90" prot="public" static="no">
+        <name>RANGE_MASK</name>
+        <initializer>(MAXJSAMPLE * 4 + 3) /* 2 bits wider than legal samples */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="78" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdct_8h_1a206b6f5362e56b51ca957635350b70b6" prot="public" static="no">
+        <name>ONE</name>
+        <initializer>((INT32) 1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="131" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdct_8h_1a7d9123295c88fc45a1b20cbaef894cd4" prot="public" static="no">
+        <name>CONST_SCALE</name>
+        <initializer>(ONE &lt;&lt; CONST_BITS)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="132" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdct_8h_1a740431a9a1d25e39e670cd5f48454ce4" prot="public" static="no">
+        <name>FIX</name>
+        <param><defname>x</defname></param>
+        <initializer>((INT32) ((x) * CONST_SCALE + 0.5))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="139" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdct_8h_1affd087378f3038026c7395cd02d2ac86" prot="public" static="no">
+        <name>DESCALE</name>
+        <param><defname>x</defname></param>
+        <param><defname>n</defname></param>
+        <initializer>RIGHT_SHIFT((x) + (ONE &lt;&lt; ((n)-1)), n)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="146" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdct_8h_1a21b633e75e4f03d2903c3f69335f21f0" prot="public" static="no">
+        <name>MULTIPLY16C16</name>
+        <param><defname>var</defname></param>
+        <param><defname>const</defname></param>
+        <initializer>((var) * (const))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="165" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdct_8h_1a68f230dc74556ab5beb9ff8d2c9aaa01" prot="public" static="no">
+        <name>MULTIPLY16V16</name>
+        <param><defname>var1</defname></param>
+        <param><defname>var2</defname></param>
+        <initializer>((var1) * (var2))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="175" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="jdct_8h_1a00460e5dc80a70f254891b5a8abe739f" prot="public" static="no">
+        <type>INT32</type>
+        <definition>typedef INT32 DCTELEM</definition>
+        <argsstring></argsstring>
+        <name>DCTELEM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="32" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="jdct_8h_1a057ec4d475bf55bf8e28a146c8d9bce1" prot="public" static="no">
+        <type>MULTIPLIER</type>
+        <definition>typedef MULTIPLIER ISLOW_MULT_TYPE</definition>
+        <argsstring></argsstring>
+        <name>ISLOW_MULT_TYPE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="56" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="jdct_8h_1a2ce5dea49d73b718b055db4d04b4a5a3" prot="public" static="no">
+        <type>INT32</type>
+        <definition>typedef INT32 IFAST_MULT_TYPE</definition>
+        <argsstring></argsstring>
+        <name>IFAST_MULT_TYPE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="61" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="jdct_8h_1ac3f02a81c5cd0fca588c66be99b42691" prot="public" static="no">
+        <type>FAST_FLOAT</type>
+        <definition>typedef FAST_FLOAT FLOAT_MULT_TYPE</definition>
+        <argsstring></argsstring>
+        <name>FLOAT_MULT_TYPE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="64" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jdct_8h_1a04d3946b6b56c66c2aaecb7da28e4fce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>typedef</type>
+        <definition>typedef JMETHOD</definition>
+        <argsstring>(void, forward_DCT_method_ptr,(DCTELEM *data))</argsstring>
+        <name>JMETHOD</name>
+        <param>
+          <type>void</type>
+        </param>
+        <param>
+          <type>forward_DCT_method_ptr</type>
+        </param>
+        <param>
+          <type>(DCTELEM *data)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="35" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jdct_8h_1aece1ea66204bec32540fae71853e264a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>typedef</type>
+        <definition>typedef JMETHOD</definition>
+        <argsstring>(void, float_DCT_method_ptr,(FAST_FLOAT *data))</argsstring>
+        <name>JMETHOD</name>
+        <param>
+          <type>void</type>
+        </param>
+        <param>
+          <type>float_DCT_method_ptr</type>
+        </param>
+        <param>
+          <type>(FAST_FLOAT *data)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="36" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jdct_8h_1a6fadaf5ae28c084d4b69d127c6c509c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void jpeg_fdct_islow</type>
+        <definition>EXTERN void jpeg_fdct_ifast JPP</definition>
+        <argsstring>((DCTELEM *data))</argsstring>
+        <name>JPP</name>
+        <param>
+          <type>(DCTELEM *data)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jdct_8h_1a23e0e3ed59a46a3f54197518c6818baa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void jpeg_fdct_float</type>
+        <definition>EXTERN void jpeg_fdct_float JPP</definition>
+        <argsstring>((FAST_FLOAT *data))</argsstring>
+        <name>JPP</name>
+        <param>
+          <type>(FAST_FLOAT *data)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="99" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jdct_8h_1af3fe3823f54214e9607bd296d0d5646d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void jpeg_idct_islow</type>
+        <definition>EXTERN void jpeg_idct_1x1 JPP</definition>
+        <argsstring>((j_decompress_ptr cinfo, jpeg_component_info *compptr, JCOEFPTR coef_block, JSAMPARRAY output_buf, JDIMENSION output_col))</argsstring>
+        <name>JPP</name>
+        <param>
+          <type>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref> cinfo, <ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref> *compptr, JCOEFPTR coef_block, JSAMPARRAY output_buf, JDIMENSION output_col)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h" line="102" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jdct.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1994,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>include<sp/>file<sp/>contains<sp/>common<sp/>declarations<sp/>for<sp/>the<sp/>forward<sp/>and</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>inverse<sp/>DCT<sp/>modules.<sp/><sp/>These<sp/>declarations<sp/>are<sp/>private<sp/>to<sp/>the<sp/>DCT<sp/>managers</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>(jcdctmgr.c,<sp/>jddctmgr.c)<sp/>and<sp/>the<sp/>individual<sp/>DCT<sp/>algorithms.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>The<sp/>individual<sp/>DCT<sp/>algorithms<sp/>are<sp/>kept<sp/>in<sp/>separate<sp/>files<sp/>to<sp/>ease<sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>machine-dependent<sp/>tuning<sp/>(e.g.,<sp/>assembly<sp/>coding).</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>A<sp/>forward<sp/>DCT<sp/>routine<sp/>is<sp/>given<sp/>a<sp/>pointer<sp/>to<sp/>a<sp/>work<sp/>area<sp/>of<sp/>type<sp/>DCTELEM[];</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>the<sp/>DCT<sp/>is<sp/>to<sp/>be<sp/>performed<sp/>in-place<sp/>in<sp/>that<sp/>buffer.<sp/><sp/>Type<sp/>DCTELEM<sp/>is<sp/>int</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>for<sp/>8-bit<sp/>samples,<sp/>INT32<sp/>for<sp/>12-bit<sp/>samples.<sp/><sp/>(NOTE:<sp/>Floating-point<sp/>DCT</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>implementations<sp/>use<sp/>an<sp/>array<sp/>of<sp/>type<sp/>FAST_FLOAT,<sp/>instead.)</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>The<sp/>DCT<sp/>inputs<sp/>are<sp/>expected<sp/>to<sp/>be<sp/>signed<sp/>(range<sp/>+-CENTERJSAMPLE).</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>The<sp/>DCT<sp/>outputs<sp/>are<sp/>returned<sp/>scaled<sp/>up<sp/>by<sp/>a<sp/>factor<sp/>of<sp/>8;<sp/>they<sp/>therefore</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>have<sp/>a<sp/>range<sp/>of<sp/>+-8K<sp/>for<sp/>8-bit<sp/>data,<sp/>+-128K<sp/>for<sp/>12-bit<sp/>data.<sp/><sp/>This</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>convention<sp/>improves<sp/>accuracy<sp/>in<sp/>integer<sp/>implementations<sp/>and<sp/>saves<sp/>some</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>work<sp/>in<sp/>floating-point<sp/>ones.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>Quantization<sp/>of<sp/>the<sp/>output<sp/>coefficients<sp/>is<sp/>done<sp/>by<sp/>jcdctmgr.c.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>BITS_IN_JSAMPLE<sp/>==<sp/>8</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DCTELEM;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>16<sp/>or<sp/>32<sp/>bits<sp/>is<sp/>fine<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>INT32<sp/>DCTELEM;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>must<sp/>have<sp/>32<sp/>bits<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>JMETHOD(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">,<sp/>forward_DCT_method_ptr,<sp/>(DCTELEM<sp/>*<sp/>data));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>JMETHOD(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">,<sp/>float_DCT_method_ptr,<sp/>(FAST_FLOAT<sp/>*<sp/>data));</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>An<sp/>inverse<sp/>DCT<sp/>routine<sp/>is<sp/>given<sp/>a<sp/>pointer<sp/>to<sp/>the<sp/>input<sp/>JBLOCK<sp/>and<sp/>a<sp/>pointer</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>to<sp/>an<sp/>output<sp/>sample<sp/>array.<sp/><sp/>The<sp/>routine<sp/>must<sp/>dequantize<sp/>the<sp/>input<sp/>data<sp/>as</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>well<sp/>as<sp/>perform<sp/>the<sp/>IDCT;<sp/>for<sp/>dequantization,<sp/>it<sp/>uses<sp/>the<sp/>multiplier<sp/>table</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>pointed<sp/>to<sp/>by<sp/>compptr-&gt;dct_table.<sp/><sp/>The<sp/>output<sp/>data<sp/>is<sp/>to<sp/>be<sp/>placed<sp/>into<sp/>the</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>sample<sp/>array<sp/>starting<sp/>at<sp/>a<sp/>specified<sp/>column.<sp/><sp/>(Any<sp/>row<sp/>offset<sp/>needed<sp/>will</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>be<sp/>applied<sp/>to<sp/>the<sp/>array<sp/>pointer<sp/>before<sp/>it<sp/>is<sp/>passed<sp/>to<sp/>the<sp/>IDCT<sp/>code.)</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>Note<sp/>that<sp/>the<sp/>number<sp/>of<sp/>samples<sp/>emitted<sp/>by<sp/>the<sp/>IDCT<sp/>routine<sp/>is</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>DCT_scaled_size<sp/>*<sp/>DCT_scaled_size.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>typedef<sp/>inverse_DCT_method_ptr<sp/>is<sp/>declared<sp/>in<sp/>jpegint.h<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>Each<sp/>IDCT<sp/>routine<sp/>has<sp/>its<sp/>own<sp/>ideas<sp/>about<sp/>the<sp/>best<sp/>dct_table<sp/>element<sp/>type.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>MULTIPLIER<sp/>ISLOW_MULT_TYPE;<sp/></highlight><highlight class="comment">/*<sp/>short<sp/>or<sp/>int,<sp/>whichever<sp/>is<sp/>faster<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>BITS_IN_JSAMPLE<sp/>==<sp/>8</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>MULTIPLIER<sp/>IFAST_MULT_TYPE;<sp/></highlight><highlight class="comment">/*<sp/>16<sp/>bits<sp/>is<sp/>OK,<sp/>use<sp/>short<sp/>if<sp/>faster<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IFAST_SCALE_BITS<sp/><sp/>2<sp/></highlight><highlight class="comment">/*<sp/>fractional<sp/>bits<sp/>in<sp/>scale<sp/>factors<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="61"><highlight class="preprocessor"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>INT32<sp/>IFAST_MULT_TYPE;<sp/><sp/></highlight><highlight class="comment">/*<sp/>need<sp/>32<sp/>bits<sp/>for<sp/>scaled<sp/>quantizers<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IFAST_SCALE_BITS<sp/><sp/>13<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>fractional<sp/>bits<sp/>in<sp/>scale<sp/>factors<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>FAST_FLOAT<sp/>FLOAT_MULT_TYPE;<sp/></highlight><highlight class="comment">/*<sp/>preferred<sp/>floating<sp/>type<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>Each<sp/>IDCT<sp/>routine<sp/>is<sp/>responsible<sp/>for<sp/>range-limiting<sp/>its<sp/>results<sp/>and</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>converting<sp/>them<sp/>to<sp/>unsigned<sp/>form<sp/>(0..MAXJSAMPLE).<sp/><sp/>The<sp/>raw<sp/>outputs<sp/>could</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>be<sp/>quite<sp/>far<sp/>out<sp/>of<sp/>range<sp/>if<sp/>the<sp/>input<sp/>data<sp/>is<sp/>corrupt,<sp/>so<sp/>a<sp/>bulletproof</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>range-limiting<sp/>step<sp/>is<sp/>required.<sp/><sp/>We<sp/>use<sp/>a<sp/>mask-and-table-lookup<sp/>method</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>to<sp/>do<sp/>the<sp/>combined<sp/>operations<sp/>quickly.<sp/><sp/>See<sp/>the<sp/>comments<sp/>with</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/>prepare_range_limit_table<sp/>(in<sp/>jdmaster.c)<sp/>for<sp/>more<sp/>info.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDCT_range_limit(cinfo)<sp/><sp/>((cinfo)-&gt;sample_range_limit<sp/>+<sp/>CENTERJSAMPLE)</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RANGE_MASK<sp/><sp/>(MAXJSAMPLE<sp/>*<sp/>4<sp/>+<sp/>3)<sp/></highlight><highlight class="comment">/*<sp/>2<sp/>bits<sp/>wider<sp/>than<sp/>legal<sp/>samples<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Short<sp/>forms<sp/>of<sp/>external<sp/>names<sp/>for<sp/>systems<sp/>with<sp/>brain-damaged<sp/>linkers.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NEED_SHORT_EXTERNAL_NAMES</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_fdct_islow<sp/><sp/><sp/><sp/><sp/>jFDislow</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_fdct_ifast<sp/><sp/><sp/><sp/><sp/>jFDifast</highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_fdct_float<sp/><sp/><sp/><sp/><sp/>jFDfloat</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_idct_islow<sp/><sp/><sp/><sp/><sp/>jRDislow</highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_idct_ifast<sp/><sp/><sp/><sp/><sp/>jRDifast</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_idct_float<sp/><sp/><sp/><sp/><sp/>jRDfloat</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_idct_4x4<sp/><sp/><sp/><sp/><sp/><sp/><sp/>jRD4x4</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_idct_2x2<sp/><sp/><sp/><sp/><sp/><sp/><sp/>jRD2x2</highlight></codeline>
+<codeline lineno="92"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_idct_1x1<sp/><sp/><sp/><sp/><sp/><sp/><sp/>jRD1x1</highlight></codeline>
+<codeline lineno="93"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>NEED_SHORT_EXTERNAL_NAMES<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="94"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Extern<sp/>declarations<sp/>for<sp/>the<sp/>forward<sp/>and<sp/>inverse<sp/>DCT<sp/>routines.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_fdct_islow<sp/>JPP((DCTELEM<sp/>*<sp/>data));</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_fdct_ifast<sp/>JPP((DCTELEM<sp/>*<sp/>data));</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_fdct_float<sp/>JPP((FAST_FLOAT<sp/>*<sp/>data));</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_idct_islow</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>JPP((<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,<sp/><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref><sp/>*<sp/>compptr,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>JCOEFPTR<sp/>coef_block,<sp/>JSAMPARRAY<sp/>output_buf,<sp/>JDIMENSION<sp/>output_col));</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_idct_ifast</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>JPP((<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,<sp/><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref><sp/>*<sp/>compptr,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>JCOEFPTR<sp/>coef_block,<sp/>JSAMPARRAY<sp/>output_buf,<sp/>JDIMENSION<sp/>output_col));</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_idct_float</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>JPP((<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,<sp/><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref><sp/>*<sp/>compptr,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>JCOEFPTR<sp/>coef_block,<sp/>JSAMPARRAY<sp/>output_buf,<sp/>JDIMENSION<sp/>output_col));</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_idct_4x4</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>JPP((<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,<sp/><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref><sp/>*<sp/>compptr,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>JCOEFPTR<sp/>coef_block,<sp/>JSAMPARRAY<sp/>output_buf,<sp/>JDIMENSION<sp/>output_col));</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_idct_2x2</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>JPP((<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,<sp/><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref><sp/>*<sp/>compptr,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>JCOEFPTR<sp/>coef_block,<sp/>JSAMPARRAY<sp/>output_buf,<sp/>JDIMENSION<sp/>output_col));</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_idct_1x1</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>JPP((<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,<sp/><ref refid="structjpeg__component__info" kindref="compound">jpeg_component_info</ref><sp/>*<sp/>compptr,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>JCOEFPTR<sp/>coef_block,<sp/>JSAMPARRAY<sp/>output_buf,<sp/>JDIMENSION<sp/>output_col));</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>Macros<sp/>for<sp/>handling<sp/>fixed-point<sp/>arithmetic;<sp/>these<sp/>are<sp/>used<sp/>by<sp/>many</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/>but<sp/>not<sp/>all<sp/>of<sp/>the<sp/>DCT/IDCT<sp/>modules.</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/>All<sp/>values<sp/>are<sp/>expected<sp/>to<sp/>be<sp/>of<sp/>type<sp/>INT32.</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>Fractional<sp/>constants<sp/>are<sp/>scaled<sp/>left<sp/>by<sp/>CONST_BITS<sp/>bits.</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>CONST_BITS<sp/>is<sp/>defined<sp/>within<sp/>each<sp/>module<sp/>using<sp/>these<sp/>macros,</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/>and<sp/>may<sp/>differ<sp/>from<sp/>one<sp/>module<sp/>to<sp/>the<sp/>next.</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ONE<sp/>((INT32)<sp/>1)</highlight></codeline>
+<codeline lineno="132"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>CONST_SCALE<sp/>(ONE<sp/>&lt;&lt;<sp/>CONST_BITS)</highlight></codeline>
+<codeline lineno="133"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Convert<sp/>a<sp/>positive<sp/>real<sp/>constant<sp/>to<sp/>an<sp/>integer<sp/>scaled<sp/>by<sp/>CONST_SCALE.</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/>Caution:<sp/>some<sp/>C<sp/>compilers<sp/>fail<sp/>to<sp/>reduce<sp/>&quot;FIX(constant)&quot;<sp/>at<sp/>compile<sp/>time,</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/>thus<sp/>causing<sp/>a<sp/>lot<sp/>of<sp/>useless<sp/>floating-point<sp/>operations<sp/>at<sp/>run<sp/>time.</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FIX(x)<sp/><sp/>((INT32)<sp/>((x)<sp/>*<sp/>CONST_SCALE<sp/>+<sp/>0.5))</highlight></codeline>
+<codeline lineno="140"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Descale<sp/>and<sp/>correctly<sp/>round<sp/>an<sp/>INT32<sp/>value<sp/>that&apos;s<sp/>scaled<sp/>by<sp/>N<sp/>bits.</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/>We<sp/>assume<sp/>RIGHT_SHIFT<sp/>rounds<sp/>towards<sp/>minus<sp/>infinity,<sp/>so<sp/>adding</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/>the<sp/>fudge<sp/>factor<sp/>is<sp/>correct<sp/>for<sp/>either<sp/>sign<sp/>of<sp/>X.</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DESCALE(x,n)<sp/><sp/>RIGHT_SHIFT((x)<sp/>+<sp/>(ONE<sp/>&lt;&lt;<sp/>((n)-1)),<sp/>n)</highlight></codeline>
+<codeline lineno="147"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Multiply<sp/>an<sp/>INT32<sp/>variable<sp/>by<sp/>an<sp/>INT32<sp/>constant<sp/>to<sp/>yield<sp/>an<sp/>INT32<sp/>result.</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/>This<sp/>macro<sp/>is<sp/>used<sp/>only<sp/>when<sp/>the<sp/>two<sp/>inputs<sp/>will<sp/>actually<sp/>be<sp/>no<sp/>more<sp/>than</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/>16<sp/>bits<sp/>wide,<sp/>so<sp/>that<sp/>a<sp/>16x16-&gt;32<sp/>bit<sp/>multiply<sp/>can<sp/>be<sp/>used<sp/>instead<sp/>of<sp/>a</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/>full<sp/>32x32<sp/>multiply.<sp/><sp/>This<sp/>provides<sp/>a<sp/>useful<sp/>speedup<sp/>on<sp/>many<sp/>machines.</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/>Unfortunately<sp/>there<sp/>is<sp/>no<sp/>way<sp/>to<sp/>specify<sp/>a<sp/>16x16-&gt;32<sp/>multiply<sp/>portably</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/>in<sp/>C,<sp/>but<sp/>some<sp/>C<sp/>compilers<sp/>will<sp/>do<sp/>the<sp/>right<sp/>thing<sp/>if<sp/>you<sp/>provide<sp/>the</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>correct<sp/>combination<sp/>of<sp/>casts.</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SHORTxSHORT_32<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>may<sp/>work<sp/>if<sp/>&apos;int&apos;<sp/>is<sp/>32<sp/>bits<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="158"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MULTIPLY16C16(var,const)<sp/><sp/>(((INT16)<sp/>(var))<sp/>*<sp/>((INT16)<sp/>(const)))</highlight></codeline>
+<codeline lineno="159"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="160"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#ifdef<sp/>SHORTxLCONST_32<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>known<sp/>to<sp/>work<sp/>with<sp/>Microsoft<sp/>C<sp/>6.0<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="161"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MULTIPLY16C16(var,const)<sp/><sp/>(((INT16)<sp/>(var))<sp/>*<sp/>((INT32)<sp/>(const)))</highlight></codeline>
+<codeline lineno="162"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="163"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MULTIPLY16C16<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>default<sp/>definition<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="165"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MULTIPLY16C16(var,const)<sp/><sp/>((var)<sp/>*<sp/>(const))</highlight></codeline>
+<codeline lineno="166"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="167"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Same<sp/>except<sp/>both<sp/>inputs<sp/>are<sp/>variables.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SHORTxSHORT_32<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>may<sp/>work<sp/>if<sp/>&apos;int&apos;<sp/>is<sp/>32<sp/>bits<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="171"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MULTIPLY16V16(var1,var2)<sp/><sp/>(((INT16)<sp/>(var1))<sp/>*<sp/>((INT16)<sp/>(var2)))</highlight></codeline>
+<codeline lineno="172"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="173"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MULTIPLY16V16<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>default<sp/>definition<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="175"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MULTIPLY16V16(var1,var2)<sp/><sp/>((var1)<sp/>*<sp/>(var2))</highlight></codeline>
+<codeline lineno="176"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdct.h"/>
+  </compounddef>
+</doxygen>

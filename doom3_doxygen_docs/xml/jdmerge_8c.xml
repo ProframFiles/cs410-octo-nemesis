@@ -1,0 +1,427 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jdmerge_8c" kind="file">
+    <compoundname>jdmerge.c</compoundname>
+    <includes refid="jinclude_8h" local="yes">jinclude.h</includes>
+    <includes refid="jpeglib_8h" local="yes">jpeglib.h</includes>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jdmerge_8c_1ad5c3cdfae3019b8223973041a2a1304b" prot="public" static="no">
+        <name>JPEG_INTERNALS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdmerge.c" line="35" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdmerge.c" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jdmerge.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1994-1995,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>code<sp/>for<sp/>merged<sp/>upsampling/color<sp/>conversion.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>combines<sp/>functions<sp/>from<sp/>jdsample.c<sp/>and<sp/>jdcolor.c;</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>read<sp/>those<sp/>files<sp/>first<sp/>to<sp/>understand<sp/>what&apos;s<sp/>going<sp/>on.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>When<sp/>the<sp/>chroma<sp/>components<sp/>are<sp/>to<sp/>be<sp/>upsampled<sp/>by<sp/>simple<sp/>replication</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>(ie,<sp/>box<sp/>filtering),<sp/>we<sp/>can<sp/>save<sp/>some<sp/>work<sp/>in<sp/>color<sp/>conversion<sp/>by</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>calculating<sp/>all<sp/>the<sp/>output<sp/>pixels<sp/>corresponding<sp/>to<sp/>a<sp/>pair<sp/>of<sp/>chroma</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>samples<sp/>at<sp/>one<sp/>time.<sp/><sp/>In<sp/>the<sp/>conversion<sp/>equations</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/>R<sp/>=<sp/>Y<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>K1<sp/>*<sp/>Cr</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>G<sp/>=<sp/>Y<sp/>+<sp/>K2<sp/>*<sp/>Cb<sp/>+<sp/>K3<sp/>*<sp/>Cr</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/>B<sp/>=<sp/>Y<sp/>+<sp/>K4<sp/>*<sp/>Cb</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>only<sp/>the<sp/>Y<sp/>term<sp/>varies<sp/>among<sp/>the<sp/>group<sp/>of<sp/>pixels<sp/>corresponding<sp/>to<sp/>a<sp/>pair</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>of<sp/>chroma<sp/>samples,<sp/>so<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>terms<sp/>can<sp/>be<sp/>calculated<sp/>just<sp/>once.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>At<sp/>typical<sp/>sampling<sp/>ratios,<sp/>this<sp/>eliminates<sp/>half<sp/>or<sp/>three-quarters<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>multiplications<sp/>needed<sp/>for<sp/>color<sp/>conversion.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>currently<sp/>provides<sp/>implementations<sp/>for<sp/>the<sp/>following<sp/>cases:</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/><sp/>YCbCr<sp/>=&gt;<sp/>RGB<sp/>color<sp/>conversion<sp/>only.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/><sp/>Sampling<sp/>ratios<sp/>of<sp/>2h1v<sp/>or<sp/>2h2v.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/>No<sp/>scaling<sp/>needed<sp/>at<sp/>upsample<sp/>time.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/><sp/>Corner-aligned<sp/>(non-CCIR601)<sp/>sampling<sp/>alignment.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>Other<sp/>special<sp/>cases<sp/>could<sp/>be<sp/>added,<sp/>but<sp/>in<sp/>most<sp/>applications<sp/>these<sp/>are</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>the<sp/>only<sp/>common<sp/>cases.<sp/><sp/>(For<sp/>uncommon<sp/>cases<sp/>we<sp/>fall<sp/>back<sp/>on<sp/>the<sp/>more</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>general<sp/>code<sp/>in<sp/>jdsample.c<sp/>and<sp/>jdcolor.c.)</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JPEG_INTERNALS</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;jinclude.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jpeglib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>UPSAMPLE_MERGING_SUPPORTED</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>subobject<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structjpeg__upsampler" kindref="compound">jpeg_upsampler</ref><sp/>pub;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>public<sp/>fields<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Pointer<sp/>to<sp/>routine<sp/>to<sp/>do<sp/>actual<sp/>upsampling/conversion<sp/>of<sp/>one<sp/>row<sp/>group<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>JMETHOD(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">,<sp/>upmethod,<sp/>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPIMAGE<sp/>input_buf,<sp/>JDIMENSION<sp/>in_row_group_ctr,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPARRAY<sp/>output_buf));</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Private<sp/>state<sp/>for<sp/>YCC-&gt;RGB<sp/>conversion<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>Cr_r_tab;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>=&gt;<sp/>table<sp/>for<sp/>Cr<sp/>to<sp/>R<sp/>conversion<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>Cb_b_tab;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>=&gt;<sp/>table<sp/>for<sp/>Cb<sp/>to<sp/>B<sp/>conversion<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>INT32<sp/>*<sp/>Cr_g_tab;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>=&gt;<sp/>table<sp/>for<sp/>Cr<sp/>to<sp/>G<sp/>conversion<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>INT32<sp/>*<sp/>Cb_g_tab;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>=&gt;<sp/>table<sp/>for<sp/>Cb<sp/>to<sp/>G<sp/>conversion<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>2:1<sp/>vertical<sp/>sampling,<sp/>we<sp/>produce<sp/>two<sp/>output<sp/>rows<sp/>at<sp/>a<sp/>time.</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/>*<sp/>We<sp/>need<sp/>a<sp/>&quot;spare&quot;<sp/>row<sp/>buffer<sp/>to<sp/>hold<sp/>the<sp/>second<sp/>output<sp/>row<sp/>if<sp/>the</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/>*<sp/>application<sp/>provides<sp/>just<sp/>a<sp/>one-row<sp/>buffer;<sp/>we<sp/>also<sp/>use<sp/>the<sp/>spare</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/>*<sp/>to<sp/>discard<sp/>the<sp/>dummy<sp/>last<sp/>row<sp/>if<sp/>the<sp/>image<sp/>height<sp/>is<sp/>odd.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>JSAMPROW<sp/>spare_row;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>spare_full;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>T<sp/>if<sp/>spare<sp/>buffer<sp/>is<sp/>occupied<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>JDIMENSION<sp/>out_row_width;<sp/></highlight><highlight class="comment">/*<sp/>samples<sp/>per<sp/>output<sp/>row<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>JDIMENSION<sp/>rows_to_go;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>counts<sp/>rows<sp/>remaining<sp/>in<sp/>image<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/><ref refid="structmy__upsampler" kindref="compound">my_upsampler</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structmy__upsampler" kindref="compound">my_upsampler</ref><sp/>*<sp/><ref refid="structmy__upsampler" kindref="compound">my_upsample_ptr</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCALEBITS<sp/><sp/><sp/>16<sp/><sp/></highlight><highlight class="comment">/*<sp/>speediest<sp/>right-shift<sp/>on<sp/>some<sp/>machines<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>ONE_HALF<sp/><sp/><sp/><sp/>((INT32)<sp/>1<sp/>&lt;&lt;<sp/>(SCALEBITS-1))</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>FIX(x)<sp/><sp/><sp/><sp/><sp/><sp/>((INT32)<sp/>((x)<sp/>*<sp/>(1L&lt;&lt;SCALEBITS)<sp/>+<sp/>0.5))</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>Initialize<sp/>tables<sp/>for<sp/>YCC-&gt;RGB<sp/>colorspace<sp/>conversion.</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>taken<sp/>directly<sp/>from<sp/>jdcolor.c;<sp/>see<sp/>that<sp/>file<sp/>for<sp/>more<sp/>info.</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">LOCAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">build_ycc_rgb_table<sp/>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>my_upsample_ptr<sp/>upsample<sp/>=<sp/>(my_upsample_ptr)<sp/>cinfo-&gt;upsample;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>INT32<sp/>x;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>SHIFT_TEMPS</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>upsample-&gt;Cr_r_tab<sp/>=<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>(*cinfo-&gt;mem-&gt;alloc_small)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo,<sp/>JPOOL_IMAGE,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(MAXJSAMPLE+1)<sp/>*<sp/>SIZEOF(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>upsample-&gt;Cb_b_tab<sp/>=<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>(*cinfo-&gt;mem-&gt;alloc_small)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo,<sp/>JPOOL_IMAGE,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(MAXJSAMPLE+1)<sp/>*<sp/>SIZEOF(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>upsample-&gt;Cr_g_tab<sp/>=<sp/>(INT32<sp/>*)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>(*cinfo-&gt;mem-&gt;alloc_small)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo,<sp/>JPOOL_IMAGE,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(MAXJSAMPLE+1)<sp/>*<sp/>SIZEOF(INT32));</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>upsample-&gt;Cb_g_tab<sp/>=<sp/>(INT32<sp/>*)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>(*cinfo-&gt;mem-&gt;alloc_small)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo,<sp/>JPOOL_IMAGE,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(MAXJSAMPLE+1)<sp/>*<sp/>SIZEOF(INT32));</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0,<sp/>x<sp/>=<sp/>-CENTERJSAMPLE;<sp/>i<sp/>&lt;=<sp/>MAXJSAMPLE;<sp/>i++,<sp/>x++)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>i<sp/>is<sp/>the<sp/>actual<sp/>input<sp/>pixel<sp/>value,<sp/>in<sp/>the<sp/>range<sp/>0..MAXJSAMPLE<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>Cb<sp/>or<sp/>Cr<sp/>value<sp/>we<sp/>are<sp/>thinking<sp/>of<sp/>is<sp/>x<sp/>=<sp/>i<sp/>-<sp/>CENTERJSAMPLE<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Cr=&gt;R<sp/>value<sp/>is<sp/>nearest<sp/>int<sp/>to<sp/>1.40200<sp/>*<sp/>x<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;Cr_r_tab[i]<sp/>=<sp/>(int)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RIGHT_SHIFT(FIX(1.40200)<sp/>*<sp/>x<sp/>+<sp/>ONE_HALF,<sp/>SCALEBITS);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Cb=&gt;B<sp/>value<sp/>is<sp/>nearest<sp/>int<sp/>to<sp/>1.77200<sp/>*<sp/>x<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;Cb_b_tab[i]<sp/>=<sp/>(int)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RIGHT_SHIFT(FIX(1.77200)<sp/>*<sp/>x<sp/>+<sp/>ONE_HALF,<sp/>SCALEBITS);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Cr=&gt;G<sp/>value<sp/>is<sp/>scaled-up<sp/>-0.71414<sp/>*<sp/>x<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;Cr_g_tab[i]<sp/>=<sp/>(-<sp/>FIX(0.71414))<sp/>*<sp/>x;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Cb=&gt;G<sp/>value<sp/>is<sp/>scaled-up<sp/>-0.34414<sp/>*<sp/>x<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>also<sp/>add<sp/>in<sp/>ONE_HALF<sp/>so<sp/>that<sp/>need<sp/>not<sp/>do<sp/>it<sp/>in<sp/>inner<sp/>loop<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;Cb_g_tab[i]<sp/>=<sp/>(-<sp/>FIX(0.34414))<sp/>*<sp/>x<sp/>+<sp/>ONE_HALF;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>Initialize<sp/>for<sp/>an<sp/>upsampling<sp/>pass.</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">start_pass_merged_upsample<sp/>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>my_upsample_ptr<sp/>upsample<sp/>=<sp/>(my_upsample_ptr)<sp/>cinfo-&gt;upsample;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Mark<sp/>the<sp/>spare<sp/>buffer<sp/>empty<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>upsample-&gt;spare_full<sp/>=<sp/>FALSE;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>total-height<sp/>counter<sp/>for<sp/>detecting<sp/>bottom<sp/>of<sp/>image<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>upsample-&gt;rows_to_go<sp/>=<sp/>cinfo-&gt;output_height;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*<sp/>Control<sp/>routine<sp/>to<sp/>do<sp/>upsampling<sp/>(and<sp/>color<sp/>conversion).</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/>The<sp/>control<sp/>routine<sp/>just<sp/>handles<sp/>the<sp/>row<sp/>buffering<sp/>considerations.</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">merged_2v_upsample<sp/>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPIMAGE<sp/>input_buf,<sp/>JDIMENSION<sp/>*in_row_group_ctr,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>in_row_groups_avail,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPARRAY<sp/>output_buf,<sp/>JDIMENSION<sp/>*out_row_ctr,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>out_rows_avail)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>2:1<sp/>vertical<sp/>sampling<sp/>case:<sp/>may<sp/>need<sp/>a<sp/>spare<sp/>row.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>my_upsample_ptr<sp/>upsample<sp/>=<sp/>(my_upsample_ptr)<sp/>cinfo-&gt;upsample;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>JSAMPROW<sp/>work_ptrs[2];</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>JDIMENSION<sp/>num_rows;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>number<sp/>of<sp/>rows<sp/>returned<sp/>to<sp/>caller<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>if<sp/>(upsample-&gt;spare_full)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>we<sp/>have<sp/>a<sp/>spare<sp/>row<sp/>saved<sp/>from<sp/>a<sp/>previous<sp/>cycle,<sp/>just<sp/>return<sp/>it.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>jcopy_sample_rows(&amp;<sp/>upsample-&gt;spare_row,<sp/>0,<sp/>output_buf<sp/>+<sp/>*out_row_ctr,<sp/>0,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>upsample-&gt;out_row_width);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>num_rows<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;spare_full<sp/>=<sp/>FALSE;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Figure<sp/>number<sp/>of<sp/>rows<sp/>to<sp/>return<sp/>to<sp/>caller.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>num_rows<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Not<sp/>more<sp/>than<sp/>the<sp/>distance<sp/>to<sp/>the<sp/>end<sp/>of<sp/>the<sp/>image.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_rows<sp/>&gt;<sp/>upsample-&gt;rows_to_go)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>num_rows<sp/>=<sp/>upsample-&gt;rows_to_go;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>And<sp/>not<sp/>more<sp/>than<sp/>what<sp/>the<sp/>client<sp/>can<sp/>accept:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>out_rows_avail<sp/>-=<sp/>*out_row_ctr;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_rows<sp/>&gt;<sp/>out_rows_avail)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>num_rows<sp/>=<sp/>out_rows_avail;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Create<sp/>output<sp/>pointer<sp/>array<sp/>for<sp/>upsampler.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>work_ptrs[0]<sp/>=<sp/>output_buf[*out_row_ctr];</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_rows<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>work_ptrs[1]<sp/>=<sp/>output_buf[*out_row_ctr<sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>work_ptrs[1]<sp/>=<sp/>upsample-&gt;spare_row;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>upsample-&gt;spare_full<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Now<sp/>do<sp/>the<sp/>upsampling.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>(*upsample-&gt;upmethod)<sp/>(cinfo,<sp/>input_buf,<sp/>*in_row_group_ctr,<sp/>work_ptrs);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Adjust<sp/>counts<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>*out_row_ctr<sp/>+=<sp/>num_rows;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>upsample-&gt;rows_to_go<sp/>-=<sp/>num_rows;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>When<sp/>the<sp/>buffer<sp/>is<sp/>emptied,<sp/>declare<sp/>this<sp/>input<sp/>row<sp/>group<sp/>consumed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>upsample-&gt;spare_full)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>(*in_row_group_ctr)++;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal">merged_1v_upsample<sp/>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPIMAGE<sp/>input_buf,<sp/>JDIMENSION<sp/>*in_row_group_ctr,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>in_row_groups_avail,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPARRAY<sp/>output_buf,<sp/>JDIMENSION<sp/>*out_row_ctr,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>out_rows_avail)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>1:1<sp/>vertical<sp/>sampling<sp/>case:<sp/>much<sp/>easier,<sp/>never<sp/>need<sp/>a<sp/>spare<sp/>row.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>my_upsample_ptr<sp/>upsample<sp/>=<sp/>(my_upsample_ptr)<sp/>cinfo-&gt;upsample;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Just<sp/>do<sp/>the<sp/>upsampling.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>(*upsample-&gt;upmethod)<sp/>(cinfo,<sp/>input_buf,<sp/>*in_row_group_ctr,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output_buf<sp/>+<sp/>*out_row_ctr);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Adjust<sp/>counts<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/>(*out_row_ctr)++;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/>(*in_row_group_ctr)++;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/>*<sp/>These<sp/>are<sp/>the<sp/>routines<sp/>invoked<sp/>by<sp/>the<sp/>control<sp/>routines<sp/>to<sp/>do</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/>*<sp/>the<sp/>actual<sp/>upsampling/conversion.<sp/><sp/>One<sp/>row<sp/>group<sp/>is<sp/>processed<sp/>per<sp/>call.</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/>*<sp/>Note:<sp/>since<sp/>we<sp/>may<sp/>be<sp/>writing<sp/>directly<sp/>into<sp/>application-supplied<sp/>buffers,</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/>*<sp/>we<sp/>have<sp/>to<sp/>be<sp/>honest<sp/>about<sp/>the<sp/>output<sp/>width;<sp/>we<sp/>can&apos;t<sp/>assume<sp/>the<sp/>buffer</highlight></codeline>
+<codeline lineno="217"><highlight class="comment"><sp/>*<sp/>has<sp/>been<sp/>rounded<sp/>up<sp/>to<sp/>an<sp/>even<sp/>width.</highlight></codeline>
+<codeline lineno="218"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/>*<sp/>Upsample<sp/>and<sp/>color<sp/>convert<sp/>for<sp/>the<sp/>case<sp/>of<sp/>2:1<sp/>horizontal<sp/>and<sp/>1:1<sp/>vertical.</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal">h2v1_merged_upsample<sp/>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPIMAGE<sp/>input_buf,<sp/>JDIMENSION<sp/>in_row_group_ctr,</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPARRAY<sp/>output_buf)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/>my_upsample_ptr<sp/>upsample<sp/>=<sp/>(my_upsample_ptr)<sp/>cinfo-&gt;upsample;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/>cred,<sp/>cgreen,<sp/>cblue;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cb,<sp/>cr;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JSAMPROW<sp/>outptr;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/>JSAMPROW<sp/>inptr0,<sp/>inptr1,<sp/>inptr2;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>JDIMENSION<sp/>col;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>copy<sp/>these<sp/>pointers<sp/>into<sp/>registers<sp/>if<sp/>possible<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JSAMPLE<sp/>*<sp/>range_limit<sp/>=<sp/>cinfo-&gt;sample_range_limit;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>Crrtab<sp/>=<sp/>upsample-&gt;Cr_r_tab;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>Cbbtab<sp/>=<sp/>upsample-&gt;Cb_b_tab;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/>INT32<sp/>*<sp/>Crgtab<sp/>=<sp/>upsample-&gt;Cr_g_tab;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/>INT32<sp/>*<sp/>Cbgtab<sp/>=<sp/>upsample-&gt;Cb_g_tab;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/>SHIFT_TEMPS</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/>inptr0<sp/>=<sp/>input_buf[0][in_row_group_ctr];</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/>inptr1<sp/>=<sp/>input_buf[1][in_row_group_ctr];</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>inptr2<sp/>=<sp/>input_buf[2][in_row_group_ctr];</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/>outptr<sp/>=<sp/>output_buf[0];</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Loop<sp/>for<sp/>each<sp/>pair<sp/>of<sp/>output<sp/>pixels<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/>for<sp/>(col<sp/>=<sp/>cinfo-&gt;output_width<sp/>&gt;&gt;<sp/>1;<sp/>col<sp/>&gt;<sp/>0;<sp/>col--)<sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>the<sp/>chroma<sp/>part<sp/>of<sp/>the<sp/>calculation<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>cb<sp/>=<sp/>GETJSAMPLE(*inptr1++);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>cr<sp/>=<sp/>GETJSAMPLE(*inptr2++);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>cred<sp/>=<sp/>Crrtab[cr];</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>cgreen<sp/>=<sp/>(int)<sp/>RIGHT_SHIFT(Cbgtab[cb]<sp/>+<sp/>Crgtab[cr],<sp/>SCALEBITS);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>cblue<sp/>=<sp/>Cbbtab[cb];</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Fetch<sp/>2<sp/>Y<sp/>values<sp/>and<sp/>emit<sp/>2<sp/>pixels<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/><sp/>=<sp/>GETJSAMPLE(*inptr0++);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr[RGB_RED]<sp/>=<sp/><sp/><sp/>range_limit[y<sp/>+<sp/>cred];</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr[RGB_GREEN]<sp/>=<sp/>range_limit[y<sp/>+<sp/>cgreen];</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr[RGB_BLUE]<sp/>=<sp/><sp/>range_limit[y<sp/>+<sp/>cblue];</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr<sp/>+=<sp/>RGB_PIXELSIZE;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/><sp/>=<sp/>GETJSAMPLE(*inptr0++);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr[RGB_RED]<sp/>=<sp/><sp/><sp/>range_limit[y<sp/>+<sp/>cred];</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr[RGB_GREEN]<sp/>=<sp/>range_limit[y<sp/>+<sp/>cgreen];</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr[RGB_BLUE]<sp/>=<sp/><sp/>range_limit[y<sp/>+<sp/>cblue];</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr<sp/>+=<sp/>RGB_PIXELSIZE;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>image<sp/>width<sp/>is<sp/>odd,<sp/>do<sp/>the<sp/>last<sp/>output<sp/>column<sp/>separately<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;output_width<sp/>&amp;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>cb<sp/>=<sp/>GETJSAMPLE(*inptr1);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>cr<sp/>=<sp/>GETJSAMPLE(*inptr2);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>cred<sp/>=<sp/>Crrtab[cr];</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>cgreen<sp/>=<sp/>(int)<sp/>RIGHT_SHIFT(Cbgtab[cb]<sp/>+<sp/>Crgtab[cr],<sp/>SCALEBITS);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>cblue<sp/>=<sp/>Cbbtab[cb];</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/><sp/>=<sp/>GETJSAMPLE(*inptr0);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr[RGB_RED]<sp/>=<sp/><sp/><sp/>range_limit[y<sp/>+<sp/>cred];</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr[RGB_GREEN]<sp/>=<sp/>range_limit[y<sp/>+<sp/>cgreen];</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr[RGB_BLUE]<sp/>=<sp/><sp/>range_limit[y<sp/>+<sp/>cblue];</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="284"><highlight class="comment"><sp/>*<sp/>Upsample<sp/>and<sp/>color<sp/>convert<sp/>for<sp/>the<sp/>case<sp/>of<sp/>2:1<sp/>horizontal<sp/>and<sp/>2:1<sp/>vertical.</highlight></codeline>
+<codeline lineno="285"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal">h2v2_merged_upsample<sp/>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPIMAGE<sp/>input_buf,<sp/>JDIMENSION<sp/>in_row_group_ctr,</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPARRAY<sp/>output_buf)</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/>my_upsample_ptr<sp/>upsample<sp/>=<sp/>(my_upsample_ptr)<sp/>cinfo-&gt;upsample;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/>cred,<sp/>cgreen,<sp/>cblue;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cb,<sp/>cr;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JSAMPROW<sp/>outptr0,<sp/>outptr1;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/>JSAMPROW<sp/>inptr00,<sp/>inptr01,<sp/>inptr1,<sp/>inptr2;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/>JDIMENSION<sp/>col;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>copy<sp/>these<sp/>pointers<sp/>into<sp/>registers<sp/>if<sp/>possible<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JSAMPLE<sp/>*<sp/>range_limit<sp/>=<sp/>cinfo-&gt;sample_range_limit;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>Crrtab<sp/>=<sp/>upsample-&gt;Cr_r_tab;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>Cbbtab<sp/>=<sp/>upsample-&gt;Cb_b_tab;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/>INT32<sp/>*<sp/>Crgtab<sp/>=<sp/>upsample-&gt;Cr_g_tab;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/>INT32<sp/>*<sp/>Cbgtab<sp/>=<sp/>upsample-&gt;Cb_g_tab;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/>SHIFT_TEMPS</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/>inptr00<sp/>=<sp/>input_buf[0][in_row_group_ctr*2];</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/>inptr01<sp/>=<sp/>input_buf[0][in_row_group_ctr*2<sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/>inptr1<sp/>=<sp/>input_buf[1][in_row_group_ctr];</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/>inptr2<sp/>=<sp/>input_buf[2][in_row_group_ctr];</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/>outptr0<sp/>=<sp/>output_buf[0];</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/>outptr1<sp/>=<sp/>output_buf[1];</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Loop<sp/>for<sp/>each<sp/>group<sp/>of<sp/>output<sp/>pixels<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/>for<sp/>(col<sp/>=<sp/>cinfo-&gt;output_width<sp/>&gt;&gt;<sp/>1;<sp/>col<sp/>&gt;<sp/>0;<sp/>col--)<sp/>{</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>the<sp/>chroma<sp/>part<sp/>of<sp/>the<sp/>calculation<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>cb<sp/>=<sp/>GETJSAMPLE(*inptr1++);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>cr<sp/>=<sp/>GETJSAMPLE(*inptr2++);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>cred<sp/>=<sp/>Crrtab[cr];</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>cgreen<sp/>=<sp/>(int)<sp/>RIGHT_SHIFT(Cbgtab[cb]<sp/>+<sp/>Crgtab[cr],<sp/>SCALEBITS);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>cblue<sp/>=<sp/>Cbbtab[cb];</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Fetch<sp/>4<sp/>Y<sp/>values<sp/>and<sp/>emit<sp/>4<sp/>pixels<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/><sp/>=<sp/>GETJSAMPLE(*inptr00++);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0[RGB_RED]<sp/>=<sp/><sp/><sp/>range_limit[y<sp/>+<sp/>cred];</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0[RGB_GREEN]<sp/>=<sp/>range_limit[y<sp/>+<sp/>cgreen];</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0[RGB_BLUE]<sp/>=<sp/><sp/>range_limit[y<sp/>+<sp/>cblue];</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0<sp/>+=<sp/>RGB_PIXELSIZE;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/><sp/>=<sp/>GETJSAMPLE(*inptr00++);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0[RGB_RED]<sp/>=<sp/><sp/><sp/>range_limit[y<sp/>+<sp/>cred];</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0[RGB_GREEN]<sp/>=<sp/>range_limit[y<sp/>+<sp/>cgreen];</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0[RGB_BLUE]<sp/>=<sp/><sp/>range_limit[y<sp/>+<sp/>cblue];</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0<sp/>+=<sp/>RGB_PIXELSIZE;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/><sp/>=<sp/>GETJSAMPLE(*inptr01++);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1[RGB_RED]<sp/>=<sp/><sp/><sp/>range_limit[y<sp/>+<sp/>cred];</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1[RGB_GREEN]<sp/>=<sp/>range_limit[y<sp/>+<sp/>cgreen];</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1[RGB_BLUE]<sp/>=<sp/><sp/>range_limit[y<sp/>+<sp/>cblue];</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1<sp/>+=<sp/>RGB_PIXELSIZE;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/><sp/>=<sp/>GETJSAMPLE(*inptr01++);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1[RGB_RED]<sp/>=<sp/><sp/><sp/>range_limit[y<sp/>+<sp/>cred];</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1[RGB_GREEN]<sp/>=<sp/>range_limit[y<sp/>+<sp/>cgreen];</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1[RGB_BLUE]<sp/>=<sp/><sp/>range_limit[y<sp/>+<sp/>cblue];</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1<sp/>+=<sp/>RGB_PIXELSIZE;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>image<sp/>width<sp/>is<sp/>odd,<sp/>do<sp/>the<sp/>last<sp/>output<sp/>column<sp/>separately<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;output_width<sp/>&amp;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>cb<sp/>=<sp/>GETJSAMPLE(*inptr1);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>cr<sp/>=<sp/>GETJSAMPLE(*inptr2);</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>cred<sp/>=<sp/>Crrtab[cr];</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>cgreen<sp/>=<sp/>(int)<sp/>RIGHT_SHIFT(Cbgtab[cb]<sp/>+<sp/>Crgtab[cr],<sp/>SCALEBITS);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/>cblue<sp/>=<sp/>Cbbtab[cb];</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/><sp/>=<sp/>GETJSAMPLE(*inptr00);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0[RGB_RED]<sp/>=<sp/><sp/><sp/>range_limit[y<sp/>+<sp/>cred];</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0[RGB_GREEN]<sp/>=<sp/>range_limit[y<sp/>+<sp/>cgreen];</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr0[RGB_BLUE]<sp/>=<sp/><sp/>range_limit[y<sp/>+<sp/>cblue];</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/><sp/>=<sp/>GETJSAMPLE(*inptr01);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1[RGB_RED]<sp/>=<sp/><sp/><sp/>range_limit[y<sp/>+<sp/>cred];</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1[RGB_GREEN]<sp/>=<sp/>range_limit[y<sp/>+<sp/>cgreen];</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr1[RGB_BLUE]<sp/>=<sp/><sp/>range_limit[y<sp/>+<sp/>cblue];</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="358"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="362"><highlight class="comment"><sp/>*<sp/>Module<sp/>initialization<sp/>routine<sp/>for<sp/>merged<sp/>upsampling/color<sp/>conversion.</highlight></codeline>
+<codeline lineno="363"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="364"><highlight class="comment"><sp/>*<sp/>NB:<sp/>this<sp/>is<sp/>called<sp/>under<sp/>the<sp/>conditions<sp/>determined<sp/>by<sp/>use_merged_upsample()</highlight></codeline>
+<codeline lineno="365"><highlight class="comment"><sp/>*<sp/>in<sp/>jdmaster.c.<sp/><sp/>That<sp/>routine<sp/>MUST<sp/>correspond<sp/>to<sp/>the<sp/>actual<sp/>capabilities</highlight></codeline>
+<codeline lineno="366"><highlight class="comment"><sp/>*<sp/>of<sp/>this<sp/>module;<sp/>no<sp/>safety<sp/>checks<sp/>are<sp/>made<sp/>here.</highlight></codeline>
+<codeline lineno="367"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal">jinit_merged_upsampler<sp/>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo)</highlight></codeline>
+<codeline lineno="371"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/>my_upsample_ptr<sp/>upsample;</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/>upsample<sp/>=<sp/>(my_upsample_ptr)</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/>(*cinfo-&gt;mem-&gt;alloc_small)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo,<sp/>JPOOL_IMAGE,</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIZEOF(<ref refid="structmy__upsampler" kindref="compound">my_upsampler</ref>));</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/>cinfo-&gt;upsample<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structjpeg__upsampler" kindref="compound">jpeg_upsampler</ref><sp/>*)<sp/>upsample;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/>upsample-&gt;pub.start_pass<sp/>=<sp/>start_pass_merged_upsample;</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/>upsample-&gt;pub.need_context_rows<sp/>=<sp/>FALSE;</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/>upsample-&gt;out_row_width<sp/>=<sp/>cinfo-&gt;output_width<sp/>*<sp/>cinfo-&gt;out_color_components;</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;max_v_samp_factor<sp/>==<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;pub.upsample<sp/>=<sp/>merged_2v_upsample;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;upmethod<sp/>=<sp/>h2v2_merged_upsample;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Allocate<sp/>a<sp/>spare<sp/>row<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;spare_row<sp/>=<sp/>(JSAMPROW)</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(*cinfo-&gt;mem-&gt;alloc_large)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo,<sp/>JPOOL_IMAGE,</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)<sp/>(upsample-&gt;out_row_width<sp/>*<sp/>SIZEOF(JSAMPLE)));</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;pub.upsample<sp/>=<sp/>merged_1v_upsample;</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;upmethod<sp/>=<sp/>h2v1_merged_upsample;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>No<sp/>spare<sp/>row<sp/>needed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/>upsample-&gt;spare_row<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/>build_ycc_rgb_table(cinfo);</highlight></codeline>
+<codeline lineno="398"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>UPSAMPLE_MERGING_SUPPORTED<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdmerge.c"/>
+  </compounddef>
+</doxygen>

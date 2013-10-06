@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jcinit_8c" kind="file">
+    <compoundname>jcinit.c</compoundname>
+    <includes refid="jinclude_8h" local="yes">jinclude.h</includes>
+    <includes refid="jpeglib_8h" local="yes">jpeglib.h</includes>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jcinit_8c_1ad5c3cdfae3019b8223973041a2a1304b" prot="public" static="no">
+        <name>JPEG_INTERNALS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcinit.c" line="18" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcinit.c" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jcinit_8c_1a24910dc7131374177475aa82eee75ce1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jinit_compress_master</definition>
+        <argsstring>(j_compress_ptr cinfo)</argsstring>
+        <name>jinit_compress_master</name>
+        <param>
+          <type><ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcinit.c" line="30" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcinit.c" bodystart="30" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jcinit.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1991-1995,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>initialization<sp/>logic<sp/>for<sp/>the<sp/>JPEG<sp/>compressor.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>routine<sp/>is<sp/>in<sp/>charge<sp/>of<sp/>selecting<sp/>the<sp/>modules<sp/>to<sp/>be<sp/>executed<sp/>and</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>making<sp/>an<sp/>initialization<sp/>call<sp/>to<sp/>each<sp/>one.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Logically,<sp/>this<sp/>code<sp/>belongs<sp/>in<sp/>jcmaster.c.<sp/><sp/>It&apos;s<sp/>split<sp/>out<sp/>because</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>linking<sp/>this<sp/>routine<sp/>implies<sp/>linking<sp/>the<sp/>entire<sp/>compression<sp/>library.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>For<sp/>a<sp/>transcoding-only<sp/>application,<sp/>we<sp/>want<sp/>to<sp/>be<sp/>able<sp/>to<sp/>use<sp/>jcmaster.c</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>without<sp/>linking<sp/>in<sp/>the<sp/>whole<sp/>library.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JPEG_INTERNALS</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;jinclude.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jpeglib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Master<sp/>selection<sp/>of<sp/>compression<sp/>modules.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>done<sp/>once<sp/>at<sp/>the<sp/>start<sp/>of<sp/>processing<sp/>an<sp/>image.<sp/><sp/>We<sp/>determine</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>which<sp/>modules<sp/>will<sp/>be<sp/>used<sp/>and<sp/>give<sp/>them<sp/>appropriate<sp/>initialization<sp/>calls.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">jinit_compress_master<sp/>(<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref><sp/>cinfo)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>master<sp/>control<sp/>(includes<sp/>parameter<sp/>checking/processing)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>jinit_c_master_control(cinfo,<sp/>FALSE<sp/></highlight><highlight class="comment">/*<sp/>full<sp/>compression<sp/>*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Preprocessing<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>cinfo-&gt;raw_data_in)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>jinit_color_converter(cinfo);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>jinit_downsampler(cinfo);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>jinit_c_prep_controller(cinfo,<sp/>FALSE<sp/></highlight><highlight class="comment">/*<sp/>never<sp/>need<sp/>full<sp/>buffer<sp/>here<sp/>*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>DCT<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>jinit_forward_dct(cinfo);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Entropy<sp/>encoding:<sp/>either<sp/>Huffman<sp/>or<sp/>arithmetic<sp/>coding.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;arith_code)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_ARITH_NOTIMPL);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;progressive_mode)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>C_PROGRESSIVE_SUPPORTED</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>jinit_phuff_encoder(cinfo);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_NOT_COMPILED);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>jinit_huff_encoder(cinfo);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Need<sp/>a<sp/>full-image<sp/>coefficient<sp/>buffer<sp/>in<sp/>any<sp/>multi-pass<sp/>mode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>jinit_c_coef_controller(cinfo,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(cinfo-&gt;num_scans<sp/>&gt;<sp/>1<sp/>||<sp/>cinfo-&gt;optimize_coding));</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>jinit_c_main_controller(cinfo,<sp/>FALSE<sp/></highlight><highlight class="comment">/*<sp/>never<sp/>need<sp/>full<sp/>buffer<sp/>here<sp/>*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>jinit_marker_writer(cinfo);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>can<sp/>now<sp/>tell<sp/>the<sp/>memory<sp/>manager<sp/>to<sp/>allocate<sp/>virtual<sp/>arrays.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>(*cinfo-&gt;mem-&gt;realize_virt_arrays)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Write<sp/>the<sp/>datastream<sp/>header<sp/>(SOI)<sp/>immediately.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Frame<sp/>and<sp/>scan<sp/>headers<sp/>are<sp/>postponed<sp/>till<sp/>later.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/><sp/><sp/>*<sp/>This<sp/>lets<sp/>application<sp/>insert<sp/>special<sp/>markers<sp/>after<sp/>the<sp/>SOI.</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>(*cinfo-&gt;marker-&gt;write_file_header)<sp/>(cinfo);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcinit.c"/>
+  </compounddef>
+</doxygen>

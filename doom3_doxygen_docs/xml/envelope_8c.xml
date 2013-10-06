@@ -1,0 +1,560 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="envelope_8c" kind="file">
+    <compoundname>envelope.c</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes refid="_math_8h" local="no">math.h</includes>
+    <includes refid="ogg_8h" local="yes">../ogg/ogg.h</includes>
+    <includes refid="sound_2_ogg_vorbis_2vorbis_2codec_8h" local="yes">../vorbis/codec.h</includes>
+    <includes refid="codec__internal_8h" local="yes">codec_internal.h</includes>
+    <includes refid="os_8h" local="yes">os.h</includes>
+    <includes refid="scales_8h" local="yes">scales.h</includes>
+    <includes refid="envelope_8h" local="yes">envelope.h</includes>
+    <includes refid="mdct_8h" local="yes">mdct.h</includes>
+    <includes refid="sound_2_ogg_vorbis_2vorbissrc_2_misc_8h" local="yes">misc.h</includes>
+    <incdepgraph>
+      <node id="2030">
+        <label>E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c</label>
+        <link refid="envelope.c"/>
+        <childnode refid="2031" relation="include">
+        </childnode>
+        <childnode refid="2032" relation="include">
+        </childnode>
+        <childnode refid="2033" relation="include">
+        </childnode>
+      </node>
+      <node id="2031">
+        <label>stdlib.h</label>
+      </node>
+      <node id="2032">
+        <label>string.h</label>
+      </node>
+      <node id="2033">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="envelope_8c_1aedc9746428d2a6117963e8dee322325e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _ve_envelope_init</definition>
+        <argsstring>(envelope_lookup *e, vorbis_info *vi)</argsstring>
+        <name>_ve_envelope_init</name>
+        <param>
+          <type><ref refid="structenvelope__lookup" kindref="compound">envelope_lookup</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="structvorbis__info" kindref="compound">vorbis_info</ref> *</type>
+          <declname>vi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" line="32" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" bodystart="32" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="envelope_8c_1a8082a156ea0041c8fd6a32a7546ca3d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _ve_envelope_clear</definition>
+        <argsstring>(envelope_lookup *e)</argsstring>
+        <name>_ve_envelope_clear</name>
+        <param>
+          <type><ref refid="structenvelope__lookup" kindref="compound">envelope_lookup</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" line="76" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" bodystart="76" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="envelope_8c_1aef224184cd34ed692f153f36dbe7337b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int _ve_amp</definition>
+        <argsstring>(envelope_lookup *ve, vorbis_info_psy_global *gi, float *data, envelope_band *bands, envelope_filter_state *filters, long pos)</argsstring>
+        <name>_ve_amp</name>
+        <param>
+          <type><ref refid="structenvelope__lookup" kindref="compound">envelope_lookup</ref> *</type>
+          <declname>ve</declname>
+        </param>
+        <param>
+          <type><ref refid="structvorbis__info__psy__global" kindref="compound">vorbis_info_psy_global</ref> *</type>
+          <declname>gi</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="structenvelope__band" kindref="compound">envelope_band</ref> *</type>
+          <declname>bands</declname>
+        </param>
+        <param>
+          <type><ref refid="structenvelope__filter__state" kindref="compound">envelope_filter_state</ref> *</type>
+          <declname>filters</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" line="90" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" bodystart="90" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="envelope_8c_1a177b23eed4057ff521a5053a479ff66d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long _ve_envelope_search</definition>
+        <argsstring>(vorbis_dsp_state *v)</argsstring>
+        <name>_ve_envelope_search</name>
+        <param>
+          <type><ref refid="structvorbis__dsp__state" kindref="compound">vorbis_dsp_state</ref> *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" line="217" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" bodystart="217" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="envelope_8c_1ae37cff40382633516d101381a1fbb6c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int _ve_envelope_mark</definition>
+        <argsstring>(vorbis_dsp_state *v)</argsstring>
+        <name>_ve_envelope_mark</name>
+        <param>
+          <type><ref refid="structvorbis__dsp__state" kindref="compound">vorbis_dsp_state</ref> *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" line="331" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" bodystart="331" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="envelope_8c_1aab5046c33ff5024cffb59d256999ca9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _ve_envelope_shift</definition>
+        <argsstring>(envelope_lookup *e, long shift)</argsstring>
+        <name>_ve_envelope_shift</name>
+        <param>
+          <type><ref refid="structenvelope__lookup" kindref="compound">envelope_lookup</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>shift</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" line="357" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c" bodystart="357" bodyend="376"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/********************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>THIS<sp/>FILE<sp/>IS<sp/>PART<sp/>OF<sp/>THE<sp/>OggVorbis<sp/>SOFTWARE<sp/>CODEC<sp/>SOURCE<sp/>CODE.<sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>USE,<sp/>DISTRIBUTION<sp/>AND<sp/>REPRODUCTION<sp/>OF<sp/>THIS<sp/>LIBRARY<sp/>SOURCE<sp/>IS<sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>GOVERNED<sp/>BY<sp/>A<sp/>BSD-STYLE<sp/>SOURCE<sp/>LICENSE<sp/>INCLUDED<sp/>WITH<sp/>THIS<sp/>SOURCE<sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>IN<sp/>&apos;COPYING&apos;.<sp/>PLEASE<sp/>READ<sp/>THESE<sp/>TERMS<sp/>BEFORE<sp/>DISTRIBUTING.<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>THE<sp/>OggVorbis<sp/>SOURCE<sp/>CODE<sp/>IS<sp/>(C)<sp/>COPYRIGHT<sp/>1994-2002<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>by<sp/>the<sp/>XIPHOPHORUS<sp/>Company<sp/>http://www.xiph.org/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>********************************************************************</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>function:<sp/>PCM<sp/>data<sp/>envelope<sp/>analysis<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>last<sp/>mod:<sp/>$Id:<sp/>envelope.c,v<sp/>1.54<sp/>2003/09/05<sp/>23:17:49<sp/>giles<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../ogg/ogg.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../vorbis/codec.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;codec_internal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;os.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;scales.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;envelope.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;mdct.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;misc.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_ve_envelope_init(<ref refid="structenvelope__lookup" kindref="compound">envelope_lookup</ref><sp/>*e,<ref refid="structvorbis__info" kindref="compound">vorbis_info</ref><sp/>*vi){</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><ref refid="structcodec__setup__info" kindref="compound">codec_setup_info</ref><sp/>*ci=vi-&gt;codec_setup;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><ref refid="structvorbis__info__psy__global" kindref="compound">vorbis_info_psy_global</ref><sp/>*gi=&amp;ci-&gt;psy_g_param;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ch=vi-&gt;channels;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,j;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n=e-&gt;winlength=128;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>e-&gt;searchstep=64;<sp/></highlight><highlight class="comment">/*<sp/>not<sp/>random<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>e-&gt;minenergy=gi-&gt;preecho_minenergy;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>e-&gt;ch=ch;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>e-&gt;storage=128;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>e-&gt;cursor=ci-&gt;blocksizes[1]/2;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>e-&gt;mdct_win=_ogg_calloc(n,</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*e-&gt;mdct_win));</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>mdct_init(&amp;e-&gt;mdct,n);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;n;i++){</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;mdct_win[i]=sin(i/(n-1.)*M_PI);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;mdct_win[i]*=e-&gt;mdct_win[i];</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>magic<sp/>follows<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>e-&gt;band[0].begin=2;<sp/><sp/>e-&gt;band[0].end=4;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>e-&gt;band[1].begin=4;<sp/><sp/>e-&gt;band[1].end=5;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>e-&gt;band[2].begin=6;<sp/><sp/>e-&gt;band[2].end=6;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>e-&gt;band[3].begin=9;<sp/><sp/>e-&gt;band[3].end=8;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>e-&gt;band[4].begin=13;<sp/><sp/>e-&gt;band[4].end=8;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>e-&gt;band[5].begin=17;<sp/><sp/>e-&gt;band[5].end=8;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>e-&gt;band[6].begin=22;<sp/><sp/>e-&gt;band[6].end=8;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;j&lt;VE_BANDS;j++){</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>n=e-&gt;band[j].end;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;band[j].window=_ogg_malloc(n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*e-&gt;band[0].window));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;n;i++){</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;band[j].window[i]=sin((i+.5)/n*M_PI);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;band[j].total+=e-&gt;band[j].window[i];</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;band[j].total=1./e-&gt;band[j].total;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>e-&gt;filter=_ogg_calloc(VE_BANDS*ch,</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*e-&gt;filter));</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>e-&gt;mark=_ogg_calloc(e-&gt;storage,</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*e-&gt;mark));</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_ve_envelope_clear(<ref refid="structenvelope__lookup" kindref="compound">envelope_lookup</ref><sp/>*e){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>mdct_clear(&amp;e-&gt;mdct);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;VE_BANDS;i++)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>_ogg_free(e-&gt;band[i].window);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>_ogg_free(e-&gt;mdct_win);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>_ogg_free(e-&gt;filter);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>_ogg_free(e-&gt;mark);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>memset(e,0,</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*e));</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>fairly<sp/>straight<sp/>threshhold-by-band<sp/>based<sp/>until<sp/>we<sp/>find<sp/>something</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/>that<sp/>works<sp/>better<sp/>and<sp/>isn&apos;t<sp/>patented.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_ve_amp(<ref refid="structenvelope__lookup" kindref="compound">envelope_lookup</ref><sp/>*ve,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structvorbis__info__psy__global" kindref="compound">vorbis_info_psy_global</ref><sp/>*gi,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*data,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structenvelope__band" kindref="compound">envelope_band</ref><sp/>*bands,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structenvelope__filter__state" kindref="compound">envelope_filter_state</ref><sp/>*filters,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>pos){</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>n=ve-&gt;winlength;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret=0;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>i,j;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>decay;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>we<sp/>want<sp/>to<sp/>have<sp/>a<sp/>&apos;minimum<sp/>bar&apos;<sp/>for<sp/>energy,<sp/>else<sp/>we&apos;re<sp/>just</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>basing<sp/>blocks<sp/>on<sp/>quantization<sp/>noise<sp/>that<sp/>outweighs<sp/>the<sp/>signal</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>itself<sp/>(for<sp/>low<sp/>power<sp/>signals)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>minV=ve-&gt;minenergy;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*vec=alloca(n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*vec));</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>stretch<sp/>is<sp/>used<sp/>to<sp/>gradually<sp/>lengthen<sp/>the<sp/>number<sp/>of<sp/>windows</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>considered<sp/>prevoius-to-potential-trigger<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stretch=max(VE_MINSTRETCH,ve-&gt;stretch/2);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>penalty=gi-&gt;stretch_penalty-(ve-&gt;stretch/2-VE_MINSTRETCH);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(penalty&lt;0.f)penalty=0.f;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(penalty&gt;gi-&gt;stretch_penalty)penalty=gi-&gt;stretch_penalty;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*_analysis_output_always(&quot;lpcm&quot;,seq2,data,n,0,0,</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/>totalshift+pos*ve-&gt;searchstep);*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>window<sp/>and<sp/>transform<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;n;i++)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>vec[i]=data[i]*ve-&gt;mdct_win[i];</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>mdct_forward(&amp;ve-&gt;mdct,vec,vec);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*_analysis_output_always(&quot;mdct&quot;,seq2,vec,n/2,0,1,0);<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>near-DC<sp/>spreading<sp/>function;<sp/>this<sp/>has<sp/>nothing<sp/>to<sp/>do<sp/>with</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>psychoacoustics,<sp/>just<sp/>sidelobe<sp/>leakage<sp/>and<sp/>window<sp/>size<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>temp=vec[0]*vec[0]+.7*vec[1]*vec[1]+.2*vec[2]*vec[2];</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ptr=filters-&gt;nearptr;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>the<sp/>accumulation<sp/>is<sp/>regularly<sp/>refreshed<sp/>from<sp/>scratch<sp/>to<sp/>avoid</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>floating<sp/>point<sp/>creep<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ptr==0){</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>decay=filters-&gt;nearDC_acc=filters-&gt;nearDC_partialacc+temp;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>filters-&gt;nearDC_partialacc=temp;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>decay=filters-&gt;nearDC_acc+=temp;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>filters-&gt;nearDC_partialacc+=temp;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>filters-&gt;nearDC_acc-=filters-&gt;nearDC[ptr];</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>filters-&gt;nearDC[ptr]=temp;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>decay*=(1./(VE_NEARDC+1));</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>filters-&gt;nearptr++;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(filters-&gt;nearptr&gt;=VE_NEARDC)filters-&gt;nearptr=0;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>decay=todB(&amp;decay)*.5-15.f;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>perform<sp/>spreading<sp/>and<sp/>limiting,<sp/>also<sp/>smooth<sp/>the<sp/>spectrum.<sp/><sp/>yes,</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>the<sp/>MDCT<sp/>results<sp/>in<sp/>all<sp/>real<sp/>coefficients,<sp/>but<sp/>it<sp/>still<sp/>*behaves*</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>like<sp/>real/imaginary<sp/>pairs<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;n/2;i+=2){</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>val=vec[i]*vec[i]+vec[i+1]*vec[i+1];</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>val=todB(&amp;val)*.5f;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(val&lt;decay)val=decay;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(val&lt;minV)val=minV;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>vec[i&gt;&gt;1]=val;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>decay-=8.;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*_analysis_output_always(&quot;spread&quot;,seq2++,vec,n/4,0,0,0);*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>perform<sp/>preecho/postecho<sp/>triggering<sp/>by<sp/>band<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;j&lt;VE_BANDS;j++){</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>acc=0.;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>valmax,valmin;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>accumulate<sp/>amplitude<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;bands[j].end;i++)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>acc+=vec[i+bands[j].begin]*bands[j].window[i];</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>acc*=bands[j].total;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>convert<sp/>amplitude<sp/>to<sp/>delta<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p,</highlight><highlight class="keyword">this</highlight><highlight class="normal">=filters[j].ampptr;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>postmax,postmin,premax=-99999.f,premin=99999.f;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>p=</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>p--;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(p&lt;0)p+=VE_AMP;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>postmax=max(acc,filters[j].ampbuf[p]);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>postmin=min(acc,filters[j].ampbuf[p]);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;stretch;i++){</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>p--;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(p&lt;0)p+=VE_AMP;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>premax=max(premax,filters[j].ampbuf[p]);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>premin=min(premin,filters[j].ampbuf[p]);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>valmin=postmin-premin;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>valmax=postmax-premax;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*filters[j].markers[pos]=valmax;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>filters[j].ampbuf[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]=acc;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>filters[j].ampptr++;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(filters[j].ampptr&gt;=VE_AMP)filters[j].ampptr=0;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>look<sp/>at<sp/>min/max,<sp/>decide<sp/>trigger<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(valmax&gt;gi-&gt;preecho_thresh[j]+penalty){</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ret|=1;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ret|=4;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(valmin&lt;gi-&gt;postecho_thresh[j]-penalty)ret|=2;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(ret);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight></codeline>
+<codeline lineno="213"><highlight class="preprocessor"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seq=0;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>ogg_int64_t<sp/>totalshift=-1024;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="216"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>_ve_envelope_search(<ref refid="structvorbis__dsp__state" kindref="compound">vorbis_dsp_state</ref><sp/>*v){</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><ref refid="structvorbis__info" kindref="compound">vorbis_info</ref><sp/>*vi=v-&gt;vi;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><ref refid="structcodec__setup__info" kindref="compound">codec_setup_info</ref><sp/>*ci=vi-&gt;codec_setup;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><ref refid="structvorbis__info__psy__global" kindref="compound">vorbis_info_psy_global</ref><sp/>*gi=&amp;ci-&gt;psy_g_param;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><ref refid="structenvelope__lookup" kindref="compound">envelope_lookup</ref><sp/>*ve=((<ref refid="structprivate__state" kindref="compound">private_state</ref><sp/>*)(v-&gt;backend_state))-&gt;ve;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>i,j;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>first=ve-&gt;current/ve-&gt;searchstep;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>last=v-&gt;pcm_current/ve-&gt;searchstep-VE_WIN;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(first&lt;0)first=0;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>make<sp/>sure<sp/>we<sp/>have<sp/>enough<sp/>storage<sp/>to<sp/>match<sp/>the<sp/>PCM<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(last+VE_WIN+VE_POST&gt;ve-&gt;storage){</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>ve-&gt;storage=last+VE_WIN+VE_POST;<sp/></highlight><highlight class="comment">/*<sp/>be<sp/>sure<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>ve-&gt;mark=_ogg_realloc(ve-&gt;mark,ve-&gt;storage*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*ve-&gt;mark));</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=first;j&lt;last;j++){</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret=0;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>ve-&gt;stretch++;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ve-&gt;stretch&gt;VE_MAXSTRETCH*2)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ve-&gt;stretch=VE_MAXSTRETCH*2;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;ve-&gt;ch;i++){</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*pcm=v-&gt;pcm[i]+ve-&gt;searchstep*(j);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ret|=_ve_amp(ve,gi,pcm,ve-&gt;band,ve-&gt;filter+i*VE_BANDS,j);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>ve-&gt;mark[j+VE_POST]=0;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ret&amp;1){</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ve-&gt;mark[j]=1;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ve-&gt;mark[j+1]=1;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ret&amp;2){</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ve-&gt;mark[j]=1;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(j&gt;0)ve-&gt;mark[j-1]=1;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ret&amp;4)ve-&gt;stretch=-1;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/>ve-&gt;current=last*ve-&gt;searchstep;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>centerW=v-&gt;centerW;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>testW=</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>centerW+</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ci-&gt;blocksizes[v-&gt;W]/4+</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ci-&gt;blocksizes[1]/2+</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ci-&gt;blocksizes[0]/4;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>j=ve-&gt;cursor;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(j&lt;ve-&gt;current-(ve-&gt;searchstep)){</highlight><highlight class="comment">/*<sp/>account<sp/>for<sp/>postecho</highlight></codeline>
+<codeline lineno="273"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>working<sp/>back<sp/>one<sp/>window<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(j&gt;=testW)</highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(1);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ve-&gt;cursor=j;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ve-&gt;mark[j/ve-&gt;searchstep]){</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(j&gt;centerW){</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>#if<sp/>0</highlight></codeline>
+<codeline lineno="282"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(j&gt;ve-&gt;curmark){</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*marker=alloca(v-&gt;pcm_current*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*marker));</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l,m;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(marker,0,</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*marker)*v-&gt;pcm_current);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,</highlight><highlight class="stringliteral">&quot;mark!<sp/>seq=%d,<sp/>cursor:%fs<sp/>time:%fs\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>seq,</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(totalshift+ve-&gt;cursor)/44100.,</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(totalshift+j)/44100.);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_analysis_output_always(</highlight><highlight class="stringliteral">&quot;pcmL&quot;</highlight><highlight class="normal">,seq,v-&gt;pcm[0],v-&gt;pcm_current,0,0,totalshift);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_analysis_output_always(</highlight><highlight class="stringliteral">&quot;pcmR&quot;</highlight><highlight class="normal">,seq,v-&gt;pcm[1],v-&gt;pcm_current,0,0,totalshift);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_analysis_output_always(</highlight><highlight class="stringliteral">&quot;markL&quot;</highlight><highlight class="normal">,seq,v-&gt;pcm[0],j,0,0,totalshift);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_analysis_output_always(</highlight><highlight class="stringliteral">&quot;markR&quot;</highlight><highlight class="normal">,seq,v-&gt;pcm[1],j,0,0,totalshift);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(m=0;m&lt;VE_BANDS;m++){</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[80];</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(buf,</highlight><highlight class="stringliteral">&quot;delL%d&quot;</highlight><highlight class="normal">,m);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(l=0;l&lt;last;l++)marker[l*ve-&gt;searchstep]=ve-&gt;filter[m].markers[l]*.1;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_analysis_output_always(buf,seq,marker,v-&gt;pcm_current,0,0,totalshift);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(m=0;m&lt;VE_BANDS;m++){</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[80];</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(buf,</highlight><highlight class="stringliteral">&quot;delR%d&quot;</highlight><highlight class="normal">,m);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(l=0;l&lt;last;l++)marker[l*ve-&gt;searchstep]=ve-&gt;filter[m+VE_BANDS].markers[l]*.1;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_analysis_output_always(buf,seq,marker,v-&gt;pcm_current,0,0,totalshift);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(l=0;l&lt;last;l++)marker[l*ve-&gt;searchstep]=ve-&gt;mark[l]*.4;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_analysis_output_always(</highlight><highlight class="stringliteral">&quot;mark&quot;</highlight><highlight class="normal">,seq,marker,v-&gt;pcm_current,0,0,totalshift);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>seq++;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="318"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ve-&gt;curmark=j;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(j&gt;=testW)</highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(1);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(0);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>j+=ve-&gt;searchstep;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(-1);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_ve_envelope_mark(<ref refid="structvorbis__dsp__state" kindref="compound">vorbis_dsp_state</ref><sp/>*v){</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><ref refid="structenvelope__lookup" kindref="compound">envelope_lookup</ref><sp/>*ve=((<ref refid="structprivate__state" kindref="compound">private_state</ref><sp/>*)(v-&gt;backend_state))-&gt;ve;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><ref refid="structvorbis__info" kindref="compound">vorbis_info</ref><sp/>*vi=v-&gt;vi;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><ref refid="structcodec__setup__info" kindref="compound">codec_setup_info</ref><sp/>*ci=vi-&gt;codec_setup;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>centerW=v-&gt;centerW;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>beginW=centerW-ci-&gt;blocksizes[v-&gt;W]/4;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>endW=centerW+ci-&gt;blocksizes[v-&gt;W]/4;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(v-&gt;W){</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>beginW-=ci-&gt;blocksizes[v-&gt;lW]/4;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>endW+=ci-&gt;blocksizes[v-&gt;nW]/4;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>beginW-=ci-&gt;blocksizes[0]/4;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>endW+=ci-&gt;blocksizes[0]/4;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ve-&gt;curmark&gt;=beginW<sp/>&amp;&amp;<sp/>ve-&gt;curmark&lt;endW)</highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(1);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>first=beginW/ve-&gt;searchstep;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>last=endW/ve-&gt;searchstep;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=first;i&lt;last;i++)</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ve-&gt;mark[i])</highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(1);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(0);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_ve_envelope_shift(<ref refid="structenvelope__lookup" kindref="compound">envelope_lookup</ref><sp/>*e,</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>shift){</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>smallsize=e-&gt;current/e-&gt;searchstep+VE_POST;<sp/></highlight><highlight class="comment">/*<sp/>adjust<sp/>for<sp/>placing<sp/>marks</highlight></codeline>
+<codeline lineno="359"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ahead<sp/>of<sp/>ve-&gt;current<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>smallshift=shift/e-&gt;searchstep;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/>memmove(e-&gt;mark,e-&gt;mark+smallshift,(smallsize-smallshift)*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*e-&gt;mark));</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#if<sp/>0</highlight></codeline>
+<codeline lineno="365"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;VE_BANDS*e-&gt;ch;i++)</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/>memmove(e-&gt;filter[i].markers,</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;filter[i].markers+smallshift,</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(1024-smallshift)*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*(*e-&gt;filter).markers));</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/>totalshift+=shift;</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif<sp/></highlight></codeline>
+<codeline lineno="371"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/>e-&gt;current-=shift;</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(e-&gt;curmark&gt;=0)</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;curmark-=shift;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/>e-&gt;cursor-=shift;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/envelope.c"/>
+  </compounddef>
+</doxygen>

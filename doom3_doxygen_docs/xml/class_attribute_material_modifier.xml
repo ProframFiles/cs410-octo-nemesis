@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_attribute_material_modifier" kind="class" prot="public" abstract="yes">
+    <compoundname>AttributeMaterialModifier</compoundname>
+    <basecompoundref refid="class_material_modifier" prot="public" virt="non-virtual">MaterialModifier</basecompoundref>
+    <derivedcompoundref refid="class_attribute_material_modifier_bool" prot="public" virt="non-virtual">AttributeMaterialModifierBool</derivedcompoundref>
+    <derivedcompoundref refid="class_attribute_material_modifier_string" prot="public" virt="non-virtual">AttributeMaterialModifierString</derivedcompoundref>
+    <includes local="yes">MaterialModifier.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_attribute_material_modifier_1af845d2e660748c268045e00a25e65a1f" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AttributeMaterialModifier::stage</definition>
+        <argsstring></argsstring>
+        <name>stage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" line="65" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attribute_material_modifier_1a6328cf6299cc47b01d0c91b52d9258f8" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_str" kindref="compound">idStr</ref></type>
+        <definition>idStr AttributeMaterialModifier::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" line="66" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_attribute_material_modifier_1ae37ac50c064a2ca0a82d0f848433c87f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AttributeMaterialModifier::AttributeMaterialModifier</definition>
+        <argsstring>(MaterialDocManager *manager, const char *materialName, int stage, const char *key)</argsstring>
+        <name>AttributeMaterialModifier</name>
+        <param>
+          <type><ref refid="class_material_doc_manager" kindref="compound">MaterialDocManager</ref> *</type>
+          <declname>manager</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>materialName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stage</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor for <ref refid="class_attribute_material_modifier" kindref="compound">AttributeMaterialModifier</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" line="58" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.cpp" bodystart="54" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_attribute_material_modifier_1acdcadaf12811b80aea8b412cc45f047e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual AttributeMaterialModifier::~AttributeMaterialModifier</definition>
+        <argsstring>()</argsstring>
+        <name>~AttributeMaterialModifier</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" line="59" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_attribute_material_modifier_1a4b9d0c3575030f5e5d201ac2e2da51c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void AttributeMaterialModifier::Undo</definition>
+        <argsstring>()=0</argsstring>
+        <name>Undo</name>
+        <reimplements refid="class_material_modifier_1a6758e6f786f776b38ded815f4bf27d07">Undo</reimplements>
+        <reimplementedby refid="class_attribute_material_modifier_string_1ad0e8d2361a25faac8708536a5ad23dcf">Undo</reimplementedby>
+        <reimplementedby refid="class_attribute_material_modifier_bool_1a2905262944ed37fa9c61df50f1098ce8">Undo</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_attribute_material_modifier_1a63016b0fc9e5eb18a385dca416412447" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void AttributeMaterialModifier::Redo</definition>
+        <argsstring>()=0</argsstring>
+        <name>Redo</name>
+        <reimplements refid="class_material_modifier_1af114f0ed134b02daea41251cc78b6b89">Redo</reimplements>
+        <reimplementedby refid="class_attribute_material_modifier_string_1a51ffd4434f3d38299c1c47260e16c5e1">Redo</reimplementedby>
+        <reimplementedby refid="class_attribute_material_modifier_bool_1a94caaf2a4c2e20a0a2569bfe9a99cce3">Redo</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" line="62" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Base class for Undo/Redo operations for attribute changes </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="17865">
+        <label>AttributeMaterialModifierBool</label>
+        <link refid="class_attribute_material_modifier_bool"/>
+        <childnode refid="17863" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17866">
+        <label>AttributeMaterialModifierString</label>
+        <link refid="class_attribute_material_modifier_string"/>
+        <childnode refid="17863" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17864">
+        <label>MaterialModifier</label>
+        <link refid="class_material_modifier"/>
+      </node>
+      <node id="17863">
+        <label>AttributeMaterialModifier</label>
+        <link refid="class_attribute_material_modifier"/>
+        <childnode refid="17864" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="17872">
+        <label>MEStage_t</label>
+        <link refid="struct_m_e_stage__t"/>
+        <childnode refid="17873" relation="usage">
+          <edgelabel>stageData</edgelabel>
+        </childnode>
+      </node>
+      <node id="17871">
+        <label>idList&lt; MaterialModifier * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="17878">
+        <label>idMaterial</label>
+        <link refid="classid_material"/>
+        <childnode refid="17879" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17874">
+        <label>MaterialDoc</label>
+        <link refid="class_material_doc"/>
+        <childnode refid="17869" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="17875" relation="usage">
+          <edgelabel>editMaterial</edgelabel>
+        </childnode>
+        <childnode refid="17870" relation="usage">
+          <edgelabel>manager</edgelabel>
+        </childnode>
+        <childnode refid="17877" relation="usage">
+          <edgelabel>sourceModifyOwner</edgelabel>
+        </childnode>
+        <childnode refid="17878" relation="usage">
+          <edgelabel>renderMaterial</edgelabel>
+        </childnode>
+      </node>
+      <node id="17868">
+        <label>MaterialModifier</label>
+        <link refid="class_material_modifier"/>
+        <childnode refid="17869" relation="usage">
+          <edgelabel>materialName</edgelabel>
+        </childnode>
+        <childnode refid="17870" relation="usage">
+          <edgelabel>manager</edgelabel>
+        </childnode>
+      </node>
+      <node id="17877">
+        <label>SourceModifyOwner</label>
+        <link refid="class_source_modify_owner"/>
+      </node>
+      <node id="17870">
+        <label>MaterialDocManager</label>
+        <link refid="class_material_doc_manager"/>
+        <childnode refid="17869" relation="usage">
+          <edgelabel>copyMaterial</edgelabel>
+          <edgelabel>copyStageMaterial</edgelabel>
+        </childnode>
+        <childnode refid="17871" relation="usage">
+          <edgelabel>undoModifiers</edgelabel>
+          <edgelabel>redoModifiers</edgelabel>
+        </childnode>
+        <childnode refid="17872" relation="usage">
+          <edgelabel>copyStage</edgelabel>
+        </childnode>
+        <childnode refid="17874" relation="usage">
+          <edgelabel>currentMaterial</edgelabel>
+        </childnode>
+        <childnode refid="17881" relation="usage">
+          <edgelabel>inProgressMaterials</edgelabel>
+        </childnode>
+        <childnode refid="17882" relation="usage">
+          <edgelabel>materialViews</edgelabel>
+        </childnode>
+      </node>
+      <node id="17876">
+        <label>idList&lt; MEStage_t * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="17880">
+        <label>idDeclBase</label>
+        <link refid="classid_decl_base"/>
+      </node>
+      <node id="17881">
+        <label>idHashTable&lt; MaterialDoc * &gt;</label>
+        <link refid="classid_hash_table"/>
+      </node>
+      <node id="17869">
+        <label>idStr</label>
+        <link refid="classid_str"/>
+      </node>
+      <node id="17867">
+        <label>AttributeMaterialModifier</label>
+        <link refid="class_attribute_material_modifier"/>
+        <childnode refid="17868" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17869" relation="usage">
+          <edgelabel>key</edgelabel>
+        </childnode>
+      </node>
+      <node id="17879">
+        <label>idDecl</label>
+        <link refid="classid_decl"/>
+        <childnode refid="17880" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+      </node>
+      <node id="17875">
+        <label>MEMaterial_t</label>
+        <link refid="struct_m_e_material__t"/>
+        <childnode refid="17876" relation="usage">
+          <edgelabel>stages</edgelabel>
+        </childnode>
+        <childnode refid="17873" relation="usage">
+          <edgelabel>materialData</edgelabel>
+        </childnode>
+      </node>
+      <node id="17873">
+        <label>idDict</label>
+        <link refid="classid_dict"/>
+      </node>
+      <node id="17882">
+        <label>idList&lt; MaterialView * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" line="55" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialModifier.h" bodystart="55" bodyend="67"/>
+    <listofallmembers>
+      <member refid="class_attribute_material_modifier_1ae37ac50c064a2ca0a82d0f848433c87f" prot="public" virt="non-virtual"><scope>AttributeMaterialModifier</scope><name>AttributeMaterialModifier</name></member>
+      <member refid="class_attribute_material_modifier_1a6328cf6299cc47b01d0c91b52d9258f8" prot="protected" virt="non-virtual"><scope>AttributeMaterialModifier</scope><name>key</name></member>
+      <member refid="class_material_modifier_1a03420e342f1bea46adbca58b30774974" prot="protected" virt="non-virtual"><scope>AttributeMaterialModifier</scope><name>manager</name></member>
+      <member refid="class_material_modifier_1a1c7632b910465958fa8eb556e10a600a" prot="public" virt="non-virtual"><scope>AttributeMaterialModifier</scope><name>MaterialModifier</name></member>
+      <member refid="class_material_modifier_1a0240cfda675d97a281800f515222a343" prot="protected" virt="non-virtual"><scope>AttributeMaterialModifier</scope><name>materialName</name></member>
+      <member refid="class_attribute_material_modifier_1a63016b0fc9e5eb18a385dca416412447" prot="public" virt="pure-virtual"><scope>AttributeMaterialModifier</scope><name>Redo</name></member>
+      <member refid="class_attribute_material_modifier_1af845d2e660748c268045e00a25e65a1f" prot="protected" virt="non-virtual"><scope>AttributeMaterialModifier</scope><name>stage</name></member>
+      <member refid="class_attribute_material_modifier_1a4b9d0c3575030f5e5d201ac2e2da51c9" prot="public" virt="pure-virtual"><scope>AttributeMaterialModifier</scope><name>Undo</name></member>
+      <member refid="class_attribute_material_modifier_1acdcadaf12811b80aea8b412cc45f047e" prot="public" virt="virtual"><scope>AttributeMaterialModifier</scope><name>~AttributeMaterialModifier</name></member>
+      <member refid="class_material_modifier_1a5c22ef03f0f08c0552d2bd1904d15a40" prot="public" virt="virtual"><scope>AttributeMaterialModifier</scope><name>~MaterialModifier</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

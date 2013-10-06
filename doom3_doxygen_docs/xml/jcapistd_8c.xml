@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jcapistd_8c" kind="file">
+    <compoundname>jcapistd.c</compoundname>
+    <includes refid="jinclude_8h" local="yes">jinclude.h</includes>
+    <includes refid="jpeglib_8h" local="yes">jpeglib.h</includes>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jcapistd_8c_1ad5c3cdfae3019b8223973041a2a1304b" prot="public" static="no">
+        <name>JPEG_INTERNALS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcapistd.c" line="17" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcapistd.c" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jcapistd_8c_1ada0d5279fdd4eab6bf3ad1677d83eb32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jpeg_start_compress</definition>
+        <argsstring>(j_compress_ptr cinfo, boolean write_all_tables)</argsstring>
+        <name>jpeg_start_compress</name>
+        <param>
+          <type><ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>write_all_tables</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcapistd.c" line="38" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcapistd.c" bodystart="38" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="jcapistd_8c_1af6e8973853f1ed4712eef74321adc4ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>JDIMENSION</type>
+        <definition>JDIMENSION jpeg_write_scanlines</definition>
+        <argsstring>(j_compress_ptr cinfo, JSAMPARRAY scanlines, JDIMENSION num_lines)</argsstring>
+        <name>jpeg_write_scanlines</name>
+        <param>
+          <type><ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type>JSAMPARRAY</type>
+          <declname>scanlines</declname>
+        </param>
+        <param>
+          <type>JDIMENSION</type>
+          <declname>num_lines</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcapistd.c" line="77" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcapistd.c" bodystart="77" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="jcapistd_8c_1a1f04068a7ae7258f5f45ef48fb539de7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>JDIMENSION</type>
+        <definition>JDIMENSION jpeg_write_raw_data</definition>
+        <argsstring>(j_compress_ptr cinfo, JSAMPIMAGE data, JDIMENSION num_lines)</argsstring>
+        <name>jpeg_write_raw_data</name>
+        <param>
+          <type><ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type>JSAMPIMAGE</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>JDIMENSION</type>
+          <declname>num_lines</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcapistd.c" line="120" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcapistd.c" bodystart="120" bodyend="161"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jcapistd.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1994-1995,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>application<sp/>interface<sp/>code<sp/>for<sp/>the<sp/>compression<sp/>half</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>of<sp/>the<sp/>JPEG<sp/>library.<sp/><sp/>These<sp/>are<sp/>the<sp/>&quot;standard&quot;<sp/>API<sp/>routines<sp/>that<sp/>are</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>used<sp/>in<sp/>the<sp/>normal<sp/>full-compression<sp/>case.<sp/><sp/>They<sp/>are<sp/>not<sp/>used<sp/>by<sp/>a</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>transcoding-only<sp/>application.<sp/><sp/>Note<sp/>that<sp/>if<sp/>an<sp/>application<sp/>links<sp/>in</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>jpeg_start_compress,<sp/>it<sp/>will<sp/>end<sp/>up<sp/>linking<sp/>in<sp/>the<sp/>entire<sp/>compressor.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>We<sp/>thus<sp/>must<sp/>separate<sp/>this<sp/>file<sp/>from<sp/>jcapimin.c<sp/>to<sp/>avoid<sp/>linking<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>whole<sp/>compression<sp/>library<sp/>into<sp/>a<sp/>transcoder.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JPEG_INTERNALS</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;jinclude.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jpeglib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>Compression<sp/>initialization.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>Before<sp/>calling<sp/>this,<sp/>all<sp/>parameters<sp/>and<sp/>a<sp/>data<sp/>destination<sp/>must<sp/>be<sp/>set<sp/>up.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>We<sp/>require<sp/>a<sp/>write_all_tables<sp/>parameter<sp/>as<sp/>a<sp/>failsafe<sp/>check<sp/>when<sp/>writing</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>multiple<sp/>datastreams<sp/>from<sp/>the<sp/>same<sp/>compression<sp/>object.<sp/><sp/>Since<sp/>prior<sp/>runs</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>will<sp/>have<sp/>left<sp/>all<sp/>the<sp/>tables<sp/>marked<sp/>sent_table=TRUE,<sp/>a<sp/>subsequent<sp/>run</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>would<sp/>emit<sp/>an<sp/>abbreviated<sp/>stream<sp/>(no<sp/>tables)<sp/>by<sp/>default.<sp/><sp/>This<sp/>may<sp/>be<sp/>what</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>is<sp/>wanted,<sp/>but<sp/>for<sp/>safety&apos;s<sp/>sake<sp/>it<sp/>should<sp/>not<sp/>be<sp/>the<sp/>default<sp/>behavior:</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>programmers<sp/>should<sp/>have<sp/>to<sp/>make<sp/>a<sp/>deliberate<sp/>choice<sp/>to<sp/>emit<sp/>abbreviated</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>images.<sp/><sp/>Therefore<sp/>the<sp/>documentation<sp/>and<sp/>examples<sp/>should<sp/>encourage<sp/>people</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>to<sp/>pass<sp/>write_all_tables=TRUE;<sp/>then<sp/>it<sp/>will<sp/>take<sp/>active<sp/>thought<sp/>to<sp/>do<sp/>the</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>wrong<sp/>thing.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">jpeg_start_compress<sp/>(<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref><sp/>cinfo,<sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>write_all_tables)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;global_state<sp/>!=<sp/>CSTATE_START)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT1(cinfo,<sp/>JERR_BAD_STATE,<sp/>cinfo-&gt;global_state);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(write_all_tables)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>jpeg_suppress_tables(cinfo,<sp/>FALSE);<sp/></highlight><highlight class="comment">/*<sp/>mark<sp/>all<sp/>tables<sp/>to<sp/>be<sp/>written<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>(Re)initialize<sp/>error<sp/>mgr<sp/>and<sp/>destination<sp/>modules<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>(*cinfo-&gt;err-&gt;reset_error_mgr)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>(*cinfo-&gt;dest-&gt;init_destination)<sp/>(cinfo);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Perform<sp/>master<sp/>selection<sp/>of<sp/>active<sp/>modules<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>jinit_compress_master(cinfo);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>up<sp/>for<sp/>the<sp/>first<sp/>pass<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>(*cinfo-&gt;master-&gt;prepare_for_pass)<sp/>(cinfo);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Ready<sp/>for<sp/>application<sp/>to<sp/>drive<sp/>first<sp/>pass<sp/>through<sp/>jpeg_write_scanlines</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/>*<sp/>or<sp/>jpeg_write_raw_data.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>cinfo-&gt;next_scanline<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>cinfo-&gt;global_state<sp/>=<sp/>(cinfo-&gt;raw_data_in<sp/>?<sp/>CSTATE_RAW_OK<sp/>:<sp/>CSTATE_SCANNING);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>Write<sp/>some<sp/>scanlines<sp/>of<sp/>data<sp/>to<sp/>the<sp/>JPEG<sp/>compressor.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/>The<sp/>return<sp/>value<sp/>will<sp/>be<sp/>the<sp/>number<sp/>of<sp/>lines<sp/>actually<sp/>written.</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>This<sp/>should<sp/>be<sp/>less<sp/>than<sp/>the<sp/>supplied<sp/>num_lines<sp/>only<sp/>in<sp/>case<sp/>that</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>the<sp/>data<sp/>destination<sp/>module<sp/>has<sp/>requested<sp/>suspension<sp/>of<sp/>the<sp/>compressor,</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>or<sp/>if<sp/>more<sp/>than<sp/>image_height<sp/>scanlines<sp/>are<sp/>passed<sp/>in.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>Note:<sp/>we<sp/>warn<sp/>about<sp/>excess<sp/>calls<sp/>to<sp/>jpeg_write_scanlines()<sp/>since</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>this<sp/>likely<sp/>signals<sp/>an<sp/>application<sp/>programmer<sp/>error.<sp/><sp/>However,</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>excess<sp/>scanlines<sp/>passed<sp/>in<sp/>the<sp/>last<sp/>valid<sp/>call<sp/>are<sp/>*silently*<sp/>ignored,</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>so<sp/>that<sp/>the<sp/>application<sp/>need<sp/>not<sp/>adjust<sp/>num_lines<sp/>for<sp/>end-of-image</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/>when<sp/>using<sp/>a<sp/>multiple-scanline<sp/>buffer.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">GLOBAL<sp/>JDIMENSION</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">jpeg_write_scanlines<sp/>(<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref><sp/>cinfo,<sp/>JSAMPARRAY<sp/>scanlines,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>num_lines)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>JDIMENSION<sp/>row_ctr,<sp/>rows_left;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;global_state<sp/>!=<sp/>CSTATE_SCANNING)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT1(cinfo,<sp/>JERR_BAD_STATE,<sp/>cinfo-&gt;global_state);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;next_scanline<sp/>&gt;=<sp/>cinfo-&gt;image_height)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>WARNMS(cinfo,<sp/>JWRN_TOO_MUCH_DATA);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Call<sp/>progress<sp/>monitor<sp/>hook<sp/>if<sp/>present<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;progress<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;progress-&gt;pass_counter<sp/>=<sp/>(long)<sp/>cinfo-&gt;next_scanline;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;progress-&gt;pass_limit<sp/>=<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)<sp/>cinfo-&gt;image_height;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>(*cinfo-&gt;progress-&gt;progress_monitor)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Give<sp/>master<sp/>control<sp/>module<sp/>another<sp/>chance<sp/>if<sp/>this<sp/>is<sp/>first<sp/>call<sp/>to</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/>*<sp/>jpeg_write_scanlines.<sp/><sp/>This<sp/>lets<sp/>output<sp/>of<sp/>the<sp/>frame/scan<sp/>headers<sp/>be</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/>*<sp/>delayed<sp/>so<sp/>that<sp/>application<sp/>can<sp/>write<sp/>COM,<sp/>etc,<sp/>markers<sp/>between</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/>*<sp/>jpeg_start_compress<sp/>and<sp/>jpeg_write_scanlines.</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;master-&gt;call_pass_startup)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>(*cinfo-&gt;master-&gt;pass_startup)<sp/>(cinfo);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Ignore<sp/>any<sp/>extra<sp/>scanlines<sp/>at<sp/>bottom<sp/>of<sp/>image.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>rows_left<sp/>=<sp/>cinfo-&gt;image_height<sp/>-<sp/>cinfo-&gt;next_scanline;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_lines<sp/>&gt;<sp/>rows_left)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>num_lines<sp/>=<sp/>rows_left;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>row_ctr<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>(*cinfo-&gt;main-&gt;process_data)<sp/>(cinfo,<sp/>scanlines,<sp/>&amp;row_ctr,<sp/>num_lines);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>cinfo-&gt;next_scanline<sp/>+=<sp/>row_ctr;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>row_ctr;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>Alternate<sp/>entry<sp/>point<sp/>to<sp/>write<sp/>raw<sp/>data.</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>Processes<sp/>exactly<sp/>one<sp/>iMCU<sp/>row<sp/>per<sp/>call,<sp/>unless<sp/>suspended.</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">GLOBAL<sp/>JDIMENSION</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">jpeg_write_raw_data<sp/>(<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref><sp/>cinfo,<sp/>JSAMPIMAGE<sp/>data,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>num_lines)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>JDIMENSION<sp/>lines_per_iMCU_row;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;global_state<sp/>!=<sp/>CSTATE_RAW_OK)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT1(cinfo,<sp/>JERR_BAD_STATE,<sp/>cinfo-&gt;global_state);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;next_scanline<sp/>&gt;=<sp/>cinfo-&gt;image_height)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>WARNMS(cinfo,<sp/>JWRN_TOO_MUCH_DATA);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Call<sp/>progress<sp/>monitor<sp/>hook<sp/>if<sp/>present<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;progress<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;progress-&gt;pass_counter<sp/>=<sp/>(long)<sp/>cinfo-&gt;next_scanline;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>cinfo-&gt;progress-&gt;pass_limit<sp/>=<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)<sp/>cinfo-&gt;image_height;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>(*cinfo-&gt;progress-&gt;progress_monitor)<sp/>((<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref>)<sp/>cinfo);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Give<sp/>master<sp/>control<sp/>module<sp/>another<sp/>chance<sp/>if<sp/>this<sp/>is<sp/>first<sp/>call<sp/>to</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/>*<sp/>jpeg_write_raw_data.<sp/><sp/>This<sp/>lets<sp/>output<sp/>of<sp/>the<sp/>frame/scan<sp/>headers<sp/>be</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/>*<sp/>delayed<sp/>so<sp/>that<sp/>application<sp/>can<sp/>write<sp/>COM,<sp/>etc,<sp/>markers<sp/>between</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/>*<sp/>jpeg_start_compress<sp/>and<sp/>jpeg_write_raw_data.</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cinfo-&gt;master-&gt;call_pass_startup)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>(*cinfo-&gt;master-&gt;pass_startup)<sp/>(cinfo);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Verify<sp/>that<sp/>at<sp/>least<sp/>one<sp/>iMCU<sp/>row<sp/>has<sp/>been<sp/>passed.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>lines_per_iMCU_row<sp/>=<sp/>cinfo-&gt;max_v_samp_factor<sp/>*<sp/>DCTSIZE;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_lines<sp/>&lt;<sp/>lines_per_iMCU_row)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_BUFFER_SIZE);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Directly<sp/>compress<sp/>the<sp/>row.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>(*cinfo-&gt;coef-&gt;compress_data)<sp/>(cinfo,<sp/>data))<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>compressor<sp/>did<sp/>not<sp/>consume<sp/>the<sp/>whole<sp/>row,<sp/>suspend<sp/>processing.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>OK,<sp/>we<sp/>processed<sp/>one<sp/>iMCU<sp/>row.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>cinfo-&gt;next_scanline<sp/>+=<sp/>lines_per_iMCU_row;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lines_per_iMCU_row;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcapistd.c"/>
+  </compounddef>
+</doxygen>

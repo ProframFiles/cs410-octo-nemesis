@@ -1,0 +1,674 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_heap" kind="class" prot="public">
+    <compoundname>idHeap</compoundname>
+    <innerclass refid="structid_heap_1_1medium_heap_entry__s" prot="private">idHeap::mediumHeapEntry_s</innerclass>
+    <innerclass refid="structid_heap_1_1page__s" prot="private">idHeap::page_s</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classid_heap_1a986fd7aab0e4060a6541e16aa6aed172" prot="private" static="no">
+        <name>@83</name>
+        <enumvalue id="classid_heap_1a986fd7aab0e4060a6541e16aa6aed172ab940069d2db9371d07d4b5c9a258d90d" prot="private">
+          <name>ALIGN</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="72" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="enum" id="classid_heap_1ae2c39e5fcf13cd09926a602f3e8fe799" prot="private" static="no">
+        <name>@84</name>
+        <enumvalue id="classid_heap_1ae2c39e5fcf13cd09926a602f3e8fe799ac4ea4a38fdf672c169949c9e8d998b5b" prot="private">
+          <name>INVALID_ALLOC</name>
+          <initializer>= 0xdd</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_heap_1ae2c39e5fcf13cd09926a602f3e8fe799a2dffbc02c2c44e614c3cd86d360ae9a7" prot="private">
+          <name>SMALL_ALLOC</name>
+          <initializer>= 0xaa</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_heap_1ae2c39e5fcf13cd09926a602f3e8fe799a7ebd02b913cc5236f1337ee5e4ffb574" prot="private">
+          <name>MEDIUM_ALLOC</name>
+          <initializer>= 0xbb</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_heap_1ae2c39e5fcf13cd09926a602f3e8fe799a7532cea7a2f33c05a40977d81b14c9ed" prot="private">
+          <name>LARGE_ALLOC</name>
+          <initializer>= 0xcc</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="76" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="76" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classid_heap_1a0f3f7824673ff8c440df5b18211cc24b" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* idHeap::smallFirstFree[256/ALIGN+1]</definition>
+        <argsstring>[256/ALIGN+1]</argsstring>
+        <name>smallFirstFree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="103" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1a7eccbe6d89d96e6d71d56848bc62eab0" prot="private" static="no" mutable="no">
+        <type>page_s *</type>
+        <definition>page_s* idHeap::smallCurPage</definition>
+        <argsstring></argsstring>
+        <name>smallCurPage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="104" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1adb360be74c00ba95abecad4e1863b6b7" prot="private" static="no" mutable="no">
+        <type>dword</type>
+        <definition>dword idHeap::smallCurPageOffset</definition>
+        <argsstring></argsstring>
+        <name>smallCurPageOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="105" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1a525f9b1e3514f4db28c61bb6cdd4f733" prot="private" static="no" mutable="no">
+        <type>page_s *</type>
+        <definition>page_s* idHeap::smallFirstUsedPage</definition>
+        <argsstring></argsstring>
+        <name>smallFirstUsedPage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="106" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1afb7a2eee6afec454bc2b22ac780d364e" prot="private" static="no" mutable="no">
+        <type>page_s *</type>
+        <definition>page_s* idHeap::mediumFirstFreePage</definition>
+        <argsstring></argsstring>
+        <name>mediumFirstFreePage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="108" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1a696e1bf2dd2b245f71e8988489c3cd7f" prot="private" static="no" mutable="no">
+        <type>page_s *</type>
+        <definition>page_s* idHeap::mediumLastFreePage</definition>
+        <argsstring></argsstring>
+        <name>mediumLastFreePage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="109" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1afa53f76b9378a61404f8f234f4a1030f" prot="private" static="no" mutable="no">
+        <type>page_s *</type>
+        <definition>page_s* idHeap::mediumFirstUsedPage</definition>
+        <argsstring></argsstring>
+        <name>mediumFirstUsedPage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="110" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1a30616f12872ad79abbdbb957c8f37eb3" prot="private" static="no" mutable="no">
+        <type>page_s *</type>
+        <definition>page_s* idHeap::largeFirstUsedPage</definition>
+        <argsstring></argsstring>
+        <name>largeFirstUsedPage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="112" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1a63368b87c9ed6465d1e034894bf1a361" prot="private" static="no" mutable="no">
+        <type>page_s *</type>
+        <definition>page_s* idHeap::swapPage</definition>
+        <argsstring></argsstring>
+        <name>swapPage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="114" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1ab1aed74bb87fc66552be86302d348ea7" prot="private" static="no" mutable="no">
+        <type>dword</type>
+        <definition>dword idHeap::pagesAllocated</definition>
+        <argsstring></argsstring>
+        <name>pagesAllocated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="116" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1a4f60fefe03f6a8ea2b0d3c437d2a067b" prot="private" static="no" mutable="no">
+        <type>dword</type>
+        <definition>dword idHeap::pageSize</definition>
+        <argsstring></argsstring>
+        <name>pageSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="117" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1af99c00e50f8cd4a218df1af5d8a05c6b" prot="private" static="no" mutable="no">
+        <type>dword</type>
+        <definition>dword idHeap::pageRequests</definition>
+        <argsstring></argsstring>
+        <name>pageRequests</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="119" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1abed97013f70e4da6366a7a7db1169a83" prot="private" static="no" mutable="no">
+        <type>dword</type>
+        <definition>dword idHeap::OSAllocs</definition>
+        <argsstring></argsstring>
+        <name>OSAllocs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="120" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1a1beb1f36ac93b2f3458698d08a2bf236" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idHeap::c_heapAllocRunningCount</definition>
+        <argsstring></argsstring>
+        <name>c_heapAllocRunningCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="122" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_heap_1a0963bff64b7b84b41c7a3d5cf4f6e43d" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* idHeap::defragBlock</definition>
+        <argsstring></argsstring>
+        <name>defragBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="124" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_heap_1ae4233f5ebbb8146f388f03c8d14f769a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idHeap::idHeap</definition>
+        <argsstring>(void)</argsstring>
+        <name>idHeap</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="58" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="180" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1a1431a8a8ef7a2a66146246a97745dfe2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idHeap::~idHeap</definition>
+        <argsstring>(void)</argsstring>
+        <name>~idHeap</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="59" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="191" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1a828b462f5523f90afca5bcc46388dc58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="60" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="151" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1a1ea3d15ce272dba6c9ffab86635ca1bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * idHeap::Allocate</definition>
+        <argsstring>(const dword bytes)</argsstring>
+        <name>Allocate</name>
+        <param>
+          <type>const dword</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="61" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="261" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1aa9471532cf3ad39766f1196bfae25f99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::Free</definition>
+        <argsstring>(void *p)</argsstring>
+        <name>Free</name>
+        <param>
+          <type>void *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="62" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="285" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1aa7cce41f309b358628b9b2b76756a683" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * idHeap::Allocate16</definition>
+        <argsstring>(const dword bytes)</argsstring>
+        <name>Allocate16</name>
+        <param>
+          <type>const dword</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="63" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="320" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1a04147bfcd5189c24767c26a76fe5ad67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::Free16</definition>
+        <argsstring>(void *p)</argsstring>
+        <name>Free16</name>
+        <param>
+          <type>void *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="64" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="349" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1a09e9009ac427873976996a22e89dc458" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>dword</type>
+        <definition>dword idHeap::Msize</definition>
+        <argsstring>(void *p)</argsstring>
+        <name>Msize</name>
+        <param>
+          <type>void *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="65" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="363" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1aee633b69f31391df900fcff78862e692" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::Dump</definition>
+        <argsstring>(void)</argsstring>
+        <name>Dump</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="66" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="401" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1aba5028a8b4956736a08e86f5f203c2e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::AllocDefragBlock</definition>
+        <argsstring>(void)</argsstring>
+        <name>AllocDefragBlock</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="68" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="240" bodyend="254"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classid_heap_1a0171995d1f6741be65d4b648a106a12a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>page_s *</type>
+        <definition>idHeap::page_s * idHeap::AllocatePage</definition>
+        <argsstring>(dword bytes)</argsstring>
+        <name>AllocatePage</name>
+        <param>
+          <type>dword</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="128" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="464" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1a0a535c582307fdce931fa70872569e39" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::FreePage</definition>
+        <argsstring>(idHeap::page_s *p)</argsstring>
+        <name>FreePage</name>
+        <param>
+          <type>idHeap::page_s *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="129" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="515" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1abe7eaeaa0253e319eb1c289c33a111b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * idHeap::SmallAllocate</definition>
+        <argsstring>(dword bytes)</argsstring>
+        <name>SmallAllocate</name>
+        <param>
+          <type>dword</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="131" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="543" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1ae4e7ce5c345ca784119e29d33638db80" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::SmallFree</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>SmallFree</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="132" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="589" bodyend="604"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1acb25d3c79f859652050e3d9b3e4ae5cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * idHeap::MediumAllocateFromPage</definition>
+        <argsstring>(idHeap::page_s *p, dword sizeNeeded)</argsstring>
+        <name>MediumAllocateFromPage</name>
+        <param>
+          <type>idHeap::page_s *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>dword</type>
+          <declname>sizeNeeded</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="134" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="625" bodyend="677"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1aa5fe19eda59b933690234489e52a2b6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * idHeap::MediumAllocate</definition>
+        <argsstring>(dword bytes)</argsstring>
+        <name>MediumAllocate</name>
+        <param>
+          <type>dword</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="135" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="688" bodyend="782"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1accd1a7983113019fd3887285451b6fef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::MediumFree</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>MediumFree</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="136" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="792" bodyend="905"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1a722877951fbef53d0cdcb86cf82bfbc2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * idHeap::LargeAllocate</definition>
+        <argsstring>(dword bytes)</argsstring>
+        <name>LargeAllocate</name>
+        <param>
+          <type>dword</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="138" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="922" bodyend="945"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1a4daebbdd9e3f852857faa4e3097cfb0b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::LargeFree</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>LargeFree</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="139" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="955" bodyend="976"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1a10d249c2956411641f6f3a0d6527239e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::ReleaseSwappedPages</definition>
+        <argsstring>(void)</argsstring>
+        <name>ReleaseSwappedPages</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="141" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="448" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_heap_1a271a9c4b15e6d686f1a54a7a80f14d9d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idHeap::FreePageReal</definition>
+        <argsstring>(idHeap::page_s *p)</argsstring>
+        <name>FreePageReal</name>
+        <param>
+          <type>idHeap::page_s *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="142" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="436" bodyend="439"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" line="55" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.cpp" bodystart="55" bodyend="143"/>
+    <listofallmembers>
+      <member refid="classid_heap_1a986fd7aab0e4060a6541e16aa6aed172ab940069d2db9371d07d4b5c9a258d90d" prot="private" virt="non-virtual"><scope>idHeap</scope><name>ALIGN</name></member>
+      <member refid="classid_heap_1a1ea3d15ce272dba6c9ffab86635ca1bf" prot="public" virt="non-virtual"><scope>idHeap</scope><name>Allocate</name></member>
+      <member refid="classid_heap_1aa7cce41f309b358628b9b2b76756a683" prot="public" virt="non-virtual"><scope>idHeap</scope><name>Allocate16</name></member>
+      <member refid="classid_heap_1a0171995d1f6741be65d4b648a106a12a" prot="private" virt="non-virtual"><scope>idHeap</scope><name>AllocatePage</name></member>
+      <member refid="classid_heap_1aba5028a8b4956736a08e86f5f203c2e6" prot="public" virt="non-virtual"><scope>idHeap</scope><name>AllocDefragBlock</name></member>
+      <member refid="classid_heap_1a1beb1f36ac93b2f3458698d08a2bf236" prot="private" virt="non-virtual"><scope>idHeap</scope><name>c_heapAllocRunningCount</name></member>
+      <member refid="classid_heap_1a0963bff64b7b84b41c7a3d5cf4f6e43d" prot="private" virt="non-virtual"><scope>idHeap</scope><name>defragBlock</name></member>
+      <member refid="classid_heap_1aee633b69f31391df900fcff78862e692" prot="public" virt="non-virtual"><scope>idHeap</scope><name>Dump</name></member>
+      <member refid="classid_heap_1aa9471532cf3ad39766f1196bfae25f99" prot="public" virt="non-virtual"><scope>idHeap</scope><name>Free</name></member>
+      <member refid="classid_heap_1a04147bfcd5189c24767c26a76fe5ad67" prot="public" virt="non-virtual"><scope>idHeap</scope><name>Free16</name></member>
+      <member refid="classid_heap_1a0a535c582307fdce931fa70872569e39" prot="private" virt="non-virtual"><scope>idHeap</scope><name>FreePage</name></member>
+      <member refid="classid_heap_1a271a9c4b15e6d686f1a54a7a80f14d9d" prot="private" virt="non-virtual"><scope>idHeap</scope><name>FreePageReal</name></member>
+      <member refid="classid_heap_1ae4233f5ebbb8146f388f03c8d14f769a" prot="public" virt="non-virtual"><scope>idHeap</scope><name>idHeap</name></member>
+      <member refid="classid_heap_1a828b462f5523f90afca5bcc46388dc58" prot="public" virt="non-virtual"><scope>idHeap</scope><name>Init</name></member>
+      <member refid="classid_heap_1ae2c39e5fcf13cd09926a602f3e8fe799ac4ea4a38fdf672c169949c9e8d998b5b" prot="private" virt="non-virtual"><scope>idHeap</scope><name>INVALID_ALLOC</name></member>
+      <member refid="classid_heap_1ae2c39e5fcf13cd09926a602f3e8fe799a7532cea7a2f33c05a40977d81b14c9ed" prot="private" virt="non-virtual"><scope>idHeap</scope><name>LARGE_ALLOC</name></member>
+      <member refid="classid_heap_1a722877951fbef53d0cdcb86cf82bfbc2" prot="private" virt="non-virtual"><scope>idHeap</scope><name>LargeAllocate</name></member>
+      <member refid="classid_heap_1a30616f12872ad79abbdbb957c8f37eb3" prot="private" virt="non-virtual"><scope>idHeap</scope><name>largeFirstUsedPage</name></member>
+      <member refid="classid_heap_1a4daebbdd9e3f852857faa4e3097cfb0b" prot="private" virt="non-virtual"><scope>idHeap</scope><name>LargeFree</name></member>
+      <member refid="classid_heap_1ae2c39e5fcf13cd09926a602f3e8fe799a7ebd02b913cc5236f1337ee5e4ffb574" prot="private" virt="non-virtual"><scope>idHeap</scope><name>MEDIUM_ALLOC</name></member>
+      <member refid="classid_heap_1aa5fe19eda59b933690234489e52a2b6f" prot="private" virt="non-virtual"><scope>idHeap</scope><name>MediumAllocate</name></member>
+      <member refid="classid_heap_1acb25d3c79f859652050e3d9b3e4ae5cc" prot="private" virt="non-virtual"><scope>idHeap</scope><name>MediumAllocateFromPage</name></member>
+      <member refid="classid_heap_1afb7a2eee6afec454bc2b22ac780d364e" prot="private" virt="non-virtual"><scope>idHeap</scope><name>mediumFirstFreePage</name></member>
+      <member refid="classid_heap_1afa53f76b9378a61404f8f234f4a1030f" prot="private" virt="non-virtual"><scope>idHeap</scope><name>mediumFirstUsedPage</name></member>
+      <member refid="classid_heap_1accd1a7983113019fd3887285451b6fef" prot="private" virt="non-virtual"><scope>idHeap</scope><name>MediumFree</name></member>
+      <member refid="classid_heap_1a696e1bf2dd2b245f71e8988489c3cd7f" prot="private" virt="non-virtual"><scope>idHeap</scope><name>mediumLastFreePage</name></member>
+      <member refid="classid_heap_1a09e9009ac427873976996a22e89dc458" prot="public" virt="non-virtual"><scope>idHeap</scope><name>Msize</name></member>
+      <member refid="classid_heap_1abed97013f70e4da6366a7a7db1169a83" prot="private" virt="non-virtual"><scope>idHeap</scope><name>OSAllocs</name></member>
+      <member refid="classid_heap_1af99c00e50f8cd4a218df1af5d8a05c6b" prot="private" virt="non-virtual"><scope>idHeap</scope><name>pageRequests</name></member>
+      <member refid="classid_heap_1ab1aed74bb87fc66552be86302d348ea7" prot="private" virt="non-virtual"><scope>idHeap</scope><name>pagesAllocated</name></member>
+      <member refid="classid_heap_1a4f60fefe03f6a8ea2b0d3c437d2a067b" prot="private" virt="non-virtual"><scope>idHeap</scope><name>pageSize</name></member>
+      <member refid="classid_heap_1a10d249c2956411641f6f3a0d6527239e" prot="private" virt="non-virtual"><scope>idHeap</scope><name>ReleaseSwappedPages</name></member>
+      <member refid="classid_heap_1ae2c39e5fcf13cd09926a602f3e8fe799a2dffbc02c2c44e614c3cd86d360ae9a7" prot="private" virt="non-virtual"><scope>idHeap</scope><name>SMALL_ALLOC</name></member>
+      <member refid="classid_heap_1abe7eaeaa0253e319eb1c289c33a111b5" prot="private" virt="non-virtual"><scope>idHeap</scope><name>SmallAllocate</name></member>
+      <member refid="classid_heap_1a7eccbe6d89d96e6d71d56848bc62eab0" prot="private" virt="non-virtual"><scope>idHeap</scope><name>smallCurPage</name></member>
+      <member refid="classid_heap_1adb360be74c00ba95abecad4e1863b6b7" prot="private" virt="non-virtual"><scope>idHeap</scope><name>smallCurPageOffset</name></member>
+      <member refid="classid_heap_1a0f3f7824673ff8c440df5b18211cc24b" prot="private" virt="non-virtual"><scope>idHeap</scope><name>smallFirstFree</name></member>
+      <member refid="classid_heap_1a525f9b1e3514f4db28c61bb6cdd4f733" prot="private" virt="non-virtual"><scope>idHeap</scope><name>smallFirstUsedPage</name></member>
+      <member refid="classid_heap_1ae4e7ce5c345ca784119e29d33638db80" prot="private" virt="non-virtual"><scope>idHeap</scope><name>SmallFree</name></member>
+      <member refid="classid_heap_1a63368b87c9ed6465d1e034894bf1a361" prot="private" virt="non-virtual"><scope>idHeap</scope><name>swapPage</name></member>
+      <member refid="classid_heap_1a1431a8a8ef7a2a66146246a97745dfe2" prot="public" virt="non-virtual"><scope>idHeap</scope><name>~idHeap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="analysis_8c" kind="file">
+    <compoundname>analysis.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="_math_8h" local="no">math.h</includes>
+    <includes refid="ogg_8h" local="yes">../ogg/ogg.h</includes>
+    <includes refid="sound_2_ogg_vorbis_2vorbis_2codec_8h" local="yes">../vorbis/codec.h</includes>
+    <includes refid="codec__internal_8h" local="yes">codec_internal.h</includes>
+    <includes refid="registry_8h" local="yes">registry.h</includes>
+    <includes refid="scales_8h" local="yes">scales.h</includes>
+    <includes refid="os_8h" local="yes">os.h</includes>
+    <includes refid="sound_2_ogg_vorbis_2vorbissrc_2_misc_8h" local="yes">misc.h</includes>
+    <incdepgraph>
+      <node id="1997">
+        <label>string.h</label>
+      </node>
+      <node id="1995">
+        <label>E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/analysis.c</label>
+        <link refid="analysis.c"/>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+      </node>
+      <node id="1996">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="analysis_8c_1ad80f929e2cbd642e839b097c3900ce67" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int analysis_noisy</definition>
+        <argsstring></argsstring>
+        <name>analysis_noisy</name>
+        <initializer>=1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/analysis.c" line="29" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/analysis.c" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="analysis_8c_1a3873974078caf99893e6268e5ce6d896" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int vorbis_analysis</definition>
+        <argsstring>(vorbis_block *vb, ogg_packet *op)</argsstring>
+        <name>vorbis_analysis</name>
+        <param>
+          <type><ref refid="structvorbis__block" kindref="compound">vorbis_block</ref> *</type>
+          <declname>vb</declname>
+        </param>
+        <param>
+          <type><ref refid="structogg__packet" kindref="compound">ogg_packet</ref> *</type>
+          <declname>op</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/analysis.c" line="32" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/analysis.c" bodystart="32" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="analysis_8c_1a2e8f752952a7e0abc21b48166b3cd138" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _analysis_output_always</definition>
+        <argsstring>(char *base, int i, float *v, int n, int bark, int dB, ogg_int64_t off)</argsstring>
+        <name>_analysis_output_always</name>
+        <param>
+          <type>char *</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bark</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dB</declname>
+        </param>
+        <param>
+          <type>ogg_int64_t</type>
+          <declname>off</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/analysis.c" line="67" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/analysis.c" bodystart="67" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="analysis_8c_1ab6d230aafcc0db81faad80d2f39ede57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _analysis_output</definition>
+        <argsstring>(char *base, int i, float *v, int n, int bark, int dB, ogg_int64_t off)</argsstring>
+        <name>_analysis_output</name>
+        <param>
+          <type>char *</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bark</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dB</declname>
+        </param>
+        <param>
+          <type>ogg_int64_t</type>
+          <declname>off</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/analysis.c" line="103" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/analysis.c" bodystart="103" bodyend="106"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/********************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>THIS<sp/>FILE<sp/>IS<sp/>PART<sp/>OF<sp/>THE<sp/>OggVorbis<sp/>SOFTWARE<sp/>CODEC<sp/>SOURCE<sp/>CODE.<sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>USE,<sp/>DISTRIBUTION<sp/>AND<sp/>REPRODUCTION<sp/>OF<sp/>THIS<sp/>LIBRARY<sp/>SOURCE<sp/>IS<sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>GOVERNED<sp/>BY<sp/>A<sp/>BSD-STYLE<sp/>SOURCE<sp/>LICENSE<sp/>INCLUDED<sp/>WITH<sp/>THIS<sp/>SOURCE<sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>IN<sp/>&apos;COPYING&apos;.<sp/>PLEASE<sp/>READ<sp/>THESE<sp/>TERMS<sp/>BEFORE<sp/>DISTRIBUTING.<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>THE<sp/>OggVorbis<sp/>SOURCE<sp/>CODE<sp/>IS<sp/>(C)<sp/>COPYRIGHT<sp/>1994-2002<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>by<sp/>the<sp/>XIPHOPHORUS<sp/>Company<sp/>http://www.xiph.org/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>********************************************************************</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>function:<sp/>single-block<sp/>PCM<sp/>analysis<sp/>mode<sp/>dispatch</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>last<sp/>mod:<sp/>$Id:<sp/>analysis.c,v<sp/>1.55<sp/>2002/07/11<sp/>06:40:48<sp/>xiphmont<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../ogg/ogg.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../vorbis/codec.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;codec_internal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;registry.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;scales.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;os.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;misc.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>analysis_noisy=1;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>decides<sp/>between<sp/>modes,<sp/>dispatches<sp/>to<sp/>the<sp/>appropriate<sp/>mapping.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vorbis_analysis(<ref refid="structvorbis__block" kindref="compound">vorbis_block</ref><sp/>*vb,<sp/><ref refid="structogg__packet" kindref="compound">ogg_packet</ref><sp/>*op){</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>vb-&gt;glue_bits=0;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>vb-&gt;time_bits=0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>vb-&gt;floor_bits=0;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>vb-&gt;res_bits=0;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>first<sp/>things<sp/>first.<sp/><sp/>Make<sp/>sure<sp/>encode<sp/>is<sp/>ready<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>oggpack_reset(&amp;vb-&gt;opb);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>we<sp/>only<sp/>have<sp/>one<sp/>mapping<sp/>type<sp/>(0),<sp/>and<sp/>we<sp/>let<sp/>the<sp/>mapping<sp/>code</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>itself<sp/>figure<sp/>out<sp/>what<sp/>soft<sp/>mode<sp/>to<sp/>use.<sp/><sp/>This<sp/>allows<sp/>easier</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>bitrate<sp/>management<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((ret=_mapping_P[0]-&gt;forward(vb)))</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(ret);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(op){</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(vorbis_bitrate_managed(vb))</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>app<sp/>is<sp/>using<sp/>a<sp/>bitmanaged<sp/>mode...<sp/>but<sp/>not<sp/>using<sp/>the</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bitrate<sp/>management<sp/>interface.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(OV_EINVAL);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>op-&gt;packet=oggpack_get_buffer(&amp;vb-&gt;opb);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>op-&gt;bytes=oggpack_bytes(&amp;vb-&gt;opb);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>op-&gt;b_o_s=0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>op-&gt;e_o_s=vb-&gt;eofflag;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>op-&gt;granulepos=vb-&gt;granulepos;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>op-&gt;packetno=vb-&gt;sequence;<sp/></highlight><highlight class="comment">/*<sp/>for<sp/>sake<sp/>of<sp/>completeness<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(0);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>there<sp/>was<sp/>no<sp/>great<sp/>place<sp/>to<sp/>put<sp/>this....<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_analysis_output_always(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*base,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*v,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bark,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dB,ogg_int64_t<sp/>off){</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>FILE<sp/>*of;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[80];</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/>if(i==5870){*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(buffer,</highlight><highlight class="stringliteral">&quot;%s_%d.m&quot;</highlight><highlight class="normal">,base,i);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>of=fopen(buffer,</highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!of)perror(</highlight><highlight class="stringliteral">&quot;failed<sp/>to<sp/>open<sp/>data<sp/>dump<sp/>file&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;j&lt;n;j++){</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(bark){</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b=toBARK((4000.f*j/n)+.25);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(of,</highlight><highlight class="stringliteral">&quot;%f<sp/>&quot;</highlight><highlight class="normal">,b);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(off!=0)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(of,</highlight><highlight class="stringliteral">&quot;%f<sp/>&quot;</highlight><highlight class="normal">,(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)(j+off)/8000.);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(of,</highlight><highlight class="stringliteral">&quot;%f<sp/>&quot;</highlight><highlight class="normal">,(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)j);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(dB){</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>val;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(v[j]==0.)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>val=-140.;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>val=todB(v+j);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(of,</highlight><highlight class="stringliteral">&quot;%f\n&quot;</highlight><highlight class="normal">,val);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(of,</highlight><highlight class="stringliteral">&quot;%f\n&quot;</highlight><highlight class="normal">,v[j]);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>fclose(of);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/>}<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_analysis_output(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*base,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*v,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bark,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dB,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ogg_int64_t<sp/>off){</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(analysis_noisy)_analysis_output_always(base,i,v,n,bark,dB,off);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/analysis.c"/>
+  </compounddef>
+</doxygen>

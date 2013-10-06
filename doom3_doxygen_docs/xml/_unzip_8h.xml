@@ -1,0 +1,1003 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_unzip_8h" kind="file">
+    <compoundname>Unzip.h</compoundname>
+    <includedby refid="_file_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/framework/File.cpp</includedby>
+    <includedby refid="_file_system_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/framework/FileSystem.cpp</includedby>
+    <includedby refid="_unzip_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp</includedby>
+    <innerclass refid="structtm__unz__s" prot="public">tm_unz_s</innerclass>
+    <innerclass refid="structunz__global__info__s" prot="public">unz_global_info_s</innerclass>
+    <innerclass refid="structunz__file__info__s" prot="public">unz_file_info_s</innerclass>
+    <innerclass refid="structunz__file__info__internal__s" prot="public">unz_file_info_internal_s</innerclass>
+    <innerclass refid="structz__stream__s" prot="public">z_stream_s</innerclass>
+    <innerclass refid="structfile__in__zip__read__info__s" prot="public">file_in_zip_read_info_s</innerclass>
+    <innerclass refid="structunz__s" prot="public">unz_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_unzip_8h_1ada043545f95ccd4dae93fa44d95e39a8" prot="public" static="no">
+        <name>UNZ_OK</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="165" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_unzip_8h_1ac55ed190d07021ce9bc1bf34b91dcae9" prot="public" static="no">
+        <name>UNZ_END_OF_LIST_OF_FILE</name>
+        <initializer>(-100)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="166" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_unzip_8h_1aae99fb3e34ea9f78ca8ba4a716f86e68" prot="public" static="no">
+        <name>UNZ_ERRNO</name>
+        <initializer>(Z_ERRNO)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="167" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_unzip_8h_1a0438887aea4e1c58e1b3955838a907f3" prot="public" static="no">
+        <name>UNZ_EOF</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="168" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_unzip_8h_1aca983831f4d25e504d544eb07f48e39b" prot="public" static="no">
+        <name>UNZ_PARAMERROR</name>
+        <initializer>(-102)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="169" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_unzip_8h_1a3fcc1d41cbea304ce10286ce99577625" prot="public" static="no">
+        <name>UNZ_BADZIPFILE</name>
+        <initializer>(-103)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="170" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_unzip_8h_1a813da146afcb179d57e948bf6871799b" prot="public" static="no">
+        <name>UNZ_INTERNALERROR</name>
+        <initializer>(-104)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="171" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_unzip_8h_1ae9155f504a5db40587b390f9e487c303" prot="public" static="no">
+        <name>UNZ_CRCERROR</name>
+        <initializer>(-105)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="172" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_unzip_8h_1a5d101de1608f14d2739d2bbcf8b0ae73" prot="public" static="no">
+        <name>UNZ_CASESENSITIVE</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="174" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_unzip_8h_1a3a38a3c1d8caa8ae1b0d97e8c13728d7" prot="public" static="no">
+        <name>UNZ_NOTCASESENSITIVE</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="175" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_unzip_8h_1a922e37539cbaf2f103bf3256939643ff" prot="public" static="no">
+        <name>UNZ_OSDEFAULTCASE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="176" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_unzip_8h_1a2e98fc2c47901e9f6e28de7fa64d548d" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* unzFile</definition>
+        <argsstring></argsstring>
+        <name>unzFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="39" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_unzip_8h_1a369a14c48c4b71afa6bf6cf95c6b9160" prot="public" static="no">
+        <type>struct <ref refid="structtm__unz__s" kindref="compound">tm_unz_s</ref></type>
+        <definition>typedef struct tm_unz_s  tm_unz</definition>
+        <argsstring></argsstring>
+        <name>tm_unz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="51" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_unzip_8h_1a18c3b238618ea86ef503ecbd4092dbce" prot="public" static="no">
+        <type>struct <ref refid="structunz__global__info__s" kindref="compound">unz_global_info_s</ref></type>
+        <definition>typedef struct unz_global_info_s  unz_global_info</definition>
+        <argsstring></argsstring>
+        <name>unz_global_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_unzip_8h_1a03b3ec1a8745daa96699ac49f193b177" prot="public" static="no">
+        <type>struct <ref refid="structunz__file__info__s" kindref="compound">unz_file_info_s</ref></type>
+        <definition>typedef struct unz_file_info_s  unz_file_info</definition>
+        <argsstring></argsstring>
+        <name>unz_file_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_unzip_8h_1a8f7400cb2fdf408412d6f75accea8305" prot="public" static="no">
+        <type>struct <ref refid="structunz__file__info__internal__s" kindref="compound">unz_file_info_internal_s</ref></type>
+        <definition>typedef struct unz_file_info_internal_s  unz_file_info_internal</definition>
+        <argsstring></argsstring>
+        <name>unz_file_info_internal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_unzip_8h_1ad7aa161e20ecfbe46058a7774f4410db" prot="public" static="no">
+        <type>void *(*</type>
+        <definition>typedef void*(* alloc_func)(void *opaque, unsigned int items, unsigned int size)</definition>
+        <argsstring>)(void *opaque, unsigned int items, unsigned int size)</argsstring>
+        <name>alloc_func</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="90" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_unzip_8h_1a7e2d1dba427748987d2c87a82678cf01" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* free_func)(void *opaque, void *address)</definition>
+        <argsstring>)(void *opaque, void *address)</argsstring>
+        <name>free_func</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="91" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_unzip_8h_1afa60092f4e0b9bc4f23b41c6930463f0" prot="public" static="no">
+        <type>struct <ref refid="structz__stream__s" kindref="compound">z_stream_s</ref></type>
+        <definition>typedef struct z_stream_s  z_stream</definition>
+        <argsstring></argsstring>
+        <name>z_stream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="114" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_unzip_8h_1a0073ee5c5eb2aa018825a6a760f93fb9" prot="public" static="no">
+        <type><ref refid="structz__stream__s" kindref="compound">z_stream</ref> *</type>
+        <definition>typedef z_stream* z_streamp</definition>
+        <argsstring></argsstring>
+        <name>z_streamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="116" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_unzip_8h_1a25ab56dfff2fc51889ba3cd66324fe5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzStringFileNameCompare</definition>
+        <argsstring>(const char *fileName1, const char *fileName2, int iCaseSensitivity)</argsstring>
+        <name>unzStringFileNameCompare</name>
+        <param>
+          <type>const char *</type>
+          <declname>fileName1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fileName2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCaseSensitivity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="178" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1210" bodyend="1219"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1acf9933071f5e89971684791f5358001e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unzFile</type>
+        <definition>unzFile unzOpen</definition>
+        <argsstring>(const char *path)</argsstring>
+        <name>unzOpen</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="189" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1309" bodyend="1396"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1a529e5f10327593d452940360ce8453aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unzFile</type>
+        <definition>unzFile unzReOpen</definition>
+        <argsstring>(const char *path, unzFile file)</argsstring>
+        <name>unzReOpen</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="190" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1282" bodyend="1298"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1aef0dc5c24f1bed75f42a8ad3c49ac161" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzClose</definition>
+        <argsstring>(unzFile file)</argsstring>
+        <name>unzClose</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="202" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1404" bodyend="1417"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1adece24d0178f61ef2d69e6ee5e6af464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzGetGlobalInfo</definition>
+        <argsstring>(unzFile file, unz_global_info *pglobal_info)</argsstring>
+        <name>unzGetGlobalInfo</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type><ref refid="structunz__global__info__s" kindref="compound">unz_global_info</ref> *</type>
+          <declname>pglobal_info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="210" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1424" bodyend="1432"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1a8837b1aec3bb870a20dc02f9a1f784be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzGetGlobalComment</definition>
+        <argsstring>(unzFile file, char *szComment, unsigned long uSizeBuf)</argsstring>
+        <name>unzGetGlobalComment</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>szComment</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>uSizeBuf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="218" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="2213" bodyend="2238"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1aede62e436e4e64d5090f880e52c60d35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzGoToFirstFile</definition>
+        <argsstring>(unzFile file)</argsstring>
+        <name>unzGoToFirstFile</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="230" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1627" bodyend="1641"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1ae8566a19fc6c613a3fc627320748000e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzGoToNextFile</definition>
+        <argsstring>(unzFile file)</argsstring>
+        <name>unzGoToNextFile</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="237" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1648" bodyend="1669"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1a32302c9ce1c4ccb24cab814d652e8f46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzGetCurrentFileInfoPosition</definition>
+        <argsstring>(unzFile file, unsigned long *pos)</argsstring>
+        <name>unzGetCurrentFileInfoPosition</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>unsigned long *</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="245" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1675" bodyend="1685"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1a727fa33f6caf8c6701686e7691dd262f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzSetCurrentFileInfoPosition</definition>
+        <argsstring>(unzFile file, unsigned long pos)</argsstring>
+        <name>unzSetCurrentFileInfoPosition</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="252" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1691" bodyend="1706"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1a0780f16e0d227f7bc0be70897a4968ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzLocateFile</definition>
+        <argsstring>(unzFile file, const char *szFileName, int iCaseSensitivity)</argsstring>
+        <name>unzLocateFile</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>szFileName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iCaseSensitivity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="259" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1716" bodyend="1756"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1abeb92c24e8e3aa2783a932f2cfbac939" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzGetCurrentFileInfo</definition>
+        <argsstring>(unzFile file, unz_file_info *pfile_info, char *szFileName, unsigned long fileNameBufferSize, void *extraField, unsigned long extraFieldBufferSize, char *szComment, unsigned long commentBufferSize)</argsstring>
+        <name>unzGetCurrentFileInfo</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type><ref refid="structunz__file__info__s" kindref="compound">unz_file_info</ref> *</type>
+          <declname>pfile_info</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>szFileName</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>fileNameBufferSize</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>extraField</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>extraFieldBufferSize</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>szComment</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>commentBufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="271" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1612" bodyend="1621"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1ab66d71fcdfc031e645ed9c1dec5e31fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzOpenCurrentFile</definition>
+        <argsstring>(unzFile file)</argsstring>
+        <name>unzOpenCurrentFile</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="291" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1852" bodyend="1939"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1a6cc787ca951b3f0ecc782f32aa1cf8e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzCloseCurrentFile</definition>
+        <argsstring>(unzFile file)</argsstring>
+        <name>unzCloseCurrentFile</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="298" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="2172" bodyend="2205"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1a2f9afaa00c7985a22826539160e71018" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzReadCurrentFile</definition>
+        <argsstring>(unzFile file, void *buf, unsigned len)</argsstring>
+        <name>unzReadCurrentFile</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="306" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="1952" bodyend="2071"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1ab17efcbbe249a835e0d2e41170541e9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long unztell</definition>
+        <argsstring>(unzFile file)</argsstring>
+        <name>unztell</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="319" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="2077" bodyend="2090"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1a88eda7d72ebcefc3509ef28d0faa6a6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzeof</definition>
+        <argsstring>(unzFile file)</argsstring>
+        <name>unzeof</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="325" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="2096" bodyend="2112"/>
+      </memberdef>
+      <memberdef kind="function" id="_unzip_8h_1ae782b18b4958a44c3c50fcb2cccf539e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unzGetLocalExtrafield</definition>
+        <argsstring>(unzFile file, void *buf, unsigned len)</argsstring>
+        <name>unzGetLocalExtrafield</name>
+        <param>
+          <type>unzFile</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h" line="331" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Unzip.cpp" bodystart="2128" bodyend="2166"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__UNZIP_H__</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__UNZIP_H__</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(STRICTUNZIP)<sp/>||<sp/>defined(STRICTZIPUNZIP)</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>like<sp/>the<sp/>STRICT<sp/>of<sp/>WIN32,<sp/>we<sp/>define<sp/>a<sp/>pointer<sp/>that<sp/>cannot<sp/>be<sp/>converted</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/>from<sp/>(void*)<sp/>without<sp/>cast<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">TagunzFile__<sp/>{<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unused;<sp/>}<sp/>unzFile__;<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>unzFile__<sp/>*unzFile;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>unzFile;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>tm_unz<sp/>contain<sp/>date/time<sp/>info<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structtm__unz__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtm__unz__s" kindref="compound">tm_unz_s</ref><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tm_sec;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>seconds<sp/>after<sp/>the<sp/>minute<sp/>-<sp/>[0,59]<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tm_min;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>minutes<sp/>after<sp/>the<sp/>hour<sp/>-<sp/>[0,59]<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tm_hour;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>hours<sp/>since<sp/>midnight<sp/>-<sp/>[0,23]<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tm_mday;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>day<sp/>of<sp/>the<sp/>month<sp/>-<sp/>[1,31]<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tm_mon;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>months<sp/>since<sp/>January<sp/>-<sp/>[0,11]<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tm_year;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>years<sp/>-<sp/>[1980..2044]<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}<sp/><ref refid="structtm__unz__s" kindref="compound">tm_unz</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>unz_global_info<sp/>structure<sp/>contain<sp/>global<sp/>data<sp/>about<sp/>the<sp/>ZIPfile</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/>These<sp/>data<sp/>comes<sp/>from<sp/>the<sp/>end<sp/>of<sp/>central<sp/>dir<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="structunz__global__info__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structunz__global__info__s" kindref="compound">unz_global_info_s</ref></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>number_entry;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>total<sp/>number<sp/>of<sp/>entries<sp/>in<sp/>the<sp/>central<sp/>dir<sp/>on<sp/>this<sp/>disk<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>size_comment;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>size<sp/>of<sp/>the<sp/>global<sp/>comment<sp/>of<sp/>the<sp/>zipfile<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}<sp/><ref refid="structunz__global__info__s" kindref="compound">unz_global_info</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>unz_file_info<sp/>contain<sp/>information<sp/>about<sp/>a<sp/>file<sp/>in<sp/>the<sp/>zipfile<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="structunz__file__info__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structunz__file__info__s" kindref="compound">unz_file_info_s</ref></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>version;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>version<sp/>made<sp/>by<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>version_needed;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>version<sp/>needed<sp/>to<sp/>extract<sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>flag;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>general<sp/>purpose<sp/>bit<sp/>flag<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>compression_method;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>compression<sp/>method<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>dosDate;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>last<sp/>mod<sp/>file<sp/>date<sp/>in<sp/>Dos<sp/>fmt<sp/><sp/><sp/>4<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>crc;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>crc-32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>compressed_size;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>compressed<sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>uncompressed_size;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>uncompressed<sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>size_filename;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>filename<sp/>length<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>size_file_extra;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>extra<sp/>field<sp/>length<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>size_file_comment;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>file<sp/>comment<sp/>length<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>disk_num_start;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>disk<sp/>number<sp/>start<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>internal_fa;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>internal<sp/>file<sp/>attributes<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>external_fa;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>external<sp/>file<sp/>attributes<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structtm__unz__s" kindref="compound">tm_unz</ref><sp/>tmu_date;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}<sp/><ref refid="structunz__file__info__s" kindref="compound">unz_file_info</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>unz_file_info_interntal<sp/>contain<sp/>internal<sp/>info<sp/>about<sp/>a<sp/>file<sp/>in<sp/>zipfile*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="structunz__file__info__internal__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structunz__file__info__internal__s" kindref="compound">unz_file_info_internal_s</ref></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>offset_curfile;</highlight><highlight class="comment">/*<sp/>relative<sp/>offset<sp/>of<sp/>static<sp/>header<sp/>4<sp/>unsigned<sp/>chars<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}<sp/><ref refid="structunz__file__info__internal__s" kindref="compound">unz_file_info_internal</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>(*alloc_func)<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>opaque,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>items,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/><sp/><sp/>(*free_func)<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>opaque,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>address);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinternal__state" kindref="compound">internal_state</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="structz__stream__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structz__stream__s" kindref="compound">z_stream_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*next_in;<sp/><sp/></highlight><highlight class="comment">/*<sp/>next<sp/>input<sp/>unsigned<sp/>char<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>avail_in;<sp/><sp/></highlight><highlight class="comment">/*<sp/>number<sp/>of<sp/>unsigned<sp/>chars<sp/>available<sp/>at<sp/>next_in<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>total_in;<sp/><sp/></highlight><highlight class="comment">/*<sp/>total<sp/>nb<sp/>of<sp/>input<sp/>unsigned<sp/>chars<sp/>read<sp/>so<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*next_out;<sp/></highlight><highlight class="comment">/*<sp/>next<sp/>output<sp/>unsigned<sp/>char<sp/>should<sp/>be<sp/>put<sp/>there<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>avail_out;<sp/></highlight><highlight class="comment">/*<sp/>remaining<sp/>free<sp/>space<sp/>at<sp/>next_out<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>total_out;<sp/></highlight><highlight class="comment">/*<sp/>total<sp/>nb<sp/>of<sp/>unsigned<sp/>chars<sp/>output<sp/>so<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*msg;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>last<sp/>error<sp/>message,<sp/>NULL<sp/>if<sp/>no<sp/>error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinternal__state" kindref="compound">internal_state</ref><sp/>*state;<sp/></highlight><highlight class="comment">/*<sp/>not<sp/>visible<sp/>by<sp/>applications<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>alloc_func<sp/>zalloc;<sp/><sp/></highlight><highlight class="comment">/*<sp/>used<sp/>to<sp/>allocate<sp/>the<sp/>internal<sp/>state<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>free_func<sp/><sp/>zfree;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>used<sp/>to<sp/>free<sp/>the<sp/>internal<sp/>state<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/>opaque;<sp/><sp/></highlight><highlight class="comment">/*<sp/>private<sp/>data<sp/>object<sp/>passed<sp/>to<sp/>zalloc<sp/>and<sp/>zfree<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>data_type;<sp/><sp/></highlight><highlight class="comment">/*<sp/>best<sp/>guess<sp/>about<sp/>the<sp/>data<sp/>type:<sp/>ascii<sp/>or<sp/>binary<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/>adler;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>adler32<sp/>value<sp/>of<sp/>the<sp/>uncompressed<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/>reserved;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>reserved<sp/>for<sp/>future<sp/>use<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}<sp/><ref refid="structz__stream__s" kindref="compound">z_stream</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structz__stream__s" kindref="compound">z_stream</ref><sp/>*<ref refid="structz__stream__s" kindref="compound">z_streamp</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>file_in_zip_read_info_s<sp/>contain<sp/>internal<sp/>information<sp/>about<sp/>a<sp/>file<sp/>in<sp/>zipfile,</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/>when<sp/>reading<sp/>and<sp/>decompress<sp/>it<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="structfile__in__zip__read__info__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>*read_buffer;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>internal<sp/>buffer<sp/>for<sp/>compressed<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structz__stream__s" kindref="compound">z_stream</ref><sp/>stream;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>zLib<sp/>stream<sp/>structure<sp/>for<sp/>inflate<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>pos_in_zipfile;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>position<sp/>in<sp/>unsigned<sp/>char<sp/>on<sp/>the<sp/>zipfile,<sp/>for<sp/>fseek*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>stream_initialised;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>flag<sp/>set<sp/>if<sp/>stream<sp/>structure<sp/>is<sp/>initialised*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>offset_local_extrafield;</highlight><highlight class="comment">/*<sp/>offset<sp/>of<sp/>the<sp/>static<sp/>extra<sp/>field<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>size_local_extrafield;</highlight><highlight class="comment">/*<sp/>size<sp/>of<sp/>the<sp/>static<sp/>extra<sp/>field<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>pos_local_extrafield;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>position<sp/>in<sp/>the<sp/>static<sp/>extra<sp/>field<sp/>in<sp/>read*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>crc32;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>crc32<sp/>of<sp/>all<sp/>data<sp/>uncompressed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>crc32_wait;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>crc32<sp/>we<sp/>must<sp/>obtain<sp/>after<sp/>decompress<sp/>all<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>rest_read_compressed;<sp/></highlight><highlight class="comment">/*<sp/>number<sp/>of<sp/>unsigned<sp/>char<sp/>to<sp/>be<sp/>decompressed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>rest_read_uncompressed;</highlight><highlight class="comment">/*number<sp/>of<sp/>unsigned<sp/>char<sp/>to<sp/>be<sp/>obtained<sp/>after<sp/>decomp*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>FILE*<sp/>file;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>io<sp/>structore<sp/>of<sp/>the<sp/>zipfile<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>compression_method;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>compression<sp/>method<sp/>(0==store)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>byte_before_the_zipfile;</highlight><highlight class="comment">/*<sp/>unsigned<sp/>char<sp/>before<sp/>the<sp/>zipfile,<sp/>(&gt;0<sp/>for<sp/>sfx)*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}<sp/><ref refid="structfile__in__zip__read__info__s" kindref="compound">file_in_zip_read_info_s</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>unz_s<sp/>contain<sp/>internal<sp/>information<sp/>about<sp/>the<sp/>zipfile</highlight></codeline>
+<codeline lineno="144"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="structunz__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>FILE*<sp/>file;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>io<sp/>structore<sp/>of<sp/>the<sp/>zipfile<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structunz__global__info__s" kindref="compound">unz_global_info</ref><sp/>gi;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>public<sp/>global<sp/>information<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>byte_before_the_zipfile;</highlight><highlight class="comment">/*<sp/>unsigned<sp/>char<sp/>before<sp/>the<sp/>zipfile,<sp/>(&gt;0<sp/>for<sp/>sfx)*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>num_file;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>number<sp/>of<sp/>the<sp/>current<sp/>file<sp/>in<sp/>the<sp/>zipfile*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>pos_in_central_dir;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>pos<sp/>of<sp/>the<sp/>current<sp/>file<sp/>in<sp/>the<sp/>central<sp/>dir*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>current_file_ok;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>flag<sp/>about<sp/>the<sp/>usability<sp/>of<sp/>the<sp/>current<sp/>file*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>central_pos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>position<sp/>of<sp/>the<sp/>beginning<sp/>of<sp/>the<sp/>central<sp/>dir*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>size_central_dir;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>size<sp/>of<sp/>the<sp/>central<sp/>directory<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>offset_central_dir;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>offset<sp/>of<sp/>start<sp/>of<sp/>central<sp/>directory<sp/>with</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>respect<sp/>to<sp/>the<sp/>starting<sp/>disk<sp/>number<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structunz__file__info__s" kindref="compound">unz_file_info</ref><sp/>cur_file_info;<sp/></highlight><highlight class="comment">/*<sp/>public<sp/>info<sp/>about<sp/>the<sp/>current<sp/>file<sp/>in<sp/>zip*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structunz__file__info__internal__s" kindref="compound">unz_file_info_internal</ref><sp/>cur_file_info_internal;<sp/></highlight><highlight class="comment">/*<sp/>private<sp/>info<sp/>about<sp/>it*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfile__in__zip__read__info__s" kindref="compound">file_in_zip_read_info_s</ref>*<sp/>pfile_in_zip_read;<sp/></highlight><highlight class="comment">/*<sp/>structure<sp/>about<sp/>the<sp/>current</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/>if<sp/>we<sp/>are<sp/>decompressing<sp/>it<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}<sp/><ref refid="structunz__s" kindref="compound">unz_s</ref>;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UNZ_OK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0)</highlight></codeline>
+<codeline lineno="166"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNZ_END_OF_LIST_OF_FILE<sp/>(-100)</highlight></codeline>
+<codeline lineno="167"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNZ_ERRNO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Z_ERRNO)</highlight></codeline>
+<codeline lineno="168"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNZ_EOF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0)</highlight></codeline>
+<codeline lineno="169"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNZ_PARAMERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-102)</highlight></codeline>
+<codeline lineno="170"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNZ_BADZIPFILE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-103)</highlight></codeline>
+<codeline lineno="171"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNZ_INTERNALERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-104)</highlight></codeline>
+<codeline lineno="172"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNZ_CRCERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-105)</highlight></codeline>
+<codeline lineno="173"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UNZ_CASESENSITIVE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight></codeline>
+<codeline lineno="175"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNZ_NOTCASESENSITIVE<sp/><sp/><sp/><sp/>2</highlight></codeline>
+<codeline lineno="176"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNZ_OSDEFAULTCASE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="177"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzStringFileNameCompare<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileName1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileName2,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCaseSensitivity);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/><sp/><sp/>Compare<sp/>two<sp/>filename<sp/>(fileName1,fileName2).</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/><sp/><sp/>If<sp/>iCaseSenisivity<sp/>=<sp/>1,<sp/>comparision<sp/>is<sp/>case<sp/>sensitivity<sp/>(like<sp/>strcmp)</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/><sp/><sp/>If<sp/>iCaseSenisivity<sp/>=<sp/>2,<sp/>comparision<sp/>is<sp/>not<sp/>case<sp/>sensitivity<sp/>(like<sp/>strcmpi</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>strcasecmp)</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/>If<sp/>iCaseSenisivity<sp/>=<sp/>0,<sp/>case<sp/>sensitivity<sp/>is<sp/>defaut<sp/>of<sp/>your<sp/>operating<sp/>system</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/><sp/><sp/><sp/>(like<sp/>1<sp/>on<sp/>Unix,<sp/>2<sp/>on<sp/>Windows)</highlight></codeline>
+<codeline lineno="187"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>unzFile<sp/>unzOpen<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>unzFile<sp/>unzReOpen<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>path,<sp/>unzFile<sp/>file);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/><sp/>Open<sp/>a<sp/>Zip<sp/>file.<sp/>path<sp/>contain<sp/>the<sp/>full<sp/>pathname<sp/>(by<sp/>example,</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>on<sp/>a<sp/>Windows<sp/>NT<sp/>computer<sp/>&quot;c:\\zlib\\zlib111.zip&quot;<sp/>or<sp/>on<sp/>an<sp/>Unix<sp/>computer</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>&quot;zlib/zlib111.zip&quot;.</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>If<sp/>the<sp/>zipfile<sp/>cannot<sp/>be<sp/>opened<sp/>(file<sp/>don&apos;t<sp/>exist<sp/>or<sp/>in<sp/>not<sp/>valid),<sp/>the</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>value<sp/>is<sp/>NULL.</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>Else,<sp/>the<sp/>return<sp/>value<sp/>is<sp/>a<sp/>unzFile<sp/>Handle,<sp/>usable<sp/>with<sp/>other<sp/>function</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>of<sp/>this<sp/>unzip<sp/>package.</highlight></codeline>
+<codeline lineno="200"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzClose<sp/>(unzFile<sp/>file);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/><sp/>Close<sp/>a<sp/>ZipFile<sp/>opened<sp/>with<sp/>unzipOpen.</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/><sp/>If<sp/>there<sp/>is<sp/>files<sp/>inside<sp/>the<sp/>.Zip<sp/>opened<sp/>with<sp/>unzOpenCurrentFile<sp/>(see<sp/>later),</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/><sp/><sp/><sp/>these<sp/>files<sp/>MUST<sp/>be<sp/>closed<sp/>with<sp/>unzipCloseCurrentFile<sp/>before<sp/>call<sp/>unzipClose.</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/><sp/>return<sp/>UNZ_OK<sp/>if<sp/>there<sp/>is<sp/>no<sp/>problem.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzGetGlobalInfo<sp/>(unzFile<sp/>file,<sp/><ref refid="structunz__global__info__s" kindref="compound">unz_global_info</ref><sp/>*pglobal_info);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/><sp/>Write<sp/>info<sp/>about<sp/>the<sp/>ZipFile<sp/>in<sp/>the<sp/>*pglobal_info<sp/>structure.</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/><sp/>No<sp/>preparation<sp/>of<sp/>the<sp/>structure<sp/>is<sp/>needed</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/><sp/>return<sp/>UNZ_OK<sp/>if<sp/>there<sp/>is<sp/>no<sp/>problem.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzGetGlobalComment<sp/>(unzFile<sp/>file,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*szComment,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>uSizeBuf);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/><sp/>Get<sp/>the<sp/>global<sp/>comment<sp/>string<sp/>of<sp/>the<sp/>ZipFile,<sp/>in<sp/>the<sp/>szComment<sp/>buffer.</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/><sp/>uSizeBuf<sp/>is<sp/>the<sp/>size<sp/>of<sp/>the<sp/>szComment<sp/>buffer.</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/><sp/>return<sp/>the<sp/>number<sp/>of<sp/>unsigned<sp/>char<sp/>copied<sp/>or<sp/>an<sp/>error<sp/>code<sp/>&lt;0</highlight></codeline>
+<codeline lineno="224"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Unzip<sp/>package<sp/>allow<sp/>you<sp/>browse<sp/>the<sp/>directory<sp/>of<sp/>the<sp/>zipfile<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzGoToFirstFile<sp/>(unzFile<sp/>file);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/><sp/>Set<sp/>the<sp/>current<sp/>file<sp/>of<sp/>the<sp/>zipfile<sp/>to<sp/>the<sp/>first<sp/>file.</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/><sp/>return<sp/>UNZ_OK<sp/>if<sp/>there<sp/>is<sp/>no<sp/>problem</highlight></codeline>
+<codeline lineno="235"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzGoToNextFile<sp/>(unzFile<sp/>file);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/><sp/>Set<sp/>the<sp/>current<sp/>file<sp/>of<sp/>the<sp/>zipfile<sp/>to<sp/>the<sp/>next<sp/>file.</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/><sp/>return<sp/>UNZ_OK<sp/>if<sp/>there<sp/>is<sp/>no<sp/>problem</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/><sp/>return<sp/>UNZ_END_OF_LIST_OF_FILE<sp/>if<sp/>the<sp/>actual<sp/>file<sp/>was<sp/>the<sp/>latest.</highlight></codeline>
+<codeline lineno="243"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzGetCurrentFileInfoPosition<sp/>(unzFile<sp/>file,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>*pos<sp/>);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"><sp/><sp/>Get<sp/>the<sp/>position<sp/>of<sp/>the<sp/>info<sp/>of<sp/>the<sp/>current<sp/>file<sp/>in<sp/>the<sp/>zip.</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/><sp/>return<sp/>UNZ_OK<sp/>if<sp/>there<sp/>is<sp/>no<sp/>problem</highlight></codeline>
+<codeline lineno="250"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzSetCurrentFileInfoPosition<sp/>(unzFile<sp/>file,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>pos<sp/>);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="255"><highlight class="comment"><sp/><sp/>Set<sp/>the<sp/>position<sp/>of<sp/>the<sp/>info<sp/>of<sp/>the<sp/>current<sp/>file<sp/>in<sp/>the<sp/>zip.</highlight></codeline>
+<codeline lineno="256"><highlight class="comment"><sp/><sp/>return<sp/>UNZ_OK<sp/>if<sp/>there<sp/>is<sp/>no<sp/>problem</highlight></codeline>
+<codeline lineno="257"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzLocateFile<sp/>(unzFile<sp/>file,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*szFileName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iCaseSensitivity);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="262"><highlight class="comment"><sp/><sp/>Try<sp/>locate<sp/>the<sp/>file<sp/>szFileName<sp/>in<sp/>the<sp/>zipfile.</highlight></codeline>
+<codeline lineno="263"><highlight class="comment"><sp/><sp/>For<sp/>the<sp/>iCaseSensitivity<sp/>signification,<sp/>see<sp/>unzStringFileNameCompare</highlight></codeline>
+<codeline lineno="264"><highlight class="comment"></highlight></codeline>
+<codeline lineno="265"><highlight class="comment"><sp/><sp/>return<sp/>value<sp/>:</highlight></codeline>
+<codeline lineno="266"><highlight class="comment"><sp/><sp/>UNZ_OK<sp/>if<sp/>the<sp/>file<sp/>is<sp/>found.<sp/>It<sp/>becomes<sp/>the<sp/>current<sp/>file.</highlight></codeline>
+<codeline lineno="267"><highlight class="comment"><sp/><sp/>UNZ_END_OF_LIST_OF_FILE<sp/>if<sp/>the<sp/>file<sp/>is<sp/>not<sp/>found</highlight></codeline>
+<codeline lineno="268"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzGetCurrentFileInfo<sp/>(unzFile<sp/>file,<sp/><ref refid="structunz__file__info__s" kindref="compound">unz_file_info</ref><sp/>*pfile_info,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*szFileName,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>fileNameBufferSize,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*extraField,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>extraFieldBufferSize,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*szComment,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>commentBufferSize);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="274"><highlight class="comment"><sp/><sp/>Get<sp/>Info<sp/>about<sp/>the<sp/>current<sp/>file</highlight></codeline>
+<codeline lineno="275"><highlight class="comment"><sp/><sp/>if<sp/>pfile_info!=NULL,<sp/>the<sp/>*pfile_info<sp/>structure<sp/>will<sp/>contain<sp/>somes<sp/>info<sp/>about</highlight></codeline>
+<codeline lineno="276"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>current<sp/>file</highlight></codeline>
+<codeline lineno="277"><highlight class="comment"><sp/><sp/>if<sp/>szFileName!=NULL,<sp/>the<sp/>filemane<sp/>string<sp/>will<sp/>be<sp/>copied<sp/>in<sp/>szFileName</highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fileNameBufferSize<sp/>is<sp/>the<sp/>size<sp/>of<sp/>the<sp/>buffer)</highlight></codeline>
+<codeline lineno="279"><highlight class="comment"><sp/><sp/>if<sp/>extraField!=NULL,<sp/>the<sp/>extra<sp/>field<sp/>information<sp/>will<sp/>be<sp/>copied<sp/>in<sp/>extraField</highlight></codeline>
+<codeline lineno="280"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(extraFieldBufferSize<sp/>is<sp/>the<sp/>size<sp/>of<sp/>the<sp/>buffer).</highlight></codeline>
+<codeline lineno="281"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>is<sp/>the<sp/>Central-header<sp/>version<sp/>of<sp/>the<sp/>extra<sp/>field</highlight></codeline>
+<codeline lineno="282"><highlight class="comment"><sp/><sp/>if<sp/>szComment!=NULL,<sp/>the<sp/>comment<sp/>string<sp/>of<sp/>the<sp/>file<sp/>will<sp/>be<sp/>copied<sp/>in<sp/>szComment</highlight></codeline>
+<codeline lineno="283"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(commentBufferSize<sp/>is<sp/>the<sp/>size<sp/>of<sp/>the<sp/>buffer)</highlight></codeline>
+<codeline lineno="284"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>for<sp/>reading<sp/>the<sp/>content<sp/>of<sp/>the<sp/>current<sp/>zipfile,<sp/>you<sp/>can<sp/>open<sp/>it,<sp/>read<sp/>data</highlight></codeline>
+<codeline lineno="288"><highlight class="comment"><sp/><sp/><sp/>from<sp/>it,<sp/>and<sp/>close<sp/>it<sp/>(you<sp/>can<sp/>close<sp/>it<sp/>before<sp/>reading<sp/>all<sp/>the<sp/>file)</highlight></codeline>
+<codeline lineno="289"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzOpenCurrentFile<sp/>(unzFile<sp/>file);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="294"><highlight class="comment"><sp/><sp/>Open<sp/>for<sp/>reading<sp/>data<sp/>the<sp/>current<sp/>file<sp/>in<sp/>the<sp/>zipfile.</highlight></codeline>
+<codeline lineno="295"><highlight class="comment"><sp/><sp/>If<sp/>there<sp/>is<sp/>no<sp/>error,<sp/>the<sp/>return<sp/>value<sp/>is<sp/>UNZ_OK.</highlight></codeline>
+<codeline lineno="296"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzCloseCurrentFile<sp/>(unzFile<sp/>file);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="301"><highlight class="comment"><sp/><sp/>Close<sp/>the<sp/>file<sp/>in<sp/>zip<sp/>opened<sp/>with<sp/>unzOpenCurrentFile</highlight></codeline>
+<codeline lineno="302"><highlight class="comment"><sp/><sp/>Return<sp/>UNZ_CRCERROR<sp/>if<sp/>all<sp/>the<sp/>file<sp/>was<sp/>read<sp/>but<sp/>the<sp/>CRC<sp/>is<sp/>not<sp/>good</highlight></codeline>
+<codeline lineno="303"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzReadCurrentFile<sp/>(unzFile<sp/>file,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>buf,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="309"><highlight class="comment"><sp/><sp/>Read<sp/>unsigned<sp/>chars<sp/>from<sp/>the<sp/>current<sp/>file<sp/>(opened<sp/>by<sp/>unzOpenCurrentFile)</highlight></codeline>
+<codeline lineno="310"><highlight class="comment"><sp/><sp/>buf<sp/>contain<sp/>buffer<sp/>where<sp/>data<sp/>must<sp/>be<sp/>copied</highlight></codeline>
+<codeline lineno="311"><highlight class="comment"><sp/><sp/>len<sp/>the<sp/>size<sp/>of<sp/>buf.</highlight></codeline>
+<codeline lineno="312"><highlight class="comment"></highlight></codeline>
+<codeline lineno="313"><highlight class="comment"><sp/><sp/>return<sp/>the<sp/>number<sp/>of<sp/>unsigned<sp/>char<sp/>copied<sp/>if<sp/>somes<sp/>unsigned<sp/>chars<sp/>are<sp/>copied</highlight></codeline>
+<codeline lineno="314"><highlight class="comment"><sp/><sp/>return<sp/>0<sp/>if<sp/>the<sp/>end<sp/>of<sp/>file<sp/>was<sp/>reached</highlight></codeline>
+<codeline lineno="315"><highlight class="comment"><sp/><sp/>return<sp/>&lt;0<sp/>with<sp/>error<sp/>code<sp/>if<sp/>there<sp/>is<sp/>an<sp/>error</highlight></codeline>
+<codeline lineno="316"><highlight class="comment"><sp/><sp/><sp/><sp/>(UNZ_ERRNO<sp/>for<sp/>IO<sp/>error,<sp/>or<sp/>zLib<sp/>error<sp/>for<sp/>uncompress<sp/>error)</highlight></codeline>
+<codeline lineno="317"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>unztell(unzFile<sp/>file);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="322"><highlight class="comment"><sp/><sp/>Give<sp/>the<sp/>current<sp/>position<sp/>in<sp/>uncompressed<sp/>data</highlight></codeline>
+<codeline lineno="323"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzeof<sp/>(unzFile<sp/>file);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="328"><highlight class="comment"><sp/><sp/>return<sp/>1<sp/>if<sp/>the<sp/>end<sp/>of<sp/>file<sp/>was<sp/>reached,<sp/>0<sp/>elsewhere<sp/></highlight></codeline>
+<codeline lineno="329"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unzGetLocalExtrafield<sp/>(unzFile<sp/>file,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>buf,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="334"><highlight class="comment"><sp/><sp/>Read<sp/>extra<sp/>field<sp/>from<sp/>the<sp/>current<sp/>file<sp/>(opened<sp/>by<sp/>unzOpenCurrentFile)</highlight></codeline>
+<codeline lineno="335"><highlight class="comment"><sp/><sp/>This<sp/>is<sp/>the<sp/>local-header<sp/>version<sp/>of<sp/>the<sp/>extra<sp/>field<sp/>(sometimes,<sp/>there<sp/>is</highlight></codeline>
+<codeline lineno="336"><highlight class="comment"><sp/><sp/><sp/><sp/>more<sp/>info<sp/>in<sp/>the<sp/>local-header<sp/>version<sp/>than<sp/>in<sp/>the<sp/>central-header)</highlight></codeline>
+<codeline lineno="337"><highlight class="comment"></highlight></codeline>
+<codeline lineno="338"><highlight class="comment"><sp/><sp/>if<sp/>buf==NULL,<sp/>it<sp/>return<sp/>the<sp/>size<sp/>of<sp/>the<sp/>local<sp/>extra<sp/>field</highlight></codeline>
+<codeline lineno="339"><highlight class="comment"></highlight></codeline>
+<codeline lineno="340"><highlight class="comment"><sp/><sp/>if<sp/>buf!=NULL,<sp/>len<sp/>is<sp/>the<sp/>size<sp/>of<sp/>the<sp/>buffer,<sp/>the<sp/>extra<sp/>header<sp/>is<sp/>copied<sp/>in</highlight></codeline>
+<codeline lineno="341"><highlight class="comment"><sp/><sp/><sp/><sp/>buf.</highlight></codeline>
+<codeline lineno="342"><highlight class="comment"><sp/><sp/>the<sp/>return<sp/>value<sp/>is<sp/>the<sp/>number<sp/>of<sp/>unsigned<sp/>chars<sp/>copied<sp/>in<sp/>buf,<sp/>or<sp/>(if<sp/>&lt;0)<sp/></highlight></codeline>
+<codeline lineno="343"><highlight class="comment"><sp/><sp/><sp/><sp/>the<sp/>error<sp/>code</highlight></codeline>
+<codeline lineno="344"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__UNZIP_H__<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/framework/Unzip.h"/>
+  </compounddef>
+</doxygen>

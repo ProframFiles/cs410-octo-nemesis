@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jload_8c" kind="file">
+    <compoundname>jload.c</compoundname>
+    <includes local="yes">../Shared/Shared.h</includes>
+    <includes local="yes">..\Common\Common.h</includes>
+    <includes refid="jpeglib_8h" local="yes">jpeglib.h</includes>
+    <incdepgraph>
+      <node id="1820">
+        <label>..\Common\Common.h</label>
+      </node>
+      <node id="1819">
+        <label>../Shared/Shared.h</label>
+      </node>
+      <node id="1818">
+        <label>E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jload.c</label>
+        <link refid="jload.c"/>
+        <childnode refid="1819" relation="include">
+        </childnode>
+        <childnode refid="1820" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jload_8c_1a836a8a2f3f7eac7a91e7321618a045d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LoadJPG</definition>
+        <argsstring>(const char *filename, unsigned char **pic, int *width, int *height)</argsstring>
+        <name>LoadJPG</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>unsigned char **</type>
+          <declname>pic</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jload.c" line="16" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jload.c" bodystart="16" bodyend="144"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../Shared/Shared.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;..\Common\Common.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Include<sp/>file<sp/>for<sp/>users<sp/>of<sp/>JPEG<sp/>library.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>You<sp/>will<sp/>need<sp/>to<sp/>have<sp/>included<sp/>system<sp/>headers<sp/>that<sp/>define<sp/>at<sp/>least</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>typedefs<sp/>FILE<sp/>and<sp/>size_t<sp/>before<sp/>you<sp/>can<sp/>include<sp/>jpeglib.h.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(stdio.h<sp/>is<sp/>sufficient<sp/>on<sp/>ANSI-conforming<sp/>systems.)</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>also<sp/>wish<sp/>to<sp/>include<sp/>&quot;jerror.h&quot;.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jpeglib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LoadJPG(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**pic,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*height<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>struct<sp/>contains<sp/>the<sp/>JPEG<sp/>decompression<sp/>parameters<sp/>and<sp/>pointers<sp/>to</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/>*<sp/>working<sp/>space<sp/>(which<sp/>is<sp/>allocated<sp/>as<sp/>needed<sp/>by<sp/>the<sp/>JPEG<sp/>library).</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structjpeg__decompress__struct" kindref="compound">jpeg_decompress_struct</ref><sp/>cinfo;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>use<sp/>our<sp/>private<sp/>extension<sp/>JPEG<sp/>error<sp/>handler.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Note<sp/>that<sp/>this<sp/>struct<sp/>must<sp/>live<sp/>as<sp/>long<sp/>as<sp/>the<sp/>main<sp/>JPEG<sp/>parameter</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/>*<sp/>struct,<sp/>to<sp/>avoid<sp/>dangling-pointer<sp/>problems.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>struct<sp/>represents<sp/>a<sp/>JPEG<sp/>error<sp/>handler.<sp/><sp/>It<sp/>is<sp/>declared<sp/>separately</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/>*<sp/>because<sp/>applications<sp/>often<sp/>want<sp/>to<sp/>supply<sp/>a<sp/>specialized<sp/>error<sp/>handler</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/>*<sp/>(see<sp/>the<sp/>second<sp/>half<sp/>of<sp/>this<sp/>file<sp/>for<sp/>an<sp/>example).<sp/><sp/>But<sp/>here<sp/>we<sp/>just</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/>*<sp/>take<sp/>the<sp/>easy<sp/>way<sp/>out<sp/>and<sp/>use<sp/>the<sp/>standard<sp/>error<sp/>handler,<sp/>which<sp/>will</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/>*<sp/>print<sp/>a<sp/>message<sp/>on<sp/>stderr<sp/>and<sp/>call<sp/>exit()<sp/>if<sp/>compression<sp/>fails.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Note<sp/>that<sp/>this<sp/>struct<sp/>must<sp/>live<sp/>as<sp/>long<sp/>as<sp/>the<sp/>main<sp/>JPEG<sp/>parameter</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/><sp/>*<sp/>struct,<sp/>to<sp/>avoid<sp/>dangling-pointer<sp/>problems.</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structjpeg__error__mgr" kindref="compound">jpeg_error_mgr</ref><sp/>jerr;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>More<sp/>stuff<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>fileHandle_t<sp/>infile;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>source<sp/>file<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>JSAMPARRAY<sp/>buffer;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Output<sp/>row<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row_stride;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>physical<sp/>row<sp/>width<sp/>in<sp/>output<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*out;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>In<sp/>this<sp/>example<sp/>we<sp/>want<sp/>to<sp/>open<sp/>the<sp/>input<sp/>file<sp/>before<sp/>doing<sp/>anything<sp/>else,</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/>*<sp/>so<sp/>that<sp/>the<sp/>setjmp()<sp/>error<sp/>recovery<sp/>below<sp/>can<sp/>assume<sp/>the<sp/>file<sp/>is<sp/>open.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/>*<sp/>VERY<sp/>IMPORTANT:<sp/>use<sp/>&quot;b&quot;<sp/>option<sp/>to<sp/>fopen()<sp/>if<sp/>you<sp/>are<sp/>on<sp/>a<sp/>machine<sp/>that</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/>*<sp/>requires<sp/>it<sp/>in<sp/>order<sp/>to<sp/>read<sp/>binary<sp/>files.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>FS_FOpenFileRead(<sp/>filename,<sp/>&amp;infile,<sp/>qfalse<sp/>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(infile<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Step<sp/>1:<sp/>allocate<sp/>and<sp/>initialize<sp/>JPEG<sp/>decompression<sp/>object<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>have<sp/>to<sp/>set<sp/>up<sp/>the<sp/>error<sp/>handler<sp/>first,<sp/>in<sp/>case<sp/>the<sp/>initialization</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/>*<sp/>step<sp/>fails.<sp/><sp/>(Unlikely,<sp/>but<sp/>it<sp/>could<sp/>happen<sp/>if<sp/>you<sp/>are<sp/>out<sp/>of<sp/>memory.)</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/>*<sp/>This<sp/>routine<sp/>fills<sp/>in<sp/>the<sp/>contents<sp/>of<sp/>struct<sp/>jerr,<sp/>and<sp/>returns<sp/>jerr&apos;s</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/>*<sp/>address<sp/>which<sp/>we<sp/>place<sp/>into<sp/>the<sp/>link<sp/>field<sp/>in<sp/>cinfo.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>cinfo.err<sp/>=<sp/>jpeg_std_error(&amp;jerr);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Now<sp/>we<sp/>can<sp/>initialize<sp/>the<sp/>JPEG<sp/>decompression<sp/>object.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>jpeg_create_decompress(&amp;cinfo);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Step<sp/>2:<sp/>specify<sp/>data<sp/>source<sp/>(eg,<sp/>a<sp/>file)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>jpeg_stdio_src(&amp;cinfo,<sp/>infile);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Step<sp/>3:<sp/>read<sp/>file<sp/>parameters<sp/>with<sp/>jpeg_read_header()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>(void)<sp/>jpeg_read_header(&amp;cinfo,<sp/>TRUE);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>can<sp/>ignore<sp/>the<sp/>return<sp/>value<sp/>from<sp/>jpeg_read_header<sp/>since</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>(a)<sp/>suspension<sp/>is<sp/>not<sp/>possible<sp/>with<sp/>the<sp/>stdio<sp/>data<sp/>source,<sp/>and</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>(b)<sp/>we<sp/>passed<sp/>TRUE<sp/>to<sp/>reject<sp/>a<sp/>tables-only<sp/>JPEG<sp/>file<sp/>as<sp/>an<sp/>error.</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/>*<sp/>See<sp/>libjpeg.doc<sp/>for<sp/>more<sp/>info.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Step<sp/>4:<sp/>set<sp/>parameters<sp/>for<sp/>decompression<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>In<sp/>this<sp/>example,<sp/>we<sp/>don&apos;t<sp/>need<sp/>to<sp/>change<sp/>any<sp/>of<sp/>the<sp/>defaults<sp/>set<sp/>by</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/>*<sp/>jpeg_read_header(),<sp/>so<sp/>we<sp/>do<sp/>nothing<sp/>here.</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Step<sp/>5:<sp/>Start<sp/>decompressor<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>(void)<sp/>jpeg_start_decompress(&amp;cinfo);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>can<sp/>ignore<sp/>the<sp/>return<sp/>value<sp/>since<sp/>suspension<sp/>is<sp/>not<sp/>possible</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/>*<sp/>with<sp/>the<sp/>stdio<sp/>data<sp/>source.</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>may<sp/>need<sp/>to<sp/>do<sp/>some<sp/>setup<sp/>of<sp/>our<sp/>own<sp/>at<sp/>this<sp/>point<sp/>before<sp/>reading</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/>*<sp/>the<sp/>data.<sp/><sp/>After<sp/>jpeg_start_decompress()<sp/>we<sp/>have<sp/>the<sp/>correct<sp/>scaled</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/>*<sp/>output<sp/>image<sp/>dimensions<sp/>available,<sp/>as<sp/>well<sp/>as<sp/>the<sp/>output<sp/>colormap</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/>*<sp/>if<sp/>we<sp/>asked<sp/>for<sp/>color<sp/>quantization.</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/>*<sp/>In<sp/>this<sp/>example,<sp/>we<sp/>need<sp/>to<sp/>make<sp/>an<sp/>output<sp/>work<sp/>buffer<sp/>of<sp/>the<sp/>right<sp/>size.</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>JSAMPLEs<sp/>per<sp/>row<sp/>in<sp/>output<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>row_stride<sp/>=<sp/>cinfo.output_width<sp/>*<sp/>cinfo.output_components;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>out<sp/>=<sp/>Z_Malloc(cinfo.output_width*cinfo.output_height*cinfo.output_components);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>*pic<sp/>=<sp/>out;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>*width<sp/>=<sp/>cinfo.output_width;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>*height<sp/>=<sp/>cinfo.output_height;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Step<sp/>6:<sp/>while<sp/>(scan<sp/>lines<sp/>remain<sp/>to<sp/>be<sp/>read)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jpeg_read_scanlines(...);<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Here<sp/>we<sp/>use<sp/>the<sp/>library&apos;s<sp/>state<sp/>variable<sp/>cinfo.output_scanline<sp/>as<sp/>the</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/>*<sp/>loop<sp/>counter,<sp/>so<sp/>that<sp/>we<sp/>don&apos;t<sp/>have<sp/>to<sp/>keep<sp/>track<sp/>ourselves.</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(cinfo.output_scanline<sp/>&lt;<sp/>cinfo.output_height)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>jpeg_read_scanlines<sp/>expects<sp/>an<sp/>array<sp/>of<sp/>pointers<sp/>to<sp/>scanlines.</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Here<sp/>the<sp/>array<sp/>is<sp/>only<sp/>one<sp/>element<sp/>long,<sp/>but<sp/>you<sp/>could<sp/>ask<sp/>for</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>more<sp/>than<sp/>one<sp/>scanline<sp/>at<sp/>a<sp/>time<sp/>if<sp/>that&apos;s<sp/>more<sp/>convenient.</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>buffer<sp/>=<sp/>(JSAMPARRAY)out+(row_stride*cinfo.output_scanline);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>jpeg_read_scanlines(&amp;cinfo,<sp/>buffer,<sp/>1);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Step<sp/>7:<sp/>Finish<sp/>decompression<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>(void)<sp/>jpeg_finish_decompress(&amp;cinfo);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>can<sp/>ignore<sp/>the<sp/>return<sp/>value<sp/>since<sp/>suspension<sp/>is<sp/>not<sp/>possible</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/>*<sp/>with<sp/>the<sp/>stdio<sp/>data<sp/>source.</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Step<sp/>8:<sp/>Release<sp/>JPEG<sp/>decompression<sp/>object<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>an<sp/>important<sp/>step<sp/>since<sp/>it<sp/>will<sp/>release<sp/>a<sp/>good<sp/>deal<sp/>of<sp/>memory.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>jpeg_destroy_decompress(&amp;cinfo);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>After<sp/>finish_decompress,<sp/>we<sp/>can<sp/>close<sp/>the<sp/>input<sp/>file.</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Here<sp/>we<sp/>postpone<sp/>it<sp/>until<sp/>after<sp/>no<sp/>more<sp/>JPEG<sp/>errors<sp/>are<sp/>possible,</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/>*<sp/>so<sp/>as<sp/>to<sp/>simplify<sp/>the<sp/>setjmp<sp/>error<sp/>logic<sp/>above.<sp/><sp/>(Actually,<sp/>I<sp/>don&apos;t</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/>*<sp/>think<sp/>that<sp/>jpeg_destroy<sp/>can<sp/>do<sp/>an<sp/>error<sp/>exit,<sp/>but<sp/>why<sp/>assume<sp/>anything...)</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>FS_FCloseFile(infile);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>At<sp/>this<sp/>point<sp/>you<sp/>may<sp/>want<sp/>to<sp/>check<sp/>to<sp/>see<sp/>whether<sp/>any<sp/>corrupt-data</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/>*<sp/>warnings<sp/>occurred<sp/>(test<sp/>whether<sp/>jerr.pub.num_warnings<sp/>is<sp/>nonzero).</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>And<sp/>we&apos;re<sp/>done!<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jload.c"/>
+  </compounddef>
+</doxygen>

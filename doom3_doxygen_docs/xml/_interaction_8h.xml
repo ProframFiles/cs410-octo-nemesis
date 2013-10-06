@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_interaction_8h" kind="file">
+    <compoundname>Interaction.h</compoundname>
+    <includedby refid="tr__local_8h" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/tr_local.h</includedby>
+    <innerclass refid="structsrf_cull_info__t" prot="public">srfCullInfo_t</innerclass>
+    <innerclass refid="structsurface_interaction__t" prot="public">surfaceInteraction_t</innerclass>
+    <innerclass refid="structarea_num_ref__s" prot="public">areaNumRef_s</innerclass>
+    <innerclass refid="classid_interaction" prot="public">idInteraction</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_interaction_8h_1a654d41ac9af168a7a783bbb9e921cd0d" prot="public" static="no">
+        <name>LIGHT_TRIS_DEFERRED</name>
+        <initializer>((<ref refid="structsrf_triangles__s" kindref="compound">srfTriangles_t</ref> *)-1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" line="44" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_interaction_8h_1a9f35c5d965a8d6065e2f4d0aa31436f2" prot="public" static="no">
+        <name>LIGHT_CULL_ALL_FRONT</name>
+        <initializer>((byte *)-1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" line="45" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_interaction_8h_1ada668c4b0bd53caa51ec60589a42e51b" prot="public" static="no">
+        <name>LIGHT_CLIP_EPSILON</name>
+        <initializer>0.1f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" line="46" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_interaction_8h_1af4c8869f29f9e366d44fd0d35316f195" prot="public" static="no">
+        <type>struct <ref refid="structarea_num_ref__s" kindref="compound">areaNumRef_s</ref></type>
+        <definition>typedef struct areaNumRef_s  areaNumRef_t</definition>
+        <argsstring></argsstring>
+        <name>areaNumRef_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" line="87" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_interaction_8h_1a7f5c4129452a054136ceaf9e90803126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R_CalcInteractionFacing</definition>
+        <argsstring>(const idRenderEntityLocal *ent, const srfTriangles_t *tri, const idRenderLightLocal *light, srfCullInfo_t &amp;cullInfo)</argsstring>
+        <name>R_CalcInteractionFacing</name>
+        <param>
+          <type>const <ref refid="classid_render_entity_local" kindref="compound">idRenderEntityLocal</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structsrf_triangles__s" kindref="compound">srfTriangles_t</ref> *</type>
+          <declname>tri</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_render_light_local" kindref="compound">idRenderLightLocal</ref> *</type>
+          <declname>light</declname>
+        </param>
+        <param>
+          <type><ref refid="structsrf_cull_info__t" kindref="compound">srfCullInfo_t</ref> &amp;</type>
+          <declname>cullInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" line="178" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.cpp" bodystart="55" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="_interaction_8h_1afdc048ad02ffd71ad8269d10d1bc5225" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R_CalcInteractionCullBits</definition>
+        <argsstring>(const idRenderEntityLocal *ent, const srfTriangles_t *tri, const idRenderLightLocal *light, srfCullInfo_t &amp;cullInfo)</argsstring>
+        <name>R_CalcInteractionCullBits</name>
+        <param>
+          <type>const <ref refid="classid_render_entity_local" kindref="compound">idRenderEntityLocal</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structsrf_triangles__s" kindref="compound">srfTriangles_t</ref> *</type>
+          <declname>tri</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_render_light_local" kindref="compound">idRenderLightLocal</ref> *</type>
+          <declname>light</declname>
+        </param>
+        <param>
+          <type><ref refid="structsrf_cull_info__t" kindref="compound">srfCullInfo_t</ref> &amp;</type>
+          <declname>cullInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" line="179" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.cpp" bodystart="92" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="_interaction_8h_1a12aa36a0d5071b492eb1ba163de7636e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R_FreeInteractionCullInfo</definition>
+        <argsstring>(srfCullInfo_t &amp;cullInfo)</argsstring>
+        <name>R_FreeInteractionCullInfo</name>
+        <param>
+          <type><ref refid="structsrf_cull_info__t" kindref="compound">srfCullInfo_t</ref> &amp;</type>
+          <declname>cullInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" line="180" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.cpp" bodystart="138" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="_interaction_8h_1ac08c3034b4b2683d6a4473ff255b7302" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void R_ShowInteractionMemory_f</definition>
+        <argsstring>(const idCmdArgs &amp;args)</argsstring>
+        <name>R_ShowInteractionMemory_f</name>
+        <param>
+          <type>const <ref refid="classid_cmd_args" kindref="compound">idCmdArgs</ref> &amp;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h" line="182" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.cpp" bodystart="1251" bodyend="1308"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__INTERACTION_H__</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__INTERACTION_H__</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">===============================================================================</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/>Interaction<sp/>between<sp/>entityDef<sp/>surfaces<sp/>and<sp/>a<sp/>lightDef.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"></highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/>Interactions<sp/>with<sp/>no<sp/>lightTris<sp/>and<sp/>no<sp/>shadowTris<sp/>are<sp/>still</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/>valid,<sp/>because<sp/>they<sp/>show<sp/>that<sp/>a<sp/>given<sp/>entityDef<sp/>/<sp/>lightDef</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/>do<sp/>not<sp/>interact,<sp/>even<sp/>though<sp/>they<sp/>share<sp/>one<sp/>or<sp/>more<sp/>areas.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"></highlight></codeline>
+<codeline lineno="41"><highlight class="comment">===============================================================================</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIGHT_TRIS_DEFERRED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((srfTriangles_t<sp/>*)-1)</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>LIGHT_CULL_ALL_FRONT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((byte<sp/>*)-1)</highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>LIGHT_CLIP_EPSILON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.1f</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="structsrf_cull_info__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>each<sp/>triangle<sp/>a<sp/>byte<sp/>set<sp/>to<sp/>1<sp/>if<sp/>facing<sp/>the<sp/>light<sp/>origin.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>byte<sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>facing;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>each<sp/>vertex<sp/>a<sp/>byte<sp/>with<sp/>the<sp/>bits<sp/>[0-5]<sp/>set<sp/>if<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>vertex<sp/>is<sp/>at<sp/>the<sp/>back<sp/>side<sp/>of<sp/>the<sp/>corresponding<sp/>clip<sp/>plane.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>&apos;cullBits&apos;<sp/>pointer<sp/>equals<sp/>LIGHT_CULL_ALL_FRONT<sp/>all</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>vertices<sp/>are<sp/>at<sp/>the<sp/>front<sp/>of<sp/>all<sp/>the<sp/>clip<sp/>planes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>byte<sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cullBits;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clip<sp/>planes<sp/>in<sp/>surface<sp/>space<sp/>used<sp/>to<sp/>calculate<sp/>the<sp/>cull<sp/>bits.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_plane" kindref="compound">idPlane</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localClipPlanes[6];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}<sp/><ref refid="structsrf_cull_info__t" kindref="compound">srfCullInfo_t</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structsurface_interaction__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>lightTris<sp/>==<sp/>LIGHT_TRIS_DEFERRED,<sp/>then<sp/>the<sp/>calculation<sp/>of<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>lightTris<sp/>has<sp/>been<sp/>deferred,<sp/>and<sp/>must<sp/>be<sp/>done<sp/>if<sp/>ambientTris<sp/>is<sp/>visible</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsrf_triangles__s" kindref="compound">srfTriangles_t</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lightTris;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>shadow<sp/>volume<sp/>triangle<sp/>surface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsrf_triangles__s" kindref="compound">srfTriangles_t</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shadowTris;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>we<sp/>can<sp/>check<sp/>ambientViewCount<sp/>before<sp/>adding<sp/>lightTris,<sp/>and<sp/>get</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>at<sp/>the<sp/>shared<sp/>vertex<sp/>and<sp/>possibly<sp/>shadowVertex<sp/>caches</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsrf_triangles__s" kindref="compound">srfTriangles_t</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ambientTris;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_material" kindref="compound">idMaterial</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>shader;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>expCulled;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>only<sp/>for<sp/>the<sp/>experimental<sp/>shadow<sp/>buffer<sp/>renderer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsrf_cull_info__t" kindref="compound">srfCullInfo_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cullInfo;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}<sp/><ref refid="structsurface_interaction__t" kindref="compound">surfaceInteraction_t</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="structarea_num_ref__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structarea_num_ref__s" kindref="compound">areaNumRef_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structarea_num_ref__s" kindref="compound">areaNumRef_s</ref><sp/>*<sp/><sp/><sp/>next;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>areaNum;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/><ref refid="structarea_num_ref__s" kindref="compound">areaNumRef_t</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_render_entity_local" kindref="compound">idRenderEntityLocal</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_render_light_local" kindref="compound">idRenderLightLocal</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classid_interaction" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_interaction" kindref="compound">idInteraction</ref><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>may<sp/>be<sp/>0<sp/>if<sp/>the<sp/>light<sp/>and<sp/>entity<sp/>do<sp/>not<sp/>actually<sp/>intersect</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-1<sp/>=<sp/>an<sp/>untested<sp/>interaction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numSurfaces;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>there<sp/>is<sp/>a<sp/>whole-entity<sp/>optimized<sp/>shadow<sp/>hull,<sp/>it<sp/>will</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>be<sp/>present<sp/>as<sp/>a<sp/>surfaceInteraction_t<sp/>with<sp/>a<sp/>NULL<sp/>ambientTris,<sp/>but</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>possibly<sp/>having<sp/>a<sp/>shader<sp/>to<sp/>specify<sp/>the<sp/>shadow<sp/>sorting<sp/>order</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsurface_interaction__t" kindref="compound">surfaceInteraction_t</ref><sp/>*<sp/><sp/>surfaces;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>space<sp/>from<sp/>here,<sp/>if<sp/>NULL,<sp/>it<sp/>is<sp/>a<sp/>pre-generated<sp/>shadow<sp/>volume<sp/>from<sp/>dmap</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_render_entity_local" kindref="compound">idRenderEntityLocal</ref><sp/>*<sp/><sp/><sp/>entityDef;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_render_light_local" kindref="compound">idRenderLightLocal</ref><sp/>*<sp/><sp/><sp/><sp/>lightDef;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_interaction" kindref="compound">idInteraction</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lightNext;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>lightDef<sp/>chains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_interaction" kindref="compound">idInteraction</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lightPrev;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_interaction" kindref="compound">idInteraction</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entityNext;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>entityDef<sp/>chains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_interaction" kindref="compound">idInteraction</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entityPrev;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_interaction" kindref="compound">idInteraction</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>because<sp/>these<sp/>are<sp/>generated<sp/>and<sp/>freed<sp/>each<sp/>game<sp/>tic<sp/>for<sp/>active<sp/>elements<sp/>all</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>over<sp/>the<sp/>world,<sp/>we<sp/>use<sp/>a<sp/>custom<sp/>pool<sp/>allocater<sp/>to<sp/>avoid<sp/>memory<sp/>allocation<sp/>overhead</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>and<sp/>fragmentation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classid_interaction" kindref="compound">idInteraction</ref><sp/>*<sp/><sp/>AllocAndLink(<sp/><ref refid="classid_render_entity_local" kindref="compound">idRenderEntityLocal</ref><sp/>*edef,<sp/><ref refid="classid_render_light_local" kindref="compound">idRenderLightLocal</ref><sp/>*ldef<sp/>);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>unlinks<sp/>from<sp/>the<sp/>entity<sp/>and<sp/>light,<sp/>frees<sp/>all<sp/>surfaceInteractions,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>and<sp/>puts<sp/>it<sp/>back<sp/>on<sp/>the<sp/>free<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UnlinkAndFree(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>free<sp/>the<sp/>interaction<sp/>surfaces</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FreeSurfaces(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>makes<sp/>the<sp/>interaction<sp/>empty<sp/>for<sp/>when<sp/>the<sp/>light<sp/>and<sp/>entity<sp/>do<sp/>not<sp/>actually<sp/>intersect</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>all<sp/>empty<sp/>interactions<sp/>are<sp/>linked<sp/>at<sp/>the<sp/>end<sp/>of<sp/>the<sp/>light&apos;s<sp/>and<sp/>entity&apos;s<sp/>interaction<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MakeEmpty(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>returns<sp/>true<sp/>if<sp/>the<sp/>interaction<sp/>is<sp/>empty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IsEmpty(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/>numSurfaces<sp/>==<sp/>0<sp/>);<sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>returns<sp/>true<sp/>if<sp/>the<sp/>interaction<sp/>is<sp/>not<sp/>yet<sp/>completely<sp/>created</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IsDeferred(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/>numSurfaces<sp/>==<sp/>-1<sp/>);<sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>returns<sp/>true<sp/>if<sp/>the<sp/>interaction<sp/>has<sp/>shadows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HasShadows(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>counts<sp/>up<sp/>the<sp/>memory<sp/>used<sp/>by<sp/>all<sp/>the<sp/>surfaceInteractions,<sp/>which</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>will<sp/>be<sp/>used<sp/>to<sp/>determine<sp/>when<sp/>we<sp/>need<sp/>to<sp/>start<sp/>purging<sp/>old<sp/>interactions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MemoryUsed(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>makes<sp/>sure<sp/>all<sp/>necessary<sp/>light<sp/>surfaces<sp/>and<sp/>shadow<sp/>surfaces<sp/>are<sp/>created,<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>calls<sp/>R_LinkLightSurf()<sp/>for<sp/>each<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AddActiveInteraction(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FRUSTUM_UNINITIALIZED,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FRUSTUM_INVALID,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FRUSTUM_VALID,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FRUSTUM_VALIDAREAS,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frustumState;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_frustum" kindref="compound">idFrustum</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frustum;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>frustum<sp/>which<sp/>contains<sp/>the<sp/>interaction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structarea_num_ref__s" kindref="compound">areaNumRef_t</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frustumAreas;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>numbers<sp/>of<sp/>the<sp/>areas<sp/>the<sp/>frustum<sp/>touches</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dynamicModelFrameCount;<sp/></highlight><highlight class="comment">//<sp/>so<sp/>we<sp/>can<sp/>tell<sp/>if<sp/>a<sp/>callback<sp/>model<sp/>animated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>actually<sp/>create<sp/>the<sp/>interaction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CreateInteraction(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_render_model" kindref="compound">idRenderModel</ref><sp/>*model<sp/>);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>unlink<sp/>from<sp/>entity<sp/>and<sp/>light<sp/>lists</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Unlink(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>try<sp/>to<sp/>determine<sp/>if<sp/>the<sp/>entire<sp/>interaction,<sp/>including<sp/>shadows,<sp/>is<sp/>guaranteed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>be<sp/>outside<sp/>the<sp/>view<sp/>frustum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CullInteractionByViewFrustum(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_frustum" kindref="compound">idFrustum</ref><sp/>&amp;viewFrustum<sp/>);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>determine<sp/>the<sp/>minimum<sp/>scissor<sp/>rect<sp/>that<sp/>will<sp/>include<sp/>the<sp/>interaction<sp/>shadows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>projected<sp/>to<sp/>the<sp/>bounds<sp/>of<sp/>the<sp/>light</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_screen_rect" kindref="compound">idScreenRect</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CalcInteractionScissorRectangle(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_frustum" kindref="compound">idFrustum</ref><sp/>&amp;viewFrustum<sp/>);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>R_CalcInteractionFacing(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_render_entity_local" kindref="compound">idRenderEntityLocal</ref><sp/>*ent,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structsrf_triangles__s" kindref="compound">srfTriangles_t</ref><sp/>*tri,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_render_light_local" kindref="compound">idRenderLightLocal</ref><sp/>*light,<sp/><ref refid="structsrf_cull_info__t" kindref="compound">srfCullInfo_t</ref><sp/>&amp;cullInfo<sp/>);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>R_CalcInteractionCullBits(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_render_entity_local" kindref="compound">idRenderEntityLocal</ref><sp/>*ent,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structsrf_triangles__s" kindref="compound">srfTriangles_t</ref><sp/>*tri,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_render_light_local" kindref="compound">idRenderLightLocal</ref><sp/>*light,<sp/><ref refid="structsrf_cull_info__t" kindref="compound">srfCullInfo_t</ref><sp/>&amp;cullInfo<sp/>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>R_FreeInteractionCullInfo(<sp/><ref refid="structsrf_cull_info__t" kindref="compound">srfCullInfo_t</ref><sp/>&amp;cullInfo<sp/>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>R_ShowInteractionMemory_f(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_cmd_args" kindref="compound">idCmdArgs</ref><sp/>&amp;args<sp/>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!__INTERACTION_H__<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/Interaction.h"/>
+  </compounddef>
+</doxygen>

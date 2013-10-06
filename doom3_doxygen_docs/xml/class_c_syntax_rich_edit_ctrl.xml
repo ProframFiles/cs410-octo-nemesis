@@ -1,0 +1,1863 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_c_syntax_rich_edit_ctrl" kind="class" prot="public">
+    <compoundname>CSyntaxRichEditCtrl</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">CRichEditCtrl</basecompoundref>
+      <sectiondef kind="protected-type">
+      <memberdef kind="enum" id="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608c" prot="protected" static="no">
+        <name>charType_t</name>
+        <enumvalue id="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608caad7a3c6652e16d1ad90f25cdb5ffc43b" prot="protected">
+          <name>CT_WHITESPACE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608ca761da429acd2a899a2eda87f48e1ebfc" prot="protected">
+          <name>CT_COMMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608ca1cc8695e045e8b4c924162c57f308a8d" prot="protected">
+          <name>CT_STRING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608ca427d31f9b5267a8d83f0f25f27a59dbb" prot="protected">
+          <name>CT_LITERAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608cab19e9255edcaeaa19685b8482c03d111" prot="protected">
+          <name>CT_NUMBER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608cae4dbdaffe60c7d7dbca91a9a66aa8822" prot="protected">
+          <name>CT_NAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608cae7f4035a38e1909523742e80450da463" prot="protected">
+          <name>CT_PUNCTUATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="157" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="157" bodyend="165"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1aac3c5965494c195affe07e7d4dcfa81f" prot="protected" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF CSyntaxRichEditCtrl::defaultColor</definition>
+        <argsstring></argsstring>
+        <name>defaultColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="150" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1ac99e020cb6985908bd58482a285a8b10" prot="protected" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF CSyntaxRichEditCtrl::singleLineCommentColor</definition>
+        <argsstring></argsstring>
+        <name>singleLineCommentColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="151" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a2d8a308dc95a6d2a41fe16dba33409c6" prot="protected" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF CSyntaxRichEditCtrl::multiLineCommentColor</definition>
+        <argsstring></argsstring>
+        <name>multiLineCommentColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="152" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a721fd4ca2da70ddc80dccc83accb7ae5" prot="protected" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF CSyntaxRichEditCtrl::stringColor[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>stringColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="153" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a75d0e4006a11be519071beb6738debff" prot="protected" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF CSyntaxRichEditCtrl::literalColor</definition>
+        <argsstring></argsstring>
+        <name>literalColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="154" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1aafafe8efaf08d7df42c6252c219129f7" prot="protected" static="no" mutable="no">
+        <type>COLORREF</type>
+        <definition>COLORREF CSyntaxRichEditCtrl::braceHighlightColor</definition>
+        <argsstring></argsstring>
+        <name>braceHighlightColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="155" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a463b9b25ded56be400540854eaa72833" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CSyntaxRichEditCtrl::charType[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>charType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="167" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a29208e1c6c32640ff95ba387654e7aaf" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_list" kindref="compound">idList</ref>&lt; <ref refid="structkey_word__t" kindref="compound">keyWord_t</ref> &gt;</type>
+        <definition>idList&lt;keyWord_t&gt; CSyntaxRichEditCtrl::keyWordsFromFile</definition>
+        <argsstring></argsstring>
+        <name>keyWordsFromFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="169" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a1c0835df727d1798c545577543b9e929" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="structkey_word__t" kindref="compound">keyWord_t</ref> *</type>
+        <definition>const keyWord_t* CSyntaxRichEditCtrl::keyWords</definition>
+        <argsstring></argsstring>
+        <name>keyWords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="170" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1af3d2a1fedee1b154480c3d6b244368ab" prot="protected" static="no" mutable="no">
+        <type>int *</type>
+        <definition>int* CSyntaxRichEditCtrl::keyWordLengths</definition>
+        <argsstring></argsstring>
+        <name>keyWordLengths</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="171" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1ae4580188d4cdfec681d98d91648674ea" prot="protected" static="no" mutable="no">
+        <type>COLORREF *</type>
+        <definition>COLORREF* CSyntaxRichEditCtrl::keyWordColors</definition>
+        <argsstring></argsstring>
+        <name>keyWordColors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="172" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a1ccc12235b5c31610ff1eac979736325" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_hash_index" kindref="compound">idHashIndex</ref></type>
+        <definition>idHashIndex CSyntaxRichEditCtrl::keyWordHash</definition>
+        <argsstring></argsstring>
+        <name>keyWordHash</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="173" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a55dd2302268b6dc3f490c5a3870c46db" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CSyntaxRichEditCtrl::caseSensitive</definition>
+        <argsstring></argsstring>
+        <name>caseSensitive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="175" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1aeb9827e27079226baa918b1edacb1cdd" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CSyntaxRichEditCtrl::allowPathNames</definition>
+        <argsstring></argsstring>
+        <name>allowPathNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="176" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a18c32380b5a6ec7082cc39f554ccff2a" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CSyntaxRichEditCtrl::keyWordAutoCompletion</definition>
+        <argsstring></argsstring>
+        <name>keyWordAutoCompletion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="177" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a41852a46bbc5c6eb5116952e0341478a" prot="protected" static="no" mutable="no">
+        <type>objectMemberCallback_t</type>
+        <definition>objectMemberCallback_t CSyntaxRichEditCtrl::GetObjectMembers</definition>
+        <argsstring></argsstring>
+        <name>GetObjectMembers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="179" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1acd0174c1b25dee3b7c87e0655d10d3a6" prot="protected" static="no" mutable="no">
+        <type>toolTipCallback_t</type>
+        <definition>toolTipCallback_t CSyntaxRichEditCtrl::GetFunctionParms</definition>
+        <argsstring></argsstring>
+        <name>GetFunctionParms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="180" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1af5e5464068ae835512eaea655d82ca1d" prot="protected" static="no" mutable="no">
+        <type>toolTipCallback_t</type>
+        <definition>toolTipCallback_t CSyntaxRichEditCtrl::GetToolTip</definition>
+        <argsstring></argsstring>
+        <name>GetToolTip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="181" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1ab30548c87cfb1896de95d9ed384772a7" prot="protected" static="no" mutable="no">
+        <type>tom::ITextDocument *</type>
+        <definition>tom::ITextDocument* CSyntaxRichEditCtrl::m_TextDoc</definition>
+        <argsstring></argsstring>
+        <name>m_TextDoc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="184" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a2a928eec9c9a9a3a94afdaebe09ad3b7" prot="protected" static="no" mutable="no">
+        <type>tom::ITextFont *</type>
+        <definition>tom::ITextFont* CSyntaxRichEditCtrl::m_DefaultFont</definition>
+        <argsstring></argsstring>
+        <name>m_DefaultFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="185" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a92d1c35249ff0a91cf602d54c4d1a681" prot="protected" static="no" mutable="no">
+        <type>CHARRANGE</type>
+        <definition>CHARRANGE CSyntaxRichEditCtrl::updateRange</definition>
+        <argsstring></argsstring>
+        <name>updateRange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="187" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1aaf0c6a56b08c446cb62fcd2c5be775fa" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CSyntaxRichEditCtrl::updateSyntaxHighlighting</definition>
+        <argsstring></argsstring>
+        <name>updateSyntaxHighlighting</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="188" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a3ba6643b50a7f2833e267ef65adf8a28" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CSyntaxRichEditCtrl::stringColorIndex</definition>
+        <argsstring></argsstring>
+        <name>stringColorIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="189" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1aee9e69e790fd805a2c5d43c6a727e455" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CSyntaxRichEditCtrl::stringColorLine</definition>
+        <argsstring></argsstring>
+        <name>stringColorLine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="190" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a1c4de510095ddd756301f45826278825" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CSyntaxRichEditCtrl::autoCompleteStart</definition>
+        <argsstring></argsstring>
+        <name>autoCompleteStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="192" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a95ad6019b129329031f1dc81293387b5" prot="protected" static="no" mutable="no">
+        <type>CListBox</type>
+        <definition>CListBox CSyntaxRichEditCtrl::autoCompleteListBox</definition>
+        <argsstring></argsstring>
+        <name>autoCompleteListBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="193" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1aa19b6dff15915d5d30951fcecc553229" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CSyntaxRichEditCtrl::funcParmToolTipStart</definition>
+        <argsstring></argsstring>
+        <name>funcParmToolTipStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="195" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a0e8bb636106d264c145c353e913e0d4a" prot="protected" static="no" mutable="no">
+        <type>CEdit</type>
+        <definition>CEdit CSyntaxRichEditCtrl::funcParmToolTip</definition>
+        <argsstring></argsstring>
+        <name>funcParmToolTip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="196" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1ac7f0d4af5d10a36b42a94291eb3bf1b0" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CSyntaxRichEditCtrl::bracedSection[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>bracedSection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="198" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a9c882d7a96a3e3131775f172f3bdb888" prot="protected" static="no" mutable="no">
+        <type>CPoint</type>
+        <definition>CPoint CSyntaxRichEditCtrl::mousePoint</definition>
+        <argsstring></argsstring>
+        <name>mousePoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="200" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a5178176133eddf1b21e51a8f37ebc863" prot="protected" static="no" mutable="no">
+        <type>CToolTipCtrl *</type>
+        <definition>CToolTipCtrl* CSyntaxRichEditCtrl::keyWordToolTip</definition>
+        <argsstring></argsstring>
+        <name>keyWordToolTip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="201" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1a35ad0029e2880a1171dc7d274b604d93" prot="protected" static="no" mutable="no">
+        <type>TCHAR *</type>
+        <definition>TCHAR* CSyntaxRichEditCtrl::m_pchTip</definition>
+        <argsstring></argsstring>
+        <name>m_pchTip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="202" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_syntax_rich_edit_ctrl_1ad76924f13b5502cb186bae22c0c5bebf" prot="protected" static="no" mutable="no">
+        <type>WCHAR *</type>
+        <definition>WCHAR* CSyntaxRichEditCtrl::m_pwchTip</definition>
+        <argsstring></argsstring>
+        <name>m_pwchTip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="203" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a4e4e4e8fd3a7fe2b05753d14594661f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CSyntaxRichEditCtrl::CSyntaxRichEditCtrl</definition>
+        <argsstring>(void)</argsstring>
+        <name>CSyntaxRichEditCtrl</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="96" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ad54a1987f015cf23e8060a8fcaa29a39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CSyntaxRichEditCtrl::~CSyntaxRichEditCtrl</definition>
+        <argsstring>(void)</argsstring>
+        <name>~CSyntaxRichEditCtrl</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="97" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="118" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ac9eb000e63819498db5fcedcebaff9ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="99" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="228" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a260d8925b58d2263df2faa8c0f3dd558" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetCaseSensitive</definition>
+        <argsstring>(bool caseSensitive)</argsstring>
+        <name>SetCaseSensitive</name>
+        <param>
+          <type>bool</type>
+          <declname>caseSensitive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="101" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="482" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a603de9e96f87c87d0d7a73c34f75c8ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::AllowPathNames</definition>
+        <argsstring>(bool allow)</argsstring>
+        <name>AllowPathNames</name>
+        <param>
+          <type>bool</type>
+          <declname>allow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="102" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="491" bodyend="493"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a99dacaa1d6655350e12dea3bef81ed07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::EnableKeyWordAutoCompletion</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>EnableKeyWordAutoCompletion</name>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="103" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="500" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a922269a25aae704e5b6ce5ab1d87c6ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetKeyWords</definition>
+        <argsstring>(const keyWord_t kws[])</argsstring>
+        <name>SetKeyWords</name>
+        <param>
+          <type>const <ref refid="structkey_word__t" kindref="compound">keyWord_t</ref></type>
+          <declname>kws</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="104" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="293" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1adf8ab30022c5e59feaa9ea135caa7584" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CSyntaxRichEditCtrl::LoadKeyWordsFromFile</definition>
+        <argsstring>(const char *fileName)</argsstring>
+        <name>LoadKeyWordsFromFile</name>
+        <param>
+          <type>const char *</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="105" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="331" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a80d972b330bd8b1db7bb4e924b85a372" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetObjectMemberCallback</definition>
+        <argsstring>(objectMemberCallback_t callback)</argsstring>
+        <name>SetObjectMemberCallback</name>
+        <param>
+          <type>objectMemberCallback_t</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="106" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="455" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a6fee8bc1ec1c525271c1e13519441b5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetFunctionParmCallback</definition>
+        <argsstring>(toolTipCallback_t callback)</argsstring>
+        <name>SetFunctionParmCallback</name>
+        <param>
+          <type>toolTipCallback_t</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="107" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="464" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1aebbb26011f8ab480d29df74beae59394" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetToolTipCallback</definition>
+        <argsstring>(toolTipCallback_t callback)</argsstring>
+        <name>SetToolTipCallback</name>
+        <param>
+          <type>toolTipCallback_t</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="108" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="473" bodyend="475"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1af80315eb27c8ce9c73a5824f8265b721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetDefaultColor</definition>
+        <argsstring>(const COLORREF color)</argsstring>
+        <name>SetDefaultColor</name>
+        <param>
+          <type>const COLORREF</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="110" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="413" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a40d7b5f7853029cae463e37df5eb48f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetCommentColor</definition>
+        <argsstring>(const COLORREF color)</argsstring>
+        <name>SetCommentColor</name>
+        <param>
+          <type>const COLORREF</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="111" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="422" bodyend="425"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a1ce2d07208d582b99ddc854dc76ed419" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetStringColor</definition>
+        <argsstring>(const COLORREF color, const COLORREF altColor=-1)</argsstring>
+        <name>SetStringColor</name>
+        <param>
+          <type>const COLORREF</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>const COLORREF</type>
+          <declname>altColor</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="112" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="432" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a45652a6ded9aac097488dad8308ede5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetLiteralColor</definition>
+        <argsstring>(const COLORREF color)</argsstring>
+        <name>SetLiteralColor</name>
+        <param>
+          <type>const COLORREF</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="113" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="446" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1aec329b9f41f15f7adf0454f4627cb908" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>COLORREF</type>
+        <definition>COLORREF CSyntaxRichEditCtrl::GetForeColor</definition>
+        <argsstring>(int charIndex) const </argsstring>
+        <name>GetForeColor</name>
+        <param>
+          <type>int</type>
+          <declname>charIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="115" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="596" bodyend="610"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a303dfd54545d3dee01368c4217378913" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>COLORREF</type>
+        <definition>COLORREF CSyntaxRichEditCtrl::GetBackColor</definition>
+        <argsstring>(int charIndex) const </argsstring>
+        <name>GetBackColor</name>
+        <param>
+          <type>int</type>
+          <declname>charIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="116" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="617" bodyend="631"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a79d45b0494806add62b98cb5b55b9f06" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::GetCursorPos</definition>
+        <argsstring>(int &amp;line, int &amp;column, int &amp;character) const </argsstring>
+        <name>GetCursorPos</name>
+        <param>
+          <type>int &amp;</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>character</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="118" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="878" bodyend="895"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1adb77625da94388b1b09125ff6b5f8718" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>CHARRANGE</type>
+        <definition>CHARRANGE CSyntaxRichEditCtrl::GetVisibleRange</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetVisibleRange</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="119" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="509" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a5c851b2195caf5802009c5e2fa2fb0d1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::GetText</definition>
+        <argsstring>(idStr &amp;text) const </argsstring>
+        <name>GetText</name>
+        <param>
+          <type><ref refid="classid_str" kindref="compound">idStr</ref> &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="121" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="902" bodyend="904"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a898db28615208a67e7a4e6345910ca77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::GetText</definition>
+        <argsstring>(idStr &amp;text, int startCharIndex, int endCharIndex) const </argsstring>
+        <name>GetText</name>
+        <param>
+          <type><ref refid="classid_str" kindref="compound">idStr</ref> &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>startCharIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>endCharIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="122" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="911" bodyend="921"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ac50e840a549d1e283726a0b7bba1631b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetText</definition>
+        <argsstring>(const char *text)</argsstring>
+        <name>SetText</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="123" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="928" bodyend="932"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ae9aa1424763f9c130dae3eb879a13035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::GoToLine</definition>
+        <argsstring>(int line)</argsstring>
+        <name>GoToLine</name>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="125" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1344" bodyend="1357"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ab72e1cd0e13f75d33bc36a19ce121846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CSyntaxRichEditCtrl::FindNext</definition>
+        <argsstring>(const char *find, bool matchCase, bool matchWholeWords, bool searchForward)</argsstring>
+        <name>FindNext</name>
+        <param>
+          <type>const char *</type>
+          <declname>find</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>matchCase</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>matchWholeWords</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>searchForward</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="126" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="939" bodyend="981"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1aef48b145a1724e19bcb893f464146ec6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CSyntaxRichEditCtrl::ReplaceAll</definition>
+        <argsstring>(const char *find, const char *replace, bool matchCase, bool matchWholeWords)</argsstring>
+        <name>ReplaceAll</name>
+        <param>
+          <type>const char *</type>
+          <declname>find</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>replace</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>matchCase</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>matchWholeWords</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="127" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="988" bodyend="1021"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a244902f6c5f21a902238594a1cad07e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::ReplaceText</definition>
+        <argsstring>(int startCharIndex, int endCharIndex, const char *replace)</argsstring>
+        <name>ReplaceText</name>
+        <param>
+          <type>int</type>
+          <declname>startCharIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>endCharIndex</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>replace</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="128" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1acbb2cb09806933918c3faf3009a11b76" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int CSyntaxRichEditCtrl::OnToolHitTest</definition>
+        <argsstring>(CPoint point, TOOLINFO *pTI) const </argsstring>
+        <name>OnToolHitTest</name>
+        <param>
+          <type>CPoint</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>TOOLINFO *</type>
+          <declname>pTI</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="131" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1364" bodyend="1375"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a93e3f0de6e1e24808b5ed3da242bd1ca" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg BOOL</type>
+        <definition>BOOL CSyntaxRichEditCtrl::OnToolTipNotify</definition>
+        <argsstring>(UINT id, NMHDR *pNMHDR, LRESULT *pResult)</argsstring>
+        <name>OnToolTipNotify</name>
+        <param>
+          <type>UINT</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>NMHDR *</type>
+          <declname>pNMHDR</declname>
+        </param>
+        <param>
+          <type>LRESULT *</type>
+          <declname>pResult</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="132" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1382" bodyend="1441"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a62bdb84d9ba1a881309af9b37ed74ec0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg UINT</type>
+        <definition>UINT CSyntaxRichEditCtrl::OnGetDlgCode</definition>
+        <argsstring>()</argsstring>
+        <name>OnGetDlgCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="133" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1448" bodyend="1451"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1aced1ad0955bfa41481cf77299f990b29" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg void</type>
+        <definition>void CSyntaxRichEditCtrl::OnChar</definition>
+        <argsstring>(UINT nChar, UINT nRepCnt, UINT nFlags)</argsstring>
+        <name>OnChar</name>
+        <param>
+          <type>UINT</type>
+          <declname>nChar</declname>
+        </param>
+        <param>
+          <type>UINT</type>
+          <declname>nRepCnt</declname>
+        </param>
+        <param>
+          <type>UINT</type>
+          <declname>nFlags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="134" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1604" bodyend="1715"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a67083bca6239ea81f0a178df48cd6073" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg void</type>
+        <definition>void CSyntaxRichEditCtrl::OnKeyDown</definition>
+        <argsstring>(UINT nKey, UINT nRepCnt, UINT nFlags)</argsstring>
+        <name>OnKeyDown</name>
+        <param>
+          <type>UINT</type>
+          <declname>nKey</declname>
+        </param>
+        <param>
+          <type>UINT</type>
+          <declname>nRepCnt</declname>
+        </param>
+        <param>
+          <type>UINT</type>
+          <declname>nFlags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="135" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1458" bodyend="1597"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1aecc2d45a5c83ece312119884f6864782" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg void</type>
+        <definition>void CSyntaxRichEditCtrl::OnLButtonDown</definition>
+        <argsstring>(UINT nFlags, CPoint point)</argsstring>
+        <name>OnLButtonDown</name>
+        <param>
+          <type>UINT</type>
+          <declname>nFlags</declname>
+        </param>
+        <param>
+          <type>CPoint</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="136" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1722" bodyend="1731"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a2b10ff5b9d94797a5eaba88aa4b85820" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg BOOL</type>
+        <definition>BOOL CSyntaxRichEditCtrl::OnMouseWheel</definition>
+        <argsstring>(UINT nFlags, short zDelta, CPoint pt)</argsstring>
+        <name>OnMouseWheel</name>
+        <param>
+          <type>UINT</type>
+          <declname>nFlags</declname>
+        </param>
+        <param>
+          <type>short</type>
+          <declname>zDelta</declname>
+        </param>
+        <param>
+          <type>CPoint</type>
+          <declname>pt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="137" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1738" bodyend="1760"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ab57902e89a6f6f9362a1b63b07c9011e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg void</type>
+        <definition>void CSyntaxRichEditCtrl::OnMouseMove</definition>
+        <argsstring>(UINT nFlags, CPoint point)</argsstring>
+        <name>OnMouseMove</name>
+        <param>
+          <type>UINT</type>
+          <declname>nFlags</declname>
+        </param>
+        <param>
+          <type>CPoint</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="138" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1767" bodyend="1779"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ae2dc4c679bdfa507e93e4e9ddd46d359" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg void</type>
+        <definition>void CSyntaxRichEditCtrl::OnVScroll</definition>
+        <argsstring>(UINT nSBCode, UINT nPos, CScrollBar *pScrollBar)</argsstring>
+        <name>OnVScroll</name>
+        <param>
+          <type>UINT</type>
+          <declname>nSBCode</declname>
+        </param>
+        <param>
+          <type>UINT</type>
+          <declname>nPos</declname>
+        </param>
+        <param>
+          <type>CScrollBar *</type>
+          <declname>pScrollBar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="139" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1801" bodyend="1811"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a3de1f9f6d2d2dc8113aa46716d53fa88" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg void</type>
+        <definition>void CSyntaxRichEditCtrl::OnSize</definition>
+        <argsstring>(UINT nType, int cx, int cy)</argsstring>
+        <name>OnSize</name>
+        <param>
+          <type>UINT</type>
+          <declname>nType</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="140" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1786" bodyend="1794"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ae8f0631de731703646fd12664d5341e7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg void</type>
+        <definition>void CSyntaxRichEditCtrl::OnProtected</definition>
+        <argsstring>(NMHDR *pNMHDR, LRESULT *pResult)</argsstring>
+        <name>OnProtected</name>
+        <param>
+          <type>NMHDR *</type>
+          <declname>pNMHDR</declname>
+        </param>
+        <param>
+          <type>LRESULT *</type>
+          <declname>pResult</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="141" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1818" bodyend="1853"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ae5e06c27d6d51da23d9cbb67018f8eb8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg void</type>
+        <definition>void CSyntaxRichEditCtrl::OnChange</definition>
+        <argsstring>()</argsstring>
+        <name>OnChange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="142" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1860" bodyend="1879"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a5c51882c1b5faaa9a5fb5b6cde87b0e2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg void</type>
+        <definition>void CSyntaxRichEditCtrl::OnAutoCompleteListBoxChange</definition>
+        <argsstring>()</argsstring>
+        <name>OnAutoCompleteListBoxChange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="143" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1886" bodyend="1889"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a8c51b1933f379ea8cc302d7b4fc6e797" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>afx_msg void</type>
+        <definition>void CSyntaxRichEditCtrl::OnAutoCompleteListBoxDblClk</definition>
+        <argsstring>()</argsstring>
+        <name>OnAutoCompleteListBoxDblClk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="144" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1896" bodyend="1903"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a2abb4cf7c826bb0cb7a4e5b8563f8497" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CSyntaxRichEditCtrl::DECLARE_MESSAGE_MAP</definition>
+        <argsstring>() CHARFORMAT2 defaultCharFormat</argsstring>
+        <name>DECLARE_MESSAGE_MAP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="146" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a26cdef6f36c87ad59fea940e09055b60" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::InitFont</definition>
+        <argsstring>(void)</argsstring>
+        <name>InitFont</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="206" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="130" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1aea84b87596a3d9d6a500798bf85b0bc9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::InitSyntaxHighlighting</definition>
+        <argsstring>(void)</argsstring>
+        <name>InitSyntaxHighlighting</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="207" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="210" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a0eaa609adee52711908bb3a2b375d6ac" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetCharType</definition>
+        <argsstring>(int first, int last, int type)</argsstring>
+        <name>SetCharType</name>
+        <param>
+          <type>int</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>last</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="208" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="199" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ab04e2ca6f4dc94a6e383f6c0fa6102d5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetDefaultFont</definition>
+        <argsstring>(int startCharIndex, int endCharIndex)</argsstring>
+        <name>SetDefaultFont</name>
+        <param>
+          <type>int</type>
+          <declname>startCharIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>endCharIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="209" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="542" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a8a6cc98b7ed893d7ae69adb9f2cbe957" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::SetColor</definition>
+        <argsstring>(int startCharIndex, int endCharIndex, COLORREF foreColor, COLORREF backColor, bool bold)</argsstring>
+        <name>SetColor</name>
+        <param>
+          <type>int</type>
+          <declname>startCharIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>endCharIndex</declname>
+        </param>
+        <param>
+          <type>COLORREF</type>
+          <declname>foreColor</declname>
+        </param>
+        <param>
+          <type>COLORREF</type>
+          <declname>backColor</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>bold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="210" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="563" bodyend="589"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a625f73e8cda6ba40643882789ce47525" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::FreeKeyWordsFromFile</definition>
+        <argsstring>(void)</argsstring>
+        <name>FreeKeyWordsFromFile</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="212" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="400" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a2ffaa10f215f7ead20b240e4b6bf8d0d" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int CSyntaxRichEditCtrl::FindKeyWord</definition>
+        <argsstring>(const char *keyWord, int length) const </argsstring>
+        <name>FindKeyWord</name>
+        <param>
+          <type>const char *</type>
+          <declname>keyWord</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="213" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="262" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1af3e435a5bcaeecdb5822ecc140b0f5ba" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::HighlightSyntax</definition>
+        <argsstring>(int startCharIndex, int endCharIndex)</argsstring>
+        <name>HighlightSyntax</name>
+        <param>
+          <type>int</type>
+          <declname>startCharIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>endCharIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="215" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="640" bodyend="822"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1aa0979b6697d0fb93eedb4af51b9c8122" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::UpdateVisibleRange</definition>
+        <argsstring>(void)</argsstring>
+        <name>UpdateVisibleRange</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="216" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="831" bodyend="871"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a58831c64f4f71a28fbc92bef07963a4d" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CSyntaxRichEditCtrl::GetNameBeforeCurrentSelection</definition>
+        <argsstring>(CString &amp;name, int &amp;charIndex) const </argsstring>
+        <name>GetNameBeforeCurrentSelection</name>
+        <param>
+          <type>CString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>charIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="218" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1282" bodyend="1305"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a276ca6207b0285a3cc79c7372f5bf265" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CSyntaxRichEditCtrl::GetNameForMousePosition</definition>
+        <argsstring>(idStr &amp;name) const </argsstring>
+        <name>GetNameForMousePosition</name>
+        <param>
+          <type><ref refid="classid_str" kindref="compound">idStr</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="219" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1312" bodyend="1337"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1ad4de64643a9b8a5c93205c3b928894b2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::AutoCompleteInsertText</definition>
+        <argsstring>(void)</argsstring>
+        <name>AutoCompleteInsertText</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="221" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1042" bodyend="1055"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a64e616e821a1504e07b581e7ad92c996" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::AutoCompleteUpdate</definition>
+        <argsstring>(void)</argsstring>
+        <name>AutoCompleteUpdate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="222" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1062" bodyend="1073"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1af09d9c28b9fcaf39d370d15ed36fe659" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::AutoCompleteShow</definition>
+        <argsstring>(int charIndex)</argsstring>
+        <name>AutoCompleteShow</name>
+        <param>
+          <type>int</type>
+          <declname>charIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="223" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1080" bodyend="1099"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a06543d05b16d2631ad04dd08e01571cd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::AutoCompleteHide</definition>
+        <argsstring>(void)</argsstring>
+        <name>AutoCompleteHide</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="224" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1106" bodyend="1109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a25e178c3cb0710a3927ad6530a0f43bf" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::ToolTipShow</definition>
+        <argsstring>(int charIndex, const char *string)</argsstring>
+        <name>ToolTipShow</name>
+        <param>
+          <type>int</type>
+          <declname>charIndex</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="226" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1116" bodyend="1137"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a2777e5e6f7aaa983f7259bf2e3e9fce2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::ToolTipHide</definition>
+        <argsstring>(void)</argsstring>
+        <name>ToolTipHide</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="227" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1144" bodyend="1147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a19efa97ce7e995e8fb36910fba0f1bc7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CSyntaxRichEditCtrl::BracedSectionStart</definition>
+        <argsstring>(char braceStartChar, char braceEndChar)</argsstring>
+        <name>BracedSectionStart</name>
+        <param>
+          <type>char</type>
+          <declname>braceStartChar</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>braceEndChar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="229" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1154" bodyend="1179"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a44cade2eb061a63cf9893c7a2a36994f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CSyntaxRichEditCtrl::BracedSectionEnd</definition>
+        <argsstring>(char braceStartChar, char braceEndChar)</argsstring>
+        <name>BracedSectionEnd</name>
+        <param>
+          <type>char</type>
+          <declname>braceStartChar</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>braceEndChar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="230" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1186" bodyend="1213"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a267fb9a38aa524d3e6c0713c99f15e7d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::BracedSectionAdjustEndTabs</definition>
+        <argsstring>(void)</argsstring>
+        <name>BracedSectionAdjustEndTabs</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="231" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1220" bodyend="1248"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a99df62be5669073a8255402bb4823e21" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::BracedSectionShow</definition>
+        <argsstring>(void)</argsstring>
+        <name>BracedSectionShow</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="232" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1255" bodyend="1261"/>
+      </memberdef>
+      <memberdef kind="function" id="class_c_syntax_rich_edit_ctrl_1a2911728f2323f563de9b97d6477b2712" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CSyntaxRichEditCtrl::BracedSectionHide</definition>
+        <argsstring>(void)</argsstring>
+        <name>BracedSectionHide</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="233" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.cpp" bodystart="1268" bodyend="1275"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="19010">
+        <label>CRichEditCtrl</label>
+      </node>
+      <node id="19009">
+        <label>CSyntaxRichEditCtrl</label>
+        <link refid="class_c_syntax_rich_edit_ctrl"/>
+        <childnode refid="19010" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="19015">
+        <label>idHashIndex</label>
+        <link refid="classid_hash_index"/>
+      </node>
+      <node id="19014">
+        <label>keyWord_t</label>
+        <link refid="structkey_word__t"/>
+      </node>
+      <node id="19012">
+        <label>CRichEditCtrl</label>
+      </node>
+      <node id="19013">
+        <label>idList&lt; keyWord_t &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="19011">
+        <label>CSyntaxRichEditCtrl</label>
+        <link refid="class_c_syntax_rich_edit_ctrl"/>
+        <childnode refid="19012" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19013" relation="usage">
+          <edgelabel>keyWordsFromFile</edgelabel>
+        </childnode>
+        <childnode refid="19014" relation="usage">
+          <edgelabel>keyWords</edgelabel>
+        </childnode>
+        <childnode refid="19015" relation="usage">
+          <edgelabel>keyWordHash</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" line="94" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/comafx/CSyntaxRichEditCtrl.h" bodystart="94" bodyend="234"/>
+    <listofallmembers>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aeb9827e27079226baa918b1edacb1cdd" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>allowPathNames</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a603de9e96f87c87d0d7a73c34f75c8ae" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>AllowPathNames</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a06543d05b16d2631ad04dd08e01571cd" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>AutoCompleteHide</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ad4de64643a9b8a5c93205c3b928894b2" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>AutoCompleteInsertText</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a95ad6019b129329031f1dc81293387b5" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>autoCompleteListBox</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1af09d9c28b9fcaf39d370d15ed36fe659" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>AutoCompleteShow</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a1c4de510095ddd756301f45826278825" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>autoCompleteStart</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a64e616e821a1504e07b581e7ad92c996" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>AutoCompleteUpdate</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ac7f0d4af5d10a36b42a94291eb3bf1b0" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>bracedSection</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a267fb9a38aa524d3e6c0713c99f15e7d" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>BracedSectionAdjustEndTabs</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a44cade2eb061a63cf9893c7a2a36994f" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>BracedSectionEnd</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a2911728f2323f563de9b97d6477b2712" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>BracedSectionHide</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a99df62be5669073a8255402bb4823e21" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>BracedSectionShow</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a19efa97ce7e995e8fb36910fba0f1bc7" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>BracedSectionStart</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aafafe8efaf08d7df42c6252c219129f7" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>braceHighlightColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a55dd2302268b6dc3f490c5a3870c46db" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>caseSensitive</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a463b9b25ded56be400540854eaa72833" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>charType</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608c" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>charType_t</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a4e4e4e8fd3a7fe2b05753d14594661f4" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>CSyntaxRichEditCtrl</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608ca761da429acd2a899a2eda87f48e1ebfc" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>CT_COMMENT</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608ca427d31f9b5267a8d83f0f25f27a59dbb" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>CT_LITERAL</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608cae4dbdaffe60c7d7dbca91a9a66aa8822" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>CT_NAME</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608cab19e9255edcaeaa19685b8482c03d111" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>CT_NUMBER</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608cae7f4035a38e1909523742e80450da463" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>CT_PUNCTUATION</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608ca1cc8695e045e8b4c924162c57f308a8d" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>CT_STRING</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a7159db049850ad588195b0069f17608caad7a3c6652e16d1ad90f25cdb5ffc43b" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>CT_WHITESPACE</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a2abb4cf7c826bb0cb7a4e5b8563f8497" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>DECLARE_MESSAGE_MAP</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aac3c5965494c195affe07e7d4dcfa81f" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>defaultColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a99dacaa1d6655350e12dea3bef81ed07" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>EnableKeyWordAutoCompletion</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a2ffaa10f215f7ead20b240e4b6bf8d0d" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>FindKeyWord</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ab72e1cd0e13f75d33bc36a19ce121846" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>FindNext</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a625f73e8cda6ba40643882789ce47525" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>FreeKeyWordsFromFile</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a0e8bb636106d264c145c353e913e0d4a" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>funcParmToolTip</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aa19b6dff15915d5d30951fcecc553229" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>funcParmToolTipStart</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a303dfd54545d3dee01368c4217378913" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetBackColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a79d45b0494806add62b98cb5b55b9f06" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetCursorPos</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aec329b9f41f15f7adf0454f4627cb908" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetForeColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1acd0174c1b25dee3b7c87e0655d10d3a6" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetFunctionParms</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a58831c64f4f71a28fbc92bef07963a4d" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetNameBeforeCurrentSelection</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a276ca6207b0285a3cc79c7372f5bf265" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetNameForMousePosition</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a41852a46bbc5c6eb5116952e0341478a" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetObjectMembers</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a5c851b2195caf5802009c5e2fa2fb0d1" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetText</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a898db28615208a67e7a4e6345910ca77" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetText</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1af5e5464068ae835512eaea655d82ca1d" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetToolTip</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1adb77625da94388b1b09125ff6b5f8718" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GetVisibleRange</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ae9aa1424763f9c130dae3eb879a13035" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>GoToLine</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1af3e435a5bcaeecdb5822ecc140b0f5ba" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>HighlightSyntax</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ac9eb000e63819498db5fcedcebaff9ca" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>Init</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a26cdef6f36c87ad59fea940e09055b60" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>InitFont</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aea84b87596a3d9d6a500798bf85b0bc9" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>InitSyntaxHighlighting</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a18c32380b5a6ec7082cc39f554ccff2a" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>keyWordAutoCompletion</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ae4580188d4cdfec681d98d91648674ea" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>keyWordColors</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a1ccc12235b5c31610ff1eac979736325" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>keyWordHash</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1af3d2a1fedee1b154480c3d6b244368ab" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>keyWordLengths</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a1c0835df727d1798c545577543b9e929" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>keyWords</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a29208e1c6c32640ff95ba387654e7aaf" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>keyWordsFromFile</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a5178176133eddf1b21e51a8f37ebc863" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>keyWordToolTip</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a75d0e4006a11be519071beb6738debff" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>literalColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1adf8ab30022c5e59feaa9ea135caa7584" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>LoadKeyWordsFromFile</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a2a928eec9c9a9a3a94afdaebe09ad3b7" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>m_DefaultFont</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a35ad0029e2880a1171dc7d274b604d93" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>m_pchTip</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ad76924f13b5502cb186bae22c0c5bebf" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>m_pwchTip</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ab30548c87cfb1896de95d9ed384772a7" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>m_TextDoc</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a9c882d7a96a3e3131775f172f3bdb888" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>mousePoint</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a2d8a308dc95a6d2a41fe16dba33409c6" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>multiLineCommentColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a5c51882c1b5faaa9a5fb5b6cde87b0e2" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnAutoCompleteListBoxChange</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a8c51b1933f379ea8cc302d7b4fc6e797" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnAutoCompleteListBoxDblClk</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ae5e06c27d6d51da23d9cbb67018f8eb8" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnChange</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aced1ad0955bfa41481cf77299f990b29" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnChar</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a62bdb84d9ba1a881309af9b37ed74ec0" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnGetDlgCode</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a67083bca6239ea81f0a178df48cd6073" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnKeyDown</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aecc2d45a5c83ece312119884f6864782" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnLButtonDown</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ab57902e89a6f6f9362a1b63b07c9011e" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnMouseMove</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a2b10ff5b9d94797a5eaba88aa4b85820" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnMouseWheel</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ae8f0631de731703646fd12664d5341e7" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnProtected</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a3de1f9f6d2d2dc8113aa46716d53fa88" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnSize</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1acbb2cb09806933918c3faf3009a11b76" prot="protected" virt="virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnToolHitTest</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a93e3f0de6e1e24808b5ed3da242bd1ca" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnToolTipNotify</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ae2dc4c679bdfa507e93e4e9ddd46d359" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>OnVScroll</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aef48b145a1724e19bcb893f464146ec6" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>ReplaceAll</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a244902f6c5f21a902238594a1cad07e1" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>ReplaceText</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a260d8925b58d2263df2faa8c0f3dd558" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetCaseSensitive</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a0eaa609adee52711908bb3a2b375d6ac" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetCharType</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a8a6cc98b7ed893d7ae69adb9f2cbe957" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a40d7b5f7853029cae463e37df5eb48f5" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetCommentColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1af80315eb27c8ce9c73a5824f8265b721" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetDefaultColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ab04e2ca6f4dc94a6e383f6c0fa6102d5" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetDefaultFont</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a6fee8bc1ec1c525271c1e13519441b5c" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetFunctionParmCallback</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a922269a25aae704e5b6ce5ab1d87c6ab" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetKeyWords</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a45652a6ded9aac097488dad8308ede5e" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetLiteralColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a80d972b330bd8b1db7bb4e924b85a372" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetObjectMemberCallback</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a1ce2d07208d582b99ddc854dc76ed419" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetStringColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ac50e840a549d1e283726a0b7bba1631b" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetText</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aebbb26011f8ab480d29df74beae59394" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>SetToolTipCallback</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ac99e020cb6985908bd58482a285a8b10" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>singleLineCommentColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a721fd4ca2da70ddc80dccc83accb7ae5" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>stringColor</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a3ba6643b50a7f2833e267ef65adf8a28" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>stringColorIndex</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aee9e69e790fd805a2c5d43c6a727e455" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>stringColorLine</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a2777e5e6f7aaa983f7259bf2e3e9fce2" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>ToolTipHide</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a25e178c3cb0710a3927ad6530a0f43bf" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>ToolTipShow</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1a92d1c35249ff0a91cf602d54c4d1a681" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>updateRange</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aaf0c6a56b08c446cb62fcd2c5be775fa" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>updateSyntaxHighlighting</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1aa0979b6697d0fb93eedb4af51b9c8122" prot="protected" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>UpdateVisibleRange</name></member>
+      <member refid="class_c_syntax_rich_edit_ctrl_1ad54a1987f015cf23e8060a8fcaa29a39" prot="public" virt="non-virtual"><scope>CSyntaxRichEditCtrl</scope><name>~CSyntaxRichEditCtrl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

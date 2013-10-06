@@ -1,0 +1,485 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="sys_2linux_2_sound_8h" kind="file">
+    <compoundname>sound.h</compoundname>
+    <includes local="no">alsa/asoundlib.h</includes>
+    <includedby refid="sys_2linux_2_sound_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp</includedby>
+    <includedby refid="sound__alsa_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/sys/linux/sound_alsa.cpp</includedby>
+    <incdepgraph>
+      <node id="1225">
+        <label>E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h</label>
+        <link refid="sys/linux/Sound.h"/>
+        <childnode refid="1226" relation="include">
+        </childnode>
+      </node>
+      <node id="1226">
+        <label>alsa/asoundlib.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classid_audio_hardware_o_s_s" prot="public">idAudioHardwareOSS</innerclass>
+    <innerclass refid="classid_audio_hardware_a_l_s_a" prot="public">idAudioHardwareALSA</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="sys_2linux_2_sound_8h_1a705350c14c1f28bb8d6d57dafbf9ccff" prot="public" static="no">
+        <name>ALSA_PCM_NEW_HW_PARAMS_API</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="88" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sys_2linux_2_sound_8h_1a5b61c3b8eee0c6801209e39a760b928a" prot="public" static="no">
+        <name>ALSA_PCM_NEW_SW_PARAMS_API</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="89" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sys_2linux_2_sound_8h_1adaaabb549b4af31cf66aeee64655528e" prot="public" static="no">
+        <name>id_snd_pcm_hw_params_alloca</name>
+        <param><defname>ptr</defname></param>
+        <initializer>do { assert(ptr); *ptr = (snd_pcm_hw_params_t *) alloca(id_snd_pcm_hw_params_sizeof()); memset(*ptr, 0, id_snd_pcm_hw_params_sizeof()); } while (0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="92" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sys_2linux_2_sound_8h_1a750727aa9c426eb73b3e83e5d89f877c" prot="public" static="no">
+        <name>ALSA_DLSYM</name>
+        <param><defname>SYM</defname></param>
+        <initializer>id_##SYM = ( pfn_##SYM )dlvsym( m_handle, #SYM, &quot;ALSA_0.9&quot; ); if ( !id_##SYM ) { common-&gt;Printf( &quot;dlsym &quot;#SYM&quot; failed: %s\n&quot;, dlerror() ); Release(); return false; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="112" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1a1d845b7150884239b552c34f59b52e9b" prot="public" static="no">
+        <type>const char *(*</type>
+        <definition>typedef const char*( * pfn_snd_asoundlib_version)(void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>pfn_snd_asoundlib_version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="94" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1adfb8225e1b431c9d48d3e383a1a3e061" prot="public" static="no">
+        <type>snd_pcm_sframes_t(*</type>
+        <definition>typedef snd_pcm_sframes_t( * pfn_snd_pcm_avail_update)(snd_pcm_t *pcm)</definition>
+        <argsstring>)(snd_pcm_t *pcm)</argsstring>
+        <name>pfn_snd_pcm_avail_update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="95" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1a66e82d429b784a2941d2c744eb752618" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_close)(snd_pcm_t *pcm)</definition>
+        <argsstring>)(snd_pcm_t *pcm)</argsstring>
+        <name>pfn_snd_pcm_close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="96" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1a34ee97dd9b3e2163953ac2139f72f6ae" prot="public" static="no">
+        <type>const char *(*</type>
+        <definition>typedef const char*( * pfn_snd_strerror)(int errnum)</definition>
+        <argsstring>)(int errnum)</argsstring>
+        <name>pfn_snd_strerror</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="97" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1acde4da038a21db20f90c506beff9b2d9" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_hw_params)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params)</definition>
+        <argsstring>)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params)</argsstring>
+        <name>pfn_snd_pcm_hw_params</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="98" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1a2a1918584fe66407e3211de7b340801e" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_hw_params_any)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params)</definition>
+        <argsstring>)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params)</argsstring>
+        <name>pfn_snd_pcm_hw_params_any</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="99" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1aac30f1437fc91c0a4c59fc21a2eb461b" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_hw_params_get_buffer_size)(const snd_pcm_hw_params_t *params, snd_pcm_uframes_t *val)</definition>
+        <argsstring>)(const snd_pcm_hw_params_t *params, snd_pcm_uframes_t *val)</argsstring>
+        <name>pfn_snd_pcm_hw_params_get_buffer_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="100" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1a7cc1345832b8e02554642292fe4d54a2" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_hw_params_set_access)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params, snd_pcm_access_t access)</definition>
+        <argsstring>)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params, snd_pcm_access_t access)</argsstring>
+        <name>pfn_snd_pcm_hw_params_set_access</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="101" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1a52cca5d44a444bcfe1481fb83024278e" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_hw_params_set_buffer_size_min)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params, snd_pcm_uframes_t *val)</definition>
+        <argsstring>)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params, snd_pcm_uframes_t *val)</argsstring>
+        <name>pfn_snd_pcm_hw_params_set_buffer_size_min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="102" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1a027e41b03b7ff87d37b0eee74cba5cfc" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_hw_params_set_channels)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params, unsigned int val)</definition>
+        <argsstring>)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params, unsigned int val)</argsstring>
+        <name>pfn_snd_pcm_hw_params_set_channels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="103" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1a2aab951ff7c175b613105261e3344df3" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_hw_params_set_format)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params, snd_pcm_format_t format)</definition>
+        <argsstring>)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params, snd_pcm_format_t format)</argsstring>
+        <name>pfn_snd_pcm_hw_params_set_format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="104" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1ada24c4940d5b37e52b00d5763e9c5709" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_hw_params_set_rate)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params, unsigned int val, int dir)</definition>
+        <argsstring>)(snd_pcm_t *pcm, snd_pcm_hw_params_t *params, unsigned int val, int dir)</argsstring>
+        <name>pfn_snd_pcm_hw_params_set_rate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="105" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1ac96e78b1fff239a0276ef3ff68fce302" prot="public" static="no">
+        <type>size_t(*</type>
+        <definition>typedef size_t( * pfn_snd_pcm_hw_params_sizeof)(void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>pfn_snd_pcm_hw_params_sizeof</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="106" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1aff97897bf7f12b501830cc54dd3fda65" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_open)(snd_pcm_t **pcmp, const char *name, snd_pcm_stream_t stream, int mode)</definition>
+        <argsstring>)(snd_pcm_t **pcmp, const char *name, snd_pcm_stream_t stream, int mode)</argsstring>
+        <name>pfn_snd_pcm_open</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="107" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1a81a3eae4d5ef115f93332ae743e6436d" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int( * pfn_snd_pcm_prepare)(snd_pcm_t *pcm)</definition>
+        <argsstring>)(snd_pcm_t *pcm)</argsstring>
+        <name>pfn_snd_pcm_prepare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="108" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1aa895527287a8c673bb977b2c86b627c3" prot="public" static="no">
+        <type>snd_pcm_state_t(*</type>
+        <definition>typedef snd_pcm_state_t( * pfn_snd_pcm_state)(snd_pcm_t *pcm)</definition>
+        <argsstring>)(snd_pcm_t *pcm)</argsstring>
+        <name>pfn_snd_pcm_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="109" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="sys_2linux_2_sound_8h_1a94eb42266b07801c8044a2df1f6d7be2" prot="public" static="no">
+        <type>snd_pcm_sframes_t(*</type>
+        <definition>typedef snd_pcm_sframes_t( * pfn_snd_pcm_writei)(snd_pcm_t *pcm, const void *buffer, snd_pcm_uframes_t size)</definition>
+        <argsstring>)(snd_pcm_t *pcm, const void *buffer, snd_pcm_uframes_t size)</argsstring>
+        <name>pfn_snd_pcm_writei</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" line="110" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ID_SND_BACKENDS</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>ID_SND_BACKENDS</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classid_audio_hardware_o_s_s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_audio_hardware_o_s_s" kindref="compound">idAudioHardwareOSS</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classid_audio_hardware" kindref="compound">idAudioHardware</ref><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>you<sp/>can&apos;t<sp/>write<sp/>MIXBUFFER_SAMPLES<sp/>all<sp/>at<sp/>once<sp/>to<sp/>the<sp/>audio<sp/>device,<sp/>split<sp/>in<sp/>MIXBUFFER_CHUNKS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MIXBUFFER_CHUNKS<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_audio_fd;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_sample_format;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>m_channels;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>m_speed;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*m_buffer;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_buffer_size;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>counting<sp/>the<sp/>loops<sp/>through<sp/>the<sp/>dma<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_loops;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>how<sp/>many<sp/>chunks<sp/>we<sp/>have<sp/>left<sp/>to<sp/>write<sp/>in<sp/>cases<sp/>where<sp/>we<sp/>need<sp/>to<sp/>split</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_writeChunks;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>how<sp/>many<sp/>chunks<sp/>we<sp/>can<sp/>write<sp/>to<sp/>the<sp/>audio<sp/>device<sp/>without<sp/>blocking</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_freeWriteChunks;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_audio_hardware_o_s_s" kindref="compound">idAudioHardwareOSS</ref>()<sp/>{<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_audio_fd<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_sample_format<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_channels<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_speed<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_buffer<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_buffer_size<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_loops<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_writeChunks<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_freeWriteChunks<sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>~<ref refid="classid_audio_hardware_o_s_s" kindref="compound">idAudioHardwareOSS</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initialize(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Linux<sp/>driver<sp/>doesn&apos;t<sp/>support<sp/>memory<sp/>map<sp/>API</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lock(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**pDSLockedBuffer,<sp/>ulong<sp/>*dwDSLockedBufferSize<sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Unlock(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pDSLockedBuffer,<sp/>dword<sp/>dwDSLockedBufferSize<sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetCurrentPosition(<sp/>ulong<sp/>*pdwCurrentWriteCursor<sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Flush();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Write(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>flushing<sp/>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetNumberOfSpeakers()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_channels;<sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetMixBufferSize();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/>GetMixBuffer();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Release(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bSilent<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExtractOSSVersion(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>version,<sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/>&amp;str<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>NO_ALSA</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/>libasound2-dev</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>new/old<sp/>API<sp/>may<sp/>be<sp/>a<sp/>problem<sp/>if<sp/>we<sp/>are<sp/>going<sp/>to<sp/>dynamically<sp/>load<sp/>the<sp/>asound<sp/>lib?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALSA_PCM_NEW_HW_PARAMS_API</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>ALSA_PCM_NEW_SW_PARAMS_API</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;alsa/asoundlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>id_snd_pcm_hw_params_alloca(ptr)<sp/>do<sp/>{<sp/>assert(ptr);<sp/>*ptr<sp/>=<sp/>(snd_pcm_hw_params_t<sp/>*)<sp/>alloca(id_snd_pcm_hw_params_sizeof());<sp/>memset(*ptr,<sp/>0,<sp/>id_snd_pcm_hw_params_sizeof());<sp/>}<sp/>while<sp/>(0)</highlight></codeline>
+<codeline lineno="93"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>(<sp/>*pfn_snd_asoundlib_version<sp/>)(<sp/>void<sp/>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>snd_pcm_sframes_t<sp/>(<sp/>*pfn_snd_pcm_avail_update<sp/>)(<sp/>snd_pcm_t<sp/>*pcm<sp/>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_close<sp/>)(<sp/>snd_pcm_t<sp/>*pcm<sp/>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>(<sp/>*pfn_snd_strerror<sp/>)(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errnum<sp/>);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_hw_params<sp/>)(<sp/>snd_pcm_t<sp/>*pcm,<sp/>snd_pcm_hw_params_t<sp/>*params<sp/>);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_hw_params_any<sp/>)(<sp/>snd_pcm_t<sp/>*pcm,<sp/>snd_pcm_hw_params_t<sp/>*params<sp/>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_hw_params_get_buffer_size<sp/>)(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>snd_pcm_hw_params_t<sp/>*params,<sp/>snd_pcm_uframes_t<sp/>*val<sp/>);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_hw_params_set_access<sp/>)(<sp/>snd_pcm_t<sp/>*pcm,<sp/>snd_pcm_hw_params_t<sp/>*params,<sp/>snd_pcm_access_t<sp/>access<sp/>);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_hw_params_set_buffer_size_min<sp/>)(<sp/>snd_pcm_t<sp/>*pcm,<sp/>snd_pcm_hw_params_t<sp/>*params,<sp/>snd_pcm_uframes_t<sp/>*val<sp/>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_hw_params_set_channels<sp/>)(<sp/>snd_pcm_t<sp/>*pcm,<sp/>snd_pcm_hw_params_t<sp/>*params,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val<sp/>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_hw_params_set_format<sp/>)(<sp/>snd_pcm_t<sp/>*pcm,<sp/>snd_pcm_hw_params_t<sp/>*params,<sp/>snd_pcm_format_t<sp/>format<sp/>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_hw_params_set_rate<sp/>)(<sp/>snd_pcm_t<sp/>*pcm,<sp/>snd_pcm_hw_params_t<sp/>*params,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir<sp/>);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>size_t<sp/>(<sp/>*pfn_snd_pcm_hw_params_sizeof<sp/>)(<sp/>void<sp/>);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_open<sp/>)(<sp/>snd_pcm_t<sp/>**pcmp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/>snd_pcm_stream_t<sp/>stream,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mode<sp/>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(<sp/>*pfn_snd_pcm_prepare<sp/>)(<sp/>snd_pcm_t<sp/>*pcm<sp/>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>snd_pcm_state_t<sp/>(<sp/>*pfn_snd_pcm_state<sp/>)(<sp/>snd_pcm_t<sp/>*pcm<sp/>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>snd_pcm_sframes_t<sp/>(<sp/>*pfn_snd_pcm_writei<sp/>)(<sp/>snd_pcm_t<sp/>*pcm,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buffer,<sp/>snd_pcm_uframes_t<sp/>size<sp/>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALSA_DLSYM(SYM)<sp/>id_##SYM<sp/>=<sp/>(<sp/>pfn_##SYM<sp/>)dlvsym(<sp/>m_handle,<sp/>#SYM,<sp/>&quot;ALSA_0.9&quot;<sp/>);<sp/>if<sp/>(<sp/>!id_##SYM<sp/>)<sp/>{<sp/>common-&gt;Printf(<sp/>&quot;dlsym<sp/>&quot;#SYM&quot;<sp/>failed:<sp/>%s\n&quot;,<sp/>dlerror()<sp/>);<sp/>Release();<sp/>return<sp/>false;<sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="classid_audio_hardware_a_l_s_a" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_audio_hardware_a_l_s_a" kindref="compound">idAudioHardwareALSA</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classid_audio_hardware" kindref="compound">idAudioHardware</ref><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>you<sp/>can&apos;t<sp/>write<sp/>MIXBUFFER_SAMPLES<sp/>all<sp/>at<sp/>once<sp/>to<sp/>the<sp/>audio<sp/>device,<sp/>split<sp/>in<sp/>MIXBUFFER_CHUNKS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>MIXBUFFER_CHUNKS<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>snd_pcm_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*m_pcm_handle;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_channels;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*m_buffer;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_buffer_size;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>how<sp/>many<sp/>frames<sp/>remaining<sp/>to<sp/>be<sp/>written<sp/>to<sp/>the<sp/>device</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_remainingFrames;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*m_handle;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_audio_hardware_a_l_s_a" kindref="compound">idAudioHardwareALSA</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pcm_handle<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_channels<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_buffer<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_buffer_size<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_remainingFrames<sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_handle<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="classid_audio_hardware_a_l_s_a" kindref="compound">idAudioHardwareALSA</ref>();</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>dlopen<sp/>the<sp/>lib<sp/>(<sp/>check<sp/>minimum<sp/>version<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DLOpen();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initialize(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Linux<sp/>driver<sp/>doesn&apos;t<sp/>support<sp/>memory<sp/>map<sp/>API</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lock(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**pDSLockedBuffer,<sp/>ulong<sp/>*dwDSLockedBufferSize<sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Unlock(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pDSLockedBuffer,<sp/>dword<sp/>dwDSLockedBufferSize<sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetCurrentPosition(<sp/>ulong<sp/>*pdwCurrentWriteCursor<sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Flush();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Write(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>flushing<sp/>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetNumberOfSpeakers(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_channels;<sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetMixBufferSize(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetMixBuffer(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Release();</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitFailed();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PlayTestPattern();</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>may<sp/>be<sp/>NULL,<sp/>outdated<sp/>alsa<sp/>versions<sp/>are<sp/>missing<sp/>it<sp/>and<sp/>we<sp/>just<sp/>ignore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_asoundlib_version<sp/>id_snd_asoundlib_version;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_avail_update<sp/>id_snd_pcm_avail_update;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_close<sp/>id_snd_pcm_close;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_strerror<sp/>id_snd_strerror;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_hw_params<sp/>id_snd_pcm_hw_params;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_hw_params_any<sp/>id_snd_pcm_hw_params_any;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_hw_params_get_buffer_size<sp/>id_snd_pcm_hw_params_get_buffer_size;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_hw_params_set_access<sp/>id_snd_pcm_hw_params_set_access;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_hw_params_set_buffer_size_min<sp/>id_snd_pcm_hw_params_set_buffer_size_min;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_hw_params_set_channels<sp/>id_snd_pcm_hw_params_set_channels;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_hw_params_set_format<sp/>id_snd_pcm_hw_params_set_format;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_hw_params_set_rate<sp/>id_snd_pcm_hw_params_set_rate;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_hw_params_sizeof<sp/>id_snd_pcm_hw_params_sizeof;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_open<sp/>id_snd_pcm_open;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_prepare<sp/>id_snd_pcm_prepare;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_state<sp/>id_snd_pcm_state;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>pfn_snd_pcm_writei<sp/>id_snd_pcm_writei;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>NO_ALSA</highlight></codeline>
+<codeline lineno="186"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.h"/>
+  </compounddef>
+</doxygen>

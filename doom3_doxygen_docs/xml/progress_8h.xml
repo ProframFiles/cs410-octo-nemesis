@@ -1,0 +1,474 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="progress_8h" kind="file">
+    <compoundname>progress.h</compoundname>
+    <includes refid="timeval_8h" local="yes">timeval.h</includes>
+    <includedby refid="dict_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/dict.c</includedby>
+    <includedby refid="file_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/file.c</includedby>
+    <includedby refid="ftp_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/ftp.c</includedby>
+    <includedby refid="http_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/http.c</includedby>
+    <includedby refid="multi_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/multi.c</includedby>
+    <includedby refid="progress_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/progress.c</includedby>
+    <includedby refid="transfer_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/transfer.c</includedby>
+    <includedby refid="url_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/url.c</includedby>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="progress_8h_1a09bc8dcec99c917afc611b1821f3a55a" prot="public" static="no">
+        <name>LEAST_SIZE_PROGRESS</name>
+        <initializer>BUFSIZE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="53" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1a1df1c268bf4f245e7e2569349b5fdffb" prot="public" static="no">
+        <name>PROGRESS_DOWNLOAD</name>
+        <initializer>(1&lt;&lt;0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="55" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1a5044d1560212f1517bfad845df1d6f9f" prot="public" static="no">
+        <name>PROGRESS_UPLOAD</name>
+        <initializer>(1&lt;&lt;1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="56" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1a3fc99b74eb499177997298fdc045dff2" prot="public" static="no">
+        <name>PROGRESS_DOWN_AND_UP</name>
+        <initializer>(PROGRESS_UPLOAD | PROGRESS_DOWNLOAD)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="57" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1af652c378ecfbcd1d13a284b27c11f88b" prot="public" static="no">
+        <name>PGRS_SHOW_DL</name>
+        <initializer>(1&lt;&lt;0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="59" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1af295af218c6f6508f6bfc0eff6da095a" prot="public" static="no">
+        <name>PGRS_SHOW_UL</name>
+        <initializer>(1&lt;&lt;1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="60" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1a3470237b39f0171fbae55446297e5c0f" prot="public" static="no">
+        <name>PGRS_DONE_DL</name>
+        <initializer>(1&lt;&lt;2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="61" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1ac0b71aa428882ef051e6fd88a05fe83b" prot="public" static="no">
+        <name>PGRS_DONE_UL</name>
+        <initializer>(1&lt;&lt;3)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="62" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1a478e9e98396f7df74b2f2402f4f6f9f0" prot="public" static="no">
+        <name>PGRS_HIDE</name>
+        <initializer>(1&lt;&lt;4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="63" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1a550d3da89049aa9c8cd0bfb990227eed" prot="public" static="no">
+        <name>PGRS_UL_SIZE_KNOWN</name>
+        <initializer>(1&lt;&lt;5)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="64" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1a1afc7b3a2c677714ffef49f406d50e39" prot="public" static="no">
+        <name>PGRS_DL_SIZE_KNOWN</name>
+        <initializer>(1&lt;&lt;6)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="65" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="progress_8h_1add56fe03bcf54cefc5b37f268fac33b2" prot="public" static="no">
+        <name>PGRS_HEADERS_OUT</name>
+        <initializer>(1&lt;&lt;7) /* set when the headers have been written */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="67" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="progress_8h_1abc090d144fb55d31dff488d24c46fb2a" prot="public" static="no">
+        <name>timerid</name>
+        <enumvalue id="progress_8h_1abc090d144fb55d31dff488d24c46fb2aa56bac4f584e8d4953afd9a03a3bbb1d8" prot="public">
+          <name>TIMER_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="progress_8h_1abc090d144fb55d31dff488d24c46fb2aab1af6a1076026a121c9f3bcefbe31079" prot="public">
+          <name>TIMER_NAMELOOKUP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="progress_8h_1abc090d144fb55d31dff488d24c46fb2aa46c5101b66124520ea017265318e48bf" prot="public">
+          <name>TIMER_CONNECT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="progress_8h_1abc090d144fb55d31dff488d24c46fb2aaab6241ac2eec69ddfb082bb472ca56a7" prot="public">
+          <name>TIMER_PRETRANSFER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="progress_8h_1abc090d144fb55d31dff488d24c46fb2aaca28f218d1fd3c4e65cd7b4d2dfe32ed" prot="public">
+          <name>TIMER_STARTTRANSFER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="progress_8h_1abc090d144fb55d31dff488d24c46fb2aa3aa166c9e5f238f33a6c57fb1d38801b" prot="public">
+          <name>TIMER_POSTRANSFER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="progress_8h_1abc090d144fb55d31dff488d24c46fb2aab81949995b4f4e4a021f6c79c29f5829" prot="public">
+          <name>TIMER_STARTSINGLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="progress_8h_1abc090d144fb55d31dff488d24c46fb2aa2356d042c0b8d22c2c319bd33f0b3d44" prot="public">
+          <name>TIMER_REDIRECT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="progress_8h_1abc090d144fb55d31dff488d24c46fb2aa75164226e999bc0888bbb8cd57387b89" prot="public">
+          <name>TIMER_LAST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="29" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" bodystart="29" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="progress_8h_1a29865febed912c3dc6319af02ce8e575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_pgrsDone</definition>
+        <argsstring>(struct connectdata *)</argsstring>
+        <name>Curl_pgrsDone</name>
+        <param>
+          <type>struct <ref refid="structconnectdata" kindref="compound">connectdata</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="41" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.c" bodystart="105" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="progress_8h_1a648ee4b78903cda01aee89b89a294372" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_pgrsStartNow</definition>
+        <argsstring>(struct SessionHandle *data)</argsstring>
+        <name>Curl_pgrsStartNow</name>
+        <param>
+          <type>struct <ref refid="struct_session_handle" kindref="compound">SessionHandle</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="42" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.c" bodystart="164" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="progress_8h_1a59ab131b477046f9bebbf8525837e034" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_pgrsSetDownloadSize</definition>
+        <argsstring>(struct SessionHandle *data, curl_off_t size)</argsstring>
+        <name>Curl_pgrsSetDownloadSize</name>
+        <param>
+          <type>struct <ref refid="struct_session_handle" kindref="compound">SessionHandle</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>curl_off_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="43" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.c" bodystart="180" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="progress_8h_1aa1c91fa28dc8dc6e2f48da6a9bbed37d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_pgrsSetUploadSize</definition>
+        <argsstring>(struct SessionHandle *data, curl_off_t size)</argsstring>
+        <name>Curl_pgrsSetUploadSize</name>
+        <param>
+          <type>struct <ref refid="struct_session_handle" kindref="compound">SessionHandle</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>curl_off_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="44" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.c" bodystart="189" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="progress_8h_1aa6dc89c9327cedc2c55a7d65d8252fa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_pgrsSetDownloadCounter</definition>
+        <argsstring>(struct SessionHandle *data, curl_off_t size)</argsstring>
+        <name>Curl_pgrsSetDownloadCounter</name>
+        <param>
+          <type>struct <ref refid="struct_session_handle" kindref="compound">SessionHandle</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>curl_off_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="45" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.c" bodystart="170" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="progress_8h_1a98e74f77ff30af94348f5fbdfd3ea8fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_pgrsSetUploadCounter</definition>
+        <argsstring>(struct SessionHandle *data, curl_off_t size)</argsstring>
+        <name>Curl_pgrsSetUploadCounter</name>
+        <param>
+          <type>struct <ref refid="struct_session_handle" kindref="compound">SessionHandle</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>curl_off_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="46" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.c" bodystart="175" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="progress_8h_1a4a0b01f61eafae0f90b64a2fe1908f14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Curl_pgrsUpdate</definition>
+        <argsstring>(struct connectdata *)</argsstring>
+        <name>Curl_pgrsUpdate</name>
+        <param>
+          <type>struct <ref refid="structconnectdata" kindref="compound">connectdata</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="47" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.c" bodystart="206" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="progress_8h_1a7281aef15d14d3e51c8c25104e0d803a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_pgrsResetTimes</definition>
+        <argsstring>(struct SessionHandle *data)</argsstring>
+        <name>Curl_pgrsResetTimes</name>
+        <param>
+          <type>struct <ref refid="struct_session_handle" kindref="compound">SessionHandle</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="48" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.c" bodystart="118" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="progress_8h_1a5933a4513738947b35c4988a8a8fb318" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_pgrsTime</definition>
+        <argsstring>(struct SessionHandle *data, timerid timer)</argsstring>
+        <name>Curl_pgrsTime</name>
+        <param>
+          <type>struct <ref refid="struct_session_handle" kindref="compound">SessionHandle</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>timerid</type>
+          <declname>timer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h" line="49" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.c" bodystart="126" bodyend="162"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__PROGRESS_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__PROGRESS_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="comment">/***************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_<sp/><sp/><sp/>_<sp/>____<sp/><sp/>_<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>Project<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>___|<sp/>|<sp/>|<sp/>|<sp/><sp/>_<sp/>\|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>__|<sp/>|<sp/>|<sp/>|<sp/>|_)<sp/>|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(__|<sp/>|_|<sp/>|<sp/><sp/>_<sp/>&lt;|<sp/>|___<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\___|\___/|_|<sp/>\_\_____|</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998<sp/>-<sp/>2004,<sp/>Daniel<sp/>Stenberg,<sp/>&lt;daniel@haxx.se&gt;,<sp/>et<sp/>al.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>licensed<sp/>as<sp/>described<sp/>in<sp/>the<sp/>file<sp/>COPYING,<sp/>which</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>you<sp/>should<sp/>have<sp/>received<sp/>as<sp/>part<sp/>of<sp/>this<sp/>distribution.<sp/>The<sp/>terms</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>are<sp/>also<sp/>available<sp/>at<sp/>http://curl.haxx.se/docs/copyright.html.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>opt<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute<sp/>and/or<sp/>sell</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>COPYING<sp/>file.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>basis,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>$Id:<sp/>progress.h,v<sp/>1.20<sp/>2004/03/10<sp/>16:20:33<sp/>bagder<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;timeval.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>TIMER_NONE,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>TIMER_NAMELOOKUP,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>TIMER_CONNECT,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>TIMER_PRETRANSFER,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>TIMER_STARTTRANSFER,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>TIMER_POSTRANSFER,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>TIMER_STARTSINGLE,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>TIMER_REDIRECT,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>TIMER_LAST<sp/></highlight><highlight class="comment">/*<sp/>must<sp/>be<sp/>last<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}<sp/>timerid;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_pgrsDone(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structconnectdata" kindref="compound">connectdata</ref><sp/>*);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_pgrsStartNow(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_session_handle" kindref="compound">SessionHandle</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_pgrsSetDownloadSize(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_session_handle" kindref="compound">SessionHandle</ref><sp/>*data,<sp/>curl_off_t<sp/>size);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_pgrsSetUploadSize(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_session_handle" kindref="compound">SessionHandle</ref><sp/>*data,<sp/>curl_off_t<sp/>size);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_pgrsSetDownloadCounter(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_session_handle" kindref="compound">SessionHandle</ref><sp/>*data,<sp/>curl_off_t<sp/>size);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_pgrsSetUploadCounter(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_session_handle" kindref="compound">SessionHandle</ref><sp/>*data,<sp/>curl_off_t<sp/>size);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Curl_pgrsUpdate(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structconnectdata" kindref="compound">connectdata</ref><sp/>*);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_pgrsResetTimes(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_session_handle" kindref="compound">SessionHandle</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_pgrsTime(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_session_handle" kindref="compound">SessionHandle</ref><sp/>*data,<sp/>timerid<sp/>timer);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Don&apos;t<sp/>show<sp/>progress<sp/>for<sp/>sizes<sp/>smaller<sp/>than:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LEAST_SIZE_PROGRESS<sp/>BUFSIZE</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROGRESS_DOWNLOAD<sp/>(1&lt;&lt;0)</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PROGRESS_UPLOAD<sp/><sp/><sp/>(1&lt;&lt;1)</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PROGRESS_DOWN_AND_UP<sp/>(PROGRESS_UPLOAD<sp/>|<sp/>PROGRESS_DOWNLOAD)</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PGRS_SHOW_DL<sp/>(1&lt;&lt;0)</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PGRS_SHOW_UL<sp/>(1&lt;&lt;1)</highlight></codeline>
+<codeline lineno="61"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PGRS_DONE_DL<sp/>(1&lt;&lt;2)</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PGRS_DONE_UL<sp/>(1&lt;&lt;3)</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PGRS_HIDE<sp/><sp/><sp/><sp/>(1&lt;&lt;4)</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PGRS_UL_SIZE_KNOWN<sp/>(1&lt;&lt;5)</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PGRS_DL_SIZE_KNOWN<sp/>(1&lt;&lt;6)</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PGRS_HEADERS_OUT<sp/>(1&lt;&lt;7)<sp/></highlight><highlight class="comment">/*<sp/>set<sp/>when<sp/>the<sp/>headers<sp/>have<sp/>been<sp/>written<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__PROGRESS_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/progress.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_c_r_c32_8h" kind="file">
+    <compoundname>CRC32.h</compoundname>
+    <includedby refid="_lib_8h" local="yes">E:/sources/3rd_party/DOOM/neo/idlib/Lib.h</includedby>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_c_r_c32_8h_1a1491db56fa728d54950ad9ddd56f598c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRC32_InitChecksum</definition>
+        <argsstring>(unsigned long &amp;crcvalue)</argsstring>
+        <name>CRC32_InitChecksum</name>
+        <param>
+          <type>unsigned long &amp;</type>
+          <declname>crcvalue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/CRC32.h" line="13" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/CRC32.cpp" bodystart="137" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c32_8h_1a1eb3ab865906e0147984603b26973c9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRC32_UpdateChecksum</definition>
+        <argsstring>(unsigned long &amp;crcvalue, const void *data, int length)</argsstring>
+        <name>CRC32_UpdateChecksum</name>
+        <param>
+          <type>unsigned long &amp;</type>
+          <declname>crcvalue</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/CRC32.h" line="14" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/CRC32.cpp" bodystart="145" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c32_8h_1acec13c541b11e09dee6b1662aca2c8e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRC32_FinishChecksum</definition>
+        <argsstring>(unsigned long &amp;crcvalue)</argsstring>
+        <name>CRC32_FinishChecksum</name>
+        <param>
+          <type>unsigned long &amp;</type>
+          <declname>crcvalue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/CRC32.h" line="15" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/CRC32.cpp" bodystart="156" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c32_8h_1acd3eb37a84f40807ad728532d3e56c98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>unsigned long CRC32_BlockChecksum</definition>
+        <argsstring>(const void *data, int length)</argsstring>
+        <name>CRC32_BlockChecksum</name>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/CRC32.h" line="16" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/CRC32.cpp" bodystart="160" bodyend="167"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__CRC32_H__</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__CRC32_H__</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">===============================================================================</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>Calculates<sp/>a<sp/>checksum<sp/>for<sp/>a<sp/>block<sp/>of<sp/>data</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>using<sp/>the<sp/>CRC-32.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment">===============================================================================</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CRC32_InitChecksum(<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>&amp;crcvalue<sp/>);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CRC32_UpdateChecksum(<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>&amp;crcvalue,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length<sp/>);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CRC32_FinishChecksum(<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>&amp;crcvalue<sp/>);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>CRC32_BlockChecksum(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length<sp/>);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!__CRC32_H__<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/CRC32.h"/>
+  </compounddef>
+</doxygen>

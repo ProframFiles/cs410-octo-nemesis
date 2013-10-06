@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_material_def_manager" kind="class" prot="public">
+    <compoundname>MaterialDefManager</compoundname>
+    <includes local="yes">MaterialDef.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_material_def_manager_1ab2a36e5963a82c86f17a06fd29b79566" prot="public" static="no">
+        <name>@152</name>
+        <enumvalue id="class_material_def_manager_1ab2a36e5963a82c86f17a06fd29b79566a720654f889baa1c84059da298506b802" prot="public">
+          <name>MATERIAL_DEF_MATERIAL</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_material_def_manager_1ab2a36e5963a82c86f17a06fd29b79566aa1b1daee0670fc7303d6d65140b5313a" prot="public">
+          <name>MATERIAL_DEF_STAGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_material_def_manager_1ab2a36e5963a82c86f17a06fd29b79566a4e3cbed4f24a2dd7be33307e2d34336d" prot="public">
+          <name>MATERIAL_DEF_SPECIAL_STAGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_material_def_manager_1ab2a36e5963a82c86f17a06fd29b79566accb4c8781b244be56eb59f2e881defab" prot="public">
+          <name>MATERIAL_DEF_NUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines the groupings of material attributes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" line="85" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" bodystart="85" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="class_material_def_manager_1a80a2d84c39765d8cb28da402f6ac9b25" prot="protected" static="yes" mutable="no">
+        <type><ref refid="classid_list" kindref="compound">MaterialDefList</ref></type>
+        <definition>MaterialDefList MaterialDefManager::materialDefs</definition>
+        <argsstring>[MATERIAL_DEF_NUM]</argsstring>
+        <name>materialDefs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" line="101" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_material_def_manager_1a747fd10854d6d4ce696a28ae1a1c8f84" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialDefManager::InitializeMaterialDefLists</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeMaterialDefLists</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads the material definition file instatiates <ref refid="class_material_def" kindref="compound">MaterialDef</ref> objects for each definition and groups the definitions. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" line="92" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.cpp" bodystart="73" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_def_manager_1a5deb5395be5dcd781e2773cea919dc41" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialDefManager::InitializeMaterialDefList</definition>
+        <argsstring>(idLexer *src, const char *typeName, MaterialDefList *list)</argsstring>
+        <name>InitializeMaterialDefList</name>
+        <param>
+          <type><ref refid="classid_lexer" kindref="compound">idLexer</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>typeName</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_list" kindref="compound">MaterialDefList</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads a single type of material attributes and adds them to the supplied MaterialDefList object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classid_lexer" kindref="compound">idLexer</ref> object that contains the file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>typeName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the attribute grouping to search for in the file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MaterialDefList object to append the <ref refid="class_material_def" kindref="compound">MaterialDef</ref> instances to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" line="93" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.cpp" bodystart="103" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_def_manager_1af559b941c95d1dd11a7dd85b4d3a82fe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialDefManager::DestroyMaterialDefLists</definition>
+        <argsstring>()</argsstring>
+        <name>DestroyMaterialDefLists</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys all <ref refid="class_material_def" kindref="compound">MaterialDef</ref> instances and clears the material attribute grouping lists. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" line="95" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.cpp" bodystart="180" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_def_manager_1a515b972ee6ccf5d9251b2ee00fa2c653" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_list" kindref="compound">MaterialDefList</ref> *</type>
+        <definition>MaterialDefList * MaterialDefManager::GetMaterialDefs</definition>
+        <argsstring>(int type)</argsstring>
+        <name>GetMaterialDefs</name>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the MaterialDefList for the specified attribute grouping. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute grouping for which to retreive the attribute list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" line="97" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.cpp" bodystart="194" bodyend="199"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This class contains static utility functions that view and <ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> use to access the <ref refid="class_material_def" kindref="compound">MaterialDef</ref> and MaterialDefList data that is loaded. This class is also responsible for loading and destroying the <ref refid="class_material_def" kindref="compound">MaterialDef</ref> instances. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="30291">
+        <label>idList&lt; type &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="30290">
+        <label>MaterialDefManager</label>
+        <link refid="class_material_def_manager"/>
+        <childnode refid="30291" relation="usage">
+          <edgelabel>materialDefs</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" line="78" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDef.h" bodystart="78" bodyend="102"/>
+    <listofallmembers>
+      <member refid="class_material_def_manager_1af559b941c95d1dd11a7dd85b4d3a82fe" prot="public" virt="non-virtual"><scope>MaterialDefManager</scope><name>DestroyMaterialDefLists</name></member>
+      <member refid="class_material_def_manager_1a515b972ee6ccf5d9251b2ee00fa2c653" prot="public" virt="non-virtual"><scope>MaterialDefManager</scope><name>GetMaterialDefs</name></member>
+      <member refid="class_material_def_manager_1a5deb5395be5dcd781e2773cea919dc41" prot="public" virt="non-virtual"><scope>MaterialDefManager</scope><name>InitializeMaterialDefList</name></member>
+      <member refid="class_material_def_manager_1a747fd10854d6d4ce696a28ae1a1c8f84" prot="public" virt="non-virtual"><scope>MaterialDefManager</scope><name>InitializeMaterialDefLists</name></member>
+      <member refid="class_material_def_manager_1ab2a36e5963a82c86f17a06fd29b79566a720654f889baa1c84059da298506b802" prot="public" virt="non-virtual"><scope>MaterialDefManager</scope><name>MATERIAL_DEF_MATERIAL</name></member>
+      <member refid="class_material_def_manager_1ab2a36e5963a82c86f17a06fd29b79566accb4c8781b244be56eb59f2e881defab" prot="public" virt="non-virtual"><scope>MaterialDefManager</scope><name>MATERIAL_DEF_NUM</name></member>
+      <member refid="class_material_def_manager_1ab2a36e5963a82c86f17a06fd29b79566a4e3cbed4f24a2dd7be33307e2d34336d" prot="public" virt="non-virtual"><scope>MaterialDefManager</scope><name>MATERIAL_DEF_SPECIAL_STAGE</name></member>
+      <member refid="class_material_def_manager_1ab2a36e5963a82c86f17a06fd29b79566aa1b1daee0670fc7303d6d65140b5313a" prot="public" virt="non-virtual"><scope>MaterialDefManager</scope><name>MATERIAL_DEF_STAGE</name></member>
+      <member refid="class_material_def_manager_1a80a2d84c39765d8cb28da402f6ac9b25" prot="protected" virt="non-virtual"><scope>MaterialDefManager</scope><name>materialDefs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

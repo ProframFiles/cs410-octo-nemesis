@@ -1,0 +1,676 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_dynamic_block_alloc" kind="class" prot="public">
+    <compoundname>idDynamicBlockAlloc</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>type</declname>
+        <defname>type</defname>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>baseBlockSize</declname>
+        <defname>baseBlockSize</defname>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>minBlockSize</declname>
+        <defname>minBlockSize</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1a9c81eb482a53ffe47a7f8ba5dff9b950" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_dynamic_block" kindref="compound">idDynamicBlock</ref>&lt; type &gt; *</type>
+        <definition>idDynamicBlock&lt;type&gt;* idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::firstBlock</definition>
+        <argsstring></argsstring>
+        <name>firstBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="415" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="415" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1a042c2b159f842598db9c80fe52b9b8d0" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_dynamic_block" kindref="compound">idDynamicBlock</ref>&lt; type &gt; *</type>
+        <definition>idDynamicBlock&lt;type&gt;* idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::lastBlock</definition>
+        <argsstring></argsstring>
+        <name>lastBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="416" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="416" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1a9742ec0327408528f0d8cec52214742d" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_b_tree" kindref="compound">idBTree</ref>&lt; <ref refid="classid_dynamic_block" kindref="compound">idDynamicBlock</ref>&lt; type &gt;, int, 4 &gt;</type>
+        <definition>idBTree&lt;idDynamicBlock&lt;type&gt;,int,4&gt; idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::freeTree</definition>
+        <argsstring></argsstring>
+        <name>freeTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="417" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="417" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1aa3f25d18c232fb57f904005043d06aac" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::allowAllocs</definition>
+        <argsstring></argsstring>
+        <name>allowAllocs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="418" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="418" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1a40af8c2131d9fa5baeeb0483701334d1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::lockMemory</definition>
+        <argsstring></argsstring>
+        <name>lockMemory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="419" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="419" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1a11f0c4e2e1634f5ed1ae11804ad5cede" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::numBaseBlocks</definition>
+        <argsstring></argsstring>
+        <name>numBaseBlocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="425" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="425" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1a46291fdf3ffe78b5d90d2f18e7e1a7ef" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::baseBlockMemory</definition>
+        <argsstring></argsstring>
+        <name>baseBlockMemory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="426" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="426" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1aefba21bbff47417ca5794fb4d0e4aaee" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::numUsedBlocks</definition>
+        <argsstring></argsstring>
+        <name>numUsedBlocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="427" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="427" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1af44cde8f3db637f01d9943ba22581666" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::usedBlockMemory</definition>
+        <argsstring></argsstring>
+        <name>usedBlockMemory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="428" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1a80ae390e2e4dc0c59edfc9569655e3cb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::numFreeBlocks</definition>
+        <argsstring></argsstring>
+        <name>numFreeBlocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="429" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1ab5b909b60cad237a92c03e7d249484c0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::freeBlockMemory</definition>
+        <argsstring></argsstring>
+        <name>freeBlockMemory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="430" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1aee57ae144402cdf0ea3db70a9249bb24" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::numAllocs</definition>
+        <argsstring></argsstring>
+        <name>numAllocs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="432" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1a0919a7e4faf4fe1ca8c45b144b238f8a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::numResizes</definition>
+        <argsstring></argsstring>
+        <name>numResizes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="433" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_dynamic_block_alloc_1ad399527da4c55d3e4e1bdd590dcf6218" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::numFrees</definition>
+        <argsstring></argsstring>
+        <name>numFrees</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="434" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="434" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1aa8cd1ef4b932a504e7a32ff160086b56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::idDynamicBlockAlloc</definition>
+        <argsstring>(void)</argsstring>
+        <name>idDynamicBlockAlloc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="392" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="446" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1abc53dfd31fb6a91eddecfe2689226a06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::~idDynamicBlockAlloc</definition>
+        <argsstring>(void)</argsstring>
+        <name>~idDynamicBlockAlloc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="393" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="451" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a0b05bae5373316d37cea26111a7dc7a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="395" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="456" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a8a6e2699b4a955e5f85d744fb6ee0b72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::Shutdown</definition>
+        <argsstring>(void)</argsstring>
+        <name>Shutdown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="396" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="461" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1add9619eb3b015d6264da2fec1b37d126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::SetFixedBlocks</definition>
+        <argsstring>(int numBlocks)</argsstring>
+        <name>SetFixedBlocks</name>
+        <param>
+          <type>int</type>
+          <declname>numBlocks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="397" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="485" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1ae7b2d9e51ca076c642ec3a23fd28bad8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::SetLockMemory</definition>
+        <argsstring>(bool lock)</argsstring>
+        <name>SetLockMemory</name>
+        <param>
+          <type>bool</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="398" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="518" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1abf84fc946a18ec6ae5ed6ccdf2c57ed5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::FreeEmptyBaseBlocks</definition>
+        <argsstring>(void)</argsstring>
+        <name>FreeEmptyBaseBlocks</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="399" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="523" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a0be736d3a97854630e94ce7c1a70fe31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type *</type>
+        <definition>type * idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::Alloc</definition>
+        <argsstring>(const int num)</argsstring>
+        <name>Alloc</name>
+        <param>
+          <type>const int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="401" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="570" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1ace6013033b02c6bedb012db7c4a8ce0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>type *</type>
+        <definition>type * idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::Resize</definition>
+        <argsstring>(type *ptr, const int num)</argsstring>
+        <name>Resize</name>
+        <param>
+          <type>type *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="402" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="599" bodyend="628"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1abadb2cc7d23cde4b903d19f52fc0ca38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::Free</definition>
+        <argsstring>(type *ptr)</argsstring>
+        <name>Free</name>
+        <param>
+          <type>type *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="403" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="631" bodyend="649"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a58b21903838db324d77a6a5e20988e93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::CheckMemory</definition>
+        <argsstring>(const type *ptr) const </argsstring>
+        <name>CheckMemory</name>
+        <param>
+          <type>const type *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="404" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="652" bodyend="689"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a34ae0ae93060be5ff1a56350e0c93bd7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::GetNumBaseBlocks</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetNumBaseBlocks</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="406" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="406" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a46783c0c0825a78f538980a820350e9b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::GetBaseBlockMemory</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetBaseBlockMemory</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="407" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="407" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a50789af3fe0ff8c8881b0377d8873177" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::GetNumUsedBlocks</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetNumUsedBlocks</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="408" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="408" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a656191f662598fb230d008fa249e0dcf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::GetUsedBlockMemory</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetUsedBlockMemory</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="409" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="409" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a72b83ee6a376f3a7f1f7ecb3df704951" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::GetNumFreeBlocks</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetNumFreeBlocks</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="410" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="410" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a2e372e73a05a788d005488948567443a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::GetFreeBlockMemory</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetFreeBlockMemory</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="411" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="411" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1ae0fbbef36b8a3a4b6d0c60e1026a9402" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::GetNumEmptyBaseBlocks</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetNumEmptyBaseBlocks</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="412" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="556" bodyend="567"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1accd8059c7d3e1382b47605cd52037a53" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::Clear</definition>
+        <argsstring>(void)</argsstring>
+        <name>Clear</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="436" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="692" bodyend="711"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1ad480e09670978b728673527fe2e89a33" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_dynamic_block" kindref="compound">idDynamicBlock</ref>&lt; type &gt; *</type>
+        <definition>idDynamicBlock&lt; type &gt; * idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::AllocInternal</definition>
+        <argsstring>(const int num)</argsstring>
+        <name>AllocInternal</name>
+        <param>
+          <type>const int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="437" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="714" bodyend="747"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1aa1780f40b2f0d53ff9483881c3402728" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_dynamic_block" kindref="compound">idDynamicBlock</ref>&lt; type &gt; *</type>
+        <definition>idDynamicBlock&lt; type &gt; * idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::ResizeInternal</definition>
+        <argsstring>(idDynamicBlock&lt; type &gt; *block, const int num)</argsstring>
+        <name>ResizeInternal</name>
+        <param>
+          <type><ref refid="classid_dynamic_block" kindref="compound">idDynamicBlock</ref>&lt; type &gt; *</type>
+          <declname>block</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="438" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="750" bodyend="813"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a00b2847d1e0436269d3f08e384367246" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::FreeInternal</definition>
+        <argsstring>(idDynamicBlock&lt; type &gt; *block)</argsstring>
+        <name>FreeInternal</name>
+        <param>
+          <type><ref refid="classid_dynamic_block" kindref="compound">idDynamicBlock</ref>&lt; type &gt; *</type>
+          <declname>block</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="439" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="816" bodyend="852"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a5c721555a39b6ac511c64c1dc7ad28ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::LinkFreeInternal</definition>
+        <argsstring>(idDynamicBlock&lt; type &gt; *block)</argsstring>
+        <name>LinkFreeInternal</name>
+        <param>
+          <type><ref refid="classid_dynamic_block" kindref="compound">idDynamicBlock</ref>&lt; type &gt; *</type>
+          <declname>block</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="440" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="855" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1a946a2fb9f925b97045260d93acb816cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::UnlinkFreeInternal</definition>
+        <argsstring>(idDynamicBlock&lt; type &gt; *block)</argsstring>
+        <name>UnlinkFreeInternal</name>
+        <param>
+          <type><ref refid="classid_dynamic_block" kindref="compound">idDynamicBlock</ref>&lt; type &gt; *</type>
+          <declname>block</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="441" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="862" bodyend="867"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_dynamic_block_alloc_1af1f335f0e741d84ac27d2bdbfc6a9523" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idDynamicBlockAlloc&lt; type, baseBlockSize, minBlockSize &gt;::CheckMemory</definition>
+        <argsstring>(void) const </argsstring>
+        <name>CheckMemory</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="442" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="870" bodyend="886"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" line="390" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/Heap.h" bodystart="390" bodyend="443"/>
+    <listofallmembers>
+      <member refid="classid_dynamic_block_alloc_1a0be736d3a97854630e94ce7c1a70fe31" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>Alloc</name></member>
+      <member refid="classid_dynamic_block_alloc_1ad480e09670978b728673527fe2e89a33" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>AllocInternal</name></member>
+      <member refid="classid_dynamic_block_alloc_1aa3f25d18c232fb57f904005043d06aac" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>allowAllocs</name></member>
+      <member refid="classid_dynamic_block_alloc_1a46291fdf3ffe78b5d90d2f18e7e1a7ef" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>baseBlockMemory</name></member>
+      <member refid="classid_dynamic_block_alloc_1a58b21903838db324d77a6a5e20988e93" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>CheckMemory</name></member>
+      <member refid="classid_dynamic_block_alloc_1af1f335f0e741d84ac27d2bdbfc6a9523" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>CheckMemory</name></member>
+      <member refid="classid_dynamic_block_alloc_1accd8059c7d3e1382b47605cd52037a53" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>Clear</name></member>
+      <member refid="classid_dynamic_block_alloc_1a9c81eb482a53ffe47a7f8ba5dff9b950" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>firstBlock</name></member>
+      <member refid="classid_dynamic_block_alloc_1abadb2cc7d23cde4b903d19f52fc0ca38" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>Free</name></member>
+      <member refid="classid_dynamic_block_alloc_1ab5b909b60cad237a92c03e7d249484c0" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>freeBlockMemory</name></member>
+      <member refid="classid_dynamic_block_alloc_1abf84fc946a18ec6ae5ed6ccdf2c57ed5" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>FreeEmptyBaseBlocks</name></member>
+      <member refid="classid_dynamic_block_alloc_1a00b2847d1e0436269d3f08e384367246" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>FreeInternal</name></member>
+      <member refid="classid_dynamic_block_alloc_1a9742ec0327408528f0d8cec52214742d" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>freeTree</name></member>
+      <member refid="classid_dynamic_block_alloc_1a46783c0c0825a78f538980a820350e9b" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>GetBaseBlockMemory</name></member>
+      <member refid="classid_dynamic_block_alloc_1a2e372e73a05a788d005488948567443a" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>GetFreeBlockMemory</name></member>
+      <member refid="classid_dynamic_block_alloc_1a34ae0ae93060be5ff1a56350e0c93bd7" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>GetNumBaseBlocks</name></member>
+      <member refid="classid_dynamic_block_alloc_1ae0fbbef36b8a3a4b6d0c60e1026a9402" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>GetNumEmptyBaseBlocks</name></member>
+      <member refid="classid_dynamic_block_alloc_1a72b83ee6a376f3a7f1f7ecb3df704951" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>GetNumFreeBlocks</name></member>
+      <member refid="classid_dynamic_block_alloc_1a50789af3fe0ff8c8881b0377d8873177" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>GetNumUsedBlocks</name></member>
+      <member refid="classid_dynamic_block_alloc_1a656191f662598fb230d008fa249e0dcf" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>GetUsedBlockMemory</name></member>
+      <member refid="classid_dynamic_block_alloc_1aa8cd1ef4b932a504e7a32ff160086b56" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>idDynamicBlockAlloc</name></member>
+      <member refid="classid_dynamic_block_alloc_1a0b05bae5373316d37cea26111a7dc7a6" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>Init</name></member>
+      <member refid="classid_dynamic_block_alloc_1a042c2b159f842598db9c80fe52b9b8d0" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>lastBlock</name></member>
+      <member refid="classid_dynamic_block_alloc_1a5c721555a39b6ac511c64c1dc7ad28ed" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>LinkFreeInternal</name></member>
+      <member refid="classid_dynamic_block_alloc_1a40af8c2131d9fa5baeeb0483701334d1" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>lockMemory</name></member>
+      <member refid="classid_dynamic_block_alloc_1aee57ae144402cdf0ea3db70a9249bb24" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>numAllocs</name></member>
+      <member refid="classid_dynamic_block_alloc_1a11f0c4e2e1634f5ed1ae11804ad5cede" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>numBaseBlocks</name></member>
+      <member refid="classid_dynamic_block_alloc_1a80ae390e2e4dc0c59edfc9569655e3cb" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>numFreeBlocks</name></member>
+      <member refid="classid_dynamic_block_alloc_1ad399527da4c55d3e4e1bdd590dcf6218" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>numFrees</name></member>
+      <member refid="classid_dynamic_block_alloc_1a0919a7e4faf4fe1ca8c45b144b238f8a" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>numResizes</name></member>
+      <member refid="classid_dynamic_block_alloc_1aefba21bbff47417ca5794fb4d0e4aaee" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>numUsedBlocks</name></member>
+      <member refid="classid_dynamic_block_alloc_1ace6013033b02c6bedb012db7c4a8ce0f" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>Resize</name></member>
+      <member refid="classid_dynamic_block_alloc_1aa1780f40b2f0d53ff9483881c3402728" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>ResizeInternal</name></member>
+      <member refid="classid_dynamic_block_alloc_1add9619eb3b015d6264da2fec1b37d126" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>SetFixedBlocks</name></member>
+      <member refid="classid_dynamic_block_alloc_1ae7b2d9e51ca076c642ec3a23fd28bad8" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>SetLockMemory</name></member>
+      <member refid="classid_dynamic_block_alloc_1a8a6e2699b4a955e5f85d744fb6ee0b72" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>Shutdown</name></member>
+      <member refid="classid_dynamic_block_alloc_1a946a2fb9f925b97045260d93acb816cf" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>UnlinkFreeInternal</name></member>
+      <member refid="classid_dynamic_block_alloc_1af44cde8f3db637f01d9943ba22581666" prot="private" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>usedBlockMemory</name></member>
+      <member refid="classid_dynamic_block_alloc_1abc53dfd31fb6a91eddecfe2689226a06" prot="public" virt="non-virtual"><scope>idDynamicBlockAlloc</scope><name>~idDynamicBlockAlloc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

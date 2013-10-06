@@ -1,0 +1,473 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_m_d5_8cpp" kind="file">
+    <compoundname>MD5.cpp</compoundname>
+    <includes refid="precompiled_8h" local="yes">../precompiled.h</includes>
+    <innerclass refid="struct_m_d5___c_t_x" prot="public">MD5_CTX</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_m_d5_8cpp_1a3c2b6b2959faadfcf644757cb570b734" prot="public" static="no">
+        <name>F1</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <param><defname>z</defname></param>
+        <initializer>(z ^ (x &amp; (y ^ z)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" line="38" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_m_d5_8cpp_1ae131b09a86bdafd00f48095647e80a00" prot="public" static="no">
+        <name>F2</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <param><defname>z</defname></param>
+        <initializer>F1(z, x, y)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" line="39" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_m_d5_8cpp_1a8f6625b749e5fe36981ee2d149229b98" prot="public" static="no">
+        <name>F3</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <param><defname>z</defname></param>
+        <initializer>(x ^ y ^ z)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" line="40" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_m_d5_8cpp_1a61cdb7eca418cc9b37e33601c1b08868" prot="public" static="no">
+        <name>F4</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <param><defname>z</defname></param>
+        <initializer>(y ^ (x | ~z))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" line="41" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_m_d5_8cpp_1a05bc633e1c2aa503fdd7802b13ea2bfe" prot="public" static="no">
+        <name>MD5STEP</name>
+        <param><defname>f</defname></param>
+        <param><defname>w</defname></param>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <param><defname>z</defname></param>
+        <param><defname>data</defname></param>
+        <param><defname>s</defname></param>
+        <initializer>( w += f(x, y, z) + data,  w = w&lt;&lt;s | w&gt;&gt;(32-s),  w += x )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" line="44" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_m_d5_8cpp_1aa95efd4a4df0bcc62d14839e2bb4250d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MD5_Transform</definition>
+        <argsstring>(unsigned int state[4], unsigned int in[16])</argsstring>
+        <name>MD5_Transform</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>state</declname>
+          <array>[4]</array>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>in</declname>
+          <array>[16]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" line="55" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" bodystart="55" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="_m_d5_8cpp_1a3587b3aeb13e97b52d91ac79a65c2940" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MD5_Init</definition>
+        <argsstring>(MD5_CTX *ctx)</argsstring>
+        <name>MD5_Init</name>
+        <param>
+          <type><ref refid="struct_m_d5___c_t_x" kindref="compound">MD5_CTX</ref> *</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" line="148" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" bodystart="148" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="_m_d5_8cpp_1ab9562b9a433cfdf3a86cf8b557b48503" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MD5_Update</definition>
+        <argsstring>(MD5_CTX *ctx, unsigned char const *buf, unsigned int len)</argsstring>
+        <name>MD5_Update</name>
+        <param>
+          <type><ref refid="struct_m_d5___c_t_x" kindref="compound">MD5_CTX</ref> *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>unsigned char const *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" line="166" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" bodystart="166" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="_m_d5_8cpp_1a8a18cbe7e87681039994216469b57fe0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MD5_Final</definition>
+        <argsstring>(MD5_CTX *ctx, unsigned char digest[16])</argsstring>
+        <name>MD5_Final</name>
+        <param>
+          <type><ref refid="struct_m_d5___c_t_x" kindref="compound">MD5_CTX</ref> *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>digest</declname>
+          <array>[16]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" line="215" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" bodystart="215" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="_m_d5_8cpp_1a258c7d310fd3f93a8a34811b28f72e64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>unsigned long MD5_BlockChecksum</definition>
+        <argsstring>(const void *data, int length)</argsstring>
+        <name>MD5_BlockChecksum</name>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" line="260" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp" bodystart="260" bodyend="272"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../precompiled.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>hdrstop</highlight></codeline>
+<codeline lineno="4"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/>MD5<sp/>Message<sp/>Digest<sp/>Algorithm.<sp/>(RFC1321)</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment">This<sp/>code<sp/>implements<sp/>the<sp/>MD5<sp/>message-digest<sp/>algorithm.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">The<sp/>algorithm<sp/>is<sp/>due<sp/>to<sp/>Ron<sp/>Rivest.<sp/><sp/>This<sp/>code<sp/>was</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">written<sp/>by<sp/>Colin<sp/>Plumb<sp/>in<sp/>1993,<sp/>no<sp/>copyright<sp/>is<sp/>claimed.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">This<sp/>code<sp/>is<sp/>in<sp/>the<sp/>public<sp/>domain;<sp/>do<sp/>with<sp/>it<sp/>what<sp/>you<sp/>wish.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"></highlight></codeline>
+<codeline lineno="16"><highlight class="comment">Equivalent<sp/>code<sp/>is<sp/>available<sp/>from<sp/>RSA<sp/>Data<sp/>Security,<sp/>Inc.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">This<sp/>code<sp/>has<sp/>been<sp/>tested<sp/>against<sp/>that,<sp/>and<sp/>is<sp/>equivalent,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">except<sp/>that<sp/>you<sp/>don&apos;t<sp/>need<sp/>to<sp/>include<sp/>two<sp/>pages<sp/>of<sp/>legalese</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">with<sp/>every<sp/>copy.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"></highlight></codeline>
+<codeline lineno="21"><highlight class="comment">To<sp/>compute<sp/>the<sp/>message<sp/>digest<sp/>of<sp/>a<sp/>chunk<sp/>of<sp/>bytes,<sp/>declare<sp/>an</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">MD5Context<sp/>structure,<sp/>pass<sp/>it<sp/>to<sp/>MD5Init,<sp/>call<sp/>MD5Update<sp/>as</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">needed<sp/>on<sp/>buffers<sp/>full<sp/>of<sp/>bytes,<sp/>and<sp/>then<sp/>call<sp/>MD5Final,<sp/>which</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">will<sp/>fill<sp/>a<sp/>supplied<sp/>16-byte<sp/>array<sp/>with<sp/>the<sp/>digest.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>MD5<sp/>context.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="struct_m_d5___c_t_x" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>state[4];</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>bits[2];</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/>in[64];</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}<sp/><ref refid="struct_m_d5___c_t_x" kindref="compound">MD5_CTX</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>four<sp/>core<sp/>functions<sp/>-<sp/>F1<sp/>is<sp/>optimized<sp/>somewhat<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>#define<sp/>F1(x,<sp/>y,<sp/>z)<sp/>(x<sp/>&amp;<sp/>y<sp/>|<sp/>~x<sp/>&amp;<sp/>z)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>F1(x,<sp/>y,<sp/>z)<sp/>(z<sp/>^<sp/>(x<sp/>&amp;<sp/>(y<sp/>^<sp/>z)))</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>F2(x,<sp/>y,<sp/>z)<sp/>F1(z,<sp/>x,<sp/>y)</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>F3(x,<sp/>y,<sp/>z)<sp/>(x<sp/>^<sp/>y<sp/>^<sp/>z)</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>F4(x,<sp/>y,<sp/>z)<sp/>(y<sp/>^<sp/>(x<sp/>|<sp/>~z))</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>the<sp/>central<sp/>step<sp/>in<sp/>the<sp/>MD5<sp/>algorithm.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MD5STEP(f,<sp/>w,<sp/>x,<sp/>y,<sp/>z,<sp/>data,<sp/>s)<sp/>(<sp/>w<sp/>+=<sp/>f(x,<sp/>y,<sp/>z)<sp/>+<sp/>data,<sp/><sp/>w<sp/>=<sp/>w&lt;&lt;s<sp/>|<sp/>w&gt;&gt;(32-s),<sp/><sp/>w<sp/>+=<sp/>x<sp/>)</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">MD5_Transform</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment">The<sp/>core<sp/>of<sp/>the<sp/>MD5<sp/>algorithm,<sp/>this<sp/>alters<sp/>an<sp/>existing<sp/>MD5<sp/>hash<sp/>to</highlight></codeline>
+<codeline lineno="51"><highlight class="comment">reflect<sp/>the<sp/>addition<sp/>of<sp/>16<sp/>longwords<sp/>of<sp/>new<sp/>data.<sp/><sp/>MD5Update<sp/>blocks</highlight></codeline>
+<codeline lineno="52"><highlight class="comment">the<sp/>data<sp/>and<sp/>converts<sp/>bytes<sp/>into<sp/>longwords<sp/>for<sp/>this<sp/>routine.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="54"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MD5_Transform(<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state[4],<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in[16]<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/>b,<sp/>c,<sp/>d;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>a<sp/>=<sp/>state[0];</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>b<sp/>=<sp/>state[1];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>c<sp/>=<sp/>state[2];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>state[3];</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>LittleRevBytes(<sp/>in,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">),<sp/>16<sp/>);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[0]<sp/>+<sp/>0xd76aa478,<sp/>7);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[1]<sp/>+<sp/>0xe8c7b756,<sp/>12);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[2]<sp/>+<sp/>0x242070db,<sp/>17);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[3]<sp/>+<sp/>0xc1bdceee,<sp/>22);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[4]<sp/>+<sp/>0xf57c0faf,<sp/>7);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[5]<sp/>+<sp/>0x4787c62a,<sp/>12);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[6]<sp/>+<sp/>0xa8304613,<sp/>17);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[7]<sp/>+<sp/>0xfd469501,<sp/>22);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[8]<sp/>+<sp/>0x698098d8,<sp/>7);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[9]<sp/>+<sp/>0x8b44f7af,<sp/>12);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[10]<sp/>+<sp/>0xffff5bb1,<sp/>17);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[11]<sp/>+<sp/>0x895cd7be,<sp/>22);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[12]<sp/>+<sp/>0x6b901122,<sp/>7);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[13]<sp/>+<sp/>0xfd987193,<sp/>12);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[14]<sp/>+<sp/>0xa679438e,<sp/>17);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F1,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[15]<sp/>+<sp/>0x49b40821,<sp/>22);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[1]<sp/>+<sp/>0xf61e2562,<sp/>5);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[6]<sp/>+<sp/>0xc040b340,<sp/>9);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[11]<sp/>+<sp/>0x265e5a51,<sp/>14);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[0]<sp/>+<sp/>0xe9b6c7aa,<sp/>20);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[5]<sp/>+<sp/>0xd62f105d,<sp/>5);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[10]<sp/>+<sp/>0x02441453,<sp/>9);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[15]<sp/>+<sp/>0xd8a1e681,<sp/>14);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[4]<sp/>+<sp/>0xe7d3fbc8,<sp/>20);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[9]<sp/>+<sp/>0x21e1cde6,<sp/>5);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[14]<sp/>+<sp/>0xc33707d6,<sp/>9);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[3]<sp/>+<sp/>0xf4d50d87,<sp/>14);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[8]<sp/>+<sp/>0x455a14ed,<sp/>20);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[13]<sp/>+<sp/>0xa9e3e905,<sp/>5);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[2]<sp/>+<sp/>0xfcefa3f8,<sp/>9);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[7]<sp/>+<sp/>0x676f02d9,<sp/>14);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F2,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[12]<sp/>+<sp/>0x8d2a4c8a,<sp/>20);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[5]<sp/>+<sp/>0xfffa3942,<sp/>4);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[8]<sp/>+<sp/>0x8771f681,<sp/>11);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[11]<sp/>+<sp/>0x6d9d6122,<sp/>16);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[14]<sp/>+<sp/>0xfde5380c,<sp/>23);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[1]<sp/>+<sp/>0xa4beea44,<sp/>4);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[4]<sp/>+<sp/>0x4bdecfa9,<sp/>11);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[7]<sp/>+<sp/>0xf6bb4b60,<sp/>16);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[10]<sp/>+<sp/>0xbebfbc70,<sp/>23);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[13]<sp/>+<sp/>0x289b7ec6,<sp/>4);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[0]<sp/>+<sp/>0xeaa127fa,<sp/>11);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[3]<sp/>+<sp/>0xd4ef3085,<sp/>16);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[6]<sp/>+<sp/>0x04881d05,<sp/>23);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[9]<sp/>+<sp/>0xd9d4d039,<sp/>4);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[12]<sp/>+<sp/>0xe6db99e5,<sp/>11);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[15]<sp/>+<sp/>0x1fa27cf8,<sp/>16);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F3,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[2]<sp/>+<sp/>0xc4ac5665,<sp/>23);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[0]<sp/>+<sp/>0xf4292244,<sp/>6);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[7]<sp/>+<sp/>0x432aff97,<sp/>10);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[14]<sp/>+<sp/>0xab9423a7,<sp/>15);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[5]<sp/>+<sp/>0xfc93a039,<sp/>21);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[12]<sp/>+<sp/>0x655b59c3,<sp/>6);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[3]<sp/>+<sp/>0x8f0ccc92,<sp/>10);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[10]<sp/>+<sp/>0xffeff47d,<sp/>15);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[1]<sp/>+<sp/>0x85845dd1,<sp/>21);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[8]<sp/>+<sp/>0x6fa87e4f,<sp/>6);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[15]<sp/>+<sp/>0xfe2ce6e0,<sp/>10);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[6]<sp/>+<sp/>0xa3014314,<sp/>15);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[13]<sp/>+<sp/>0x4e0811a1,<sp/>21);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>a,<sp/>b,<sp/>c,<sp/>d,<sp/>in[4]<sp/>+<sp/>0xf7537e82,<sp/>6);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>d,<sp/>a,<sp/>b,<sp/>c,<sp/>in[11]<sp/>+<sp/>0xbd3af235,<sp/>10);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>c,<sp/>d,<sp/>a,<sp/>b,<sp/>in[2]<sp/>+<sp/>0x2ad7d2bb,<sp/>15);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5STEP(F4,<sp/>b,<sp/>c,<sp/>d,<sp/>a,<sp/>in[9]<sp/>+<sp/>0xeb86d391,<sp/>21);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>LittleRevBytes(<sp/>in,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">),<sp/>16<sp/>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>state[0]<sp/>+=<sp/>a;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>state[1]<sp/>+=<sp/>b;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>state[2]<sp/>+=<sp/>c;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>state[3]<sp/>+=<sp/>d;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="142"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="143"><highlight class="comment">MD5_Init</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"></highlight></codeline>
+<codeline lineno="145"><highlight class="comment">MD5<sp/>initialization.<sp/>Begins<sp/>an<sp/>MD5<sp/>operation,<sp/>writing<sp/>a<sp/>new<sp/>context.</highlight></codeline>
+<codeline lineno="146"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="147"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MD5_Init(<sp/><ref refid="struct_m_d5___c_t_x" kindref="compound">MD5_CTX</ref><sp/>*ctx<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx-&gt;state[0]<sp/>=<sp/>0x67452301;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx-&gt;state[1]<sp/>=<sp/>0xefcdab89;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx-&gt;state[2]<sp/>=<sp/>0x98badcfe;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx-&gt;state[3]<sp/>=<sp/>0x10325476;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx-&gt;bits[0]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx-&gt;bits[1]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="159"><highlight class="comment">===================</highlight></codeline>
+<codeline lineno="160"><highlight class="comment">MD5_Update</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"></highlight></codeline>
+<codeline lineno="162"><highlight class="comment">MD5<sp/>block<sp/>update<sp/>operation.<sp/>Continues<sp/>an<sp/>MD5<sp/>message-digest<sp/>operation,</highlight></codeline>
+<codeline lineno="163"><highlight class="comment">processing<sp/>another<sp/>message<sp/>block,<sp/>and<sp/>updating<sp/>the<sp/>context.</highlight></codeline>
+<codeline lineno="164"><highlight class="comment">===================</highlight></codeline>
+<codeline lineno="165"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MD5_Update(<sp/><ref refid="struct_m_d5___c_t_x" kindref="compound">MD5_CTX</ref><sp/>*ctx,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Update<sp/>bitcount<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>ctx-&gt;bits[0];</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<sp/>ctx-&gt;bits[0]<sp/>=<sp/>t<sp/>+<sp/>(<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>len<sp/>&lt;&lt;<sp/>3<sp/>)<sp/>)<sp/>&lt;<sp/>t<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctx-&gt;bits[1]++;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Carry<sp/>from<sp/>low<sp/>to<sp/>high<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx-&gt;bits[1]<sp/>+=<sp/>len<sp/>&gt;&gt;<sp/>29;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>(<sp/>t<sp/>&gt;&gt;<sp/>3<sp/>)<sp/>&amp;<sp/>0x3f;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Bytes<sp/>already<sp/>in<sp/>shsInfo-&gt;data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Handle<sp/>any<sp/>leading<sp/>odd-sized<sp/>chunks<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>t<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*p<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>ctx-&gt;in<sp/>+<sp/>t;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/>64<sp/>-<sp/>t;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>len<sp/>&lt;<sp/>t<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(<sp/>p,<sp/>buf,<sp/>len<sp/>);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(<sp/>p,<sp/>buf,<sp/>t<sp/>);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MD5_Transform(<sp/>ctx-&gt;state,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)<sp/>ctx-&gt;in<sp/>);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf<sp/>+=<sp/>t;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len<sp/>-=<sp/>t;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Process<sp/>data<sp/>in<sp/>64-byte<sp/>chunks<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>len<sp/>&gt;=<sp/>64<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(<sp/>ctx-&gt;in,<sp/>buf,<sp/>64<sp/>);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MD5_Transform(<sp/>ctx-&gt;state,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)<sp/>ctx-&gt;in<sp/>);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf<sp/>+=<sp/>64;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len<sp/>-=<sp/>64;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Handle<sp/>any<sp/>remaining<sp/>bytes<sp/>of<sp/>data.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(<sp/>ctx-&gt;in,<sp/>buf,<sp/>len<sp/>);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="208"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="209"><highlight class="comment">MD5_Final</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"></highlight></codeline>
+<codeline lineno="211"><highlight class="comment">MD5<sp/>finalization.<sp/>Ends<sp/>an<sp/>MD5<sp/>message-digest<sp/>operation,</highlight></codeline>
+<codeline lineno="212"><highlight class="comment">writing<sp/>the<sp/>message<sp/>digest<sp/>and<sp/>zeroizing<sp/>the<sp/>context.</highlight></codeline>
+<codeline lineno="213"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="214"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MD5_Final(<sp/><ref refid="struct_m_d5___c_t_x" kindref="compound">MD5_CTX</ref><sp/>*ctx,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>digest[16]<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*p;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Compute<sp/>number<sp/>of<sp/>bytes<sp/>mod<sp/>64<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>(<sp/>ctx-&gt;bits[0]<sp/>&gt;&gt;<sp/>3<sp/>)<sp/>&amp;<sp/>0x3F;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>first<sp/>char<sp/>of<sp/>padding<sp/>to<sp/>0x80.<sp/><sp/>This<sp/>is<sp/>safe<sp/>since<sp/>there<sp/>is</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>always<sp/>at<sp/>least<sp/>one<sp/>byte<sp/>free<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>ctx-&gt;in<sp/>+<sp/>count;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>*p++<sp/>=<sp/>0x80;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Bytes<sp/>of<sp/>padding<sp/>needed<sp/>to<sp/>make<sp/>64<sp/>bytes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>64<sp/>-<sp/>1<sp/>-<sp/>count;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Pad<sp/>out<sp/>to<sp/>56<sp/>mod<sp/>64<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>count<sp/>&lt;<sp/>8<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Two<sp/>lots<sp/>of<sp/>padding:<sp/><sp/>Pad<sp/>the<sp/>first<sp/>block<sp/>to<sp/>64<sp/>bytes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(<sp/>p,<sp/>0,<sp/>count<sp/>);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MD5_Transform(<sp/>ctx-&gt;state,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)<sp/>ctx-&gt;in<sp/>);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Now<sp/>fill<sp/>the<sp/>next<sp/>block<sp/>with<sp/>56<sp/>bytes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(<sp/>ctx-&gt;in,<sp/>0,<sp/>56<sp/>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Pad<sp/>block<sp/>to<sp/>56<sp/>bytes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(<sp/>p,<sp/>0,<sp/>count<sp/>-<sp/>8<sp/>);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Append<sp/>length<sp/>in<sp/>bits<sp/>and<sp/>transform<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val0<sp/>=<sp/>ctx-&gt;bits[0];</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val1<sp/>=<sp/>ctx-&gt;bits[1];</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)<sp/>ctx-&gt;in)[14]<sp/>=<sp/>LittleLong(<sp/>val0<sp/>);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)<sp/>ctx-&gt;in)[15]<sp/>=<sp/>LittleLong(<sp/>val1<sp/>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5_Transform(<sp/>ctx-&gt;state,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)<sp/>ctx-&gt;in<sp/>);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(<sp/>digest,<sp/>ctx-&gt;state,<sp/>16<sp/>);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<sp/>ctx,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>ctx<sp/>)<sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>In<sp/>case<sp/>it&apos;s<sp/>sensitive<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="256"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="257"><highlight class="comment">MD5_BlockChecksum</highlight></codeline>
+<codeline lineno="258"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="259"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>MD5_BlockChecksum(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/>digest[4];</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/>val;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_m_d5___c_t_x" kindref="compound">MD5_CTX</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctx;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5_Init(<sp/>&amp;ctx<sp/>);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5_Update(<sp/>&amp;ctx,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)data,<sp/>length<sp/>);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>MD5_Final(<sp/>&amp;ctx,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)digest<sp/>);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>val<sp/>=<sp/>digest[0]<sp/>^<sp/>digest[1]<sp/>^<sp/>digest[2]<sp/>^<sp/>digest[3];</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/idlib/hashing/MD5.cpp"/>
+  </compounddef>
+</doxygen>

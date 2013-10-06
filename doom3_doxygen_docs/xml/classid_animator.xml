@@ -1,0 +1,2825 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_animator" kind="class" prot="public">
+    <compoundname>idAnimator</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classid_animator_1a292612dcc4b28f4c1945532f350aef88" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classid_decl_model_def" kindref="compound">idDeclModelDef</ref> *</type>
+        <definition>const idDeclModelDef * idAnimator::modelDef</definition>
+        <argsstring></argsstring>
+        <name>modelDef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="573" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="573" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a1ae3e6a1d27e8dd45f66cad4713f851c" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+        <definition>idEntity * idAnimator::entity</definition>
+        <argsstring></argsstring>
+        <name>entity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="574" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="574" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a4df3e9bce706f604102dce4974385dad" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_anim_blend" kindref="compound">idAnimBlend</ref></type>
+        <definition>idAnimBlend idAnimator::channels</definition>
+        <argsstring>[ANIM_NumAnimChannels][ANIM_MaxAnimsPerChannel]</argsstring>
+        <name>channels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="576" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="576" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a0180e63e12b6981b396fcdb46058a475" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_list" kindref="compound">idList</ref>&lt; <ref refid="structjoint_mod__t" kindref="compound">jointMod_t</ref> * &gt;</type>
+        <definition>idList&lt; jointMod_t * &gt; idAnimator::jointMods</definition>
+        <argsstring></argsstring>
+        <name>jointMods</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="577" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="577" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a6a68b47b719663d6420d829ff2014764" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idAnimator::numJoints</definition>
+        <argsstring></argsstring>
+        <name>numJoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="578" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="578" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a0f97ba83981db7ce46de1fa80e40e96e" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_joint_mat" kindref="compound">idJointMat</ref> *</type>
+        <definition>idJointMat * idAnimator::joints</definition>
+        <argsstring></argsstring>
+        <name>joints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="579" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="579" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1ac502a734e888d9ab3878398df9178224" prot="private" static="no" mutable="yes">
+        <type>int</type>
+        <definition>int idAnimator::lastTransformTime</definition>
+        <argsstring></argsstring>
+        <name>lastTransformTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="581" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="581" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1ad3d59343694a9099c37fadcb534bc7a7" prot="private" static="no" mutable="yes">
+        <type>bool</type>
+        <definition>bool idAnimator::stoppedAnimatingUpdate</definition>
+        <argsstring></argsstring>
+        <name>stoppedAnimatingUpdate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="582" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="582" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a093b4f35fd70d0c9d29bee32d59d18d0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idAnimator::removeOriginOffset</definition>
+        <argsstring></argsstring>
+        <name>removeOriginOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="583" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="583" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a037e175d8a15cdca305c981caff5a491" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idAnimator::forceUpdate</definition>
+        <argsstring></argsstring>
+        <name>forceUpdate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="584" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="584" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a4c1a66caf53ccc6a011a60b4ac3a2d66" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_bounds" kindref="compound">idBounds</ref></type>
+        <definition>idBounds idAnimator::frameBounds</definition>
+        <argsstring></argsstring>
+        <name>frameBounds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="586" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="586" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1ab1a6e83717d32a59ced1453a9e25bd20" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idAnimator::AFPoseBlendWeight</definition>
+        <argsstring></argsstring>
+        <name>AFPoseBlendWeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="588" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="588" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a2096720b13caf9024bc82389ee5ec483" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_list" kindref="compound">idList</ref>&lt; int &gt;</type>
+        <definition>idList&lt; int &gt; idAnimator::AFPoseJoints</definition>
+        <argsstring></argsstring>
+        <name>AFPoseJoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="589" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="589" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a58cb977f88ccc8eee2ab761b13ef1896" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_list" kindref="compound">idList</ref>&lt; <ref refid="classid_a_f_pose_joint_mod" kindref="compound">idAFPoseJointMod</ref> &gt;</type>
+        <definition>idList&lt; idAFPoseJointMod &gt; idAnimator::AFPoseJointMods</definition>
+        <argsstring></argsstring>
+        <name>AFPoseJointMods</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="590" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="590" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a19edb91a711e2e02278815e506fd6816" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_list" kindref="compound">idList</ref>&lt; <ref refid="classid_joint_quat" kindref="compound">idJointQuat</ref> &gt;</type>
+        <definition>idList&lt; idJointQuat &gt; idAnimator::AFPoseJointFrame</definition>
+        <argsstring></argsstring>
+        <name>AFPoseJointFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="591" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="591" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1a101259eb13e961bb1e4c2100436a0f2f" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_bounds" kindref="compound">idBounds</ref></type>
+        <definition>idBounds idAnimator::AFPoseBounds</definition>
+        <argsstring></argsstring>
+        <name>AFPoseBounds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="592" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="592" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_animator_1ad1722bc309d0579dc8cd71312dca7fd2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idAnimator::AFPoseTime</definition>
+        <argsstring></argsstring>
+        <name>AFPoseTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="593" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="593" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_animator_1afbdea6d6b178671dde6cdb97270e71bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idAnimator::idAnimator</definition>
+        <argsstring>()</argsstring>
+        <name>idAnimator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="488" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3087" bodyend="3112"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1afb914089e1cde605db1b19279e463a8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idAnimator::~idAnimator</definition>
+        <argsstring>()</argsstring>
+        <name>~idAnimator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="489" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3119" bodyend="3121"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a5a652c59e9cb6b0a38087e9a4bff7a8b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t idAnimator::Allocated</definition>
+        <argsstring>(void) const </argsstring>
+        <name>Allocated</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="491" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3128" bodyend="3134"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aa28ac511f4d24baca91f6ee8b32ee876" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t idAnimator::Size</definition>
+        <argsstring>(void) const </argsstring>
+        <name>Size</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="492" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3387" bodyend="3389"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1222ffc99bcaece516734b840e5c2b43" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::Save</definition>
+        <argsstring>(idSaveGame *savefile) const </argsstring>
+        <name>Save</name>
+        <param>
+          <type><ref refid="classid_save_game" kindref="compound">idSaveGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="494" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3143" bodyend="3205"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a11c8d1cc87fd29269c6810a8dd3ca406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::Restore</definition>
+        <argsstring>(idRestoreGame *savefile)</argsstring>
+        <name>Restore</name>
+        <param>
+          <type><ref refid="classid_restore_game" kindref="compound">idRestoreGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="495" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3214" bodyend="3286"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac2ab0bc45a009affc194d853ba0ff078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetEntity</definition>
+        <argsstring>(idEntity *ent)</argsstring>
+        <name>SetEntity</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="497" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3396" bodyend="3398"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac6c0b131dec421acac73c54860c322fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+        <definition>idEntity * idAnimator::GetEntity</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetEntity</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="498" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3405" bodyend="3407"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ae8245abca7ba13d44ac10c1fe2c8b863" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::RemoveOriginOffset</definition>
+        <argsstring>(bool remove)</argsstring>
+        <name>RemoveOriginOffset</name>
+        <param>
+          <type>bool</type>
+          <declname>remove</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="499" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3414" bodyend="3416"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1af090a67690767a2296543fe6ca86ddc5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::RemoveOrigin</definition>
+        <argsstring>(void) const </argsstring>
+        <name>RemoveOrigin</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="500" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3423" bodyend="3425"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a3fc02e06e70d619afbb1affe31c2b480" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::GetJointList</definition>
+        <argsstring>(const char *jointnames, idList&lt; jointHandle_t &gt; &amp;jointList) const </argsstring>
+        <name>GetJointList</name>
+        <param>
+          <type>const char *</type>
+          <declname>jointnames</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_list" kindref="compound">idList</ref>&lt; jointHandle_t &gt; &amp;</type>
+          <declname>jointList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="502" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3432" bodyend="3436"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ab311fc0d51ac2b26a9f2ecca7a714bf4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::NumAnims</definition>
+        <argsstring>(void) const </argsstring>
+        <name>NumAnims</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="504" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3443" bodyend="3449"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a07dc64fa0dab173473cc72fdbf06d636" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classid_anim" kindref="compound">idAnim</ref> *</type>
+        <definition>const idAnim * idAnimator::GetAnim</definition>
+        <argsstring>(int index) const </argsstring>
+        <name>GetAnim</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="505" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3456" bodyend="3462"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1ea660570aaf32401c72d91f4e2ac335" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::GetAnim</definition>
+        <argsstring>(const char *name) const </argsstring>
+        <name>GetAnim</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="506" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3469" bodyend="3475"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1acfa7c85c23fb8dd288d9ec9e1f187760" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::HasAnim</definition>
+        <argsstring>(const char *name) const </argsstring>
+        <name>HasAnim</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="507" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3482" bodyend="3488"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1acad6ef510f18c6dceb8982ec8cd2c246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ServiceAnims</definition>
+        <argsstring>(int fromtime, int totime)</argsstring>
+        <name>ServiceAnims</name>
+        <param>
+          <type>int</type>
+          <declname>fromtime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>totime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="509" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4158" bodyend="4184"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aa10c470e57d0e399581ce23b9d2bdee9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::IsAnimating</definition>
+        <argsstring>(int currentTime) const </argsstring>
+        <name>IsAnimating</name>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="510" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4191" bodyend="4214"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a25c2321c4b1afc5025b1c61faa561ed6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::GetJoints</definition>
+        <argsstring>(int *numJoints, idJointMat **jointsPtr)</argsstring>
+        <name>GetJoints</name>
+        <param>
+          <type>int *</type>
+          <declname>numJoints</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_joint_mat" kindref="compound">idJointMat</ref> **</type>
+          <declname>jointsPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="512" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4649" bodyend="4652"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ae4a485a24d1f54c8d4d93a8ae6cff659" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::NumJoints</definition>
+        <argsstring>(void) const </argsstring>
+        <name>NumJoints</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="513" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3495" bodyend="3497"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a8d22676ca688a7f2b06d5099186ae761" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idAnimator::GetFirstChild</definition>
+        <argsstring>(jointHandle_t jointnum) const </argsstring>
+        <name>GetFirstChild</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="514" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4622" bodyend="4642"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a625bae6eee29af06750bb3a64ab52640" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idAnimator::GetFirstChild</definition>
+        <argsstring>(const char *name) const </argsstring>
+        <name>GetFirstChild</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="515" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4613" bodyend="4615"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a27eb16392730dafb89a61bf366542517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_render_model" kindref="compound">idRenderModel</ref> *</type>
+        <definition>idRenderModel * idAnimator::SetModel</definition>
+        <argsstring>(const char *modelname)</argsstring>
+        <name>SetModel</name>
+        <param>
+          <type>const char *</type>
+          <declname>modelname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="517" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3345" bodyend="3380"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1acf484f9c0b923047e2d736d85546cea9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_render_model" kindref="compound">idRenderModel</ref> *</type>
+        <definition>idRenderModel * idAnimator::ModelHandle</definition>
+        <argsstring>(void) const </argsstring>
+        <name>ModelHandle</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="518" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3504" bodyend="3510"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aac4e0ad8b348048d49f4039c0b9c73ea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classid_decl_model_def" kindref="compound">idDeclModelDef</ref> *</type>
+        <definition>const idDeclModelDef * idAnimator::ModelDef</definition>
+        <argsstring>(void) const </argsstring>
+        <name>ModelDef</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="519" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3517" bodyend="3519"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a2e269614f373becec9713cc15b48da5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ForceUpdate</definition>
+        <argsstring>(void)</argsstring>
+        <name>ForceUpdate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="521" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4500" bodyend="4503"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1adceb9b76a42243cfde7b8e1f9f7f65ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ClearForceUpdate</definition>
+        <argsstring>(void)</argsstring>
+        <name>ClearForceUpdate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="522" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4510" bodyend="4512"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a91f4ea776d7abccc933d84bb6f4b7b80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::CreateFrame</definition>
+        <argsstring>(int animtime, bool force)</argsstring>
+        <name>CreateFrame</name>
+        <param>
+          <type>int</type>
+          <declname>animtime</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>force</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="523" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4255" bodyend="4493"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a0f290f2cee20d5be7497dc8176377844" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::FrameHasChanged</definition>
+        <argsstring>(int animtime) const </argsstring>
+        <name>FrameHasChanged</name>
+        <param>
+          <type>int</type>
+          <declname>animtime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="524" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4221" bodyend="4248"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ae7dd3f0d7413956c35ee60689e1078a7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::GetDelta</definition>
+        <argsstring>(int fromtime, int totime, idVec3 &amp;delta) const </argsstring>
+        <name>GetDelta</name>
+        <param>
+          <type>int</type>
+          <declname>fromtime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>totime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="525" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3784" bodyend="3808"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac5211d97dec3307c88705768f0945ac4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::GetDeltaRotation</definition>
+        <argsstring>(int fromtime, int totime, idMat3 &amp;delta) const </argsstring>
+        <name>GetDeltaRotation</name>
+        <param>
+          <type>int</type>
+          <declname>fromtime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>totime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="526" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3815" bodyend="3848"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aa1c06c49ddec70d22e1a4362dc4b5c35" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::GetOrigin</definition>
+        <argsstring>(int currentTime, idVec3 &amp;pos) const </argsstring>
+        <name>GetOrigin</name>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="527" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3855" bodyend="3881"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1af3d20b93ac26f063444f27110c531b05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::GetBounds</definition>
+        <argsstring>(int currentTime, idBounds &amp;bounds)</argsstring>
+        <name>GetBounds</name>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_bounds" kindref="compound">idBounds</ref> &amp;</type>
+          <declname>bounds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="528" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3888" bodyend="3939"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ab73a01b5454e368f05be291dd14755b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_anim_blend" kindref="compound">idAnimBlend</ref> *</type>
+        <definition>idAnimBlend * idAnimator::CurrentAnim</definition>
+        <argsstring>(int channelNum)</argsstring>
+        <name>CurrentAnim</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="530" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3526" bodyend="3532"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a83d489329b62206aa94408180e66f829" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::Clear</definition>
+        <argsstring>(int channelNum, int currentTime, int cleartime)</argsstring>
+        <name>Clear</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cleartime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="531" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3539" bodyend="3552"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1acc953988990bc1d113f2efc56e57f560" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetFrame</definition>
+        <argsstring>(int channelNum, int animnum, int frame, int currenttime, int blendtime)</argsstring>
+        <name>SetFrame</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currenttime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blendtime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="532" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3559" bodyend="3573"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a27409ffa6dbecd8beee334ef756defb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::CycleAnim</definition>
+        <argsstring>(int channelNum, int animnum, int currenttime, int blendtime)</argsstring>
+        <name>CycleAnim</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currenttime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blendtime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="533" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3580" bodyend="3594"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ab5d95d0b93b6310987d800a99c01a80c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::PlayAnim</definition>
+        <argsstring>(int channelNum, int animnum, int currenttime, int blendTime)</argsstring>
+        <name>PlayAnim</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currenttime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blendTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="534" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3601" bodyend="3615"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a808168544afb90f2a334903f8abce38b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SyncAnimChannels</definition>
+        <argsstring>(int channelNum, int fromChannelNum, int currenttime, int blendTime)</argsstring>
+        <name>SyncAnimChannels</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fromChannelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currenttime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blendTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="538" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3622" bodyend="3645"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1abf66621553409fce7dbc2410c99363c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetJointPos</definition>
+        <argsstring>(jointHandle_t jointnum, jointModTransform_t transform_type, const idVec3 &amp;pos)</argsstring>
+        <name>SetJointPos</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointnum</declname>
+        </param>
+        <param>
+          <type>jointModTransform_t</type>
+          <declname>transform_type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="540" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3652" bodyend="3685"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1dfc81ab42dbfd92474a2417d6b66a1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetJointAxis</definition>
+        <argsstring>(jointHandle_t jointnum, jointModTransform_t transform_type, const idMat3 &amp;mat)</argsstring>
+        <name>SetJointAxis</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointnum</declname>
+        </param>
+        <param>
+          <type>jointModTransform_t</type>
+          <declname>transform_type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>mat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="541" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3692" bodyend="3725"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a9ffb0443ac0eb221495806f0f6437268" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ClearJoint</definition>
+        <argsstring>(jointHandle_t jointnum)</argsstring>
+        <name>ClearJoint</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="542" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3732" bodyend="3749"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aa1d9aa168a7826e8d4088d1eed317e96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ClearAllJoints</definition>
+        <argsstring>(void)</argsstring>
+        <name>ClearAllJoints</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="543" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3756" bodyend="3761"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a301f954853aae54732e130eac9bba7a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::InitAFPose</definition>
+        <argsstring>(void)</argsstring>
+        <name>InitAFPose</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="545" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3946" bodyend="3956"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a16c58fd578d6ec3999165d6dbb8ef1dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetAFPoseJointMod</definition>
+        <argsstring>(const jointHandle_t jointNum, const AFJointModType_t mod, const idMat3 &amp;axis, const idVec3 &amp;origin)</argsstring>
+        <name>SetAFPoseJointMod</name>
+        <param>
+          <type>const jointHandle_t</type>
+          <declname>jointNum</declname>
+        </param>
+        <param>
+          <type>const AFJointModType_t</type>
+          <declname>mod</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="546" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3963" bodyend="3972"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a33c3f95f9a6e339356c09a9f2942fdee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::FinishAFPose</definition>
+        <argsstring>(int animnum, const idBounds &amp;bounds, const int time)</argsstring>
+        <name>FinishAFPose</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_bounds" kindref="compound">idBounds</ref> &amp;</type>
+          <declname>bounds</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="547" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3979" bodyend="4111"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a31cb8d5d9f75e0bf4da4e2e883b46698" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetAFPoseBlendWeight</definition>
+        <argsstring>(float blendWeight)</argsstring>
+        <name>SetAFPoseBlendWeight</name>
+        <param>
+          <type>float</type>
+          <declname>blendWeight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="548" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4118" bodyend="4120"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a9002bfc906acbf7eb6566bc78a22434a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::BlendAFPose</definition>
+        <argsstring>(idJointQuat *blendFrame) const </argsstring>
+        <name>BlendAFPose</name>
+        <param>
+          <type><ref refid="classid_joint_quat" kindref="compound">idJointQuat</ref> *</type>
+          <declname>blendFrame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="549" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4127" bodyend="4136"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a53a72467c1e6078eaf503d10f9fb057e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ClearAFPose</definition>
+        <argsstring>(void)</argsstring>
+        <name>ClearAFPose</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="550" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4143" bodyend="4151"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac7e385131e2f92941129df0de4cf261c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ClearAllAnims</definition>
+        <argsstring>(int currentTime, int cleartime)</argsstring>
+        <name>ClearAllAnims</name>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cleartime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="552" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3768" bodyend="3777"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1e7c7974b09d073964e53b2efb1173d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idAnimator::GetJointHandle</definition>
+        <argsstring>(const char *name) const </argsstring>
+        <name>GetJointHandle</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="554" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4570" bodyend="4576"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1c18dcc74db358d5ce3eae2585faa800" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * idAnimator::GetJointName</definition>
+        <argsstring>(jointHandle_t handle) const </argsstring>
+        <name>GetJointName</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="555" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4583" bodyend="4589"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac5d4d63f41e4083d768998e499f71ee7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::GetChannelForJoint</definition>
+        <argsstring>(jointHandle_t joint) const </argsstring>
+        <name>GetChannelForJoint</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>joint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="556" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4596" bodyend="4606"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a7b228baa483a344234a506e807fc4b75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::GetJointTransform</definition>
+        <argsstring>(jointHandle_t jointHandle, int currenttime, idVec3 &amp;offset, idMat3 &amp;axis)</argsstring>
+        <name>GetJointTransform</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointHandle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currenttime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="557" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4520" bodyend="4531"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a558d3d6e0f4ca6801ac06eb5f202287a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::GetJointLocalTransform</definition>
+        <argsstring>(jointHandle_t jointHandle, int currentTime, idVec3 &amp;offset, idMat3 &amp;axis)</argsstring>
+        <name>GetJointLocalTransform</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointHandle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="558" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4538" bodyend="4563"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a3c334333e912bcc1cfbb052be0d413de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structanim_flags__t" kindref="compound">animFlags_t</ref></type>
+        <definition>const animFlags_t idAnimator::GetAnimFlags</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>GetAnimFlags</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="560" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4659" bodyend="4669"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a043a49e3024ad7c7e6f693ebb1227f9e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::NumFrames</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>NumFrames</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="561" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4676" bodyend="4683"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1af99a2eb09d4df285e9e20c0cbe1b7527" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::NumSyncedAnims</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>NumSyncedAnims</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="562" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4690" bodyend="4697"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a97abe70c5f60a84a9684bf5c86e846da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * idAnimator::AnimName</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>AnimName</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="563" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4704" bodyend="4711"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a59ef3696adae13799cc60a66a2cbf6b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * idAnimator::AnimFullName</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>AnimFullName</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="564" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4718" bodyend="4725"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1358587f2f314d3284e4bb0e219b1a26" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::AnimLength</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>AnimLength</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="565" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4732" bodyend="4739"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1adcbc32db388952b385fe02c56b455449" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+        <definition>const idVec3 &amp; idAnimator::TotalMovementDelta</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>TotalMovementDelta</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="566" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="4746" bodyend="4753"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1afbdea6d6b178671dde6cdb97270e71bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idAnimator::idAnimator</definition>
+        <argsstring>()</argsstring>
+        <name>idAnimator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="482" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1afb914089e1cde605db1b19279e463a8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idAnimator::~idAnimator</definition>
+        <argsstring>()</argsstring>
+        <name>~idAnimator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="483" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a5a652c59e9cb6b0a38087e9a4bff7a8b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t idAnimator::Allocated</definition>
+        <argsstring>(void) const </argsstring>
+        <name>Allocated</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="485" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aa28ac511f4d24baca91f6ee8b32ee876" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t idAnimator::Size</definition>
+        <argsstring>(void) const </argsstring>
+        <name>Size</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="486" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1222ffc99bcaece516734b840e5c2b43" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::Save</definition>
+        <argsstring>(idSaveGame *savefile) const </argsstring>
+        <name>Save</name>
+        <param>
+          <type><ref refid="classid_save_game" kindref="compound">idSaveGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="488" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a11c8d1cc87fd29269c6810a8dd3ca406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::Restore</definition>
+        <argsstring>(idRestoreGame *savefile)</argsstring>
+        <name>Restore</name>
+        <param>
+          <type><ref refid="classid_restore_game" kindref="compound">idRestoreGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="489" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac2ab0bc45a009affc194d853ba0ff078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetEntity</definition>
+        <argsstring>(idEntity *ent)</argsstring>
+        <name>SetEntity</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="491" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a459fd2c4dfe9ea2ff2479f979dc47bcf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+        <definition>idEntity* idAnimator::GetEntity</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetEntity</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="492" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ae8245abca7ba13d44ac10c1fe2c8b863" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::RemoveOriginOffset</definition>
+        <argsstring>(bool remove)</argsstring>
+        <name>RemoveOriginOffset</name>
+        <param>
+          <type>bool</type>
+          <declname>remove</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="493" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1af090a67690767a2296543fe6ca86ddc5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::RemoveOrigin</definition>
+        <argsstring>(void) const </argsstring>
+        <name>RemoveOrigin</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="494" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a3fc02e06e70d619afbb1affe31c2b480" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::GetJointList</definition>
+        <argsstring>(const char *jointnames, idList&lt; jointHandle_t &gt; &amp;jointList) const </argsstring>
+        <name>GetJointList</name>
+        <param>
+          <type>const char *</type>
+          <declname>jointnames</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_list" kindref="compound">idList</ref>&lt; jointHandle_t &gt; &amp;</type>
+          <declname>jointList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="496" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ab311fc0d51ac2b26a9f2ecca7a714bf4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::NumAnims</definition>
+        <argsstring>(void) const </argsstring>
+        <name>NumAnims</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="498" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac10d70432ffc1501f657c358ef81db3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classid_anim" kindref="compound">idAnim</ref> *</type>
+        <definition>const idAnim* idAnimator::GetAnim</definition>
+        <argsstring>(int index) const </argsstring>
+        <name>GetAnim</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="499" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1ea660570aaf32401c72d91f4e2ac335" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::GetAnim</definition>
+        <argsstring>(const char *name) const </argsstring>
+        <name>GetAnim</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="500" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1acfa7c85c23fb8dd288d9ec9e1f187760" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::HasAnim</definition>
+        <argsstring>(const char *name) const </argsstring>
+        <name>HasAnim</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="501" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1acad6ef510f18c6dceb8982ec8cd2c246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ServiceAnims</definition>
+        <argsstring>(int fromtime, int totime)</argsstring>
+        <name>ServiceAnims</name>
+        <param>
+          <type>int</type>
+          <declname>fromtime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>totime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="503" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aa10c470e57d0e399581ce23b9d2bdee9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::IsAnimating</definition>
+        <argsstring>(int currentTime) const </argsstring>
+        <name>IsAnimating</name>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="504" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a25c2321c4b1afc5025b1c61faa561ed6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::GetJoints</definition>
+        <argsstring>(int *numJoints, idJointMat **jointsPtr)</argsstring>
+        <name>GetJoints</name>
+        <param>
+          <type>int *</type>
+          <declname>numJoints</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_joint_mat" kindref="compound">idJointMat</ref> **</type>
+          <declname>jointsPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="506" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ae4a485a24d1f54c8d4d93a8ae6cff659" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::NumJoints</definition>
+        <argsstring>(void) const </argsstring>
+        <name>NumJoints</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="507" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a8d22676ca688a7f2b06d5099186ae761" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idAnimator::GetFirstChild</definition>
+        <argsstring>(jointHandle_t jointnum) const </argsstring>
+        <name>GetFirstChild</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="508" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a625bae6eee29af06750bb3a64ab52640" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idAnimator::GetFirstChild</definition>
+        <argsstring>(const char *name) const </argsstring>
+        <name>GetFirstChild</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="509" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a6b2ee6c5b4cf8cff5dba6234ac3a97b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_render_model" kindref="compound">idRenderModel</ref> *</type>
+        <definition>idRenderModel* idAnimator::SetModel</definition>
+        <argsstring>(const char *modelname)</argsstring>
+        <name>SetModel</name>
+        <param>
+          <type>const char *</type>
+          <declname>modelname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="511" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a39a521d36d0641c9abb65e339404931f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_render_model" kindref="compound">idRenderModel</ref> *</type>
+        <definition>idRenderModel* idAnimator::ModelHandle</definition>
+        <argsstring>(void) const </argsstring>
+        <name>ModelHandle</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="512" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac019d221c290e845a106f84edaaa7f52" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classid_decl_model_def" kindref="compound">idDeclModelDef</ref> *</type>
+        <definition>const idDeclModelDef* idAnimator::ModelDef</definition>
+        <argsstring>(void) const </argsstring>
+        <name>ModelDef</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="513" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a2e269614f373becec9713cc15b48da5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ForceUpdate</definition>
+        <argsstring>(void)</argsstring>
+        <name>ForceUpdate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="515" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1adceb9b76a42243cfde7b8e1f9f7f65ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ClearForceUpdate</definition>
+        <argsstring>(void)</argsstring>
+        <name>ClearForceUpdate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="516" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a91f4ea776d7abccc933d84bb6f4b7b80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::CreateFrame</definition>
+        <argsstring>(int animtime, bool force)</argsstring>
+        <name>CreateFrame</name>
+        <param>
+          <type>int</type>
+          <declname>animtime</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>force</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="517" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a0f290f2cee20d5be7497dc8176377844" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::FrameHasChanged</definition>
+        <argsstring>(int animtime) const </argsstring>
+        <name>FrameHasChanged</name>
+        <param>
+          <type>int</type>
+          <declname>animtime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="518" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ae7dd3f0d7413956c35ee60689e1078a7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::GetDelta</definition>
+        <argsstring>(int fromtime, int totime, idVec3 &amp;delta) const </argsstring>
+        <name>GetDelta</name>
+        <param>
+          <type>int</type>
+          <declname>fromtime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>totime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="519" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac5211d97dec3307c88705768f0945ac4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::GetDeltaRotation</definition>
+        <argsstring>(int fromtime, int totime, idMat3 &amp;delta) const </argsstring>
+        <name>GetDeltaRotation</name>
+        <param>
+          <type>int</type>
+          <declname>fromtime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>totime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="520" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aa1c06c49ddec70d22e1a4362dc4b5c35" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::GetOrigin</definition>
+        <argsstring>(int currentTime, idVec3 &amp;pos) const </argsstring>
+        <name>GetOrigin</name>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="521" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1af3d20b93ac26f063444f27110c531b05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::GetBounds</definition>
+        <argsstring>(int currentTime, idBounds &amp;bounds)</argsstring>
+        <name>GetBounds</name>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_bounds" kindref="compound">idBounds</ref> &amp;</type>
+          <declname>bounds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="522" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aee5eb92b0c8b64e5dbd83e4701c9523d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_anim_blend" kindref="compound">idAnimBlend</ref> *</type>
+        <definition>idAnimBlend* idAnimator::CurrentAnim</definition>
+        <argsstring>(int channelNum)</argsstring>
+        <name>CurrentAnim</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="524" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a83d489329b62206aa94408180e66f829" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::Clear</definition>
+        <argsstring>(int channelNum, int currentTime, int cleartime)</argsstring>
+        <name>Clear</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cleartime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="525" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1acc953988990bc1d113f2efc56e57f560" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetFrame</definition>
+        <argsstring>(int channelNum, int animnum, int frame, int currenttime, int blendtime)</argsstring>
+        <name>SetFrame</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currenttime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blendtime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="526" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a27409ffa6dbecd8beee334ef756defb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::CycleAnim</definition>
+        <argsstring>(int channelNum, int animnum, int currenttime, int blendtime)</argsstring>
+        <name>CycleAnim</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currenttime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blendtime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="527" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ab5d95d0b93b6310987d800a99c01a80c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::PlayAnim</definition>
+        <argsstring>(int channelNum, int animnum, int currenttime, int blendTime)</argsstring>
+        <name>PlayAnim</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currenttime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blendTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="528" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a808168544afb90f2a334903f8abce38b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SyncAnimChannels</definition>
+        <argsstring>(int channelNum, int fromChannelNum, int currenttime, int blendTime)</argsstring>
+        <name>SyncAnimChannels</name>
+        <param>
+          <type>int</type>
+          <declname>channelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fromChannelNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currenttime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blendTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="532" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1abf66621553409fce7dbc2410c99363c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetJointPos</definition>
+        <argsstring>(jointHandle_t jointnum, jointModTransform_t transform_type, const idVec3 &amp;pos)</argsstring>
+        <name>SetJointPos</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointnum</declname>
+        </param>
+        <param>
+          <type>jointModTransform_t</type>
+          <declname>transform_type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="534" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1dfc81ab42dbfd92474a2417d6b66a1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetJointAxis</definition>
+        <argsstring>(jointHandle_t jointnum, jointModTransform_t transform_type, const idMat3 &amp;mat)</argsstring>
+        <name>SetJointAxis</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointnum</declname>
+        </param>
+        <param>
+          <type>jointModTransform_t</type>
+          <declname>transform_type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>mat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="535" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a9ffb0443ac0eb221495806f0f6437268" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ClearJoint</definition>
+        <argsstring>(jointHandle_t jointnum)</argsstring>
+        <name>ClearJoint</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="536" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aa1d9aa168a7826e8d4088d1eed317e96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ClearAllJoints</definition>
+        <argsstring>(void)</argsstring>
+        <name>ClearAllJoints</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="537" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a301f954853aae54732e130eac9bba7a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::InitAFPose</definition>
+        <argsstring>(void)</argsstring>
+        <name>InitAFPose</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="539" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a16c58fd578d6ec3999165d6dbb8ef1dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetAFPoseJointMod</definition>
+        <argsstring>(const jointHandle_t jointNum, const AFJointModType_t mod, const idMat3 &amp;axis, const idVec3 &amp;origin)</argsstring>
+        <name>SetAFPoseJointMod</name>
+        <param>
+          <type>const jointHandle_t</type>
+          <declname>jointNum</declname>
+        </param>
+        <param>
+          <type>const AFJointModType_t</type>
+          <declname>mod</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="540" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a33c3f95f9a6e339356c09a9f2942fdee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::FinishAFPose</definition>
+        <argsstring>(int animnum, const idBounds &amp;bounds, const int time)</argsstring>
+        <name>FinishAFPose</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_bounds" kindref="compound">idBounds</ref> &amp;</type>
+          <declname>bounds</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="541" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a31cb8d5d9f75e0bf4da4e2e883b46698" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::SetAFPoseBlendWeight</definition>
+        <argsstring>(float blendWeight)</argsstring>
+        <name>SetAFPoseBlendWeight</name>
+        <param>
+          <type>float</type>
+          <declname>blendWeight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="542" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a9002bfc906acbf7eb6566bc78a22434a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::BlendAFPose</definition>
+        <argsstring>(idJointQuat *blendFrame) const </argsstring>
+        <name>BlendAFPose</name>
+        <param>
+          <type><ref refid="classid_joint_quat" kindref="compound">idJointQuat</ref> *</type>
+          <declname>blendFrame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="543" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a53a72467c1e6078eaf503d10f9fb057e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ClearAFPose</definition>
+        <argsstring>(void)</argsstring>
+        <name>ClearAFPose</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="544" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac7e385131e2f92941129df0de4cf261c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::ClearAllAnims</definition>
+        <argsstring>(int currentTime, int cleartime)</argsstring>
+        <name>ClearAllAnims</name>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cleartime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="546" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1e7c7974b09d073964e53b2efb1173d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idAnimator::GetJointHandle</definition>
+        <argsstring>(const char *name) const </argsstring>
+        <name>GetJointHandle</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="548" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a6b590309f341397c60fed7df1b42fd7c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* idAnimator::GetJointName</definition>
+        <argsstring>(jointHandle_t handle) const </argsstring>
+        <name>GetJointName</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="549" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ac5d4d63f41e4083d768998e499f71ee7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::GetChannelForJoint</definition>
+        <argsstring>(jointHandle_t joint) const </argsstring>
+        <name>GetChannelForJoint</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>joint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="550" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a7b228baa483a344234a506e807fc4b75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::GetJointTransform</definition>
+        <argsstring>(jointHandle_t jointHandle, int currenttime, idVec3 &amp;offset, idMat3 &amp;axis)</argsstring>
+        <name>GetJointTransform</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointHandle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currenttime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="551" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a558d3d6e0f4ca6801ac06eb5f202287a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAnimator::GetJointLocalTransform</definition>
+        <argsstring>(jointHandle_t jointHandle, int currentTime, idVec3 &amp;offset, idMat3 &amp;axis)</argsstring>
+        <name>GetJointLocalTransform</name>
+        <param>
+          <type>jointHandle_t</type>
+          <declname>jointHandle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="552" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a3c334333e912bcc1cfbb052be0d413de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structanim_flags__t" kindref="compound">animFlags_t</ref></type>
+        <definition>const animFlags_t idAnimator::GetAnimFlags</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>GetAnimFlags</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="554" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a043a49e3024ad7c7e6f693ebb1227f9e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::NumFrames</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>NumFrames</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="555" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1af99a2eb09d4df285e9e20c0cbe1b7527" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::NumSyncedAnims</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>NumSyncedAnims</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="556" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a8a3b18924bea5c6a6185d4040c2b73c2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* idAnimator::AnimName</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>AnimName</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="557" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ab7fa68cb87fca6a7f353fe13b760b7d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* idAnimator::AnimFullName</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>AnimFullName</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="558" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1a1358587f2f314d3284e4bb0e219b1a26" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAnimator::AnimLength</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>AnimLength</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="559" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1aa6cb921523df3e9d3fbdb42e63959327" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+        <definition>const idVec3&amp; idAnimator::TotalMovementDelta</definition>
+        <argsstring>(int animnum) const </argsstring>
+        <name>TotalMovementDelta</name>
+        <param>
+          <type>int</type>
+          <declname>animnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="560" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classid_animator_1acfead8f8a14f380b302917787a002005" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::FreeData</definition>
+        <argsstring>(void)</argsstring>
+        <name>FreeData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="569" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3293" bodyend="3315"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ae55d8a26a80ad9b4825b0c88abffa610" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::PushAnims</definition>
+        <argsstring>(int channel, int currentTime, int blendTime)</argsstring>
+        <name>PushAnims</name>
+        <param>
+          <type>int</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blendTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="570" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim_Blend.cpp" bodystart="3322" bodyend="3338"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1acfead8f8a14f380b302917787a002005" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::FreeData</definition>
+        <argsstring>(void)</argsstring>
+        <name>FreeData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="563" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_animator_1ae55d8a26a80ad9b4825b0c88abffa610" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idAnimator::PushAnims</definition>
+        <argsstring>(int channel, int currentTime, int blendTime)</argsstring>
+        <name>PushAnims</name>
+        <param>
+          <type>int</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currentTime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blendTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/anim/Anim.h" line="564" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" line="486" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/anim/Anim.h" bodystart="486" bodyend="594"/>
+    <listofallmembers>
+      <member refid="classid_animator_1ab1a6e83717d32a59ced1453a9e25bd20" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>AFPoseBlendWeight</name></member>
+      <member refid="classid_animator_1a101259eb13e961bb1e4c2100436a0f2f" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>AFPoseBounds</name></member>
+      <member refid="classid_animator_1a19edb91a711e2e02278815e506fd6816" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>AFPoseJointFrame</name></member>
+      <member refid="classid_animator_1a58cb977f88ccc8eee2ab761b13ef1896" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>AFPoseJointMods</name></member>
+      <member refid="classid_animator_1a2096720b13caf9024bc82389ee5ec483" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>AFPoseJoints</name></member>
+      <member refid="classid_animator_1ad1722bc309d0579dc8cd71312dca7fd2" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>AFPoseTime</name></member>
+      <member refid="classid_animator_1a5a652c59e9cb6b0a38087e9a4bff7a8b" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>Allocated</name></member>
+      <member refid="classid_animator_1a5a652c59e9cb6b0a38087e9a4bff7a8b" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>Allocated</name></member>
+      <member refid="classid_animator_1a59ef3696adae13799cc60a66a2cbf6b8" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>AnimFullName</name></member>
+      <member refid="classid_animator_1ab7fa68cb87fca6a7f353fe13b760b7d9" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>AnimFullName</name></member>
+      <member refid="classid_animator_1a1358587f2f314d3284e4bb0e219b1a26" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>AnimLength</name></member>
+      <member refid="classid_animator_1a1358587f2f314d3284e4bb0e219b1a26" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>AnimLength</name></member>
+      <member refid="classid_animator_1a97abe70c5f60a84a9684bf5c86e846da" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>AnimName</name></member>
+      <member refid="classid_animator_1a8a3b18924bea5c6a6185d4040c2b73c2" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>AnimName</name></member>
+      <member refid="classid_animator_1a9002bfc906acbf7eb6566bc78a22434a" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>BlendAFPose</name></member>
+      <member refid="classid_animator_1a9002bfc906acbf7eb6566bc78a22434a" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>BlendAFPose</name></member>
+      <member refid="classid_animator_1a4df3e9bce706f604102dce4974385dad" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>channels</name></member>
+      <member refid="classid_animator_1a83d489329b62206aa94408180e66f829" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>Clear</name></member>
+      <member refid="classid_animator_1a83d489329b62206aa94408180e66f829" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>Clear</name></member>
+      <member refid="classid_animator_1a53a72467c1e6078eaf503d10f9fb057e" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ClearAFPose</name></member>
+      <member refid="classid_animator_1a53a72467c1e6078eaf503d10f9fb057e" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ClearAFPose</name></member>
+      <member refid="classid_animator_1ac7e385131e2f92941129df0de4cf261c" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ClearAllAnims</name></member>
+      <member refid="classid_animator_1ac7e385131e2f92941129df0de4cf261c" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ClearAllAnims</name></member>
+      <member refid="classid_animator_1aa1d9aa168a7826e8d4088d1eed317e96" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ClearAllJoints</name></member>
+      <member refid="classid_animator_1aa1d9aa168a7826e8d4088d1eed317e96" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ClearAllJoints</name></member>
+      <member refid="classid_animator_1adceb9b76a42243cfde7b8e1f9f7f65ee" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ClearForceUpdate</name></member>
+      <member refid="classid_animator_1adceb9b76a42243cfde7b8e1f9f7f65ee" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ClearForceUpdate</name></member>
+      <member refid="classid_animator_1a9ffb0443ac0eb221495806f0f6437268" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ClearJoint</name></member>
+      <member refid="classid_animator_1a9ffb0443ac0eb221495806f0f6437268" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ClearJoint</name></member>
+      <member refid="classid_animator_1a91f4ea776d7abccc933d84bb6f4b7b80" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>CreateFrame</name></member>
+      <member refid="classid_animator_1a91f4ea776d7abccc933d84bb6f4b7b80" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>CreateFrame</name></member>
+      <member refid="classid_animator_1ab73a01b5454e368f05be291dd14755b6" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>CurrentAnim</name></member>
+      <member refid="classid_animator_1aee5eb92b0c8b64e5dbd83e4701c9523d" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>CurrentAnim</name></member>
+      <member refid="classid_animator_1a27409ffa6dbecd8beee334ef756defb0" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>CycleAnim</name></member>
+      <member refid="classid_animator_1a27409ffa6dbecd8beee334ef756defb0" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>CycleAnim</name></member>
+      <member refid="classid_animator_1a1ae3e6a1d27e8dd45f66cad4713f851c" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>entity</name></member>
+      <member refid="classid_animator_1a33c3f95f9a6e339356c09a9f2942fdee" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>FinishAFPose</name></member>
+      <member refid="classid_animator_1a33c3f95f9a6e339356c09a9f2942fdee" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>FinishAFPose</name></member>
+      <member refid="classid_animator_1a037e175d8a15cdca305c981caff5a491" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>forceUpdate</name></member>
+      <member refid="classid_animator_1a2e269614f373becec9713cc15b48da5b" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ForceUpdate</name></member>
+      <member refid="classid_animator_1a2e269614f373becec9713cc15b48da5b" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ForceUpdate</name></member>
+      <member refid="classid_animator_1a4c1a66caf53ccc6a011a60b4ac3a2d66" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>frameBounds</name></member>
+      <member refid="classid_animator_1a0f290f2cee20d5be7497dc8176377844" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>FrameHasChanged</name></member>
+      <member refid="classid_animator_1a0f290f2cee20d5be7497dc8176377844" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>FrameHasChanged</name></member>
+      <member refid="classid_animator_1acfead8f8a14f380b302917787a002005" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>FreeData</name></member>
+      <member refid="classid_animator_1acfead8f8a14f380b302917787a002005" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>FreeData</name></member>
+      <member refid="classid_animator_1a07dc64fa0dab173473cc72fdbf06d636" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetAnim</name></member>
+      <member refid="classid_animator_1a1ea660570aaf32401c72d91f4e2ac335" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetAnim</name></member>
+      <member refid="classid_animator_1ac10d70432ffc1501f657c358ef81db3c" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetAnim</name></member>
+      <member refid="classid_animator_1a1ea660570aaf32401c72d91f4e2ac335" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetAnim</name></member>
+      <member refid="classid_animator_1a3c334333e912bcc1cfbb052be0d413de" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetAnimFlags</name></member>
+      <member refid="classid_animator_1a3c334333e912bcc1cfbb052be0d413de" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetAnimFlags</name></member>
+      <member refid="classid_animator_1af3d20b93ac26f063444f27110c531b05" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetBounds</name></member>
+      <member refid="classid_animator_1af3d20b93ac26f063444f27110c531b05" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetBounds</name></member>
+      <member refid="classid_animator_1ac5d4d63f41e4083d768998e499f71ee7" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetChannelForJoint</name></member>
+      <member refid="classid_animator_1ac5d4d63f41e4083d768998e499f71ee7" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetChannelForJoint</name></member>
+      <member refid="classid_animator_1ae7dd3f0d7413956c35ee60689e1078a7" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetDelta</name></member>
+      <member refid="classid_animator_1ae7dd3f0d7413956c35ee60689e1078a7" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetDelta</name></member>
+      <member refid="classid_animator_1ac5211d97dec3307c88705768f0945ac4" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetDeltaRotation</name></member>
+      <member refid="classid_animator_1ac5211d97dec3307c88705768f0945ac4" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetDeltaRotation</name></member>
+      <member refid="classid_animator_1ac6c0b131dec421acac73c54860c322fa" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetEntity</name></member>
+      <member refid="classid_animator_1a459fd2c4dfe9ea2ff2479f979dc47bcf" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetEntity</name></member>
+      <member refid="classid_animator_1a8d22676ca688a7f2b06d5099186ae761" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetFirstChild</name></member>
+      <member refid="classid_animator_1a625bae6eee29af06750bb3a64ab52640" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetFirstChild</name></member>
+      <member refid="classid_animator_1a8d22676ca688a7f2b06d5099186ae761" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetFirstChild</name></member>
+      <member refid="classid_animator_1a625bae6eee29af06750bb3a64ab52640" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetFirstChild</name></member>
+      <member refid="classid_animator_1a1e7c7974b09d073964e53b2efb1173d8" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJointHandle</name></member>
+      <member refid="classid_animator_1a1e7c7974b09d073964e53b2efb1173d8" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJointHandle</name></member>
+      <member refid="classid_animator_1a3fc02e06e70d619afbb1affe31c2b480" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJointList</name></member>
+      <member refid="classid_animator_1a3fc02e06e70d619afbb1affe31c2b480" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJointList</name></member>
+      <member refid="classid_animator_1a558d3d6e0f4ca6801ac06eb5f202287a" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJointLocalTransform</name></member>
+      <member refid="classid_animator_1a558d3d6e0f4ca6801ac06eb5f202287a" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJointLocalTransform</name></member>
+      <member refid="classid_animator_1a1c18dcc74db358d5ce3eae2585faa800" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJointName</name></member>
+      <member refid="classid_animator_1a6b590309f341397c60fed7df1b42fd7c" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJointName</name></member>
+      <member refid="classid_animator_1a25c2321c4b1afc5025b1c61faa561ed6" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJoints</name></member>
+      <member refid="classid_animator_1a25c2321c4b1afc5025b1c61faa561ed6" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJoints</name></member>
+      <member refid="classid_animator_1a7b228baa483a344234a506e807fc4b75" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJointTransform</name></member>
+      <member refid="classid_animator_1a7b228baa483a344234a506e807fc4b75" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetJointTransform</name></member>
+      <member refid="classid_animator_1aa1c06c49ddec70d22e1a4362dc4b5c35" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetOrigin</name></member>
+      <member refid="classid_animator_1aa1c06c49ddec70d22e1a4362dc4b5c35" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>GetOrigin</name></member>
+      <member refid="classid_animator_1acfa7c85c23fb8dd288d9ec9e1f187760" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>HasAnim</name></member>
+      <member refid="classid_animator_1acfa7c85c23fb8dd288d9ec9e1f187760" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>HasAnim</name></member>
+      <member refid="classid_animator_1afbdea6d6b178671dde6cdb97270e71bd" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>idAnimator</name></member>
+      <member refid="classid_animator_1afbdea6d6b178671dde6cdb97270e71bd" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>idAnimator</name></member>
+      <member refid="classid_animator_1a301f954853aae54732e130eac9bba7a5" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>InitAFPose</name></member>
+      <member refid="classid_animator_1a301f954853aae54732e130eac9bba7a5" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>InitAFPose</name></member>
+      <member refid="classid_animator_1aa10c470e57d0e399581ce23b9d2bdee9" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>IsAnimating</name></member>
+      <member refid="classid_animator_1aa10c470e57d0e399581ce23b9d2bdee9" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>IsAnimating</name></member>
+      <member refid="classid_animator_1a0180e63e12b6981b396fcdb46058a475" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>jointMods</name></member>
+      <member refid="classid_animator_1a0f97ba83981db7ce46de1fa80e40e96e" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>joints</name></member>
+      <member refid="classid_animator_1ac502a734e888d9ab3878398df9178224" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>lastTransformTime</name></member>
+      <member refid="classid_animator_1aac4e0ad8b348048d49f4039c0b9c73ea" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ModelDef</name></member>
+      <member refid="classid_animator_1ac019d221c290e845a106f84edaaa7f52" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ModelDef</name></member>
+      <member refid="classid_animator_1a292612dcc4b28f4c1945532f350aef88" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>modelDef</name></member>
+      <member refid="classid_animator_1acf484f9c0b923047e2d736d85546cea9" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ModelHandle</name></member>
+      <member refid="classid_animator_1a39a521d36d0641c9abb65e339404931f" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ModelHandle</name></member>
+      <member refid="classid_animator_1ab311fc0d51ac2b26a9f2ecca7a714bf4" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>NumAnims</name></member>
+      <member refid="classid_animator_1ab311fc0d51ac2b26a9f2ecca7a714bf4" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>NumAnims</name></member>
+      <member refid="classid_animator_1a043a49e3024ad7c7e6f693ebb1227f9e" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>NumFrames</name></member>
+      <member refid="classid_animator_1a043a49e3024ad7c7e6f693ebb1227f9e" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>NumFrames</name></member>
+      <member refid="classid_animator_1ae4a485a24d1f54c8d4d93a8ae6cff659" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>NumJoints</name></member>
+      <member refid="classid_animator_1ae4a485a24d1f54c8d4d93a8ae6cff659" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>NumJoints</name></member>
+      <member refid="classid_animator_1a6a68b47b719663d6420d829ff2014764" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>numJoints</name></member>
+      <member refid="classid_animator_1af99a2eb09d4df285e9e20c0cbe1b7527" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>NumSyncedAnims</name></member>
+      <member refid="classid_animator_1af99a2eb09d4df285e9e20c0cbe1b7527" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>NumSyncedAnims</name></member>
+      <member refid="classid_animator_1ab5d95d0b93b6310987d800a99c01a80c" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>PlayAnim</name></member>
+      <member refid="classid_animator_1ab5d95d0b93b6310987d800a99c01a80c" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>PlayAnim</name></member>
+      <member refid="classid_animator_1ae55d8a26a80ad9b4825b0c88abffa610" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>PushAnims</name></member>
+      <member refid="classid_animator_1ae55d8a26a80ad9b4825b0c88abffa610" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>PushAnims</name></member>
+      <member refid="classid_animator_1af090a67690767a2296543fe6ca86ddc5" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>RemoveOrigin</name></member>
+      <member refid="classid_animator_1af090a67690767a2296543fe6ca86ddc5" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>RemoveOrigin</name></member>
+      <member refid="classid_animator_1a093b4f35fd70d0c9d29bee32d59d18d0" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>removeOriginOffset</name></member>
+      <member refid="classid_animator_1ae8245abca7ba13d44ac10c1fe2c8b863" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>RemoveOriginOffset</name></member>
+      <member refid="classid_animator_1ae8245abca7ba13d44ac10c1fe2c8b863" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>RemoveOriginOffset</name></member>
+      <member refid="classid_animator_1a11c8d1cc87fd29269c6810a8dd3ca406" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>Restore</name></member>
+      <member refid="classid_animator_1a11c8d1cc87fd29269c6810a8dd3ca406" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>Restore</name></member>
+      <member refid="classid_animator_1a1222ffc99bcaece516734b840e5c2b43" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>Save</name></member>
+      <member refid="classid_animator_1a1222ffc99bcaece516734b840e5c2b43" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>Save</name></member>
+      <member refid="classid_animator_1acad6ef510f18c6dceb8982ec8cd2c246" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ServiceAnims</name></member>
+      <member refid="classid_animator_1acad6ef510f18c6dceb8982ec8cd2c246" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>ServiceAnims</name></member>
+      <member refid="classid_animator_1a31cb8d5d9f75e0bf4da4e2e883b46698" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetAFPoseBlendWeight</name></member>
+      <member refid="classid_animator_1a31cb8d5d9f75e0bf4da4e2e883b46698" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetAFPoseBlendWeight</name></member>
+      <member refid="classid_animator_1a16c58fd578d6ec3999165d6dbb8ef1dc" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetAFPoseJointMod</name></member>
+      <member refid="classid_animator_1a16c58fd578d6ec3999165d6dbb8ef1dc" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetAFPoseJointMod</name></member>
+      <member refid="classid_animator_1ac2ab0bc45a009affc194d853ba0ff078" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetEntity</name></member>
+      <member refid="classid_animator_1ac2ab0bc45a009affc194d853ba0ff078" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetEntity</name></member>
+      <member refid="classid_animator_1acc953988990bc1d113f2efc56e57f560" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetFrame</name></member>
+      <member refid="classid_animator_1acc953988990bc1d113f2efc56e57f560" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetFrame</name></member>
+      <member refid="classid_animator_1a1dfc81ab42dbfd92474a2417d6b66a1e" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetJointAxis</name></member>
+      <member refid="classid_animator_1a1dfc81ab42dbfd92474a2417d6b66a1e" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetJointAxis</name></member>
+      <member refid="classid_animator_1abf66621553409fce7dbc2410c99363c7" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetJointPos</name></member>
+      <member refid="classid_animator_1abf66621553409fce7dbc2410c99363c7" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetJointPos</name></member>
+      <member refid="classid_animator_1a27eb16392730dafb89a61bf366542517" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetModel</name></member>
+      <member refid="classid_animator_1a6b2ee6c5b4cf8cff5dba6234ac3a97b5" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SetModel</name></member>
+      <member refid="classid_animator_1aa28ac511f4d24baca91f6ee8b32ee876" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>Size</name></member>
+      <member refid="classid_animator_1aa28ac511f4d24baca91f6ee8b32ee876" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>Size</name></member>
+      <member refid="classid_animator_1ad3d59343694a9099c37fadcb534bc7a7" prot="private" virt="non-virtual"><scope>idAnimator</scope><name>stoppedAnimatingUpdate</name></member>
+      <member refid="classid_animator_1a808168544afb90f2a334903f8abce38b" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SyncAnimChannels</name></member>
+      <member refid="classid_animator_1a808168544afb90f2a334903f8abce38b" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>SyncAnimChannels</name></member>
+      <member refid="classid_animator_1adcbc32db388952b385fe02c56b455449" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>TotalMovementDelta</name></member>
+      <member refid="classid_animator_1aa6cb921523df3e9d3fbdb42e63959327" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>TotalMovementDelta</name></member>
+      <member refid="classid_animator_1afb914089e1cde605db1b19279e463a8e" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>~idAnimator</name></member>
+      <member refid="classid_animator_1afb914089e1cde605db1b19279e463a8e" prot="public" virt="non-virtual"><scope>idAnimator</scope><name>~idAnimator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jchuff_8h" kind="file">
+    <compoundname>jchuff.h</compoundname>
+    <includedby refid="jchuff_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jchuff.c</includedby>
+    <includedby refid="jcphuff_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jcphuff.c</includedby>
+    <innerclass refid="structc__derived__tbl" prot="public">c_derived_tbl</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jchuff_8h_1ac8933608f0268dd00d9820ffe580fdc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void jpeg_make_c_derived_tbl</type>
+        <definition>EXTERN void jpeg_make_c_derived_tbl JPP</definition>
+        <argsstring>((j_compress_ptr cinfo, JHUFF_TBL *htbl, c_derived_tbl **pdtbl))</argsstring>
+        <name>JPP</name>
+        <param>
+          <type>(<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref> cinfo, <ref refid="struct_j_h_u_f_f___t_b_l" kindref="compound">JHUFF_TBL</ref> *htbl, <ref refid="structc__derived__tbl" kindref="compound">c_derived_tbl</ref> **pdtbl)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jchuff.h" line="29" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jchuff_8h_1a7acfd9ccd431e1c7900318e47727a1a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void jpeg_gen_optimal_table</type>
+        <definition>EXTERN void jpeg_gen_optimal_table JPP</definition>
+        <argsstring>((j_compress_ptr cinfo, JHUFF_TBL *htbl, long freq[]))</argsstring>
+        <name>JPP</name>
+        <param>
+          <type>(<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref> cinfo, <ref refid="struct_j_h_u_f_f___t_b_l" kindref="compound">JHUFF_TBL</ref> *htbl, long freq[])</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jchuff.h" line="33" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jchuff.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1991-1995,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>declarations<sp/>for<sp/>Huffman<sp/>entropy<sp/>encoding<sp/>routines</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>that<sp/>are<sp/>shared<sp/>between<sp/>the<sp/>sequential<sp/>encoder<sp/>(jchuff.c)<sp/>and<sp/>the</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>progressive<sp/>encoder<sp/>(jcphuff.c).<sp/><sp/>No<sp/>other<sp/>modules<sp/>need<sp/>to<sp/>see<sp/>these.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Derived<sp/>data<sp/>constructed<sp/>for<sp/>each<sp/>Huffman<sp/>table<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="structc__derived__tbl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ehufco[256];<sp/></highlight><highlight class="comment">/*<sp/>code<sp/>for<sp/>each<sp/>symbol<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>ehufsi[256];<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>length<sp/>of<sp/>code<sp/>for<sp/>each<sp/>symbol<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>no<sp/>code<sp/>has<sp/>been<sp/>allocated<sp/>for<sp/>a<sp/>symbol<sp/>S,<sp/>ehufsi[S]<sp/>contains<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}<sp/><ref refid="structc__derived__tbl" kindref="compound">c_derived_tbl</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Short<sp/>forms<sp/>of<sp/>external<sp/>names<sp/>for<sp/>systems<sp/>with<sp/>brain-damaged<sp/>linkers.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NEED_SHORT_EXTERNAL_NAMES</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_make_c_derived_tbl<sp/>jMkCDerived</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_gen_optimal_table<sp/><sp/>jGenOptTbl</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>NEED_SHORT_EXTERNAL_NAMES<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Expand<sp/>a<sp/>Huffman<sp/>table<sp/>definition<sp/>into<sp/>the<sp/>derived<sp/>format<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_make_c_derived_tbl<sp/>JPP((<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref><sp/>cinfo,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_j_h_u_f_f___t_b_l" kindref="compound">JHUFF_TBL</ref><sp/>*<sp/>htbl,<sp/><ref refid="structc__derived__tbl" kindref="compound">c_derived_tbl</ref><sp/>**<sp/>pdtbl));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Generate<sp/>an<sp/>optimal<sp/>table<sp/>definition<sp/>given<sp/>the<sp/>specified<sp/>counts<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_gen_optimal_table<sp/>JPP((<ref refid="structjpeg__compress__struct" kindref="compound">j_compress_ptr</ref><sp/>cinfo,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_j_h_u_f_f___t_b_l" kindref="compound">JHUFF_TBL</ref><sp/>*<sp/>htbl,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>freq[]));</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jchuff.h"/>
+  </compounddef>
+</doxygen>

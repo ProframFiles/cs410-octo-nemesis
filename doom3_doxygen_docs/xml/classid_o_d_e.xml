@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_o_d_e" kind="class" prot="public" abstract="yes">
+    <compoundname>idODE</compoundname>
+    <derivedcompoundref refid="classid_o_d_e___euler" prot="public" virt="non-virtual">idODE_Euler</derivedcompoundref>
+    <derivedcompoundref refid="classid_o_d_e___midpoint" prot="public" virt="non-virtual">idODE_Midpoint</derivedcompoundref>
+    <derivedcompoundref refid="classid_o_d_e___r_k4" prot="public" virt="non-virtual">idODE_RK4</derivedcompoundref>
+    <derivedcompoundref refid="classid_o_d_e___r_k4_adaptive" prot="public" virt="non-virtual">idODE_RK4Adaptive</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classid_o_d_e_1a0f5aedcadb5054436d0c627db4471324" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idODE::dimension</definition>
+        <argsstring></argsstring>
+        <name>dimension</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" line="57" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_o_d_e_1afd3978840018b7fe2de934dfdb8c8c24" prot="protected" static="no" mutable="no">
+        <type>deriveFunction_t</type>
+        <definition>deriveFunction_t idODE::derive</definition>
+        <argsstring></argsstring>
+        <name>derive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" line="58" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_o_d_e_1a4cf5bab19fb70cb779a70f9bf98922ec" prot="protected" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* idODE::userData</definition>
+        <argsstring></argsstring>
+        <name>userData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" line="59" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_o_d_e_1adcd73decc06d38de82520017e7456e34" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual idODE::~idODE</definition>
+        <argsstring>(void)</argsstring>
+        <name>~idODE</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" line="52" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_o_d_e_1a68ace6c849ec0875f45df17626039ba4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float idODE::Evaluate</definition>
+        <argsstring>(const float *state, float *newState, float t0, float t1)=0</argsstring>
+        <name>Evaluate</name>
+        <reimplementedby refid="classid_o_d_e___euler_1ab68c32fbe87ff1c2c5190ecd9fc343c1">Evaluate</reimplementedby>
+        <reimplementedby refid="classid_o_d_e___midpoint_1aecc2b8a169075165406991cbe5368763">Evaluate</reimplementedby>
+        <reimplementedby refid="classid_o_d_e___r_k4_1ab89333a9f1004f3461c1d81b1d7b4b40">Evaluate</reimplementedby>
+        <reimplementedby refid="classid_o_d_e___r_k4_adaptive_1abc013ac3a3096c767887762a3d48e239">Evaluate</reimplementedby>
+        <param>
+          <type>const float *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>newState</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" line="54" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="25802">
+        <label>idODE</label>
+        <link refid="classid_o_d_e"/>
+      </node>
+      <node id="25805">
+        <label>idODE_RK4</label>
+        <link refid="classid_o_d_e___r_k4"/>
+        <childnode refid="25802" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25803">
+        <label>idODE_Euler</label>
+        <link refid="classid_o_d_e___euler"/>
+        <childnode refid="25802" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25806">
+        <label>idODE_RK4Adaptive</label>
+        <link refid="classid_o_d_e___r_k4_adaptive"/>
+        <childnode refid="25802" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25804">
+        <label>idODE_Midpoint</label>
+        <link refid="classid_o_d_e___midpoint"/>
+        <childnode refid="25802" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" line="49" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Ode.h" bodystart="49" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classid_o_d_e_1afd3978840018b7fe2de934dfdb8c8c24" prot="protected" virt="non-virtual"><scope>idODE</scope><name>derive</name></member>
+      <member refid="classid_o_d_e_1a0f5aedcadb5054436d0c627db4471324" prot="protected" virt="non-virtual"><scope>idODE</scope><name>dimension</name></member>
+      <member refid="classid_o_d_e_1a68ace6c849ec0875f45df17626039ba4" prot="public" virt="pure-virtual"><scope>idODE</scope><name>Evaluate</name></member>
+      <member refid="classid_o_d_e_1a4cf5bab19fb70cb779a70f9bf98922ec" prot="protected" virt="non-virtual"><scope>idODE</scope><name>userData</name></member>
+      <member refid="classid_o_d_e_1adcd73decc06d38de82520017e7456e34" prot="public" virt="virtual"><scope>idODE</scope><name>~idODE</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

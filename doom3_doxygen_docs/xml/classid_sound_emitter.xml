@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_sound_emitter" kind="class" prot="public" abstract="yes">
+    <compoundname>idSoundEmitter</compoundname>
+    <derivedcompoundref refid="classid_sound_emitter_local" prot="public" virt="non-virtual">idSoundEmitterLocal</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_sound_emitter_1a5f3d658620d296589a6c6ca88983b8c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual idSoundEmitter::~idSoundEmitter</definition>
+        <argsstring>(void)</argsstring>
+        <name>~idSoundEmitter</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="152" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/sound.h" bodystart="152" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_sound_emitter_1ac1ec6eea638ee3f9830abe4dbc6599c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idSoundEmitter::Free</definition>
+        <argsstring>(bool immediate)=0</argsstring>
+        <name>Free</name>
+        <reimplementedby refid="classid_sound_emitter_local_1a1e0786757c60c442ead5bf7ca77d9e89">Free</reimplementedby>
+        <param>
+          <type>bool</type>
+          <declname>immediate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="157" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_sound_emitter_1a81d13e4777b8e04510987216f4cd3481" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idSoundEmitter::UpdateEmitter</definition>
+        <argsstring>(const idVec3 &amp;origin, int listenerId, const soundShaderParms_t *parms)=0</argsstring>
+        <name>UpdateEmitter</name>
+        <reimplementedby refid="classid_sound_emitter_local_1a1dcc3788112d4e7d110c83d75482d6fa">UpdateEmitter</reimplementedby>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>listenerId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structsound_shader_parms__t" kindref="compound">soundShaderParms_t</ref> *</type>
+          <declname>parms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="161" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_sound_emitter_1a54b35c40b71940cffaccfab10aa9d9a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int idSoundEmitter::StartSound</definition>
+        <argsstring>(const idSoundShader *shader, const s_channelType channel, float diversity=0, int shaderFlags=0, bool allowSlow=true)=0</argsstring>
+        <name>StartSound</name>
+        <reimplementedby refid="classid_sound_emitter_local_1a60be683acd3d4f2dae4be7aaff15758a">StartSound</reimplementedby>
+        <param>
+          <type>const <ref refid="classid_sound_shader" kindref="compound">idSoundShader</ref> *</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type>const s_channelType</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>diversity</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>shaderFlags</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>allowSlow</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="164" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_sound_emitter_1a07d9278036d84a62a89602de5588fd51" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idSoundEmitter::ModifySound</definition>
+        <argsstring>(const s_channelType channel, const soundShaderParms_t *parms)=0</argsstring>
+        <name>ModifySound</name>
+        <reimplementedby refid="classid_sound_emitter_local_1a94dd2f19db54b93fb5232f11924d28cd">ModifySound</reimplementedby>
+        <param>
+          <type>const s_channelType</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structsound_shader_parms__t" kindref="compound">soundShaderParms_t</ref> *</type>
+          <declname>parms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="167" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_sound_emitter_1a93e84e7b6e2eac8e6e4a63c9885a79e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idSoundEmitter::StopSound</definition>
+        <argsstring>(const s_channelType channel)=0</argsstring>
+        <name>StopSound</name>
+        <reimplementedby refid="classid_sound_emitter_local_1a4314309739ae13a24da6dc12f7597696">StopSound</reimplementedby>
+        <param>
+          <type>const s_channelType</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="168" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_sound_emitter_1a42c71620b8071240e471e798065cd43e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idSoundEmitter::FadeSound</definition>
+        <argsstring>(const s_channelType channel, float to, float over)=0</argsstring>
+        <name>FadeSound</name>
+        <reimplementedby refid="classid_sound_emitter_local_1ae76b416836dfbaad2afb8664356e8048">FadeSound</reimplementedby>
+        <param>
+          <type>const s_channelType</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>over</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="170" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_sound_emitter_1ab065ef3f39a586d7214492691bb6a969" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idSoundEmitter::CurrentlyPlaying</definition>
+        <argsstring>(void) const =0</argsstring>
+        <name>CurrentlyPlaying</name>
+        <reimplementedby refid="classid_sound_emitter_local_1afe15e505e4bd7589847c602da6ae88d2">CurrentlyPlaying</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="175" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_sound_emitter_1a9353a5a12178a692d5def3993396d7e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float idSoundEmitter::CurrentAmplitude</definition>
+        <argsstring>(void)=0</argsstring>
+        <name>CurrentAmplitude</name>
+        <reimplementedby refid="classid_sound_emitter_local_1a9fba341b6084e32cb19845b747e4f00b">CurrentAmplitude</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="180" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_sound_emitter_1a0b07c534ffbc9510cddc810e865fb5b6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int idSoundEmitter::Index</definition>
+        <argsstring>(void) const =0</argsstring>
+        <name>Index</name>
+        <reimplementedby refid="classid_sound_emitter_local_1acd7fdbaa2ad3795a9361d1bf107125ab">Index</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="183" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="27710">
+        <label>idSoundEmitterLocal</label>
+        <link refid="classid_sound_emitter_local"/>
+        <childnode refid="27709" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27709">
+        <label>idSoundEmitter</label>
+        <link refid="classid_sound_emitter"/>
+      </node>
+    </inheritancegraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/sound/sound.h" line="150" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/sound.h" bodystart="150" bodyend="184"/>
+    <listofallmembers>
+      <member refid="classid_sound_emitter_1a9353a5a12178a692d5def3993396d7e7" prot="public" virt="pure-virtual"><scope>idSoundEmitter</scope><name>CurrentAmplitude</name></member>
+      <member refid="classid_sound_emitter_1ab065ef3f39a586d7214492691bb6a969" prot="public" virt="pure-virtual"><scope>idSoundEmitter</scope><name>CurrentlyPlaying</name></member>
+      <member refid="classid_sound_emitter_1a42c71620b8071240e471e798065cd43e" prot="public" virt="pure-virtual"><scope>idSoundEmitter</scope><name>FadeSound</name></member>
+      <member refid="classid_sound_emitter_1ac1ec6eea638ee3f9830abe4dbc6599c4" prot="public" virt="pure-virtual"><scope>idSoundEmitter</scope><name>Free</name></member>
+      <member refid="classid_sound_emitter_1a0b07c534ffbc9510cddc810e865fb5b6" prot="public" virt="pure-virtual"><scope>idSoundEmitter</scope><name>Index</name></member>
+      <member refid="classid_sound_emitter_1a07d9278036d84a62a89602de5588fd51" prot="public" virt="pure-virtual"><scope>idSoundEmitter</scope><name>ModifySound</name></member>
+      <member refid="classid_sound_emitter_1a54b35c40b71940cffaccfab10aa9d9a0" prot="public" virt="pure-virtual"><scope>idSoundEmitter</scope><name>StartSound</name></member>
+      <member refid="classid_sound_emitter_1a93e84e7b6e2eac8e6e4a63c9885a79e0" prot="public" virt="pure-virtual"><scope>idSoundEmitter</scope><name>StopSound</name></member>
+      <member refid="classid_sound_emitter_1a81d13e4777b8e04510987216f4cd3481" prot="public" virt="pure-virtual"><scope>idSoundEmitter</scope><name>UpdateEmitter</name></member>
+      <member refid="classid_sound_emitter_1a5f3d658620d296589a6c6ca88983b8c7" prot="public" virt="virtual"><scope>idSoundEmitter</scope><name>~idSoundEmitter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

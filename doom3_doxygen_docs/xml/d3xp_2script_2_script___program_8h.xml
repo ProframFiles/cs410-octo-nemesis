@@ -1,0 +1,1455 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d3xp_2script_2_script___program_8h" kind="file">
+    <compoundname>Script_Program.h</compoundname>
+    <includedby refid="d3xp_2_game__local_8h" local="yes">E:/sources/3rd_party/DOOM/neo/d3xp/Game_local.h</includedby>
+    <innerclass refid="classfunction__t" prot="public">function_t</innerclass>
+    <innerclass refid="unioneval__s" prot="public">eval_s</innerclass>
+    <innerclass refid="classid_type_def" prot="public">idTypeDef</innerclass>
+    <innerclass refid="classid_script_object" prot="public">idScriptObject</innerclass>
+    <innerclass refid="classid_script_variable" prot="public">idScriptVariable</innerclass>
+    <innerclass refid="classid_compile_error" prot="public">idCompileError</innerclass>
+    <innerclass refid="unionvar_eval__s" prot="public">varEval_s</innerclass>
+    <innerclass refid="classid_var_def" prot="public">idVarDef</innerclass>
+    <innerclass refid="classid_var_def_name" prot="public">idVarDefName</innerclass>
+    <innerclass refid="structstatement__s" prot="public">statement_s</innerclass>
+    <innerclass refid="classid_program" prot="public">idProgram</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="d3xp_2script_2_script___program_8h_1a4fa9aad0e9c7cc2e344b679cdbb2b67d" prot="public" static="no">
+        <name>MAX_STRING_LEN</name>
+        <initializer>128</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="41" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3xp_2script_2_script___program_8h_1a0db09fce814603217ee7f46b2c43de77" prot="public" static="no">
+        <name>MAX_GLOBALS</name>
+        <initializer>196608</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="45" column="10" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3xp_2script_2_script___program_8h_1a56616411e56f79c8ef71d13a76713622" prot="public" static="no">
+        <name>MAX_STRINGS</name>
+        <initializer>1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="47" column="10" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3xp_2script_2_script___program_8h_1aaebb1e5a1a96d407cf9f2164c7a050ac" prot="public" static="no">
+        <name>MAX_FUNCS</name>
+        <initializer>3072</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="52" column="10" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3xp_2script_2_script___program_8h_1afae0f75eb78abdd32744a37ffe989266" prot="public" static="no">
+        <name>MAX_STATEMENTS</name>
+        <initializer>81920</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="58" column="10" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aec" prot="public" static="no">
+        <name>etype_t</name>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca7737ae06e964c273399de5ffed2f4811" prot="public">
+          <name>ev_error</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca585e3247b6f4ed41f87bf65c980c09a2" prot="public">
+          <name>ev_void</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca99a769ed2eb1489a8fb7b1b7e7ae3a88" prot="public">
+          <name>ev_scriptevent</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecaf9f50af377fed3d6ef8aa8c11f1db3d0" prot="public">
+          <name>ev_namespace</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecaa32dac1dc8e04d67a4a2f4794f15aabb" prot="public">
+          <name>ev_string</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecad37097221d4122b271d7e17614fdc4e0" prot="public">
+          <name>ev_float</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca5b713b13ab580bb84d294b64c099b06e" prot="public">
+          <name>ev_vector</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca5cae21391bca9136a74513b8dc070838" prot="public">
+          <name>ev_entity</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca90794d242ee04edd426545df93d13a5e" prot="public">
+          <name>ev_field</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca3d1f3f894ab2d5d819e92dff93114264" prot="public">
+          <name>ev_function</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecac28085a61884ef38037631d9d7a01513" prot="public">
+          <name>ev_virtualfunction</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecaee9574ab399258939dd020c85bc52c76" prot="public">
+          <name>ev_pointer</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca977c18acd848b80fe837992a4270098d" prot="public">
+          <name>ev_object</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecaf449ca991bd9989488c28044db967ff5" prot="public">
+          <name>ev_jumpoffset</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca192cc09610d46587aac06f4efb2b9ca7" prot="public">
+          <name>ev_argsize</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3xp_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca048994511bacf875a543420a6a802cbd" prot="public">
+          <name>ev_boolean</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca7737ae06e964c273399de5ffed2f4811" prot="public">
+          <name>ev_error</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca585e3247b6f4ed41f87bf65c980c09a2" prot="public">
+          <name>ev_void</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca99a769ed2eb1489a8fb7b1b7e7ae3a88" prot="public">
+          <name>ev_scriptevent</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecaf9f50af377fed3d6ef8aa8c11f1db3d0" prot="public">
+          <name>ev_namespace</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecaa32dac1dc8e04d67a4a2f4794f15aabb" prot="public">
+          <name>ev_string</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecad37097221d4122b271d7e17614fdc4e0" prot="public">
+          <name>ev_float</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca5b713b13ab580bb84d294b64c099b06e" prot="public">
+          <name>ev_vector</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca5cae21391bca9136a74513b8dc070838" prot="public">
+          <name>ev_entity</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca90794d242ee04edd426545df93d13a5e" prot="public">
+          <name>ev_field</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca3d1f3f894ab2d5d819e92dff93114264" prot="public">
+          <name>ev_function</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecac28085a61884ef38037631d9d7a01513" prot="public">
+          <name>ev_virtualfunction</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecaee9574ab399258939dd020c85bc52c76" prot="public">
+          <name>ev_pointer</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca977c18acd848b80fe837992a4270098d" prot="public">
+          <name>ev_object</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aecaf449ca991bd9989488c28044db967ff5" prot="public">
+          <name>ev_jumpoffset</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca192cc09610d46587aac06f4efb2b9ca7" prot="public">
+          <name>ev_argsize</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="game_2script_2_script___program_8h_1abc686f256c41753ff937886598c78aeca048994511bacf875a543420a6a802cbd" prot="public">
+          <name>ev_boolean</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="61" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="61" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="d3xp_2script_2_script___program_8h_1adbc9ee5cb58b3a398c286fc23efefb5c" prot="public" static="no">
+        <type>union <ref refid="unioneval__s" kindref="compound">eval_s</ref></type>
+        <definition>typedef union eval_s  eval_t</definition>
+        <argsstring></argsstring>
+        <name>eval_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="95" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3xp_2script_2_script___program_8h_1a0a93c5f95c3059e44a453acf46229588" prot="public" static="no">
+        <type><ref refid="classid_script_variable" kindref="compound">idScriptVariable</ref>&lt; int, ev_boolean, int &gt;</type>
+        <definition>typedef idScriptVariable&lt;int, ev_boolean, int&gt; idScriptBool</definition>
+        <argsstring></argsstring>
+        <name>idScriptBool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="277" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="277" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3xp_2script_2_script___program_8h_1a6a5df251efa0871be161dafb206dcfc1" prot="public" static="no">
+        <type><ref refid="classid_script_variable" kindref="compound">idScriptVariable</ref>&lt; float, ev_float, float &gt;</type>
+        <definition>typedef idScriptVariable&lt;float, ev_float, float&gt; idScriptFloat</definition>
+        <argsstring></argsstring>
+        <name>idScriptFloat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="278" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3xp_2script_2_script___program_8h_1a0d986ea25e9984c0e962a44de365b3fc" prot="public" static="no">
+        <type><ref refid="classid_script_variable" kindref="compound">idScriptVariable</ref>&lt; float, ev_float, int &gt;</type>
+        <definition>typedef idScriptVariable&lt;float, ev_float, int&gt; idScriptInt</definition>
+        <argsstring></argsstring>
+        <name>idScriptInt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="279" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3xp_2script_2_script___program_8h_1af30b5ec6aa685c5ffe83ee360be7016c" prot="public" static="no">
+        <type><ref refid="classid_script_variable" kindref="compound">idScriptVariable</ref>&lt; <ref refid="classid_vec3" kindref="compound">idVec3</ref>, ev_vector, <ref refid="classid_vec3" kindref="compound">idVec3</ref> &gt;</type>
+        <definition>typedef idScriptVariable&lt;idVec3, ev_vector, idVec3&gt; idScriptVector</definition>
+        <argsstring></argsstring>
+        <name>idScriptVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="280" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3xp_2script_2_script___program_8h_1aeac54973e73bca63a9118c41fb292e7a" prot="public" static="no">
+        <type><ref refid="classid_script_variable" kindref="compound">idScriptVariable</ref>&lt; <ref refid="classid_str" kindref="compound">idStr</ref>, ev_string, const char * &gt;</type>
+        <definition>typedef idScriptVariable&lt;idStr, ev_string, const char *&gt; idScriptString</definition>
+        <argsstring></argsstring>
+        <name>idScriptString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="281" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3xp_2script_2_script___program_8h_1a7e83a5230bcd8e5a123936924bb6f126" prot="public" static="no">
+        <type>union <ref refid="unionvar_eval__s" kindref="compound">varEval_s</ref></type>
+        <definition>typedef union varEval_s  varEval_t</definition>
+        <argsstring></argsstring>
+        <name>varEval_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="321" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3xp_2script_2_script___program_8h_1a4a7431acc47bce9ea5118208cf3a9570" prot="public" static="no">
+        <type>struct <ref refid="structstatement__s" kindref="compound">statement_s</ref></type>
+        <definition>typedef struct statement_s  statement_t</definition>
+        <argsstring></argsstring>
+        <name>statement_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="435" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a694526a05c22df9e0c7c9a99eaa4cad4" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_void</definition>
+        <argsstring></argsstring>
+        <name>type_void</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="396" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a36817b6e15d8c519c02b4dbee6f58eeb" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_scriptevent</definition>
+        <argsstring></argsstring>
+        <name>type_scriptevent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="397" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a985cd246b03aaa3a1a0346efd47e5776" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_namespace</definition>
+        <argsstring></argsstring>
+        <name>type_namespace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="398" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a90efc9c8c42ea63f4951158bece7cb89" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_string</definition>
+        <argsstring></argsstring>
+        <name>type_string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="399" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a842584ed81cfa7cf89a3a302d4f256f5" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_float</definition>
+        <argsstring></argsstring>
+        <name>type_float</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="400" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a38683ec668376fff5f6cd8431dd2d732" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_vector</definition>
+        <argsstring></argsstring>
+        <name>type_vector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="401" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a75a54534ca1dc1e65d68ae032acdf41a" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_entity</definition>
+        <argsstring></argsstring>
+        <name>type_entity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="402" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1ac762eb360c0b2b59b4f2017de381518b" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_field</definition>
+        <argsstring></argsstring>
+        <name>type_field</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="403" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a3dc5c1c2a52c5567918540088a02a245" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_function</definition>
+        <argsstring></argsstring>
+        <name>type_function</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="404" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1ae7474001463a799922bec49940ab7923" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_virtualfunction</definition>
+        <argsstring></argsstring>
+        <name>type_virtualfunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="405" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1ab286295c2285e4ed0f6134791bb913e0" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_pointer</definition>
+        <argsstring></argsstring>
+        <name>type_pointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="406" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a22549edd2ea7335e24feb2409852b7bf" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_object</definition>
+        <argsstring></argsstring>
+        <name>type_object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="407" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1aab14baa3ecad4dfe731e961c8c391d80" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_jumpoffset</definition>
+        <argsstring></argsstring>
+        <name>type_jumpoffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="408" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a8079f5227d0f409ecccc8dcf28d0af78" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_argsize</definition>
+        <argsstring></argsstring>
+        <name>type_argsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="409" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a191ae21a5c2080d7c519c8ea0eaba0c6" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref></type>
+        <definition>idTypeDef type_boolean</definition>
+        <argsstring></argsstring>
+        <name>type_boolean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="410" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.cpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a07b80c7d23b8dc277bb99b4bb4c47c64" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_void</definition>
+        <argsstring></argsstring>
+        <name>def_void</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="412" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a0645474a7de6667a7b08c80fadca8164" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_scriptevent</definition>
+        <argsstring></argsstring>
+        <name>def_scriptevent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="413" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a04ea4b8b938e4c98365be69374ef44de" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_namespace</definition>
+        <argsstring></argsstring>
+        <name>def_namespace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="414" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1ad7070b8b0cf04c66a376a4e91cac40cb" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_string</definition>
+        <argsstring></argsstring>
+        <name>def_string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="415" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a2497213253f10541c0154049ab79e997" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_float</definition>
+        <argsstring></argsstring>
+        <name>def_float</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="416" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1ace0fa03b58a846141e4be83242126ba2" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_vector</definition>
+        <argsstring></argsstring>
+        <name>def_vector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="417" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a15b23ed377a60f30bad6d4358c6a31fa" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_entity</definition>
+        <argsstring></argsstring>
+        <name>def_entity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="418" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1af61d59fc54c0a932884352ace36e041d" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_field</definition>
+        <argsstring></argsstring>
+        <name>def_field</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="419" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a94e6a5223f008cf755812effb8d86bfc" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_function</definition>
+        <argsstring></argsstring>
+        <name>def_function</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="420" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a7a699847ee1f314c92aa4c26dc413540" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_virtualfunction</definition>
+        <argsstring></argsstring>
+        <name>def_virtualfunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="421" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a800267f53e16ce6dc6a61d9be3d22f3a" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_pointer</definition>
+        <argsstring></argsstring>
+        <name>def_pointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="422" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1ab75366bdbda26d36d5051fc6ad7d3ef9" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_object</definition>
+        <argsstring></argsstring>
+        <name>def_object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="423" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a6e28924e4725a5558eec4ad8a8eda716" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_jumpoffset</definition>
+        <argsstring></argsstring>
+        <name>def_jumpoffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="424" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a9a0ea6f479122146b7b16a3201edb4c4" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_argsize</definition>
+        <argsstring></argsstring>
+        <name>def_argsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="425" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3xp_2script_2_script___program_8h_1a14d615c55835c0049e14245be9c3e6cd" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref></type>
+        <definition>idVarDef def_boolean</definition>
+        <argsstring></argsstring>
+        <name>def_boolean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h" line="426" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__SCRIPT_PROGRAM_H__</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__SCRIPT_PROGRAM_H__</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_script_object" kindref="compound">idScriptObject</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_event_def" kindref="compound">idEventDef</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_var_def" kindref="compound">idVarDef</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_type_def" kindref="compound">idTypeDef</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_entity" kindref="compound">idEntity</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_thread" kindref="compound">idThread</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_save_game" kindref="compound">idSaveGame</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_restore_game" kindref="compound">idRestoreGame</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_STRING_LEN<sp/><sp/><sp/><sp/><sp/><sp/>128</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#ifdef<sp/>_D3XP</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MAX_GLOBALS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>296608<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>in<sp/>bytes</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MAX_GLOBALS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>196608<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>in<sp/>bytes</highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MAX_STRINGS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1024</highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_D3XP</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MAX_FUNCS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3584</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MAX_FUNCS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3072</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_D3XP</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MAX_STATEMENTS<sp/><sp/><sp/><sp/><sp/><sp/>131072<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>statement_t<sp/>-<sp/>18<sp/>bytes<sp/>last<sp/>I<sp/>checked</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MAX_STATEMENTS<sp/><sp/><sp/><sp/><sp/><sp/>81920<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>statement_t<sp/>-<sp/>18<sp/>bytes<sp/>last<sp/>I<sp/>checked</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>ev_error<sp/>=<sp/>-1,<sp/>ev_void,<sp/>ev_scriptevent,<sp/>ev_namespace,<sp/>ev_string,<sp/>ev_float,<sp/>ev_vector,<sp/>ev_entity,<sp/>ev_field,<sp/>ev_function,<sp/>ev_virtualfunction,<sp/>ev_pointer,<sp/>ev_object,<sp/>ev_jumpoffset,<sp/>ev_argsize,<sp/>ev_boolean</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}<sp/>etype_t;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classfunction__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref>();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Allocated(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetName(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*Name(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Clear(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_event_def" kindref="compound">idEventDef</ref><sp/><sp/><sp/><sp/>*eventdef;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*def;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/>*type;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>firstStatement;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numStatements;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parmTotal;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>locals;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>total<sp/>ints<sp/>of<sp/>parms<sp/>+<sp/>locals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filenum;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>source<sp/>file<sp/>defined<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_list" kindref="compound">idList&lt;int&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parmSize;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="unioneval__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unioneval__s" kindref="compound">eval_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*stringPtr;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_float;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector[<sp/>3<sp/>];</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">function</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_int;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}<sp/><ref refid="unioneval__s" kindref="compound">eval_t</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">/***********************************************************************</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"></highlight></codeline>
+<codeline lineno="99"><highlight class="comment">idTypeDef</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"></highlight></codeline>
+<codeline lineno="101"><highlight class="comment">Contains<sp/>type<sp/>information<sp/>for<sp/>variables<sp/>and<sp/>functions.</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"></highlight></codeline>
+<codeline lineno="103"><highlight class="comment">***********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classid_type_def" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>etype_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>function<sp/>types<sp/>are<sp/>more<sp/>complex</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*auxType;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_list" kindref="compound">idList&lt;idTypeDef *&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parmTypes;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_list" kindref="compound">idStrList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parmNames;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_list" kindref="compound">idList&lt;const function_t *&gt;</ref><sp/><sp/>functions;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*def;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>a<sp/>def<sp/>that<sp/>points<sp/>to<sp/>this<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>&amp;other<sp/>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref>(<sp/>etype_t<sp/>etype,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*edef,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>esize,<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*aux<sp/>);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>operator=(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref>&amp;<sp/>other<sp/>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Allocated(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Inherits(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*basetype<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MatchesType(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>&amp;matchtype<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MatchesVirtualFunction(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>&amp;matchfunc<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AddFunctionParm(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*parmtype,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AddField(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*fieldtype,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetName(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*newname<sp/>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*Name(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>etype_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Type(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Size(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*SuperClass(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ReturnType(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetReturnType(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type<sp/>);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*FieldType(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetFieldType(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type<sp/>);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*PointerType(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetPointerType(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type<sp/>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NumParameters(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetParmType(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>parmNumber<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetParmName(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>parmNumber<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NumFunctions(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetFunctionNumber(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/>*func<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/>*GetFunction(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>funcNumber<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AddFunction(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/>*func<sp/>);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment">/***********************************************************************</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"></highlight></codeline>
+<codeline lineno="160"><highlight class="comment">idScriptObject</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"></highlight></codeline>
+<codeline lineno="162"><highlight class="comment">In-game<sp/>representation<sp/>of<sp/>objects<sp/>in<sp/>scripts.<sp/><sp/>Use<sp/>the<sp/>idScriptVariable<sp/>template</highlight></codeline>
+<codeline lineno="163"><highlight class="comment">(below)<sp/>to<sp/>access<sp/>variables.</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"></highlight></codeline>
+<codeline lineno="165"><highlight class="comment">***********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="classid_script_object" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_script_object" kindref="compound">idScriptObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*type;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>byte<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*data;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_script_object" kindref="compound">idScriptObject</ref>();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="classid_script_object" kindref="compound">idScriptObject</ref>();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Save(<sp/><ref refid="classid_save_game" kindref="compound">idSaveGame</ref><sp/>*savefile<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>archives<sp/>object<sp/>for<sp/>save<sp/>game<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Restore(<sp/><ref refid="classid_restore_game" kindref="compound">idRestoreGame</ref><sp/>*savefile<sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>unarchives<sp/>object<sp/>from<sp/>save<sp/>game<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Free(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetType(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*typeName<sp/>);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ClearObject(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HasObject(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetTypeDef(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetTypeName(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetConstructor(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetDestructor(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetFunction(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>byte<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetVariable(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/>etype_t<sp/>etype<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment">/***********************************************************************</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"></highlight></codeline>
+<codeline lineno="195"><highlight class="comment">idScriptVariable</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"></highlight></codeline>
+<codeline lineno="197"><highlight class="comment">Helper<sp/>template<sp/>that<sp/>handles<sp/>looking<sp/>up<sp/>script<sp/>variables<sp/>stored<sp/>in<sp/>objects.</highlight></codeline>
+<codeline lineno="198"><highlight class="comment">If<sp/>the<sp/>specified<sp/>variable<sp/>doesn&apos;t<sp/>exist,<sp/>or<sp/>is<sp/>the<sp/>wrong<sp/>data<sp/>type,<sp/>idScriptVariable</highlight></codeline>
+<codeline lineno="199"><highlight class="comment">will<sp/>cause<sp/>an<sp/>error.</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"></highlight></codeline>
+<codeline lineno="201"><highlight class="comment">***********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>type,<sp/>etype_t<sp/>etype,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>returnType&gt;</highlight></codeline>
+<codeline lineno="204" refid="classid_script_variable" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_script_variable" kindref="compound">idScriptVariable</ref><sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>type<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*data;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable</ref>();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IsLinked(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Unlink(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LinkTo(<sp/><ref refid="classid_script_object" kindref="compound">idScriptObject</ref><sp/>&amp;obj,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable</ref><sp/><sp/><sp/><sp/>&amp;operator=(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>returnType<sp/>&amp;value<sp/>);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>returnType()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>type,<sp/>etype_t<sp/>etype,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>returnType&gt;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">ID_INLINE<sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;type, etype, returnType&gt;::idScriptVariable</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>data<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>type,<sp/>etype_t<sp/>etype,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>returnType&gt;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;type, etype, returnType&gt;::IsLinked</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/>data<sp/>!=<sp/>NULL<sp/>);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>type,<sp/>etype_t<sp/>etype,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>returnType&gt;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;type, etype, returnType&gt;::Unlink</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>data<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>type,<sp/>etype_t<sp/>etype,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>returnType&gt;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;type, etype, returnType&gt;::LinkTo</ref>(<sp/><ref refid="classid_script_object" kindref="compound">idScriptObject</ref><sp/>&amp;obj,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>data<sp/>=<sp/>(<sp/>type<sp/>*<sp/>)obj.GetVariable(<sp/>name,<sp/>etype<sp/>);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!data<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gameError(<sp/></highlight><highlight class="stringliteral">&quot;Missing<sp/>&apos;%s&apos;<sp/>field<sp/>in<sp/>script<sp/>object<sp/>&apos;%s&apos;&quot;</highlight><highlight class="normal">,<sp/>name,<sp/>obj.GetTypeName()<sp/>);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>type,<sp/>etype_t<sp/>etype,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>returnType&gt;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">ID_INLINE<sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;type, etype, returnType&gt;</ref><sp/>&amp;<ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;type, etype, returnType&gt;::operator=</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>returnType<sp/>&amp;value<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>if<sp/>we<sp/>attempt<sp/>to<sp/>access<sp/>the<sp/>object<sp/>before<sp/>it&apos;s<sp/>been<sp/>linked</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>data<sp/>);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>sure<sp/>we<sp/>don&apos;t<sp/>crash<sp/>if<sp/>we<sp/>don&apos;t<sp/>have<sp/>a<sp/>pointer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>data<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*data<sp/>=<sp/>(<sp/>type<sp/>)value;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>type,<sp/>etype_t<sp/>etype,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>returnType&gt;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">ID_INLINE<sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;type, etype, returnType&gt;::operator</ref><sp/>returnType()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>if<sp/>we<sp/>attempt<sp/>to<sp/>access<sp/>the<sp/>object<sp/>before<sp/>it&apos;s<sp/>been<sp/>linked</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>data<sp/>);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>sure<sp/>we<sp/>don&apos;t<sp/>crash<sp/>if<sp/>we<sp/>don&apos;t<sp/>have<sp/>a<sp/>pointer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>data<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>returnType<sp/>)*data;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reasonably<sp/>safe<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>returnType<sp/>)0;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="comment">/***********************************************************************</highlight></codeline>
+<codeline lineno="267"><highlight class="comment"></highlight></codeline>
+<codeline lineno="268"><highlight class="comment">Script<sp/>object<sp/>variable<sp/>access<sp/>template<sp/>instantiations</highlight></codeline>
+<codeline lineno="269"><highlight class="comment"></highlight></codeline>
+<codeline lineno="270"><highlight class="comment">These<sp/>objects<sp/>will<sp/>automatically<sp/>handle<sp/>looking<sp/>up<sp/>of<sp/>the<sp/>current<sp/>value</highlight></codeline>
+<codeline lineno="271"><highlight class="comment">of<sp/>a<sp/>variable<sp/>in<sp/>a<sp/>script<sp/>object.<sp/><sp/>They<sp/>can<sp/>be<sp/>stored<sp/>as<sp/>part<sp/>of<sp/>a<sp/>class</highlight></codeline>
+<codeline lineno="272"><highlight class="comment">for<sp/>up-to-date<sp/>values<sp/>of<sp/>the<sp/>variable,<sp/>or<sp/>can<sp/>be<sp/>used<sp/>in<sp/>functions<sp/>to</highlight></codeline>
+<codeline lineno="273"><highlight class="comment">sample<sp/>the<sp/>data<sp/>for<sp/>non-dynamic<sp/>values.</highlight></codeline>
+<codeline lineno="274"><highlight class="comment"></highlight></codeline>
+<codeline lineno="275"><highlight class="comment">***********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;int, ev_boolean, int&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_script_variable" kindref="compound">idScriptBool</ref>;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;float, ev_float, float&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_script_variable" kindref="compound">idScriptFloat</ref>;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;float, ev_float, int&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_script_variable" kindref="compound">idScriptInt</ref>;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;idVec3, ev_vector, idVec3&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVector</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classid_script_variable" kindref="compound">idScriptVariable&lt;idStr, ev_string, const char *&gt;</ref><sp/><sp/><sp/><sp/><ref refid="classid_script_variable" kindref="compound">idScriptString</ref>;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="comment">/***********************************************************************</highlight></codeline>
+<codeline lineno="284"><highlight class="comment"></highlight></codeline>
+<codeline lineno="285"><highlight class="comment">idCompileError</highlight></codeline>
+<codeline lineno="286"><highlight class="comment"></highlight></codeline>
+<codeline lineno="287"><highlight class="comment">Causes<sp/>the<sp/>compiler<sp/>to<sp/>exit<sp/>out<sp/>of<sp/>compiling<sp/>the<sp/>current<sp/>function<sp/>and</highlight></codeline>
+<codeline lineno="288"><highlight class="comment">display<sp/>an<sp/>error<sp/>message<sp/>with<sp/>line<sp/>and<sp/>file<sp/>info.</highlight></codeline>
+<codeline lineno="289"><highlight class="comment"></highlight></codeline>
+<codeline lineno="290"><highlight class="comment">***********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292" refid="classid_compile_error" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_compile_error" kindref="compound">idCompileError</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classid_exception" kindref="compound">idException</ref><sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_compile_error" kindref="compound">idCompileError</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text<sp/>)<sp/>:<sp/><ref refid="classid_exception" kindref="compound">idException</ref>(<sp/>text<sp/>)<sp/>{}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight><highlight class="comment">/***********************************************************************</highlight></codeline>
+<codeline lineno="298"><highlight class="comment"></highlight></codeline>
+<codeline lineno="299"><highlight class="comment">idVarDef</highlight></codeline>
+<codeline lineno="300"><highlight class="comment"></highlight></codeline>
+<codeline lineno="301"><highlight class="comment">Define<sp/>the<sp/>name,<sp/>type,<sp/>and<sp/>location<sp/>of<sp/>variables,<sp/>functions,<sp/>and<sp/>objects</highlight></codeline>
+<codeline lineno="302"><highlight class="comment">defined<sp/>in<sp/>script.</highlight></codeline>
+<codeline lineno="303"><highlight class="comment"></highlight></codeline>
+<codeline lineno="304"><highlight class="comment">***********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306" refid="unionvar_eval__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionvar_eval__s" kindref="compound">varEval_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_script_object" kindref="compound">idScriptObject</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**objectPtrPtr;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*stringPtr;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*floatPtr;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*vectorPtr;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*functionPtr;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*intPtr;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>byte<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*bytePtr;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*entityNumberPtr;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>virtualFunction;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jumpOffset;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stackOffset;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>offset<sp/>in<sp/>stack<sp/>for<sp/>local<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>argSize;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="unionvar_eval__s" kindref="compound">varEval_s</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*evalPtr;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptrOffset;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal">}<sp/><ref refid="unionvar_eval__s" kindref="compound">varEval_t</ref>;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_var_def_name" kindref="compound">idVarDefName</ref>;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325" refid="classid_var_def" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>{</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_var_def_name" kindref="compound">idVarDefName</ref>;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num;</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="unionvar_eval__s" kindref="compound">varEval_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scope;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>function,<sp/>namespace,<sp/>or<sp/>object<sp/>the<sp/>var<sp/>was<sp/>defined<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numUsers;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>users<sp/>if<sp/>this<sp/>is<sp/>a<sp/>constant</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uninitialized,<sp/>initializedVariable,<sp/>initializedConstant,<sp/>stackVariable</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>initialized_t;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>initialized_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialized;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref>(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*typeptr<sp/>=<sp/>NULL<sp/>);</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="classid_var_def" kindref="compound">idVarDef</ref>();</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GlobalName(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetTypeDef(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*_type<sp/>)<sp/>{<sp/>typeDef<sp/>=<sp/>_type;<sp/>}</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TypeDef(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>typeDef;<sp/>}</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>etype_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Type(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/>typeDef<sp/>!=<sp/>NULL<sp/>)<sp/>?<sp/>typeDef-&gt;Type()<sp/>:<sp/>ev_void;<sp/>}</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DepthOfScope(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*otherScope<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetFunction(<sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/>*func<sp/>);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetObject(<sp/><ref refid="classid_script_object" kindref="compound">idScriptObject</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetValue(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="unioneval__s" kindref="compound">eval_t</ref><sp/>&amp;value,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>constant<sp/>);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetString(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>constant<sp/>);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Next(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>next;<sp/>}<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>next<sp/>var<sp/>def<sp/>with<sp/>same<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PrintInfo(<sp/><ref refid="classid_file" kindref="compound">idFile</ref><sp/>*file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>instructionPointer<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>typeDef;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def_name" kindref="compound">idVarDefName</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>name<sp/>of<sp/>this<sp/>var</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>next;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>next<sp/>var<sp/>with<sp/>the<sp/>same<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight><highlight class="comment">/***********************************************************************</highlight></codeline>
+<codeline lineno="369"><highlight class="comment"></highlight></codeline>
+<codeline lineno="370"><highlight class="comment"><sp/><sp/>idVarDefName</highlight></codeline>
+<codeline lineno="371"><highlight class="comment"></highlight></codeline>
+<codeline lineno="372"><highlight class="comment">***********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374" refid="classid_var_def_name" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_var_def_name" kindref="compound">idVarDefName</ref><sp/>{</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_var_def_name" kindref="compound">idVarDefName</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{<sp/>defs<sp/>=<sp/>NULL;<sp/>}</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_var_def_name" kindref="compound">idVarDefName</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*n<sp/>)<sp/>{<sp/>name<sp/>=<sp/>n;<sp/>defs<sp/>=<sp/>NULL;<sp/>}</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>name;<sp/>}</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetDefs(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>defs;<sp/>}</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AddDef(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*def<sp/>);</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RemoveDef(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*def<sp/>);</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>defs;</highlight></codeline>
+<codeline lineno="388"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="comment">/***********************************************************************</highlight></codeline>
+<codeline lineno="391"><highlight class="comment"></highlight></codeline>
+<codeline lineno="392"><highlight class="comment"><sp/><sp/>Variable<sp/>and<sp/>type<sp/>defintions</highlight></codeline>
+<codeline lineno="393"><highlight class="comment"></highlight></codeline>
+<codeline lineno="394"><highlight class="comment">***********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_void;</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_scriptevent;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_namespace;</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_string;</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_float;</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_vector;</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_entity;</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_field;</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_function;</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_virtualfunction;</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_pointer;</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_object;</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_jumpoffset;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>only<sp/>used<sp/>for<sp/>jump<sp/>opcodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_argsize;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>only<sp/>used<sp/>for<sp/>function<sp/>call<sp/>and<sp/>thread<sp/>opcodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/>type_boolean;</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_void;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_scriptevent;</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_namespace;</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_string;</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_float;</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_vector;</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_entity;</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_field;</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_function;</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_virtualfunction;</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_pointer;</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_object;</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_jumpoffset;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>only<sp/>used<sp/>for<sp/>jump<sp/>opcodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_argsize;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>only<sp/>used<sp/>for<sp/>function<sp/>call<sp/>and<sp/>thread<sp/>opcodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/>def_boolean;</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight></codeline>
+<codeline lineno="428" refid="structstatement__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structstatement__s" kindref="compound">statement_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><sp/>op;</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*a;</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*b;</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*c;</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><sp/>linenumber;</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><sp/>file;</highlight></codeline>
+<codeline lineno="435"><highlight class="normal">}<sp/><ref refid="structstatement__s" kindref="compound">statement_t</ref>;</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight><highlight class="comment">/***********************************************************************</highlight></codeline>
+<codeline lineno="438"><highlight class="comment"></highlight></codeline>
+<codeline lineno="439"><highlight class="comment">idProgram</highlight></codeline>
+<codeline lineno="440"><highlight class="comment"></highlight></codeline>
+<codeline lineno="441"><highlight class="comment">Handles<sp/>compiling<sp/>and<sp/>storage<sp/>of<sp/>script<sp/>data.<sp/><sp/>Multiple<sp/>idProgram<sp/>objects</highlight></codeline>
+<codeline lineno="442"><highlight class="comment">would<sp/>represent<sp/>seperate<sp/>programs<sp/>with<sp/>no<sp/>knowledge<sp/>of<sp/>each<sp/>other.<sp/><sp/>Scripts</highlight></codeline>
+<codeline lineno="443"><highlight class="comment">meant<sp/>to<sp/>access<sp/>shared<sp/>data<sp/>and<sp/>functions<sp/>should<sp/>all<sp/>be<sp/>compiled<sp/>by<sp/>a</highlight></codeline>
+<codeline lineno="444"><highlight class="comment">single<sp/>idProgram.</highlight></codeline>
+<codeline lineno="445"><highlight class="comment"></highlight></codeline>
+<codeline lineno="446"><highlight class="comment">***********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="447"><highlight class="normal"></highlight></codeline>
+<codeline lineno="448" refid="classid_program" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classid_program" kindref="compound">idProgram</ref><sp/>{</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_list" kindref="compound">idStrList</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fileList;</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filename;</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filenum;</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numVariables;</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/>byte<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>variables[<sp/>MAX_GLOBALS<sp/>];</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_static_list" kindref="compound">idStaticList&lt;byte,MAX_GLOBALS&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>variableDefaults;</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_static_list" kindref="compound">idStaticList&lt;function_t,MAX_FUNCS&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>functions;</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_static_list" kindref="compound">idStaticList&lt;statement_t,MAX_STATEMENTS&gt;</ref><sp/><sp/><sp/><sp/>statements;</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_list" kindref="compound">idList&lt;idTypeDef *&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>types;</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_list" kindref="compound">idList&lt;idVarDefName *&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>varDefNames;</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_hash_index" kindref="compound">idHashIndex</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>varDefNameHash;</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_list" kindref="compound">idList&lt;idVarDef *&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>varDefs;</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sysDef;</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_functions;</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_statements;</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_types;</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_defs;</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_files;</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"></highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CompileStats(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"></highlight></codeline>
+<codeline lineno="474"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*returnDef;</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*returnStringDef;</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_program" kindref="compound">idProgram</ref>();</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="classid_program" kindref="compound">idProgram</ref>();</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>save<sp/>games</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Save(<sp/><ref refid="classid_save_game" kindref="compound">idSaveGame</ref><sp/>*savefile<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Restore(<sp/><ref refid="classid_restore_game" kindref="compound">idRestoreGame</ref><sp/>*savefile<sp/>);</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CalculateChecksum(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>insure<sp/>program<sp/>code<sp/>has<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>changed<sp/>between<sp/>savegames</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"></highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Startup(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*defaultScript<sp/>);</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Restart(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CompileText(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*source,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>console<sp/>);</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*CompileFunction(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text<sp/>);</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CompileFile(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename<sp/>);</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BeginCompilation(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FinishCompilation(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DisassembleStatement(<sp/><ref refid="classid_file" kindref="compound">idFile</ref><sp/>*file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>instructionPointer<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Disassemble(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FreeData(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetFilename(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num<sp/>);</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetFilenum(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetLineNumberForStatement(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>);</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetFilenameForStatement(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>);</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"></highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*AllocType(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>&amp;type<sp/>);</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*AllocType(<sp/>etype_t<sp/>etype,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*edef,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>esize,<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*aux<sp/>);</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetType(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>&amp;type,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>allocate<sp/>);</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*FindType(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"></highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*AllocDef(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*scope,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>constant<sp/>);</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetDef(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*scope<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FreeDef(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*scope<sp/>);</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*FindFreeResultDef(<sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*scope,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*b<sp/>);</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetDefList(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AddDefToNameList(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*def,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>);</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"></highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*FindFunction(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>returns<sp/>NULL<sp/>if<sp/>function<sp/>not<sp/>found</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*FindFunction(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_type_def" kindref="compound">idTypeDef</ref><sp/>*type<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>returns<sp/>NULL<sp/>if<sp/>function<sp/>not<sp/>found</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;AllocFunction(<sp/><ref refid="classid_var_def" kindref="compound">idVarDef</ref><sp/>*def<sp/>);</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*GetFunction(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>);</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetFunctionIndex(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/>*func<sp/>);</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"></highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetEntity(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/><ref refid="classid_entity" kindref="compound">idEntity</ref><sp/>*ent<sp/>);</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"></highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstatement__s" kindref="compound">statement_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*AllocStatement(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstatement__s" kindref="compound">statement_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;GetStatement(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NumStatements(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>statements.Num();<sp/>}</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetReturnedInteger(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"></highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReturnFloat(<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value<sp/>);</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReturnInteger(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value<sp/>);</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReturnVector(<sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;vec<sp/>);</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReturnString(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReturnEntity(<sp/><ref refid="classid_entity" kindref="compound">idEntity</ref><sp/>*ent<sp/>);</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NumFilenames(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fileList.Num(<sp/>);<sp/>}</highlight></codeline>
+<codeline lineno="536"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"></highlight></codeline>
+<codeline lineno="538"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="539"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="540"><highlight class="comment">idProgram::GetStatement</highlight></codeline>
+<codeline lineno="541"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="542"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="543"><highlight class="normal">ID_INLINE<sp/><ref refid="structstatement__s" kindref="compound">statement_t</ref><sp/>&amp;idProgram::GetStatement(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>statements[<sp/>index<sp/>];</highlight></codeline>
+<codeline lineno="545"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"></highlight></codeline>
+<codeline lineno="547"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="548"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="549"><highlight class="comment">idProgram::GetFunction</highlight></codeline>
+<codeline lineno="550"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="551"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="552"><highlight class="normal">ID_INLINE<sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/>*idProgram::GetFunction(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;functions[<sp/>index<sp/>];</highlight></codeline>
+<codeline lineno="554"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"></highlight></codeline>
+<codeline lineno="556"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="557"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="558"><highlight class="comment">idProgram::GetFunctionIndex</highlight></codeline>
+<codeline lineno="559"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="560"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="561"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idProgram::GetFunctionIndex(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfunction__t" kindref="compound">function_t</ref><sp/>*func<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>func<sp/>-<sp/>&amp;functions[0];</highlight></codeline>
+<codeline lineno="563"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"></highlight></codeline>
+<codeline lineno="565"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="566"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="567"><highlight class="comment">idProgram::GetReturnedInteger</highlight></codeline>
+<codeline lineno="568"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="569"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="570"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idProgram::GetReturnedInteger(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*returnDef-&gt;value.intPtr;</highlight></codeline>
+<codeline lineno="572"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight></codeline>
+<codeline lineno="574"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="575"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="576"><highlight class="comment">idProgram::ReturnFloat</highlight></codeline>
+<codeline lineno="577"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="578"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>idProgram::ReturnFloat(<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/>*returnDef-&gt;value.floatPtr<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="581"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"></highlight></codeline>
+<codeline lineno="583"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="584"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="585"><highlight class="comment">idProgram::ReturnInteger</highlight></codeline>
+<codeline lineno="586"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="587"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="588"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>idProgram::ReturnInteger(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/>*returnDef-&gt;value.intPtr<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="590"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"></highlight></codeline>
+<codeline lineno="592"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="593"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="594"><highlight class="comment">idProgram::ReturnVector</highlight></codeline>
+<codeline lineno="595"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="596"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="597"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>idProgram::ReturnVector(<sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;vec<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/>*returnDef-&gt;value.vectorPtr<sp/>=<sp/>vec;</highlight></codeline>
+<codeline lineno="599"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"></highlight></codeline>
+<codeline lineno="601"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="602"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="603"><highlight class="comment">idProgram::ReturnString</highlight></codeline>
+<codeline lineno="604"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="605"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="606"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>idProgram::ReturnString(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/>idStr::Copynz(<sp/>returnStringDef-&gt;value.stringPtr,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/>MAX_STRING_LEN<sp/>);</highlight></codeline>
+<codeline lineno="608"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="610"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="611"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="612"><highlight class="comment">idProgram::GetFilename</highlight></codeline>
+<codeline lineno="613"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="614"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="615"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*idProgram::GetFilename(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fileList[<sp/>num<sp/>];</highlight></codeline>
+<codeline lineno="617"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"></highlight></codeline>
+<codeline lineno="619"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="620"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="621"><highlight class="comment">idProgram::GetLineNumberForStatement</highlight></codeline>
+<codeline lineno="622"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="623"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="624"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idProgram::GetLineNumberForStatement(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>statements[<sp/>index<sp/>].linenumber;</highlight></codeline>
+<codeline lineno="626"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"></highlight></codeline>
+<codeline lineno="628"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="629"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="630"><highlight class="comment">idProgram::GetFilenameForStatement</highlight></codeline>
+<codeline lineno="631"><highlight class="comment">================</highlight></codeline>
+<codeline lineno="632"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="633"><highlight class="normal">ID_INLINE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*idProgram::GetFilenameForStatement(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetFilename(<sp/>statements[<sp/>index<sp/>].file<sp/>);</highlight></codeline>
+<codeline lineno="635"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight></codeline>
+<codeline lineno="637"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!__SCRIPT_PROGRAM_H__<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Program.h"/>
+  </compounddef>
+</doxygen>

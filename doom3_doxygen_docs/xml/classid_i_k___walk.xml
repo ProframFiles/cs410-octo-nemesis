@@ -1,0 +1,1181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_i_k___walk" kind="class" prot="public">
+    <compoundname>idIK_Walk</compoundname>
+    <basecompoundref refid="classid_i_k" prot="public" virt="non-virtual">idIK</basecompoundref>
+    <basecompoundref refid="classid_i_k" prot="public" virt="non-virtual">idIK</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classid_i_k___walk_1a84ac55698122013d04c998535577074c" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>static const int idIK_Walk::MAX_LEGS</definition>
+        <argsstring></argsstring>
+        <name>MAX_LEGS</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="96" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classid_i_k___walk_1ac6b78fdceb82fd87cb2a03b3c4d262d6" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+        <definition>idClipModel * idIK_Walk::footModel</definition>
+        <argsstring></argsstring>
+        <name>footModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="98" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1aa7008f786119b5c5a15752ad35b143c6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idIK_Walk::numLegs</definition>
+        <argsstring></argsstring>
+        <name>numLegs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="100" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a29e84a9f09943805cadab2da6ac42f98" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idIK_Walk::enabledLegs</definition>
+        <argsstring></argsstring>
+        <name>enabledLegs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="101" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a763066eea0be95f70b0d06dc6f4e87d8" prot="private" static="no" mutable="no">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idIK_Walk::footJoints</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>footJoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="102" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a60930ba0b259e6fdc92bc07b32823672" prot="private" static="no" mutable="no">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idIK_Walk::ankleJoints</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>ankleJoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="103" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a14c7258ed6ad158f22e1adb74f2492e6" prot="private" static="no" mutable="no">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idIK_Walk::kneeJoints</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>kneeJoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="104" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a731e906ec7b6d1a5bce9d8defdd2996a" prot="private" static="no" mutable="no">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idIK_Walk::hipJoints</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>hipJoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="105" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a94c528fb8cb458493223551b88e4642d" prot="private" static="no" mutable="no">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idIK_Walk::dirJoints</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>dirJoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="106" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a128649ce7ea0035d2d044648ed538768" prot="private" static="no" mutable="no">
+        <type>jointHandle_t</type>
+        <definition>jointHandle_t idIK_Walk::waistJoint</definition>
+        <argsstring></argsstring>
+        <name>waistJoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="107" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1aee10b4968745e344bc60a112300ea9ce" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_vec3" kindref="compound">idVec3</ref></type>
+        <definition>idVec3 idIK_Walk::hipForward</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>hipForward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="109" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a18822f05c271e33c0534a13c98218503" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_vec3" kindref="compound">idVec3</ref></type>
+        <definition>idVec3 idIK_Walk::kneeForward</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>kneeForward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="110" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a3068228ffdd45d65dd544c72465850b7" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::upperLegLength</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>upperLegLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="112" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1ab395a75f01bf80a9830d3417a926aae0" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::lowerLegLength</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>lowerLegLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="113" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a5b1ec3bde9325a50ab44f1b2117970f2" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_mat3" kindref="compound">idMat3</ref></type>
+        <definition>idMat3 idIK_Walk::upperLegToHipJoint</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>upperLegToHipJoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="115" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a3a26a0d89e62812d80c0f9d6a4650a71" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_mat3" kindref="compound">idMat3</ref></type>
+        <definition>idMat3 idIK_Walk::lowerLegToKneeJoint</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>lowerLegToKneeJoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="116" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a9c273972c8edebdc1c01d44045085892" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::smoothing</definition>
+        <argsstring></argsstring>
+        <name>smoothing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="118" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1ae3ec20a5cb0b0e94043722384cd295c5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::waistSmoothing</definition>
+        <argsstring></argsstring>
+        <name>waistSmoothing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="119" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a628d03d8540a6929b5f37aa84d600f00" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::footShift</definition>
+        <argsstring></argsstring>
+        <name>footShift</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="120" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a09a2c51e47bef6f0e621fed944b55676" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::waistShift</definition>
+        <argsstring></argsstring>
+        <name>waistShift</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="121" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a7daa97040574811b8b770d7426ad538c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::minWaistFloorDist</definition>
+        <argsstring></argsstring>
+        <name>minWaistFloorDist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="122" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1abe8339220705a225b81cff843a16d5a2" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::minWaistAnkleDist</definition>
+        <argsstring></argsstring>
+        <name>minWaistAnkleDist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="123" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1aa5818f83509a29356361e4463e4e7def" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::footUpTrace</definition>
+        <argsstring></argsstring>
+        <name>footUpTrace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="124" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1adc8a69c04d6c454ad1b1363b02a47e65" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::footDownTrace</definition>
+        <argsstring></argsstring>
+        <name>footDownTrace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="125" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a1578189651de01d1b79eca2f8305fab3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idIK_Walk::tiltWaist</definition>
+        <argsstring></argsstring>
+        <name>tiltWaist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="126" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1ab7b5a9575cda03a060a9c1dc7e146552" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idIK_Walk::usePivot</definition>
+        <argsstring></argsstring>
+        <name>usePivot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="127" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a7e4b0b38454cc366d5b03d4f100b2eb1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idIK_Walk::pivotFoot</definition>
+        <argsstring></argsstring>
+        <name>pivotFoot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="130" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1aeadcd2d0d43f4db6180018b46ec299a7" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::pivotYaw</definition>
+        <argsstring></argsstring>
+        <name>pivotYaw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="131" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a9c4024765327766a11225c1e7779beed" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_vec3" kindref="compound">idVec3</ref></type>
+        <definition>idVec3 idIK_Walk::pivotPos</definition>
+        <argsstring></argsstring>
+        <name>pivotPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="132" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a304d03df76a1e9141dc46111585f15a8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idIK_Walk::oldHeightsValid</definition>
+        <argsstring></argsstring>
+        <name>oldHeightsValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="133" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1aa6a91793e017e09bbaa8957376f0da1a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::oldWaistHeight</definition>
+        <argsstring></argsstring>
+        <name>oldWaistHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="134" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a6eb7ae4247d15566a168777df39cd927" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float idIK_Walk::oldAnkleHeights</definition>
+        <argsstring>[MAX_LEGS]</argsstring>
+        <name>oldAnkleHeights</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="135" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_i_k___walk_1a55ee06026a238a16e94c8701491bc7a0" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_vec3" kindref="compound">idVec3</ref></type>
+        <definition>idVec3 idIK_Walk::waistOffset</definition>
+        <argsstring></argsstring>
+        <name>waistOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="136" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_i_k___walk_1a0e170c3fdd967437ebd3f6e51d5b4f58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idIK_Walk::idIK_Walk</definition>
+        <argsstring>(void)</argsstring>
+        <name>idIK_Walk</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="80" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="238" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a65b9b6c0239a36e45b804e5cc5064d30" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>idIK_Walk::~idIK_Walk</definition>
+        <argsstring>(void)</argsstring>
+        <name>~idIK_Walk</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="81" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="286" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a1eee88dad78e41c94f8c2da8fd0417d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::Save</definition>
+        <argsstring>(idSaveGame *savefile) const </argsstring>
+        <name>Save</name>
+        <param>
+          <type><ref refid="classid_save_game" kindref="compound">idSaveGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="83" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="297" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a6822b264f2df4e11e461ace2c94eb2ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::Restore</definition>
+        <argsstring>(idRestoreGame *savefile)</argsstring>
+        <name>Restore</name>
+        <param>
+          <type><ref refid="classid_restore_game" kindref="compound">idRestoreGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="84" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="360" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1ae6dd0fda57ce9de27226322d9f438a53" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool idIK_Walk::Init</definition>
+        <argsstring>(idEntity *self, const char *anim, const idVec3 &amp;modelOffset)</argsstring>
+        <name>Init</name>
+        <reimplements refid="classid_i_k_1a7a7d76a78c0c620f163f6c8ddb4db5b6">Init</reimplements>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>anim</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>modelOffset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="86" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="423" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a812c94d350d583470cfd0c3e027c6e66" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::Evaluate</definition>
+        <argsstring>(void)</argsstring>
+        <name>Evaluate</name>
+        <reimplements refid="classid_i_k_1a872bac23992f02f096990e4c298c8f1e">Evaluate</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="87" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="563" bodyend="772"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1afcf8cf1a47d1e1d3c6112cec00351438" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::ClearJointMods</definition>
+        <argsstring>(void)</argsstring>
+        <name>ClearJointMods</name>
+        <reimplements refid="classid_i_k_1a018a1187e9e3d76356fe1e9d5bfc60f7">ClearJointMods</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="88" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="779" bodyend="795"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a824ffbe5b1c16fa984f1475e956b4581" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::EnableAll</definition>
+        <argsstring>(void)</argsstring>
+        <name>EnableAll</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="90" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="802" bodyend="805"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1aedefeb4c2c8964ccfb331292bb73d031" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::DisableAll</definition>
+        <argsstring>(void)</argsstring>
+        <name>DisableAll</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="91" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="812" bodyend="815"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1ab385c0b3dcbb6041af03adaabea1bcd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::EnableLeg</definition>
+        <argsstring>(int num)</argsstring>
+        <name>EnableLeg</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="92" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="822" bodyend="824"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a4ef9fd70bd560ae9204dae60b3a538b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::DisableLeg</definition>
+        <argsstring>(int num)</argsstring>
+        <name>DisableLeg</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="93" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.cpp" bodystart="831" bodyend="833"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a0e170c3fdd967437ebd3f6e51d5b4f58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idIK_Walk::idIK_Walk</definition>
+        <argsstring>(void)</argsstring>
+        <name>idIK_Walk</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a5eb5db127380b8179188a685d85341ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual idIK_Walk::~idIK_Walk</definition>
+        <argsstring>(void)</argsstring>
+        <name>~idIK_Walk</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="81" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a1eee88dad78e41c94f8c2da8fd0417d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::Save</definition>
+        <argsstring>(idSaveGame *savefile) const </argsstring>
+        <name>Save</name>
+        <param>
+          <type><ref refid="classid_save_game" kindref="compound">idSaveGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a6822b264f2df4e11e461ace2c94eb2ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::Restore</definition>
+        <argsstring>(idRestoreGame *savefile)</argsstring>
+        <name>Restore</name>
+        <param>
+          <type><ref refid="classid_restore_game" kindref="compound">idRestoreGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a388287ed5064fc60121d476b8839117d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool idIK_Walk::Init</definition>
+        <argsstring>(idEntity *self, const char *anim, const idVec3 &amp;modelOffset)</argsstring>
+        <name>Init</name>
+        <reimplements refid="classid_i_k_1a7a7d76a78c0c620f163f6c8ddb4db5b6">Init</reimplements>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>anim</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>modelOffset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a17ba391dd1b1db6d0b6d5b524c2a1a0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void idIK_Walk::Evaluate</definition>
+        <argsstring>(void)</argsstring>
+        <name>Evaluate</name>
+        <reimplements refid="classid_i_k_1a872bac23992f02f096990e4c298c8f1e">Evaluate</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="87" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a9881232efcebebe20fd5d5d1c8624f74" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void idIK_Walk::ClearJointMods</definition>
+        <argsstring>(void)</argsstring>
+        <name>ClearJointMods</name>
+        <reimplements refid="classid_i_k_1a018a1187e9e3d76356fe1e9d5bfc60f7">ClearJointMods</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a824ffbe5b1c16fa984f1475e956b4581" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::EnableAll</definition>
+        <argsstring>(void)</argsstring>
+        <name>EnableAll</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1aedefeb4c2c8964ccfb331292bb73d031" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::DisableAll</definition>
+        <argsstring>(void)</argsstring>
+        <name>DisableAll</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="91" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1ab385c0b3dcbb6041af03adaabea1bcd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::EnableLeg</definition>
+        <argsstring>(int num)</argsstring>
+        <name>EnableLeg</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_i_k___walk_1a4ef9fd70bd560ae9204dae60b3a538b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idIK_Walk::DisableLeg</definition>
+        <argsstring>(int num)</argsstring>
+        <name>DisableLeg</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/IK.h" line="93" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="24858">
+        <label>idIK_Walk</label>
+        <link refid="classid_i_k___walk"/>
+        <childnode refid="24859" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24859" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24859">
+        <label>idIK</label>
+        <link refid="classid_i_k"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="24888">
+        <label>idSoundShader</label>
+        <link refid="classid_sound_shader"/>
+        <childnode refid="24874" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24886">
+        <label>refSound_t</label>
+        <link refid="structref_sound__t"/>
+        <childnode refid="24887" relation="usage">
+          <edgelabel>parms</edgelabel>
+        </childnode>
+        <childnode refid="24888" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="24881" relation="usage">
+          <edgelabel>referenceSound</edgelabel>
+        </childnode>
+        <childnode refid="24872" relation="usage">
+          <edgelabel>origin</edgelabel>
+        </childnode>
+      </node>
+      <node id="24860">
+        <label>idIK_Walk</label>
+        <link refid="classid_i_k___walk"/>
+        <childnode refid="24861" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24861" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24869">
+        <label>idEntity::entityFlags_s</label>
+        <link refid="structid_entity_1_1entity_flags__s"/>
+      </node>
+      <node id="24863">
+        <label>idClass</label>
+        <link refid="classid_class"/>
+        <childnode refid="24864" relation="usage">
+          <edgelabel>Type</edgelabel>
+        </childnode>
+        <childnode refid="24866" relation="usage">
+          <edgelabel>eventCallbacks</edgelabel>
+        </childnode>
+      </node>
+      <node id="24870">
+        <label>renderView_s</label>
+        <link refid="structrender_view__s"/>
+        <childnode refid="24871" relation="usage">
+          <edgelabel>viewaxis</edgelabel>
+        </childnode>
+        <childnode refid="24872" relation="usage">
+          <edgelabel>vieworg</edgelabel>
+        </childnode>
+        <childnode refid="24873" relation="usage">
+          <edgelabel>globalMaterial</edgelabel>
+        </childnode>
+      </node>
+      <node id="24866">
+        <label>idEventFunc&lt; idClass &gt;</label>
+        <link refid="structid_event_func"/>
+        <childnode refid="24867" relation="usage">
+          <edgelabel>event</edgelabel>
+        </childnode>
+      </node>
+      <node id="24862">
+        <label>idEntity</label>
+        <link refid="classid_entity"/>
+        <childnode refid="24863" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24863" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24862" relation="usage">
+          <edgelabel>cameraTarget</edgelabel>
+        </childnode>
+        <childnode refid="24868" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="24869" relation="usage">
+          <edgelabel>fl</edgelabel>
+        </childnode>
+        <childnode refid="24870" relation="usage">
+          <edgelabel>renderView</edgelabel>
+        </childnode>
+        <childnode refid="24876" relation="usage">
+          <edgelabel>targets</edgelabel>
+        </childnode>
+        <childnode refid="24877" relation="usage">
+          <edgelabel>spawnNode</edgelabel>
+          <edgelabel>snapshotNode</edgelabel>
+          <edgelabel>activeNode</edgelabel>
+        </childnode>
+        <childnode refid="24878" relation="usage">
+          <edgelabel>renderEntity</edgelabel>
+        </childnode>
+        <childnode refid="24885" relation="usage">
+          <edgelabel>spawnArgs</edgelabel>
+        </childnode>
+        <childnode refid="24886" relation="usage">
+          <edgelabel>refSound</edgelabel>
+        </childnode>
+        <childnode refid="24889" relation="usage">
+          <edgelabel>scriptObject</edgelabel>
+        </childnode>
+      </node>
+      <node id="24887">
+        <label>soundShaderParms_t</label>
+        <link refid="structsound_shader_parms__t"/>
+      </node>
+      <node id="24881">
+        <label>idSoundEmitter</label>
+        <link refid="classid_sound_emitter"/>
+      </node>
+      <node id="24873">
+        <label>idMaterial</label>
+        <link refid="classid_material"/>
+        <childnode refid="24874" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24867">
+        <label>idEventDef</label>
+        <link refid="classid_event_def"/>
+      </node>
+      <node id="24880">
+        <label>idJointMat</label>
+        <link refid="classid_joint_mat"/>
+      </node>
+      <node id="24876">
+        <label>idList&lt; idEntityPtr&lt; idEntity &gt; &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="24878">
+        <label>renderEntity_s</label>
+        <link refid="structrender_entity__s"/>
+        <childnode refid="24871" relation="usage">
+          <edgelabel>axis</edgelabel>
+        </childnode>
+        <childnode refid="24879" relation="usage">
+          <edgelabel>customSkin</edgelabel>
+        </childnode>
+        <childnode refid="24880" relation="usage">
+          <edgelabel>joints</edgelabel>
+        </childnode>
+        <childnode refid="24870" relation="usage">
+          <edgelabel>remoteRenderView</edgelabel>
+        </childnode>
+        <childnode refid="24881" relation="usage">
+          <edgelabel>referenceSound</edgelabel>
+        </childnode>
+        <childnode refid="24882" relation="usage">
+          <edgelabel>hModel</edgelabel>
+        </childnode>
+        <childnode refid="24883" relation="usage">
+          <edgelabel>bounds</edgelabel>
+        </childnode>
+        <childnode refid="24872" relation="usage">
+          <edgelabel>origin</edgelabel>
+        </childnode>
+        <childnode refid="24878" relation="usage">
+          <edgelabel>callback</edgelabel>
+        </childnode>
+        <childnode refid="24873" relation="usage">
+          <edgelabel>customShader</edgelabel>
+          <edgelabel>referenceShader</edgelabel>
+        </childnode>
+        <childnode refid="24884" relation="usage">
+          <edgelabel>gui</edgelabel>
+        </childnode>
+      </node>
+      <node id="24889">
+        <label>idScriptObject</label>
+        <link refid="classid_script_object"/>
+      </node>
+      <node id="24883">
+        <label>idBounds</label>
+        <link refid="classid_bounds"/>
+      </node>
+      <node id="24871">
+        <label>idMat3</label>
+        <link refid="classid_mat3"/>
+      </node>
+      <node id="24884">
+        <label>idUserInterface</label>
+        <link refid="classid_user_interface"/>
+      </node>
+      <node id="24875">
+        <label>idDeclBase</label>
+        <link refid="classid_decl_base"/>
+      </node>
+      <node id="24865">
+        <label>idHierarchy&lt; idTypeInfo &gt;</label>
+        <link refid="classid_hierarchy"/>
+      </node>
+      <node id="24861">
+        <label>idIK</label>
+        <link refid="classid_i_k"/>
+        <childnode refid="24862" relation="usage">
+          <edgelabel>self</edgelabel>
+        </childnode>
+        <childnode refid="24890" relation="usage">
+          <edgelabel>animator</edgelabel>
+        </childnode>
+        <childnode refid="24872" relation="usage">
+          <edgelabel>modelOffset</edgelabel>
+        </childnode>
+      </node>
+      <node id="24868">
+        <label>idStr</label>
+        <link refid="classid_str"/>
+      </node>
+      <node id="24882">
+        <label>idRenderModel</label>
+        <link refid="classid_render_model"/>
+      </node>
+      <node id="24874">
+        <label>idDecl</label>
+        <link refid="classid_decl"/>
+        <childnode refid="24875" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+      </node>
+      <node id="24872">
+        <label>idVec3</label>
+        <link refid="classid_vec3"/>
+      </node>
+      <node id="24877">
+        <label>idLinkList&lt; idEntity &gt;</label>
+        <link refid="classid_link_list"/>
+      </node>
+      <node id="24885">
+        <label>idDict</label>
+        <link refid="classid_dict"/>
+      </node>
+      <node id="24879">
+        <label>idDeclSkin</label>
+        <link refid="classid_decl_skin"/>
+        <childnode refid="24874" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24864">
+        <label>idTypeInfo</label>
+        <link refid="classid_type_info"/>
+        <childnode refid="24864" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>super</edgelabel>
+        </childnode>
+        <childnode refid="24865" relation="usage">
+          <edgelabel>node</edgelabel>
+        </childnode>
+        <childnode refid="24866" relation="usage">
+          <edgelabel>eventCallbacks</edgelabel>
+        </childnode>
+        <childnode refid="24863" relation="usage">
+          <edgelabel>CreateInstance</edgelabel>
+        </childnode>
+      </node>
+      <node id="24890">
+        <label>idAnimator</label>
+        <link refid="classid_animator"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" line="77" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/IK.h" bodystart="77" bodyend="137"/>
+    <listofallmembers>
+      <member refid="classid_i_k_1ab42cd6d43d3a329223745f5ecf3ab31f" prot="protected" virt="non-virtual"><scope>idIK_Walk</scope><name>animator</name></member>
+      <member refid="classid_i_k___walk_1a60930ba0b259e6fdc92bc07b32823672" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>ankleJoints</name></member>
+      <member refid="classid_i_k___walk_1afcf8cf1a47d1e1d3c6112cec00351438" prot="public" virt="virtual"><scope>idIK_Walk</scope><name>ClearJointMods</name></member>
+      <member refid="classid_i_k___walk_1a9881232efcebebe20fd5d5d1c8624f74" prot="public" virt="virtual"><scope>idIK_Walk</scope><name>ClearJointMods</name></member>
+      <member refid="classid_i_k___walk_1a94c528fb8cb458493223551b88e4642d" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>dirJoints</name></member>
+      <member refid="classid_i_k___walk_1aedefeb4c2c8964ccfb331292bb73d031" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>DisableAll</name></member>
+      <member refid="classid_i_k___walk_1aedefeb4c2c8964ccfb331292bb73d031" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>DisableAll</name></member>
+      <member refid="classid_i_k___walk_1a4ef9fd70bd560ae9204dae60b3a538b7" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>DisableLeg</name></member>
+      <member refid="classid_i_k___walk_1a4ef9fd70bd560ae9204dae60b3a538b7" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>DisableLeg</name></member>
+      <member refid="classid_i_k___walk_1a824ffbe5b1c16fa984f1475e956b4581" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>EnableAll</name></member>
+      <member refid="classid_i_k___walk_1a824ffbe5b1c16fa984f1475e956b4581" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>EnableAll</name></member>
+      <member refid="classid_i_k___walk_1a29e84a9f09943805cadab2da6ac42f98" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>enabledLegs</name></member>
+      <member refid="classid_i_k___walk_1ab385c0b3dcbb6041af03adaabea1bcd3" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>EnableLeg</name></member>
+      <member refid="classid_i_k___walk_1ab385c0b3dcbb6041af03adaabea1bcd3" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>EnableLeg</name></member>
+      <member refid="classid_i_k___walk_1a812c94d350d583470cfd0c3e027c6e66" prot="public" virt="virtual"><scope>idIK_Walk</scope><name>Evaluate</name></member>
+      <member refid="classid_i_k___walk_1a17ba391dd1b1db6d0b6d5b524c2a1a0c" prot="public" virt="virtual"><scope>idIK_Walk</scope><name>Evaluate</name></member>
+      <member refid="classid_i_k___walk_1adc8a69c04d6c454ad1b1363b02a47e65" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>footDownTrace</name></member>
+      <member refid="classid_i_k___walk_1a763066eea0be95f70b0d06dc6f4e87d8" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>footJoints</name></member>
+      <member refid="classid_i_k___walk_1ac6b78fdceb82fd87cb2a03b3c4d262d6" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>footModel</name></member>
+      <member refid="classid_i_k___walk_1a628d03d8540a6929b5f37aa84d600f00" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>footShift</name></member>
+      <member refid="classid_i_k___walk_1aa5818f83509a29356361e4463e4e7def" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>footUpTrace</name></member>
+      <member refid="classid_i_k_1a058eec68e5309853b36e9c68d4ad2723" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>GetBoneAxis</name></member>
+      <member refid="classid_i_k_1a058eec68e5309853b36e9c68d4ad2723" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>GetBoneAxis</name></member>
+      <member refid="classid_i_k___walk_1aee10b4968745e344bc60a112300ea9ce" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>hipForward</name></member>
+      <member refid="classid_i_k___walk_1a731e906ec7b6d1a5bce9d8defdd2996a" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>hipJoints</name></member>
+      <member refid="classid_i_k_1ac2464633008dcdff164b7377b32ffc9d" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>idIK</name></member>
+      <member refid="classid_i_k_1ac2464633008dcdff164b7377b32ffc9d" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>idIK</name></member>
+      <member refid="classid_i_k___walk_1a0e170c3fdd967437ebd3f6e51d5b4f58" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>idIK_Walk</name></member>
+      <member refid="classid_i_k___walk_1a0e170c3fdd967437ebd3f6e51d5b4f58" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>idIK_Walk</name></member>
+      <member refid="classid_i_k_1a341f4cb48a2a7ad25680e9c6eed7c3e7" prot="protected" virt="non-virtual"><scope>idIK_Walk</scope><name>ik_activate</name></member>
+      <member refid="classid_i_k___walk_1ae6dd0fda57ce9de27226322d9f438a53" prot="public" virt="virtual"><scope>idIK_Walk</scope><name>Init</name></member>
+      <member refid="classid_i_k___walk_1a388287ed5064fc60121d476b8839117d" prot="public" virt="virtual"><scope>idIK_Walk</scope><name>Init</name></member>
+      <member refid="classid_i_k_1a3e5ba1a3b6c9002e366608c0763b6296" prot="protected" virt="non-virtual"><scope>idIK_Walk</scope><name>initialized</name></member>
+      <member refid="classid_i_k_1a311517977864827e4d9236a51f2a1889" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>IsInitialized</name></member>
+      <member refid="classid_i_k_1a311517977864827e4d9236a51f2a1889" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>IsInitialized</name></member>
+      <member refid="classid_i_k___walk_1a18822f05c271e33c0534a13c98218503" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>kneeForward</name></member>
+      <member refid="classid_i_k___walk_1a14c7258ed6ad158f22e1adb74f2492e6" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>kneeJoints</name></member>
+      <member refid="classid_i_k___walk_1ab395a75f01bf80a9830d3417a926aae0" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>lowerLegLength</name></member>
+      <member refid="classid_i_k___walk_1a3a26a0d89e62812d80c0f9d6a4650a71" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>lowerLegToKneeJoint</name></member>
+      <member refid="classid_i_k___walk_1a84ac55698122013d04c998535577074c" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>MAX_LEGS</name></member>
+      <member refid="classid_i_k___walk_1abe8339220705a225b81cff843a16d5a2" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>minWaistAnkleDist</name></member>
+      <member refid="classid_i_k___walk_1a7daa97040574811b8b770d7426ad538c" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>minWaistFloorDist</name></member>
+      <member refid="classid_i_k_1a563f12a8c2d21bbb93d9ea3dcafdced4" prot="protected" virt="non-virtual"><scope>idIK_Walk</scope><name>modelOffset</name></member>
+      <member refid="classid_i_k_1ae684c32894ff5df88a852277e6ccc585" prot="protected" virt="non-virtual"><scope>idIK_Walk</scope><name>modifiedAnim</name></member>
+      <member refid="classid_i_k___walk_1aa7008f786119b5c5a15752ad35b143c6" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>numLegs</name></member>
+      <member refid="classid_i_k___walk_1a6eb7ae4247d15566a168777df39cd927" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>oldAnkleHeights</name></member>
+      <member refid="classid_i_k___walk_1a304d03df76a1e9141dc46111585f15a8" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>oldHeightsValid</name></member>
+      <member refid="classid_i_k___walk_1aa6a91793e017e09bbaa8957376f0da1a" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>oldWaistHeight</name></member>
+      <member refid="classid_i_k___walk_1a7e4b0b38454cc366d5b03d4f100b2eb1" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>pivotFoot</name></member>
+      <member refid="classid_i_k___walk_1a9c4024765327766a11225c1e7779beed" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>pivotPos</name></member>
+      <member refid="classid_i_k___walk_1aeadcd2d0d43f4db6180018b46ec299a7" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>pivotYaw</name></member>
+      <member refid="classid_i_k___walk_1a6822b264f2df4e11e461ace2c94eb2ec" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>Restore</name></member>
+      <member refid="classid_i_k___walk_1a6822b264f2df4e11e461ace2c94eb2ec" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>Restore</name></member>
+      <member refid="classid_i_k___walk_1a1eee88dad78e41c94f8c2da8fd0417d9" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>Save</name></member>
+      <member refid="classid_i_k___walk_1a1eee88dad78e41c94f8c2da8fd0417d9" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>Save</name></member>
+      <member refid="classid_i_k_1a03d98751977c0cd4a1f74360d2dc6720" prot="protected" virt="non-virtual"><scope>idIK_Walk</scope><name>self</name></member>
+      <member refid="classid_i_k___walk_1a9c273972c8edebdc1c01d44045085892" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>smoothing</name></member>
+      <member refid="classid_i_k_1ae9a6aaa218eca085f3dc299f2c719bcf" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>SolveTwoBones</name></member>
+      <member refid="classid_i_k_1ae9a6aaa218eca085f3dc299f2c719bcf" prot="public" virt="non-virtual"><scope>idIK_Walk</scope><name>SolveTwoBones</name></member>
+      <member refid="classid_i_k___walk_1a1578189651de01d1b79eca2f8305fab3" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>tiltWaist</name></member>
+      <member refid="classid_i_k___walk_1a3068228ffdd45d65dd544c72465850b7" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>upperLegLength</name></member>
+      <member refid="classid_i_k___walk_1a5b1ec3bde9325a50ab44f1b2117970f2" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>upperLegToHipJoint</name></member>
+      <member refid="classid_i_k___walk_1ab7b5a9575cda03a060a9c1dc7e146552" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>usePivot</name></member>
+      <member refid="classid_i_k___walk_1a128649ce7ea0035d2d044648ed538768" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>waistJoint</name></member>
+      <member refid="classid_i_k___walk_1a55ee06026a238a16e94c8701491bc7a0" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>waistOffset</name></member>
+      <member refid="classid_i_k___walk_1a09a2c51e47bef6f0e621fed944b55676" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>waistShift</name></member>
+      <member refid="classid_i_k___walk_1ae3ec20a5cb0b0e94043722384cd295c5" prot="private" virt="non-virtual"><scope>idIK_Walk</scope><name>waistSmoothing</name></member>
+      <member refid="classid_i_k_1a5b457fce4e14f45d10475ab696acd050" prot="public" virt="virtual"><scope>idIK_Walk</scope><name>~idIK</name></member>
+      <member refid="classid_i_k_1a33b6b1c3ef518105c51b8da95cef7fa1" prot="public" virt="virtual"><scope>idIK_Walk</scope><name>~idIK</name></member>
+      <member refid="classid_i_k___walk_1a65b9b6c0239a36e45b804e5cc5064d30" prot="public" virt="virtual"><scope>idIK_Walk</scope><name>~idIK_Walk</name></member>
+      <member refid="classid_i_k___walk_1a5eb5db127380b8179188a685d85341ec" prot="public" virt="virtual"><scope>idIK_Walk</scope><name>~idIK_Walk</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

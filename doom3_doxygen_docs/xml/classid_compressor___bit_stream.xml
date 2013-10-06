@@ -1,0 +1,613 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_compressor___bit_stream" kind="class" prot="public">
+    <compoundname>idCompressor_BitStream</compoundname>
+    <basecompoundref refid="classid_compressor___none" prot="public" virt="non-virtual">idCompressor_None</basecompoundref>
+    <derivedcompoundref refid="classid_compressor___arithmetic" prot="public" virt="non-virtual">idCompressor_Arithmetic</derivedcompoundref>
+    <derivedcompoundref refid="classid_compressor___l_z_s_s" prot="public" virt="non-virtual">idCompressor_LZSS</derivedcompoundref>
+    <derivedcompoundref refid="classid_compressor___l_z_w" prot="public" virt="non-virtual">idCompressor_LZW</derivedcompoundref>
+    <derivedcompoundref refid="classid_compressor___run_length" prot="public" virt="non-virtual">idCompressor_RunLength</derivedcompoundref>
+    <derivedcompoundref refid="classid_compressor___run_length___zero_based" prot="public" virt="non-virtual">idCompressor_RunLength_ZeroBased</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1aef70e367e806ed82410c5e8b5ec4a48e" prot="protected" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte idCompressor_BitStream::buffer[65536]</definition>
+        <argsstring>[65536]</argsstring>
+        <name>buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="245" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1add41dc4b92c0100cea7bae93b3d9042e" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::wordLength</definition>
+        <argsstring></argsstring>
+        <name>wordLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="246" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1acd122b3fcb168704eea4daad232e22bd" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::readTotalBytes</definition>
+        <argsstring></argsstring>
+        <name>readTotalBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="248" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1a51ef6a22ecba1f4aa33a49ed00a25269" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::readLength</definition>
+        <argsstring></argsstring>
+        <name>readLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="249" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1a0648e0b944bcb1597edf732e96bb0d63" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::readByte</definition>
+        <argsstring></argsstring>
+        <name>readByte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="250" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1ac665e6b05c9506d92814140fdd7dd771" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::readBit</definition>
+        <argsstring></argsstring>
+        <name>readBit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="251" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1a0fc18b666c81b7114291282b9eb8dda5" prot="protected" static="no" mutable="no">
+        <type>const byte *</type>
+        <definition>const byte* idCompressor_BitStream::readData</definition>
+        <argsstring></argsstring>
+        <name>readData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="252" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1ac744967f0cf71ade1646374633ef05bc" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::writeTotalBytes</definition>
+        <argsstring></argsstring>
+        <name>writeTotalBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="254" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1a84c9350d68992c0240dc700dd120ce3c" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::writeLength</definition>
+        <argsstring></argsstring>
+        <name>writeLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="255" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1a1c9ea64fa0d9bf1a820a6497404c56f6" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::writeByte</definition>
+        <argsstring></argsstring>
+        <name>writeByte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="256" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1a65ef0023a42310f66e5b6a874f508ca8" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::writeBit</definition>
+        <argsstring></argsstring>
+        <name>writeBit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="257" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___bit_stream_1a9e111a9fbf78d4c1d3cb70b5a0f29eb7" prot="protected" static="no" mutable="no">
+        <type>byte *</type>
+        <definition>byte* idCompressor_BitStream::writeData</definition>
+        <argsstring></argsstring>
+        <name>writeData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="258" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_compressor___bit_stream_1afd5587c02488f7bc2c401481e16beab2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>idCompressor_BitStream::idCompressor_BitStream</definition>
+        <argsstring>(void)</argsstring>
+        <name>idCompressor_BitStream</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="235" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="235" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___bit_stream_1abfee76e4343ef0f171c4ba36415354af" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idCompressor_BitStream::Init</definition>
+        <argsstring>(idFile *f, bool compress, int wordLength)</argsstring>
+        <name>Init</name>
+        <reimplements refid="classid_compressor___none_1aac40a71794c76e61593ec4227c1ee954">Init</reimplements>
+        <reimplementedby refid="classid_compressor___run_length_1a7c574c7438c933d3329ec796d7d672d1">Init</reimplementedby>
+        <reimplementedby refid="classid_compressor___arithmetic_1a5fb48826b2de3e3f03e1d2179d422c61">Init</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_s_s_1a98e00464a2fb0448c23e8b371f69072c">Init</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_s_s___word_aligned_1a78bd872e770add47313bcf880f3a3ac9">Init</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_w_1aac2c80be776e16fe91c374b5773164dc">Init</reimplementedby>
+        <param>
+          <type><ref refid="classid_file" kindref="compound">idFile</ref> *</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>compress</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>wordLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="237" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="274" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___bit_stream_1a4b91a506116ca7975d598d14e6e35f88" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idCompressor_BitStream::FinishCompress</definition>
+        <argsstring>(void)</argsstring>
+        <name>FinishCompress</name>
+        <reimplements refid="classid_compressor___none_1aa82a6e37c14dfd1d5eea452e1ee2b1b1">FinishCompress</reimplements>
+        <reimplementedby refid="classid_compressor___arithmetic_1ae6a1ec2c3036ca2acf4236d9a1e6b27e">FinishCompress</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_s_s_1ae98bf0bf3545d022284de134e2e1c303">FinishCompress</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_w_1aca4d57dca3338a757dfdfcf2fe191b9c">FinishCompress</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="238" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="553" bodyend="564"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___bit_stream_1ae5a5073c0b428765f54e2d2ea5b03647" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>float</type>
+        <definition>float idCompressor_BitStream::GetCompressionRatio</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetCompressionRatio</name>
+        <reimplements refid="classid_compressor___none_1ac1671aa8417690b9f2ce23b8f9522a88">GetCompressionRatio</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="239" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="591" bodyend="597"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___bit_stream_1a6a934180c00f3fccb071ae55634fa916" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::Write</definition>
+        <argsstring>(const void *inData, int inLength)</argsstring>
+        <name>Write</name>
+        <reimplements refid="classid_compressor___none_1a29ef9f868c9109f42415cfc55b4463d7">Write</reimplements>
+        <reimplementedby refid="classid_compressor___run_length_1a5ce19b1688818fc05cd133eed3e2cbb5">Write</reimplementedby>
+        <reimplementedby refid="classid_compressor___run_length___zero_based_1a614743248d244013b71035c166f4dedb">Write</reimplementedby>
+        <reimplementedby refid="classid_compressor___arithmetic_1a02054623564a81253d78d74bceba516f">Write</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_s_s_1a532053a554d159e139c4d19ff9b4cb0e">Write</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_w_1a0f74570d6f39d784e7ee6637141a13ae">Write</reimplementedby>
+        <param>
+          <type>const void *</type>
+          <declname>inData</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>inLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="241" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="533" bodyend="546"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___bit_stream_1a3cbf3ed76e1be9f37d603383996fa40e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::Read</definition>
+        <argsstring>(void *outData, int outLength)</argsstring>
+        <name>Read</name>
+        <reimplements refid="classid_compressor___none_1a60377881b349c17c7be1656932cbe9f1">Read</reimplements>
+        <reimplementedby refid="classid_compressor___run_length_1a6cd141cec4e0b596dcb6423ede022c91">Read</reimplementedby>
+        <reimplementedby refid="classid_compressor___run_length___zero_based_1a06ffa3faa11f70c57f3e8eb3bf702624">Read</reimplementedby>
+        <reimplementedby refid="classid_compressor___arithmetic_1a9c4486ff1902acd31f34a5333488367c">Read</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_s_s_1a3bb54581dedf53b352e2c0585d6367c9">Read</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_w_1a4b4463d8d809e77a907cce183ba6cfc5">Read</reimplementedby>
+        <param>
+          <type>void *</type>
+          <declname>outData</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>outLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="242" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="571" bodyend="584"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classid_compressor___bit_stream_1a8cd60e22af5163ddec616f1fc0efd02e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idCompressor_BitStream::InitCompress</definition>
+        <argsstring>(const void *inData, const int inLength)</argsstring>
+        <name>InitCompress</name>
+        <param>
+          <type>const void *</type>
+          <declname>inData</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>inLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="261" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="300" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___bit_stream_1aad1951f1057ef54d90c778eb4a97248a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idCompressor_BitStream::InitDecompress</definition>
+        <argsstring>(void *outData, int outLength)</argsstring>
+        <name>InitDecompress</name>
+        <param>
+          <type>void *</type>
+          <declname>outData</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>outLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="262" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="320" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___bit_stream_1ad614e8af14fbdb982016d8afd4d1bdaa" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_BitStream::WriteBits</definition>
+        <argsstring>(int value, int numBits)</argsstring>
+        <name>WriteBits</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="263" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="340" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___bit_stream_1ac7fb60b0c589875ff703d20edc500a3e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::ReadBits</definition>
+        <argsstring>(int numBits)</argsstring>
+        <name>ReadBits</name>
+        <param>
+          <type>int</type>
+          <declname>numBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="264" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="387" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___bit_stream_1a79fd7a412d812218f080597a4563f12a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_BitStream::UnreadBits</definition>
+        <argsstring>(int numBits)</argsstring>
+        <name>UnreadBits</name>
+        <param>
+          <type>int</type>
+          <declname>numBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="265" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="437" bodyend="454"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___bit_stream_1ae561f01c5c86ab7b3c39f5736e087a08" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idCompressor_BitStream::Compare</definition>
+        <argsstring>(const byte *src1, int bitPtr1, const byte *src2, int bitPtr2, int maxBits) const </argsstring>
+        <name>Compare</name>
+        <param>
+          <type>const byte *</type>
+          <declname>src1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bitPtr1</declname>
+        </param>
+        <param>
+          <type>const byte *</type>
+          <declname>src2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bitPtr2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="266" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="461" bodyend="526"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="23044">
+        <label>idCompressor</label>
+        <link refid="classid_compressor"/>
+        <childnode refid="23045" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23045">
+        <label>idFile</label>
+        <link refid="classid_file"/>
+      </node>
+      <node id="23050">
+        <label>idCompressor_RunLength</label>
+        <link refid="classid_compressor___run_length"/>
+        <childnode refid="23042" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23047">
+        <label>idCompressor_LZSS</label>
+        <link refid="classid_compressor___l_z_s_s"/>
+        <childnode refid="23042" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23042">
+        <label>idCompressor_BitStream</label>
+        <link refid="classid_compressor___bit_stream"/>
+        <childnode refid="23043" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23046">
+        <label>idCompressor_Arithmetic</label>
+        <link refid="classid_compressor___arithmetic"/>
+        <childnode refid="23042" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23051">
+        <label>idCompressor_RunLength_ZeroBased</label>
+        <link refid="classid_compressor___run_length___zero_based"/>
+        <childnode refid="23042" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23043">
+        <label>idCompressor_None</label>
+        <link refid="classid_compressor___none"/>
+        <childnode refid="23044" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23048">
+        <label>idCompressor_LZSS_WordAligned</label>
+        <link refid="classid_compressor___l_z_s_s___word_aligned"/>
+        <childnode refid="23047" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23049">
+        <label>idCompressor_LZW</label>
+        <link refid="classid_compressor___l_z_w"/>
+        <childnode refid="23042" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="23054">
+        <label>idCompressor</label>
+        <link refid="classid_compressor"/>
+        <childnode refid="23055" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23055">
+        <label>idFile</label>
+        <link refid="classid_file"/>
+      </node>
+      <node id="23052">
+        <label>idCompressor_BitStream</label>
+        <link refid="classid_compressor___bit_stream"/>
+        <childnode refid="23053" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23053">
+        <label>idCompressor_None</label>
+        <link refid="classid_compressor___none"/>
+        <childnode refid="23054" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23055" relation="usage">
+          <edgelabel>file</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="233" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="233" bodyend="267"/>
+    <listofallmembers>
+      <member refid="classid_compressor_1a948c5f6b02d75a933ebdb0cf3f520568" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>AllocArithmetic</name></member>
+      <member refid="classid_compressor_1a78065588ccabbde8294682e7019e4aed" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>AllocBitStream</name></member>
+      <member refid="classid_compressor_1abcccf0f7106ab7af30b5adfc22790f35" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>AllocHuffman</name></member>
+      <member refid="classid_compressor_1ab271a5e4534b1cb0c1409cb0fd40d142" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>AllocLZSS</name></member>
+      <member refid="classid_compressor_1a68e941f1d0f05b920a77bce6aacb9593" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>AllocLZSS_WordAligned</name></member>
+      <member refid="classid_compressor_1a884b06dbf22908b847d03a7b3457e584" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>AllocLZW</name></member>
+      <member refid="classid_compressor_1a3faf166652cc2afbe47862398f2a79e6" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>AllocNoCompression</name></member>
+      <member refid="classid_compressor_1aeb18f646172c5e19c65cf728bf4e232c" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>AllocRunLength</name></member>
+      <member refid="classid_compressor_1a774778953be895ef50fb34baf5c679c2" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>AllocRunLength_ZeroBased</name></member>
+      <member refid="classid_compressor___bit_stream_1aef70e367e806ed82410c5e8b5ec4a48e" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>buffer</name></member>
+      <member refid="classid_compressor___bit_stream_1ae561f01c5c86ab7b3c39f5736e087a08" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>Compare</name></member>
+      <member refid="classid_compressor___none_1a4504ab7aed6d64a550478f5b6f17034c" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>compress</name></member>
+      <member refid="classid_compressor___none_1a2633597107f0e60dae6a07fef7ead5b5" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>file</name></member>
+      <member refid="classid_compressor___bit_stream_1a4b91a506116ca7975d598d14e6e35f88" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>FinishCompress</name></member>
+      <member refid="classid_compressor___none_1a9bbe5386db46b183aa3a77163b2dd1d8" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>Flush</name></member>
+      <member refid="classid_compressor___none_1a3ed965e71606f5225b5619f733931d41" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ForceFlush</name></member>
+      <member refid="classid_compressor___bit_stream_1ae5a5073c0b428765f54e2d2ea5b03647" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>GetCompressionRatio</name></member>
+      <member refid="classid_compressor___none_1ac1b26592e5abe7bedd679505e20152d5" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>GetFullPath</name></member>
+      <member refid="classid_compressor___none_1ad0b25a1bada1a50b54609b7a8e58633f" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>GetName</name></member>
+      <member refid="classid_compressor___bit_stream_1afd5587c02488f7bc2c401481e16beab2" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>idCompressor_BitStream</name></member>
+      <member refid="classid_compressor___none_1affd73fbd05db59a2c924c7cfafe70d56" prot="public" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>idCompressor_None</name></member>
+      <member refid="classid_compressor___bit_stream_1abfee76e4343ef0f171c4ba36415354af" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>Init</name></member>
+      <member refid="classid_compressor___bit_stream_1a8cd60e22af5163ddec616f1fc0efd02e" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>InitCompress</name></member>
+      <member refid="classid_compressor___bit_stream_1aad1951f1057ef54d90c778eb4a97248a" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>InitDecompress</name></member>
+      <member refid="classid_compressor___none_1a3e26819600226f3e85a2b345fad5e1d0" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>Length</name></member>
+      <member refid="classid_file_1adfd432a73c3592176226dd82808c21c9" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>Printf</name></member>
+      <member refid="classid_compressor___bit_stream_1a3cbf3ed76e1be9f37d603383996fa40e" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>Read</name></member>
+      <member refid="classid_compressor___bit_stream_1ac665e6b05c9506d92814140fdd7dd771" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>readBit</name></member>
+      <member refid="classid_compressor___bit_stream_1ac7fb60b0c589875ff703d20edc500a3e" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>ReadBits</name></member>
+      <member refid="classid_file_1a7f791780d9a45d92777d1e4f9873a8b9" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadBool</name></member>
+      <member refid="classid_compressor___bit_stream_1a0648e0b944bcb1597edf732e96bb0d63" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>readByte</name></member>
+      <member refid="classid_file_1a5810139f1e5f4639f54bd98e6f24e7ae" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadChar</name></member>
+      <member refid="classid_compressor___bit_stream_1a0fc18b666c81b7114291282b9eb8dda5" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>readData</name></member>
+      <member refid="classid_file_1a941a07fa1530f0f24afb7de47490677d" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadFloat</name></member>
+      <member refid="classid_file_1a185f671e3f0a8cb1c95cf12c5f9eb25b" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadInt</name></member>
+      <member refid="classid_compressor___bit_stream_1a51ef6a22ecba1f4aa33a49ed00a25269" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>readLength</name></member>
+      <member refid="classid_file_1ae4bed1ce67c3cb66f4ea21fb847b7794" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadMat3</name></member>
+      <member refid="classid_file_1af01dee78fa44acf5367868b8f76848fa" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadShort</name></member>
+      <member refid="classid_file_1a24fa6f42665e91f2bf606ed6b20ebcaa" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadString</name></member>
+      <member refid="classid_compressor___bit_stream_1acd122b3fcb168704eea4daad232e22bd" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>readTotalBytes</name></member>
+      <member refid="classid_file_1af4333d4614a09b09a1849f29ee34ca3b" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadUnsignedChar</name></member>
+      <member refid="classid_file_1a772c592c1e5108241ab29252a294d09f" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadUnsignedInt</name></member>
+      <member refid="classid_file_1a87b31cd43aeea4736ea9cf0d9c72b698" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadUnsignedShort</name></member>
+      <member refid="classid_file_1ad540f64882bc1a4a4477ba4ec556e853" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadVec2</name></member>
+      <member refid="classid_file_1a130fc853cbc30ca9a620ba7dcec1ee36" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadVec3</name></member>
+      <member refid="classid_file_1a6dc2b9efd38940009971b0dc31b7fad9" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadVec4</name></member>
+      <member refid="classid_file_1ab358679311d77e35855960a505039891" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>ReadVec6</name></member>
+      <member refid="classid_file_1a35cd4415f630c2b015743ab0cae948ef" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>Rewind</name></member>
+      <member refid="classid_compressor___none_1a6cd64455598f13637b0c07d699aa5306" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>Seek</name></member>
+      <member refid="classid_compressor___none_1a19cfa8b021c8f1cf0aa7305fb0bf0820" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>Tell</name></member>
+      <member refid="classid_compressor___none_1a272cb619afc28a4f021ffdff829b8aac" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>Timestamp</name></member>
+      <member refid="classid_compressor___bit_stream_1a79fd7a412d812218f080597a4563f12a" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>UnreadBits</name></member>
+      <member refid="classid_file_1a1efb9b1240f9f0e751fa4fdc7ab989f9" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>VPrintf</name></member>
+      <member refid="classid_compressor___bit_stream_1add41dc4b92c0100cea7bae93b3d9042e" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>wordLength</name></member>
+      <member refid="classid_compressor___bit_stream_1a6a934180c00f3fccb071ae55634fa916" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>Write</name></member>
+      <member refid="classid_compressor___bit_stream_1a65ef0023a42310f66e5b6a874f508ca8" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>writeBit</name></member>
+      <member refid="classid_compressor___bit_stream_1ad614e8af14fbdb982016d8afd4d1bdaa" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>WriteBits</name></member>
+      <member refid="classid_file_1ab83dc0daed46cfef37c5b399fe20351a" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteBool</name></member>
+      <member refid="classid_compressor___bit_stream_1a1c9ea64fa0d9bf1a820a6497404c56f6" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>writeByte</name></member>
+      <member refid="classid_file_1ab0446bf820388a2bfe18aadcbe4b1614" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteChar</name></member>
+      <member refid="classid_compressor___bit_stream_1a9e111a9fbf78d4c1d3cb70b5a0f29eb7" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>writeData</name></member>
+      <member refid="classid_file_1a0ca233bb1a950edbcbfbe8b61c374d1a" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteFloat</name></member>
+      <member refid="classid_file_1af50aed7477c02cb29c2e6547c77a9082" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteFloatString</name></member>
+      <member refid="classid_file_1a74639eb327849916c4c61a2b7f483ea0" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteInt</name></member>
+      <member refid="classid_compressor___bit_stream_1a84c9350d68992c0240dc700dd120ce3c" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>writeLength</name></member>
+      <member refid="classid_file_1a3f5efe4020ee03a45e90b46b8d508773" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteMat3</name></member>
+      <member refid="classid_file_1a6f6c4a96246650dca07347e0fdb51676" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteShort</name></member>
+      <member refid="classid_file_1a7d0e90b0d610c61167fbe4269ed5747e" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteString</name></member>
+      <member refid="classid_compressor___bit_stream_1ac744967f0cf71ade1646374633ef05bc" prot="protected" virt="non-virtual"><scope>idCompressor_BitStream</scope><name>writeTotalBytes</name></member>
+      <member refid="classid_file_1a8c4e1a31e368370d5ab6d47d83c8f65a" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteUnsignedChar</name></member>
+      <member refid="classid_file_1a823cff29fc14457b11017c06cb9cd95e" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteUnsignedInt</name></member>
+      <member refid="classid_file_1aa0510f4c495f59bf659edb9a44daff66" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteUnsignedShort</name></member>
+      <member refid="classid_file_1ab56756a3fa18f96010a6180ca9b62980" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteVec2</name></member>
+      <member refid="classid_file_1ad7fcadac658820eb12b51e2474bf4a8c" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteVec3</name></member>
+      <member refid="classid_file_1a4c6ba993d3b4e195941fbcfab7c5a0dd" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteVec4</name></member>
+      <member refid="classid_file_1a68d9f55dbe29f963e91b6f3b8eb80757" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>WriteVec6</name></member>
+      <member refid="classid_file_1a0c18523ff226e9d53a8c5d074f5f20ed" prot="public" virt="virtual"><scope>idCompressor_BitStream</scope><name>~idFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

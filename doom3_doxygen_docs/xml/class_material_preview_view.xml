@@ -1,0 +1,681 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_material_preview_view" kind="class" prot="public">
+    <compoundname>MaterialPreviewView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">CView</basecompoundref>
+    <basecompoundref refid="class_material_view" prot="public" virt="non-virtual">MaterialView</basecompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_material_preview_view_1ad6a66601d3d5ce5dbe186940bc50fa29" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_g_l_widget" kindref="compound">idGLWidget</ref></type>
+        <definition>idGLWidget MaterialPreviewView::renderWindow</definition>
+        <argsstring></argsstring>
+        <name>renderWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="138" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_material_preview_view_1ace96b6c2bf1a55cd629890b18d4b5a32" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_g_l_drawable_view" kindref="compound">idGLDrawableView</ref></type>
+        <definition>idGLDrawableView MaterialPreviewView::renderedView</definition>
+        <argsstring></argsstring>
+        <name>renderedView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="139" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_material_preview_view_1a430c057f4e34a73878279a3dc63f96a6" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_str" kindref="compound">idStr</ref></type>
+        <definition>idStr MaterialPreviewView::currentMaterial</definition>
+        <argsstring></argsstring>
+        <name>currentMaterial</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="141" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_material_preview_view_1a3eac1998941b775b593ae324b15e7991" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>DECLARE_DYNCREATE(<ref refid="class_material_preview_view" kindref="compound">MaterialPreviewView</ref>) protected</type>
+        <definition>MaterialPreviewView::~MaterialPreviewView</definition>
+        <argsstring>()</argsstring>
+        <name>~MaterialPreviewView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="110" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="45" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_material_preview_view_1a3c4ff30f589e6d5c81b825cbb5d8c31e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialPreviewView::OnDraw</definition>
+        <argsstring>(CDC *pDC)</argsstring>
+        <name>OnDraw</name>
+        <param>
+          <type>CDC *</type>
+          <declname>pDC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="113" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1ad7dd183fb4b2b18e25e7f22cdd668379" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::MV_OnMaterialSelectionChange</definition>
+        <argsstring>(MaterialDoc *pMaterial)</argsstring>
+        <name>MV_OnMaterialSelectionChange</name>
+        <reimplements refid="class_material_view_1a294aad530ce65823d3251446a3a3ae83">MV_OnMaterialSelectionChange</reimplements>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when the selected material has changed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The newly selected material. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="115" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="108" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1a132a619151edaabc7dfd89039f2eee52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnModelChange</definition>
+        <argsstring>(int modelId)</argsstring>
+        <name>OnModelChange</name>
+        <param>
+          <type>int</type>
+          <declname>modelId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="117" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="160" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1a5ccbc260c84394cb13e33af15b2134fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnCustomModelChange</definition>
+        <argsstring>(idStr modelName)</argsstring>
+        <name>OnCustomModelChange</name>
+        <param>
+          <type><ref refid="classid_str" kindref="compound">idStr</ref></type>
+          <declname>modelName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="118" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="165" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1a7278b8ea4729350008e051e1f25285cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnShowLightsChange</definition>
+        <argsstring>(bool showLights)</argsstring>
+        <name>OnShowLightsChange</name>
+        <param>
+          <type>bool</type>
+          <declname>showLights</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="119" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="170" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1a550de7463dc00b7b7f5ff4360b3c397b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnLocalParmChange</definition>
+        <argsstring>(int parmNum, float value)</argsstring>
+        <name>OnLocalParmChange</name>
+        <param>
+          <type>int</type>
+          <declname>parmNum</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="121" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1aeb4f7568275088a3f1db9a0a650c6a04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnGlobalParmChange</definition>
+        <argsstring>(int parmNum, float value)</argsstring>
+        <name>OnGlobalParmChange</name>
+        <param>
+          <type>int</type>
+          <declname>parmNum</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="122" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="125" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1a84348bd6b99d242558fa65d7567cc093" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnLightShaderChange</definition>
+        <argsstring>(int lightId, idStr shaderName)</argsstring>
+        <name>OnLightShaderChange</name>
+        <param>
+          <type>int</type>
+          <declname>lightId</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_str" kindref="compound">idStr</ref></type>
+          <declname>shaderName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="124" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1a5903c476780914e563d314ee401963d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnLightRadiusChange</definition>
+        <argsstring>(int lightId, float radius)</argsstring>
+        <name>OnLightRadiusChange</name>
+        <param>
+          <type>int</type>
+          <declname>lightId</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="125" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="140" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1afcacbdf0d02c9cef561b175602178f90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnLightColorChange</definition>
+        <argsstring>(int lightId, idVec3 &amp;color)</argsstring>
+        <name>OnLightColorChange</name>
+        <param>
+          <type>int</type>
+          <declname>lightId</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="126" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1add202875e6d587daa5b8d07a75b2d637" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnLightAllowMoveChange</definition>
+        <argsstring>(int lightId, bool move)</argsstring>
+        <name>OnLightAllowMoveChange</name>
+        <param>
+          <type>int</type>
+          <declname>lightId</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>move</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="127" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="145" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1a89b56f4192184641086d053cafd2fdcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnAddLight</definition>
+        <argsstring>(void)</argsstring>
+        <name>OnAddLight</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="129" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="150" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_preview_view_1aaf27167444bac7413c85014b83ecaa42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MaterialPreviewView::OnDeleteLight</definition>
+        <argsstring>(int lightId)</argsstring>
+        <name>OnDeleteLight</name>
+        <param>
+          <type>int</type>
+          <declname>lightId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="130" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="155" bodyend="158"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_material_preview_view_1adda3485b91d03d619cd927ac3f1f9492" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DECLARE_MESSAGE_MAP() public afx_msg void</type>
+        <definition>void MaterialPreviewView::OnSize</definition>
+        <argsstring>(UINT nType, int cx, int cy)</argsstring>
+        <name>OnSize</name>
+        <param>
+          <type>UINT</type>
+          <declname>nType</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="147" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.cpp" bodystart="95" bodyend="106"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="30424">
+        <label>MaterialPreviewView</label>
+        <link refid="class_material_preview_view"/>
+        <childnode refid="30425" relation="public-inheritance">
+        </childnode>
+        <childnode refid="30426" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30425">
+        <label>CView</label>
+      </node>
+      <node id="30426">
+        <label>MaterialView</label>
+        <link refid="class_material_view"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="30451">
+        <label>idAngles</label>
+        <link refid="classid_angles"/>
+      </node>
+      <node id="30457">
+        <label>renderView_s</label>
+        <link refid="structrender_view__s"/>
+        <childnode refid="30454" relation="usage">
+          <edgelabel>viewaxis</edgelabel>
+        </childnode>
+        <childnode refid="30452" relation="usage">
+          <edgelabel>vieworg</edgelabel>
+        </childnode>
+        <childnode refid="30439" relation="usage">
+          <edgelabel>globalMaterial</edgelabel>
+        </childnode>
+      </node>
+      <node id="30427">
+        <label>MaterialPreviewView</label>
+        <link refid="class_material_preview_view"/>
+        <childnode refid="30428" relation="public-inheritance">
+        </childnode>
+        <childnode refid="30429" relation="public-inheritance">
+        </childnode>
+        <childnode refid="30431" relation="usage">
+          <edgelabel>currentMaterial</edgelabel>
+        </childnode>
+        <childnode refid="30444" relation="usage">
+          <edgelabel>renderWindow</edgelabel>
+        </childnode>
+        <childnode refid="30447" relation="usage">
+          <edgelabel>renderedView</edgelabel>
+        </childnode>
+      </node>
+      <node id="30428">
+        <label>CView</label>
+      </node>
+      <node id="30447">
+        <label>idGLDrawableView</label>
+        <link refid="classid_g_l_drawable_view"/>
+        <childnode refid="30446" relation="public-inheritance">
+        </childnode>
+        <childnode refid="30448" relation="usage">
+          <edgelabel>viewLights</edgelabel>
+        </childnode>
+        <childnode refid="30431" relation="usage">
+          <edgelabel>customModelName</edgelabel>
+        </childnode>
+        <childnode refid="30449" relation="usage">
+          <edgelabel>world</edgelabel>
+        </childnode>
+        <childnode refid="30450" relation="usage">
+          <edgelabel>worldModel</edgelabel>
+        </childnode>
+        <childnode refid="30451" relation="usage">
+          <edgelabel>viewRotation</edgelabel>
+        </childnode>
+        <childnode refid="30452" relation="usage">
+          <edgelabel>viewOrigin</edgelabel>
+        </childnode>
+        <childnode refid="30453" relation="usage">
+          <edgelabel>worldEntity</edgelabel>
+        </childnode>
+        <childnode refid="30439" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+      </node>
+      <node id="30458">
+        <label>idSoundEmitter</label>
+        <link refid="classid_sound_emitter"/>
+      </node>
+      <node id="30433">
+        <label>MEStage_t</label>
+        <link refid="struct_m_e_stage__t"/>
+        <childnode refid="30434" relation="usage">
+          <edgelabel>stageData</edgelabel>
+        </childnode>
+      </node>
+      <node id="30432">
+        <label>idList&lt; MaterialModifier * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="30439">
+        <label>idMaterial</label>
+        <link refid="classid_material"/>
+        <childnode refid="30440" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30446">
+        <label>idGLDrawable</label>
+        <link refid="classid_g_l_drawable"/>
+      </node>
+      <node id="30435">
+        <label>MaterialDoc</label>
+        <link refid="class_material_doc"/>
+        <childnode refid="30431" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="30436" relation="usage">
+          <edgelabel>editMaterial</edgelabel>
+        </childnode>
+        <childnode refid="30430" relation="usage">
+          <edgelabel>manager</edgelabel>
+        </childnode>
+        <childnode refid="30438" relation="usage">
+          <edgelabel>sourceModifyOwner</edgelabel>
+        </childnode>
+        <childnode refid="30439" relation="usage">
+          <edgelabel>renderMaterial</edgelabel>
+        </childnode>
+      </node>
+      <node id="30456">
+        <label>idJointMat</label>
+        <link refid="classid_joint_mat"/>
+      </node>
+      <node id="30453">
+        <label>renderEntity_s</label>
+        <link refid="structrender_entity__s"/>
+        <childnode refid="30454" relation="usage">
+          <edgelabel>axis</edgelabel>
+        </childnode>
+        <childnode refid="30455" relation="usage">
+          <edgelabel>customSkin</edgelabel>
+        </childnode>
+        <childnode refid="30456" relation="usage">
+          <edgelabel>joints</edgelabel>
+        </childnode>
+        <childnode refid="30457" relation="usage">
+          <edgelabel>remoteRenderView</edgelabel>
+        </childnode>
+        <childnode refid="30458" relation="usage">
+          <edgelabel>referenceSound</edgelabel>
+        </childnode>
+        <childnode refid="30450" relation="usage">
+          <edgelabel>hModel</edgelabel>
+        </childnode>
+        <childnode refid="30459" relation="usage">
+          <edgelabel>bounds</edgelabel>
+        </childnode>
+        <childnode refid="30452" relation="usage">
+          <edgelabel>origin</edgelabel>
+        </childnode>
+        <childnode refid="30453" relation="usage">
+          <edgelabel>callback</edgelabel>
+        </childnode>
+        <childnode refid="30439" relation="usage">
+          <edgelabel>customShader</edgelabel>
+          <edgelabel>referenceShader</edgelabel>
+        </childnode>
+        <childnode refid="30460" relation="usage">
+          <edgelabel>gui</edgelabel>
+        </childnode>
+      </node>
+      <node id="30438">
+        <label>SourceModifyOwner</label>
+        <link refid="class_source_modify_owner"/>
+      </node>
+      <node id="30430">
+        <label>MaterialDocManager</label>
+        <link refid="class_material_doc_manager"/>
+        <childnode refid="30431" relation="usage">
+          <edgelabel>copyMaterial</edgelabel>
+          <edgelabel>copyStageMaterial</edgelabel>
+        </childnode>
+        <childnode refid="30432" relation="usage">
+          <edgelabel>undoModifiers</edgelabel>
+          <edgelabel>redoModifiers</edgelabel>
+        </childnode>
+        <childnode refid="30433" relation="usage">
+          <edgelabel>copyStage</edgelabel>
+        </childnode>
+        <childnode refid="30435" relation="usage">
+          <edgelabel>currentMaterial</edgelabel>
+        </childnode>
+        <childnode refid="30442" relation="usage">
+          <edgelabel>inProgressMaterials</edgelabel>
+        </childnode>
+        <childnode refid="30443" relation="usage">
+          <edgelabel>materialViews</edgelabel>
+        </childnode>
+      </node>
+      <node id="30429">
+        <label>MaterialView</label>
+        <link refid="class_material_view"/>
+        <childnode refid="30430" relation="usage">
+          <edgelabel>materialDocManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="30459">
+        <label>idBounds</label>
+        <link refid="classid_bounds"/>
+      </node>
+      <node id="30437">
+        <label>idList&lt; MEStage_t * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="30444">
+        <label>idGLWidget</label>
+        <link refid="classid_g_l_widget"/>
+        <childnode refid="30445" relation="public-inheritance">
+        </childnode>
+        <childnode refid="30446" relation="usage">
+          <edgelabel>drawable</edgelabel>
+        </childnode>
+      </node>
+      <node id="30454">
+        <label>idMat3</label>
+        <link refid="classid_mat3"/>
+      </node>
+      <node id="30460">
+        <label>idUserInterface</label>
+        <link refid="classid_user_interface"/>
+      </node>
+      <node id="30449">
+        <label>idRenderWorld</label>
+        <link refid="classid_render_world"/>
+      </node>
+      <node id="30441">
+        <label>idDeclBase</label>
+        <link refid="classid_decl_base"/>
+      </node>
+      <node id="30448">
+        <label>idList&lt; idGLDrawableView::lightInfo_t &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="30442">
+        <label>idHashTable&lt; MaterialDoc * &gt;</label>
+        <link refid="classid_hash_table"/>
+      </node>
+      <node id="30431">
+        <label>idStr</label>
+        <link refid="classid_str"/>
+      </node>
+      <node id="30450">
+        <label>idRenderModel</label>
+        <link refid="classid_render_model"/>
+      </node>
+      <node id="30445">
+        <label>CWnd</label>
+      </node>
+      <node id="30440">
+        <label>idDecl</label>
+        <link refid="classid_decl"/>
+        <childnode refid="30441" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+      </node>
+      <node id="30436">
+        <label>MEMaterial_t</label>
+        <link refid="struct_m_e_material__t"/>
+        <childnode refid="30437" relation="usage">
+          <edgelabel>stages</edgelabel>
+        </childnode>
+        <childnode refid="30434" relation="usage">
+          <edgelabel>materialData</edgelabel>
+        </childnode>
+      </node>
+      <node id="30452">
+        <label>idVec3</label>
+        <link refid="classid_vec3"/>
+      </node>
+      <node id="30434">
+        <label>idDict</label>
+        <link refid="classid_dict"/>
+      </node>
+      <node id="30455">
+        <label>idDeclSkin</label>
+        <link refid="classid_decl_skin"/>
+        <childnode refid="30440" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30443">
+        <label>idList&lt; MaterialView * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" line="105" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h" bodystart="104" bodyend="148"/>
+    <listofallmembers>
+      <member refid="class_material_preview_view_1a430c057f4e34a73878279a3dc63f96a6" prot="protected" virt="non-virtual"><scope>MaterialPreviewView</scope><name>currentMaterial</name></member>
+      <member refid="class_material_view_1a48b5e582bd571476202d86f3932861a5" prot="protected" virt="non-virtual"><scope>MaterialPreviewView</scope><name>materialDocManager</name></member>
+      <member refid="class_material_view_1a45ef70a7829e502864efdeb31deeff09" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>MaterialView</name></member>
+      <member refid="class_material_view_1ad82257506a932020ac1f2f9bc898cec7" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnFileReload</name></member>
+      <member refid="class_material_view_1a684c35d093bafad8d00c959d702cee16" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialAdd</name></member>
+      <member refid="class_material_view_1ad87ced902a1149ac424eaee83fcbe388" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialApply</name></member>
+      <member refid="class_material_view_1abf652e7a01a00c206a39e53b1ecf1f2e" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialAttributeChanged</name></member>
+      <member refid="class_material_view_1a1e3770beb54336ad8591ffa809b097b4" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialChange</name></member>
+      <member refid="class_material_view_1ad8842a2c9c617e70298925a2a440ea51" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialDelete</name></member>
+      <member refid="class_material_view_1a76429e9d0c1af5da32b9981298778a83" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialNameChanged</name></member>
+      <member refid="class_material_view_1a4486e3bf091dab709c551a343021819a" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialSaved</name></member>
+      <member refid="class_material_view_1a923605b3f9ff899a77baee716b14ec7b" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialSaveFile</name></member>
+      <member refid="class_material_preview_view_1ad7dd183fb4b2b18e25e7f22cdd668379" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialSelectionChange</name></member>
+      <member refid="class_material_view_1a0bd0b53be219cf288f368c6471783c65" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialStageAdd</name></member>
+      <member refid="class_material_view_1af563438a4747d6086305108eca7c6e89" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialStageDelete</name></member>
+      <member refid="class_material_view_1a2f236aad283436758cae63b26c8d70ac" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>MV_OnMaterialStageMove</name></member>
+      <member refid="class_material_preview_view_1a89b56f4192184641086d053cafd2fdcf" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnAddLight</name></member>
+      <member refid="class_material_preview_view_1a5ccbc260c84394cb13e33af15b2134fb" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnCustomModelChange</name></member>
+      <member refid="class_material_preview_view_1aaf27167444bac7413c85014b83ecaa42" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnDeleteLight</name></member>
+      <member refid="class_material_preview_view_1a3c4ff30f589e6d5c81b825cbb5d8c31e" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>OnDraw</name></member>
+      <member refid="class_material_preview_view_1aeb4f7568275088a3f1db9a0a650c6a04" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnGlobalParmChange</name></member>
+      <member refid="class_material_preview_view_1add202875e6d587daa5b8d07a75b2d637" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnLightAllowMoveChange</name></member>
+      <member refid="class_material_preview_view_1afcacbdf0d02c9cef561b175602178f90" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnLightColorChange</name></member>
+      <member refid="class_material_preview_view_1a5903c476780914e563d314ee401963d0" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnLightRadiusChange</name></member>
+      <member refid="class_material_preview_view_1a84348bd6b99d242558fa65d7567cc093" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnLightShaderChange</name></member>
+      <member refid="class_material_preview_view_1a550de7463dc00b7b7f5ff4360b3c397b" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnLocalParmChange</name></member>
+      <member refid="class_material_preview_view_1a132a619151edaabc7dfd89039f2eee52" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnModelChange</name></member>
+      <member refid="class_material_preview_view_1a7278b8ea4729350008e051e1f25285cf" prot="public" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnShowLightsChange</name></member>
+      <member refid="class_material_preview_view_1adda3485b91d03d619cd927ac3f1f9492" prot="protected" virt="non-virtual"><scope>MaterialPreviewView</scope><name>OnSize</name></member>
+      <member refid="class_material_preview_view_1ace96b6c2bf1a55cd629890b18d4b5a32" prot="protected" virt="non-virtual"><scope>MaterialPreviewView</scope><name>renderedView</name></member>
+      <member refid="class_material_preview_view_1ad6a66601d3d5ce5dbe186940bc50fa29" prot="protected" virt="non-virtual"><scope>MaterialPreviewView</scope><name>renderWindow</name></member>
+      <member refid="class_material_view_1a5d965fd5a68d42d6dbe6a64838d64bc1" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>SetMaterialDocManager</name></member>
+      <member refid="class_material_preview_view_1a3eac1998941b775b593ae324b15e7991" prot="private" virt="virtual"><scope>MaterialPreviewView</scope><name>~MaterialPreviewView</name></member>
+      <member refid="class_material_view_1a4612111f726a941cc7c9fd87c07be58f" prot="public" virt="virtual"><scope>MaterialPreviewView</scope><name>~MaterialView</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

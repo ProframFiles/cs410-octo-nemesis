@@ -1,0 +1,820 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_n_v_ctrl_8c" kind="file">
+    <compoundname>NVCtrl.c</compoundname>
+    <includes local="no">X11/Xlibint.h</includes>
+    <includes local="no">X11/Xutil.h</includes>
+    <includes local="no">X11/extensions/Xext.h</includes>
+    <includes refid="extutil_8h" local="yes">extutil.h</includes>
+    <includes refid="_n_v_ctrl_lib_8h" local="yes">NVCtrlLib.h</includes>
+    <includes refid="nv__control_8h" local="yes">nv_control.h</includes>
+    <incdepgraph>
+      <node id="2227">
+        <label>X11/Xlibint.h</label>
+      </node>
+      <node id="2229">
+        <label>X11/extensions/Xext.h</label>
+      </node>
+      <node id="2226">
+        <label>E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c</label>
+        <link refid="NVCtrl.c"/>
+        <childnode refid="2227" relation="include">
+        </childnode>
+        <childnode refid="2228" relation="include">
+        </childnode>
+        <childnode refid="2229" relation="include">
+        </childnode>
+      </node>
+      <node id="2228">
+        <label>X11/Xutil.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_n_v_ctrl_8c_1ae44d790f2220242dcd5f4c8290b406f7" prot="public" static="no">
+        <name>NEED_EVENTS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="1" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="1" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_n_v_ctrl_8c_1a9cbd892e4ec99bfc12d693d1f9fd88c7" prot="public" static="no">
+        <name>NEED_REPLIES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="2" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_n_v_ctrl_8c_1aedf5ecd7be9d58c066cfb3cf368d47e1" prot="public" static="no">
+        <name>XNVCTRLCheckExtension</name>
+        <param><defname>dpy</defname></param>
+        <param><defname>i</defname></param>
+        <param><defname>val</defname></param>
+        <initializer>XextCheckExtension (dpy, i, nvctrl_extension_name, val)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="18" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_n_v_ctrl_8c_1a5a667fde9e957dc3445ddde2be8cc83c" prot="public" static="no">
+        <name>XNVCTRLSimpleCheckExtension</name>
+        <param><defname>dpy</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>XextSimpleCheckExtension (dpy, i, nvctrl_extension_name)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="20" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_n_v_ctrl_8c_1a655ce8980c533d56ef64cf11f92f0691" prot="public" static="yes" mutable="no">
+        <type><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref></type>
+        <definition>XExtensionInfo _nvctrl_ext_info_data</definition>
+        <argsstring></argsstring>
+        <name>_nvctrl_ext_info_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="14" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_v_ctrl_8c_1a7c494764529a05be626d1980f53a2cbe" prot="public" static="yes" mutable="no">
+        <type><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref> *</type>
+        <definition>XExtensionInfo* nvctrl_ext_info</definition>
+        <argsstring></argsstring>
+        <name>nvctrl_ext_info</name>
+        <initializer>= &amp;_nvctrl_ext_info_data</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="15" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_v_ctrl_8c_1afc2a7329447ecd4e0b7013d8e3e115d6" prot="public" static="yes" mutable="no">
+        <type>char *</type>
+        <definition>char* nvctrl_extension_name</definition>
+        <argsstring></argsstring>
+        <name>nvctrl_extension_name</name>
+        <initializer>=  &quot;NV-CONTROL&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="16" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_v_ctrl_8c_1a3203fd2bc254f6ce2a6c0cb01ef0d6d8" prot="public" static="yes" mutable="no">
+        <type><ref refid="struct___x_extension_hooks" kindref="compound">XExtensionHooks</ref></type>
+        <definition>XExtensionHooks nvctrl_extension_hooks</definition>
+        <argsstring></argsstring>
+        <name>nvctrl_extension_hooks</name>
+        <initializer>= {
+    NULL,                               
+    NULL,                               
+    NULL,                               
+    NULL,                               
+    NULL,                               
+    NULL,                               
+    close_display,                      
+    wire_to_event,                      
+    NULL,                               
+    NULL,                               
+    NULL,                               
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="25" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_n_v_ctrl_8c_1a7a1f57711ba2b4ddbdeba57975663aff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int close_display</definition>
+        <argsstring>()</argsstring>
+        <name>close_display</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="23" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1aa56a7259ff198b2b57a4c4530d7e1d5e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Bool</type>
+        <definition>static Bool wire_to_event</definition>
+        <argsstring>()</argsstring>
+        <name>wire_to_event</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1af85dbd1ce85a98b0f173d937abace98e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref> *</type>
+        <definition>static XExtDisplayInfo* find_display</definition>
+        <argsstring>(Display *dpy)</argsstring>
+        <name>find_display</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="42" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1a8861f41c7a010fbbe414eaf4db3c7f3f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int close_display</definition>
+        <argsstring>(Display *dpy, XExtCodes *codes)</argsstring>
+        <name>close_display</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>XExtCodes *</type>
+          <declname>codes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="44" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1a9f16964709b2becebbbc05adf79e1535" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Bool</type>
+        <definition>Bool XNVCTRLQueryExtension</definition>
+        <argsstring>(Display *dpy, int *event_basep, int *error_basep)</argsstring>
+        <name>XNVCTRLQueryExtension</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>event_basep</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>error_basep</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="46" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="46" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1adf6955f4f53dce1c86cc08b52028043e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Bool</type>
+        <definition>Bool XNVCTRLQueryVersion</definition>
+        <argsstring>(Display *dpy, int *major, int *minor)</argsstring>
+        <name>XNVCTRLQueryVersion</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>major</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>minor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="63" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="63" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1a63dbdc40c3e3fe3060571c2b4bcbe82c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Bool</type>
+        <definition>Bool XNVCTRLIsNvScreen</definition>
+        <argsstring>(Display *dpy, int screen)</argsstring>
+        <name>XNVCTRLIsNvScreen</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>screen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="94" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="94" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1af5ef682cc858d4b5a946458e7739364b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XNVCTRLSetAttribute</definition>
+        <argsstring>(Display *dpy, int screen, unsigned int display_mask, unsigned int attribute, int value)</argsstring>
+        <name>XNVCTRLSetAttribute</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>screen</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>display_mask</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>attribute</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="125" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="125" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1ae7c498d4315d725f88eecef920e28f9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Bool</type>
+        <definition>Bool XNVCTRLQueryAttribute</definition>
+        <argsstring>(Display *dpy, int screen, unsigned int display_mask, unsigned int attribute, int *value)</argsstring>
+        <name>XNVCTRLQueryAttribute</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>screen</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>display_mask</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>attribute</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="150" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="150" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1a2e7de84fd18e64117a1aa24f0fcfd16f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Bool</type>
+        <definition>Bool XNVCTRLQueryStringAttribute</definition>
+        <argsstring>(Display *dpy, int screen, unsigned int display_mask, unsigned int attribute, char **ptr)</argsstring>
+        <name>XNVCTRLQueryStringAttribute</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>screen</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>display_mask</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>attribute</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="187" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="187" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1afba5e36da7f4118f2ad1c411a28456cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Bool</type>
+        <definition>Bool XNVCTRLQueryValidAttributeValues</definition>
+        <argsstring>(Display *dpy, int screen, unsigned int display_mask, unsigned int attribute, NVCTRLAttributeValidValuesRec *values)</argsstring>
+        <name>XNVCTRLQueryValidAttributeValues</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>screen</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>display_mask</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>attribute</declname>
+        </param>
+        <param>
+          <type><ref refid="struct___n_v_c_t_r_l_attribute_valid_values" kindref="compound">NVCTRLAttributeValidValuesRec</ref> *</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="238" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="238" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1a4447157a0db1ec7c7933419f819baad8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Bool</type>
+        <definition>Bool XNVCtrlSelectNotify</definition>
+        <argsstring>(Display *dpy, int screen, int type, Bool onoff)</argsstring>
+        <name>XNVCtrlSelectNotify</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>screen</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>Bool</type>
+          <declname>onoff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="284" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="284" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_v_ctrl_8c_1a59a0b9fea32859a6f2afbc0a6ace38fd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Bool</type>
+        <definition>static Bool wire_to_event</definition>
+        <argsstring>(Display *dpy, XEvent *host, xEvent *wire)</argsstring>
+        <name>wire_to_event</name>
+        <param>
+          <type>Display *</type>
+          <declname>dpy</declname>
+        </param>
+        <param>
+          <type>XEvent *</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>xEvent *</type>
+          <declname>wire</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" line="311" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c" bodystart="311" bodyend="338"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#define<sp/>NEED_EVENTS</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>NEED_REPLIES</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;X11/Xlibint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;X11/Xutil.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;X11/extensions/Xext.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;extutil.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;NVCtrlLib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;nv_control.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(XTRHEADS)</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#warning<sp/>XTRHEADS<sp/>not<sp/>defined<sp/>--<sp/>this<sp/>libXNVCtrl.a<sp/>will<sp/>not<sp/>be<sp/>thread<sp/>safe!</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref><sp/>_nvctrl_ext_info_data;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct___x_extension_info" kindref="compound">XExtensionInfo</ref><sp/>*nvctrl_ext_info<sp/>=<sp/>&amp;_nvctrl_ext_info_data;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>const<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nvctrl_extension_name<sp/>=<sp/>NV_CONTROL_NAME;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XNVCTRLCheckExtension(dpy,i,val)<sp/>\</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"><sp/><sp/>XextCheckExtension<sp/>(dpy,<sp/>i,<sp/>nvctrl_extension_name,<sp/>val)</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>XNVCTRLSimpleCheckExtension(dpy,i)<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/>XextSimpleCheckExtension<sp/>(dpy,<sp/>i,<sp/>nvctrl_extension_name)</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>close_display();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Bool<sp/>wire_to_event();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>const<sp/>*/</highlight><highlight class="normal"><sp/><ref refid="struct___x_extension_hooks" kindref="compound">XExtensionHooks</ref><sp/>nvctrl_extension_hooks<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>create_gc<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>copy_gc<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>flush_gc<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>free_gc<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>create_font<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>free_font<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>close_display,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>close_display<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>wire_to_event,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>wire_to_event<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>event_to_wire<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>error_string<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>XEXT_GENERATE_FIND_DISPLAY<sp/>(find_display,<sp/>nvctrl_ext_info,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nvctrl_extension_name,<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;nvctrl_extension_hooks,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NV_CONTROL_EVENTS,<sp/>NULL)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">static<sp/>XEXT_GENERATE_CLOSE_DISPLAY<sp/>(close_display,<sp/>nvctrl_ext_info)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">Bool<sp/>XNVCTRLQueryExtension<sp/>(</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*dpy,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*event_basep,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*error_basep</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">){</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*info<sp/>=<sp/>find_display<sp/>(dpy);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(XextHasExtension(info))<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event_basep)<sp/>*event_basep<sp/>=<sp/>info-&gt;codes-&gt;first_event;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(error_basep)<sp/>*error_basep<sp/>=<sp/>info-&gt;codes-&gt;first_error;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>True;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">Bool<sp/>XNVCTRLQueryVersion<sp/>(</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*dpy,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*major,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*minor</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">){</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*info<sp/>=<sp/>find_display<sp/>(dpy);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_query_extension_reply" kindref="compound">xnvCtrlQueryExtensionReply</ref><sp/>rep;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_query_extension_req" kindref="compound">xnvCtrlQueryExtensionReq</ref><sp/><sp/><sp/>*req;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!XextHasExtension(info))</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>XNVCTRLCheckExtension<sp/>(dpy,<sp/>info,<sp/>False);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>LockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>GetReq<sp/>(nvCtrlQueryExtension,<sp/>req);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;reqType<sp/>=<sp/>info-&gt;codes-&gt;major_opcode;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;nvReqType<sp/>=<sp/>X_nvCtrlQueryExtension;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_XReply<sp/>(dpy,<sp/>(xReply<sp/>*)<sp/>&amp;rep,<sp/>0,<sp/>xTrue))<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(major)<sp/>*major<sp/>=<sp/>rep.major;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(minor)<sp/>*minor<sp/>=<sp/>rep.minor;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>True;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">Bool<sp/>XNVCTRLIsNvScreen<sp/>(</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*dpy,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>screen</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">){</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*info<sp/>=<sp/>find_display<sp/>(dpy);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_is_nv_reply" kindref="compound">xnvCtrlIsNvReply</ref><sp/>rep;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_is_nv_req" kindref="compound">xnvCtrlIsNvReq</ref><sp/><sp/><sp/>*req;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>Bool<sp/>isnv;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!XextHasExtension(info))</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>XNVCTRLCheckExtension<sp/>(dpy,<sp/>info,<sp/>False);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>LockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>GetReq<sp/>(nvCtrlIsNv,<sp/>req);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;reqType<sp/>=<sp/>info-&gt;codes-&gt;major_opcode;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;nvReqType<sp/>=<sp/>X_nvCtrlIsNv;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;screen<sp/>=<sp/>screen;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_XReply<sp/>(dpy,<sp/>(xReply<sp/>*)<sp/>&amp;rep,<sp/>0,<sp/>xTrue))<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>isnv<sp/>=<sp/>rep.isnv;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>isnv;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>XNVCTRLSetAttribute<sp/>(</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*dpy,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>screen,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>display_mask,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>attribute,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">){</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*info<sp/>=<sp/>find_display<sp/>(dpy);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_set_attribute_req" kindref="compound">xnvCtrlSetAttributeReq</ref><sp/>*req;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>XNVCTRLSimpleCheckExtension<sp/>(dpy,<sp/>info);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>LockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>GetReq<sp/>(nvCtrlSetAttribute,<sp/>req);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;reqType<sp/>=<sp/>info-&gt;codes-&gt;major_opcode;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;nvReqType<sp/>=<sp/>X_nvCtrlSetAttribute;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;screen<sp/>=<sp/>screen;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;display_mask<sp/>=<sp/>display_mask;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;attribute<sp/>=<sp/>attribute;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;value<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal">Bool<sp/>XNVCTRLQueryAttribute<sp/>(</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*dpy,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>screen,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>display_mask,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>attribute,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*value</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">){</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*info<sp/>=<sp/>find_display<sp/>(dpy);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_query_attribute_reply" kindref="compound">xnvCtrlQueryAttributeReply</ref><sp/>rep;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_query_attribute_req" kindref="compound">xnvCtrlQueryAttributeReq</ref><sp/><sp/><sp/>*req;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>Bool<sp/>exists;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!XextHasExtension(info))</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>XNVCTRLCheckExtension<sp/>(dpy,<sp/>info,<sp/>False);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>LockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>GetReq<sp/>(nvCtrlQueryAttribute,<sp/>req);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;reqType<sp/>=<sp/>info-&gt;codes-&gt;major_opcode;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;nvReqType<sp/>=<sp/>X_nvCtrlQueryAttribute;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;screen<sp/>=<sp/>screen;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;display_mask<sp/>=<sp/>display_mask;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;attribute<sp/>=<sp/>attribute;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_XReply<sp/>(dpy,<sp/>(xReply<sp/>*)<sp/>&amp;rep,<sp/>0,<sp/>xTrue))<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value)<sp/>*value<sp/>=<sp/>rep.value;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>exists<sp/>=<sp/>rep.flags;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>exists;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal">Bool<sp/>XNVCTRLQueryStringAttribute<sp/>(</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*dpy,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>screen,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>display_mask,</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>attribute,</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**ptr</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">){</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*info<sp/>=<sp/>find_display<sp/>(dpy);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_query_string_attribute_reply" kindref="compound">xnvCtrlQueryStringAttributeReply</ref><sp/>rep;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_query_string_attribute_req" kindref="compound">xnvCtrlQueryStringAttributeReq</ref><sp/><sp/><sp/>*req;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>Bool<sp/>exists;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length,<sp/>numbytes,<sp/>slop;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ptr)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!XextHasExtension(info))</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>XNVCTRLCheckExtension<sp/>(dpy,<sp/>info,<sp/>False);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>LockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>GetReq<sp/>(nvCtrlQueryStringAttribute,<sp/>req);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;reqType<sp/>=<sp/>info-&gt;codes-&gt;major_opcode;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;nvReqType<sp/>=<sp/>X_nvCtrlQueryStringAttribute;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;screen<sp/>=<sp/>screen;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;display_mask<sp/>=<sp/>display_mask;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;attribute<sp/>=<sp/>attribute;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_XReply<sp/>(dpy,<sp/>(xReply<sp/>*)<sp/>&amp;rep,<sp/>0,<sp/>False))<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>length<sp/>=<sp/>rep.length;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>numbytes<sp/>=<sp/>rep.n;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>slop<sp/>=<sp/>numbytes<sp/>&amp;<sp/>3;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>*ptr<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>Xmalloc(numbytes);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>*ptr)<sp/>{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_XEatData(dpy,<sp/>length);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_XRead(dpy,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>*ptr,<sp/>numbytes);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(slop)<sp/>_XEatData(dpy,<sp/>4-slop);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>exists<sp/>=<sp/>rep.flags;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>exists;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal">Bool<sp/>XNVCTRLQueryValidAttributeValues<sp/>(</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*dpy,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>screen,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>display_mask,</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>attribute,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___n_v_c_t_r_l_attribute_valid_values" kindref="compound">NVCTRLAttributeValidValuesRec</ref><sp/>*values</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">){</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*info<sp/>=<sp/>find_display<sp/>(dpy);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_query_valid_attribute_values_reply" kindref="compound">xnvCtrlQueryValidAttributeValuesReply</ref><sp/>rep;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_query_valid_attribute_values_req" kindref="compound">xnvCtrlQueryValidAttributeValuesReq</ref><sp/><sp/><sp/>*req;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>Bool<sp/>exists;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!values)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!XextHasExtension(info))</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>XNVCTRLCheckExtension<sp/>(dpy,<sp/>info,<sp/>False);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>LockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>GetReq<sp/>(nvCtrlQueryValidAttributeValues,<sp/>req);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;reqType<sp/>=<sp/>info-&gt;codes-&gt;major_opcode;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;nvReqType<sp/>=<sp/>X_nvCtrlQueryValidAttributeValues;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;screen<sp/>=<sp/>screen;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;display_mask<sp/>=<sp/>display_mask;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;attribute<sp/>=<sp/>attribute;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_XReply<sp/>(dpy,<sp/>(xReply<sp/>*)<sp/>&amp;rep,<sp/>0,<sp/>xTrue))<sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>exists<sp/>=<sp/>rep.flags;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>values-&gt;type<sp/>=<sp/>rep.attr_type;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rep.attr_type<sp/>==<sp/>ATTRIBUTE_TYPE_RANGE)<sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>values-&gt;u.range.min<sp/>=<sp/>rep.min;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>values-&gt;u.range.max<sp/>=<sp/>rep.max;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rep.attr_type<sp/>==<sp/>ATTRIBUTE_TYPE_INT_BITS)<sp/>{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>values-&gt;u.bits.ints<sp/>=<sp/>rep.bits;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>values-&gt;permissions<sp/>=<sp/>rep.perms;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>exists;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal">Bool<sp/>XNVCtrlSelectNotify<sp/>(</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*dpy,</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>screen,</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>Bool<sp/>onoff</highlight></codeline>
+<codeline lineno="289"><highlight class="normal">){</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*info<sp/>=<sp/>find_display<sp/>(dpy);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnv_ctrl_select_notify_req" kindref="compound">xnvCtrlSelectNotifyReq</ref><sp/>*req;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!XextHasExtension<sp/>(info))</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>XNVCTRLCheckExtension<sp/>(dpy,<sp/>info,<sp/>False);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>LockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>GetReq<sp/>(nvCtrlSelectNotify,<sp/>req);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;reqType<sp/>=<sp/>info-&gt;codes-&gt;major_opcode;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;nvReqType<sp/>=<sp/>X_nvCtrlSelectNotify;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;screen<sp/>=<sp/>screen;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;notifyType<sp/>=<sp/>type;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>req-&gt;onoff<sp/>=<sp/>onoff;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>UnlockDisplay<sp/>(dpy);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>SyncHandle<sp/>();</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>True;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Bool<sp/>wire_to_event<sp/>(Display<sp/>*dpy,<sp/>XEvent<sp/>*host,<sp/>xEvent<sp/>*wire)</highlight></codeline>
+<codeline lineno="312"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___x_ext_display_info" kindref="compound">XExtDisplayInfo</ref><sp/>*info<sp/>=<sp/>find_display<sp/>(dpy);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_x_n_v_ctrl_event" kindref="compound">XNVCtrlEvent</ref><sp/>*re<sp/>=<sp/>(<ref refid="union_x_n_v_ctrl_event" kindref="compound">XNVCtrlEvent</ref><sp/>*)<sp/>host;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxnvctrl_event" kindref="compound">xnvctrlEvent</ref><sp/>*</highlight><highlight class="keyword">event</highlight><highlight class="normal"><sp/>=<sp/>(<ref refid="structxnvctrl_event" kindref="compound">xnvctrlEvent</ref><sp/>*)<sp/>wire;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>XNVCTRLCheckExtension<sp/>(dpy,<sp/>info,<sp/>False);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>((event-&gt;u.u.type<sp/>&amp;<sp/>0x7F)<sp/>-<sp/>info-&gt;codes-&gt;first_event)<sp/>{</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>ATTRIBUTE_CHANGED_EVENT:</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>re-&gt;attribute_changed.type<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;u.u.type<sp/>&amp;<sp/>0x7F;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>re-&gt;attribute_changed.serial<sp/>=<sp/></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_XSetLastRequestRead(dpy,<sp/>(xGenericReply*)<sp/>event);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>re-&gt;attribute_changed.send_event<sp/>=<sp/>((</highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;u.u.type<sp/>&amp;<sp/>0x80)<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>re-&gt;attribute_changed.display<sp/>=<sp/>dpy;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>re-&gt;attribute_changed.time<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;u.attribute_changed.time;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>re-&gt;attribute_changed.screen<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;u.attribute_changed.screen;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>re-&gt;attribute_changed.display_mask<sp/>=</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;u.attribute_changed.display_mask;</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>re-&gt;attribute_changed.attribute<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;u.attribute_changed.attribute;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>re-&gt;attribute_changed.value<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;u.attribute_changed.value;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>False;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>True;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/libXNVCtrl/NVCtrl.c"/>
+  </compounddef>
+</doxygen>

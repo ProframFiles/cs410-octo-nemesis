@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="lpc_8c" kind="file">
+    <compoundname>lpc.c</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="_math_8h" local="no">math.h</includes>
+    <includes refid="os_8h" local="yes">os.h</includes>
+    <includes refid="smallft_8h" local="yes">smallft.h</includes>
+    <includes refid="lpc_8h" local="yes">lpc.h</includes>
+    <includes refid="scales_8h" local="yes">scales.h</includes>
+    <includes refid="sound_2_ogg_vorbis_2vorbissrc_2_misc_8h" local="yes">misc.h</includes>
+    <incdepgraph>
+      <node id="2062">
+        <label>stdlib.h</label>
+      </node>
+      <node id="2061">
+        <label>E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/lpc.c</label>
+        <link refid="lpc.c"/>
+        <childnode refid="2062" relation="include">
+        </childnode>
+        <childnode refid="2063" relation="include">
+        </childnode>
+      </node>
+      <node id="2063">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="lpc_8c_1a0cc602a0114d5b46a0db0f362c67822c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float vorbis_lpc_from_data</definition>
+        <argsstring>(float *data, float *lpci, int n, int m)</argsstring>
+        <name>vorbis_lpc_from_data</name>
+        <param>
+          <type>float *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>lpci</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/lpc.c" line="61" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/lpc.c" bodystart="61" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="lpc_8c_1a46ea915aca4497037fa6ea5b57bbe9df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vorbis_lpc_predict</definition>
+        <argsstring>(float *coeff, float *prime, int m, float *data, long n)</argsstring>
+        <name>vorbis_lpc_predict</name>
+        <param>
+          <type>float *</type>
+          <declname>coeff</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>prime</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/lpc.c" line="117" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/lpc.c" bodystart="117" bodyend="144"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/********************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>THIS<sp/>FILE<sp/>IS<sp/>PART<sp/>OF<sp/>THE<sp/>OggVorbis<sp/>SOFTWARE<sp/>CODEC<sp/>SOURCE<sp/>CODE.<sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>USE,<sp/>DISTRIBUTION<sp/>AND<sp/>REPRODUCTION<sp/>OF<sp/>THIS<sp/>LIBRARY<sp/>SOURCE<sp/>IS<sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>GOVERNED<sp/>BY<sp/>A<sp/>BSD-STYLE<sp/>SOURCE<sp/>LICENSE<sp/>INCLUDED<sp/>WITH<sp/>THIS<sp/>SOURCE<sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>IN<sp/>&apos;COPYING&apos;.<sp/>PLEASE<sp/>READ<sp/>THESE<sp/>TERMS<sp/>BEFORE<sp/>DISTRIBUTING.<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>THE<sp/>OggVorbis<sp/>SOURCE<sp/>CODE<sp/>IS<sp/>(C)<sp/>COPYRIGHT<sp/>1994-2002<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>by<sp/>the<sp/>XIPHOPHORUS<sp/>Company<sp/>http://www.xiph.org/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>********************************************************************</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>function:<sp/>LPC<sp/>low<sp/>level<sp/>routines</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/>last<sp/>mod:<sp/>$Id:<sp/>lpc.c,v<sp/>1.37<sp/>2003/03/08<sp/>07:15:32<sp/>xiphmont<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Some<sp/>of<sp/>these<sp/>routines<sp/>(autocorrelator,<sp/>LPC<sp/>coefficient<sp/>estimator)</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/>are<sp/>derived<sp/>from<sp/>code<sp/>written<sp/>by<sp/>Jutta<sp/>Degener<sp/>and<sp/>Carsten<sp/>Bormann;</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/>thus<sp/>we<sp/>include<sp/>their<sp/>copyright<sp/>below.<sp/><sp/>The<sp/>entirety<sp/>of<sp/>this<sp/>file</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/>is<sp/>freely<sp/>redistributable<sp/>on<sp/>the<sp/>condition<sp/>that<sp/>both<sp/>of<sp/>these</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/>copyright<sp/>notices<sp/>are<sp/>preserved<sp/>without<sp/>modification.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Preserved<sp/>Copyright:<sp/>*********************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Copyright<sp/>1992,<sp/>1993,<sp/>1994<sp/>by<sp/>Jutta<sp/>Degener<sp/>and<sp/>Carsten<sp/>Bormann,</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">Technische<sp/>Universita&quot;t<sp/>Berlin</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"></highlight></codeline>
+<codeline lineno="29"><highlight class="comment">Any<sp/>use<sp/>of<sp/>this<sp/>software<sp/>is<sp/>permitted<sp/>provided<sp/>that<sp/>this<sp/>notice<sp/>is<sp/>not</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">removed<sp/>and<sp/>that<sp/>neither<sp/>the<sp/>authors<sp/>nor<sp/>the<sp/>Technische<sp/>Universita&quot;t</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">Berlin<sp/>are<sp/>deemed<sp/>to<sp/>have<sp/>made<sp/>any<sp/>representations<sp/>as<sp/>to<sp/>the</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">suitability<sp/>of<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose<sp/>nor<sp/>are<sp/>held<sp/>responsible</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">for<sp/>any<sp/>defects<sp/>of<sp/>this<sp/>software.<sp/>THERE<sp/>IS<sp/>ABSOLUTELY<sp/>NO<sp/>WARRANTY<sp/>FOR</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">THIS<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"></highlight></codeline>
+<codeline lineno="36"><highlight class="comment">As<sp/>a<sp/>matter<sp/>of<sp/>courtesy,<sp/>the<sp/>authors<sp/>request<sp/>to<sp/>be<sp/>informed<sp/>about<sp/>uses</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">this<sp/>software<sp/>has<sp/>found,<sp/>about<sp/>bugs<sp/>in<sp/>this<sp/>software,<sp/>and<sp/>about<sp/>any</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">improvements<sp/>that<sp/>may<sp/>be<sp/>of<sp/>general<sp/>interest.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"></highlight></codeline>
+<codeline lineno="40"><highlight class="comment">Berlin,<sp/>28.11.1994</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">Jutta<sp/>Degener</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">Carsten<sp/>Bormann</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"></highlight></codeline>
+<codeline lineno="44"><highlight class="comment">*********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;os.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;smallft.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;lpc.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;scales.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;misc.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Autocorrelation<sp/>LPC<sp/>coeff<sp/>generation<sp/>algorithm<sp/>invented<sp/>by</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/>N.<sp/>Levinson<sp/>in<sp/>1947,<sp/>modified<sp/>by<sp/>J.<sp/>Durbin<sp/>in<sp/>1959.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Input<sp/>:<sp/>n<sp/>elements<sp/>of<sp/>time<sp/>doamin<sp/>data</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/>Output:<sp/>m<sp/>lpc<sp/>coefficients,<sp/>excitation<sp/>energy<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>vorbis_lpc_from_data(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*data,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*lpci,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m){</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*aut=alloca(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*aut)*(m+1));</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*lpc=alloca(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*lpc)*(m));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,j;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>autocorrelation,<sp/>p+1<sp/>lag<sp/>coefficients<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>j=m+1;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(j--){</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>d=0;<sp/></highlight><highlight class="comment">/*<sp/>double<sp/>needed<sp/>for<sp/>accumulator<sp/>depth<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=j;i&lt;n;i++)d+=(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)data[i]*data[i-j];</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>aut[j]=d;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Generate<sp/>lpc<sp/>coefficients<sp/>from<sp/>autocorr<sp/>values<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>error=aut[0];</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;m;i++){</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r=<sp/>-aut[i+1];</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(error==0){</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>memset(lpci,0,m*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*lpci));</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Sum<sp/>up<sp/>this<sp/>iteration&apos;s<sp/>reflection<sp/>coefficient;<sp/>note<sp/>that<sp/>in</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vorbis<sp/>we<sp/>don&apos;t<sp/>save<sp/>it.<sp/><sp/>If<sp/>anyone<sp/>wants<sp/>to<sp/>recycle<sp/>this<sp/>code</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>needs<sp/>reflection<sp/>coefficients,<sp/>save<sp/>the<sp/>results<sp/>of<sp/>&apos;r&apos;<sp/>from</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>each<sp/>iteration.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;j&lt;i;j++)r-=lpc[j]*aut[i-j];</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>r/=error;<sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Update<sp/>LPC<sp/>coefficients<sp/>and<sp/>total<sp/>error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>lpc[i]=r;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;j&lt;i/2;j++){</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tmp=lpc[j];</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lpc[j]+=r*lpc[i-1-j];</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lpc[i-1-j]+=r*tmp;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(i%2)lpc[j]+=lpc[j]*r;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>error*=1.f-r*r;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;j&lt;m;j++)lpci[j]=(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)lpc[j];</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>we<sp/>need<sp/>the<sp/>error<sp/>value<sp/>to<sp/>know<sp/>how<sp/>big<sp/>an<sp/>impulse<sp/>to<sp/>hit<sp/>the</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>filter<sp/>with<sp/>later<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>vorbis_lpc_predict(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*coeff,</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*prime,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*data,</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>n){</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>in:<sp/>coeff[0...m-1]<sp/>LPC<sp/>coefficients<sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prime[0...m-1]<sp/>initial<sp/>values<sp/>(allocated<sp/>size<sp/>of<sp/>n+m-1)</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/><sp/><sp/>out:<sp/>data[0...n-1]<sp/>data<sp/>samples<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>i,j,o,p;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*work=alloca(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*work)*(m+n));</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!prime)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;m;i++)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>work[i]=0.f;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;m;i++)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>work[i]=prime[i];</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;i&lt;n;i++){</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>y=0;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>o=i;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>p=m;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;j&lt;m;j++)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>y-=work[o++]*coeff[--p];</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>data[i]=work[o]=y;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sound/OggVorbis/vorbissrc/lpc.c"/>
+  </compounddef>
+</doxygen>

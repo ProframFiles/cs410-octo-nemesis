@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_material_view_8h" kind="file">
+    <compoundname>MaterialView.h</compoundname>
+    <includes refid="_material_doc_manager_8h" local="yes">MaterialDocManager.h</includes>
+    <includedby refid="_material_tree_view_8h" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialTreeView.h</includedby>
+    <includedby refid="_material_prop_tree_view_8h" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPropTreeView.h</includedby>
+    <includedby refid="_material_preview_view_8h" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialPreviewView.h</includedby>
+    <includedby refid="_stage_view_8h" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/StageView.h</includedby>
+    <includedby refid="_material_doc_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDoc.cpp</includedby>
+    <includedby refid="_material_doc_manager_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDocManager.cpp</includedby>
+    <includedby refid="_material_view_8cpp" local="yes">E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.cpp</includedby>
+    <innerclass refid="class_material_view" prot="public">MaterialView</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MaterialDocManager.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">*<sp/>MaterialView<sp/>Interface.<sp/>Interface<sp/>to<sp/>be<sp/>implemented<sp/>by<sp/>classes<sp/>that<sp/>want<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="comment">*<sp/>notifications<sp/>of<sp/>material<sp/>changes.<sp/>Classes<sp/>that<sp/>implement<sp/>this<sp/>interface<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="comment">*<sp/>must<sp/>register<sp/>themself<sp/>with<sp/>the<sp/>MaterialDocManager<sp/>class<sp/>with<sp/>the<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="comment">*<sp/>RegisterView<sp/>method.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_material_view" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_material_view" kindref="compound">MaterialView</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Constructor.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1a45ef70a7829e502864efdeb31deeff09" kindref="member">MaterialView</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{<sp/>materialDocManager<sp/>=<sp/>NULL;<sp/>};</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Destructor.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_material_view_1a4612111f726a941cc7c9fd87c07be58f" kindref="member">~MaterialView</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/>//////////////////////////////////////////////////////////////////////////</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Public<sp/>Interface<sp/>to<sp/>be<sp/>implemented<sp/>by<sp/>subclasses</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/>//////////////////////////////////////////////////////////////////////////</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Sets<sp/>the<sp/>material<sp/>document<sp/>manager<sp/>for<sp/>this<sp/>view<sp/>instance.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>docManager<sp/>The<sp/>material<sp/>document<sp/>manager<sp/>for<sp/>this<sp/>view<sp/>instance.</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1a5d965fd5a68d42d6dbe6a64838d64bc1" kindref="member">SetMaterialDocManager</ref>(<ref refid="class_material_doc_manager" kindref="compound">MaterialDocManager</ref>*<sp/>docManager)<sp/>{<sp/>materialDocManager<sp/>=<sp/>docManager;<sp/>};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>the<sp/>selected<sp/>material<sp/>has<sp/>changed.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>newly<sp/>selected<sp/>material.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1a294aad530ce65823d3251446a3a3ae83" kindref="member">MV_OnMaterialSelectionChange</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial)<sp/>{};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>the<sp/>material<sp/>has<sp/>changed<sp/>but<sp/>not<sp/>applied.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>selected<sp/>material.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1a1e3770beb54336ad8591ffa809b097b4" kindref="member">MV_OnMaterialChange</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial)<sp/>{};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>the<sp/>material<sp/>changes<sp/>have<sp/>been<sp/>applied.<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>selected<sp/>material.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1ad87ced902a1149ac424eaee83fcbe388" kindref="member">MV_OnMaterialApply</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial)<sp/>{};</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>the<sp/>material<sp/>changes<sp/>have<sp/>been<sp/>saved.<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>saved<sp/>material.</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1a4486e3bf091dab709c551a343021819a" kindref="member">MV_OnMaterialSaved</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial)<sp/>{};</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>a<sp/>material<sp/>file<sp/>has<sp/>been<sp/>saved</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>filename<sp/>path<sp/>of<sp/>the<sp/>file<sp/>that<sp/>was<sp/>saved.</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1a923605b3f9ff899a77baee716b14ec7b" kindref="member">MV_OnMaterialSaveFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename)<sp/>{};</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>a<sp/>material<sp/>is<sp/>added</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>material<sp/>that<sp/>was<sp/>added.</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1a684c35d093bafad8d00c959d702cee16" kindref="member">MV_OnMaterialAdd</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial)<sp/>{};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>a<sp/>material<sp/>is<sp/>deleted</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>material<sp/>that<sp/>was<sp/>deleted.</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1ad8842a2c9c617e70298925a2a440ea51" kindref="member">MV_OnMaterialDelete</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial)<sp/>{};</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>a<sp/>stage<sp/>is<sp/>added</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>material<sp/>that<sp/>was<sp/>affected.</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>stageNum<sp/>The<sp/>index<sp/>of<sp/>the<sp/>stage<sp/>that<sp/>was<sp/>added</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1a0bd0b53be219cf288f368c6471783c65" kindref="member">MV_OnMaterialStageAdd</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stageNum)<sp/>{};</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>a<sp/>stage<sp/>is<sp/>deleted</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>material<sp/>that<sp/>was<sp/>affected.</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>stageNum<sp/>The<sp/>index<sp/>of<sp/>the<sp/>stage<sp/>that<sp/>was<sp/>deleted</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1af563438a4747d6086305108eca7c6e89" kindref="member">MV_OnMaterialStageDelete</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stageNum)<sp/>{};</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>a<sp/>stage<sp/>is<sp/>moved</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>material<sp/>that<sp/>was<sp/>deleted.</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>from<sp/>The<sp/>from<sp/>index</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>to<sp/>The<sp/>to<sp/>index</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1a2f236aad283436758cae63b26c8d70ac" kindref="member">MV_OnMaterialStageMove</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>from,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>to)<sp/>{};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>an<sp/>attribute<sp/>is<sp/>changed</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>material<sp/>that<sp/>was<sp/>deleted.</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>stage<sp/>The<sp/>stage<sp/>that<sp/>contains<sp/>the<sp/>change.</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>attribName<sp/>The<sp/>attribute<sp/>that<sp/>has<sp/>changed.</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1abf652e7a01a00c206a39e53b1ecf1f2e" kindref="member">MV_OnMaterialAttributeChanged</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stage,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>attribName)<sp/>{};</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>the<sp/>material<sp/>name<sp/>has<sp/>changed</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>pMaterial<sp/>The<sp/>material<sp/>that<sp/>was<sp/>deleted.</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>oldName<sp/>The<sp/>old<sp/>name<sp/>of<sp/>the<sp/>material.</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1a76429e9d0c1af5da32b9981298778a83" kindref="member">MV_OnMaterialNameChanged</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>pMaterial,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>oldName)<sp/>{};</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Called<sp/>when<sp/>a<sp/>file<sp/>has<sp/>been<sp/>reloaded</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>filename<sp/>The<sp/>file<sp/>that<sp/>was<sp/>reloaded.</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_view_1ad82257506a932020ac1f2f9bc898cec7" kindref="member">MV_OnFileReload</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename)<sp/>{};</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager" kindref="compound">MaterialDocManager</ref>*<sp/>materialDocManager;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h"/>
+  </compounddef>
+</doxygen>

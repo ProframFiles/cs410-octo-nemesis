@@ -1,0 +1,511 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="multi_8h" kind="file">
+    <compoundname>multi.h</compoundname>
+    <includes local="no">winsock2.h</includes>
+    <includes refid="curl_8h" local="yes">curl.h</includes>
+    <includedby refid="curl_8h" local="yes">E:/sources/3rd_party/DOOM/neo/curl/include/curl/curl.h</includedby>
+    <incdepgraph>
+      <node id="134">
+        <label>E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h</label>
+        <link refid="multi.h"/>
+        <childnode refid="135" relation="include">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>winsock2.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_c_u_r_l_msg" prot="public">CURLMsg</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="multi_8h_1a92acc8d3a23eaae72955b8a8b22c83e3" prot="public" static="no">
+        <name>CURLMcode</name>
+        <enumvalue id="multi_8h_1a92acc8d3a23eaae72955b8a8b22c83e3ada965a9b89eeb3b2f3a012edaa3acdd6" prot="public">
+          <name>CURLM_CALL_MULTI_PERFORM</name>
+          <initializer>=-1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="multi_8h_1a92acc8d3a23eaae72955b8a8b22c83e3ae3b5d27fd8dc9cff7a60772cf90cf9d6" prot="public">
+          <name>CURLM_OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="multi_8h_1a92acc8d3a23eaae72955b8a8b22c83e3a8876b8ad10b9b2e9ee4cfb22034803ed" prot="public">
+          <name>CURLM_BAD_HANDLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="multi_8h_1a92acc8d3a23eaae72955b8a8b22c83e3af6c791401114f6d764dbb8209838ba31" prot="public">
+          <name>CURLM_BAD_EASY_HANDLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="multi_8h_1a92acc8d3a23eaae72955b8a8b22c83e3a323be072bc47b2a7ff1d3fc4533e8f70" prot="public">
+          <name>CURLM_OUT_OF_MEMORY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="multi_8h_1a92acc8d3a23eaae72955b8a8b22c83e3a53d037bdcf6900341e9f83efbf14b1d1" prot="public">
+          <name>CURLM_INTERNAL_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="multi_8h_1a92acc8d3a23eaae72955b8a8b22c83e3adf229fdf86c1ea54a8138f0bf702d3e6" prot="public">
+          <name>CURLM_LAST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="78" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" bodystart="78" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="enum" id="multi_8h_1a7f87d375fc82f79b121ef4adaeedc154" prot="public" static="no">
+        <name>CURLMSG</name>
+        <enumvalue id="multi_8h_1a7f87d375fc82f79b121ef4adaeedc154ae3b4bbc61ade639e930424147049e4e5" prot="public">
+          <name>CURLMSG_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="multi_8h_1a7f87d375fc82f79b121ef4adaeedc154a374efd706ae91c3321d6360be3c398b7" prot="public">
+          <name>CURLMSG_DONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="multi_8h_1a7f87d375fc82f79b121ef4adaeedc154a57d9664397bd951b89bf317b7f4721ec" prot="public">
+          <name>CURLMSG_LAST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="88" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" bodystart="88" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="multi_8h_1a5ad3a82c3de54ee92ce4ddb052d18036" prot="public" static="no">
+        <type>void</type>
+        <definition>typedef void CURLM</definition>
+        <argsstring></argsstring>
+        <name>CURLM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="76" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="multi_8h_1a091e73d065f7b286cb86ad6867e6f88b" prot="public" static="no">
+        <type>struct <ref refid="struct_c_u_r_l_msg" kindref="compound">CURLMsg</ref></type>
+        <definition>typedef struct CURLMsg CURLMsg</definition>
+        <argsstring></argsstring>
+        <name>CURLMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="76" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="multi_8h_1ac3973e5e6772f7e9715c4474a1d8f1d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CURLM *</type>
+        <definition>CURLM* curl_multi_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>curl_multi_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="111" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/multi.c" bodystart="114" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="multi_8h_1a9efda11ca6ec5fc5604525ba92e66761" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CURLMcode</type>
+        <definition>CURLMcode curl_multi_add_handle</definition>
+        <argsstring>(CURLM *multi_handle, CURL *curl_handle)</argsstring>
+        <name>curl_multi_add_handle</name>
+        <param>
+          <type>CURLM *</type>
+          <declname>multi_handle</declname>
+        </param>
+        <param>
+          <type>CURL *</type>
+          <declname>curl_handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="119" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/multi.c" bodystart="134" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="multi_8h_1a4ca70283f7d936f96feaf6a3651262e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CURLMcode</type>
+        <definition>CURLMcode curl_multi_remove_handle</definition>
+        <argsstring>(CURLM *multi_handle, CURL *curl_handle)</argsstring>
+        <name>curl_multi_remove_handle</name>
+        <param>
+          <type>CURLM *</type>
+          <declname>multi_handle</declname>
+        </param>
+        <param>
+          <type>CURL *</type>
+          <declname>curl_handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="128" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/multi.c" bodystart="182" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="multi_8h_1af6f14efff22938a514a6d3eb4902b95d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CURLMcode</type>
+        <definition>CURLMcode curl_multi_fdset</definition>
+        <argsstring>(CURLM *multi_handle, fd_set *read_fd_set, fd_set *write_fd_set, fd_set *exc_fd_set, int *max_fd)</argsstring>
+        <name>curl_multi_fdset</name>
+        <param>
+          <type>CURLM *</type>
+          <declname>multi_handle</declname>
+        </param>
+        <param>
+          <type>fd_set *</type>
+          <declname>read_fd_set</declname>
+        </param>
+        <param>
+          <type>fd_set *</type>
+          <declname>write_fd_set</declname>
+        </param>
+        <param>
+          <type>fd_set *</type>
+          <declname>exc_fd_set</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>max_fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="139" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/multi.c" bodystart="231" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="multi_8h_1a443261e31b712852239a5e5cd2724041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CURLMcode</type>
+        <definition>CURLMcode curl_multi_perform</definition>
+        <argsstring>(CURLM *multi_handle, int *running_handles)</argsstring>
+        <name>curl_multi_perform</name>
+        <param>
+          <type>CURLM *</type>
+          <declname>multi_handle</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>running_handles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="161" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/multi.c" bodystart="306" bodyend="581"/>
+      </memberdef>
+      <memberdef kind="function" id="multi_8h_1afcba6806e2e99188d869d3d707a4a248" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CURLMcode</type>
+        <definition>CURLMcode curl_multi_cleanup</definition>
+        <argsstring>(CURLM *multi_handle)</argsstring>
+        <name>curl_multi_cleanup</name>
+        <param>
+          <type>CURLM *</type>
+          <declname>multi_handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="173" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/multi.c" bodystart="583" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="multi_8h_1ae56993158d03b1a96d09d38831dd44a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_c_u_r_l_msg" kindref="compound">CURLMsg</ref> *</type>
+        <definition>CURLMsg* curl_multi_info_read</definition>
+        <argsstring>(CURLM *multi_handle, int *msgs_in_queue)</argsstring>
+        <name>curl_multi_info_read</name>
+        <param>
+          <type>CURLM *</type>
+          <declname>multi_handle</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>msgs_in_queue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h" line="203" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/multi.c" bodystart="614" bodyend="644"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__CURL_MULTI_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__CURL_MULTI_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="comment">/***************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_<sp/><sp/><sp/>_<sp/>____<sp/><sp/>_<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>Project<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>___|<sp/>|<sp/>|<sp/>|<sp/><sp/>_<sp/>\|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>__|<sp/>|<sp/>|<sp/>|<sp/>|_)<sp/>|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(__|<sp/>|_|<sp/>|<sp/><sp/>_<sp/>&lt;|<sp/>|___<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\___|\___/|_|<sp/>\_\_____|</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998<sp/>-<sp/>2004,<sp/>Daniel<sp/>Stenberg,<sp/>&lt;daniel@haxx.se&gt;,<sp/>et<sp/>al.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>licensed<sp/>as<sp/>described<sp/>in<sp/>the<sp/>file<sp/>COPYING,<sp/>which</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>you<sp/>should<sp/>have<sp/>received<sp/>as<sp/>part<sp/>of<sp/>this<sp/>distribution.<sp/>The<sp/>terms</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>are<sp/>also<sp/>available<sp/>at<sp/>http://curl.haxx.se/docs/copyright.html.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>opt<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute<sp/>and/or<sp/>sell</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>COPYING<sp/>file.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>basis,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>$Id:<sp/>multi.h,v<sp/>1.17<sp/>2004/03/17<sp/>12:46:45<sp/>bagder<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/>This<sp/>is<sp/>meant<sp/>to<sp/>be<sp/>the<sp/>&quot;external&quot;<sp/>header<sp/>file.<sp/>Don&apos;t<sp/>give<sp/>away<sp/>any</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/>internals<sp/>here!</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"></highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/>This<sp/>document<sp/>presents<sp/>a<sp/>mixture<sp/>of<sp/>ideas<sp/>from<sp/>at<sp/>least:</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/>-<sp/>Daniel<sp/>Stenberg</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/>-<sp/>Steve<sp/>Dekorte</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/>-<sp/>Sterling<sp/>Hughes</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/>-<sp/>Ben<sp/>Greear</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/>-------------------------------------------</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/>GOALS</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"></highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/>o<sp/>Enable<sp/>a<sp/>&quot;pull&quot;<sp/>interface.<sp/>The<sp/>application<sp/>that<sp/>uses<sp/>libcurl<sp/>decides<sp/>where</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/>and<sp/>when<sp/>to<sp/>ask<sp/>libcurl<sp/>to<sp/>get/send<sp/>data.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"></highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/>o<sp/>Enable<sp/>multiple<sp/>simultaneous<sp/>transfers<sp/>in<sp/>the<sp/>same<sp/>thread<sp/>without<sp/>making<sp/>it</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/>complicated<sp/>for<sp/>the<sp/>application.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"></highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/>o<sp/>Enable<sp/>the<sp/>application<sp/>to<sp/>select()<sp/>on<sp/>its<sp/>own<sp/>file<sp/>descriptors<sp/>and<sp/>curl&apos;s</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/>file<sp/>descriptors<sp/>simultaneous<sp/>easily.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)<sp/>&amp;&amp;<sp/>!defined(WIN32)</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>Chris<sp/>Lewis<sp/>mentioned<sp/>that<sp/>he<sp/>doesn&apos;t<sp/>get<sp/>WIN32<sp/>defined,<sp/>only<sp/>_WIN32<sp/>so<sp/>we</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/>make<sp/>this<sp/>adjustment<sp/>to<sp/>catch<sp/>this.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WIN32<sp/>1</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(WIN32)<sp/>&amp;&amp;<sp/>!defined(__GNUC__)<sp/>||<sp/>defined(__MINGW32__)</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;winsock2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>HP-UX<sp/>systems<sp/>version<sp/>9,<sp/>10<sp/>and<sp/>11<sp/>lack<sp/>sys/select.h<sp/>and<sp/>so<sp/>does<sp/>oldish</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/>libc5-based<sp/>Linux<sp/>systems.<sp/>Only<sp/>include<sp/>it<sp/>on<sp/>system<sp/>that<sp/>are<sp/>known<sp/>to</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/>require<sp/>it!<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_AIX)<sp/>||<sp/>defined(NETWARE)</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/select.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;curl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CURLM;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>CURLM_CALL_MULTI_PERFORM=-1,<sp/></highlight><highlight class="comment">/*<sp/>please<sp/>call<sp/>curl_multi_perform()<sp/>soon<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>CURLM_OK,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>CURLM_BAD_HANDLE,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>the<sp/>passed-in<sp/>handle<sp/>is<sp/>not<sp/>a<sp/>valid<sp/>CURLM<sp/>handle<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>CURLM_BAD_EASY_HANDLE,<sp/></highlight><highlight class="comment">/*<sp/>an<sp/>easy<sp/>handle<sp/>was<sp/>not<sp/>good/valid<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>CURLM_OUT_OF_MEMORY,<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>if<sp/>you<sp/>ever<sp/>get<sp/>this,<sp/>you&apos;re<sp/>in<sp/>deep<sp/>sh*t<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>CURLM_INTERNAL_ERROR,<sp/><sp/></highlight><highlight class="comment">/*<sp/>this<sp/>is<sp/>a<sp/>libcurl<sp/>bug<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>CURLM_LAST</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}<sp/>CURLMcode;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>CURLMSG_NONE,<sp/></highlight><highlight class="comment">/*<sp/>first,<sp/>not<sp/>used<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>CURLMSG_DONE,<sp/></highlight><highlight class="comment">/*<sp/>This<sp/>easy<sp/>handle<sp/>has<sp/>completed.<sp/>&apos;result&apos;<sp/>contains</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>CURLcode<sp/>of<sp/>the<sp/>transfer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>CURLMSG_LAST<sp/></highlight><highlight class="comment">/*<sp/>last,<sp/>not<sp/>used<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}<sp/>CURLMSG;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="struct_c_u_r_l_msg" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_c_u_r_l_msg" kindref="compound">CURLMsg</ref><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>CURLMSG<sp/>msg;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>what<sp/>this<sp/>message<sp/>means<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>CURL<sp/>*easy_handle;<sp/></highlight><highlight class="comment">/*<sp/>the<sp/>handle<sp/>it<sp/>concerns<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*whatever;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>message-specific<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>CURLcode<sp/>result;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>return<sp/>code<sp/>for<sp/>transfer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>}<sp/>data;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_c_u_r_l_msg" kindref="compound">CURLMsg</ref><sp/><ref refid="struct_c_u_r_l_msg" kindref="compound">CURLMsg</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>Name:<sp/><sp/><sp/><sp/>curl_multi_init()</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>Desc:<sp/><sp/><sp/><sp/>inititalize<sp/>multi-style<sp/>curl<sp/>usage</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>Returns:<sp/>a<sp/>new<sp/>CURLM<sp/>handle<sp/>to<sp/>use<sp/>in<sp/>all<sp/>&apos;curl_multi&apos;<sp/>functions.</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">CURLM<sp/>*curl_multi_init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>Name:<sp/><sp/><sp/><sp/>curl_multi_add_handle()</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>Desc:<sp/><sp/><sp/><sp/>add<sp/>a<sp/>standard<sp/>curl<sp/>handle<sp/>to<sp/>the<sp/>multi<sp/>stack</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>Returns:<sp/>CURLMcode<sp/>type,<sp/>general<sp/>multi<sp/>error<sp/>code.</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">CURLMcode<sp/>curl_multi_add_handle(CURLM<sp/>*multi_handle,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CURL<sp/>*curl_handle);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/>*<sp/>Name:<sp/><sp/><sp/><sp/>curl_multi_remove_handle()</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/>*</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/>*<sp/>Desc:<sp/><sp/><sp/><sp/>removes<sp/>a<sp/>curl<sp/>handle<sp/>from<sp/>the<sp/>multi<sp/>stack<sp/>again</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/>*<sp/>Returns:<sp/>CURLMcode<sp/>type,<sp/>general<sp/>multi<sp/>error<sp/>code.</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal">CURLMcode<sp/>curl_multi_remove_handle(CURLM<sp/>*multi_handle,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CURL<sp/>*curl_handle);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/>*<sp/>Name:<sp/><sp/><sp/><sp/>curl_multi_fdset()</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/>*</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/>*<sp/>Desc:<sp/><sp/><sp/><sp/>Ask<sp/>curl<sp/>for<sp/>its<sp/>fd_set<sp/>sets.<sp/>The<sp/>app<sp/>can<sp/>use<sp/>these<sp/>to<sp/>select()<sp/>or</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>poll()<sp/>on.<sp/>We<sp/>want<sp/>curl_multi_perform()<sp/>called<sp/>as<sp/>soon<sp/>as<sp/>one<sp/>of</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>them<sp/>are<sp/>ready.</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/>*<sp/>Returns:<sp/>CURLMcode<sp/>type,<sp/>general<sp/>multi<sp/>error<sp/>code.</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">CURLMcode<sp/>curl_multi_fdset(CURLM<sp/>*multi_handle,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd_set<sp/>*read_fd_set,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd_set<sp/>*write_fd_set,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fd_set<sp/>*exc_fd_set,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*max_fd);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/>*<sp/>Name:<sp/><sp/><sp/><sp/>curl_multi_perform()</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/>*</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/>*<sp/>Desc:<sp/><sp/><sp/><sp/>When<sp/>the<sp/>app<sp/>thinks<sp/>there&apos;s<sp/>data<sp/>available<sp/>for<sp/>curl<sp/>it<sp/>calls<sp/>this</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>function<sp/>to<sp/>read/write<sp/>whatever<sp/>there<sp/>is<sp/>right<sp/>now.<sp/>This<sp/>returns</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>as<sp/>soon<sp/>as<sp/>the<sp/>reads<sp/>and<sp/>writes<sp/>are<sp/>done.<sp/>This<sp/>function<sp/>does<sp/>not</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>require<sp/>that<sp/>there<sp/>actually<sp/>is<sp/>data<sp/>available<sp/>for<sp/>reading<sp/>or<sp/>that</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>can<sp/>be<sp/>written,<sp/>it<sp/>can<sp/>be<sp/>called<sp/>just<sp/>in<sp/>case.<sp/>It<sp/>returns</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>number<sp/>of<sp/>handles<sp/>that<sp/>still<sp/>transfer<sp/>data<sp/>in<sp/>the<sp/>second</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>argument&apos;s<sp/>integer-pointer.</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/><sp/>*</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/><sp/>*<sp/>Returns:<sp/>CURLMcode<sp/>type,<sp/>general<sp/>multi<sp/>error<sp/>code.<sp/>*NOTE*<sp/>that<sp/>this<sp/>only</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>returns<sp/>errors<sp/>etc<sp/>regarding<sp/>the<sp/>whole<sp/>multi<sp/>stack.<sp/>There<sp/>might</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>still<sp/>have<sp/>occurred<sp/>problems<sp/>on<sp/>invidual<sp/>transfers<sp/>even<sp/>when<sp/>this</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>returns<sp/>OK.</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">CURLMcode<sp/>curl_multi_perform(CURLM<sp/>*multi_handle,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*running_handles);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/><sp/>*<sp/>Name:<sp/><sp/><sp/><sp/>curl_multi_cleanup()</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/><sp/>*</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/><sp/>*<sp/>Desc:<sp/><sp/><sp/><sp/>Cleans<sp/>up<sp/>and<sp/>removes<sp/>a<sp/>whole<sp/>multi<sp/>stack.<sp/>It<sp/>does<sp/>not<sp/>free<sp/>or</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>touch<sp/>any<sp/>individual<sp/>easy<sp/>handles<sp/>in<sp/>any<sp/>way.<sp/>We<sp/>need<sp/>to<sp/>define</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>what<sp/>state<sp/>those<sp/>handles<sp/>will<sp/>be<sp/>if<sp/>this<sp/>function<sp/>is<sp/>called</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>middle<sp/>of<sp/>a<sp/>transfer.</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/><sp/>*<sp/>Returns:<sp/>CURLMcode<sp/>type,<sp/>general<sp/>multi<sp/>error<sp/>code.</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">CURLMcode<sp/>curl_multi_cleanup(CURLM<sp/>*multi_handle);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/>Name:<sp/><sp/><sp/><sp/>curl_multi_info_read()</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/>Desc:<sp/><sp/><sp/><sp/>Ask<sp/>the<sp/>multi<sp/>handle<sp/>if<sp/>there&apos;s<sp/>any<sp/>messages/informationals<sp/>from</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>individual<sp/>transfers.<sp/>Messages<sp/>include<sp/>informationals<sp/>such<sp/>as</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error<sp/>code<sp/>from<sp/>the<sp/>transfer<sp/>or<sp/>just<sp/>the<sp/>fact<sp/>that<sp/>a<sp/>transfer<sp/>is</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>completed.<sp/>More<sp/>details<sp/>on<sp/>these<sp/>should<sp/>be<sp/>written<sp/>down<sp/>as<sp/>well.</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Repeated<sp/>calls<sp/>to<sp/>this<sp/>function<sp/>will<sp/>return<sp/>a<sp/>new<sp/>struct<sp/>each</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time,<sp/>until<sp/>a<sp/>special<sp/>&quot;end<sp/>of<sp/>msgs&quot;<sp/>struct<sp/>is<sp/>returned<sp/>as<sp/>a<sp/>signal</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>that<sp/>there<sp/>is<sp/>no<sp/>more<sp/>to<sp/>get<sp/>at<sp/>this<sp/>point.</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>data<sp/>the<sp/>returned<sp/>pointer<sp/>points<sp/>to<sp/>will<sp/>not<sp/>survive<sp/>calling</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curl_multi_cleanup().</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>&apos;CURLMsg&apos;<sp/>struct<sp/>is<sp/>meant<sp/>to<sp/>be<sp/>very<sp/>simple<sp/>and<sp/>only<sp/>contain</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>very<sp/>basic<sp/>informations.<sp/>If<sp/>more<sp/>involved<sp/>information<sp/>is<sp/>wanted,</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>we<sp/>will<sp/>provide<sp/>the<sp/>particular<sp/>&quot;transfer<sp/>handle&quot;<sp/>in<sp/>that<sp/>struct</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>that<sp/>should/could/would<sp/>be<sp/>used<sp/>in<sp/>subsequent</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curl_easy_getinfo()<sp/>calls<sp/>(or<sp/>similar).<sp/>The<sp/>point<sp/>being<sp/>that<sp/>we</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>must<sp/>never<sp/>expose<sp/>complex<sp/>structs<sp/>to<sp/>applications,<sp/>as<sp/>then<sp/>we&apos;ll</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>undoubtably<sp/>get<sp/>backwards<sp/>compatibility<sp/>problems<sp/>in<sp/>the<sp/>future.</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*<sp/>Returns:<sp/>A<sp/>pointer<sp/>to<sp/>a<sp/>filled-in<sp/>struct,<sp/>or<sp/>NULL<sp/>if<sp/>it<sp/>failed<sp/>or<sp/>ran<sp/>out</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>of<sp/>structs.<sp/>It<sp/>also<sp/>writes<sp/>the<sp/>number<sp/>of<sp/>messages<sp/>left<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>queue<sp/>(after<sp/>this<sp/>read)<sp/>in<sp/>the<sp/>integer<sp/>the<sp/>second<sp/>argument<sp/>points</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>to.</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><ref refid="struct_c_u_r_l_msg" kindref="compound">CURLMsg</ref><sp/>*curl_multi_info_read(CURLM<sp/>*multi_handle,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*msgs_in_queue);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="207"><highlight class="preprocessor"></highlight><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>end<sp/>of<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="209"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/curl/include/curl/multi.h"/>
+  </compounddef>
+</doxygen>

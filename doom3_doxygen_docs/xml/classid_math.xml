@@ -1,0 +1,1736 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_math" kind="class" prot="public">
+    <compoundname>idMath</compoundname>
+    <innerclass refid="unionid_math_1_1__flint" prot="private">idMath::_flint</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classid_math_1ae89ded036ae8333dd32ed58b4065646d" prot="private" static="no">
+        <name>@86</name>
+        <enumvalue id="classid_math_1ae89ded036ae8333dd32ed58b4065646dafdfb8b8c3c89466a71e7e424281aca57" prot="private">
+          <name>LOOKUP_BITS</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_math_1ae89ded036ae8333dd32ed58b4065646da603ec0b3ec07cb4443f82dcab0ad2c67" prot="private">
+          <name>EXP_POS</name>
+          <initializer>= 23</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_math_1ae89ded036ae8333dd32ed58b4065646da562504d4be720202781899c3954503f1" prot="private">
+          <name>EXP_BIAS</name>
+          <initializer>= 127</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_math_1ae89ded036ae8333dd32ed58b4065646dad646a17e2c3a646ba74f35f77d2caa72" prot="private">
+          <name>LOOKUP_POS</name>
+          <initializer>= (EXP_POS-LOOKUP_BITS)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_math_1ae89ded036ae8333dd32ed58b4065646dad92d886a05c20a396a7f9f90c4fcaaf1" prot="private">
+          <name>SEED_POS</name>
+          <initializer>= (EXP_POS-8)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_math_1ae89ded036ae8333dd32ed58b4065646daac187cdf1ab380f9e024e55866f77642" prot="private">
+          <name>SQRT_TABLE_SIZE</name>
+          <initializer>= (2&lt;&lt;LOOKUP_BITS)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classid_math_1ae89ded036ae8333dd32ed58b4065646da30a2e23cdc2c6254320194cb92378f12" prot="private">
+          <name>LOOKUP_MASK</name>
+          <initializer>= (SQRT_TABLE_SIZE-1)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="220" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="220" bodyend="228"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classid_math_1a80fd6c1e1956c4c5a8961d83a1534c17" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::PI</definition>
+        <argsstring></argsstring>
+        <name>PI</name>
+        <initializer>= 3.14159265358979323846f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="203" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1a1597d7b07befc1ef3e4e1f6cf32b17dc" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::TWO_PI</definition>
+        <argsstring></argsstring>
+        <name>TWO_PI</name>
+        <initializer>= 2.0f * PI</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="204" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1aaf1ad54f2496d9e42366ea7986a02faa" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::HALF_PI</definition>
+        <argsstring></argsstring>
+        <name>HALF_PI</name>
+        <initializer>= 0.5f * PI</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="205" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1a005c0db6231e8602db12448bd1c8dc52" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::ONEFOURTH_PI</definition>
+        <argsstring></argsstring>
+        <name>ONEFOURTH_PI</name>
+        <initializer>= 0.25f * PI</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="206" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1a3e2f55530cdcbb2b6210a73a424c308a" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::E</definition>
+        <argsstring></argsstring>
+        <name>E</name>
+        <initializer>= 2.71828182845904523536f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="207" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1a083893c9659910fa198211412b4037f4" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::SQRT_TWO</definition>
+        <argsstring></argsstring>
+        <name>SQRT_TWO</name>
+        <initializer>= 1.41421356237309504880f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="208" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1ab7c8b7cc5b4e141becb78006a958f90e" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::SQRT_THREE</definition>
+        <argsstring></argsstring>
+        <name>SQRT_THREE</name>
+        <initializer>= 1.73205080756887729352f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="209" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1a38668a95360fe98309399057faaeab71" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::SQRT_1OVER2</definition>
+        <argsstring></argsstring>
+        <name>SQRT_1OVER2</name>
+        <initializer>= 0.70710678118654752440f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="210" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1a3216ff154942c8986b527bda827b977a" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::SQRT_1OVER3</definition>
+        <argsstring></argsstring>
+        <name>SQRT_1OVER3</name>
+        <initializer>= 0.57735026918962576450f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="211" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1a6b36223b8343281f3bb3aea6fbac2316" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::M_DEG2RAD</definition>
+        <argsstring></argsstring>
+        <name>M_DEG2RAD</name>
+        <initializer>= PI / 180.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="212" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1a05c0dadda4bdd87fededef926ff26c47" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::M_RAD2DEG</definition>
+        <argsstring></argsstring>
+        <name>M_RAD2DEG</name>
+        <initializer>= 180.0f / PI</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="213" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1ace5160e26167d451b1170d917ae20a3d" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::M_SEC2MS</definition>
+        <argsstring></argsstring>
+        <name>M_SEC2MS</name>
+        <initializer>= 1000.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="214" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1af7293030ce03b877b3104b9b092d2225" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::M_MS2SEC</definition>
+        <argsstring></argsstring>
+        <name>M_MS2SEC</name>
+        <initializer>= 0.001f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="215" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1a78772a3409fd29e9e6e85e48e3cb0ae3" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::INFINITY</definition>
+        <argsstring></argsstring>
+        <name>INFINITY</name>
+        <initializer>= 1e30f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="216" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1aafbb4a9939633dc99340296d56a26e28" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float idMath::FLT_EPSILON</definition>
+        <argsstring></argsstring>
+        <name>FLT_EPSILON</name>
+        <initializer>= 1.192092896e-07f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="217" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classid_math_1ac303928ce99b0e7ec063707030306443" prot="private" static="yes" mutable="no">
+        <type>dword</type>
+        <definition>dword idMath::iSqrt</definition>
+        <argsstring>[SQRT_TABLE_SIZE]</argsstring>
+        <name>iSqrt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="235" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_math_1a8948d22a3f116eea04cd5b9462b38652" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool idMath::initialized</definition>
+        <argsstring></argsstring>
+        <name>initialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="236" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classid_math_1a85a52d6484cce99f6cf7689e18c33698" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idMath::Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="109" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.cpp" bodystart="57" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a5affc0b959e698438179917cc850900a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::RSqrt</definition>
+        <argsstring>(float x)</argsstring>
+        <name>RSqrt</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="111" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="239" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a1007de6ea87428130fecd26e09883506" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::InvSqrt</definition>
+        <argsstring>(float x)</argsstring>
+        <name>InvSqrt</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="113" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="266" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1afbc28358b73c1d101d69cb68e4cd510e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::InvSqrt16</definition>
+        <argsstring>(float x)</argsstring>
+        <name>InvSqrt16</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="114" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="252" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aaf7c4015e39865eaa82eafe871225446" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::InvSqrt64</definition>
+        <argsstring>(float x)</argsstring>
+        <name>InvSqrt64</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="115" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="281" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a2a1c1b2521f9b7e0f3b93c2d0b7600e0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Sqrt</definition>
+        <argsstring>(float x)</argsstring>
+        <name>Sqrt</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="117" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="300" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aa57aa624924f7c9b463e7d34638e8b61" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Sqrt16</definition>
+        <argsstring>(float x)</argsstring>
+        <name>Sqrt16</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="118" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="296" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1ac6c50780fa24cd48e0c7c7a15a7e9da9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::Sqrt64</definition>
+        <argsstring>(float x)</argsstring>
+        <name>Sqrt64</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="119" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="304" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aef626e07bbaeac43cf14973431b0e1d0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Sin</definition>
+        <argsstring>(float a)</argsstring>
+        <name>Sin</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="121" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="308" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a79666debb48e6d24da8d3d1eb6d85732" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Sin16</definition>
+        <argsstring>(float a)</argsstring>
+        <name>Sin16</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="122" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="312" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a8ecb63de6c9cadf3e5d5dfc43202b830" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::Sin64</definition>
+        <argsstring>(float a)</argsstring>
+        <name>Sin64</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="123" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="340" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aa9205afc596d48fa3a6f4dab7264ae70" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Cos</definition>
+        <argsstring>(float a)</argsstring>
+        <name>Cos</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="125" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="344" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a045794b3f1f7b06aeb470efdbcb0d61e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Cos16</definition>
+        <argsstring>(float a)</argsstring>
+        <name>Cos16</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="126" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="348" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a0810e170694ff2f9c36dc86f04d82922" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::Cos64</definition>
+        <argsstring>(float a)</argsstring>
+        <name>Cos64</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="127" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="384" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a773bb4312140e9052a0db0a53d101be5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idMath::SinCos</definition>
+        <argsstring>(float a, float &amp;s, float &amp;c)</argsstring>
+        <name>SinCos</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="129" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="388" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1ac332c4938c47cb815d5aaaacae6777d3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idMath::SinCos16</definition>
+        <argsstring>(float a, float &amp;s, float &amp;c)</argsstring>
+        <name>SinCos16</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="130" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="404" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a3cf7501ccc3590c5c6add96bd407187f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idMath::SinCos64</definition>
+        <argsstring>(float a, double &amp;s, double &amp;c)</argsstring>
+        <name>SinCos64</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="131" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="441" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a7d01b1c375f463580520bcfadd013f21" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Tan</definition>
+        <argsstring>(float a)</argsstring>
+        <name>Tan</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="133" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="457" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1ab94474906a7afb6cd4bd504b972a81b5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Tan16</definition>
+        <argsstring>(float a)</argsstring>
+        <name>Tan16</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="134" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="461" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a35a052ebf314e91becf2abdef2072b9d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::Tan64</definition>
+        <argsstring>(float a)</argsstring>
+        <name>Tan64</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="135" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="503" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1ae06707b384d5e1aafe20e45fd4fd9424" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::ASin</definition>
+        <argsstring>(float a)</argsstring>
+        <name>ASin</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="137" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="507" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a1697bcc0a0529d9d47df1192c12780a7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::ASin16</definition>
+        <argsstring>(float a)</argsstring>
+        <name>ASin16</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="138" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="517" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a154cbafba89b3f918361c01b73fbaa5a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::ASin64</definition>
+        <argsstring>(float a)</argsstring>
+        <name>ASin64</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="139" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="532" bodyend="540"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a1718049c2aebcc98f49a8f20a0917a20" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::ACos</definition>
+        <argsstring>(float a)</argsstring>
+        <name>ACos</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="141" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="542" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1ac4ce56f728e090d52d100fdb323cb68d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::ACos16</definition>
+        <argsstring>(float a)</argsstring>
+        <name>ACos16</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="142" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="552" bodyend="565"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1acb2de155b40735cdb0a1f4107b58e396" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::ACos64</definition>
+        <argsstring>(float a)</argsstring>
+        <name>ACos64</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="143" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="567" bodyend="575"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a9cb754f00ba2de5b21eddacd676b1005" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::ATan</definition>
+        <argsstring>(float a)</argsstring>
+        <name>ATan</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="145" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="577" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1ad96e2f81973f132467a1fb94235f1064" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::ATan16</definition>
+        <argsstring>(float a)</argsstring>
+        <name>ATan16</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="146" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="581" bodyend="599"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a6d5f7f5937dc6bcf2c764113ba80e0a8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::ATan64</definition>
+        <argsstring>(float a)</argsstring>
+        <name>ATan64</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="147" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="601" bodyend="603"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a432665a95c8e77e1007234b40da91b4a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::ATan</definition>
+        <argsstring>(float y, float x)</argsstring>
+        <name>ATan</name>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="149" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="605" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a42986fea64228dc399265aee44548650" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::ATan16</definition>
+        <argsstring>(float y, float x)</argsstring>
+        <name>ATan16</name>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="150" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="609" bodyend="628"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1af230c63647c33a93ac2c61a3393d76af" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::ATan64</definition>
+        <argsstring>(float y, float x)</argsstring>
+        <name>ATan64</name>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="151" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="630" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aab695a88b5bf821e2a917eb2cc0375fc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Pow</definition>
+        <argsstring>(float x, float y)</argsstring>
+        <name>Pow</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="153" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="634" bodyend="636"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a9c8d6ec724fc9bcdd8e7b4f1c377b9f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Pow16</definition>
+        <argsstring>(float x, float y)</argsstring>
+        <name>Pow16</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="154" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="638" bodyend="640"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a44f5a455702a721a0945afd810c0cfbb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::Pow64</definition>
+        <argsstring>(float x, float y)</argsstring>
+        <name>Pow64</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="155" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="642" bodyend="644"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a9c99a907d1aa72cbf5d86abdc72b28d1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Exp</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Exp</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="157" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="646" bodyend="648"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a26eb9b8fc1e550f308d6648c0a72807e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Exp16</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Exp16</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="158" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="650" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a32d6567e57bcabd10867a247147016eb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::Exp64</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Exp64</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="159" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="681" bodyend="683"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a54ea504350a5092aae1ca37a78cc2a25" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Log</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Log</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="161" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="685" bodyend="687"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1abc21eaf0f7f539e5f2b6a3c4fb924ae5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Log16</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Log16</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="162" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="689" bodyend="703"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aeabec5df704f7df430346d5802973e5f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>ID_INLINE double idMath::Log64</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Log64</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="163" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="705" bodyend="707"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a69507b11da74031c641b629f46cb361b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::IPow</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>IPow</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="165" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="709" bodyend="711"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aa7499fc901020ac70e87834a204de0bb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::ILog2</definition>
+        <argsstring>(float f)</argsstring>
+        <name>ILog2</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="166" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="713" bodyend="715"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a1ba78b231b1e0e71bed1d71de75bb209" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::ILog2</definition>
+        <argsstring>(int i)</argsstring>
+        <name>ILog2</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="167" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="717" bodyend="719"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1ac901d1164dea1d5b833d6b8204f1be40" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::BitsForFloat</definition>
+        <argsstring>(float f)</argsstring>
+        <name>BitsForFloat</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="169" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="721" bodyend="723"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a8ecccd4f76a857b663bf4685e122fee3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::BitsForInteger</definition>
+        <argsstring>(int i)</argsstring>
+        <name>BitsForInteger</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="170" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="725" bodyend="727"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1adfd440ec9ecdafc5094d926e0b7f031b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::MaskForFloatSign</definition>
+        <argsstring>(float f)</argsstring>
+        <name>MaskForFloatSign</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="171" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="729" bodyend="731"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a50f2d722b198d4efeb9e2c5932ec631a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::MaskForIntegerSign</definition>
+        <argsstring>(int i)</argsstring>
+        <name>MaskForIntegerSign</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="172" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="733" bodyend="735"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a12e6b7d5288b6db669ea5f741df5f1e0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::FloorPowerOfTwo</definition>
+        <argsstring>(int x)</argsstring>
+        <name>FloorPowerOfTwo</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="173" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="737" bodyend="739"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a98a9a7a4753ebfb9288c8fa22092cbd3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::CeilPowerOfTwo</definition>
+        <argsstring>(int x)</argsstring>
+        <name>CeilPowerOfTwo</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="174" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="741" bodyend="750"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1ad5a725d56bbd56f2f7cac32db16aa1c3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>ID_INLINE bool idMath::IsPowerOfTwo</definition>
+        <argsstring>(int x)</argsstring>
+        <name>IsPowerOfTwo</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="175" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="752" bodyend="754"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a8ef845a21839cb2c81f00d4120126f45" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::BitCount</definition>
+        <argsstring>(int x)</argsstring>
+        <name>BitCount</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="176" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="756" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1ada7b9c417c230c0fcb3d7ff8b0483675" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::BitReverse</definition>
+        <argsstring>(int x)</argsstring>
+        <name>BitReverse</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="177" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="764" bodyend="770"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a987c39f7a979fb9cf95d8704f5573f59" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::Abs</definition>
+        <argsstring>(int x)</argsstring>
+        <name>Abs</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="179" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="772" bodyend="775"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a8a835d2c1ecf4f01995b9bc725d9f872" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Fabs</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Fabs</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="180" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="777" bodyend="781"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a4d2b53fdbea2062ea378d767bcb470ff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Floor</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Floor</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="181" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="783" bodyend="785"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1acd5688938585c43e9c615f861b2f7858" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Ceil</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Ceil</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="182" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="787" bodyend="789"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a8f075cb9667804dde681da247dc3c0f2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::Rint</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Rint</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="183" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="791" bodyend="793"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aced55cdc858ffe05bc52393698117eb4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::Ftoi</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Ftoi</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="184" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="795" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a8de1459a9b55d7aa00ce1123284ecc60" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::FtoiFast</definition>
+        <argsstring>(float f)</argsstring>
+        <name>FtoiFast</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="185" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="799" bodyend="825"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aad5367bcf66a2d87cc380db8ad0d45c5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>ID_INLINE unsigned long idMath::Ftol</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Ftol</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="186" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="827" bodyend="829"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aa77b588f9217fa5d96e4c0160681ccc8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>ID_INLINE unsigned long idMath::FtolFast</definition>
+        <argsstring>(float)</argsstring>
+        <name>FtolFast</name>
+        <param>
+          <type>float</type>
+          <defname>f</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="187" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="831" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a4e2f87feeb1c5ad3c524e76a8088ea55" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>signed char</type>
+        <definition>ID_INLINE signed char idMath::ClampChar</definition>
+        <argsstring>(int i)</argsstring>
+        <name>ClampChar</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="189" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="861" bodyend="869"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1ab92d8416d2966b7f21f53a499b98c69d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>signed short</type>
+        <definition>ID_INLINE signed short idMath::ClampShort</definition>
+        <argsstring>(int i)</argsstring>
+        <name>ClampShort</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="190" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="871" bodyend="879"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a5b2fbbcb153b6b081eb57b44767d0539" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::ClampInt</definition>
+        <argsstring>(int min, int max, int value)</argsstring>
+        <name>ClampInt</name>
+        <param>
+          <type>int</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="191" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="881" bodyend="889"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a24a34d72aa494429daf9db98dfb85e5e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::ClampFloat</definition>
+        <argsstring>(float min, float max, float value)</argsstring>
+        <name>ClampFloat</name>
+        <param>
+          <type>float</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>max</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="192" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="891" bodyend="899"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a95c64a4602e0aae41b81e69c920b2ff1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::AngleNormalize360</definition>
+        <argsstring>(float angle)</argsstring>
+        <name>AngleNormalize360</name>
+        <param>
+          <type>float</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="194" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="901" bodyend="906"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1af54f1d75a811faf8a18eaeb64b453a90" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::AngleNormalize180</definition>
+        <argsstring>(float angle)</argsstring>
+        <name>AngleNormalize180</name>
+        <param>
+          <type>float</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="195" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="908" bodyend="914"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a6b7cee7d797ee40e1b4c55752e374ba6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idMath::AngleDelta</definition>
+        <argsstring>(float angle1, float angle2)</argsstring>
+        <name>AngleDelta</name>
+        <param>
+          <type>float</type>
+          <declname>angle1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>angle2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="196" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="916" bodyend="918"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1aff30312db8afbc8b27919ae8f3b18368" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idMath::FloatToBits</definition>
+        <argsstring>(float f, int exponentBits, int mantissaBits)</argsstring>
+        <name>FloatToBits</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>exponentBits</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mantissaBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="198" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.cpp" bodystart="76" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a1fc8c8a702574d74d726997157e14b17" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float idMath::BitsToFloat</definition>
+        <argsstring>(int i, int exponentBits, int mantissaBits)</argsstring>
+        <name>BitsToFloat</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>exponentBits</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mantissaBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="199" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.cpp" bodystart="118" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_math_1a3ebefdc2e34ad0d36869844067148428" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idMath::FloatHash</definition>
+        <argsstring>(const float *array, const int numFloats)</argsstring>
+        <name>FloatHash</name>
+        <param>
+          <type>const float *</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>numFloats</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="201" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="920" bodyend="929"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" line="106" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/math/Math.h" bodystart="106" bodyend="237"/>
+    <listofallmembers>
+      <member refid="classid_math_1a987c39f7a979fb9cf95d8704f5573f59" prot="public" virt="non-virtual"><scope>idMath</scope><name>Abs</name></member>
+      <member refid="classid_math_1a1718049c2aebcc98f49a8f20a0917a20" prot="public" virt="non-virtual"><scope>idMath</scope><name>ACos</name></member>
+      <member refid="classid_math_1ac4ce56f728e090d52d100fdb323cb68d" prot="public" virt="non-virtual"><scope>idMath</scope><name>ACos16</name></member>
+      <member refid="classid_math_1acb2de155b40735cdb0a1f4107b58e396" prot="public" virt="non-virtual"><scope>idMath</scope><name>ACos64</name></member>
+      <member refid="classid_math_1a6b7cee7d797ee40e1b4c55752e374ba6" prot="public" virt="non-virtual"><scope>idMath</scope><name>AngleDelta</name></member>
+      <member refid="classid_math_1af54f1d75a811faf8a18eaeb64b453a90" prot="public" virt="non-virtual"><scope>idMath</scope><name>AngleNormalize180</name></member>
+      <member refid="classid_math_1a95c64a4602e0aae41b81e69c920b2ff1" prot="public" virt="non-virtual"><scope>idMath</scope><name>AngleNormalize360</name></member>
+      <member refid="classid_math_1ae06707b384d5e1aafe20e45fd4fd9424" prot="public" virt="non-virtual"><scope>idMath</scope><name>ASin</name></member>
+      <member refid="classid_math_1a1697bcc0a0529d9d47df1192c12780a7" prot="public" virt="non-virtual"><scope>idMath</scope><name>ASin16</name></member>
+      <member refid="classid_math_1a154cbafba89b3f918361c01b73fbaa5a" prot="public" virt="non-virtual"><scope>idMath</scope><name>ASin64</name></member>
+      <member refid="classid_math_1a9cb754f00ba2de5b21eddacd676b1005" prot="public" virt="non-virtual"><scope>idMath</scope><name>ATan</name></member>
+      <member refid="classid_math_1a432665a95c8e77e1007234b40da91b4a" prot="public" virt="non-virtual"><scope>idMath</scope><name>ATan</name></member>
+      <member refid="classid_math_1ad96e2f81973f132467a1fb94235f1064" prot="public" virt="non-virtual"><scope>idMath</scope><name>ATan16</name></member>
+      <member refid="classid_math_1a42986fea64228dc399265aee44548650" prot="public" virt="non-virtual"><scope>idMath</scope><name>ATan16</name></member>
+      <member refid="classid_math_1a6d5f7f5937dc6bcf2c764113ba80e0a8" prot="public" virt="non-virtual"><scope>idMath</scope><name>ATan64</name></member>
+      <member refid="classid_math_1af230c63647c33a93ac2c61a3393d76af" prot="public" virt="non-virtual"><scope>idMath</scope><name>ATan64</name></member>
+      <member refid="classid_math_1a8ef845a21839cb2c81f00d4120126f45" prot="public" virt="non-virtual"><scope>idMath</scope><name>BitCount</name></member>
+      <member refid="classid_math_1ada7b9c417c230c0fcb3d7ff8b0483675" prot="public" virt="non-virtual"><scope>idMath</scope><name>BitReverse</name></member>
+      <member refid="classid_math_1ac901d1164dea1d5b833d6b8204f1be40" prot="public" virt="non-virtual"><scope>idMath</scope><name>BitsForFloat</name></member>
+      <member refid="classid_math_1a8ecccd4f76a857b663bf4685e122fee3" prot="public" virt="non-virtual"><scope>idMath</scope><name>BitsForInteger</name></member>
+      <member refid="classid_math_1a1fc8c8a702574d74d726997157e14b17" prot="public" virt="non-virtual"><scope>idMath</scope><name>BitsToFloat</name></member>
+      <member refid="classid_math_1acd5688938585c43e9c615f861b2f7858" prot="public" virt="non-virtual"><scope>idMath</scope><name>Ceil</name></member>
+      <member refid="classid_math_1a98a9a7a4753ebfb9288c8fa22092cbd3" prot="public" virt="non-virtual"><scope>idMath</scope><name>CeilPowerOfTwo</name></member>
+      <member refid="classid_math_1a4e2f87feeb1c5ad3c524e76a8088ea55" prot="public" virt="non-virtual"><scope>idMath</scope><name>ClampChar</name></member>
+      <member refid="classid_math_1a24a34d72aa494429daf9db98dfb85e5e" prot="public" virt="non-virtual"><scope>idMath</scope><name>ClampFloat</name></member>
+      <member refid="classid_math_1a5b2fbbcb153b6b081eb57b44767d0539" prot="public" virt="non-virtual"><scope>idMath</scope><name>ClampInt</name></member>
+      <member refid="classid_math_1ab92d8416d2966b7f21f53a499b98c69d" prot="public" virt="non-virtual"><scope>idMath</scope><name>ClampShort</name></member>
+      <member refid="classid_math_1aa9205afc596d48fa3a6f4dab7264ae70" prot="public" virt="non-virtual"><scope>idMath</scope><name>Cos</name></member>
+      <member refid="classid_math_1a045794b3f1f7b06aeb470efdbcb0d61e" prot="public" virt="non-virtual"><scope>idMath</scope><name>Cos16</name></member>
+      <member refid="classid_math_1a0810e170694ff2f9c36dc86f04d82922" prot="public" virt="non-virtual"><scope>idMath</scope><name>Cos64</name></member>
+      <member refid="classid_math_1a3e2f55530cdcbb2b6210a73a424c308a" prot="public" virt="non-virtual"><scope>idMath</scope><name>E</name></member>
+      <member refid="classid_math_1a9c99a907d1aa72cbf5d86abdc72b28d1" prot="public" virt="non-virtual"><scope>idMath</scope><name>Exp</name></member>
+      <member refid="classid_math_1a26eb9b8fc1e550f308d6648c0a72807e" prot="public" virt="non-virtual"><scope>idMath</scope><name>Exp16</name></member>
+      <member refid="classid_math_1a32d6567e57bcabd10867a247147016eb" prot="public" virt="non-virtual"><scope>idMath</scope><name>Exp64</name></member>
+      <member refid="classid_math_1ae89ded036ae8333dd32ed58b4065646da562504d4be720202781899c3954503f1" prot="private" virt="non-virtual"><scope>idMath</scope><name>EXP_BIAS</name></member>
+      <member refid="classid_math_1ae89ded036ae8333dd32ed58b4065646da603ec0b3ec07cb4443f82dcab0ad2c67" prot="private" virt="non-virtual"><scope>idMath</scope><name>EXP_POS</name></member>
+      <member refid="classid_math_1a8a835d2c1ecf4f01995b9bc725d9f872" prot="public" virt="non-virtual"><scope>idMath</scope><name>Fabs</name></member>
+      <member refid="classid_math_1a3ebefdc2e34ad0d36869844067148428" prot="public" virt="non-virtual"><scope>idMath</scope><name>FloatHash</name></member>
+      <member refid="classid_math_1aff30312db8afbc8b27919ae8f3b18368" prot="public" virt="non-virtual"><scope>idMath</scope><name>FloatToBits</name></member>
+      <member refid="classid_math_1a4d2b53fdbea2062ea378d767bcb470ff" prot="public" virt="non-virtual"><scope>idMath</scope><name>Floor</name></member>
+      <member refid="classid_math_1a12e6b7d5288b6db669ea5f741df5f1e0" prot="public" virt="non-virtual"><scope>idMath</scope><name>FloorPowerOfTwo</name></member>
+      <member refid="classid_math_1aafbb4a9939633dc99340296d56a26e28" prot="public" virt="non-virtual"><scope>idMath</scope><name>FLT_EPSILON</name></member>
+      <member refid="classid_math_1aced55cdc858ffe05bc52393698117eb4" prot="public" virt="non-virtual"><scope>idMath</scope><name>Ftoi</name></member>
+      <member refid="classid_math_1a8de1459a9b55d7aa00ce1123284ecc60" prot="public" virt="non-virtual"><scope>idMath</scope><name>FtoiFast</name></member>
+      <member refid="classid_math_1aad5367bcf66a2d87cc380db8ad0d45c5" prot="public" virt="non-virtual"><scope>idMath</scope><name>Ftol</name></member>
+      <member refid="classid_math_1aa77b588f9217fa5d96e4c0160681ccc8" prot="public" virt="non-virtual"><scope>idMath</scope><name>FtolFast</name></member>
+      <member refid="classid_math_1aaf1ad54f2496d9e42366ea7986a02faa" prot="public" virt="non-virtual"><scope>idMath</scope><name>HALF_PI</name></member>
+      <member refid="classid_math_1aa7499fc901020ac70e87834a204de0bb" prot="public" virt="non-virtual"><scope>idMath</scope><name>ILog2</name></member>
+      <member refid="classid_math_1a1ba78b231b1e0e71bed1d71de75bb209" prot="public" virt="non-virtual"><scope>idMath</scope><name>ILog2</name></member>
+      <member refid="classid_math_1a78772a3409fd29e9e6e85e48e3cb0ae3" prot="public" virt="non-virtual"><scope>idMath</scope><name>INFINITY</name></member>
+      <member refid="classid_math_1a85a52d6484cce99f6cf7689e18c33698" prot="public" virt="non-virtual"><scope>idMath</scope><name>Init</name></member>
+      <member refid="classid_math_1a8948d22a3f116eea04cd5b9462b38652" prot="private" virt="non-virtual"><scope>idMath</scope><name>initialized</name></member>
+      <member refid="classid_math_1a1007de6ea87428130fecd26e09883506" prot="public" virt="non-virtual"><scope>idMath</scope><name>InvSqrt</name></member>
+      <member refid="classid_math_1afbc28358b73c1d101d69cb68e4cd510e" prot="public" virt="non-virtual"><scope>idMath</scope><name>InvSqrt16</name></member>
+      <member refid="classid_math_1aaf7c4015e39865eaa82eafe871225446" prot="public" virt="non-virtual"><scope>idMath</scope><name>InvSqrt64</name></member>
+      <member refid="classid_math_1a69507b11da74031c641b629f46cb361b" prot="public" virt="non-virtual"><scope>idMath</scope><name>IPow</name></member>
+      <member refid="classid_math_1ad5a725d56bbd56f2f7cac32db16aa1c3" prot="public" virt="non-virtual"><scope>idMath</scope><name>IsPowerOfTwo</name></member>
+      <member refid="classid_math_1ac303928ce99b0e7ec063707030306443" prot="private" virt="non-virtual"><scope>idMath</scope><name>iSqrt</name></member>
+      <member refid="classid_math_1a54ea504350a5092aae1ca37a78cc2a25" prot="public" virt="non-virtual"><scope>idMath</scope><name>Log</name></member>
+      <member refid="classid_math_1abc21eaf0f7f539e5f2b6a3c4fb924ae5" prot="public" virt="non-virtual"><scope>idMath</scope><name>Log16</name></member>
+      <member refid="classid_math_1aeabec5df704f7df430346d5802973e5f" prot="public" virt="non-virtual"><scope>idMath</scope><name>Log64</name></member>
+      <member refid="classid_math_1ae89ded036ae8333dd32ed58b4065646dafdfb8b8c3c89466a71e7e424281aca57" prot="private" virt="non-virtual"><scope>idMath</scope><name>LOOKUP_BITS</name></member>
+      <member refid="classid_math_1ae89ded036ae8333dd32ed58b4065646da30a2e23cdc2c6254320194cb92378f12" prot="private" virt="non-virtual"><scope>idMath</scope><name>LOOKUP_MASK</name></member>
+      <member refid="classid_math_1ae89ded036ae8333dd32ed58b4065646dad646a17e2c3a646ba74f35f77d2caa72" prot="private" virt="non-virtual"><scope>idMath</scope><name>LOOKUP_POS</name></member>
+      <member refid="classid_math_1a6b36223b8343281f3bb3aea6fbac2316" prot="public" virt="non-virtual"><scope>idMath</scope><name>M_DEG2RAD</name></member>
+      <member refid="classid_math_1af7293030ce03b877b3104b9b092d2225" prot="public" virt="non-virtual"><scope>idMath</scope><name>M_MS2SEC</name></member>
+      <member refid="classid_math_1a05c0dadda4bdd87fededef926ff26c47" prot="public" virt="non-virtual"><scope>idMath</scope><name>M_RAD2DEG</name></member>
+      <member refid="classid_math_1ace5160e26167d451b1170d917ae20a3d" prot="public" virt="non-virtual"><scope>idMath</scope><name>M_SEC2MS</name></member>
+      <member refid="classid_math_1adfd440ec9ecdafc5094d926e0b7f031b" prot="public" virt="non-virtual"><scope>idMath</scope><name>MaskForFloatSign</name></member>
+      <member refid="classid_math_1a50f2d722b198d4efeb9e2c5932ec631a" prot="public" virt="non-virtual"><scope>idMath</scope><name>MaskForIntegerSign</name></member>
+      <member refid="classid_math_1a005c0db6231e8602db12448bd1c8dc52" prot="public" virt="non-virtual"><scope>idMath</scope><name>ONEFOURTH_PI</name></member>
+      <member refid="classid_math_1a80fd6c1e1956c4c5a8961d83a1534c17" prot="public" virt="non-virtual"><scope>idMath</scope><name>PI</name></member>
+      <member refid="classid_math_1aab695a88b5bf821e2a917eb2cc0375fc" prot="public" virt="non-virtual"><scope>idMath</scope><name>Pow</name></member>
+      <member refid="classid_math_1a9c8d6ec724fc9bcdd8e7b4f1c377b9f6" prot="public" virt="non-virtual"><scope>idMath</scope><name>Pow16</name></member>
+      <member refid="classid_math_1a44f5a455702a721a0945afd810c0cfbb" prot="public" virt="non-virtual"><scope>idMath</scope><name>Pow64</name></member>
+      <member refid="classid_math_1a8f075cb9667804dde681da247dc3c0f2" prot="public" virt="non-virtual"><scope>idMath</scope><name>Rint</name></member>
+      <member refid="classid_math_1a5affc0b959e698438179917cc850900a" prot="public" virt="non-virtual"><scope>idMath</scope><name>RSqrt</name></member>
+      <member refid="classid_math_1ae89ded036ae8333dd32ed58b4065646dad92d886a05c20a396a7f9f90c4fcaaf1" prot="private" virt="non-virtual"><scope>idMath</scope><name>SEED_POS</name></member>
+      <member refid="classid_math_1aef626e07bbaeac43cf14973431b0e1d0" prot="public" virt="non-virtual"><scope>idMath</scope><name>Sin</name></member>
+      <member refid="classid_math_1a79666debb48e6d24da8d3d1eb6d85732" prot="public" virt="non-virtual"><scope>idMath</scope><name>Sin16</name></member>
+      <member refid="classid_math_1a8ecb63de6c9cadf3e5d5dfc43202b830" prot="public" virt="non-virtual"><scope>idMath</scope><name>Sin64</name></member>
+      <member refid="classid_math_1a773bb4312140e9052a0db0a53d101be5" prot="public" virt="non-virtual"><scope>idMath</scope><name>SinCos</name></member>
+      <member refid="classid_math_1ac332c4938c47cb815d5aaaacae6777d3" prot="public" virt="non-virtual"><scope>idMath</scope><name>SinCos16</name></member>
+      <member refid="classid_math_1a3cf7501ccc3590c5c6add96bd407187f" prot="public" virt="non-virtual"><scope>idMath</scope><name>SinCos64</name></member>
+      <member refid="classid_math_1a2a1c1b2521f9b7e0f3b93c2d0b7600e0" prot="public" virt="non-virtual"><scope>idMath</scope><name>Sqrt</name></member>
+      <member refid="classid_math_1aa57aa624924f7c9b463e7d34638e8b61" prot="public" virt="non-virtual"><scope>idMath</scope><name>Sqrt16</name></member>
+      <member refid="classid_math_1ac6c50780fa24cd48e0c7c7a15a7e9da9" prot="public" virt="non-virtual"><scope>idMath</scope><name>Sqrt64</name></member>
+      <member refid="classid_math_1a38668a95360fe98309399057faaeab71" prot="public" virt="non-virtual"><scope>idMath</scope><name>SQRT_1OVER2</name></member>
+      <member refid="classid_math_1a3216ff154942c8986b527bda827b977a" prot="public" virt="non-virtual"><scope>idMath</scope><name>SQRT_1OVER3</name></member>
+      <member refid="classid_math_1ae89ded036ae8333dd32ed58b4065646daac187cdf1ab380f9e024e55866f77642" prot="private" virt="non-virtual"><scope>idMath</scope><name>SQRT_TABLE_SIZE</name></member>
+      <member refid="classid_math_1ab7c8b7cc5b4e141becb78006a958f90e" prot="public" virt="non-virtual"><scope>idMath</scope><name>SQRT_THREE</name></member>
+      <member refid="classid_math_1a083893c9659910fa198211412b4037f4" prot="public" virt="non-virtual"><scope>idMath</scope><name>SQRT_TWO</name></member>
+      <member refid="classid_math_1a7d01b1c375f463580520bcfadd013f21" prot="public" virt="non-virtual"><scope>idMath</scope><name>Tan</name></member>
+      <member refid="classid_math_1ab94474906a7afb6cd4bd504b972a81b5" prot="public" virt="non-virtual"><scope>idMath</scope><name>Tan16</name></member>
+      <member refid="classid_math_1a35a052ebf314e91becf2abdef2072b9d" prot="public" virt="non-virtual"><scope>idMath</scope><name>Tan64</name></member>
+      <member refid="classid_math_1a1597d7b07befc1ef3e4e1f6cf32b17dc" prot="public" virt="non-virtual"><scope>idMath</scope><name>TWO_PI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

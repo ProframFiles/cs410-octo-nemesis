@@ -1,0 +1,909 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_material_doc_manager_8cpp" kind="file">
+    <compoundname>MaterialDocManager.cpp</compoundname>
+    <includes refid="precompiled_8h" local="yes">../../idlib/precompiled.h</includes>
+    <includes refid="_material_doc_manager_8h" local="yes">MaterialDocManager.h</includes>
+    <includes refid="_material_view_8h" local="yes">MaterialView.h</includes>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../idlib/precompiled.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>hdrstop</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MaterialDocManager.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MaterialView.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="36"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">*<sp/>Constructor<sp/>for<sp/>MaterialDocManager.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="class_material_doc_manager_1a017ee6f6fee48b9e786ed9917b3dc6dc" kindref="member">MaterialDocManager::MaterialDocManager</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>currentMaterial<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>cutMaterial<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="44"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="45"><highlight class="comment">*<sp/>Destructor<sp/>for<sp/>MaterialDocManager.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><ref refid="class_material_doc_manager_1ab0e57bb787d91fed725f93675879c9ba" kindref="member">MaterialDocManager::~MaterialDocManager</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a9b9e843a2a455a1250b9d76930ea06e7" kindref="member">UnRegisterAllMaterialViews</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a73613db1fac76911cb9c7e9d0193cb06" kindref="member">ClearUndo</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1ad158710355e8a3326306ce57072af87b" kindref="member">ClearRedo</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="55"><highlight class="comment">*<sp/>Registers<sp/>an<sp/>object<sp/>to<sp/>receive<sp/>notifications<sp/>about<sp/>changes<sp/>made<sp/>to<sp/>materials.</highlight></codeline>
+<codeline lineno="56"><highlight class="comment">*<sp/>@param<sp/>view<sp/>The<sp/>object<sp/>that<sp/>would<sp/>like<sp/>to<sp/>receive<sp/>material<sp/>notifications.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a5fe53b51e6ba7d7ea5c496d9fb60c8da" kindref="member">MaterialDocManager::RegisterMaterialView</ref>(<ref refid="class_material_view" kindref="compound">MaterialView</ref>*<sp/>view)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT(view);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a3d75a7fdfe66e0096591f98dc36a59dd" kindref="member">UnRegisterMaterialView</ref>(view);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>materialViews.Append(view);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Notify<sp/>the<sp/>view<sp/>of<sp/>myself</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>view-&gt;<ref refid="class_material_view_1a5d965fd5a68d42d6dbe6a64838d64bc1" kindref="member">SetMaterialDocManager</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="67"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">*<sp/>Tells<sp/>the<sp/>MaterialDocManager<sp/>to<sp/>stop<sp/>sending<sp/>notifications<sp/>to<sp/>a<sp/>view.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment">*<sp/>@param<sp/>view<sp/>The<sp/>view<sp/>that<sp/>no<sp/>longer<sp/>wants<sp/>notifications.</highlight></codeline>
+<codeline lineno="70"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a3d75a7fdfe66e0096591f98dc36a59dd" kindref="member">MaterialDocManager::UnRegisterMaterialView</ref>(<ref refid="class_material_view" kindref="compound">MaterialView</ref>*<sp/>view)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT(view);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>materialViews.Remove(view);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Remove<sp/>the<sp/>reference<sp/>to<sp/>myself</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>view-&gt;<ref refid="class_material_view_1a5d965fd5a68d42d6dbe6a64838d64bc1" kindref="member">SetMaterialDocManager</ref>(NULL);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="79"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="80"><highlight class="comment">*<sp/>Unregisters<sp/>all<sp/>of<sp/>the<sp/>views<sp/>that<sp/>are<sp/>registered<sp/>to<sp/>get<sp/>material<sp/>change</highlight></codeline>
+<codeline lineno="81"><highlight class="comment">*<sp/>notifications.</highlight></codeline>
+<codeline lineno="82"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a9b9e843a2a455a1250b9d76930ea06e7" kindref="member">MaterialDocManager::UnRegisterAllMaterialViews</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Remove<sp/>the<sp/>reference<sp/>to<sp/>myself</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>materialViews.Num();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>c;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;SetMaterialDocManager(NULL);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>materialViews.Clear();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="93"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="94"><highlight class="comment">*<sp/>Tells<sp/>the<sp/>MaterialDocManager<sp/>which<sp/>material<sp/>has<sp/>been<sp/>selected<sp/>for<sp/>editing.</highlight></codeline>
+<codeline lineno="95"><highlight class="comment">*<sp/>@param<sp/>material<sp/>The<sp/>material<sp/>that<sp/>has<sp/>been<sp/>selected.</highlight></codeline>
+<codeline lineno="96"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a257af6575f95cec08915941741f06bf5" kindref="member">MaterialDocManager::SetSelectedMaterial</ref>(<ref refid="classid_material" kindref="compound">idMaterial</ref>*<sp/>material)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>change<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Do<sp/>we<sp/>need<sp/>to<sp/>change<sp/>the<sp/>material</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(material)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(currentMaterial)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strcmp(material-&gt;GetName(),<sp/>currentMaterial-&gt;renderMaterial-&gt;GetName()))<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>change<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>change<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(currentMaterial)<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>change<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Now<sp/>make<sp/>the<sp/>change</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(change)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(currentMaterial)<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Delete<sp/>the<sp/>material<sp/>unless<sp/>it<sp/>has<sp/>been<sp/>changed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!inProgressMaterials.Get(currentMaterial-&gt;name.c_str()))<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>currentMaterial;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentMaterial<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>tempDoc;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(material<sp/>&amp;&amp;<sp/>inProgressMaterials.Get(material-&gt;GetName(),<sp/>&amp;tempDoc))<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentMaterial<sp/>=<sp/>*tempDoc;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentMaterial<sp/>=<sp/><ref refid="class_material_doc_manager_1aa375849ea57f9de80a96cef7d0a0db56" kindref="member">CreateMaterialDoc</ref>(material);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(currentMaterial,<sp/>SELECTION_CHANGE);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="139"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="140"><highlight class="comment">*<sp/>Returns<sp/>true<sp/>if<sp/>the<sp/>specified<sp/>file<sp/>needs<sp/>to<sp/>be<sp/>applied<sp/>and<sp/>false<sp/>otherwise.</highlight></codeline>
+<codeline lineno="141"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1ade6934ff07285dd58762cf5b39133b77" kindref="member">MaterialDocManager::DoesFileNeedApply</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>inProgressMaterials.Num();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>pDoc<sp/>=<sp/>inProgressMaterials.GetIndex(i);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!strcmp((*pDoc)-&gt;renderMaterial-&gt;GetFileName(),<sp/>filename)<sp/>&amp;&amp;<sp/>(*pDoc)-&gt;applyWaiting)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="151"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="152"><highlight class="comment">*<sp/>Returns<sp/>true<sp/>if<sp/>any<sp/>material<sp/>needs<sp/>to<sp/>be<sp/>applied.</highlight></codeline>
+<codeline lineno="153"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1ab47121a9e3dfe4f3e2f00ea312bd0446" kindref="member">MaterialDocManager::DoesAnyNeedApply</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>inProgressMaterials.Num();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>pDoc<sp/>=<sp/>inProgressMaterials.GetIndex(i);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((*pDoc)-&gt;applyWaiting)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="163"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="164"><highlight class="comment">*<sp/>Returns<sp/>true<sp/>if<sp/>the<sp/>specified<sp/>file<sp/>has<sp/>been<sp/>modified.</highlight></codeline>
+<codeline lineno="165"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1acdbd61f51f1685f2bfa562b126029e5f" kindref="member">MaterialDocManager::IsFileModified</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>inProgressMaterials.Num();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>pDoc<sp/>=<sp/>inProgressMaterials.GetIndex(i);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!strcmp((*pDoc)-&gt;renderMaterial-&gt;GetFileName(),<sp/>filename))</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="175"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="176"><highlight class="comment">*<sp/>Returns<sp/>true<sp/>if<sp/>any<sp/>material<sp/>has<sp/>been<sp/>modified.</highlight></codeline>
+<codeline lineno="177"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1af0e2bb58450c0193d445c1404ee7009c" kindref="member">MaterialDocManager::IsAnyModified</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(inProgressMaterials.Num()<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="182"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="183"><highlight class="comment">*<sp/>Adds<sp/>a<sp/>material.</highlight></codeline>
+<codeline lineno="184"><highlight class="comment">*<sp/>@param<sp/>name<sp/>The<sp/>name<sp/>of<sp/>the<sp/>material.</highlight></codeline>
+<codeline lineno="185"><highlight class="comment">*<sp/>@param<sp/>filename<sp/>The<sp/>file<sp/>to<sp/>place<sp/>the<sp/>material<sp/>in.</highlight></codeline>
+<codeline lineno="186"><highlight class="comment">*<sp/>@param<sp/>sourceText<sp/>The<sp/>initial<sp/>material<sp/>definition.</highlight></codeline>
+<codeline lineno="187"><highlight class="comment">*<sp/>@param<sp/>addUndo<sp/>Can<sp/>this<sp/>operation<sp/>be<sp/>undone.</highlight></codeline>
+<codeline lineno="188"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a19aa17e197343b037716daa5b053c628" kindref="member">MaterialDocManager::AddMaterial</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>sourceText,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>addUndo)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(addUndo)<sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_add_material_modifier" kindref="compound">AddMaterialModifier</ref>*<sp/>mod<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_add_material_modifier" kindref="compound">AddMaterialModifier</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>name,<sp/>filename);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1aaeea1b384090f28bb8c9a48dcb344007" kindref="member">AddMaterialUndoModifier</ref>(mod);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>newDoc<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>();</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>newDoc-&gt;manager<sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>newDoc-&gt;modified<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_material" kindref="compound">idMaterial</ref>*<sp/>rendMat<sp/>=<sp/>(<ref refid="classid_material" kindref="compound">idMaterial</ref>*)declManager-&gt;CreateNewDecl(DECL_MATERIAL,<sp/>name,<sp/>filename);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(sourceText)<sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rendMat-&gt;SetText(sourceText);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>newDoc-&gt;<ref refid="class_material_doc_1a8e5b7c88ead192a08181ba520d788569" kindref="member">SetRenderMaterial</ref>(rendMat,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>sourceText<sp/>?<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>inProgressMaterials.Set(newDoc-&gt;name.c_str(),<sp/>newDoc);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(newDoc,<sp/>MATERIAL_ADD);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Force<sp/>an<sp/>apply<sp/>so<sp/>the<sp/>text<sp/>will<sp/>be<sp/>generated<sp/>to<sp/>match<sp/>the<sp/>new<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>newDoc-&gt;applyWaiting<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>newDoc-&gt;<ref refid="class_material_doc_1add2c440be343730f9855f97981271f23" kindref="member">ApplyMaterialChanges</ref>();</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="217"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="218"><highlight class="comment">*<sp/>Used<sp/>to<sp/>redo<sp/>an<sp/>add<sp/>material<sp/>and<sp/>undo<sp/>a<sp/>delete<sp/>material.<sp/></highlight></codeline>
+<codeline lineno="219"><highlight class="comment">*<sp/>The<sp/>undo<sp/>for<sp/>adding<sp/>a<sp/>material<sp/>deletes<sp/>the<sp/>material.<sp/>Instead<sp/>of<sp/>adding<sp/>a<sp/>completely</highlight></codeline>
+<codeline lineno="220"><highlight class="comment">*<sp/>new<sp/>material<sp/>RedoAddMaterial<sp/>finds<sp/>the<sp/>one<sp/>that<sp/>was<sp/>just<sp/>deleted<sp/>and<sp/>uses<sp/>that.<sp/></highlight></codeline>
+<codeline lineno="221"><highlight class="comment">*<sp/>@param<sp/>name<sp/>The<sp/>name<sp/>of<sp/>the<sp/>material<sp/>that<sp/>was<sp/>added/deleted.</highlight></codeline>
+<codeline lineno="222"><highlight class="comment">*<sp/>@param<sp/>clearData<sp/>Should<sp/>the<sp/>material<sp/>definition<sp/>be<sp/>reset<sp/>to<sp/>the<sp/>default<sp/>definition.</highlight></codeline>
+<codeline lineno="223"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a17d2f23b90bee5ae7f08c24e91c3b59a" kindref="member">MaterialDocManager::RedoAddMaterial</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clearData)<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>newDoc<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>();</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>newDoc-&gt;manager<sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>newDoc-&gt;modified<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_material" kindref="compound">idMaterial</ref>*<sp/>rendMat<sp/>=<sp/></highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal"><ref refid="classid_material" kindref="compound">idMaterial</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(declManager-&gt;FindMaterial(name,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(clearData)<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rendMat-&gt;SetText(rendMat-&gt;DefaultDefinition());</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>newDoc-&gt;<ref refid="class_material_doc_1a8e5b7c88ead192a08181ba520d788569" kindref="member">SetRenderMaterial</ref>(rendMat,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>inProgressMaterials.Set(newDoc-&gt;name.c_str(),<sp/>newDoc);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(newDoc,<sp/>MATERIAL_ADD);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Force<sp/>an<sp/>apply<sp/>so<sp/>the<sp/>text<sp/>will<sp/>be<sp/>generated<sp/>to<sp/>match<sp/>the<sp/>new<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>newDoc-&gt;applyWaiting<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>newDoc-&gt;<ref refid="class_material_doc_1add2c440be343730f9855f97981271f23" kindref="member">ApplyMaterialChanges</ref>();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="247"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="248"><highlight class="comment">*<sp/>Deletes<sp/>a<sp/>material.</highlight></codeline>
+<codeline lineno="249"><highlight class="comment">*<sp/>@param<sp/>material<sp/>The<sp/>material<sp/>to<sp/>be<sp/>deleted.</highlight></codeline>
+<codeline lineno="250"><highlight class="comment">*<sp/>@param<sp/>addUndo<sp/>Can<sp/>this<sp/>operation<sp/>be<sp/>undone.</highlight></codeline>
+<codeline lineno="251"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a0e3ea77c18aab3463bc7d7e9ca584c79" kindref="member">MaterialDocManager::DeleteMaterial</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>material,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>addUndo)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(material);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//This<sp/>will<sp/>just<sp/>flag<sp/>for<sp/>delete.<sp/>The<sp/>actual<sp/>delete<sp/>will<sp/>happen<sp/>during<sp/>the<sp/>save</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>material-&gt;<ref refid="class_material_doc_1ae4a9ccd988a4da986e529be6fb92716c" kindref="member">Delete</ref>();</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(addUndo)<sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_delete_material_modifier" kindref="compound">DeleteMaterialModifier</ref>*<sp/>mod<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_delete_material_modifier" kindref="compound">DeleteMaterialModifier</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>material-&gt;name);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1aaeea1b384090f28bb8c9a48dcb344007" kindref="member">AddMaterialUndoModifier</ref>(mod);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(material,<sp/>MATERIAL_DELETE);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="267"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="268"><highlight class="comment">*<sp/>Applys<sp/>changes<sp/>to<sp/>a<sp/>material.</highlight></codeline>
+<codeline lineno="269"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>to<sp/>be<sp/>applied.</highlight></codeline>
+<codeline lineno="270"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a8f2f8a3fb80648ae1d680c860d1e891a" kindref="member">MaterialDocManager::ApplyMaterial</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc)<sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(materialDoc);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>materialDoc-&gt;<ref refid="class_material_doc_1add2c440be343730f9855f97981271f23" kindref="member">ApplyMaterialChanges</ref>();</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="276"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="277"><highlight class="comment">*<sp/>Applies<sp/>all<sp/>materials<sp/>in<sp/>the<sp/>specified<sp/>filename.</highlight></codeline>
+<codeline lineno="278"><highlight class="comment">*<sp/>@param<sp/>filename<sp/>The<sp/>file<sp/>to<sp/>apply.</highlight></codeline>
+<codeline lineno="279"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1ac78b9961a701e5c3597eab05961529c1" kindref="member">MaterialDocManager::ApplyFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename)<sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>inProgressMaterials.Num();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>pDoc<sp/>=<sp/>inProgressMaterials.GetIndex(i);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!strcmp((*pDoc)-&gt;renderMaterial-&gt;GetFileName(),<sp/>filename))</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*pDoc)-&gt;<ref refid="class_material_doc_1add2c440be343730f9855f97981271f23" kindref="member">ApplyMaterialChanges</ref>();</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="289"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="290"><highlight class="comment">*<sp/>Applies<sp/>all<sp/>materials<sp/>that<sp/>have<sp/>been<sp/>changed.</highlight></codeline>
+<codeline lineno="291"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a01857466cf3672e6f314d667c8e2dcda" kindref="member">MaterialDocManager::ApplyAll</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>inProgressMaterials.Num();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>pDoc<sp/>=<sp/>inProgressMaterials.GetIndex(i);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*pDoc)-&gt;<ref refid="class_material_doc_1add2c440be343730f9855f97981271f23" kindref="member">ApplyMaterialChanges</ref>();</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="299"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="300"><highlight class="comment">*<sp/>Saves<sp/>a<sp/>single<sp/>material.</highlight></codeline>
+<codeline lineno="301"><highlight class="comment">*<sp/>@param<sp/>material<sp/>The<sp/>material<sp/>to<sp/>save.</highlight></codeline>
+<codeline lineno="302"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a88943dff6f42aea479bfcb6e016257f0" kindref="member">MaterialDocManager::SaveMaterial</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>material)<sp/>{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(material);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>material-&gt;<ref refid="class_material_doc_1a43c2caa36ffea5f4127356aa3568f0e2" kindref="member">Save</ref>();</highlight></codeline>
+<codeline lineno="306"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="308"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="309"><highlight class="comment">*<sp/>Saves<sp/>all<sp/>materials<sp/>in<sp/>the<sp/>specified<sp/>file.</highlight></codeline>
+<codeline lineno="310"><highlight class="comment">*<sp/>@param<sp/>filename<sp/>The<sp/>file<sp/>to<sp/>save.</highlight></codeline>
+<codeline lineno="311"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a95b070a9b5647d8c0f405550bb3cc411" kindref="member">MaterialDocManager::SaveFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename)<sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>inProgressMaterials.Num()-1;<sp/>i<sp/>&gt;=<sp/>0;<sp/>i--)<sp/>{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>pDoc<sp/>=<sp/>inProgressMaterials.GetIndex(i);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!strcmp((*pDoc)-&gt;renderMaterial-&gt;GetFileName(),<sp/>filename))</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*pDoc)-&gt;<ref refid="class_material_doc_1a43c2caa36ffea5f4127356aa3568f0e2" kindref="member">Save</ref>();</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Notify<sp/>everyone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(NULL,<sp/>MATERIAL_SAVE_FILE,<sp/>filename);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="324"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="325"><highlight class="comment">*<sp/>Saves<sp/>all<sp/>materials<sp/>that<sp/>have<sp/>been<sp/>changed.</highlight></codeline>
+<codeline lineno="326"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1aca5f1a918cc9d3494ab4c6a5d73009b0" kindref="member">MaterialDocManager::SaveAllMaterials</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>inProgressMaterials.Num()-1;<sp/>i<sp/>&gt;=<sp/>0;<sp/>i--)<sp/>{</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>pDoc<sp/>=<sp/>inProgressMaterials.GetIndex(i);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*pDoc)-&gt;<ref refid="class_material_doc_1a43c2caa36ffea5f4127356aa3568f0e2" kindref="member">Save</ref>();</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="334"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="335"><highlight class="comment">*<sp/>Reloads<sp/>a<sp/>specified<sp/>file.</highlight></codeline>
+<codeline lineno="336"><highlight class="comment">*<sp/>@param<sp/>filename<sp/>The<sp/>file<sp/>to<sp/>reload.</highlight></codeline>
+<codeline lineno="337"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a835c81c914006dd0ef0eb6a1fce56b85" kindref="member">MaterialDocManager::ReloadFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename)<sp/>{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>declManager-&gt;ReloadFile(filename,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//purge<sp/>the<sp/>changes<sp/>of<sp/>any<sp/>in<sp/>progress<sp/>materials</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>inProgressMaterials.Num()-1;<sp/>j<sp/>&gt;=<sp/>0;<sp/>j--)<sp/>{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>pDoc<sp/>=<sp/>inProgressMaterials.GetIndex(j);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!strcmp((*pDoc)-&gt;renderMaterial-&gt;GetFileName(),<sp/>filename))<sp/>{</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*pDoc)-&gt;<ref refid="class_material_doc_1a8e5b7c88ead192a08181ba520d788569" kindref="member">SetRenderMaterial</ref>((*pDoc)-&gt;renderMaterial);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inProgressMaterials.Remove((*pDoc)-&gt;name);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Reparse<sp/>the<sp/>current<sp/>material</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(currentMaterial)<sp/>{</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentMaterial-&gt;<ref refid="class_material_doc_1a8e5b7c88ead192a08181ba520d788569" kindref="member">SetRenderMaterial</ref>(currentMaterial-&gt;renderMaterial);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Trigger<sp/>all<sp/>the<sp/>views<sp/>to<sp/>refresh</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(currentMaterial,<sp/>SELECTION_CHANGE);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(NULL,<sp/>FILE_RELOAD,<sp/>filename);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="362"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="363"><highlight class="comment">*<sp/>Creates<sp/>a<sp/>MaterialDoc<sp/>object<sp/>for<sp/>the<sp/>specified<sp/>material<sp/>name.<sp/>If<sp/>a<sp/>MaterialDoc<sp/></highlight></codeline>
+<codeline lineno="364"><highlight class="comment">*<sp/>object<sp/>already<sp/>exists<sp/>then<sp/>it<sp/>is<sp/>used.</highlight></codeline>
+<codeline lineno="365"><highlight class="comment">*<sp/>@param<sp/>materialName<sp/>The<sp/>name<sp/>of<sp/>the<sp/>material<sp/>for<sp/>which<sp/>to<sp/>create<sp/>a<sp/>MaterialDoc<sp/>object.</highlight></codeline>
+<codeline lineno="366"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/><ref refid="class_material_doc_manager_1aa375849ea57f9de80a96cef7d0a0db56" kindref="member">MaterialDocManager::CreateMaterialDoc</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>materialName)<sp/>{</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_material" kindref="compound">idMaterial</ref>*<sp/>material<sp/>=<sp/>declManager-&gt;FindMaterial(materialName);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1aa375849ea57f9de80a96cef7d0a0db56" kindref="member">CreateMaterialDoc</ref>(const_cast&lt;idMaterial<sp/>*&gt;(material));</highlight></codeline>
+<codeline lineno="371"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="373"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="374"><highlight class="comment">*<sp/>Creates<sp/>a<sp/>MaterialDoc<sp/>object<sp/>for<sp/>the<sp/>specified<sp/>material.<sp/>If<sp/>a<sp/>MaterialDoc<sp/></highlight></codeline>
+<codeline lineno="375"><highlight class="comment">*<sp/>object<sp/>already<sp/>exists<sp/>then<sp/>it<sp/>is<sp/>used.</highlight></codeline>
+<codeline lineno="376"><highlight class="comment">*<sp/>@param<sp/>material<sp/>The<sp/>material<sp/>for<sp/>which<sp/>to<sp/>create<sp/>a<sp/>MaterialDoc<sp/>object.</highlight></codeline>
+<codeline lineno="377"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/><ref refid="class_material_doc_manager_1aa375849ea57f9de80a96cef7d0a0db56" kindref="member">MaterialDocManager::CreateMaterialDoc</ref>(<ref refid="classid_material" kindref="compound">idMaterial</ref>*<sp/>material)<sp/>{</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>existingDoc<sp/>=<sp/><ref refid="class_material_doc_manager_1a1508f8523bac27d2157ffbe380f3fd88" kindref="member">GetInProgressDoc</ref>(material);</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(existingDoc)<sp/>{</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>existingDoc;</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(currentMaterial<sp/>&amp;&amp;<sp/>material<sp/>&amp;&amp;<sp/>!currentMaterial-&gt;name.Icmp(material-&gt;GetName()))<sp/>{</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>currentMaterial;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(material)<sp/>{</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>newDoc<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>();</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDoc-&gt;manager<sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDoc-&gt;<ref refid="class_material_doc_1a8e5b7c88ead192a08181ba520d788569" kindref="member">SetRenderMaterial</ref>(material);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>newDoc;</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="400"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="401"><highlight class="comment">*<sp/>Checks<sp/>the<sp/>current<sp/>list<sp/>of<sp/>in<sp/>progress<sp/>MaterialDoc<sp/>objects<sp/>to<sp/>see<sp/>if</highlight></codeline>
+<codeline lineno="402"><highlight class="comment">*<sp/>a<sp/>MaterialDoc<sp/>object<sp/>already<sp/>exists.</highlight></codeline>
+<codeline lineno="403"><highlight class="comment">*<sp/>@param<sp/>material<sp/>The<sp/>material<sp/>to<sp/>check<sp/>for.</highlight></codeline>
+<codeline lineno="404"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/><ref refid="class_material_doc_manager_1a1508f8523bac27d2157ffbe380f3fd88" kindref="member">MaterialDocManager::GetInProgressDoc</ref>(<ref refid="classid_material" kindref="compound">idMaterial</ref>*<sp/>material)<sp/>{</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(material)<sp/>{</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>inProgressMaterials.Num();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>pDoc<sp/>=<sp/>inProgressMaterials.GetIndex(i);</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(*pDoc)-&gt;name.Icmp(material-&gt;GetName()))</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*pDoc;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="416"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="418"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="419"><highlight class="comment">*<sp/>Prepares<sp/>a<sp/>material<sp/>for<sp/>a<sp/>copy/cut<sp/>and<sp/>paste<sp/>operations.</highlight></codeline>
+<codeline lineno="420"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>to<sp/>copy.</highlight></codeline>
+<codeline lineno="421"><highlight class="comment">*<sp/>@param<sp/>cut<sp/>Is<sp/>this<sp/>a<sp/>cut<sp/>operation.</highlight></codeline>
+<codeline lineno="422"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="423"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1ae8e420f2a67b67e436a24b30004b620b" kindref="member">MaterialDocManager::CopyMaterial</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cut)<sp/>{</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/>cutMaterial<sp/>=<sp/>cut;</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(materialDoc)</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>copyMaterial<sp/>=<sp/>materialDoc-&gt;name;</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a00e60efaff9864ebbce404b73bae98fc" kindref="member">ClearCopy</ref>();</highlight></codeline>
+<codeline lineno="431"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="433"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="434"><highlight class="comment">*<sp/>Clears<sp/>the<sp/>copy<sp/>buffer<sp/>for<sp/>a<sp/>material.</highlight></codeline>
+<codeline lineno="435"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a00e60efaff9864ebbce404b73bae98fc" kindref="member">MaterialDocManager::ClearCopy</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/>copyMaterial.Empty();</highlight></codeline>
+<codeline lineno="438"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="440"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="441"><highlight class="comment">*<sp/>Returns<sp/>true<sp/>if<sp/>there<sp/>is<sp/>a<sp/>material<sp/>in<sp/>the<sp/>copy<sp/>buffer.</highlight></codeline>
+<codeline lineno="442"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="443"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a8049fda221a6f4450857c395d52835d9" kindref="member">MaterialDocManager::IsCopyMaterial</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(copyMaterial.Length()<sp/>)<sp/>?<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="445"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="447"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="448"><highlight class="comment">*<sp/>Returns<sp/>the<sp/>name<sp/>of<sp/>the<sp/>material<sp/>in<sp/>the<sp/>copy<sp/>buffer.</highlight></codeline>
+<codeline lineno="449"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><ref refid="classid_str" kindref="compound">idStr</ref><sp/><ref refid="class_material_doc_manager_1a787a30de73ce3b7d35b0bc797e1eec5d" kindref="member">MaterialDocManager::GetCopyMaterialName</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>copyMaterial;</highlight></codeline>
+<codeline lineno="452"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="454"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="455"><highlight class="comment">*<sp/>Performs<sp/>a<sp/>material<sp/>paste<sp/>operation<sp/>for<sp/>a<sp/>material<sp/>in<sp/>the<sp/>copy<sp/>buffer.</highlight></codeline>
+<codeline lineno="456"><highlight class="comment">*<sp/>@param<sp/>name<sp/>The<sp/>new<sp/>name<sp/>for<sp/>the<sp/>material<sp/>that<sp/>is<sp/>being<sp/>copied.</highlight></codeline>
+<codeline lineno="457"><highlight class="comment">*<sp/>@param<sp/>filename<sp/>The<sp/>file<sp/>to<sp/>paste<sp/>the<sp/>material<sp/>in.</highlight></codeline>
+<codeline lineno="458"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a4d2553b764199ea7648562d10aef376c" kindref="member">MaterialDocManager::PasteMaterial</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename)<sp/>{</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="class_material_doc_manager_1a8049fda221a6f4450857c395d52835d9" kindref="member">IsCopyMaterial</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"></highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Apply<sp/>the<sp/>material<sp/>if<sp/>there<sp/>are<sp/>some<sp/>changes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>copyMat<sp/>=<sp/><ref refid="class_material_doc_manager_1aa375849ea57f9de80a96cef7d0a0db56" kindref="member">CreateMaterialDoc</ref>(copyMaterial);</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(copyMat-&gt;applyWaiting)<sp/>{</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>copyMat-&gt;<ref refid="class_material_doc_1add2c440be343730f9855f97981271f23" kindref="member">ApplyMaterialChanges</ref>();</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Paste<sp/>the<sp/>material</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_material" kindref="compound">idMaterial</ref>*<sp/>material<sp/>=<sp/>copyMat-&gt;renderMaterial;</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Add<sp/>a<sp/>material<sp/>with<sp/>the<sp/>existing<sp/>source<sp/>text</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*declText<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>_alloca(<sp/>material-&gt;GetTextLength()<sp/>+<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/>material-&gt;GetText(<sp/>declText<sp/>);</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"></highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a19aa17e197343b037716daa5b053c628" kindref="member">AddMaterial</ref>(name,<sp/>filename,<sp/>declText,<sp/>!cutMaterial);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>this<sp/>is<sp/>a<sp/>cut<sp/>then<sp/>remove<sp/>the<sp/>original</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(cutMaterial)<sp/>{</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>cutMaterial<sp/>=<sp/><ref refid="class_material_doc_manager_1aa375849ea57f9de80a96cef7d0a0db56" kindref="member">CreateMaterialDoc</ref>(material);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a0e3ea77c18aab3463bc7d7e9ca584c79" kindref="member">DeleteMaterial</ref>(cutMaterial,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_move_material_modifier" kindref="compound">MoveMaterialModifier</ref>*<sp/>mod<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_move_material_modifier" kindref="compound">MoveMaterialModifier</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>name,<sp/>filename,<sp/>copyMaterial);</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1aaeea1b384090f28bb8c9a48dcb344007" kindref="member">AddMaterialUndoModifier</ref>(mod);</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"></highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a00e60efaff9864ebbce404b73bae98fc" kindref="member">ClearCopy</ref>();</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="490"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="492"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="493"><highlight class="comment">*<sp/>Prepares<sp/>a<sp/>material<sp/>stage<sp/>for<sp/>a<sp/>copy/paste<sp/>operation.</highlight></codeline>
+<codeline lineno="494"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>materialDoc<sp/>that<sp/>contains<sp/>the<sp/>stage<sp/>to<sp/>be<sp/>copied.</highlight></codeline>
+<codeline lineno="495"><highlight class="comment">*<sp/>@param<sp/>stageNum<sp/>the<sp/>stage<sp/>to<sp/>copy.</highlight></codeline>
+<codeline lineno="496"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a22b1cfc1a00d1cf75f931e7c00380232" kindref="member">MaterialDocManager::CopyStage</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stageNum)<sp/>{</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(materialDoc);</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"></highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/>copyStageMaterial<sp/>=<sp/>materialDoc-&gt;name;</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/>copyStage<sp/>=<sp/>materialDoc-&gt;<ref refid="class_material_doc_1ad3a8131be0ade7533eb4d7089cd618bb" kindref="member">GetStage</ref>(stageNum);</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/>stageName<sp/>=<sp/>copyStage.stageData.GetString(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="505"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="507"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="508"><highlight class="comment">*<sp/>Clears<sp/>the<sp/>copy<sp/>buffer<sp/>for<sp/>copied<sp/>stages.</highlight></codeline>
+<codeline lineno="509"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="510"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1abc6ee42c71366c42641cf9149efe814b" kindref="member">MaterialDocManager::ClearCopyStage</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/>copyStageMaterial.Empty();</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/>copyStage.stageData.Clear();</highlight></codeline>
+<codeline lineno="513"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="515"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="516"><highlight class="comment">*<sp/>Returns<sp/>true<sp/>if<sp/>there<sp/>is<sp/>a<sp/>stage<sp/>in<sp/>the<sp/>copy<sp/>buffer.</highlight></codeline>
+<codeline lineno="517"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="518"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a7e4b54002b5a7b2afb2b25829b3b61b2" kindref="member">MaterialDocManager::IsCopyStage</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(copyStageMaterial.Length()<sp/>)<sp/>?<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="520"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="522"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="523"><highlight class="comment">*<sp/>Performs<sp/>a<sp/>paste<sp/>operation<sp/>of<sp/>the<sp/>stage<sp/>in<sp/>the<sp/>copy<sp/>buffer.</highlight></codeline>
+<codeline lineno="524"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>materialDoc<sp/>to<sp/>paste<sp/>the<sp/>stage<sp/>in.</highlight></codeline>
+<codeline lineno="525"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="526"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1aff547b1bb41aa099542af24db5f6f2ba" kindref="member">MaterialDocManager::PasteStage</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc)<sp/>{</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"></highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(materialDoc);</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"></highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stageType<sp/>=<sp/>copyStage.stageData.GetInt(</highlight><highlight class="stringliteral">&quot;stagetype&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"></highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Create<sp/>a<sp/>new<sp/>stage<sp/>and<sp/>copy<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/>materialDoc-&gt;<ref refid="class_material_doc_1ae4d0eca9b486cf8ad98c55376275e45e" kindref="member">AddStage</ref>(stageType,<sp/>copyStage.stageData.GetString(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/>materialDoc-&gt;<ref refid="class_material_doc_1a0e34ba6697b6484d753c083fb47a9325" kindref="member">SetData</ref>(materialDoc-&gt;<ref refid="class_material_doc_1a10f4f9444b7ea1f5fc79f9cd265c0941" kindref="member">GetStageCount</ref>()-1,<sp/>&amp;copyStage.stageData);</highlight></codeline>
+<codeline lineno="535"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="537"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="538"><highlight class="comment">*<sp/>Returns<sp/>information<sp/>about<sp/>the<sp/>stage<sp/>in<sp/>the<sp/>copy<sp/>buffer.</highlight></codeline>
+<codeline lineno="539"><highlight class="comment">*<sp/>@param<sp/>type<sp/>Holds<sp/>the<sp/>type<sp/>of<sp/>the<sp/>stage<sp/>in<sp/>the<sp/>copy<sp/>buffer.</highlight></codeline>
+<codeline lineno="540"><highlight class="comment">*<sp/>@param<sp/>name<sp/>Hold<sp/>the<sp/>name<sp/>of<sp/>the<sp/>stage<sp/>in<sp/>the<sp/>copy<sp/>buffer.</highlight></codeline>
+<codeline lineno="541"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="542"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1acfd67504882963ea886a16ad63cb6bc5" kindref="member">MaterialDocManager::GetCopyStageInfo</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>type,<sp/><ref refid="classid_str" kindref="compound">idStr</ref>&amp;<sp/>name)<sp/>{</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="class_material_doc_manager_1a7e4b54002b5a7b2afb2b25829b3b61b2" kindref="member">IsCopyStage</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/>=<sp/>copyStage.stageData.GetInt(</highlight><highlight class="stringliteral">&quot;stagetype&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/>=<sp/>copyStage.stageData.GetString(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="547"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="549"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="550"><highlight class="comment">*<sp/>Performs<sp/>the<sp/>first<sp/>available<sp/>undo<sp/>operation.</highlight></codeline>
+<codeline lineno="551"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="552"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1aeab734eadca8765f48ca81d0e47ee7d3" kindref="member">MaterialDocManager::Undo</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"></highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="class_material_doc_manager_1a6b6bbd97ca71178b56e65bbc715c6b4d" kindref="member">IsUndoAvailable</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_modifier" kindref="compound">MaterialModifier</ref>*<sp/>mod<sp/>=<sp/>undoModifiers[undoModifiers.Num()-1];</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>undoModifiers.RemoveIndex(undoModifiers.Num()-1);</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mod-&gt;Undo();</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"></highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Add<sp/>this<sp/>modifier<sp/>to<sp/>the<sp/>redo<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a9cf04a2fc3c50f2f1afb4b94fc1d38fe" kindref="member">AddMaterialRedoModifier</ref>(mod);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="563"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="565"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="566"><highlight class="comment">*<sp/>Returns<sp/>true<sp/>if<sp/>an<sp/>undo<sp/>operation<sp/>is<sp/>available.</highlight></codeline>
+<codeline lineno="567"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a6b6bbd97ca71178b56e65bbc715c6b4d" kindref="member">MaterialDocManager::IsUndoAvailable</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(undoModifiers.Num()<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="570"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="572"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="573"><highlight class="comment">*<sp/>Clears<sp/>the<sp/>entire<sp/>undo<sp/>buffer.</highlight></codeline>
+<codeline lineno="574"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="575"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a73613db1fac76911cb9c7e9d0193cb06" kindref="member">MaterialDocManager::ClearUndo</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"></highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>undoModifiers.Num();</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>c;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>undoModifiers[i];</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/>undoModifiers.Clear();</highlight></codeline>
+<codeline lineno="582"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="584"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="585"><highlight class="comment">*<sp/>Performs<sp/>the<sp/>first<sp/>available<sp/>redo<sp/>operation.</highlight></codeline>
+<codeline lineno="586"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="587"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a119ff2ed5654e371382581c9d8be6f79" kindref="member">MaterialDocManager::Redo</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"></highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="class_material_doc_manager_1aafc49f02eda60382d3d1334e6478fe88" kindref="member">IsRedoAvailable</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_modifier" kindref="compound">MaterialModifier</ref>*<sp/>mod<sp/>=<sp/>redoModifiers[redoModifiers.Num()-1];</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>redoModifiers.RemoveIndex(redoModifiers.Num()-1);</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"></highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mod-&gt;Redo();</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"></highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Done<sp/>with<sp/>the<sp/>mod<sp/>because<sp/>the<sp/>redo<sp/>process<sp/>will<sp/>set<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//attributes<sp/>and<sp/>create<sp/>the<sp/>appropriate<sp/>redo<sp/>modifier</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1aaeea1b384090f28bb8c9a48dcb344007" kindref="member">AddMaterialUndoModifier</ref>(mod,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="599"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="601"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="602"><highlight class="comment">*<sp/>Returns<sp/>true<sp/>if<sp/>a<sp/>redo<sp/>operation<sp/>is<sp/>available.</highlight></codeline>
+<codeline lineno="603"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1aafc49f02eda60382d3d1334e6478fe88" kindref="member">MaterialDocManager::IsRedoAvailable</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(redoModifiers.Num()<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="606"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="608"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="609"><highlight class="comment">*<sp/>Clears<sp/>the<sp/>redo<sp/>buffer.</highlight></codeline>
+<codeline lineno="610"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="611"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1ad158710355e8a3326306ce57072af87b" kindref="member">MaterialDocManager::ClearRedo</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"></highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>redoModifiers.Num();</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>c;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>redoModifiers[i];</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/>redoModifiers.Clear();</highlight></codeline>
+<codeline lineno="618"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="620"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="621"><highlight class="comment">*<sp/>Adds<sp/>an<sp/>undo<sp/>operation<sp/>to<sp/>the<sp/>undo<sp/>buffer.</highlight></codeline>
+<codeline lineno="622"><highlight class="comment">*<sp/>@param<sp/>mod<sp/>The<sp/>MaterialModifier<sp/>object<sp/>that<sp/>contains<sp/>the<sp/>undo<sp/>data.</highlight></codeline>
+<codeline lineno="623"><highlight class="comment">*<sp/>@param<sp/>clearRedo<sp/>Should<sp/>we<sp/>clear<sp/>the<sp/>redo<sp/>buffer.</highlight></codeline>
+<codeline lineno="624"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="625"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="class_material_doc_manager_1aaeea1b384090f28bb8c9a48dcb344007" kindref="member">MaterialDocManager::AddMaterialUndoModifier</ref>(<ref refid="class_material_modifier" kindref="compound">MaterialModifier</ref>*<sp/>mod,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clearRedo)<sp/>{</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/>undoModifiers.Append(mod);</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"></highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(undoModifiers.Num()<sp/>&gt;<sp/>MAX_UNDOREDO)<sp/>{</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>undoModifiers.RemoveIndex(0);</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"></highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(clearRedo)<sp/>{</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1ad158710355e8a3326306ce57072af87b" kindref="member">ClearRedo</ref>();</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="635"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="637"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="638"><highlight class="comment">*<sp/>Adds<sp/>a<sp/>redo<sp/>operation<sp/>to<sp/>the<sp/>redo<sp/>buffer.</highlight></codeline>
+<codeline lineno="639"><highlight class="comment">*<sp/>@param<sp/>mod<sp/>The<sp/>MaterialModifier<sp/>object<sp/>that<sp/>contains<sp/>the<sp/>redo<sp/>data.</highlight></codeline>
+<codeline lineno="640"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="641"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="class_material_doc_manager_1a9cf04a2fc3c50f2f1afb4b94fc1d38fe" kindref="member">MaterialDocManager::AddMaterialRedoModifier</ref>(<ref refid="class_material_modifier" kindref="compound">MaterialModifier</ref>*<sp/>mod)<sp/>{</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/>redoModifiers.Append(mod);</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"></highlight></codeline>
+<codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(redoModifiers.Num()<sp/>&gt;<sp/>MAX_UNDOREDO)<sp/>{</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>redoModifiers.RemoveIndex(0);</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="647"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="649"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="650"><highlight class="comment">*<sp/>Searches<sp/>for<sp/>a<sp/>material<sp/>that<sp/>matches<sp/>the<sp/>specified<sp/>search<sp/>data.</highlight></codeline>
+<codeline lineno="651"><highlight class="comment">*<sp/>@param<sp/>name<sp/>The<sp/>name<sp/>of<sp/>the<sp/>material<sp/>to<sp/>search.</highlight></codeline>
+<codeline lineno="652"><highlight class="comment">*<sp/>@param<sp/>searchData<sp/>The<sp/>search<sp/>parameters.</highlight></codeline>
+<codeline lineno="653"><highlight class="comment">*<sp/>@param<sp/>checkName<sp/>If<sp/>true<sp/>then<sp/>the<sp/>name<sp/>of<sp/>the<sp/>material<sp/>will<sp/>be<sp/>checked<sp/>along<sp/>with<sp/>the<sp/>material<sp/>text.</highlight></codeline>
+<codeline lineno="654"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="655"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a5a70900c5771516b4c790727e8840985" kindref="member">MaterialDocManager::FindMaterial</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/><ref refid="struct_material_search_data__t" kindref="compound">MaterialSearchData_t</ref>*<sp/>searchData,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checkName)<sp/>{</highlight></codeline>
+<codeline lineno="656"><highlight class="normal"></highlight></codeline>
+<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Fast<sp/>way<sp/>of<sp/>finding<sp/>the<sp/>material<sp/>without<sp/>parsing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_material" kindref="compound">idMaterial</ref>*<sp/>material<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal"><ref refid="classid_material" kindref="compound">idMaterial</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(declManager-&gt;FindDeclWithoutParsing(DECL_MATERIAL,<sp/>name,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(material)<sp/>{</highlight></codeline>
+<codeline lineno="661"><highlight class="normal"></highlight></codeline>
+<codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>findPos;</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"></highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(checkName)<sp/>{</highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Check<sp/>the<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/>name<sp/>=<sp/>material-&gt;GetName();</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"></highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>findPos<sp/>=<sp/>name.Find(searchData-&gt;searchText,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(findPos<sp/>!=<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="673"><highlight class="normal"></highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Skip<sp/>to<sp/>the<sp/>open<sp/>braket<sp/>so<sp/>the<sp/>name<sp/>is<sp/>not<sp/>checked</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*declText<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>_alloca(<sp/>material-&gt;GetTextLength()<sp/>+<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>material-&gt;GetText(<sp/>declText<sp/>);</highlight></codeline>
+<codeline lineno="677"><highlight class="normal"></highlight></codeline>
+<codeline lineno="678"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/>text<sp/>=<sp/>declText;</highlight></codeline>
+<codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>start<sp/>=<sp/>text.Find(</highlight><highlight class="stringliteral">&quot;{&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(start<sp/>!=<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="681"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text<sp/>=<sp/>text.Right(text.Length()-start);</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>findPos<sp/>=<sp/>text.Find(searchData-&gt;searchText,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(findPos<sp/>!=<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Todo:<sp/>Include<sp/>match<sp/>whole<sp/>word</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="691"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="692"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="693"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="694"><highlight class="comment">*<sp/>Returns<sp/>a<sp/>unique<sp/>material<sp/>name<sp/>given<sp/>a<sp/>base<sp/>name.<sp/>This<sp/>is<sp/>used<sp/>to<sp/>resolve<sp/>materials<sp/>with<sp/>the<sp/>same<sp/>name.</highlight></codeline>
+<codeline lineno="695"><highlight class="comment">*<sp/>@param<sp/>name<sp/>The<sp/>base<sp/>name<sp/>of<sp/>the<sp/>material.</highlight></codeline>
+<codeline lineno="696"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><ref refid="classid_str" kindref="compound">idStr</ref><sp/><ref refid="class_material_doc_manager_1a48134235778290a29b828b3c06e7e2ce" kindref="member">MaterialDocManager::GetUniqueMaterialName</ref>(<ref refid="classid_str" kindref="compound">idStr</ref><sp/>name)<sp/>{</highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1)<sp/>{</highlight></codeline>
+<codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/>testName;</highlight></codeline>
+<codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(num<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>testName<sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="704"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>testName<sp/>=<sp/>va(</highlight><highlight class="stringliteral">&quot;%s%d&quot;</highlight><highlight class="normal">,<sp/>name.c_str(),<sp/>num);</highlight></codeline>
+<codeline lineno="705"><highlight class="normal"></highlight></codeline>
+<codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_material" kindref="compound">idMaterial</ref>*<sp/>mat<sp/>=<sp/>declManager-&gt;FindMaterial(testName.c_str(),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="707"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!mat)<sp/>{</highlight></codeline>
+<codeline lineno="708"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>testName;</highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="710"><highlight class="normal"></highlight></codeline>
+<codeline lineno="711"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//We<sp/>can<sp/>reuse<sp/>delete<sp/>material<sp/>names</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="712"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mat-&gt;GetTextLength()<sp/>&lt;<sp/>1)</highlight></codeline>
+<codeline lineno="713"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>testName;</highlight></codeline>
+<codeline lineno="714"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="715"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num++;</highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="717"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="719"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="720"><highlight class="comment">*<sp/>Notifies<sp/>all<sp/>registered<sp/>views<sp/>of<sp/>a<sp/>material<sp/>event.</highlight></codeline>
+<codeline lineno="721"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>that<sp/>has<sp/>been<sp/>affected.</highlight></codeline>
+<codeline lineno="722"><highlight class="comment">*<sp/>@param<sp/>notifyType<sp/>The<sp/>type<sp/>of<sp/>event<sp/>that<sp/>has<sp/>occured.</highlight></codeline>
+<codeline lineno="723"><highlight class="comment">*<sp/>@param<sp/>...<sp/>Notification<sp/>specific<sp/>data.<sp/>See<sp/>MaterialView.</highlight></codeline>
+<codeline lineno="724"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="725"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">MaterialDocManager::NotifyViews</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>notifyType,<sp/>...<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="726"><highlight class="normal"></highlight></codeline>
+<codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/>va_list<sp/>argptr;</highlight></codeline>
+<codeline lineno="728"><highlight class="normal"></highlight></codeline>
+<codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>materialViews.Num();</highlight></codeline>
+<codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>c;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>va_start(<sp/>argptr,<sp/>notifyType<sp/>);</highlight></codeline>
+<codeline lineno="732"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(notifyType)<sp/>{</highlight></codeline>
+<codeline lineno="733"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SELECTION_CHANGE:</highlight></codeline>
+<codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialSelectionChange(materialDoc);</highlight></codeline>
+<codeline lineno="735"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_CHANGE:</highlight></codeline>
+<codeline lineno="737"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialChange(materialDoc);</highlight></codeline>
+<codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_APPLY:</highlight></codeline>
+<codeline lineno="740"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialApply(materialDoc);</highlight></codeline>
+<codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_SAVE:</highlight></codeline>
+<codeline lineno="743"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialSaved(materialDoc);</highlight></codeline>
+<codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="745"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_SAVE_FILE:</highlight></codeline>
+<codeline lineno="746"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialSaveFile(va_arg(argptr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*));</highlight></codeline>
+<codeline lineno="747"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_ADD:</highlight></codeline>
+<codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialAdd(materialDoc);</highlight></codeline>
+<codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_DELETE:</highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialDelete(materialDoc);</highlight></codeline>
+<codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_ADD_STAGE:</highlight></codeline>
+<codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialStageAdd(materialDoc,<sp/>va_arg(argptr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="756"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_DELETE_STAGE:</highlight></codeline>
+<codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialStageDelete(materialDoc,<sp/>va_arg(argptr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_MOVE_STAGE:</highlight></codeline>
+<codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>from<sp/>=<sp/>va_arg(argptr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>to<sp/>=<sp/>va_arg(argptr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="764"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialStageMove(materialDoc,<sp/>from,<sp/>to);</highlight></codeline>
+<codeline lineno="765"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_ATTRIBUTE_CHANGE:</highlight></codeline>
+<codeline lineno="768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="769"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stage<sp/>=<sp/>va_arg(argptr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>attribName<sp/>=<sp/>va_arg(argptr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*);</highlight></codeline>
+<codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialAttributeChanged(materialDoc,<sp/>stage,<sp/>attribName);</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MATERIAL_NAME_CHANGE:</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>oldName<sp/>=<sp/>va_arg(argptr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*);</highlight></codeline>
+<codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnMaterialNameChanged(materialDoc,<sp/>oldName);</highlight></codeline>
+<codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="780"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>FILE_RELOAD:</highlight></codeline>
+<codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename<sp/>=<sp/>va_arg(argptr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*);</highlight></codeline>
+<codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>materialViews[i]-&gt;MV_OnFileReload(filename);</highlight></codeline>
+<codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="785"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="786"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="787"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>va_end(<sp/>argptr<sp/>);</highlight></codeline>
+<codeline lineno="788"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="789"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="790"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="791"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="792"><highlight class="comment">*<sp/>Called<sp/>when<sp/>a<sp/>material<sp/>has<sp/>been<sp/>edited<sp/>and<sp/>notifies<sp/>all<sp/>views<sp/>of<sp/>the<sp/>change.</highlight></codeline>
+<codeline lineno="793"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>that<sp/>has<sp/>changed.</highlight></codeline>
+<codeline lineno="794"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="795"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1af9bd7e05d880fc1da9ef1701ecd0a4d2" kindref="member">MaterialDocManager::MaterialChanged</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc)<sp/>{</highlight></codeline>
+<codeline lineno="796"><highlight class="normal"></highlight></codeline>
+<codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Make<sp/>sure<sp/>this<sp/>material<sp/>is<sp/>in<sp/>our<sp/>list<sp/>of<sp/>changed<sp/>materials</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!inProgressMaterials.Get(materialDoc-&gt;name.c_str()))<sp/>{</highlight></codeline>
+<codeline lineno="799"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inProgressMaterials.Set(materialDoc-&gt;name.c_str(),<sp/>materialDoc);</highlight></codeline>
+<codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="801"><highlight class="normal"></highlight></codeline>
+<codeline lineno="802"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Notify<sp/>everyone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="803"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(materialDoc,<sp/>MATERIAL_CHANGE);</highlight></codeline>
+<codeline lineno="804"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="805"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="806"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="807"><highlight class="comment">*<sp/>Called<sp/>when<sp/>a<sp/>material<sp/>has<sp/>been<sp/>applied<sp/>and<sp/>notifies<sp/>all<sp/>views<sp/>of<sp/>the<sp/>apply.</highlight></codeline>
+<codeline lineno="808"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>that<sp/>has<sp/>been<sp/>applied.</highlight></codeline>
+<codeline lineno="809"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="810"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1af278c32ecda53219920325abf21c3527" kindref="member">MaterialDocManager::MaterialApplied</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc)<sp/>{</highlight></codeline>
+<codeline lineno="811"><highlight class="normal"></highlight></codeline>
+<codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Notify<sp/>everyone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="813"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(materialDoc,<sp/>MATERIAL_APPLY);</highlight></codeline>
+<codeline lineno="814"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="815"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="816"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="817"><highlight class="comment">*<sp/>Called<sp/>when<sp/>a<sp/>material<sp/>has<sp/>been<sp/>saved<sp/>and<sp/>notifies<sp/>all<sp/>views<sp/>of<sp/>the<sp/>save.</highlight></codeline>
+<codeline lineno="818"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>that<sp/>has<sp/>been<sp/>saved.</highlight></codeline>
+<codeline lineno="819"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="820"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a9e008727ae76960e3a15509cc11f57de" kindref="member">MaterialDocManager::MaterialSaved</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc)<sp/>{</highlight></codeline>
+<codeline lineno="821"><highlight class="normal"></highlight></codeline>
+<codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>tempDoc;</highlight></codeline>
+<codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(inProgressMaterials.Get(materialDoc-&gt;name.c_str(),<sp/>&amp;tempDoc))<sp/>{</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"></highlight></codeline>
+<codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_str" kindref="compound">idStr</ref><sp/>name<sp/>=<sp/>materialDoc-&gt;name.c_str();</highlight></codeline>
+<codeline lineno="826"><highlight class="normal"></highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Remove<sp/>this<sp/>file<sp/>from<sp/>our<sp/>in<sp/>progress<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inProgressMaterials.Remove(name.c_str());</highlight></codeline>
+<codeline lineno="829"><highlight class="normal"></highlight></codeline>
+<codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Notify<sp/>everyone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(materialDoc,<sp/>MATERIAL_SAVE);</highlight></codeline>
+<codeline lineno="832"><highlight class="normal"></highlight></codeline>
+<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(materialDoc<sp/>!=<sp/>currentMaterial)</highlight></codeline>
+<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>materialDoc;</highlight></codeline>
+<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="836"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="838"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="839"><highlight class="comment">*<sp/>Called<sp/>when<sp/>a<sp/>material<sp/>name<sp/>has<sp/>been<sp/>changed<sp/>and<sp/>notifies<sp/>all<sp/>views<sp/>of<sp/>the<sp/>change.</highlight></codeline>
+<codeline lineno="840"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>that<sp/>has<sp/>changed.</highlight></codeline>
+<codeline lineno="841"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="842"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a65d77e91f75ec33d4ea51531a72d8094" kindref="member">MaterialDocManager::MaterialNameChanged</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>oldName,<sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc)<sp/>{</highlight></codeline>
+<codeline lineno="843"><highlight class="normal"></highlight></codeline>
+<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>**<sp/>tempDoc;</highlight></codeline>
+<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(inProgressMaterials.Get(oldName,<sp/>&amp;tempDoc))<sp/>{</highlight></codeline>
+<codeline lineno="846"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inProgressMaterials.Set(materialDoc-&gt;name,<sp/>*tempDoc);</highlight></codeline>
+<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inProgressMaterials.Remove(oldName);</highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="849"><highlight class="normal"></highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(materialDoc,<sp/>MATERIAL_NAME_CHANGE,<sp/>oldName);</highlight></codeline>
+<codeline lineno="851"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="852"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="853"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="854"><highlight class="comment">*<sp/>Called<sp/>when<sp/>a<sp/>stage<sp/>is<sp/>added<sp/>and<sp/>notifies<sp/>all<sp/>views<sp/>of<sp/>the<sp/>addition.</highlight></codeline>
+<codeline lineno="855"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>that<sp/>has<sp/>changed.</highlight></codeline>
+<codeline lineno="856"><highlight class="comment">*<sp/>@param<sp/>stageNum<sp/>The<sp/>stage<sp/>that<sp/>was<sp/>added.</highlight></codeline>
+<codeline lineno="857"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="858"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a2f28235affc1aeb3ebbd1b0d0cd07fc1" kindref="member">MaterialDocManager::StageAdded</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stageNum)<sp/>{</highlight></codeline>
+<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Notify<sp/>everyone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(materialDoc,<sp/>MATERIAL_ADD_STAGE,<sp/>stageNum);</highlight></codeline>
+<codeline lineno="861"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="862"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="863"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="864"><highlight class="comment">*<sp/>Called<sp/>when<sp/>a<sp/>stage<sp/>has<sp/>been<sp/>deleted<sp/>and<sp/>notifies<sp/>all<sp/>views<sp/>of<sp/>the<sp/>change.</highlight></codeline>
+<codeline lineno="865"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>that<sp/>has<sp/>changed.</highlight></codeline>
+<codeline lineno="866"><highlight class="comment">*<sp/>@param<sp/>stageNum<sp/>The<sp/>stage<sp/>that<sp/>was<sp/>deleted.</highlight></codeline>
+<codeline lineno="867"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="868"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1ae7b5a5edb73f57f197d50636b1bffe0c" kindref="member">MaterialDocManager::StageDeleted</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stageNum)<sp/>{</highlight></codeline>
+<codeline lineno="869"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Notify<sp/>everyone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(materialDoc,<sp/>MATERIAL_DELETE_STAGE,<sp/>stageNum);</highlight></codeline>
+<codeline lineno="871"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="872"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="873"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="874"><highlight class="comment">*<sp/>Called<sp/>when<sp/>a<sp/>stage<sp/>has<sp/>been<sp/>movied<sp/>and<sp/>notifies<sp/>all<sp/>views<sp/>of<sp/>the<sp/>change.</highlight></codeline>
+<codeline lineno="875"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>that<sp/>has<sp/>changed.</highlight></codeline>
+<codeline lineno="876"><highlight class="comment">*<sp/>@param<sp/>from<sp/>The<sp/>original<sp/>position<sp/>of<sp/>the<sp/>stage.</highlight></codeline>
+<codeline lineno="877"><highlight class="comment">*<sp/>@param<sp/>to<sp/>The<sp/>new<sp/>position<sp/>of<sp/>the<sp/>stage.</highlight></codeline>
+<codeline lineno="878"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="879"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a788f34e8c1aaf1594e518aea5832dc0c" kindref="member">MaterialDocManager::StageMoved</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>from,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>to)<sp/>{</highlight></codeline>
+<codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Notify<sp/>everyone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(materialDoc,<sp/>MATERIAL_MOVE_STAGE,<sp/>from,<sp/>to);</highlight></codeline>
+<codeline lineno="882"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="883"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="884"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="885"><highlight class="comment">*<sp/>Called<sp/>when<sp/>a<sp/>material<sp/>attribute<sp/>has<sp/>been<sp/>edited<sp/>and<sp/>notifies<sp/>all<sp/>views<sp/>of<sp/>the<sp/>change.</highlight></codeline>
+<codeline lineno="886"><highlight class="comment">*<sp/>@param<sp/>materialDoc<sp/>The<sp/>material<sp/>that<sp/>has<sp/>changed.</highlight></codeline>
+<codeline lineno="887"><highlight class="comment">*<sp/>@param<sp/>stage<sp/>The<sp/>stage<sp/>that<sp/>contains<sp/>the<sp/>changed<sp/>attribute.</highlight></codeline>
+<codeline lineno="888"><highlight class="comment">*<sp/>@param<sp/>attribName<sp/>The<sp/>name<sp/>of<sp/>the<sp/>attribute<sp/>that<sp/>changed.</highlight></codeline>
+<codeline lineno="889"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="890"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_material_doc_manager_1a6404d17b14449f006ed3488861e1045d" kindref="member">MaterialDocManager::AttributeChanged</ref>(<ref refid="class_material_doc" kindref="compound">MaterialDoc</ref>*<sp/>materialDoc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stage,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>attribName)<sp/>{</highlight></codeline>
+<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Notify<sp/>everyone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_material_doc_manager_1a10647de8ce32c8e66e1c830a459b02a2" kindref="member">NotifyViews</ref>(materialDoc,<sp/>MATERIAL_ATTRIBUTE_CHANGE,<sp/>stage,<sp/>attribName);</highlight></codeline>
+<codeline lineno="893"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialDocManager.cpp"/>
+  </compounddef>
+</doxygen>

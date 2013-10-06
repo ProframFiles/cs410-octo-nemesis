@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="_prop_tree_item_button_8cpp" kind="file">
+    <compoundname>PropTreeItemButton.cpp</compoundname>
+    <includes refid="precompiled_8h" local="yes">../../../idlib/precompiled.h</includes>
+    <includes refid="_prop_tree_8h" local="yes">proptree.h</includes>
+    <includes refid="_prop_tree_item_button_8h" local="yes">PropTreeItemButton.h</includes>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_prop_tree_item_button_8cpp_1af066dd01b4084623c107c8c327603831" prot="public" static="no">
+        <name>BUTTON_SIZE</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/common/PropTree/PropTreeItemButton.cpp" line="32" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/common/PropTree/PropTreeItemButton.cpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>PropTreeItemButton.cpp<sp/>:<sp/>implementation<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>(C)<sp/>1998-2001<sp/>Scott<sp/>Ramsay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>sramsay@gonavi.com</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>http://www.gonavi.com</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>This<sp/>material<sp/>is<sp/>provided<sp/>&quot;as<sp/>is&quot;,<sp/>with<sp/>absolutely<sp/>no<sp/>warranty<sp/>expressed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>or<sp/>implied.<sp/>Any<sp/>use<sp/>is<sp/>at<sp/>your<sp/>own<sp/>risk.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Permission<sp/>to<sp/>use<sp/>or<sp/>copy<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose<sp/>is<sp/>hereby<sp/>granted<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>without<sp/>fee,<sp/>provided<sp/>the<sp/>above<sp/>notices<sp/>are<sp/>retained<sp/>on<sp/>all<sp/>copies.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Permission<sp/>to<sp/>modify<sp/>the<sp/>code<sp/>and<sp/>to<sp/>distribute<sp/>modified<sp/>code<sp/>is<sp/>granted,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>provided<sp/>the<sp/>above<sp/>notices<sp/>are<sp/>retained,<sp/>and<sp/>a<sp/>notice<sp/>that<sp/>the<sp/>code<sp/>was</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>modified<sp/>is<sp/>included<sp/>with<sp/>the<sp/>above<sp/>copyright<sp/>notice.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>If<sp/>you<sp/>use<sp/>this<sp/>code,<sp/>drop<sp/>me<sp/>an<sp/>email.<sp/><sp/>I&apos;d<sp/>like<sp/>to<sp/>know<sp/>if<sp/>you<sp/>find<sp/>the<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>useful.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;stdafx.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../idlib/precompiled.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>hdrstop</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;proptree.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;PropTreeItemButton.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_DEBUG</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>new<sp/>DEBUG_NEW</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#undef<sp/>THIS_FILE</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>THIS_FILE[]<sp/>=<sp/>__FILE__;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BUTTON_SIZE<sp/>17</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="34"><highlight class="comment">/////////////////////////////////////////////////////////////////////////////</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"></highlight><highlight class="comment">//<sp/>CPropTreeItemButton</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">CPropTreeItemButton::CPropTreeItemButton()<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>mouseDown<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">CPropTreeItemButton::~CPropTreeItemButton()<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="45"><highlight class="comment">/////////////////////////////////////////////////////////////////////////////</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"></highlight><highlight class="comment">//<sp/>CPropTreeItemButton<sp/>message<sp/>handlers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">LONG<sp/>CPropTreeItemButton::DrawItem(<sp/>CDC*<sp/>pDC,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>RECT&amp;<sp/>rc,<sp/>LONG<sp/>x,<sp/>LONG<sp/>y<sp/>)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>CSize<sp/><sp/><sp/>textSize;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>CRect<sp/><sp/><sp/>textRect;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>LONG<sp/><sp/><sp/><sp/>nTotal<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>nTotal<sp/>=<sp/>CPropTreeItem::DrawItem(<sp/>pDC,<sp/>rc,<sp/>x,<sp/>y<sp/>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>textSize<sp/>=<sp/>pDC-&gt;GetOutputTextExtent(<sp/>buttonText<sp/>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>buttonRect.left<sp/>=<sp/>m_rc.right<sp/>-<sp/>(<sp/>textSize.cx<sp/>+<sp/>12<sp/>+<sp/>4);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>buttonRect.top<sp/>=<sp/>m_rc.top<sp/>+<sp/>((m_rc.bottom<sp/>-<sp/>m_rc.top)/2)-BUTTON_SIZE/2;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>buttonRect.right<sp/>=<sp/>buttonRect.left<sp/>+<sp/>textSize.cx<sp/>+<sp/>12;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>buttonRect.bottom<sp/>=<sp/>buttonRect.top<sp/>+<sp/>BUTTON_SIZE;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>UINT<sp/>buttonStyle;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(m_dwState<sp/>&amp;<sp/>TreeItemChecked)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buttonStyle<sp/>=<sp/>DFCS_BUTTONPUSH<sp/>|<sp/>DFCS_PUSHED;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buttonStyle<sp/>=<sp/>DFCS_BUTTONPUSH;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>pDC-&gt;DrawFrameControl(&amp;buttonRect,<sp/>DFC_BUTTON,<sp/>buttonStyle<sp/>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>textRect<sp/>=<sp/>buttonRect;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>textRect.left<sp/>+=<sp/>4;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>textRect.right<sp/>-=<sp/>8;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>pDC-&gt;DrawText(<sp/>buttonText,<sp/>textRect,<sp/>DT_SINGLELINE|DT_VCENTER<sp/>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Adjust<sp/>hit<sp/>test<sp/>rect<sp/>to<sp/>acount<sp/>for<sp/>window<sp/>scrolling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>hitTestRect<sp/>=<sp/>buttonRect;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>hitTestRect.OffsetRect(0,<sp/>m_pProp-&gt;GetOrigin().y);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>nTotal;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemButton::DrawAttribute(CDC*<sp/>pDC,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>RECT&amp;<sp/>rc)<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="class_c_prop_tree_item" kindref="compound">LPARAM</ref><sp/>CPropTreeItemButton::GetItemValue()<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="class_c_prop_tree_item" kindref="compound">LPARAM</ref>)0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemButton::SetItemValue(<ref refid="class_c_prop_tree_item" kindref="compound">LPARAM</ref><sp/>lParam)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">BOOL<sp/>CPropTreeItemButton::HitButton(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structtag_p_o_i_n_t" kindref="compound">POINT</ref>&amp;<sp/>pt<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hitTestRect.PtInRect(<sp/>pt<sp/>);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CPropTreeItemButton::SetButtonText(<sp/>LPCSTR<sp/>text<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>buttonText<sp/>=<sp/>text;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/common/PropTree/PropTreeItemButton.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="timeval_8c" kind="file">
+    <compoundname>timeval.c</compoundname>
+    <includes refid="timeval_8h" local="yes">timeval.h</includes>
+    <includes local="no">mmsystem.h</includes>
+    <incdepgraph>
+      <node id="529">
+        <label>E:/sources/3rd_party/DOOM/neo/curl/lib/timeval.c</label>
+        <link refid="timeval.c"/>
+        <childnode refid="530" relation="include">
+        </childnode>
+      </node>
+      <node id="530">
+        <label>mmsystem.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="timeval_8c_1a19b52cccfe0e995f777cd310cbc487f2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int gettimeofday</definition>
+        <argsstring>(struct timeval *tp, void *nothing)</argsstring>
+        <name>gettimeofday</name>
+        <param>
+          <type>struct <ref refid="structtimeval" kindref="compound">timeval</ref> *</type>
+          <declname>tp</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>nothing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>The earlier time calculations using GetLocalTime had a time resolution of 10ms.The timeGetTime, part of multimedia apis offer a better time resolution of 1ms.Need to link against winmm.lib for this</para>        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/timeval.c" line="31" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/timeval.c" bodystart="31" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="timeval_8c_1a08e7d048dfb7b30bbd679db133c5d490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structtimeval" kindref="compound">timeval</ref></type>
+        <definition>struct timeval Curl_tvnow</definition>
+        <argsstring>(void)</argsstring>
+        <name>Curl_tvnow</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/timeval.c" line="31" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/timeval.c" bodystart="81" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="timeval_8c_1a47fcee52eb28bc23c0b3ed302dc6b579" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Curl_tvdiff</definition>
+        <argsstring>(struct timeval newer, struct timeval older)</argsstring>
+        <name>Curl_tvdiff</name>
+        <param>
+          <type>struct <ref refid="structtimeval" kindref="compound">timeval</ref></type>
+          <declname>newer</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structtimeval" kindref="compound">timeval</ref></type>
+          <declname>older</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/timeval.c" line="92" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/timeval.c" bodystart="92" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="timeval_8c_1a445ee95779e152e12e2d625fafd3f0bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Curl_tvlong</definition>
+        <argsstring>(struct timeval t1)</argsstring>
+        <name>Curl_tvlong</name>
+        <param>
+          <type>struct <ref refid="structtimeval" kindref="compound">timeval</ref></type>
+          <declname>t1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/timeval.c" line="98" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/timeval.c" bodystart="98" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/***************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_<sp/><sp/><sp/>_<sp/>____<sp/><sp/>_</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Project<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>___|<sp/>|<sp/>|<sp/>|<sp/><sp/>_<sp/>\|<sp/>|</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>__|<sp/>|<sp/>|<sp/>|<sp/>|_)<sp/>|<sp/>|</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(__|<sp/>|_|<sp/>|<sp/><sp/>_<sp/>&lt;|<sp/>|___</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\___|\___/|_|<sp/>\_\_____|</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998<sp/>-<sp/>2004,<sp/>Daniel<sp/>Stenberg,<sp/>&lt;daniel@haxx.se&gt;,<sp/>et<sp/>al.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>licensed<sp/>as<sp/>described<sp/>in<sp/>the<sp/>file<sp/>COPYING,<sp/>which</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>you<sp/>should<sp/>have<sp/>received<sp/>as<sp/>part<sp/>of<sp/>this<sp/>distribution.<sp/>The<sp/>terms</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>are<sp/>also<sp/>available<sp/>at<sp/>http://curl.haxx.se/docs/copyright.html.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>opt<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute<sp/>and/or<sp/>sell</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>COPYING<sp/>file.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>basis,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>$Id:<sp/>timeval.c,v<sp/>1.20<sp/>2004/03/11<sp/>13:13:35<sp/>bagder<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;timeval.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAVE_GETTIMEOFDAY</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WIN32</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;mmsystem.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gettimeofday(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structtimeval" kindref="compound">timeval</ref><sp/>*tp,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*nothing)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WITHOUT_MM_LIB</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>SYSTEMTIME<sp/>st;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>time_t<sp/>tt;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>tmtm;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>mktime<sp/>converts<sp/>local<sp/>to<sp/>UTC<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>GetLocalTime<sp/>(&amp;st);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>tmtm.tm_sec<sp/>=<sp/>st.wSecond;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>tmtm.tm_min<sp/>=<sp/>st.wMinute;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>tmtm.tm_hour<sp/>=<sp/>st.wHour;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>tmtm.tm_mday<sp/>=<sp/>st.wDay;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>tmtm.tm_mon<sp/>=<sp/>st.wMonth<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>tmtm.tm_year<sp/>=<sp/>st.wYear<sp/>-<sp/>1900;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>tmtm.tm_isdst<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>tt<sp/>=<sp/>mktime<sp/>(&amp;tmtm);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>tp-&gt;tv_sec<sp/>=<sp/>tt;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>tp-&gt;tv_usec<sp/>=<sp/>st.wMilliseconds<sp/>*<sp/>1000;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"></highlight><highlight class="comment"><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/>**<sp/>The<sp/>earlier<sp/>time<sp/>calculations<sp/>using<sp/>GetLocalTime</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/>**<sp/>had<sp/>a<sp/>time<sp/>resolution<sp/>of<sp/>10ms.The<sp/>timeGetTime,<sp/>part</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/>**<sp/>of<sp/>multimedia<sp/>apis<sp/>offer<sp/>a<sp/>better<sp/>time<sp/>resolution</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/>**<sp/>of<sp/>1ms.Need<sp/>to<sp/>link<sp/>against<sp/>winmm.lib<sp/>for<sp/>this</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/>**/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>Ticks<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>Sec<sp/>=0;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>Usec<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>Ticks<sp/>=<sp/>timeGetTime();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>Sec<sp/>=<sp/>Ticks/1000;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>Usec<sp/>=<sp/>(Ticks<sp/>-<sp/>(Sec*1000))*1000;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>tp-&gt;tv_sec<sp/>=<sp/>Sec;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>tp-&gt;tv_usec<sp/>=<sp/>Usec;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>WITHOUT_MM_LIB<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>(void)nothing;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">/*<sp/>WIN32<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>non-win32<sp/>version<sp/>of<sp/>Curl_gettimeofday()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gettimeofday(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structtimeval" kindref="compound">timeval</ref><sp/>*tp,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*nothing)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>(void)nothing;<sp/></highlight><highlight class="comment">/*<sp/>we<sp/>don&apos;t<sp/>support<sp/>specific<sp/>time-zones<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>tp-&gt;tv_sec<sp/>=<sp/>(long)time(NULL);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>tp-&gt;tv_usec<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>WIN32<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>HAVE_GETTIMEOFDAY<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtimeval" kindref="compound">timeval</ref><sp/>Curl_tvnow<sp/>(void)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtimeval" kindref="compound">timeval</ref><sp/>now;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>(void)gettimeofday(&amp;now,<sp/>NULL);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>now;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>Make<sp/>sure<sp/>that<sp/>the<sp/>first<sp/>argument<sp/>is<sp/>the<sp/>more<sp/>recent<sp/>time,<sp/>as<sp/>otherwise</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>we&apos;ll<sp/>get<sp/>a<sp/>weird<sp/>negative<sp/>time-diff<sp/>back...</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>Curl_tvdiff<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structtimeval" kindref="compound">timeval</ref><sp/>newer,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structtimeval" kindref="compound">timeval</ref><sp/>older)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(newer.tv_sec-older.tv_sec)*1000+</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>(499+newer.tv_usec-older.tv_usec)/1000;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>Curl_tvlong<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structtimeval" kindref="compound">timeval</ref><sp/>t1)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>t1.tv_sec;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/timeval.c"/>
+  </compounddef>
+</doxygen>

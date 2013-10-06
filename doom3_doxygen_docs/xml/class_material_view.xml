@@ -1,0 +1,687 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_material_view" kind="class" prot="public">
+    <compoundname>MaterialView</compoundname>
+    <derivedcompoundref refid="class_material_edit_view" prot="public" virt="non-virtual">MaterialEditView</derivedcompoundref>
+    <derivedcompoundref refid="class_material_preview_view" prot="public" virt="non-virtual">MaterialPreviewView</derivedcompoundref>
+    <derivedcompoundref refid="class_material_prop_tree_view" prot="public" virt="non-virtual">MaterialPropTreeView</derivedcompoundref>
+    <derivedcompoundref refid="class_material_tree_view" prot="public" virt="non-virtual">MaterialTreeView</derivedcompoundref>
+    <derivedcompoundref refid="class_m_e_main_frame" prot="public" virt="non-virtual">MEMainFrame</derivedcompoundref>
+    <derivedcompoundref refid="class_stage_view" prot="public" virt="non-virtual">StageView</derivedcompoundref>
+    <includes local="yes">MaterialView.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_material_view_1a48b5e582bd571476202d86f3932861a5" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_material_doc_manager" kindref="compound">MaterialDocManager</ref> *</type>
+        <definition>MaterialDocManager* MaterialView::materialDocManager</definition>
+        <argsstring></argsstring>
+        <name>materialDocManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="147" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_material_view_1a45ef70a7829e502864efdeb31deeff09" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MaterialView::MaterialView</definition>
+        <argsstring>(void)</argsstring>
+        <name>MaterialView</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="43" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1a4612111f726a941cc7c9fd87c07be58f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual MaterialView::~MaterialView</definition>
+        <argsstring>(void)</argsstring>
+        <name>~MaterialView</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="47" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1a5d965fd5a68d42d6dbe6a64838d64bc1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::SetMaterialDocManager</definition>
+        <argsstring>(MaterialDocManager *docManager)</argsstring>
+        <name>SetMaterialDocManager</name>
+        <param>
+          <type><ref refid="class_material_doc_manager" kindref="compound">MaterialDocManager</ref> *</type>
+          <declname>docManager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the material document manager for this view instance. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>docManager</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The material document manager for this view instance. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="57" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1a294aad530ce65823d3251446a3a3ae83" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialSelectionChange</definition>
+        <argsstring>(MaterialDoc *pMaterial)</argsstring>
+        <name>MV_OnMaterialSelectionChange</name>
+        <reimplementedby refid="class_material_edit_view_1ae43ea2b9baada9af74f1f896913c37ea">MV_OnMaterialSelectionChange</reimplementedby>
+        <reimplementedby refid="class_stage_view_1aa08d048fe925912c0ad3223af8427c55">MV_OnMaterialSelectionChange</reimplementedby>
+        <reimplementedby refid="class_material_preview_view_1ad7dd183fb4b2b18e25e7f22cdd668379">MV_OnMaterialSelectionChange</reimplementedby>
+        <reimplementedby refid="class_m_e_main_frame_1a67a76cbeae722ea3dc9b7c7b00997eee">MV_OnMaterialSelectionChange</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when the selected material has changed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The newly selected material. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="63" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1a1e3770beb54336ad8591ffa809b097b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialChange</definition>
+        <argsstring>(MaterialDoc *pMaterial)</argsstring>
+        <name>MV_OnMaterialChange</name>
+        <reimplementedby refid="class_material_prop_tree_view_1a9833aca234ffd9a6816b7e3dee757f0e">MV_OnMaterialChange</reimplementedby>
+        <reimplementedby refid="class_material_tree_view_1a87b0847e8cc36aca6007945036cf743f">MV_OnMaterialChange</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when the material has changed but not applied. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The selected material. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="69" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1ad87ced902a1149ac424eaee83fcbe388" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialApply</definition>
+        <argsstring>(MaterialDoc *pMaterial)</argsstring>
+        <name>MV_OnMaterialApply</name>
+        <reimplementedby refid="class_material_tree_view_1a30da60644ce871113b286475d09177ad">MV_OnMaterialApply</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when the material changes have been applied. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The selected material. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="75" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1a4486e3bf091dab709c551a343021819a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialSaved</definition>
+        <argsstring>(MaterialDoc *pMaterial)</argsstring>
+        <name>MV_OnMaterialSaved</name>
+        <reimplementedby refid="class_material_tree_view_1a396d477a8d34695d8cf672d3d61eb765">MV_OnMaterialSaved</reimplementedby>
+        <reimplementedby refid="class_stage_view_1a756b1217fbdc6e6ed0577bbce091a3d2">MV_OnMaterialSaved</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when the material changes have been saved. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The saved material. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="81" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="81" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1a923605b3f9ff899a77baee716b14ec7b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialSaveFile</definition>
+        <argsstring>(const char *filename)</argsstring>
+        <name>MV_OnMaterialSaveFile</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when a material file has been saved <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path of the file that was saved. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="87" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1a684c35d093bafad8d00c959d702cee16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialAdd</definition>
+        <argsstring>(MaterialDoc *pMaterial)</argsstring>
+        <name>MV_OnMaterialAdd</name>
+        <reimplementedby refid="class_material_tree_view_1ad6df553df1fdcd18ffe87ea771f78d93">MV_OnMaterialAdd</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when a material is added <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The material that was added. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="93" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="93" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1ad8842a2c9c617e70298925a2a440ea51" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialDelete</definition>
+        <argsstring>(MaterialDoc *pMaterial)</argsstring>
+        <name>MV_OnMaterialDelete</name>
+        <reimplementedby refid="class_material_tree_view_1aacd66ffe41882788fd32da07f68b4ef1">MV_OnMaterialDelete</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when a material is deleted <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The material that was deleted. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="99" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="99" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1a0bd0b53be219cf288f368c6471783c65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialStageAdd</definition>
+        <argsstring>(MaterialDoc *pMaterial, int stageNum)</argsstring>
+        <name>MV_OnMaterialStageAdd</name>
+        <reimplementedby refid="class_stage_view_1ac542570cf6ae28939a9c52633153f5c9">MV_OnMaterialStageAdd</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stageNum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when a stage is added <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The material that was affected. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stageNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the stage that was added </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="106" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="106" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1af563438a4747d6086305108eca7c6e89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialStageDelete</definition>
+        <argsstring>(MaterialDoc *pMaterial, int stageNum)</argsstring>
+        <name>MV_OnMaterialStageDelete</name>
+        <reimplementedby refid="class_stage_view_1ac7379c6193add9d0f7d719514066c687">MV_OnMaterialStageDelete</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stageNum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when a stage is deleted <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The material that was affected. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stageNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the stage that was deleted </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="113" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="113" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1a2f236aad283436758cae63b26c8d70ac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialStageMove</definition>
+        <argsstring>(MaterialDoc *pMaterial, int from, int to)</argsstring>
+        <name>MV_OnMaterialStageMove</name>
+        <reimplementedby refid="class_stage_view_1acce0e9008875d597bb7ce571a77b7e36">MV_OnMaterialStageMove</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when a stage is moved <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The material that was deleted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>from</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The from index </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>to</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The to index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="121" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1abf652e7a01a00c206a39e53b1ecf1f2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialAttributeChanged</definition>
+        <argsstring>(MaterialDoc *pMaterial, int stage, const char *attribName)</argsstring>
+        <name>MV_OnMaterialAttributeChanged</name>
+        <reimplementedby refid="class_stage_view_1a8df8ae19d132dbd7eb573d17f279560d">MV_OnMaterialAttributeChanged</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stage</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attribName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when an attribute is changed <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The material that was deleted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stage that contains the change. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>attribName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute that has changed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="129" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="129" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1a76429e9d0c1af5da32b9981298778a83" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnMaterialNameChanged</definition>
+        <argsstring>(MaterialDoc *pMaterial, const char *oldName)</argsstring>
+        <name>MV_OnMaterialNameChanged</name>
+        <reimplementedby refid="class_material_edit_view_1adec7dc511f6b99e76fd2ad7039a59dca">MV_OnMaterialNameChanged</reimplementedby>
+        <reimplementedby refid="class_material_tree_view_1a1de24964339b7a8d72f8ce1f38706077">MV_OnMaterialNameChanged</reimplementedby>
+        <param>
+          <type><ref refid="class_material_doc" kindref="compound">MaterialDoc</ref> *</type>
+          <declname>pMaterial</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>oldName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when the material name has changed <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pMaterial</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The material that was deleted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>oldName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The old name of the material. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="137" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="137" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="class_material_view_1ad82257506a932020ac1f2f9bc898cec7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MaterialView::MV_OnFileReload</definition>
+        <argsstring>(const char *filename)</argsstring>
+        <name>MV_OnFileReload</name>
+        <reimplementedby refid="class_material_tree_view_1aa7d479a5644fa04235d59d2805fb4c60">MV_OnFileReload</reimplementedby>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when a file has been reloaded <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file that was reloaded. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="143" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="143" bodyend="143"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_material_view" kindref="compound">MaterialView</ref> Interface. Interface to be implemented by classes that want notifications of material changes. Classes that implement this interface must register themself with the <ref refid="class_material_doc_manager" kindref="compound">MaterialDocManager</ref> class with the RegisterView method. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="30514">
+        <label>MaterialEditView</label>
+        <link refid="class_material_edit_view"/>
+        <childnode refid="30513" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30515">
+        <label>MaterialPreviewView</label>
+        <link refid="class_material_preview_view"/>
+        <childnode refid="30513" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30517">
+        <label>MaterialTreeView</label>
+        <link refid="class_material_tree_view"/>
+        <childnode refid="30513" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30519">
+        <label>StageView</label>
+        <link refid="class_stage_view"/>
+        <childnode refid="30513" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30516">
+        <label>MaterialPropTreeView</label>
+        <link refid="class_material_prop_tree_view"/>
+        <childnode refid="30513" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30518">
+        <label>MEMainFrame</label>
+        <link refid="class_m_e_main_frame"/>
+        <childnode refid="30513" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30513">
+        <label>MaterialView</label>
+        <link refid="class_material_view"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="30524">
+        <label>MEStage_t</label>
+        <link refid="struct_m_e_stage__t"/>
+        <childnode refid="30525" relation="usage">
+          <edgelabel>stageData</edgelabel>
+        </childnode>
+      </node>
+      <node id="30523">
+        <label>idList&lt; MaterialModifier * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="30530">
+        <label>idMaterial</label>
+        <link refid="classid_material"/>
+        <childnode refid="30531" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30526">
+        <label>MaterialDoc</label>
+        <link refid="class_material_doc"/>
+        <childnode refid="30522" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="30527" relation="usage">
+          <edgelabel>editMaterial</edgelabel>
+        </childnode>
+        <childnode refid="30521" relation="usage">
+          <edgelabel>manager</edgelabel>
+        </childnode>
+        <childnode refid="30529" relation="usage">
+          <edgelabel>sourceModifyOwner</edgelabel>
+        </childnode>
+        <childnode refid="30530" relation="usage">
+          <edgelabel>renderMaterial</edgelabel>
+        </childnode>
+      </node>
+      <node id="30529">
+        <label>SourceModifyOwner</label>
+        <link refid="class_source_modify_owner"/>
+      </node>
+      <node id="30521">
+        <label>MaterialDocManager</label>
+        <link refid="class_material_doc_manager"/>
+        <childnode refid="30522" relation="usage">
+          <edgelabel>copyMaterial</edgelabel>
+          <edgelabel>copyStageMaterial</edgelabel>
+        </childnode>
+        <childnode refid="30523" relation="usage">
+          <edgelabel>undoModifiers</edgelabel>
+          <edgelabel>redoModifiers</edgelabel>
+        </childnode>
+        <childnode refid="30524" relation="usage">
+          <edgelabel>copyStage</edgelabel>
+        </childnode>
+        <childnode refid="30526" relation="usage">
+          <edgelabel>currentMaterial</edgelabel>
+        </childnode>
+        <childnode refid="30533" relation="usage">
+          <edgelabel>inProgressMaterials</edgelabel>
+        </childnode>
+        <childnode refid="30534" relation="usage">
+          <edgelabel>materialViews</edgelabel>
+        </childnode>
+      </node>
+      <node id="30520">
+        <label>MaterialView</label>
+        <link refid="class_material_view"/>
+        <childnode refid="30521" relation="usage">
+          <edgelabel>materialDocManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="30528">
+        <label>idList&lt; MEStage_t * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="30532">
+        <label>idDeclBase</label>
+        <link refid="classid_decl_base"/>
+      </node>
+      <node id="30533">
+        <label>idHashTable&lt; MaterialDoc * &gt;</label>
+        <link refid="classid_hash_table"/>
+      </node>
+      <node id="30522">
+        <label>idStr</label>
+        <link refid="classid_str"/>
+      </node>
+      <node id="30531">
+        <label>idDecl</label>
+        <link refid="classid_decl"/>
+        <childnode refid="30532" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+      </node>
+      <node id="30527">
+        <label>MEMaterial_t</label>
+        <link refid="struct_m_e_material__t"/>
+        <childnode refid="30528" relation="usage">
+          <edgelabel>stages</edgelabel>
+        </childnode>
+        <childnode refid="30525" relation="usage">
+          <edgelabel>materialData</edgelabel>
+        </childnode>
+      </node>
+      <node id="30525">
+        <label>idDict</label>
+        <link refid="classid_dict"/>
+      </node>
+      <node id="30534">
+        <label>idList&lt; MaterialView * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" line="38" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/materialeditor/MaterialView.h" bodystart="38" bodyend="148"/>
+    <listofallmembers>
+      <member refid="class_material_view_1a48b5e582bd571476202d86f3932861a5" prot="protected" virt="non-virtual"><scope>MaterialView</scope><name>materialDocManager</name></member>
+      <member refid="class_material_view_1a45ef70a7829e502864efdeb31deeff09" prot="public" virt="non-virtual"><scope>MaterialView</scope><name>MaterialView</name></member>
+      <member refid="class_material_view_1ad82257506a932020ac1f2f9bc898cec7" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnFileReload</name></member>
+      <member refid="class_material_view_1a684c35d093bafad8d00c959d702cee16" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialAdd</name></member>
+      <member refid="class_material_view_1ad87ced902a1149ac424eaee83fcbe388" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialApply</name></member>
+      <member refid="class_material_view_1abf652e7a01a00c206a39e53b1ecf1f2e" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialAttributeChanged</name></member>
+      <member refid="class_material_view_1a1e3770beb54336ad8591ffa809b097b4" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialChange</name></member>
+      <member refid="class_material_view_1ad8842a2c9c617e70298925a2a440ea51" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialDelete</name></member>
+      <member refid="class_material_view_1a76429e9d0c1af5da32b9981298778a83" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialNameChanged</name></member>
+      <member refid="class_material_view_1a4486e3bf091dab709c551a343021819a" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialSaved</name></member>
+      <member refid="class_material_view_1a923605b3f9ff899a77baee716b14ec7b" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialSaveFile</name></member>
+      <member refid="class_material_view_1a294aad530ce65823d3251446a3a3ae83" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialSelectionChange</name></member>
+      <member refid="class_material_view_1a0bd0b53be219cf288f368c6471783c65" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialStageAdd</name></member>
+      <member refid="class_material_view_1af563438a4747d6086305108eca7c6e89" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialStageDelete</name></member>
+      <member refid="class_material_view_1a2f236aad283436758cae63b26c8d70ac" prot="public" virt="virtual"><scope>MaterialView</scope><name>MV_OnMaterialStageMove</name></member>
+      <member refid="class_material_view_1a5d965fd5a68d42d6dbe6a64838d64bc1" prot="public" virt="virtual"><scope>MaterialView</scope><name>SetMaterialDocManager</name></member>
+      <member refid="class_material_view_1a4612111f726a941cc7c9fd87c07be58f" prot="public" virt="virtual"><scope>MaterialView</scope><name>~MaterialView</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

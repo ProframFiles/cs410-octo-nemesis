@@ -1,0 +1,726 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_compressor___huffman" kind="class" prot="public">
+    <compoundname>idCompressor_Huffman</compoundname>
+    <basecompoundref refid="classid_compressor___none" prot="public" virt="non-virtual">idCompressor_None</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classid_compressor___huffman_1ac573336309110355cdc9502dcf5b7f6b" prot="private" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte idCompressor_Huffman::seq[65536]</definition>
+        <argsstring>[65536]</argsstring>
+        <name>seq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="831" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="831" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1aae3f47fbf19ec036c2b79c0faf0e0b9e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::bloc</definition>
+        <argsstring></argsstring>
+        <name>bloc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="832" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="832" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1a41bea00d36bc7646d7357eaa2af2895f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::blocMax</definition>
+        <argsstring></argsstring>
+        <name>blocMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="833" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="833" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1a50a5879d44941c5c7401e0ef88e1817d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::blocIn</definition>
+        <argsstring></argsstring>
+        <name>blocIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="834" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="834" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1abee37e8168cea1c77c98afd5b7554a16" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::blocNode</definition>
+        <argsstring></argsstring>
+        <name>blocNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="835" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="835" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1af5caff269ad8b9962969a227085df3b9" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::blocPtrs</definition>
+        <argsstring></argsstring>
+        <name>blocPtrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="836" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="836" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1a888ab1c1301b0f96c53f606293c61ca8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::compressedSize</definition>
+        <argsstring></argsstring>
+        <name>compressedSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="838" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="838" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1adce1f7949115017c5893aca758cefce2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::unCompressedSize</definition>
+        <argsstring></argsstring>
+        <name>unCompressedSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="839" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="839" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1a67606f65710dcfe926eaf933049f6419" prot="private" static="no" mutable="no">
+        <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+        <definition>huffmanNode_t* idCompressor_Huffman::tree</definition>
+        <argsstring></argsstring>
+        <name>tree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="841" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="841" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1a84992bc7aa029a480a9cacfb70680a9a" prot="private" static="no" mutable="no">
+        <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+        <definition>huffmanNode_t* idCompressor_Huffman::lhead</definition>
+        <argsstring></argsstring>
+        <name>lhead</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="842" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="842" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1a6df5101546639f528fe35720a8db3fb5" prot="private" static="no" mutable="no">
+        <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+        <definition>huffmanNode_t* idCompressor_Huffman::ltail</definition>
+        <argsstring></argsstring>
+        <name>ltail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="843" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="843" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1a7a33692f9411ac6019078d802877ff06" prot="private" static="no" mutable="no">
+        <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+        <definition>huffmanNode_t* idCompressor_Huffman::loc[HMAX+1]</definition>
+        <argsstring>[HMAX+1]</argsstring>
+        <name>loc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="844" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="844" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1aafc9f84cfb8e983502a2e6b9f04729de" prot="private" static="no" mutable="no">
+        <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> **</type>
+        <definition>huffmanNode_t** idCompressor_Huffman::freelist</definition>
+        <argsstring></argsstring>
+        <name>freelist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="845" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="845" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1a2466d0d2c5f4b53fe1871316bee22564" prot="private" static="no" mutable="no">
+        <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref></type>
+        <definition>huffmanNode_t idCompressor_Huffman::nodeList[768]</definition>
+        <argsstring>[768]</argsstring>
+        <name>nodeList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="847" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="847" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___huffman_1af8d44846038a88cb3fc63c684282cf16" prot="private" static="no" mutable="no">
+        <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+        <definition>huffmanNode_t* idCompressor_Huffman::nodePtrs[768]</definition>
+        <argsstring>[768]</argsstring>
+        <name>nodePtrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="848" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="848" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_compressor___huffman_1a2a6f7a31012ff2420f6a743dcff2b878" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>idCompressor_Huffman::idCompressor_Huffman</definition>
+        <argsstring>(void)</argsstring>
+        <name>idCompressor_Huffman</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="821" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="821" bodyend="821"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1ad5321578b2a3dcc07dc5b94916798539" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::Init</definition>
+        <argsstring>(idFile *f, bool compress, int wordLength)</argsstring>
+        <name>Init</name>
+        <reimplements refid="classid_compressor___none_1aac40a71794c76e61593ec4227c1ee954">Init</reimplements>
+        <param>
+          <type><ref refid="classid_file" kindref="compound">idFile</ref> *</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>compress</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>wordLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="823" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="872" bodyend="914"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1abed732896c0055a3544cd607fe865971" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::FinishCompress</definition>
+        <argsstring>(void)</argsstring>
+        <name>FinishCompress</name>
+        <reimplements refid="classid_compressor___none_1aa82a6e37c14dfd1d5eea452e1ee2b1b1">FinishCompress</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="824" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1294" bodyend="1306"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1aab9763be9e39353f9f1d5eb65e1be1d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>float</type>
+        <definition>float idCompressor_Huffman::GetCompressionRatio</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetCompressionRatio</name>
+        <reimplements refid="classid_compressor___none_1ac1671aa8417690b9f2ce23b8f9522a88">GetCompressionRatio</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="825" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1353" bodyend="1355"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1a4ec93233c06e49f9c8a0b4b6babcf79f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::Write</definition>
+        <argsstring>(const void *inData, int inLength)</argsstring>
+        <name>Write</name>
+        <reimplements refid="classid_compressor___none_1a29ef9f868c9109f42415cfc55b4463d7">Write</reimplements>
+        <param>
+          <type>const void *</type>
+          <declname>inData</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>inLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="827" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1265" bodyend="1287"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1a50cdbfbc5fb424cd883eb73bda7b80e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::Read</definition>
+        <argsstring>(void *outData, int outLength)</argsstring>
+        <name>Read</name>
+        <reimplements refid="classid_compressor___none_1a60377881b349c17c7be1656932cbe9f1">Read</reimplements>
+        <param>
+          <type>void *</type>
+          <declname>outData</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>outLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="828" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1313" bodyend="1346"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classid_compressor___huffman_1a82d83392de6452d67d1290de1401a98b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::AddRef</definition>
+        <argsstring>(byte ch)</argsstring>
+        <name>AddRef</name>
+        <param>
+          <type>byte</type>
+          <declname>ch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="851" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1130" bodyend="1197"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1adf67d8e9b891149ac673a420e30ec27f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::Receive</definition>
+        <argsstring>(huffmanNode_t *node, int *ch)</argsstring>
+        <name>Receive</name>
+        <param>
+          <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="852" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1206" bodyend="1218"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1a72e6df42ebc64fc7094d2b374ba5753d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::Transmit</definition>
+        <argsstring>(int ch, byte *fout)</argsstring>
+        <name>Transmit</name>
+        <param>
+          <type>int</type>
+          <declname>ch</declname>
+        </param>
+        <param>
+          <type>byte *</type>
+          <declname>fout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="853" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1247" bodyend="1258"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1a58256d3fedc816509ac6f221b01bd0e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::PutBit</definition>
+        <argsstring>(int bit, byte *fout, int *offset)</argsstring>
+        <name>PutBit</name>
+        <param>
+          <type>int</type>
+          <declname>bit</declname>
+        </param>
+        <param>
+          <type>byte *</type>
+          <declname>fout</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="854" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="921" bodyend="929"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1ab1a2efc56b4f6c9096a9b32501b13703" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::GetBit</definition>
+        <argsstring>(byte *fout, int *offset)</argsstring>
+        <name>GetBit</name>
+        <param>
+          <type>byte *</type>
+          <declname>fout</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="855" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="936" bodyend="943"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1a1d4ed7ccc00b4def4497a0944a841c89" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::Add_bit</definition>
+        <argsstring>(char bit, byte *fout)</argsstring>
+        <name>Add_bit</name>
+        <param>
+          <type>char</type>
+          <declname>bit</declname>
+        </param>
+        <param>
+          <type>byte *</type>
+          <declname>fout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="857" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="952" bodyend="958"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1a08818171f4c1d3c370a335b8b4255ce3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idCompressor_Huffman::Get_bit</definition>
+        <argsstring>()</argsstring>
+        <name>Get_bit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="858" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="967" bodyend="979"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1a11f604f73d21c1b9ec2b966dd23bb8fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> **</type>
+        <definition>huffmanNode_t ** idCompressor_Huffman::Get_ppnode</definition>
+        <argsstring>()</argsstring>
+        <name>Get_ppnode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="859" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="986" bodyend="995"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1a16da1c8688acf459fe253406d3ddad9d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::Free_ppnode</definition>
+        <argsstring>(huffmanNode_t **ppnode)</argsstring>
+        <name>Free_ppnode</name>
+        <param>
+          <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> **</type>
+          <declname>ppnode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="860" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1002" bodyend="1005"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1ad36cb8947148a6433668d6135cf18b61" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::Swap</definition>
+        <argsstring>(huffmanNode_t *node1, huffmanNode_t *node2)</argsstring>
+        <name>Swap</name>
+        <param>
+          <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+          <declname>node1</declname>
+        </param>
+        <param>
+          <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+          <declname>node2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="861" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1014" bodyend="1042"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1a963c0e416e33b5ab082e689b85c2f8a5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::Swaplist</definition>
+        <argsstring>(huffmanNode_t *node1, huffmanNode_t *node2)</argsstring>
+        <name>Swaplist</name>
+        <param>
+          <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+          <declname>node1</declname>
+        </param>
+        <param>
+          <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+          <declname>node2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="862" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1051" bodyend="1080"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1a3d0e354feb91f70e45331b7eaacbf52a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::Increment</definition>
+        <argsstring>(huffmanNode_t *node)</argsstring>
+        <name>Increment</name>
+        <param>
+          <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="863" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1087" bodyend="1123"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___huffman_1adc58518843ac4705bc642de8d4027779" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompressor_Huffman::Send</definition>
+        <argsstring>(huffmanNode_t *node, huffmanNode_t *child, byte *fout)</argsstring>
+        <name>Send</name>
+        <param>
+          <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="structnodetype" kindref="compound">huffmanNode_t</ref> *</type>
+          <declname>child</declname>
+        </param>
+        <param>
+          <type>byte *</type>
+          <declname>fout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="864" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="1227" bodyend="1238"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="23058">
+        <label>idCompressor</label>
+        <link refid="classid_compressor"/>
+        <childnode refid="23059" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23059">
+        <label>idFile</label>
+        <link refid="classid_file"/>
+      </node>
+      <node id="23057">
+        <label>idCompressor_None</label>
+        <link refid="classid_compressor___none"/>
+        <childnode refid="23058" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23056">
+        <label>idCompressor_Huffman</label>
+        <link refid="classid_compressor___huffman"/>
+        <childnode refid="23057" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="23062">
+        <label>idCompressor</label>
+        <link refid="classid_compressor"/>
+        <childnode refid="23063" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23063">
+        <label>idFile</label>
+        <link refid="classid_file"/>
+      </node>
+      <node id="23061">
+        <label>idCompressor_None</label>
+        <link refid="classid_compressor___none"/>
+        <childnode refid="23062" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23063" relation="usage">
+          <edgelabel>file</edgelabel>
+        </childnode>
+      </node>
+      <node id="23060">
+        <label>idCompressor_Huffman</label>
+        <link refid="classid_compressor___huffman"/>
+        <childnode refid="23061" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="819" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="819" bodyend="865"/>
+    <listofallmembers>
+      <member refid="classid_compressor___huffman_1a1d4ed7ccc00b4def4497a0944a841c89" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>Add_bit</name></member>
+      <member refid="classid_compressor___huffman_1a82d83392de6452d67d1290de1401a98b" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>AddRef</name></member>
+      <member refid="classid_compressor_1a948c5f6b02d75a933ebdb0cf3f520568" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>AllocArithmetic</name></member>
+      <member refid="classid_compressor_1a78065588ccabbde8294682e7019e4aed" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>AllocBitStream</name></member>
+      <member refid="classid_compressor_1abcccf0f7106ab7af30b5adfc22790f35" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>AllocHuffman</name></member>
+      <member refid="classid_compressor_1ab271a5e4534b1cb0c1409cb0fd40d142" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>AllocLZSS</name></member>
+      <member refid="classid_compressor_1a68e941f1d0f05b920a77bce6aacb9593" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>AllocLZSS_WordAligned</name></member>
+      <member refid="classid_compressor_1a884b06dbf22908b847d03a7b3457e584" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>AllocLZW</name></member>
+      <member refid="classid_compressor_1a3faf166652cc2afbe47862398f2a79e6" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>AllocNoCompression</name></member>
+      <member refid="classid_compressor_1aeb18f646172c5e19c65cf728bf4e232c" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>AllocRunLength</name></member>
+      <member refid="classid_compressor_1a774778953be895ef50fb34baf5c679c2" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>AllocRunLength_ZeroBased</name></member>
+      <member refid="classid_compressor___huffman_1aae3f47fbf19ec036c2b79c0faf0e0b9e" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>bloc</name></member>
+      <member refid="classid_compressor___huffman_1a50a5879d44941c5c7401e0ef88e1817d" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>blocIn</name></member>
+      <member refid="classid_compressor___huffman_1a41bea00d36bc7646d7357eaa2af2895f" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>blocMax</name></member>
+      <member refid="classid_compressor___huffman_1abee37e8168cea1c77c98afd5b7554a16" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>blocNode</name></member>
+      <member refid="classid_compressor___huffman_1af5caff269ad8b9962969a227085df3b9" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>blocPtrs</name></member>
+      <member refid="classid_compressor___none_1a4504ab7aed6d64a550478f5b6f17034c" prot="protected" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>compress</name></member>
+      <member refid="classid_compressor___huffman_1a888ab1c1301b0f96c53f606293c61ca8" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>compressedSize</name></member>
+      <member refid="classid_compressor___none_1a2633597107f0e60dae6a07fef7ead5b5" prot="protected" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>file</name></member>
+      <member refid="classid_compressor___huffman_1abed732896c0055a3544cd607fe865971" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>FinishCompress</name></member>
+      <member refid="classid_compressor___none_1a9bbe5386db46b183aa3a77163b2dd1d8" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>Flush</name></member>
+      <member refid="classid_compressor___none_1a3ed965e71606f5225b5619f733931d41" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ForceFlush</name></member>
+      <member refid="classid_compressor___huffman_1a16da1c8688acf459fe253406d3ddad9d" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>Free_ppnode</name></member>
+      <member refid="classid_compressor___huffman_1aafc9f84cfb8e983502a2e6b9f04729de" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>freelist</name></member>
+      <member refid="classid_compressor___huffman_1a08818171f4c1d3c370a335b8b4255ce3" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>Get_bit</name></member>
+      <member refid="classid_compressor___huffman_1a11f604f73d21c1b9ec2b966dd23bb8fc" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>Get_ppnode</name></member>
+      <member refid="classid_compressor___huffman_1ab1a2efc56b4f6c9096a9b32501b13703" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>GetBit</name></member>
+      <member refid="classid_compressor___huffman_1aab9763be9e39353f9f1d5eb65e1be1d9" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>GetCompressionRatio</name></member>
+      <member refid="classid_compressor___none_1ac1b26592e5abe7bedd679505e20152d5" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>GetFullPath</name></member>
+      <member refid="classid_compressor___none_1ad0b25a1bada1a50b54609b7a8e58633f" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>GetName</name></member>
+      <member refid="classid_compressor___huffman_1a2a6f7a31012ff2420f6a743dcff2b878" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>idCompressor_Huffman</name></member>
+      <member refid="classid_compressor___none_1affd73fbd05db59a2c924c7cfafe70d56" prot="public" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>idCompressor_None</name></member>
+      <member refid="classid_compressor___huffman_1a3d0e354feb91f70e45331b7eaacbf52a" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>Increment</name></member>
+      <member refid="classid_compressor___huffman_1ad5321578b2a3dcc07dc5b94916798539" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>Init</name></member>
+      <member refid="classid_compressor___none_1a3e26819600226f3e85a2b345fad5e1d0" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>Length</name></member>
+      <member refid="classid_compressor___huffman_1a84992bc7aa029a480a9cacfb70680a9a" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>lhead</name></member>
+      <member refid="classid_compressor___huffman_1a7a33692f9411ac6019078d802877ff06" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>loc</name></member>
+      <member refid="classid_compressor___huffman_1a6df5101546639f528fe35720a8db3fb5" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>ltail</name></member>
+      <member refid="classid_compressor___huffman_1a2466d0d2c5f4b53fe1871316bee22564" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>nodeList</name></member>
+      <member refid="classid_compressor___huffman_1af8d44846038a88cb3fc63c684282cf16" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>nodePtrs</name></member>
+      <member refid="classid_file_1adfd432a73c3592176226dd82808c21c9" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>Printf</name></member>
+      <member refid="classid_compressor___huffman_1a58256d3fedc816509ac6f221b01bd0e6" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>PutBit</name></member>
+      <member refid="classid_compressor___huffman_1a50cdbfbc5fb424cd883eb73bda7b80e0" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>Read</name></member>
+      <member refid="classid_file_1a7f791780d9a45d92777d1e4f9873a8b9" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadBool</name></member>
+      <member refid="classid_file_1a5810139f1e5f4639f54bd98e6f24e7ae" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadChar</name></member>
+      <member refid="classid_file_1a941a07fa1530f0f24afb7de47490677d" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadFloat</name></member>
+      <member refid="classid_file_1a185f671e3f0a8cb1c95cf12c5f9eb25b" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadInt</name></member>
+      <member refid="classid_file_1ae4bed1ce67c3cb66f4ea21fb847b7794" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadMat3</name></member>
+      <member refid="classid_file_1af01dee78fa44acf5367868b8f76848fa" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadShort</name></member>
+      <member refid="classid_file_1a24fa6f42665e91f2bf606ed6b20ebcaa" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadString</name></member>
+      <member refid="classid_file_1af4333d4614a09b09a1849f29ee34ca3b" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadUnsignedChar</name></member>
+      <member refid="classid_file_1a772c592c1e5108241ab29252a294d09f" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadUnsignedInt</name></member>
+      <member refid="classid_file_1a87b31cd43aeea4736ea9cf0d9c72b698" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadUnsignedShort</name></member>
+      <member refid="classid_file_1ad540f64882bc1a4a4477ba4ec556e853" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadVec2</name></member>
+      <member refid="classid_file_1a130fc853cbc30ca9a620ba7dcec1ee36" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadVec3</name></member>
+      <member refid="classid_file_1a6dc2b9efd38940009971b0dc31b7fad9" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadVec4</name></member>
+      <member refid="classid_file_1ab358679311d77e35855960a505039891" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>ReadVec6</name></member>
+      <member refid="classid_compressor___huffman_1adf67d8e9b891149ac673a420e30ec27f" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>Receive</name></member>
+      <member refid="classid_file_1a35cd4415f630c2b015743ab0cae948ef" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>Rewind</name></member>
+      <member refid="classid_compressor___none_1a6cd64455598f13637b0c07d699aa5306" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>Seek</name></member>
+      <member refid="classid_compressor___huffman_1adc58518843ac4705bc642de8d4027779" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>Send</name></member>
+      <member refid="classid_compressor___huffman_1ac573336309110355cdc9502dcf5b7f6b" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>seq</name></member>
+      <member refid="classid_compressor___huffman_1ad36cb8947148a6433668d6135cf18b61" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>Swap</name></member>
+      <member refid="classid_compressor___huffman_1a963c0e416e33b5ab082e689b85c2f8a5" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>Swaplist</name></member>
+      <member refid="classid_compressor___none_1a19cfa8b021c8f1cf0aa7305fb0bf0820" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>Tell</name></member>
+      <member refid="classid_compressor___none_1a272cb619afc28a4f021ffdff829b8aac" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>Timestamp</name></member>
+      <member refid="classid_compressor___huffman_1a72e6df42ebc64fc7094d2b374ba5753d" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>Transmit</name></member>
+      <member refid="classid_compressor___huffman_1a67606f65710dcfe926eaf933049f6419" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>tree</name></member>
+      <member refid="classid_compressor___huffman_1adce1f7949115017c5893aca758cefce2" prot="private" virt="non-virtual"><scope>idCompressor_Huffman</scope><name>unCompressedSize</name></member>
+      <member refid="classid_file_1a1efb9b1240f9f0e751fa4fdc7ab989f9" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>VPrintf</name></member>
+      <member refid="classid_compressor___huffman_1a4ec93233c06e49f9c8a0b4b6babcf79f" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>Write</name></member>
+      <member refid="classid_file_1ab83dc0daed46cfef37c5b399fe20351a" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteBool</name></member>
+      <member refid="classid_file_1ab0446bf820388a2bfe18aadcbe4b1614" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteChar</name></member>
+      <member refid="classid_file_1a0ca233bb1a950edbcbfbe8b61c374d1a" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteFloat</name></member>
+      <member refid="classid_file_1af50aed7477c02cb29c2e6547c77a9082" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteFloatString</name></member>
+      <member refid="classid_file_1a74639eb327849916c4c61a2b7f483ea0" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteInt</name></member>
+      <member refid="classid_file_1a3f5efe4020ee03a45e90b46b8d508773" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteMat3</name></member>
+      <member refid="classid_file_1a6f6c4a96246650dca07347e0fdb51676" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteShort</name></member>
+      <member refid="classid_file_1a7d0e90b0d610c61167fbe4269ed5747e" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteString</name></member>
+      <member refid="classid_file_1a8c4e1a31e368370d5ab6d47d83c8f65a" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteUnsignedChar</name></member>
+      <member refid="classid_file_1a823cff29fc14457b11017c06cb9cd95e" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteUnsignedInt</name></member>
+      <member refid="classid_file_1aa0510f4c495f59bf659edb9a44daff66" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteUnsignedShort</name></member>
+      <member refid="classid_file_1ab56756a3fa18f96010a6180ca9b62980" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteVec2</name></member>
+      <member refid="classid_file_1ad7fcadac658820eb12b51e2474bf4a8c" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteVec3</name></member>
+      <member refid="classid_file_1a4c6ba993d3b4e195941fbcfab7c5a0dd" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteVec4</name></member>
+      <member refid="classid_file_1a68d9f55dbe29f963e91b6f3b8eb80757" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>WriteVec6</name></member>
+      <member refid="classid_file_1a0c18523ff226e9d53a8c5d074f5f20ed" prot="public" virt="virtual"><scope>idCompressor_Huffman</scope><name>~idFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

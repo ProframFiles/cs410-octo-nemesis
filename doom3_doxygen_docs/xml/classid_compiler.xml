@@ -1,0 +1,2398 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_compiler" kind="class" prot="public">
+    <compoundname>idCompiler</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classid_compiler_1a04a27349fbbabc8c28680ef2fec5e8f9" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>static bool idCompiler::punctuationValid</definition>
+        <argsstring>[256]</argsstring>
+        <name>punctuationValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="199" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1a883ed883af32a1eb4e5e2ccc7a4a1c78" prot="private" static="yes" mutable="no">
+        <type>char *</type>
+        <definition>static char * idCompiler::punctuation</definition>
+        <argsstring>[]</argsstring>
+        <name>punctuation</name>
+        <initializer>= {
+	&quot;+=&quot;, &quot;-=&quot;, &quot;*=&quot;, &quot;/=&quot;, &quot;%=&quot;, &quot;&amp;=&quot;, &quot;|=&quot;, &quot;++&quot;, &quot;--&quot;,
+	&quot;&amp;&amp;&quot;, &quot;||&quot;, &quot;&lt;=&quot;, &quot;&gt;=&quot;, &quot;==&quot;, &quot;!=&quot;, &quot;::&quot;, &quot;;&quot;,  &quot;,&quot;,
+	&quot;~&quot;,  &quot;!&quot;,  &quot;*&quot;,  &quot;/&quot;,  &quot;%&quot;,  &quot;(&quot;,   &quot;)&quot;,  &quot;-&quot;, &quot;+&quot;,
+	&quot;=&quot;,  &quot;[&quot;,  &quot;]&quot;,  &quot;.&quot;,  &quot;&lt;&quot;,  &quot;&gt;&quot; ,  &quot;&amp;&quot;,  &quot;|&quot;, &quot;:&quot;,  NULL
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="200" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classid_compiler_1a8e4937148e7e026714b83fca29a77489" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_parser" kindref="compound">idParser</ref></type>
+        <definition>idParser idCompiler::parser</definition>
+        <argsstring></argsstring>
+        <name>parser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="202" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1a61651e3f7a435934cdf20a0b4b3c0387" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_parser" kindref="compound">idParser</ref> *</type>
+        <definition>idParser * idCompiler::parserPtr</definition>
+        <argsstring></argsstring>
+        <name>parserPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="203" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1add2159d57940ab0d7fbd8f7390afcbbe" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_token" kindref="compound">idToken</ref></type>
+        <definition>idToken idCompiler::token</definition>
+        <argsstring></argsstring>
+        <name>token</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="204" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1a5b07d95cf2e9d34eb3015354b1c25ec4" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+        <definition>idTypeDef * idCompiler::immediateType</definition>
+        <argsstring></argsstring>
+        <name>immediateType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="206" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1a3d214c3a12cda8b9b8c7e06e6b31b6ef" prot="private" static="no" mutable="no">
+        <type><ref refid="unioneval__s" kindref="compound">eval_t</ref></type>
+        <definition>eval_t idCompiler::immediate</definition>
+        <argsstring></argsstring>
+        <name>immediate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="207" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1a3d8da8983c8fa04c06126846a3164c14" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idCompiler::eof</definition>
+        <argsstring></argsstring>
+        <name>eof</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="209" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1a2c283c6ccdc97dd0c072c07f7fbc536a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idCompiler::console</definition>
+        <argsstring></argsstring>
+        <name>console</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="210" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1a4c2f200b711c40360ad91a3212d83a70" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idCompiler::callthread</definition>
+        <argsstring></argsstring>
+        <name>callthread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="211" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1a50c9927cb6372aac4fa05317ebbd1a71" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompiler::braceDepth</definition>
+        <argsstring></argsstring>
+        <name>braceDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="212" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1a713c8ce7355aa27b81eb40b55f4339c9" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompiler::loopDepth</definition>
+        <argsstring></argsstring>
+        <name>loopDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="213" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1acba5b982bdd1da07ca9b422e43d5b27a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompiler::currentLineNumber</definition>
+        <argsstring></argsstring>
+        <name>currentLineNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="214" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1af4b5e9f217228c1568681459c042798d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompiler::currentFileNumber</definition>
+        <argsstring></argsstring>
+        <name>currentFileNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="215" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1a3daad4326188d138487c62f8449b3f78" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idCompiler::errorCount</definition>
+        <argsstring></argsstring>
+        <name>errorCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="216" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1ac0a36e3dcd12415c9cd4a6abe8033dee" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::scope</definition>
+        <argsstring></argsstring>
+        <name>scope</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="218" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compiler_1abda94339f973b3bcfe308ba3cb49f350" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>const idVarDef * idCompiler::basetype</definition>
+        <argsstring></argsstring>
+        <name>basetype</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="219" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classid_compiler_1af88df4d76dfe160bfc0a6ca932a70107" prot="public" static="yes" mutable="no">
+        <type><ref refid="structopcode__s" kindref="compound">opcode_t</ref></type>
+        <definition>static opcode_t idCompiler::opcodes</definition>
+        <argsstring>[]</argsstring>
+        <name>opcodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="272" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classid_compiler_1aa323e92ffa0b7aa6125a986f05a58848" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>ID_INLINE float idCompiler::Divide</definition>
+        <argsstring>(float numerator, float denominator)</argsstring>
+        <name>Divide</name>
+        <param>
+          <type>float</type>
+          <declname>numerator</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>denominator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="221" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="364" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ad1b1e5d5cec3516c3bc3e14acba1233e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::Error</definition>
+        <argsstring>(const char *error,...) const id_attribute((format(printf</argsstring>
+        <name>Error</name>
+        <param>
+          <type>const char *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="222" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="248" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a75fd64d2071db608efc3b038bd2c7b24" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void void</type>
+        <definition>void idCompiler::Warning</definition>
+        <argsstring>(const char *message,...) const id_attribute((format(printf</argsstring>
+        <name>Warning</name>
+        <param>
+          <type>const char *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="223" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="266" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a577dc6df06a7e0299cd6508540adaf3e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void void <ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::OptimizeOpcode</definition>
+        <argsstring>(const opcode_t *op, idVarDef *var_a, idVarDef *var_b)</argsstring>
+        <name>OptimizeOpcode</name>
+        <param>
+          <type>const <ref refid="structopcode__s" kindref="compound">opcode_t</ref> *</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_a</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="224" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="486" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a1c6f98c51ccf415e66f61d930e924967" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::EmitOpcode</definition>
+        <argsstring>(const opcode_t *op, idVarDef *var_a, idVarDef *var_b)</argsstring>
+        <name>EmitOpcode</name>
+        <param>
+          <type>const <ref refid="structopcode__s" kindref="compound">opcode_t</ref> *</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_a</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="225" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="571" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a6657324cbc4a3ab31e1f22f476171aca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>ID_INLINE idVarDef * idCompiler::EmitOpcode</definition>
+        <argsstring>(int op, idVarDef *var_a, idVarDef *var_b)</argsstring>
+        <name>EmitOpcode</name>
+        <param>
+          <type>int</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_a</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="226" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="621" bodyend="623"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ab358601dc34935fd19324fa4081dfe8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idCompiler::EmitPush</definition>
+        <argsstring>(idVarDef *expression, const idTypeDef *funcArg)</argsstring>
+        <name>EmitPush</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>expression</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>funcArg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="227" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="632" bodyend="655"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a071813b16efce92ab7bb520ecc83d525" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::NextToken</definition>
+        <argsstring>(void)</argsstring>
+        <name>NextToken</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="228" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="664" bodyend="761"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aecc874329ae85da8ae8d2d6421baefe2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ExpectToken</definition>
+        <argsstring>(const char *string)</argsstring>
+        <name>ExpectToken</name>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="229" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="771" bodyend="777"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aa78a6183759cfe963ec97dbf50574223" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idCompiler::CheckToken</definition>
+        <argsstring>(const char *string)</argsstring>
+        <name>CheckToken</name>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="230" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="787" bodyend="795"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ad28b4c957e59ba58b4b3141a1b154fe8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseName</definition>
+        <argsstring>(idStr &amp;name)</argsstring>
+        <name>ParseName</name>
+        <param>
+          <type><ref refid="classid_str" kindref="compound">idStr</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="231" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="804" bodyend="811"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ac3dac0d6d129304bedc17473558afac1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::SkipOutOfFunction</definition>
+        <argsstring>(void)</argsstring>
+        <name>SkipOutOfFunction</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="232" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="820" bodyend="826"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a5679cfa1d0edab1470b5fc73dd143d86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::SkipToSemicolon</definition>
+        <argsstring>(void)</argsstring>
+        <name>SkipToSemicolon</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="233" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="835" bodyend="843"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a646e275ba36b3f198cb9ac97d046ea0a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+        <definition>idTypeDef * idCompiler::CheckType</definition>
+        <argsstring>(void)</argsstring>
+        <name>CheckType</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="234" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="852" bodyend="881"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aa57d762dfe4c06b193ad58f1cbd144a0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+        <definition>idTypeDef * idCompiler::ParseType</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseType</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="235" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="890" bodyend="909"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1adfb269d0316be52cc42f81965bc48599" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::FindImmediate</definition>
+        <argsstring>(const idTypeDef *type, const eval_t *eval, const char *string) const </argsstring>
+        <name>FindImmediate</name>
+        <param>
+          <type>const <ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="unioneval__s" kindref="compound">eval_t</ref> *</type>
+          <declname>eval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="236" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="380" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a0573a3ef40b126553bd330e284af6d4d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::GetImmediate</definition>
+        <argsstring>(idTypeDef *type, const eval_t *eval, const char *string)</argsstring>
+        <name>GetImmediate</name>
+        <param>
+          <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="unioneval__s" kindref="compound">eval_t</ref> *</type>
+          <declname>eval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="237" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="460" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ae54497d1858c1f6c6e3eb1386abdaa03" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>ID_INLINE idVarDef * idCompiler::VirtualFunctionConstant</definition>
+        <argsstring>(idVarDef *func)</argsstring>
+        <name>VirtualFunctionConstant</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="238" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="284" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a383a2bf1872a5d4b684ffac2e6ca6483" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>ID_INLINE idVarDef * idCompiler::SizeConstant</definition>
+        <argsstring>(int size)</argsstring>
+        <name>SizeConstant</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="239" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="303" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a699eef15fe2376c4eb96bbea17720869" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>ID_INLINE idVarDef * idCompiler::JumpConstant</definition>
+        <argsstring>(int value)</argsstring>
+        <name>JumpConstant</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="240" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="318" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1afe67acf7e38ed5c7a03e83dee7d636ac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>ID_INLINE idVarDef * idCompiler::JumpDef</definition>
+        <argsstring>(int jumpfrom, int jumpto)</argsstring>
+        <name>JumpDef</name>
+        <param>
+          <type>int</type>
+          <declname>jumpfrom</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>jumpto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="241" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="333" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ace07a4a4852054c727a346c4d6548122" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>ID_INLINE idVarDef * idCompiler::JumpTo</definition>
+        <argsstring>(int jumpto)</argsstring>
+        <name>JumpTo</name>
+        <param>
+          <type>int</type>
+          <declname>jumpto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="242" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="344" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a1222884b45184be31d602bb9d699ef55" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>ID_INLINE idVarDef * idCompiler::JumpFrom</definition>
+        <argsstring>(int jumpfrom)</argsstring>
+        <name>JumpFrom</name>
+        <param>
+          <type>int</type>
+          <declname>jumpfrom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="243" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="355" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a5e16686b8de0531c60001103892ae189" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::ParseImmediate</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseImmediate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="244" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="918" bodyend="925"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a89b6a14b36ef75c60f03699bde71212c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::EmitFunctionParms</definition>
+        <argsstring>(int op, idVarDef *func, int startarg, int startsize, idVarDef *object)</argsstring>
+        <name>EmitFunctionParms</name>
+        <param>
+          <type>int</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>startarg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>startsize</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="245" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="932" bodyend="1048"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a59f236f6d085e00309fa8ef3dce58cf6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::ParseFunctionCall</definition>
+        <argsstring>(idVarDef *func)</argsstring>
+        <name>ParseFunctionCall</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="246" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1055" bodyend="1090"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1addbed09d7766b7e2944e17e1d743a1cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::ParseObjectCall</definition>
+        <argsstring>(idVarDef *object, idVarDef *func)</argsstring>
+        <name>ParseObjectCall</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="247" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1097" bodyend="1105"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a779ecb4fb48d12ba9bd5224f1212c154" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::ParseEventCall</definition>
+        <argsstring>(idVarDef *object, idVarDef *func)</argsstring>
+        <name>ParseEventCall</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="248" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1112" bodyend="1132"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a9309ef77474a7225f79a964a0320e6c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::ParseSysObjectCall</definition>
+        <argsstring>(idVarDef *func)</argsstring>
+        <name>ParseSysObjectCall</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="249" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1139" bodyend="1157"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ab05896077912e42a80fb4a40fe5555c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::LookupDef</definition>
+        <argsstring>(const char *name, const idVarDef *baseobj)</argsstring>
+        <name>LookupDef</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>baseobj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="250" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1164" bodyend="1246"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a4c07c27276e22218f5f350a6be4fe37a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::ParseValue</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseValue</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="251" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1255" bodyend="1297"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ab798fb98c791bb11e72fd61c51ccb454" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::GetTerm</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetTerm</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="252" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1304" bodyend="1437"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ac486326efa899e4bcf6c8d169398fa32" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idCompiler::TypeMatches</definition>
+        <argsstring>(etype_t type1, etype_t type2) const </argsstring>
+        <name>TypeMatches</name>
+        <param>
+          <type>etype_t</type>
+          <declname>type1</declname>
+        </param>
+        <param>
+          <type>etype_t</type>
+          <declname>type2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="253" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1444" bodyend="1458"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a7614cd03cee7031b980162e0fead9b33" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef * idCompiler::GetExpression</definition>
+        <argsstring>(int priority)</argsstring>
+        <name>GetExpression</name>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="254" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1465" bodyend="1648"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a1b73fa62a552ad930834b8e3147fe6a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+        <definition>idTypeDef * idCompiler::GetTypeForEventArg</definition>
+        <argsstring>(char argType)</argsstring>
+        <name>GetTypeForEventArg</name>
+        <param>
+          <type>char</type>
+          <declname>argType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="255" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="2349" bodyend="2391"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a149bec379c0a4fb5a1edf6b1e5930622" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::PatchLoop</definition>
+        <argsstring>(int start, int continuePos)</argsstring>
+        <name>PatchLoop</name>
+        <param>
+          <type>int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>continuePos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="256" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1655" bodyend="1669"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aee74d772e6518cb7769930cc2ec4aac8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseReturnStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseReturnStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="257" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1676" bodyend="1725"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a49c05776fae64a0c76dff5e4484d4cf1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseWhileStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseWhileStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="258" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1732" bodyend="1761"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a7248a6233c3f57206620b4520ad1e5ac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseForStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseForStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="259" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1802" bodyend="1867"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a1a32881d4f45c931649e0be47b9ce8cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseDoWhileStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseDoWhileStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="260" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1874" bodyend="1894"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ad7604a360c711512321e66bd9e7b391a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseIfStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseIfStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="261" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1901" bodyend="1925"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a35ad6f100ed51aea6c3dc1312a0a75ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="262" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="1932" bodyend="1996"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aaf5b58e569732b55993912c534990531" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseObjectDef</definition>
+        <argsstring>(const char *objname)</argsstring>
+        <name>ParseObjectDef</name>
+        <param>
+          <type>const char *</type>
+          <declname>objname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="263" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="2003" bodyend="2077"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a1de8e8c1ff4e33fe90bee2df4615b41b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+        <definition>idTypeDef * idCompiler::ParseFunction</definition>
+        <argsstring>(idTypeDef *returnType, const char *name)</argsstring>
+        <name>ParseFunction</name>
+        <param>
+          <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>returnType</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="264" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="2086" bodyend="2107"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ac44985c8e774d360c8d5a36177f7ab66" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseFunctionDef</definition>
+        <argsstring>(idTypeDef *returnType, const char *name)</argsstring>
+        <name>ParseFunctionDef</name>
+        <param>
+          <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>returnType</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="265" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="2114" bodyend="2256"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a81eed828e8154da5187d3aee5c8f5d24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseVariableDef</definition>
+        <argsstring>(idTypeDef *type, const char *name)</argsstring>
+        <name>ParseVariableDef</name>
+        <param>
+          <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="266" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="2263" bodyend="2342"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1abbba361296507a27d696fad1d429707b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseEventDef</definition>
+        <argsstring>(idTypeDef *type, const char *name)</argsstring>
+        <name>ParseEventDef</name>
+        <param>
+          <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="267" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="2398" bodyend="2476"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aca66ddd7c7dc1c6bdbb66f74f4fafb91" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseDefs</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseDefs</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="268" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="2485" bodyend="2536"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a58a31ddbd275d2060d4bb9fe0a86cca5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseNamespace</definition>
+        <argsstring>(idVarDef *newScope)</argsstring>
+        <name>ParseNamespace</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>newScope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="269" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="2545" bodyend="2565"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a56c38480731887c707c4586ac52fdede" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float idCompiler::Divide</definition>
+        <argsstring>(float numerator, float denominator)</argsstring>
+        <name>Divide</name>
+        <param>
+          <type>float</type>
+          <declname>numerator</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>denominator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="221" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ad1b1e5d5cec3516c3bc3e14acba1233e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::Error</definition>
+        <argsstring>(const char *error,...) const id_attribute((format(printf</argsstring>
+        <name>Error</name>
+        <param>
+          <type>const char *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="222" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a7378716f0d18574f885ed2bef69ec0d9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void void</type>
+        <definition>void void idCompiler::Warning</definition>
+        <argsstring>(const char *message,...) const id_attribute((format(printf</argsstring>
+        <name>Warning</name>
+        <param>
+          <type>const char *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="223" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a4f58061ea2de34fb4461213d3f651125" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void void <ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>void void idVarDef* idCompiler::OptimizeOpcode</definition>
+        <argsstring>(const opcode_t *op, idVarDef *var_a, idVarDef *var_b)</argsstring>
+        <name>OptimizeOpcode</name>
+        <param>
+          <type>const <ref refid="structopcode__s" kindref="compound">opcode_t</ref> *</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_a</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="224" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a0c7a08f724984648305aefbc3456323c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::EmitOpcode</definition>
+        <argsstring>(const opcode_t *op, idVarDef *var_a, idVarDef *var_b)</argsstring>
+        <name>EmitOpcode</name>
+        <param>
+          <type>const <ref refid="structopcode__s" kindref="compound">opcode_t</ref> *</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_a</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="225" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a47df3e4a7e4922db414c35cb9f507e11" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::EmitOpcode</definition>
+        <argsstring>(int op, idVarDef *var_a, idVarDef *var_b)</argsstring>
+        <name>EmitOpcode</name>
+        <param>
+          <type>int</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_a</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>var_b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="226" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ab358601dc34935fd19324fa4081dfe8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idCompiler::EmitPush</definition>
+        <argsstring>(idVarDef *expression, const idTypeDef *funcArg)</argsstring>
+        <name>EmitPush</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>expression</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>funcArg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="227" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a071813b16efce92ab7bb520ecc83d525" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::NextToken</definition>
+        <argsstring>(void)</argsstring>
+        <name>NextToken</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="228" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aecc874329ae85da8ae8d2d6421baefe2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ExpectToken</definition>
+        <argsstring>(const char *string)</argsstring>
+        <name>ExpectToken</name>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="229" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aa78a6183759cfe963ec97dbf50574223" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idCompiler::CheckToken</definition>
+        <argsstring>(const char *string)</argsstring>
+        <name>CheckToken</name>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="230" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ad28b4c957e59ba58b4b3141a1b154fe8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseName</definition>
+        <argsstring>(idStr &amp;name)</argsstring>
+        <name>ParseName</name>
+        <param>
+          <type><ref refid="classid_str" kindref="compound">idStr</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="231" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ac3dac0d6d129304bedc17473558afac1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::SkipOutOfFunction</definition>
+        <argsstring>(void)</argsstring>
+        <name>SkipOutOfFunction</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="232" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a5679cfa1d0edab1470b5fc73dd143d86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::SkipToSemicolon</definition>
+        <argsstring>(void)</argsstring>
+        <name>SkipToSemicolon</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="233" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a889e7090ce98f3da528d7aeb5882a3aa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+        <definition>idTypeDef* idCompiler::CheckType</definition>
+        <argsstring>(void)</argsstring>
+        <name>CheckType</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="234" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a9fa565ccacc84c511a456c7137562dd0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+        <definition>idTypeDef* idCompiler::ParseType</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseType</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="235" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a98d1da4fc535f6d404feb5ba89338ec8" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::FindImmediate</definition>
+        <argsstring>(const idTypeDef *type, const eval_t *eval, const char *string) const </argsstring>
+        <name>FindImmediate</name>
+        <param>
+          <type>const <ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="unioneval__s" kindref="compound">eval_t</ref> *</type>
+          <declname>eval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="236" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ac40ef2e2e31f6fb2123138d15fad3ad0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::GetImmediate</definition>
+        <argsstring>(idTypeDef *type, const eval_t *eval, const char *string)</argsstring>
+        <name>GetImmediate</name>
+        <param>
+          <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const <ref refid="unioneval__s" kindref="compound">eval_t</ref> *</type>
+          <declname>eval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="237" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1af131fe3388b161fc653b680406bc486d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::VirtualFunctionConstant</definition>
+        <argsstring>(idVarDef *func)</argsstring>
+        <name>VirtualFunctionConstant</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="238" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ac6ba96d31775a514b22f921a38f1bd6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::SizeConstant</definition>
+        <argsstring>(int size)</argsstring>
+        <name>SizeConstant</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="239" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aade961a8f6e2545efe4a59ad1f3b132b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::JumpConstant</definition>
+        <argsstring>(int value)</argsstring>
+        <name>JumpConstant</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="240" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1abe0739145796b7ad703a4915812d726f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::JumpDef</definition>
+        <argsstring>(int jumpfrom, int jumpto)</argsstring>
+        <name>JumpDef</name>
+        <param>
+          <type>int</type>
+          <declname>jumpfrom</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>jumpto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="241" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aeabd1cd83e3e111817220c990c248204" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::JumpTo</definition>
+        <argsstring>(int jumpto)</argsstring>
+        <name>JumpTo</name>
+        <param>
+          <type>int</type>
+          <declname>jumpto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="242" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a1a4a80c0591c17d2271231d19b0c4298" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::JumpFrom</definition>
+        <argsstring>(int jumpfrom)</argsstring>
+        <name>JumpFrom</name>
+        <param>
+          <type>int</type>
+          <declname>jumpfrom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="243" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a9ad9c6406e030f425121add559fdf4e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::ParseImmediate</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseImmediate</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="244" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ac18693705845c1d936757789df24d7f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::EmitFunctionParms</definition>
+        <argsstring>(int op, idVarDef *func, int startarg, int startsize, idVarDef *object)</argsstring>
+        <name>EmitFunctionParms</name>
+        <param>
+          <type>int</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>startarg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>startsize</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="245" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a60a43cea6bf88eb3804f236702ffdd10" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::ParseFunctionCall</definition>
+        <argsstring>(idVarDef *func)</argsstring>
+        <name>ParseFunctionCall</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="246" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a99ef497cd46b601873912dce93a447c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::ParseObjectCall</definition>
+        <argsstring>(idVarDef *object, idVarDef *func)</argsstring>
+        <name>ParseObjectCall</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="247" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1accc66e97abdc8ba245600263256c97ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::ParseEventCall</definition>
+        <argsstring>(idVarDef *object, idVarDef *func)</argsstring>
+        <name>ParseEventCall</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="248" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1acf8f30ac0838ac26812340e0afd4c95f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::ParseSysObjectCall</definition>
+        <argsstring>(idVarDef *func)</argsstring>
+        <name>ParseSysObjectCall</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="249" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1acc43338032b5674692a5e57f1fa1dd58" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::LookupDef</definition>
+        <argsstring>(const char *name, const idVarDef *baseobj)</argsstring>
+        <name>LookupDef</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>baseobj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="250" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a4f0955e640c20cd6d0e5d1511f108e2f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::ParseValue</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseValue</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="251" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aabeea71433c6bdfbc8997d893904d5d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::GetTerm</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetTerm</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="252" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ac486326efa899e4bcf6c8d169398fa32" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idCompiler::TypeMatches</definition>
+        <argsstring>(etype_t type1, etype_t type2) const </argsstring>
+        <name>TypeMatches</name>
+        <param>
+          <type>etype_t</type>
+          <declname>type1</declname>
+        </param>
+        <param>
+          <type>etype_t</type>
+          <declname>type2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="253" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a06aa9ff797d42104afd3f8dcf47a9e0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+        <definition>idVarDef* idCompiler::GetExpression</definition>
+        <argsstring>(int priority)</argsstring>
+        <name>GetExpression</name>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="254" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a3c8fe03d6897af043b7e78cc844ab6b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+        <definition>idTypeDef* idCompiler::GetTypeForEventArg</definition>
+        <argsstring>(char argType)</argsstring>
+        <name>GetTypeForEventArg</name>
+        <param>
+          <type>char</type>
+          <declname>argType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="255" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a149bec379c0a4fb5a1edf6b1e5930622" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::PatchLoop</definition>
+        <argsstring>(int start, int continuePos)</argsstring>
+        <name>PatchLoop</name>
+        <param>
+          <type>int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>continuePos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="256" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aee74d772e6518cb7769930cc2ec4aac8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseReturnStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseReturnStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="257" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a49c05776fae64a0c76dff5e4484d4cf1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseWhileStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseWhileStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="258" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a7248a6233c3f57206620b4520ad1e5ac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseForStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseForStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="259" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a1a32881d4f45c931649e0be47b9ce8cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseDoWhileStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseDoWhileStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="260" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ad7604a360c711512321e66bd9e7b391a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseIfStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseIfStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="261" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a35ad6f100ed51aea6c3dc1312a0a75ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseStatement</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseStatement</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="262" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aaf5b58e569732b55993912c534990531" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseObjectDef</definition>
+        <argsstring>(const char *objname)</argsstring>
+        <name>ParseObjectDef</name>
+        <param>
+          <type>const char *</type>
+          <declname>objname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="263" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a5c16591e502fca5d44a8038e19dd332b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+        <definition>idTypeDef* idCompiler::ParseFunction</definition>
+        <argsstring>(idTypeDef *returnType, const char *name)</argsstring>
+        <name>ParseFunction</name>
+        <param>
+          <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>returnType</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="264" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1ac44985c8e774d360c8d5a36177f7ab66" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseFunctionDef</definition>
+        <argsstring>(idTypeDef *returnType, const char *name)</argsstring>
+        <name>ParseFunctionDef</name>
+        <param>
+          <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>returnType</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="265" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a81eed828e8154da5187d3aee5c8f5d24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseVariableDef</definition>
+        <argsstring>(idTypeDef *type, const char *name)</argsstring>
+        <name>ParseVariableDef</name>
+        <param>
+          <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="266" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1abbba361296507a27d696fad1d429707b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseEventDef</definition>
+        <argsstring>(idTypeDef *type, const char *name)</argsstring>
+        <name>ParseEventDef</name>
+        <param>
+          <type><ref refid="classid_type_def" kindref="compound">idTypeDef</ref> *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="267" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1aca66ddd7c7dc1c6bdbb66f74f4fafb91" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseDefs</definition>
+        <argsstring>(void)</argsstring>
+        <name>ParseDefs</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="268" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a58a31ddbd275d2060d4bb9fe0a86cca5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::ParseNamespace</definition>
+        <argsstring>(idVarDef *newScope)</argsstring>
+        <name>ParseNamespace</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>newScope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="269" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_compiler_1af9618f727b7022c4fdfb2b18d400f47b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idCompiler::idCompiler</definition>
+        <argsstring>()</argsstring>
+        <name>idCompiler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="274" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="209" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a82ee63aa3f51e877dd57f8d542b4bfb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::CompileFile</definition>
+        <argsstring>(const char *text, const char *filename, bool console)</argsstring>
+        <name>CompileFile</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>console</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="275" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.cpp" bodystart="2574" bodyend="2649"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1af9618f727b7022c4fdfb2b18d400f47b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idCompiler::idCompiler</definition>
+        <argsstring>()</argsstring>
+        <name>idCompiler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="274" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compiler_1a82ee63aa3f51e877dd57f8d542b4bfb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idCompiler::CompileFile</definition>
+        <argsstring>(const char *text, const char *filename, bool console)</argsstring>
+        <name>CompileFile</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>console</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Compiler.h" line="275" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="23011">
+        <label>function_t</label>
+        <link refid="classfunction__t"/>
+        <childnode refid="23012" relation="usage">
+          <edgelabel>parmSize</edgelabel>
+        </childnode>
+        <childnode refid="23013" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="23009" relation="usage">
+          <edgelabel>def</edgelabel>
+        </childnode>
+        <childnode refid="23014" relation="usage">
+          <edgelabel>eventdef</edgelabel>
+        </childnode>
+      </node>
+      <node id="23010">
+        <label>varEval_s</label>
+        <link refid="unionvar_eval__s"/>
+        <childnode refid="23011" relation="usage">
+          <edgelabel>functionPtr</edgelabel>
+        </childnode>
+        <childnode refid="23010" relation="usage">
+          <edgelabel>evalPtr</edgelabel>
+        </childnode>
+        <childnode refid="23015" relation="usage">
+          <edgelabel>vectorPtr</edgelabel>
+        </childnode>
+        <childnode refid="23016" relation="usage">
+          <edgelabel>objectPtrPtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="23014">
+        <label>idEventDef</label>
+        <link refid="classid_event_def"/>
+      </node>
+      <node id="23016">
+        <label>idScriptObject</label>
+        <link refid="classid_script_object"/>
+      </node>
+      <node id="23008">
+        <label>opcode_s</label>
+        <link refid="structopcode__s"/>
+        <childnode refid="23009" relation="usage">
+          <edgelabel>type_a</edgelabel>
+          <edgelabel>type_b</edgelabel>
+          <edgelabel>type_c</edgelabel>
+        </childnode>
+      </node>
+      <node id="23012">
+        <label>idList&lt; int &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="23013">
+        <label>idTypeDef</label>
+        <link refid="classid_type_def"/>
+        <childnode refid="23009" relation="usage">
+          <edgelabel>def</edgelabel>
+        </childnode>
+      </node>
+      <node id="23009">
+        <label>idVarDef</label>
+        <link refid="classid_var_def"/>
+        <childnode refid="23010" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
+        <childnode refid="23009" relation="usage">
+          <edgelabel>scope</edgelabel>
+        </childnode>
+      </node>
+      <node id="23015">
+        <label>idVec3</label>
+        <link refid="classid_vec3"/>
+      </node>
+      <node id="23007">
+        <label>idCompiler</label>
+        <link refid="classid_compiler"/>
+        <childnode refid="23008" relation="usage">
+          <edgelabel>opcodes</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" line="197" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Compiler.h" bodystart="197" bodyend="276"/>
+    <listofallmembers>
+      <member refid="classid_compiler_1abda94339f973b3bcfe308ba3cb49f350" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>basetype</name></member>
+      <member refid="classid_compiler_1a50c9927cb6372aac4fa05317ebbd1a71" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>braceDepth</name></member>
+      <member refid="classid_compiler_1a4c2f200b711c40360ad91a3212d83a70" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>callthread</name></member>
+      <member refid="classid_compiler_1aa78a6183759cfe963ec97dbf50574223" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>CheckToken</name></member>
+      <member refid="classid_compiler_1aa78a6183759cfe963ec97dbf50574223" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>CheckToken</name></member>
+      <member refid="classid_compiler_1a646e275ba36b3f198cb9ac97d046ea0a" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>CheckType</name></member>
+      <member refid="classid_compiler_1a889e7090ce98f3da528d7aeb5882a3aa" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>CheckType</name></member>
+      <member refid="classid_compiler_1a82ee63aa3f51e877dd57f8d542b4bfb0" prot="public" virt="non-virtual"><scope>idCompiler</scope><name>CompileFile</name></member>
+      <member refid="classid_compiler_1a82ee63aa3f51e877dd57f8d542b4bfb0" prot="public" virt="non-virtual"><scope>idCompiler</scope><name>CompileFile</name></member>
+      <member refid="classid_compiler_1a2c283c6ccdc97dd0c072c07f7fbc536a" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>console</name></member>
+      <member refid="classid_compiler_1af4b5e9f217228c1568681459c042798d" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>currentFileNumber</name></member>
+      <member refid="classid_compiler_1acba5b982bdd1da07ca9b422e43d5b27a" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>currentLineNumber</name></member>
+      <member refid="classid_compiler_1aa323e92ffa0b7aa6125a986f05a58848" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>Divide</name></member>
+      <member refid="classid_compiler_1a56c38480731887c707c4586ac52fdede" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>Divide</name></member>
+      <member refid="classid_compiler_1a89b6a14b36ef75c60f03699bde71212c" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>EmitFunctionParms</name></member>
+      <member refid="classid_compiler_1ac18693705845c1d936757789df24d7f5" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>EmitFunctionParms</name></member>
+      <member refid="classid_compiler_1a1c6f98c51ccf415e66f61d930e924967" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>EmitOpcode</name></member>
+      <member refid="classid_compiler_1a6657324cbc4a3ab31e1f22f476171aca" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>EmitOpcode</name></member>
+      <member refid="classid_compiler_1a0c7a08f724984648305aefbc3456323c" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>EmitOpcode</name></member>
+      <member refid="classid_compiler_1a47df3e4a7e4922db414c35cb9f507e11" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>EmitOpcode</name></member>
+      <member refid="classid_compiler_1ab358601dc34935fd19324fa4081dfe8f" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>EmitPush</name></member>
+      <member refid="classid_compiler_1ab358601dc34935fd19324fa4081dfe8f" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>EmitPush</name></member>
+      <member refid="classid_compiler_1a3d8da8983c8fa04c06126846a3164c14" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>eof</name></member>
+      <member refid="classid_compiler_1ad1b1e5d5cec3516c3bc3e14acba1233e" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>Error</name></member>
+      <member refid="classid_compiler_1ad1b1e5d5cec3516c3bc3e14acba1233e" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>Error</name></member>
+      <member refid="classid_compiler_1a3daad4326188d138487c62f8449b3f78" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>errorCount</name></member>
+      <member refid="classid_compiler_1aecc874329ae85da8ae8d2d6421baefe2" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ExpectToken</name></member>
+      <member refid="classid_compiler_1aecc874329ae85da8ae8d2d6421baefe2" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ExpectToken</name></member>
+      <member refid="classid_compiler_1adfb269d0316be52cc42f81965bc48599" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>FindImmediate</name></member>
+      <member refid="classid_compiler_1a98d1da4fc535f6d404feb5ba89338ec8" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>FindImmediate</name></member>
+      <member refid="classid_compiler_1a7614cd03cee7031b980162e0fead9b33" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>GetExpression</name></member>
+      <member refid="classid_compiler_1a06aa9ff797d42104afd3f8dcf47a9e0c" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>GetExpression</name></member>
+      <member refid="classid_compiler_1a0573a3ef40b126553bd330e284af6d4d" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>GetImmediate</name></member>
+      <member refid="classid_compiler_1ac40ef2e2e31f6fb2123138d15fad3ad0" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>GetImmediate</name></member>
+      <member refid="classid_compiler_1ab798fb98c791bb11e72fd61c51ccb454" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>GetTerm</name></member>
+      <member refid="classid_compiler_1aabeea71433c6bdfbc8997d893904d5d1" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>GetTerm</name></member>
+      <member refid="classid_compiler_1a1b73fa62a552ad930834b8e3147fe6a6" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>GetTypeForEventArg</name></member>
+      <member refid="classid_compiler_1a3c8fe03d6897af043b7e78cc844ab6b5" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>GetTypeForEventArg</name></member>
+      <member refid="classid_compiler_1af9618f727b7022c4fdfb2b18d400f47b" prot="public" virt="non-virtual"><scope>idCompiler</scope><name>idCompiler</name></member>
+      <member refid="classid_compiler_1af9618f727b7022c4fdfb2b18d400f47b" prot="public" virt="non-virtual"><scope>idCompiler</scope><name>idCompiler</name></member>
+      <member refid="classid_compiler_1a3d214c3a12cda8b9b8c7e06e6b31b6ef" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>immediate</name></member>
+      <member refid="classid_compiler_1a5b07d95cf2e9d34eb3015354b1c25ec4" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>immediateType</name></member>
+      <member refid="classid_compiler_1a699eef15fe2376c4eb96bbea17720869" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>JumpConstant</name></member>
+      <member refid="classid_compiler_1aade961a8f6e2545efe4a59ad1f3b132b" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>JumpConstant</name></member>
+      <member refid="classid_compiler_1afe67acf7e38ed5c7a03e83dee7d636ac" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>JumpDef</name></member>
+      <member refid="classid_compiler_1abe0739145796b7ad703a4915812d726f" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>JumpDef</name></member>
+      <member refid="classid_compiler_1a1222884b45184be31d602bb9d699ef55" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>JumpFrom</name></member>
+      <member refid="classid_compiler_1a1a4a80c0591c17d2271231d19b0c4298" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>JumpFrom</name></member>
+      <member refid="classid_compiler_1ace07a4a4852054c727a346c4d6548122" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>JumpTo</name></member>
+      <member refid="classid_compiler_1aeabd1cd83e3e111817220c990c248204" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>JumpTo</name></member>
+      <member refid="classid_compiler_1ab05896077912e42a80fb4a40fe5555c8" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>LookupDef</name></member>
+      <member refid="classid_compiler_1acc43338032b5674692a5e57f1fa1dd58" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>LookupDef</name></member>
+      <member refid="classid_compiler_1a713c8ce7355aa27b81eb40b55f4339c9" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>loopDepth</name></member>
+      <member refid="classid_compiler_1a071813b16efce92ab7bb520ecc83d525" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>NextToken</name></member>
+      <member refid="classid_compiler_1a071813b16efce92ab7bb520ecc83d525" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>NextToken</name></member>
+      <member refid="classid_compiler_1af88df4d76dfe160bfc0a6ca932a70107" prot="public" virt="non-virtual"><scope>idCompiler</scope><name>opcodes</name></member>
+      <member refid="classid_compiler_1a577dc6df06a7e0299cd6508540adaf3e" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>OptimizeOpcode</name></member>
+      <member refid="classid_compiler_1a4f58061ea2de34fb4461213d3f651125" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>OptimizeOpcode</name></member>
+      <member refid="classid_compiler_1aca66ddd7c7dc1c6bdbb66f74f4fafb91" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseDefs</name></member>
+      <member refid="classid_compiler_1aca66ddd7c7dc1c6bdbb66f74f4fafb91" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseDefs</name></member>
+      <member refid="classid_compiler_1a1a32881d4f45c931649e0be47b9ce8cc" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseDoWhileStatement</name></member>
+      <member refid="classid_compiler_1a1a32881d4f45c931649e0be47b9ce8cc" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseDoWhileStatement</name></member>
+      <member refid="classid_compiler_1a779ecb4fb48d12ba9bd5224f1212c154" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseEventCall</name></member>
+      <member refid="classid_compiler_1accc66e97abdc8ba245600263256c97ca" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseEventCall</name></member>
+      <member refid="classid_compiler_1abbba361296507a27d696fad1d429707b" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseEventDef</name></member>
+      <member refid="classid_compiler_1abbba361296507a27d696fad1d429707b" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseEventDef</name></member>
+      <member refid="classid_compiler_1a7248a6233c3f57206620b4520ad1e5ac" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseForStatement</name></member>
+      <member refid="classid_compiler_1a7248a6233c3f57206620b4520ad1e5ac" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseForStatement</name></member>
+      <member refid="classid_compiler_1a1de8e8c1ff4e33fe90bee2df4615b41b" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseFunction</name></member>
+      <member refid="classid_compiler_1a5c16591e502fca5d44a8038e19dd332b" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseFunction</name></member>
+      <member refid="classid_compiler_1a59f236f6d085e00309fa8ef3dce58cf6" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseFunctionCall</name></member>
+      <member refid="classid_compiler_1a60a43cea6bf88eb3804f236702ffdd10" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseFunctionCall</name></member>
+      <member refid="classid_compiler_1ac44985c8e774d360c8d5a36177f7ab66" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseFunctionDef</name></member>
+      <member refid="classid_compiler_1ac44985c8e774d360c8d5a36177f7ab66" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseFunctionDef</name></member>
+      <member refid="classid_compiler_1ad7604a360c711512321e66bd9e7b391a" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseIfStatement</name></member>
+      <member refid="classid_compiler_1ad7604a360c711512321e66bd9e7b391a" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseIfStatement</name></member>
+      <member refid="classid_compiler_1a5e16686b8de0531c60001103892ae189" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseImmediate</name></member>
+      <member refid="classid_compiler_1a9ad9c6406e030f425121add559fdf4e5" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseImmediate</name></member>
+      <member refid="classid_compiler_1ad28b4c957e59ba58b4b3141a1b154fe8" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseName</name></member>
+      <member refid="classid_compiler_1ad28b4c957e59ba58b4b3141a1b154fe8" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseName</name></member>
+      <member refid="classid_compiler_1a58a31ddbd275d2060d4bb9fe0a86cca5" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseNamespace</name></member>
+      <member refid="classid_compiler_1a58a31ddbd275d2060d4bb9fe0a86cca5" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseNamespace</name></member>
+      <member refid="classid_compiler_1addbed09d7766b7e2944e17e1d743a1cc" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseObjectCall</name></member>
+      <member refid="classid_compiler_1a99ef497cd46b601873912dce93a447c8" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseObjectCall</name></member>
+      <member refid="classid_compiler_1aaf5b58e569732b55993912c534990531" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseObjectDef</name></member>
+      <member refid="classid_compiler_1aaf5b58e569732b55993912c534990531" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseObjectDef</name></member>
+      <member refid="classid_compiler_1a8e4937148e7e026714b83fca29a77489" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>parser</name></member>
+      <member refid="classid_compiler_1aee74d772e6518cb7769930cc2ec4aac8" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseReturnStatement</name></member>
+      <member refid="classid_compiler_1aee74d772e6518cb7769930cc2ec4aac8" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseReturnStatement</name></member>
+      <member refid="classid_compiler_1a61651e3f7a435934cdf20a0b4b3c0387" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>parserPtr</name></member>
+      <member refid="classid_compiler_1a35ad6f100ed51aea6c3dc1312a0a75ba" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseStatement</name></member>
+      <member refid="classid_compiler_1a35ad6f100ed51aea6c3dc1312a0a75ba" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseStatement</name></member>
+      <member refid="classid_compiler_1a9309ef77474a7225f79a964a0320e6c3" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseSysObjectCall</name></member>
+      <member refid="classid_compiler_1acf8f30ac0838ac26812340e0afd4c95f" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseSysObjectCall</name></member>
+      <member refid="classid_compiler_1aa57d762dfe4c06b193ad58f1cbd144a0" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseType</name></member>
+      <member refid="classid_compiler_1a9fa565ccacc84c511a456c7137562dd0" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseType</name></member>
+      <member refid="classid_compiler_1a4c07c27276e22218f5f350a6be4fe37a" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseValue</name></member>
+      <member refid="classid_compiler_1a4f0955e640c20cd6d0e5d1511f108e2f" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseValue</name></member>
+      <member refid="classid_compiler_1a81eed828e8154da5187d3aee5c8f5d24" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseVariableDef</name></member>
+      <member refid="classid_compiler_1a81eed828e8154da5187d3aee5c8f5d24" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseVariableDef</name></member>
+      <member refid="classid_compiler_1a49c05776fae64a0c76dff5e4484d4cf1" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseWhileStatement</name></member>
+      <member refid="classid_compiler_1a49c05776fae64a0c76dff5e4484d4cf1" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>ParseWhileStatement</name></member>
+      <member refid="classid_compiler_1a149bec379c0a4fb5a1edf6b1e5930622" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>PatchLoop</name></member>
+      <member refid="classid_compiler_1a149bec379c0a4fb5a1edf6b1e5930622" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>PatchLoop</name></member>
+      <member refid="classid_compiler_1a883ed883af32a1eb4e5e2ccc7a4a1c78" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>punctuation</name></member>
+      <member refid="classid_compiler_1a04a27349fbbabc8c28680ef2fec5e8f9" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>punctuationValid</name></member>
+      <member refid="classid_compiler_1ac0a36e3dcd12415c9cd4a6abe8033dee" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>scope</name></member>
+      <member refid="classid_compiler_1a383a2bf1872a5d4b684ffac2e6ca6483" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>SizeConstant</name></member>
+      <member refid="classid_compiler_1ac6ba96d31775a514b22f921a38f1bd6f" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>SizeConstant</name></member>
+      <member refid="classid_compiler_1ac3dac0d6d129304bedc17473558afac1" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>SkipOutOfFunction</name></member>
+      <member refid="classid_compiler_1ac3dac0d6d129304bedc17473558afac1" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>SkipOutOfFunction</name></member>
+      <member refid="classid_compiler_1a5679cfa1d0edab1470b5fc73dd143d86" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>SkipToSemicolon</name></member>
+      <member refid="classid_compiler_1a5679cfa1d0edab1470b5fc73dd143d86" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>SkipToSemicolon</name></member>
+      <member refid="classid_compiler_1add2159d57940ab0d7fbd8f7390afcbbe" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>token</name></member>
+      <member refid="classid_compiler_1ac486326efa899e4bcf6c8d169398fa32" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>TypeMatches</name></member>
+      <member refid="classid_compiler_1ac486326efa899e4bcf6c8d169398fa32" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>TypeMatches</name></member>
+      <member refid="classid_compiler_1ae54497d1858c1f6c6e3eb1386abdaa03" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>VirtualFunctionConstant</name></member>
+      <member refid="classid_compiler_1af131fe3388b161fc653b680406bc486d" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>VirtualFunctionConstant</name></member>
+      <member refid="classid_compiler_1a75fd64d2071db608efc3b038bd2c7b24" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>Warning</name></member>
+      <member refid="classid_compiler_1a7378716f0d18574f885ed2bef69ec0d9" prot="private" virt="non-virtual"><scope>idCompiler</scope><name>Warning</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

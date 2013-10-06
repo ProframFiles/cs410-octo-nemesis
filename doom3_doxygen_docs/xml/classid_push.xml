@@ -1,0 +1,865 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_push" kind="class" prot="public">
+    <compoundname>idPush</compoundname>
+    <innerclass refid="structid_push_1_1pushed__s" prot="private">idPush::pushed_s</innerclass>
+    <innerclass refid="structid_push_1_1pushed_group__s" prot="private">idPush::pushedGroup_s</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classid_push_1a348c65d056d6652f4f675572e3a3665e" prot="private" static="no" mutable="no">
+        <type>struct idPush::pushed_s</type>
+        <definition>struct idPush::pushed_s idPush::pushed</definition>
+        <argsstring>[MAX_GENTITIES]</argsstring>
+        <name>pushed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_push_1af693093bb102ce5ef8a84c42e8bb6b36" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idPush::numPushed</definition>
+        <argsstring></argsstring>
+        <name>numPushed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="77" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_push_1ae3a76831eab529c91328dc4fd18d0ba3" prot="private" static="no" mutable="no">
+        <type>struct idPush::pushedGroup_s</type>
+        <definition>struct idPush::pushedGroup_s idPush::pushedGroup</definition>
+        <argsstring>[MAX_GENTITIES]</argsstring>
+        <name>pushedGroup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_push_1a2a8ce9df8fbb9f2fbe8af893fb96f9d1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idPush::pushedGroupSize</definition>
+        <argsstring></argsstring>
+        <name>pushedGroupSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="85" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_push_1a78c9fb09a8a521c2b275572afb3becb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float idPush::ClipTranslationalPush</definition>
+        <argsstring>(trace_t &amp;results, idEntity *pusher, const int flags, const idVec3 &amp;newOrigin, const idVec3 &amp;move)</argsstring>
+        <name>ClipTranslationalPush</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>pusher</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>newOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>move</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="53" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="1042" bodyend="1213"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1aec771603ae7a91c7d4bf3038c3ea6e0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float idPush::ClipRotationalPush</definition>
+        <argsstring>(trace_t &amp;results, idEntity *pusher, const int flags, const idMat3 &amp;newAxis, const idRotation &amp;rotation)</argsstring>
+        <name>ClipRotationalPush</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>pusher</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>newAxis</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_rotation" kindref="compound">idRotation</ref> &amp;</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="56" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="1222" bodyend="1378"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1add2f9923ae113db99890719015e17feb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float idPush::ClipPush</definition>
+        <argsstring>(trace_t &amp;results, idEntity *pusher, const int flags, const idVec3 &amp;oldOrigin, const idMat3 &amp;oldAxis, idVec3 &amp;newOrigin, idMat3 &amp;newAxis)</argsstring>
+        <name>ClipPush</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>pusher</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>oldOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>oldAxis</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>newOrigin</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>newAxis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="59" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="1390" bodyend="1448"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a85749d48e9cf3f360f11c7e2a01ea4b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idPush::InitSavingPushedEntityPositions</definition>
+        <argsstring>(void)</argsstring>
+        <name>InitSavingPushedEntityPositions</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="64" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a84437e1e9353b205105a47e53348e028" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idPush::RestorePushedEntityPositions</definition>
+        <argsstring>(void)</argsstring>
+        <name>RestorePushedEntityPositions</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="66" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="84" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1ac0a58f27a6aef152a351f9d4f01c6c07" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int idPush::GetNumPushedEntities</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetNumPushedEntities</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="68" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1ad145ba64c0679be9133619bf6bc5c0be" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+        <definition>idEntity* idPush::GetPushedEntity</definition>
+        <argsstring>(int i) const </argsstring>
+        <name>GetPushedEntity</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="70" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a78c9fb09a8a521c2b275572afb3becb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float idPush::ClipTranslationalPush</definition>
+        <argsstring>(trace_t &amp;results, idEntity *pusher, const int flags, const idVec3 &amp;newOrigin, const idVec3 &amp;move)</argsstring>
+        <name>ClipTranslationalPush</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>pusher</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>newOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>move</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1aec771603ae7a91c7d4bf3038c3ea6e0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float idPush::ClipRotationalPush</definition>
+        <argsstring>(trace_t &amp;results, idEntity *pusher, const int flags, const idMat3 &amp;newAxis, const idRotation &amp;rotation)</argsstring>
+        <name>ClipRotationalPush</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>pusher</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>newAxis</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_rotation" kindref="compound">idRotation</ref> &amp;</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1add2f9923ae113db99890719015e17feb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float idPush::ClipPush</definition>
+        <argsstring>(trace_t &amp;results, idEntity *pusher, const int flags, const idVec3 &amp;oldOrigin, const idMat3 &amp;oldAxis, idVec3 &amp;newOrigin, idMat3 &amp;newAxis)</argsstring>
+        <name>ClipPush</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>pusher</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>oldOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>oldAxis</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>newOrigin</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>newAxis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a85749d48e9cf3f360f11c7e2a01ea4b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idPush::InitSavingPushedEntityPositions</definition>
+        <argsstring>(void)</argsstring>
+        <name>InitSavingPushedEntityPositions</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="64" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a84437e1e9353b205105a47e53348e028" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idPush::RestorePushedEntityPositions</definition>
+        <argsstring>(void)</argsstring>
+        <name>RestorePushedEntityPositions</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1ac0a58f27a6aef152a351f9d4f01c6c07" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int idPush::GetNumPushedEntities</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetNumPushedEntities</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="68" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1ad145ba64c0679be9133619bf6bc5c0be" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+        <definition>idEntity* idPush::GetPushedEntity</definition>
+        <argsstring>(int i) const </argsstring>
+        <name>GetPushedEntity</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="70" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" bodystart="70" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classid_push_1ae427ee1ccbdcd9e59c235f51d8bdcf99" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idPush::SaveEntityPosition</definition>
+        <argsstring>(idEntity *ent)</argsstring>
+        <name>SaveEntityPosition</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="88" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="49" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a1a28d7ddde2d76559cb6d8823ab5ac1d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idPush::RotateEntityToAxial</definition>
+        <argsstring>(idEntity *ent, idVec3 rotationPoint)</argsstring>
+        <name>RotateEntityToAxial</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref></type>
+          <declname>rotationPoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="89" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="105" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a82d8d98264c26c09e11680844b0fa811" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idPush::ClipEntityRotation</definition>
+        <argsstring>(trace_t &amp;trace, const idEntity *ent, const idClipModel *clipModel, idClipModel *skip, const idRotation &amp;rotation)</argsstring>
+        <name>ClipEntityRotation</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>trace</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>clipModel</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>skip</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_rotation" kindref="compound">idRotation</ref> &amp;</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="101" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="668" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a656a61aba4f0031fb81c9471e6ebd90b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idPush::ClipEntityTranslation</definition>
+        <argsstring>(trace_t &amp;trace, const idEntity *ent, const idClipModel *clipModel, idClipModel *skip, const idVec3 &amp;translation)</argsstring>
+        <name>ClipEntityTranslation</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>trace</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>clipModel</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>skip</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>translation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="103" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="686" bodyend="697"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1af9c2424fc6c9f0792de503635976b62d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idPush::TryTranslatePushEntity</definition>
+        <argsstring>(trace_t &amp;results, idEntity *check, idClipModel *clipModel, const int flags, const idVec3 &amp;newOrigin, const idVec3 &amp;move)</argsstring>
+        <name>TryTranslatePushEntity</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>check</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>clipModel</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>newOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>move</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="105" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="866" bodyend="986"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a2df34331823ebeb5d678b6e504a341cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idPush::TryRotatePushEntity</definition>
+        <argsstring>(trace_t &amp;results, idEntity *check, idClipModel *clipModel, const int flags, const idMat3 &amp;newAxis, const idRotation &amp;rotation)</argsstring>
+        <name>TryRotatePushEntity</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>check</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>clipModel</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>newAxis</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_rotation" kindref="compound">idRotation</ref> &amp;</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="107" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="708" bodyend="855"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a8d4f04bb9a5456591698ae9db41fa291" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idPush::DiscardEntities</definition>
+        <argsstring>(idEntity *entityList[], int numEntities, int flags, idEntity *pusher)</argsstring>
+        <name>DiscardEntities</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>entityList</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numEntities</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>pusher</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="109" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.cpp" bodystart="993" bodyend="1033"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1ae427ee1ccbdcd9e59c235f51d8bdcf99" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idPush::SaveEntityPosition</definition>
+        <argsstring>(idEntity *ent)</argsstring>
+        <name>SaveEntityPosition</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a1a28d7ddde2d76559cb6d8823ab5ac1d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idPush::RotateEntityToAxial</definition>
+        <argsstring>(idEntity *ent, idVec3 rotationPoint)</argsstring>
+        <name>RotateEntityToAxial</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref></type>
+          <declname>rotationPoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="89" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a82d8d98264c26c09e11680844b0fa811" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idPush::ClipEntityRotation</definition>
+        <argsstring>(trace_t &amp;trace, const idEntity *ent, const idClipModel *clipModel, idClipModel *skip, const idRotation &amp;rotation)</argsstring>
+        <name>ClipEntityRotation</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>trace</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>clipModel</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>skip</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_rotation" kindref="compound">idRotation</ref> &amp;</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="101" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a656a61aba4f0031fb81c9471e6ebd90b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idPush::ClipEntityTranslation</definition>
+        <argsstring>(trace_t &amp;trace, const idEntity *ent, const idClipModel *clipModel, idClipModel *skip, const idVec3 &amp;translation)</argsstring>
+        <name>ClipEntityTranslation</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>trace</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>clipModel</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>skip</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>translation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="103" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1af9c2424fc6c9f0792de503635976b62d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idPush::TryTranslatePushEntity</definition>
+        <argsstring>(trace_t &amp;results, idEntity *check, idClipModel *clipModel, const int flags, const idVec3 &amp;newOrigin, const idVec3 &amp;move)</argsstring>
+        <name>TryTranslatePushEntity</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>check</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>clipModel</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>newOrigin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>move</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="105" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a2df34331823ebeb5d678b6e504a341cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idPush::TryRotatePushEntity</definition>
+        <argsstring>(trace_t &amp;results, idEntity *check, idClipModel *clipModel, const int flags, const idMat3 &amp;newAxis, const idRotation &amp;rotation)</argsstring>
+        <name>TryRotatePushEntity</name>
+        <param>
+          <type><ref refid="structtrace__s" kindref="compound">trace_t</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>check</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_clip_model" kindref="compound">idClipModel</ref> *</type>
+          <declname>clipModel</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_mat3" kindref="compound">idMat3</ref> &amp;</type>
+          <declname>newAxis</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_rotation" kindref="compound">idRotation</ref> &amp;</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="107" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_push_1a8d4f04bb9a5456591698ae9db41fa291" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idPush::DiscardEntities</definition>
+        <argsstring>(idEntity *entityList[], int numEntities, int flags, idEntity *pusher)</argsstring>
+        <name>DiscardEntities</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>entityList</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numEntities</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>pusher</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/physics/Push.h" line="109" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" line="48" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/physics/Push.h" bodystart="48" bodyend="111"/>
+    <listofallmembers>
+      <member refid="classid_push_1a82d8d98264c26c09e11680844b0fa811" prot="private" virt="non-virtual"><scope>idPush</scope><name>ClipEntityRotation</name></member>
+      <member refid="classid_push_1a82d8d98264c26c09e11680844b0fa811" prot="private" virt="non-virtual"><scope>idPush</scope><name>ClipEntityRotation</name></member>
+      <member refid="classid_push_1a656a61aba4f0031fb81c9471e6ebd90b" prot="private" virt="non-virtual"><scope>idPush</scope><name>ClipEntityTranslation</name></member>
+      <member refid="classid_push_1a656a61aba4f0031fb81c9471e6ebd90b" prot="private" virt="non-virtual"><scope>idPush</scope><name>ClipEntityTranslation</name></member>
+      <member refid="classid_push_1add2f9923ae113db99890719015e17feb" prot="public" virt="non-virtual"><scope>idPush</scope><name>ClipPush</name></member>
+      <member refid="classid_push_1add2f9923ae113db99890719015e17feb" prot="public" virt="non-virtual"><scope>idPush</scope><name>ClipPush</name></member>
+      <member refid="classid_push_1aec771603ae7a91c7d4bf3038c3ea6e0e" prot="public" virt="non-virtual"><scope>idPush</scope><name>ClipRotationalPush</name></member>
+      <member refid="classid_push_1aec771603ae7a91c7d4bf3038c3ea6e0e" prot="public" virt="non-virtual"><scope>idPush</scope><name>ClipRotationalPush</name></member>
+      <member refid="classid_push_1a78c9fb09a8a521c2b275572afb3becb2" prot="public" virt="non-virtual"><scope>idPush</scope><name>ClipTranslationalPush</name></member>
+      <member refid="classid_push_1a78c9fb09a8a521c2b275572afb3becb2" prot="public" virt="non-virtual"><scope>idPush</scope><name>ClipTranslationalPush</name></member>
+      <member refid="classid_push_1a8d4f04bb9a5456591698ae9db41fa291" prot="private" virt="non-virtual"><scope>idPush</scope><name>DiscardEntities</name></member>
+      <member refid="classid_push_1a8d4f04bb9a5456591698ae9db41fa291" prot="private" virt="non-virtual"><scope>idPush</scope><name>DiscardEntities</name></member>
+      <member refid="classid_push_1ac0a58f27a6aef152a351f9d4f01c6c07" prot="public" virt="non-virtual"><scope>idPush</scope><name>GetNumPushedEntities</name></member>
+      <member refid="classid_push_1ac0a58f27a6aef152a351f9d4f01c6c07" prot="public" virt="non-virtual"><scope>idPush</scope><name>GetNumPushedEntities</name></member>
+      <member refid="classid_push_1ad145ba64c0679be9133619bf6bc5c0be" prot="public" virt="non-virtual"><scope>idPush</scope><name>GetPushedEntity</name></member>
+      <member refid="classid_push_1ad145ba64c0679be9133619bf6bc5c0be" prot="public" virt="non-virtual"><scope>idPush</scope><name>GetPushedEntity</name></member>
+      <member refid="classid_push_1a85749d48e9cf3f360f11c7e2a01ea4b8" prot="public" virt="non-virtual"><scope>idPush</scope><name>InitSavingPushedEntityPositions</name></member>
+      <member refid="classid_push_1a85749d48e9cf3f360f11c7e2a01ea4b8" prot="public" virt="non-virtual"><scope>idPush</scope><name>InitSavingPushedEntityPositions</name></member>
+      <member refid="classid_push_1af693093bb102ce5ef8a84c42e8bb6b36" prot="private" virt="non-virtual"><scope>idPush</scope><name>numPushed</name></member>
+      <member refid="classid_push_1a348c65d056d6652f4f675572e3a3665e" prot="private" virt="non-virtual"><scope>idPush</scope><name>pushed</name></member>
+      <member refid="classid_push_1ae3a76831eab529c91328dc4fd18d0ba3" prot="private" virt="non-virtual"><scope>idPush</scope><name>pushedGroup</name></member>
+      <member refid="classid_push_1a2a8ce9df8fbb9f2fbe8af893fb96f9d1" prot="private" virt="non-virtual"><scope>idPush</scope><name>pushedGroupSize</name></member>
+      <member refid="classid_push_1a84437e1e9353b205105a47e53348e028" prot="public" virt="non-virtual"><scope>idPush</scope><name>RestorePushedEntityPositions</name></member>
+      <member refid="classid_push_1a84437e1e9353b205105a47e53348e028" prot="public" virt="non-virtual"><scope>idPush</scope><name>RestorePushedEntityPositions</name></member>
+      <member refid="classid_push_1a1a28d7ddde2d76559cb6d8823ab5ac1d" prot="private" virt="non-virtual"><scope>idPush</scope><name>RotateEntityToAxial</name></member>
+      <member refid="classid_push_1a1a28d7ddde2d76559cb6d8823ab5ac1d" prot="private" virt="non-virtual"><scope>idPush</scope><name>RotateEntityToAxial</name></member>
+      <member refid="classid_push_1ae427ee1ccbdcd9e59c235f51d8bdcf99" prot="private" virt="non-virtual"><scope>idPush</scope><name>SaveEntityPosition</name></member>
+      <member refid="classid_push_1ae427ee1ccbdcd9e59c235f51d8bdcf99" prot="private" virt="non-virtual"><scope>idPush</scope><name>SaveEntityPosition</name></member>
+      <member refid="classid_push_1a2df34331823ebeb5d678b6e504a341cd" prot="private" virt="non-virtual"><scope>idPush</scope><name>TryRotatePushEntity</name></member>
+      <member refid="classid_push_1a2df34331823ebeb5d678b6e504a341cd" prot="private" virt="non-virtual"><scope>idPush</scope><name>TryRotatePushEntity</name></member>
+      <member refid="classid_push_1af9c2424fc6c9f0792de503635976b62d" prot="private" virt="non-virtual"><scope>idPush</scope><name>TryTranslatePushEntity</name></member>
+      <member refid="classid_push_1af9c2424fc6c9f0792de503635976b62d" prot="private" virt="non-virtual"><scope>idPush</scope><name>TryTranslatePushEntity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

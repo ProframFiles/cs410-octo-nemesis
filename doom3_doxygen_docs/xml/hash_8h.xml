@@ -1,0 +1,350 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="hash_8h" kind="file">
+    <compoundname>hash.h</compoundname>
+    <includes refid="lib_2setup_8h" local="yes">setup.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes refid="llist_8h" local="yes">llist.h</includes>
+    <includedby refid="hostip_8h" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/hostip.h</includedby>
+    <includedby refid="urldata_8h" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/urldata.h</includedby>
+    <includedby refid="hash_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/hash.c</includedby>
+    <includedby refid="hostip_8c" local="yes">E:/sources/3rd_party/DOOM/neo/curl/lib/hostip.c</includedby>
+    <incdepgraph>
+      <node id="313">
+        <label>stddef.h</label>
+      </node>
+      <node id="312">
+        <label>E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h</label>
+        <link refid="hash.h"/>
+        <childnode refid="313" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct__curl__hash" prot="public">_curl_hash</innerclass>
+    <innerclass refid="struct__curl__hash__element" prot="public">_curl_hash_element</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="hash_8h_1a35e7ce339894010a984f4a86ecfdf3cf" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* curl_hash_dtor)(void *)</definition>
+        <argsstring>)(void *)</argsstring>
+        <name>curl_hash_dtor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="32" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="hash_8h_1a5323b70be072b905282baf12b74eabbe" prot="public" static="no">
+        <type>struct <ref refid="struct__curl__hash" kindref="compound">_curl_hash</ref></type>
+        <definition>typedef struct _curl_hash  curl_hash</definition>
+        <argsstring></argsstring>
+        <name>curl_hash</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="hash_8h_1aab0bef872384c560a5fa542e193585c8" prot="public" static="no">
+        <type>struct <ref refid="struct__curl__hash__element" kindref="compound">_curl_hash_element</ref></type>
+        <definition>typedef struct _curl_hash_element  curl_hash_element</definition>
+        <argsstring></argsstring>
+        <name>curl_hash_element</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="45" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hash_8h_1ad7f443d9df46a7724767aed23efd700f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Curl_hash_init</definition>
+        <argsstring>(curl_hash *, int, curl_hash_dtor)</argsstring>
+        <name>Curl_hash_init</name>
+        <param>
+          <type><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>curl_hash_dtor</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="48" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.c" bodystart="69" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="hash_8h_1aa2316f44e964ba4276a0a168e067c887" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref> *</type>
+        <definition>curl_hash* Curl_hash_alloc</definition>
+        <argsstring>(int, curl_hash_dtor)</argsstring>
+        <name>Curl_hash_alloc</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>curl_hash_dtor</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="49" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.c" bodystart="95" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="hash_8h_1a89275510e1f3ffc32ac73adfdd5eaad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* Curl_hash_add</definition>
+        <argsstring>(curl_hash *, char *, size_t, void *)</argsstring>
+        <name>Curl_hash_add</name>
+        <param>
+          <type><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref> *</type>
+        </param>
+        <param>
+          <type>char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="50" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.c" bodystart="144" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="hash_8h_1a87d8b01c61b34d114abb4ecfffc019fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Curl_hash_delete</definition>
+        <argsstring>(curl_hash *h, char *key, size_t key_len)</argsstring>
+        <name>Curl_hash_delete</name>
+        <param>
+          <type><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>key_len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="51" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hash_8h_1a280ef4494c93f373d2bc86efab9bcc6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* Curl_hash_pick</definition>
+        <argsstring>(curl_hash *, char *, size_t)</argsstring>
+        <name>Curl_hash_pick</name>
+        <param>
+          <type><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref> *</type>
+        </param>
+        <param>
+          <type>char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="52" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.c" bodystart="195" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="hash_8h_1a91483ab3292ba2cbf047a01ee1d7a203" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_hash_apply</definition>
+        <argsstring>(curl_hash *h, void *user, void(*cb)(void *user, void *ptr))</argsstring>
+        <name>Curl_hash_apply</name>
+        <param>
+          <type><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>void(*)(void *user, void *ptr)</type>
+          <declname>cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hash_8h_1a66171703368d5a39b894c234eee77335" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Curl_hash_count</definition>
+        <argsstring>(curl_hash *h)</argsstring>
+        <name>Curl_hash_count</name>
+        <param>
+          <type><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="55" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hash_8h_1aeadbc1290ccd1b687d8c272f72172f7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_hash_clean</definition>
+        <argsstring>(curl_hash *h)</argsstring>
+        <name>Curl_hash_clean</name>
+        <param>
+          <type><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="56" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.c" bodystart="233" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="hash_8h_1a4c5e5ca53416a8e960437b3e349c7316" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_hash_clean_with_criterium</definition>
+        <argsstring>(curl_hash *h, void *user, int(*comp)(void *, void *))</argsstring>
+        <name>Curl_hash_clean_with_criterium</name>
+        <param>
+          <type><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>int(*)(void *, void *)</type>
+          <declname>comp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="57" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.c" bodystart="245" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="hash_8h_1a986e9af3b58afb5474f8a3a4f727a6a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Curl_hash_destroy</definition>
+        <argsstring>(curl_hash *h)</argsstring>
+        <name>Curl_hash_destroy</name>
+        <param>
+          <type><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h" line="58" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.c" bodystart="278" bodyend="285"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__HASH_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__HASH_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="comment">/***************************************************************************</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_<sp/><sp/><sp/>_<sp/>____<sp/><sp/>_<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>Project<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>___|<sp/>|<sp/>|<sp/>|<sp/><sp/>_<sp/>\|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/<sp/>__|<sp/>|<sp/>|<sp/>|<sp/>|_)<sp/>|<sp/>|<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(__|<sp/>|_|<sp/>|<sp/><sp/>_<sp/>&lt;|<sp/>|___<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\___|\___/|_|<sp/>\_\_____|</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1998<sp/>-<sp/>2004,<sp/>Daniel<sp/>Stenberg,<sp/>&lt;daniel@haxx.se&gt;,<sp/>et<sp/>al.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>licensed<sp/>as<sp/>described<sp/>in<sp/>the<sp/>file<sp/>COPYING,<sp/>which</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>you<sp/>should<sp/>have<sp/>received<sp/>as<sp/>part<sp/>of<sp/>this<sp/>distribution.<sp/>The<sp/>terms</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>are<sp/>also<sp/>available<sp/>at<sp/>http://curl.haxx.se/docs/copyright.html.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>opt<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute<sp/>and/or<sp/>sell</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>COPYING<sp/>file.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>This<sp/>software<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>basis,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>$Id:<sp/>hash.h,v<sp/>1.15<sp/>2004/01/07<sp/>09:19:35<sp/>bagder<sp/>Exp<sp/>$</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;setup.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;llist.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*curl_hash_dtor)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="struct__curl__hash" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__curl__hash" kindref="compound">_curl_hash</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><ref refid="struct__curl__llist" kindref="compound">curl_llist</ref><sp/><sp/><sp/><sp/><sp/>**table;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>curl_hash_dtor<sp/><sp/><sp/>dtor;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>slots;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}<sp/><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="struct__curl__hash__element" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__curl__hash__element" kindref="compound">_curl_hash_element</ref><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/>*ptr;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/>*key;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>key_len;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/><ref refid="struct__curl__hash__element" kindref="compound">curl_hash_element</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Curl_hash_init(<ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>curl_hash_dtor);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*Curl_hash_alloc(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>curl_hash_dtor);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*Curl_hash_add(<ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Curl_hash_delete(<ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*h,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>key_len);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*Curl_hash_pick(<ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_hash_apply(<ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*h,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*user,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*cb)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*user,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ptr));</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Curl_hash_count(<ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*h);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_hash_clean(<ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*h);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_hash_clean_with_criterium(<ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*h,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*user,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>(*comp)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*));</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Curl_hash_destroy(<ref refid="struct__curl__hash" kindref="compound">curl_hash</ref><sp/>*h);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/curl/lib/hash.h"/>
+  </compounddef>
+</doxygen>

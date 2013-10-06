@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="structmodel_surface__s" kind="struct" prot="public">
+    <compoundname>modelSurface_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmodel_surface__s_1a1022f3085a87248badfecdd1a4999c23" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int modelSurface_s::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Model.h" line="145" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Model.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmodel_surface__s_1af5b9b43eaff4a15f7b8185b4d320f07c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classid_material" kindref="compound">idMaterial</ref> *</type>
+        <definition>const idMaterial* modelSurface_s::shader</definition>
+        <argsstring></argsstring>
+        <name>shader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Model.h" line="146" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Model.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmodel_surface__s_1a035af726ac38e036407d06eb9340b6b8" prot="public" static="no" mutable="no">
+        <type><ref refid="structsrf_triangles__s" kindref="compound">srfTriangles_t</ref> *</type>
+        <definition>srfTriangles_t* modelSurface_s::geometry</definition>
+        <argsstring></argsstring>
+        <name>geometry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/Model.h" line="147" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Model.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="30690">
+        <label>idDrawVert</label>
+        <link refid="classid_draw_vert"/>
+        <childnode refid="30691" relation="usage">
+          <edgelabel>st</edgelabel>
+        </childnode>
+        <childnode refid="30692" relation="usage">
+          <edgelabel>xyz</edgelabel>
+          <edgelabel>normal</edgelabel>
+          <edgelabel>tangents</edgelabel>
+        </childnode>
+      </node>
+      <node id="30687">
+        <label>shadowCache_s</label>
+        <link refid="structshadow_cache__s"/>
+        <childnode refid="30688" relation="usage">
+          <edgelabel>xyz</edgelabel>
+        </childnode>
+      </node>
+      <node id="30684">
+        <label>vertCache_s</label>
+        <link refid="structvert_cache__s"/>
+        <childnode refid="30684" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+          <edgelabel>user</edgelabel>
+        </childnode>
+      </node>
+      <node id="30694">
+        <label>idMaterial</label>
+        <link refid="classid_material"/>
+        <childnode refid="30695" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30685">
+        <label>idPlane</label>
+        <link refid="classid_plane"/>
+      </node>
+      <node id="30689">
+        <label>idBounds</label>
+        <link refid="classid_bounds"/>
+      </node>
+      <node id="30683">
+        <label>srfTriangles_s</label>
+        <link refid="structsrf_triangles__s"/>
+        <childnode refid="30684" relation="usage">
+          <edgelabel>indexCache</edgelabel>
+          <edgelabel>ambientCache</edgelabel>
+          <edgelabel>shadowCache</edgelabel>
+          <edgelabel>lightingCache</edgelabel>
+        </childnode>
+        <childnode refid="30685" relation="usage">
+          <edgelabel>facePlanes</edgelabel>
+        </childnode>
+        <childnode refid="30686" relation="usage">
+          <edgelabel>silEdges</edgelabel>
+        </childnode>
+        <childnode refid="30683" relation="usage">
+          <edgelabel>ambientSurface</edgelabel>
+          <edgelabel>nextDeferredFree</edgelabel>
+        </childnode>
+        <childnode refid="30687" relation="usage">
+          <edgelabel>shadowVertexes</edgelabel>
+        </childnode>
+        <childnode refid="30689" relation="usage">
+          <edgelabel>bounds</edgelabel>
+        </childnode>
+        <childnode refid="30690" relation="usage">
+          <edgelabel>verts</edgelabel>
+        </childnode>
+        <childnode refid="30693" relation="usage">
+          <edgelabel>dominantTris</edgelabel>
+        </childnode>
+      </node>
+      <node id="30696">
+        <label>idDeclBase</label>
+        <link refid="classid_decl_base"/>
+      </node>
+      <node id="30693">
+        <label>dominantTri_s</label>
+        <link refid="structdominant_tri__s"/>
+      </node>
+      <node id="30695">
+        <label>idDecl</label>
+        <link refid="classid_decl"/>
+        <childnode refid="30696" relation="usage">
+          <edgelabel>base</edgelabel>
+        </childnode>
+      </node>
+      <node id="30686">
+        <label>silEdge_t</label>
+        <link refid="structsil_edge__t"/>
+      </node>
+      <node id="30691">
+        <label>idVec2</label>
+        <link refid="classid_vec2"/>
+      </node>
+      <node id="30682">
+        <label>modelSurface_s</label>
+        <link refid="structmodel_surface__s"/>
+        <childnode refid="30683" relation="usage">
+          <edgelabel>geometry</edgelabel>
+        </childnode>
+        <childnode refid="30694" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+      </node>
+      <node id="30692">
+        <label>idVec3</label>
+        <link refid="classid_vec3"/>
+      </node>
+      <node id="30688">
+        <label>idVec4</label>
+        <link refid="classid_vec4"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/Model.h" line="144" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/Model.h" bodystart="144" bodyend="148"/>
+    <listofallmembers>
+      <member refid="structmodel_surface__s_1a035af726ac38e036407d06eb9340b6b8" prot="public" virt="non-virtual"><scope>modelSurface_s</scope><name>geometry</name></member>
+      <member refid="structmodel_surface__s_1a1022f3085a87248badfecdd1a4999c23" prot="public" virt="non-virtual"><scope>modelSurface_s</scope><name>id</name></member>
+      <member refid="structmodel_surface__s_1af5b9b43eaff4a15f7b8185b4d320f07c" prot="public" virt="non-virtual"><scope>modelSurface_s</scope><name>shader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

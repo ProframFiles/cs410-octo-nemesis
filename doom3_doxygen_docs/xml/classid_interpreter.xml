@@ -1,0 +1,1677 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_interpreter" kind="class" prot="public">
+    <compoundname>idInterpreter</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classid_interpreter_1af31b5b273d8ac27f9a371a56134a7c65" prot="private" static="no" mutable="no">
+        <type><ref refid="structprstack__s" kindref="compound">prstack_t</ref></type>
+        <definition>prstack_t idInterpreter::callStack</definition>
+        <argsstring>[64]</argsstring>
+        <name>callStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="43" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1ae569b13cdc03dcab1c21a74d96cabf32" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idInterpreter::callStackDepth</definition>
+        <argsstring></argsstring>
+        <name>callStackDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="44" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1a7dbca7874d75b154916f5b7a10d9f56a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idInterpreter::maxStackDepth</definition>
+        <argsstring></argsstring>
+        <name>maxStackDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="45" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1accc1a2ddf6191c0acfa62de49a5b2991" prot="private" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte idInterpreter::localstack</definition>
+        <argsstring>[6144]</argsstring>
+        <name>localstack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="47" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1a5931f535585db1eec6bdcaa0cb64c2d3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idInterpreter::localstackUsed</definition>
+        <argsstring></argsstring>
+        <name>localstackUsed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="48" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1a0668b646fd5081e42c103636fb148e16" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idInterpreter::localstackBase</definition>
+        <argsstring></argsstring>
+        <name>localstackBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="49" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1a6a09a5ff20ef0bdda8146791d7e51d88" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idInterpreter::maxLocalstackUsed</definition>
+        <argsstring></argsstring>
+        <name>maxLocalstackUsed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="50" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1ab7733d59833433e7da14256467b668e7" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+        <definition>const function_t * idInterpreter::currentFunction</definition>
+        <argsstring></argsstring>
+        <name>currentFunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="52" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1ada645ec0d03dc9c0cb39c8a61cd83f6a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idInterpreter::instructionPointer</definition>
+        <argsstring></argsstring>
+        <name>instructionPointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="53" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1a915c27d9b6bdf7a9c2c24bed81ad6af8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int idInterpreter::popParms</definition>
+        <argsstring></argsstring>
+        <name>popParms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="55" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1a860d91ab673c7195caba18390f9e2ca4" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classid_event_def" kindref="compound">idEventDef</ref> *</type>
+        <definition>const idEventDef * idInterpreter::multiFrameEvent</definition>
+        <argsstring></argsstring>
+        <name>multiFrameEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="56" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1a3f89645024878e809f5d4f0256d25b50" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+        <definition>idEntity * idInterpreter::eventEntity</definition>
+        <argsstring></argsstring>
+        <name>eventEntity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="57" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1a1dbdf8554a179a02b4fce592acad9bff" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_thread" kindref="compound">idThread</ref> *</type>
+        <definition>idThread * idInterpreter::thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="59" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classid_interpreter_1aca3448909a6abeeddfc8d5977067cd87" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idInterpreter::doneProcessing</definition>
+        <argsstring></argsstring>
+        <name>doneProcessing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="78" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1a8a6d87d00ce54f961649c30472586a5a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idInterpreter::threadDying</definition>
+        <argsstring></argsstring>
+        <name>threadDying</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="79" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1afc423ed63d40a5aef7111e57b39ab9e5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idInterpreter::terminateOnExit</definition>
+        <argsstring></argsstring>
+        <name>terminateOnExit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="80" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_interpreter_1a6551925eaf8893c27d9ee1341a6e5030" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idInterpreter::debug</definition>
+        <argsstring></argsstring>
+        <name>debug</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="81" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classid_interpreter_1a1ae4ec8c233deb56ac022c5e260720a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idInterpreter::PopParms</definition>
+        <argsstring>(int numParms)</argsstring>
+        <name>PopParms</name>
+        <param>
+          <type>int</type>
+          <declname>numParms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="61" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="124" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a1c7bc5b453bf3b223e88b2a14f740164" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idInterpreter::PushString</definition>
+        <argsstring>(const char *string)</argsstring>
+        <name>PushString</name>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="62" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="151" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1abde2315ab66b10298abd688e7e6f37dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idInterpreter::Push</definition>
+        <argsstring>(int value)</argsstring>
+        <name>Push</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="63" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="138" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a8a2c346cea01a357e2341dc07d571526" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>ID_INLINE const char * idInterpreter::FloatToString</definition>
+        <argsstring>(float value)</argsstring>
+        <name>FloatToString</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="64" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="164" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a33b4fda343ba8d17f0c01d9c7a3c5eb7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idInterpreter::AppendString</definition>
+        <argsstring>(idVarDef *def, const char *from)</argsstring>
+        <name>AppendString</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>def</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>from</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="65" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="180" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ac9302cb287c003dc58f5bcb95f55faee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idInterpreter::SetString</definition>
+        <argsstring>(idVarDef *def, const char *from)</argsstring>
+        <name>SetString</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>def</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>from</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="66" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="193" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a15b9937c5a90e90f59d37671c932a964" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>ID_INLINE const char * idInterpreter::GetString</definition>
+        <argsstring>(idVarDef *def)</argsstring>
+        <name>GetString</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>def</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="67" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="206" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a9d456f2647d3fb7296e025fb031cd637" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="unionvar_eval__s" kindref="compound">varEval_t</ref></type>
+        <definition>ID_INLINE varEval_t idInterpreter::GetVariable</definition>
+        <argsstring>(idVarDef *def)</argsstring>
+        <name>GetVariable</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>def</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="68" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="219" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ae9d2a2e5c15db3ec7264f4666cf21af0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+        <definition>ID_INLINE idEntity * idInterpreter::GetEntity</definition>
+        <argsstring>(int entnum) const </argsstring>
+        <name>GetEntity</name>
+        <param>
+          <type>int</type>
+          <declname>entnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="69" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="234" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ad32d920e1ad8a5ab0d7c8262fb2c513b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_script_object" kindref="compound">idScriptObject</ref> *</type>
+        <definition>ID_INLINE idScriptObject * idInterpreter::GetScriptObject</definition>
+        <argsstring>(int entnum) const </argsstring>
+        <name>GetScriptObject</name>
+        <param>
+          <type>int</type>
+          <declname>entnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="70" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="247" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1af2879e1dad6802f10263c67728f59d86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idInterpreter::NextInstruction</definition>
+        <argsstring>(int position)</argsstring>
+        <name>NextInstruction</name>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="71" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="265" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a8e589f2370b80033b35caf82dc8c80e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::LeaveFunction</definition>
+        <argsstring>(idVarDef *returnDef)</argsstring>
+        <name>LeaveFunction</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>returnDef</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="73" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="623" bodyend="676"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a4d1095cd381f6770cfe9d9eb1e9a0ee1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::CallEvent</definition>
+        <argsstring>(const function_t *func, int argsize)</argsstring>
+        <name>CallEvent</name>
+        <param>
+          <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>argsize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="74" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="683" bodyend="805"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ad8a44b6f5fdf6f3a47d72586f9db0693" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::CallSysEvent</definition>
+        <argsstring>(const function_t *func, int argsize)</argsstring>
+        <name>CallSysEvent</name>
+        <param>
+          <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>argsize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="75" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="854" bodyend="929"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1abf883d8ab87dff362f3ff97aa89e6355" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::PopParms</definition>
+        <argsstring>(int numParms)</argsstring>
+        <name>PopParms</name>
+        <param>
+          <type>int</type>
+          <declname>numParms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ad03b6d6bbf3bcf72b074c7f40548da08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::PushString</definition>
+        <argsstring>(const char *string)</argsstring>
+        <name>PushString</name>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a5acd745045339dfe8bd507f2e419def7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::Push</definition>
+        <argsstring>(int value)</argsstring>
+        <name>Push</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="63" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1abfbf814b085cb83b084fdfc7cb609d0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* idInterpreter::FloatToString</definition>
+        <argsstring>(float value)</argsstring>
+        <name>FloatToString</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="64" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a01cc54194bd5b928a3d12c8f2a0dc2b1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::AppendString</definition>
+        <argsstring>(idVarDef *def, const char *from)</argsstring>
+        <name>AppendString</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>def</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>from</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ac82996b966b96a0a92265c59bd13482f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::SetString</definition>
+        <argsstring>(idVarDef *def, const char *from)</argsstring>
+        <name>SetString</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>def</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>from</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1af7d1fd461384652657b9a71fe928ac0a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* idInterpreter::GetString</definition>
+        <argsstring>(idVarDef *def)</argsstring>
+        <name>GetString</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>def</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="67" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a743d915abe7ad4983619f2ccf88e615a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="unionvar_eval__s" kindref="compound">varEval_t</ref></type>
+        <definition>varEval_t idInterpreter::GetVariable</definition>
+        <argsstring>(idVarDef *def)</argsstring>
+        <name>GetVariable</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>def</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a353fbe449695fdc134f028ff1b489849" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+        <definition>idEntity* idInterpreter::GetEntity</definition>
+        <argsstring>(int entnum) const </argsstring>
+        <name>GetEntity</name>
+        <param>
+          <type>int</type>
+          <declname>entnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a15d4b37b2f61328baef84605c293f4c9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_script_object" kindref="compound">idScriptObject</ref> *</type>
+        <definition>idScriptObject* idInterpreter::GetScriptObject</definition>
+        <argsstring>(int entnum) const </argsstring>
+        <name>GetScriptObject</name>
+        <param>
+          <type>int</type>
+          <declname>entnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a0d04e8e0083b429bc8cd4b2bdcf40f28" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::NextInstruction</definition>
+        <argsstring>(int position)</argsstring>
+        <name>NextInstruction</name>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a8e589f2370b80033b35caf82dc8c80e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::LeaveFunction</definition>
+        <argsstring>(idVarDef *returnDef)</argsstring>
+        <name>LeaveFunction</name>
+        <param>
+          <type><ref refid="classid_var_def" kindref="compound">idVarDef</ref> *</type>
+          <declname>returnDef</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="73" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a4d1095cd381f6770cfe9d9eb1e9a0ee1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::CallEvent</definition>
+        <argsstring>(const function_t *func, int argsize)</argsstring>
+        <name>CallEvent</name>
+        <param>
+          <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>argsize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ad8a44b6f5fdf6f3a47d72586f9db0693" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::CallSysEvent</definition>
+        <argsstring>(const function_t *func, int argsize)</argsstring>
+        <name>CallSysEvent</name>
+        <param>
+          <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>argsize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="75" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_interpreter_1a86ae453e149ac31305b04118b4999a1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idInterpreter::idInterpreter</definition>
+        <argsstring>()</argsstring>
+        <name>idInterpreter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="83" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="39" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a57116c267040a99a63e4cf27242f8ed8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::Save</definition>
+        <argsstring>(idSaveGame *savefile) const </argsstring>
+        <name>Save</name>
+        <param>
+          <type><ref refid="classid_save_game" kindref="compound">idSaveGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="86" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="53" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a6e50108930c51197cf6188694dc12b90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::Restore</definition>
+        <argsstring>(idRestoreGame *savefile)</argsstring>
+        <name>Restore</name>
+        <param>
+          <type><ref refid="classid_restore_game" kindref="compound">idRestoreGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="87" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="103" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a4d869d5a45a33f1bc7bdf6fb3325a8cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::SetThread</definition>
+        <argsstring>(idThread *pThread)</argsstring>
+        <name>SetThread</name>
+        <param>
+          <type><ref refid="classid_thread" kindref="compound">idThread</ref> *</type>
+          <declname>pThread</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="89" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="357" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a49ffa98439e3b1bb309a5e4482461338" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::StackTrace</definition>
+        <argsstring>(void) const </argsstring>
+        <name>StackTrace</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="91" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="390" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a59fa3dc11d80dd07db1d416922225cc6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idInterpreter::CurrentLine</definition>
+        <argsstring>(void) const </argsstring>
+        <name>CurrentLine</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="93" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="366" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ac1afd39a493e6f8d577f7013f5d86e64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * idInterpreter::CurrentFile</definition>
+        <argsstring>(void) const </argsstring>
+        <name>CurrentFile</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="94" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="378" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a7b9c5b3e2a33530f09391c750f170348" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::Error</definition>
+        <argsstring>(char *fmt,...) const id_attribute((format(printf</argsstring>
+        <name>Error</name>
+        <param>
+          <type>char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="96" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="428" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a6ce846aa81cb1fa04b2659154c8d3065" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void void</type>
+        <definition>void idInterpreter::Warning</definition>
+        <argsstring>(char *fmt,...) const id_attribute((format(printf</argsstring>
+        <name>Warning</name>
+        <param>
+          <type>char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="97" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="453" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1aba19fed1b4a2ef46ed3a1be89c16bde8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void void void</type>
+        <definition>void idInterpreter::DisplayInfo</definition>
+        <argsstring>(void) const </argsstring>
+        <name>DisplayInfo</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="98" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="474" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ad0ecde581dbfaa72775a8717808a474d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idInterpreter::BeginMultiFrameEvent</definition>
+        <argsstring>(idEntity *ent, const idEventDef *event)</argsstring>
+        <name>BeginMultiFrameEvent</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_event_def" kindref="compound">idEventDef</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="100" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="812" bodyend="825"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a0c7c66eec00a5ec96ed649c9b58fdd8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::EndMultiFrameEvent</definition>
+        <argsstring>(idEntity *ent, const idEventDef *event)</argsstring>
+        <name>EndMultiFrameEvent</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_event_def" kindref="compound">idEventDef</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="101" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="832" bodyend="838"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a042f551cfa057eb0c7fd4e0de683c91d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idInterpreter::MultiFrameEventInProgress</definition>
+        <argsstring>(void) const </argsstring>
+        <name>MultiFrameEventInProgress</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="102" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="845" bodyend="847"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ae86ea599ee43e11c894a81067a818dc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::ThreadCall</definition>
+        <argsstring>(idInterpreter *source, const function_t *func, int args)</argsstring>
+        <name>ThreadCall</name>
+        <param>
+          <type><ref refid="classid_interpreter" kindref="compound">idInterpreter</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="104" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="510" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a38d5e3d7ace297f2d48fb303fbed7fd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::EnterFunction</definition>
+        <argsstring>(const function_t *func, bool clearStack)</argsstring>
+        <name>EnterFunction</name>
+        <param>
+          <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clearStack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="105" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="554" bodyend="616"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ab7a72f1aa85f4b00c0b5677eda46522a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::EnterObjectFunction</definition>
+        <argsstring>(idEntity *self, const function_t *func, bool clearStack)</argsstring>
+        <name>EnterObjectFunction</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clearStack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="106" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="533" bodyend="543"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a06a3a91de4371daf758efa44d9342dcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idInterpreter::Execute</definition>
+        <argsstring>(void)</argsstring>
+        <name>Execute</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="108" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="936" bodyend="1835"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a2c6eeb7059d0b4d0c87d9dd14a687571" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::Reset</definition>
+        <argsstring>(void)</argsstring>
+        <name>Reset</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="109" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="158" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a7c0c24bad1dae463df8bb902aa7a5909" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idInterpreter::GetRegisterValue</definition>
+        <argsstring>(const char *name, idStr &amp;out, int scopeDepth)</argsstring>
+        <name>GetRegisterValue</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_str" kindref="compound">idStr</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scopeDepth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="111" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="187" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a9ef04b6c083c6d82e3b44b3c7596ceb2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idInterpreter::GetCallstackDepth</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetCallstackDepth</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="112" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="320" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1af37e7de75e0f906c66587a1ec880db16" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structprstack__s" kindref="compound">prstack_t</ref> *</type>
+        <definition>const prstack_t * idInterpreter::GetCallstack</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetCallstack</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="113" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="329" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1af4c54499d063600fdcbb3aaee0a6bbd3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+        <definition>const function_t * idInterpreter::GetCurrentFunction</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetCurrentFunction</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="114" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="338" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a0cfdbf58c7eacde82a6bb545e545744a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_thread" kindref="compound">idThread</ref> *</type>
+        <definition>idThread * idInterpreter::GetThread</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetThread</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="115" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.cpp" bodystart="347" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a86ae453e149ac31305b04118b4999a1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idInterpreter::idInterpreter</definition>
+        <argsstring>()</argsstring>
+        <name>idInterpreter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a57116c267040a99a63e4cf27242f8ed8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::Save</definition>
+        <argsstring>(idSaveGame *savefile) const </argsstring>
+        <name>Save</name>
+        <param>
+          <type><ref refid="classid_save_game" kindref="compound">idSaveGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a6e50108930c51197cf6188694dc12b90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::Restore</definition>
+        <argsstring>(idRestoreGame *savefile)</argsstring>
+        <name>Restore</name>
+        <param>
+          <type><ref refid="classid_restore_game" kindref="compound">idRestoreGame</ref> *</type>
+          <declname>savefile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="87" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a4d869d5a45a33f1bc7bdf6fb3325a8cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::SetThread</definition>
+        <argsstring>(idThread *pThread)</argsstring>
+        <name>SetThread</name>
+        <param>
+          <type><ref refid="classid_thread" kindref="compound">idThread</ref> *</type>
+          <declname>pThread</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="89" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a49ffa98439e3b1bb309a5e4482461338" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::StackTrace</definition>
+        <argsstring>(void) const </argsstring>
+        <name>StackTrace</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="91" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a59fa3dc11d80dd07db1d416922225cc6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idInterpreter::CurrentLine</definition>
+        <argsstring>(void) const </argsstring>
+        <name>CurrentLine</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="93" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1af6987126434e08508d99f316d6416bbb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* idInterpreter::CurrentFile</definition>
+        <argsstring>(void) const </argsstring>
+        <name>CurrentFile</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="94" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a7b9c5b3e2a33530f09391c750f170348" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::Error</definition>
+        <argsstring>(char *fmt,...) const id_attribute((format(printf</argsstring>
+        <name>Error</name>
+        <param>
+          <type>char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="96" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a39be38925cfcfa11f985ed5173eb3105" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void void</type>
+        <definition>void void idInterpreter::Warning</definition>
+        <argsstring>(char *fmt,...) const id_attribute((format(printf</argsstring>
+        <name>Warning</name>
+        <param>
+          <type>char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a3bbad979327db6add3fe4dbc2d0e8d8d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void void void</type>
+        <definition>void void void idInterpreter::DisplayInfo</definition>
+        <argsstring>(void) const </argsstring>
+        <name>DisplayInfo</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="98" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ad0ecde581dbfaa72775a8717808a474d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idInterpreter::BeginMultiFrameEvent</definition>
+        <argsstring>(idEntity *ent, const idEventDef *event)</argsstring>
+        <name>BeginMultiFrameEvent</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_event_def" kindref="compound">idEventDef</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="100" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a0c7c66eec00a5ec96ed649c9b58fdd8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::EndMultiFrameEvent</definition>
+        <argsstring>(idEntity *ent, const idEventDef *event)</argsstring>
+        <name>EndMultiFrameEvent</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>ent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classid_event_def" kindref="compound">idEventDef</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="101" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a042f551cfa057eb0c7fd4e0de683c91d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idInterpreter::MultiFrameEventInProgress</definition>
+        <argsstring>(void) const </argsstring>
+        <name>MultiFrameEventInProgress</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="102" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ae86ea599ee43e11c894a81067a818dc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::ThreadCall</definition>
+        <argsstring>(idInterpreter *source, const function_t *func, int args)</argsstring>
+        <name>ThreadCall</name>
+        <param>
+          <type><ref refid="classid_interpreter" kindref="compound">idInterpreter</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a38d5e3d7ace297f2d48fb303fbed7fd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::EnterFunction</definition>
+        <argsstring>(const function_t *func, bool clearStack)</argsstring>
+        <name>EnterFunction</name>
+        <param>
+          <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clearStack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="105" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ab7a72f1aa85f4b00c0b5677eda46522a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::EnterObjectFunction</definition>
+        <argsstring>(idEntity *self, const function_t *func, bool clearStack)</argsstring>
+        <name>EnterObjectFunction</name>
+        <param>
+          <type><ref refid="classid_entity" kindref="compound">idEntity</ref> *</type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clearStack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a06a3a91de4371daf758efa44d9342dcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idInterpreter::Execute</definition>
+        <argsstring>(void)</argsstring>
+        <name>Execute</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="108" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a2c6eeb7059d0b4d0c87d9dd14a687571" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void idInterpreter::Reset</definition>
+        <argsstring>(void)</argsstring>
+        <name>Reset</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="109" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a7c0c24bad1dae463df8bb902aa7a5909" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idInterpreter::GetRegisterValue</definition>
+        <argsstring>(const char *name, idStr &amp;out, int scopeDepth)</argsstring>
+        <name>GetRegisterValue</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_str" kindref="compound">idStr</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scopeDepth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a9ef04b6c083c6d82e3b44b3c7596ceb2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idInterpreter::GetCallstackDepth</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetCallstackDepth</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="112" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1af13d3fcd4ece22851085a6091e632afd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structprstack__s" kindref="compound">prstack_t</ref> *</type>
+        <definition>const prstack_t* idInterpreter::GetCallstack</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetCallstack</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="113" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1a10fab34f0931555ce56adce200688b8f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+        <definition>const function_t* idInterpreter::GetCurrentFunction</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetCurrentFunction</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="114" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_interpreter_1ada7ac54eeaa464a61088d27efa11ec9e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_thread" kindref="compound">idThread</ref> *</type>
+        <definition>idThread* idInterpreter::GetThread</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetThread</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/game/script/Script_Interpreter.h" line="115" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" line="41" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/d3xp/script/Script_Interpreter.h" bodystart="41" bodyend="117"/>
+    <listofallmembers>
+      <member refid="classid_interpreter_1a33b4fda343ba8d17f0c01d9c7a3c5eb7" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>AppendString</name></member>
+      <member refid="classid_interpreter_1a01cc54194bd5b928a3d12c8f2a0dc2b1" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>AppendString</name></member>
+      <member refid="classid_interpreter_1ad0ecde581dbfaa72775a8717808a474d" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>BeginMultiFrameEvent</name></member>
+      <member refid="classid_interpreter_1ad0ecde581dbfaa72775a8717808a474d" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>BeginMultiFrameEvent</name></member>
+      <member refid="classid_interpreter_1a4d1095cd381f6770cfe9d9eb1e9a0ee1" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>CallEvent</name></member>
+      <member refid="classid_interpreter_1a4d1095cd381f6770cfe9d9eb1e9a0ee1" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>CallEvent</name></member>
+      <member refid="classid_interpreter_1af31b5b273d8ac27f9a371a56134a7c65" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>callStack</name></member>
+      <member refid="classid_interpreter_1ae569b13cdc03dcab1c21a74d96cabf32" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>callStackDepth</name></member>
+      <member refid="classid_interpreter_1ad8a44b6f5fdf6f3a47d72586f9db0693" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>CallSysEvent</name></member>
+      <member refid="classid_interpreter_1ad8a44b6f5fdf6f3a47d72586f9db0693" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>CallSysEvent</name></member>
+      <member refid="classid_interpreter_1ac1afd39a493e6f8d577f7013f5d86e64" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>CurrentFile</name></member>
+      <member refid="classid_interpreter_1af6987126434e08508d99f316d6416bbb" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>CurrentFile</name></member>
+      <member refid="classid_interpreter_1ab7733d59833433e7da14256467b668e7" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>currentFunction</name></member>
+      <member refid="classid_interpreter_1a59fa3dc11d80dd07db1d416922225cc6" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>CurrentLine</name></member>
+      <member refid="classid_interpreter_1a59fa3dc11d80dd07db1d416922225cc6" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>CurrentLine</name></member>
+      <member refid="classid_interpreter_1a6551925eaf8893c27d9ee1341a6e5030" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>debug</name></member>
+      <member refid="classid_interpreter_1aba19fed1b4a2ef46ed3a1be89c16bde8" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>DisplayInfo</name></member>
+      <member refid="classid_interpreter_1a3bbad979327db6add3fe4dbc2d0e8d8d" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>DisplayInfo</name></member>
+      <member refid="classid_interpreter_1aca3448909a6abeeddfc8d5977067cd87" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>doneProcessing</name></member>
+      <member refid="classid_interpreter_1a0c7c66eec00a5ec96ed649c9b58fdd8d" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>EndMultiFrameEvent</name></member>
+      <member refid="classid_interpreter_1a0c7c66eec00a5ec96ed649c9b58fdd8d" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>EndMultiFrameEvent</name></member>
+      <member refid="classid_interpreter_1a38d5e3d7ace297f2d48fb303fbed7fd8" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>EnterFunction</name></member>
+      <member refid="classid_interpreter_1a38d5e3d7ace297f2d48fb303fbed7fd8" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>EnterFunction</name></member>
+      <member refid="classid_interpreter_1ab7a72f1aa85f4b00c0b5677eda46522a" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>EnterObjectFunction</name></member>
+      <member refid="classid_interpreter_1ab7a72f1aa85f4b00c0b5677eda46522a" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>EnterObjectFunction</name></member>
+      <member refid="classid_interpreter_1a7b9c5b3e2a33530f09391c750f170348" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Error</name></member>
+      <member refid="classid_interpreter_1a7b9c5b3e2a33530f09391c750f170348" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Error</name></member>
+      <member refid="classid_interpreter_1a3f89645024878e809f5d4f0256d25b50" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>eventEntity</name></member>
+      <member refid="classid_interpreter_1a06a3a91de4371daf758efa44d9342dcb" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Execute</name></member>
+      <member refid="classid_interpreter_1a06a3a91de4371daf758efa44d9342dcb" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Execute</name></member>
+      <member refid="classid_interpreter_1a8a2c346cea01a357e2341dc07d571526" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>FloatToString</name></member>
+      <member refid="classid_interpreter_1abfbf814b085cb83b084fdfc7cb609d0c" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>FloatToString</name></member>
+      <member refid="classid_interpreter_1af37e7de75e0f906c66587a1ec880db16" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>GetCallstack</name></member>
+      <member refid="classid_interpreter_1af13d3fcd4ece22851085a6091e632afd" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>GetCallstack</name></member>
+      <member refid="classid_interpreter_1a9ef04b6c083c6d82e3b44b3c7596ceb2" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>GetCallstackDepth</name></member>
+      <member refid="classid_interpreter_1a9ef04b6c083c6d82e3b44b3c7596ceb2" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>GetCallstackDepth</name></member>
+      <member refid="classid_interpreter_1af4c54499d063600fdcbb3aaee0a6bbd3" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>GetCurrentFunction</name></member>
+      <member refid="classid_interpreter_1a10fab34f0931555ce56adce200688b8f" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>GetCurrentFunction</name></member>
+      <member refid="classid_interpreter_1ae9d2a2e5c15db3ec7264f4666cf21af0" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>GetEntity</name></member>
+      <member refid="classid_interpreter_1a353fbe449695fdc134f028ff1b489849" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>GetEntity</name></member>
+      <member refid="classid_interpreter_1a7c0c24bad1dae463df8bb902aa7a5909" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>GetRegisterValue</name></member>
+      <member refid="classid_interpreter_1a7c0c24bad1dae463df8bb902aa7a5909" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>GetRegisterValue</name></member>
+      <member refid="classid_interpreter_1ad32d920e1ad8a5ab0d7c8262fb2c513b" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>GetScriptObject</name></member>
+      <member refid="classid_interpreter_1a15d4b37b2f61328baef84605c293f4c9" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>GetScriptObject</name></member>
+      <member refid="classid_interpreter_1a15b9937c5a90e90f59d37671c932a964" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>GetString</name></member>
+      <member refid="classid_interpreter_1af7d1fd461384652657b9a71fe928ac0a" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>GetString</name></member>
+      <member refid="classid_interpreter_1a0cfdbf58c7eacde82a6bb545e545744a" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>GetThread</name></member>
+      <member refid="classid_interpreter_1ada7ac54eeaa464a61088d27efa11ec9e" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>GetThread</name></member>
+      <member refid="classid_interpreter_1a9d456f2647d3fb7296e025fb031cd637" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>GetVariable</name></member>
+      <member refid="classid_interpreter_1a743d915abe7ad4983619f2ccf88e615a" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>GetVariable</name></member>
+      <member refid="classid_interpreter_1a86ae453e149ac31305b04118b4999a1e" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>idInterpreter</name></member>
+      <member refid="classid_interpreter_1a86ae453e149ac31305b04118b4999a1e" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>idInterpreter</name></member>
+      <member refid="classid_interpreter_1ada645ec0d03dc9c0cb39c8a61cd83f6a" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>instructionPointer</name></member>
+      <member refid="classid_interpreter_1a8e589f2370b80033b35caf82dc8c80e5" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>LeaveFunction</name></member>
+      <member refid="classid_interpreter_1a8e589f2370b80033b35caf82dc8c80e5" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>LeaveFunction</name></member>
+      <member refid="classid_interpreter_1accc1a2ddf6191c0acfa62de49a5b2991" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>localstack</name></member>
+      <member refid="classid_interpreter_1a0668b646fd5081e42c103636fb148e16" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>localstackBase</name></member>
+      <member refid="classid_interpreter_1a5931f535585db1eec6bdcaa0cb64c2d3" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>localstackUsed</name></member>
+      <member refid="classid_interpreter_1a6a09a5ff20ef0bdda8146791d7e51d88" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>maxLocalstackUsed</name></member>
+      <member refid="classid_interpreter_1a7dbca7874d75b154916f5b7a10d9f56a" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>maxStackDepth</name></member>
+      <member refid="classid_interpreter_1a860d91ab673c7195caba18390f9e2ca4" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>multiFrameEvent</name></member>
+      <member refid="classid_interpreter_1a042f551cfa057eb0c7fd4e0de683c91d" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>MultiFrameEventInProgress</name></member>
+      <member refid="classid_interpreter_1a042f551cfa057eb0c7fd4e0de683c91d" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>MultiFrameEventInProgress</name></member>
+      <member refid="classid_interpreter_1af2879e1dad6802f10263c67728f59d86" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>NextInstruction</name></member>
+      <member refid="classid_interpreter_1a0d04e8e0083b429bc8cd4b2bdcf40f28" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>NextInstruction</name></member>
+      <member refid="classid_interpreter_1a1ae4ec8c233deb56ac022c5e260720a6" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>PopParms</name></member>
+      <member refid="classid_interpreter_1abf883d8ab87dff362f3ff97aa89e6355" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>PopParms</name></member>
+      <member refid="classid_interpreter_1a915c27d9b6bdf7a9c2c24bed81ad6af8" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>popParms</name></member>
+      <member refid="classid_interpreter_1abde2315ab66b10298abd688e7e6f37dd" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>Push</name></member>
+      <member refid="classid_interpreter_1a5acd745045339dfe8bd507f2e419def7" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>Push</name></member>
+      <member refid="classid_interpreter_1a1c7bc5b453bf3b223e88b2a14f740164" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>PushString</name></member>
+      <member refid="classid_interpreter_1ad03b6d6bbf3bcf72b074c7f40548da08" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>PushString</name></member>
+      <member refid="classid_interpreter_1a2c6eeb7059d0b4d0c87d9dd14a687571" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Reset</name></member>
+      <member refid="classid_interpreter_1a2c6eeb7059d0b4d0c87d9dd14a687571" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Reset</name></member>
+      <member refid="classid_interpreter_1a6e50108930c51197cf6188694dc12b90" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Restore</name></member>
+      <member refid="classid_interpreter_1a6e50108930c51197cf6188694dc12b90" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Restore</name></member>
+      <member refid="classid_interpreter_1a57116c267040a99a63e4cf27242f8ed8" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Save</name></member>
+      <member refid="classid_interpreter_1a57116c267040a99a63e4cf27242f8ed8" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Save</name></member>
+      <member refid="classid_interpreter_1ac9302cb287c003dc58f5bcb95f55faee" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>SetString</name></member>
+      <member refid="classid_interpreter_1ac82996b966b96a0a92265c59bd13482f" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>SetString</name></member>
+      <member refid="classid_interpreter_1a4d869d5a45a33f1bc7bdf6fb3325a8cd" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>SetThread</name></member>
+      <member refid="classid_interpreter_1a4d869d5a45a33f1bc7bdf6fb3325a8cd" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>SetThread</name></member>
+      <member refid="classid_interpreter_1a49ffa98439e3b1bb309a5e4482461338" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>StackTrace</name></member>
+      <member refid="classid_interpreter_1a49ffa98439e3b1bb309a5e4482461338" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>StackTrace</name></member>
+      <member refid="classid_interpreter_1afc423ed63d40a5aef7111e57b39ab9e5" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>terminateOnExit</name></member>
+      <member refid="classid_interpreter_1a1dbdf8554a179a02b4fce592acad9bff" prot="private" virt="non-virtual"><scope>idInterpreter</scope><name>thread</name></member>
+      <member refid="classid_interpreter_1ae86ea599ee43e11c894a81067a818dc3" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>ThreadCall</name></member>
+      <member refid="classid_interpreter_1ae86ea599ee43e11c894a81067a818dc3" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>ThreadCall</name></member>
+      <member refid="classid_interpreter_1a8a6d87d00ce54f961649c30472586a5a" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>threadDying</name></member>
+      <member refid="classid_interpreter_1a6ce846aa81cb1fa04b2659154c8d3065" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Warning</name></member>
+      <member refid="classid_interpreter_1a39be38925cfcfa11f985ed5173eb3105" prot="public" virt="non-virtual"><scope>idInterpreter</scope><name>Warning</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

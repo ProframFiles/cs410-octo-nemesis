@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jdhuff_8h" kind="file">
+    <compoundname>jdhuff.h</compoundname>
+    <includedby refid="jdhuff_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.c</includedby>
+    <includedby refid="jdphuff_8c" local="yes">E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdphuff.c</includedby>
+    <innerclass refid="structd__derived__tbl" prot="public">d_derived_tbl</innerclass>
+    <innerclass refid="structbitread__perm__state" prot="public">bitread_perm_state</innerclass>
+    <innerclass refid="structbitread__working__state" prot="public">bitread_working_state</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jdhuff_8h_1a51937b71b3fbef28d57cc49f69ec8e7d" prot="public" static="no">
+        <name>HUFF_LOOKAHEAD</name>
+        <initializer>8	/* # of bits of lookahead */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="24" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdhuff_8h_1af1bdc52b149ed3624eae0843033e7ee8" prot="public" static="no">
+        <name>BIT_BUF_SIZE</name>
+        <initializer>32	/* size of buffer in bits */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="69" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdhuff_8h_1a980b37b80ff5f9f5f61f355e94971f2d" prot="public" static="no">
+        <name>BITREAD_STATE_VARS</name>
+        <initializer>register bit_buf_type get_buffer;  \
+	register int bits_left;  \
+	<ref refid="structbitread__working__state" kindref="compound">bitread_working_state</ref> br_state</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="100" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdhuff_8h_1aac92a9696088b68207ea708322b692ca" prot="public" static="no">
+        <name>BITREAD_LOAD_STATE</name>
+        <param><defname>cinfop</defname></param>
+        <param><defname>permstate</defname></param>
+        <initializer>br_state.cinfo = cinfop; \
+	br_state.next_input_byte = cinfop-&gt;src-&gt;next_input_byte; \
+	br_state.bytes_in_buffer = cinfop-&gt;src-&gt;bytes_in_buffer; \
+	br_state.unread_marker = cinfop-&gt;unread_marker; \
+	get_buffer = permstate.get_buffer; \
+	bits_left = permstate.bits_left; \
+	br_state.printed_eod_ptr = &amp; permstate.printed_eod</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="105" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdhuff_8h_1afe3920d8725ec70f0c4cc68395266b1e" prot="public" static="no">
+        <name>BITREAD_SAVE_STATE</name>
+        <param><defname>cinfop</defname></param>
+        <param><defname>permstate</defname></param>
+        <initializer>cinfop-&gt;src-&gt;next_input_byte = br_state.next_input_byte; \
+	cinfop-&gt;src-&gt;bytes_in_buffer = br_state.bytes_in_buffer; \
+	cinfop-&gt;unread_marker = br_state.unread_marker; \
+	permstate.get_buffer = get_buffer; \
+	permstate.bits_left = bits_left</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="114" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdhuff_8h_1af6bdea3084471f67f52a9c3bd330fe5a" prot="public" static="no">
+        <name>CHECK_BIT_BUFFER</name>
+        <param><defname>state</defname></param>
+        <param><defname>nbits</defname></param>
+        <param><defname>action</defname></param>
+        <initializer>{ if (bits_left &lt; (nbits)) {  \
+	    if (! jpeg_fill_bit_buffer(&amp;(state),get_buffer,bits_left,nbits))  \
+	      { action; }  \
+	    get_buffer = (state).get_buffer; bits_left = (state).bits_left; } }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="139" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdhuff_8h_1a2a9341c1fe1afae135e1a50c4c1a6416" prot="public" static="no">
+        <name>GET_BITS</name>
+        <param><defname>nbits</defname></param>
+        <initializer>(((int) (get_buffer &gt;&gt; (bits_left -= (nbits)))) &amp; ((1&lt;&lt;(nbits))-1))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="145" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdhuff_8h_1af206f5a6e7f0e147e85e4e772e2276cb" prot="public" static="no">
+        <name>PEEK_BITS</name>
+        <param><defname>nbits</defname></param>
+        <initializer>(((int) (get_buffer &gt;&gt; (bits_left -  (nbits)))) &amp; ((1&lt;&lt;(nbits))-1))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="148" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdhuff_8h_1a4d2644ad3912b6b94de83233b191d96e" prot="public" static="no">
+        <name>DROP_BITS</name>
+        <param><defname>nbits</defname></param>
+        <initializer>(bits_left -= (nbits))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="151" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jdhuff_8h_1aaeab72644a8012bb53c7b2426bbe2cf9" prot="public" static="no">
+        <name>HUFF_DECODE</name>
+        <param><defname>result</defname></param>
+        <param><defname>state</defname></param>
+        <param><defname>htbl</defname></param>
+        <param><defname>failaction</defname></param>
+        <param><defname>slowlabel</defname></param>
+        <initializer>{ register int nb, look; \
+  if (bits_left &lt; HUFF_LOOKAHEAD) { \
+    if (! jpeg_fill_bit_buffer(&amp;state,get_buffer,bits_left, 0)) {failaction;} \
+    get_buffer = state.get_buffer; bits_left = state.bits_left; \
+    if (bits_left &lt; HUFF_LOOKAHEAD) { \
+      nb = 1; goto slowlabel; \
+    } \
+  } \
+  look = PEEK_BITS(HUFF_LOOKAHEAD); \
+  if ((nb = htbl-&gt;look_nbits[look]) != 0) { \
+    DROP_BITS(nb); \
+    result = htbl-&gt;look_sym[look]; \
+  } else { \
+    nb = HUFF_LOOKAHEAD+1; \
+slowlabel: \
+    if ((result=jpeg_huff_decode(&amp;state,get_buffer,bits_left,htbl,nb)) &lt; 0) \
+	{ failaction; } \
+    get_buffer = state.get_buffer; bits_left = state.bits_left; \
+  } \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="177" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="jdhuff_8h_1ab2d47e546a8ed21c68e22f54535574a8" prot="public" static="no">
+        <type>INT32</type>
+        <definition>typedef INT32 bit_buf_type</definition>
+        <argsstring></argsstring>
+        <name>bit_buf_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="68" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jdhuff_8h_1a795f3a9ca4dda2b831cf4d59f6bf50a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void jpeg_make_d_derived_tbl</type>
+        <definition>EXTERN void jpeg_make_d_derived_tbl JPP</definition>
+        <argsstring>((j_decompress_ptr cinfo, JHUFF_TBL *htbl, d_derived_tbl **pdtbl))</argsstring>
+        <name>JPP</name>
+        <param>
+          <type>(<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref> cinfo, <ref refid="struct_j_h_u_f_f___t_b_l" kindref="compound">JHUFF_TBL</ref> *htbl, <ref refid="structd__derived__tbl" kindref="compound">d_derived_tbl</ref> **pdtbl)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="46" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jdhuff_8h_1a32eb17c9df018b1d50430eaa9630f0a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN boolean jpeg_fill_bit_buffer</type>
+        <definition>EXTERN boolean jpeg_fill_bit_buffer JPP</definition>
+        <argsstring>((bitread_working_state *state, register bit_buf_type get_buffer, register int bits_left, int nbits))</argsstring>
+        <name>JPP</name>
+        <param>
+          <type>(<ref refid="structbitread__working__state" kindref="compound">bitread_working_state</ref> *state, register bit_buf_type get_buffer, register int bits_left, int nbits)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="155" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jdhuff_8h_1a5e00151181ed468adad4813427886f85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int jpeg_huff_decode</type>
+        <definition>EXTERN int jpeg_huff_decode JPP</definition>
+        <argsstring>((bitread_working_state *state, register bit_buf_type get_buffer, register int bits_left, d_derived_tbl *htbl, int min_bits))</argsstring>
+        <name>JPP</name>
+        <param>
+          <type>(<ref refid="structbitread__working__state" kindref="compound">bitread_working_state</ref> *state, register bit_buf_type get_buffer, register int bits_left, <ref refid="structd__derived__tbl" kindref="compound">d_derived_tbl</ref> *htbl, int min_bits)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h" line="200" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jdhuff.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1991-1995,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>declarations<sp/>for<sp/>Huffman<sp/>entropy<sp/>decoding<sp/>routines</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>that<sp/>are<sp/>shared<sp/>between<sp/>the<sp/>sequential<sp/>decoder<sp/>(jdhuff.c)<sp/>and<sp/>the</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>progressive<sp/>decoder<sp/>(jdphuff.c).<sp/><sp/>No<sp/>other<sp/>modules<sp/>need<sp/>to<sp/>see<sp/>these.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Short<sp/>forms<sp/>of<sp/>external<sp/>names<sp/>for<sp/>systems<sp/>with<sp/>brain-damaged<sp/>linkers.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NEED_SHORT_EXTERNAL_NAMES</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_make_d_derived_tbl<sp/>jMkDDerived</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_fill_bit_buffer<sp/><sp/><sp/><sp/>jFilBitBuf</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>jpeg_huff_decode<sp/><sp/><sp/><sp/>jHufDecode</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>NEED_SHORT_EXTERNAL_NAMES<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Derived<sp/>data<sp/>constructed<sp/>for<sp/>each<sp/>Huffman<sp/>table<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUFF_LOOKAHEAD<sp/><sp/>8<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>#<sp/>of<sp/>bits<sp/>of<sp/>lookahead<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structd__derived__tbl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Basic<sp/>tables:<sp/>(element<sp/>[0]<sp/>of<sp/>each<sp/>array<sp/>is<sp/>unused)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>INT32<sp/>mincode[17];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>smallest<sp/>code<sp/>of<sp/>length<sp/>k<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>INT32<sp/>maxcode[18];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>largest<sp/>code<sp/>of<sp/>length<sp/>k<sp/>(-1<sp/>if<sp/>none)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>(maxcode[17]<sp/>is<sp/>a<sp/>sentinel<sp/>to<sp/>ensure<sp/>jpeg_huff_decode<sp/>terminates)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>valptr[17];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>huffval[]<sp/>index<sp/>of<sp/>1st<sp/>symbol<sp/>of<sp/>length<sp/>k<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Link<sp/>to<sp/>public<sp/>Huffman<sp/>table<sp/>(needed<sp/>only<sp/>in<sp/>jpeg_huff_decode)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><ref refid="struct_j_h_u_f_f___t_b_l" kindref="compound">JHUFF_TBL</ref><sp/>*pub;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Lookahead<sp/>tables:<sp/>indexed<sp/>by<sp/>the<sp/>next<sp/>HUFF_LOOKAHEAD<sp/>bits<sp/>of</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/>*<sp/>the<sp/>input<sp/>data<sp/>stream.<sp/><sp/>If<sp/>the<sp/>next<sp/>Huffman<sp/>code<sp/>is<sp/>no<sp/>more</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/>*<sp/>than<sp/>HUFF_LOOKAHEAD<sp/>bits<sp/>long,<sp/>we<sp/>can<sp/>obtain<sp/>its<sp/>length<sp/>and</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/>*<sp/>the<sp/>corresponding<sp/>symbol<sp/>directly<sp/>from<sp/>these<sp/>tables.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>look_nbits[1&lt;&lt;HUFF_LOOKAHEAD];<sp/></highlight><highlight class="comment">/*<sp/>#<sp/>bits,<sp/>or<sp/>0<sp/>if<sp/>too<sp/>long<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>UINT8<sp/>look_sym[1&lt;&lt;HUFF_LOOKAHEAD];<sp/></highlight><highlight class="comment">/*<sp/>symbol,<sp/>or<sp/>unused<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}<sp/><ref refid="structd__derived__tbl" kindref="compound">d_derived_tbl</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Expand<sp/>a<sp/>Huffman<sp/>table<sp/>definition<sp/>into<sp/>the<sp/>derived<sp/>format<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>jpeg_make_d_derived_tbl<sp/>JPP((<ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_j_h_u_f_f___t_b_l" kindref="compound">JHUFF_TBL</ref><sp/>*<sp/>htbl,<sp/><ref refid="structd__derived__tbl" kindref="compound">d_derived_tbl</ref><sp/>**<sp/>pdtbl));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>Fetching<sp/>the<sp/>next<sp/>N<sp/>bits<sp/>from<sp/>the<sp/>input<sp/>stream<sp/>is<sp/>a<sp/>time-critical<sp/>operation</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>for<sp/>the<sp/>Huffman<sp/>decoders.<sp/><sp/>We<sp/>implement<sp/>it<sp/>with<sp/>a<sp/>combination<sp/>of<sp/>inline</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>macros<sp/>and<sp/>out-of-line<sp/>subroutines.<sp/><sp/>Note<sp/>that<sp/>N<sp/>(the<sp/>number<sp/>of<sp/>bits</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>demanded<sp/>at<sp/>one<sp/>time)<sp/>never<sp/>exceeds<sp/>15<sp/>for<sp/>JPEG<sp/>use.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>We<sp/>read<sp/>source<sp/>bytes<sp/>into<sp/>get_buffer<sp/>and<sp/>dole<sp/>out<sp/>bits<sp/>as<sp/>needed.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>If<sp/>get_buffer<sp/>already<sp/>contains<sp/>enough<sp/>bits,<sp/>they<sp/>are<sp/>fetched<sp/>in-line</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>by<sp/>the<sp/>macros<sp/>CHECK_BIT_BUFFER<sp/>and<sp/>GET_BITS.<sp/><sp/>When<sp/>there<sp/>aren&apos;t<sp/>enough</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>bits,<sp/>jpeg_fill_bit_buffer<sp/>is<sp/>called;<sp/>it<sp/>will<sp/>attempt<sp/>to<sp/>fill<sp/>get_buffer</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>as<sp/>full<sp/>as<sp/>possible<sp/>(not<sp/>just<sp/>to<sp/>the<sp/>number<sp/>of<sp/>bits<sp/>needed;<sp/>this</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>prefetching<sp/>reduces<sp/>the<sp/>overhead<sp/>cost<sp/>of<sp/>calling<sp/>jpeg_fill_bit_buffer).</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>Note<sp/>that<sp/>jpeg_fill_bit_buffer<sp/>may<sp/>return<sp/>FALSE<sp/>to<sp/>indicate<sp/>suspension.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>On<sp/>TRUE<sp/>return,<sp/>jpeg_fill_bit_buffer<sp/>guarantees<sp/>that<sp/>get_buffer<sp/>contains</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/>at<sp/>least<sp/>the<sp/>requested<sp/>number<sp/>of<sp/>bits<sp/>---<sp/>dummy<sp/>zeroes<sp/>are<sp/>inserted<sp/>if</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>necessary.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>INT32<sp/>bit_buf_type;<sp/></highlight><highlight class="comment">/*<sp/>type<sp/>of<sp/>bit-extraction<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BIT_BUF_SIZE<sp/><sp/>32<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>size<sp/>of<sp/>buffer<sp/>in<sp/>bits<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>If<sp/>long<sp/>is<sp/>&gt;<sp/>32<sp/>bits<sp/>on<sp/>your<sp/>machine,<sp/>and<sp/>shifting/masking<sp/>longs<sp/>is</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>reasonably<sp/>fast,<sp/>making<sp/>bit_buf_type<sp/>be<sp/>long<sp/>and<sp/>setting<sp/>BIT_BUF_SIZE</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/>appropriately<sp/>should<sp/>be<sp/>a<sp/>win.<sp/><sp/>Unfortunately<sp/>we<sp/>can&apos;t<sp/>do<sp/>this<sp/>with</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>something<sp/>like<sp/><sp/>#define<sp/>BIT_BUF_SIZE<sp/>(sizeof(bit_buf_type)*8)</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>because<sp/>not<sp/>all<sp/>machines<sp/>measure<sp/>sizeof<sp/>in<sp/>8-bit<sp/>bytes.</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="structbitread__perm__state" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Bitreading<sp/>state<sp/>saved<sp/>across<sp/>MCUs<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>bit_buf_type<sp/>get_buffer;<sp/><sp/></highlight><highlight class="comment">/*<sp/>current<sp/>bit-extraction<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bits_left;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>#<sp/>of<sp/>unused<sp/>bits<sp/>in<sp/>it<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>printed_eod;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>flag<sp/>to<sp/>suppress<sp/>multiple<sp/>warning<sp/>msgs<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}<sp/><ref refid="structbitread__perm__state" kindref="compound">bitread_perm_state</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="structbitread__working__state" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Bitreading<sp/>working<sp/>state<sp/>within<sp/>an<sp/>MCU<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>current<sp/>data<sp/>source<sp/>state<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>JOCTET<sp/>*<sp/>next_input_byte;<sp/></highlight><highlight class="comment">/*<sp/>=&gt;<sp/>next<sp/>byte<sp/>to<sp/>read<sp/>from<sp/>source<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bytes_in_buffer;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>#<sp/>of<sp/>bytes<sp/>remaining<sp/>in<sp/>source<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unread_marker;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>nonzero<sp/>if<sp/>we<sp/>have<sp/>hit<sp/>a<sp/>marker<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>bit<sp/>input<sp/>buffer<sp/>---<sp/>note<sp/>these<sp/>values<sp/>are<sp/>kept<sp/>in<sp/>register<sp/>variables,</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/>*<sp/>not<sp/>in<sp/>this<sp/>struct,<sp/>inside<sp/>the<sp/>inner<sp/>loops.</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>bit_buf_type<sp/>get_buffer;<sp/><sp/></highlight><highlight class="comment">/*<sp/>current<sp/>bit-extraction<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bits_left;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>#<sp/>of<sp/>unused<sp/>bits<sp/>in<sp/>it<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>pointers<sp/>needed<sp/>by<sp/>jpeg_fill_bit_buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><ref refid="structjpeg__decompress__struct" kindref="compound">j_decompress_ptr</ref><sp/>cinfo;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>back<sp/>link<sp/>to<sp/>decompress<sp/>master<sp/>record<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>*<sp/>printed_eod_ptr;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>=&gt;<sp/>flag<sp/>in<sp/>permanent<sp/>state<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}<sp/><ref refid="structbitread__working__state" kindref="compound">bitread_working_state</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Macros<sp/>to<sp/>declare<sp/>and<sp/>load/save<sp/>bitread<sp/>local<sp/>variables.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BITREAD_STATE_VARS<sp/><sp/>\</highlight></codeline>
+<codeline lineno="101"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>register<sp/>bit_buf_type<sp/>get_buffer;<sp/><sp/>\</highlight></codeline>
+<codeline lineno="102"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>register<sp/>int<sp/>bits_left;<sp/><sp/>\</highlight></codeline>
+<codeline lineno="103"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>bitread_working_state<sp/>br_state</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BITREAD_LOAD_STATE(cinfop,permstate)<sp/><sp/>\</highlight></codeline>
+<codeline lineno="106"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>br_state.cinfo<sp/>=<sp/>cinfop;<sp/>\</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>br_state.next_input_byte<sp/>=<sp/>cinfop-&gt;src-&gt;next_input_byte;<sp/>\</highlight></codeline>
+<codeline lineno="108"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>br_state.bytes_in_buffer<sp/>=<sp/>cinfop-&gt;src-&gt;bytes_in_buffer;<sp/>\</highlight></codeline>
+<codeline lineno="109"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>br_state.unread_marker<sp/>=<sp/>cinfop-&gt;unread_marker;<sp/>\</highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>get_buffer<sp/>=<sp/>permstate.get_buffer;<sp/>\</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>bits_left<sp/>=<sp/>permstate.bits_left;<sp/>\</highlight></codeline>
+<codeline lineno="112"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>br_state.printed_eod_ptr<sp/>=<sp/>&amp;<sp/>permstate.printed_eod</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BITREAD_SAVE_STATE(cinfop,permstate)<sp/><sp/>\</highlight></codeline>
+<codeline lineno="115"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>cinfop-&gt;src-&gt;next_input_byte<sp/>=<sp/>br_state.next_input_byte;<sp/>\</highlight></codeline>
+<codeline lineno="116"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>cinfop-&gt;src-&gt;bytes_in_buffer<sp/>=<sp/>br_state.bytes_in_buffer;<sp/>\</highlight></codeline>
+<codeline lineno="117"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>cinfop-&gt;unread_marker<sp/>=<sp/>br_state.unread_marker;<sp/>\</highlight></codeline>
+<codeline lineno="118"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>permstate.get_buffer<sp/>=<sp/>get_buffer;<sp/>\</highlight></codeline>
+<codeline lineno="119"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>permstate.bits_left<sp/>=<sp/>bits_left</highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>These<sp/>macros<sp/>provide<sp/>the<sp/>in-line<sp/>portion<sp/>of<sp/>bit<sp/>fetching.</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/>Use<sp/>CHECK_BIT_BUFFER<sp/>to<sp/>ensure<sp/>there<sp/>are<sp/>N<sp/>bits<sp/>in<sp/>get_buffer</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/>before<sp/>using<sp/>GET_BITS,<sp/>PEEK_BITS,<sp/>or<sp/>DROP_BITS.</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/>The<sp/>variables<sp/>get_buffer<sp/>and<sp/>bits_left<sp/>are<sp/>assumed<sp/>to<sp/>be<sp/>locals,</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>but<sp/>the<sp/>state<sp/>struct<sp/>might<sp/>not<sp/>be<sp/>(jpeg_huff_decode<sp/>needs<sp/>this).</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/><sp/>CHECK_BIT_BUFFER(state,n,action);</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Ensure<sp/>there<sp/>are<sp/>N<sp/>bits<sp/>in<sp/>get_buffer;<sp/>if<sp/>suspend,<sp/>take<sp/>action.</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>val<sp/>=<sp/>GET_BITS(n);</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Fetch<sp/>next<sp/>N<sp/>bits.</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>val<sp/>=<sp/>PEEK_BITS(n);</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Fetch<sp/>next<sp/>N<sp/>bits<sp/>without<sp/>removing<sp/>them<sp/>from<sp/>the<sp/>buffer.</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/><sp/>DROP_BITS(n);</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Discard<sp/>next<sp/>N<sp/>bits.</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/>The<sp/>value<sp/>N<sp/>should<sp/>be<sp/>a<sp/>simple<sp/>variable,<sp/>not<sp/>an<sp/>expression,<sp/>because<sp/>it</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/>is<sp/>evaluated<sp/>multiple<sp/>times.</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHECK_BIT_BUFFER(state,nbits,action)<sp/>\</highlight></codeline>
+<codeline lineno="140"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>if<sp/>(bits_left<sp/>&lt;<sp/>(nbits))<sp/>{<sp/><sp/>\</highlight></codeline>
+<codeline lineno="141"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(!<sp/>jpeg_fill_bit_buffer(&amp;(state),get_buffer,bits_left,nbits))<sp/><sp/>\</highlight></codeline>
+<codeline lineno="142"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>action;<sp/>}<sp/><sp/>\</highlight></codeline>
+<codeline lineno="143"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>get_buffer<sp/>=<sp/>(state).get_buffer;<sp/>bits_left<sp/>=<sp/>(state).bits_left;<sp/>}<sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GET_BITS(nbits)<sp/>\</highlight></codeline>
+<codeline lineno="146"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((int)<sp/>(get_buffer<sp/>&gt;&gt;<sp/>(bits_left<sp/>-=<sp/>(nbits))))<sp/>&amp;<sp/>((1&lt;&lt;(nbits))-1))</highlight></codeline>
+<codeline lineno="147"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PEEK_BITS(nbits)<sp/>\</highlight></codeline>
+<codeline lineno="149"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((int)<sp/>(get_buffer<sp/>&gt;&gt;<sp/>(bits_left<sp/>-<sp/><sp/>(nbits))))<sp/>&amp;<sp/>((1&lt;&lt;(nbits))-1))</highlight></codeline>
+<codeline lineno="150"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DROP_BITS(nbits)<sp/>\</highlight></codeline>
+<codeline lineno="152"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(bits_left<sp/>-=<sp/>(nbits))</highlight></codeline>
+<codeline lineno="153"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Load<sp/>up<sp/>the<sp/>bit<sp/>buffer<sp/>to<sp/>a<sp/>depth<sp/>of<sp/>at<sp/>least<sp/>nbits<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>jpeg_fill_bit_buffer<sp/>JPP((<ref refid="structbitread__working__state" kindref="compound">bitread_working_state</ref><sp/>*<sp/>state,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>bit_buf_type<sp/>get_buffer,<sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bits_left,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbits));</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/>Code<sp/>for<sp/>extracting<sp/>next<sp/>Huffman-coded<sp/>symbol<sp/>from<sp/>input<sp/>bit<sp/>stream.</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/>Again,<sp/>this<sp/>is<sp/>time-critical<sp/>and<sp/>we<sp/>make<sp/>the<sp/>main<sp/>paths<sp/>be<sp/>macros.</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*<sp/>We<sp/>use<sp/>a<sp/>lookahead<sp/>table<sp/>to<sp/>process<sp/>codes<sp/>of<sp/>up<sp/>to<sp/>HUFF_LOOKAHEAD<sp/>bits</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/>without<sp/>looping.<sp/><sp/>Usually,<sp/>more<sp/>than<sp/>95%<sp/>of<sp/>the<sp/>Huffman<sp/>codes<sp/>will<sp/>be<sp/>8</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/>or<sp/>fewer<sp/>bits<sp/>long.<sp/><sp/>The<sp/>few<sp/>overlength<sp/>codes<sp/>are<sp/>handled<sp/>with<sp/>a<sp/>loop,</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*<sp/>which<sp/>need<sp/>not<sp/>be<sp/>inline<sp/>code.</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/>Notes<sp/>about<sp/>the<sp/>HUFF_DECODE<sp/>macro:</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/>1.<sp/>Near<sp/>the<sp/>end<sp/>of<sp/>the<sp/>data<sp/>segment,<sp/>we<sp/>may<sp/>fail<sp/>to<sp/>get<sp/>enough<sp/>bits</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>for<sp/>a<sp/>lookahead.<sp/><sp/>In<sp/>that<sp/>case,<sp/>we<sp/>do<sp/>it<sp/>the<sp/>hard<sp/>way.</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/>2.<sp/>If<sp/>the<sp/>lookahead<sp/>table<sp/>contains<sp/>no<sp/>entry,<sp/>the<sp/>next<sp/>code<sp/>must<sp/>be</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>more<sp/>than<sp/>HUFF_LOOKAHEAD<sp/>bits<sp/>long.</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*<sp/>3.<sp/>jpeg_huff_decode<sp/>returns<sp/>-1<sp/>if<sp/>forced<sp/>to<sp/>suspend.</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUFF_DECODE(result,state,htbl,failaction,slowlabel)<sp/>\</highlight></codeline>
+<codeline lineno="178"><highlight class="preprocessor">{<sp/>register<sp/>int<sp/>nb,<sp/>look;<sp/>\</highlight></codeline>
+<codeline lineno="179"><highlight class="preprocessor"><sp/><sp/>if<sp/>(bits_left<sp/>&lt;<sp/>HUFF_LOOKAHEAD)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="180"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!<sp/>jpeg_fill_bit_buffer(&amp;state,get_buffer,bits_left,<sp/>0))<sp/>{failaction;}<sp/>\</highlight></codeline>
+<codeline lineno="181"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>get_buffer<sp/>=<sp/>state.get_buffer;<sp/>bits_left<sp/>=<sp/>state.bits_left;<sp/>\</highlight></codeline>
+<codeline lineno="182"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(bits_left<sp/>&lt;<sp/>HUFF_LOOKAHEAD)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="183"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>nb<sp/>=<sp/>1;<sp/>goto<sp/>slowlabel;<sp/>\</highlight></codeline>
+<codeline lineno="184"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="185"><highlight class="preprocessor"><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="186"><highlight class="preprocessor"><sp/><sp/>look<sp/>=<sp/>PEEK_BITS(HUFF_LOOKAHEAD);<sp/>\</highlight></codeline>
+<codeline lineno="187"><highlight class="preprocessor"><sp/><sp/>if<sp/>((nb<sp/>=<sp/>htbl-&gt;look_nbits[look])<sp/>!=<sp/>0)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="188"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>DROP_BITS(nb);<sp/>\</highlight></codeline>
+<codeline lineno="189"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>result<sp/>=<sp/>htbl-&gt;look_sym[look];<sp/>\</highlight></codeline>
+<codeline lineno="190"><highlight class="preprocessor"><sp/><sp/>}<sp/>else<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="191"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>nb<sp/>=<sp/>HUFF_LOOKAHEAD+1;<sp/>\</highlight></codeline>
+<codeline lineno="192"><highlight class="preprocessor">slowlabel:<sp/>\</highlight></codeline>
+<codeline lineno="193"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>((result=jpeg_huff_decode(&amp;state,get_buffer,bits_left,htbl,nb))<sp/>&lt;<sp/>0)<sp/>\</highlight></codeline>
+<codeline lineno="194"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>failaction;<sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="195"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>get_buffer<sp/>=<sp/>state.get_buffer;<sp/>bits_left<sp/>=<sp/>state.bits_left;<sp/>\</highlight></codeline>
+<codeline lineno="196"><highlight class="preprocessor"><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="197"><highlight class="preprocessor">}</highlight></codeline>
+<codeline lineno="198"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Out-of-line<sp/>case<sp/>for<sp/>Huffman<sp/>code<sp/>fetching<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jpeg_huff_decode<sp/>JPP((<ref refid="structbitread__working__state" kindref="compound">bitread_working_state</ref><sp/>*<sp/>state,</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>bit_buf_type<sp/>get_buffer,<sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bits_left,</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structd__derived__tbl" kindref="compound">d_derived_tbl</ref><sp/>*<sp/>htbl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min_bits));</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jdhuff.h"/>
+  </compounddef>
+</doxygen>

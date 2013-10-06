@@ -1,0 +1,1683 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jmemdos_8c" kind="file">
+    <compoundname>jmemdos.c</compoundname>
+    <includes refid="jinclude_8h" local="yes">jinclude.h</includes>
+    <includes refid="jpeglib_8h" local="yes">jpeglib.h</includes>
+    <includes refid="jmemsys_8h" local="yes">jmemsys.h</includes>
+    <innerclass refid="struct_x_m_scontext" prot="public">XMScontext</innerclass>
+    <innerclass refid="struct_e_m_scontext" prot="public">EMScontext</innerclass>
+    <innerclass refid="union_x_m_s_p_t_r" prot="public">XMSPTR</innerclass>
+    <innerclass refid="struct_x_m_sspec" prot="public">XMSspec</innerclass>
+    <innerclass refid="union_e_m_sspec" prot="public">EMSspec</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jmemdos_8c_1aff2d819076e9e63556300feb303272d2" prot="public" static="no">
+        <name>XMS_SUPPORTED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="35" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1ae67a0bb0bdade62683689473432facc0" prot="public" static="no">
+        <name>EMS_SUPPORTED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="38" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1ad5c3cdfae3019b8223973041a2a1304b" prot="public" static="no">
+        <name>JPEG_INTERNALS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="42" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a5acb81771f4116aead6a505fef283918" prot="public" static="no">
+        <name>far_malloc</name>
+        <param><defname>x</defname></param>
+        <initializer>malloc(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="69" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a62b58a42160c4f1ef221f843d2a520c4" prot="public" static="no">
+        <name>far_free</name>
+        <param><defname>x</defname></param>
+        <initializer>free(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="70" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a7032a5e02e3a69b9bb87efd768bffabc" prot="public" static="no">
+        <name>READ_BINARY</name>
+        <initializer>&quot;rb&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="77" column="10" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a10b62c1c6a13b239af27ba97e17ce763" prot="public" static="no">
+        <name>DEFAULT_MAX_MEM</name>
+        <initializer>300000L /* for total usage about 450K */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="200" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a7578923043a4716f1b5a17abbe107e9f" prot="public" static="no">
+        <name>ODD</name>
+        <param><defname>X</defname></param>
+        <initializer>(((X) &amp; 1L) != 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="325" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1aeb864a52e63fdf02e5db909e61ff662c" prot="public" static="no">
+        <name>FIELD_AT</name>
+        <param><defname>spec</defname></param>
+        <param><defname>offset</defname></param>
+        <param><defname>type</defname></param>
+        <initializer>(*((type *) &amp;(spec.bytes[offset])))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="468" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="468" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1ac3d504cc8887b3e1f53168a35616fb55" prot="public" static="no">
+        <name>SRC_TYPE</name>
+        <param><defname>spec</defname></param>
+        <initializer>FIELD_AT(spec,4,char)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="469" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="469" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a921cfdcab52eb71f04178cf68e24bca7" prot="public" static="no">
+        <name>SRC_HANDLE</name>
+        <param><defname>spec</defname></param>
+        <initializer>FIELD_AT(spec,5,EMSH)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="470" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="470" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a064081fecc8322b144c241536ca24241" prot="public" static="no">
+        <name>SRC_OFFSET</name>
+        <param><defname>spec</defname></param>
+        <initializer>FIELD_AT(spec,7,unsigned short)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="471" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="471" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a09c94cebd327fe82689f1a85fd46edcf" prot="public" static="no">
+        <name>SRC_PAGE</name>
+        <param><defname>spec</defname></param>
+        <initializer>FIELD_AT(spec,9,unsigned short)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="472" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1ab24e19730c6efa06f9cae10db8ee22ce" prot="public" static="no">
+        <name>SRC_PTR</name>
+        <param><defname>spec</defname></param>
+        <initializer>FIELD_AT(spec,7,EMSPTR)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="473" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="473" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a8af3c09146ea8c172272abfc5004ffac" prot="public" static="no">
+        <name>DST_TYPE</name>
+        <param><defname>spec</defname></param>
+        <initializer>FIELD_AT(spec,11,char)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="474" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="474" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a00a6b8a7474d4fdd7879fdd01d5dae89" prot="public" static="no">
+        <name>DST_HANDLE</name>
+        <param><defname>spec</defname></param>
+        <initializer>FIELD_AT(spec,12,EMSH)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="475" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="475" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1af972caf0b83d888b0acec6987b829191" prot="public" static="no">
+        <name>DST_OFFSET</name>
+        <param><defname>spec</defname></param>
+        <initializer>FIELD_AT(spec,14,unsigned short)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="476" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="476" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a941f757f5ad6ed4e0d8dca57aa20c593" prot="public" static="no">
+        <name>DST_PAGE</name>
+        <param><defname>spec</defname></param>
+        <initializer>FIELD_AT(spec,16,unsigned short)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="477" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="477" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a835af39745c2d204ce420cd272fdbca9" prot="public" static="no">
+        <name>DST_PTR</name>
+        <param><defname>spec</defname></param>
+        <initializer>FIELD_AT(spec,14,EMSPTR)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="478" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="478" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1aacfaa4b005c515aa51c0f1754bf990ce" prot="public" static="no">
+        <name>EMSPAGESIZE</name>
+        <initializer>16384L	/* gospel, see the EMS specs */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="480" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="480" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a7605bf56971f0500104cb2e6893931ff" prot="public" static="no">
+        <name>HIBYTE</name>
+        <param><defname>W</defname></param>
+        <initializer>(((W) &gt;&gt; 8) &amp; 0xFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="482" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="482" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jmemdos_8c_1a3b71aea2d7567d9e33958329d1a89e9b" prot="public" static="no">
+        <name>LOBYTE</name>
+        <param><defname>W</defname></param>
+        <initializer>((W) &amp; 0xFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="483" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="483" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="jmemdos_8c_1aa12c12ae056c93942aeffb2b5ee4e2bf" prot="public" static="no" mutable="no">
+        <type>should be less than typedef void far *</type>
+        <definition>should be less than typedef void far* XMSDRIVER</definition>
+        <argsstring></argsstring>
+        <name>XMSDRIVER</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="93" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="jmemdos_8c_1a1eda1bdcfef380fae5b4e9e791a920da" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int next_file_num</definition>
+        <argsstring></argsstring>
+        <name>next_file_num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="121" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="jmemdos_8c_1a541f431a6d885c3795f1a8978b696010" prot="public" static="yes" mutable="no">
+        <type>XMSDRIVER</type>
+        <definition>XMSDRIVER xms_driver</definition>
+        <argsstring></argsstring>
+        <name>xms_driver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="310" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="310" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="jmemdos_8c_1a886b9e2b0658a0aec69778a60a41ff5b" prot="public" static="no">
+        <type>void far *</type>
+        <definition>typedef void far* EMSPTR</definition>
+        <argsstring></argsstring>
+        <name>EMSPTR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="460" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="460" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jmemdos_8c_1a3bd57cdd1417b35b05ea14bfe6d1e7e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short far</type>
+        <definition>short far jdos_open</definition>
+        <argsstring>(short far *handle, char far *filename)</argsstring>
+        <name>jdos_open</name>
+        <param>
+          <type>short far *</type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>char far *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="103" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1abd46f027fb40fd2ca9b2b28fd4cc8cef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short far</type>
+        <definition>short far jdos_close</definition>
+        <argsstring>(short handle)</argsstring>
+        <name>jdos_close</name>
+        <param>
+          <type>short</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a5fa75258af5ac44cb61ef109e83d9a2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short far</type>
+        <definition>short far jdos_seek</definition>
+        <argsstring>(short handle, long offset)</argsstring>
+        <name>jdos_seek</name>
+        <param>
+          <type>short</type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="105" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1aa9b1b8606fa74bbf3ce41cf6c798852e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short far</type>
+        <definition>short far jdos_read</definition>
+        <argsstring>(short handle, void far *buffer, unsigned short count)</argsstring>
+        <name>jdos_read</name>
+        <param>
+          <type>short</type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>void far *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1aafc6f3ca942d690b7084b54f798182ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short far</type>
+        <definition>short far jdos_write</definition>
+        <argsstring>(short handle, void far *buffer, unsigned short count)</argsstring>
+        <name>jdos_write</name>
+        <param>
+          <type>short</type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>void far *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="108" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1af1d6e1b54bfe1ab234af9ffa0ce9b7f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void far</type>
+        <definition>void far jxms_getdriver</definition>
+        <argsstring>(XMSDRIVER far *)</argsstring>
+        <name>jxms_getdriver</name>
+        <param>
+          <type>XMSDRIVER far *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="110" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a5f62f550bf4a363b0bfeed89f15b0d73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void far</type>
+        <definition>void far jxms_calldriver</definition>
+        <argsstring>(XMSDRIVER, XMScontext far *)</argsstring>
+        <name>jxms_calldriver</name>
+        <param>
+          <type>XMSDRIVER</type>
+        </param>
+        <param>
+          <type><ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref> far *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1ab2e5cf534d2328205fd31b27bd2f8f6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short far</type>
+        <definition>short far jems_available</definition>
+        <argsstring>(void)</argsstring>
+        <name>jems_available</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="112" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a0b7975a3eb9b443172701357261fa15a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void far</type>
+        <definition>void far jems_calldriver</definition>
+        <argsstring>(EMScontext far *)</argsstring>
+        <name>jems_calldriver</name>
+        <param>
+          <type><ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref> far *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="113" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a2369fe08a7d4ae92fe95ada3d2abdce9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void select_file_name</definition>
+        <argsstring>(char *fname)</argsstring>
+        <name>select_file_name</name>
+        <param>
+          <type>char *</type>
+          <declname>fname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="124" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="124" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1ab60e1599069962f06594912a1dfe07a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* jpeg_get_small</definition>
+        <argsstring>(j_common_ptr cinfo, size_t sizeofobject)</argsstring>
+        <name>jpeg_get_small</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>sizeofobject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="162" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="162" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a4548fda4b8765bdaac9f94021e5653d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jpeg_free_small</definition>
+        <argsstring>(j_common_ptr cinfo, void *object, size_t sizeofobject)</argsstring>
+        <name>jpeg_free_small</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>sizeofobject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="168" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="168" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a5cd972eb6ff2e180a2fa41e1da4176af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* jpeg_get_large</definition>
+        <argsstring>(j_common_ptr cinfo, size_t sizeofobject)</argsstring>
+        <name>jpeg_get_large</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>sizeofobject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="179" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="179" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1af71475763ddc75f28c3b6efc3ad212b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jpeg_free_large</definition>
+        <argsstring>(j_common_ptr cinfo, void *object, size_t sizeofobject)</argsstring>
+        <name>jpeg_free_large</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>sizeofobject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="185" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="185" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1ab589c9da269700f0a3462475c782d7d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long jpeg_mem_available</definition>
+        <argsstring>(j_common_ptr cinfo, long min_bytes_needed, long max_bytes_needed, long already_allocated)</argsstring>
+        <name>jpeg_mem_available</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>min_bytes_needed</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>max_bytes_needed</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>already_allocated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="204" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="204" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a3687ae7b2331617bad401f82d4913e78" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void read_file_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info, void *buffer_address, long file_offset, long byte_count)</argsstring>
+        <name>read_file_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buffer_address</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>file_offset</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>byte_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="239" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="239" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a4f0e8d13b06dbcf50d1a5cd374b396ef" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void write_file_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info, void *buffer_address, long file_offset, long byte_count)</argsstring>
+        <name>write_file_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buffer_address</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>file_offset</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>byte_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="255" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="255" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1afac8f31a7f3309d22b814baf9106aaa1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void close_file_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info)</argsstring>
+        <name>close_file_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="271" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="271" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a32bf175e3495253a53710aa3f275cc65" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean open_file_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info, long total_bytes_needed)</argsstring>
+        <name>open_file_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>total_bytes_needed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="284" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="284" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a99bdb260682be2657b01117c143fae8b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void read_xms_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info, void *buffer_address, long file_offset, long byte_count)</argsstring>
+        <name>read_xms_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buffer_address</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>file_offset</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>byte_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="329" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="329" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a0dea942c5b09389daad46b63ffccf652" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void write_xms_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info, void *buffer_address, long file_offset, long byte_count)</argsstring>
+        <name>write_xms_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buffer_address</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>file_offset</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>byte_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="362" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="362" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1ab171a6ee5bfa4f50e333256565b12416" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void close_xms_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info)</argsstring>
+        <name>close_xms_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="397" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="397" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a5c374c4dfc40823f57351ff83a2d6185" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean open_xms_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info, long total_bytes_needed)</argsstring>
+        <name>open_xms_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>total_bytes_needed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="410" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="410" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1aeb98c1517575df1f8865bb429805d934" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void read_ems_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info, void *buffer_address, long file_offset, long byte_count)</argsstring>
+        <name>read_ems_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buffer_address</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>file_offset</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>byte_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="487" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="487" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a7afb936042d8c4ac65323f754b20a9d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void write_ems_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info, void *buffer_address, long file_offset, long byte_count)</argsstring>
+        <name>write_ems_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buffer_address</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>file_offset</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>byte_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="512" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="512" bodyend="533"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a77e48568e9d789a15bb1b80c754b4a7d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void close_ems_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info)</argsstring>
+        <name>close_ems_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="537" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="537" bodyend="546"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a6ecd4bced5b754c464554fd8aff1f985" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean open_ems_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info, long total_bytes_needed)</argsstring>
+        <name>open_ems_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>total_bytes_needed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="550" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="550" bodyend="585"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a7845a6361a93c91fb4ec22b5ab20b0c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jpeg_open_backing_store</definition>
+        <argsstring>(j_common_ptr cinfo, backing_store_ptr info, long total_bytes_needed)</argsstring>
+        <name>jpeg_open_backing_store</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref></type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>total_bytes_needed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="595" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="595" bodyend="610"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1ad0cdf8a11eca62091fc8c1ca0aa12168" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long jpeg_mem_init</definition>
+        <argsstring>(j_common_ptr cinfo)</argsstring>
+        <name>jpeg_mem_init</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="619" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="619" bodyend="623"/>
+      </memberdef>
+      <memberdef kind="function" id="jmemdos_8c_1a37ea2756f17c1fe8eac98dee4e2a6106" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jpeg_mem_term</definition>
+        <argsstring>(j_common_ptr cinfo)</argsstring>
+        <name>jpeg_mem_term</name>
+        <param>
+          <type><ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref></type>
+          <declname>cinfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" line="626" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c" bodystart="626" bodyend="634"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jmemdos.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1992-1994,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>provides<sp/>an<sp/>MS-DOS-compatible<sp/>implementation<sp/>of<sp/>the<sp/>system-</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>dependent<sp/>portion<sp/>of<sp/>the<sp/>JPEG<sp/>memory<sp/>manager.<sp/><sp/>Temporary<sp/>data<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>stored<sp/>in<sp/>extended<sp/>or<sp/>expanded<sp/>memory<sp/>as<sp/>well<sp/>as<sp/>in<sp/>regular<sp/>DOS<sp/>files.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>If<sp/>you<sp/>use<sp/>this<sp/>file,<sp/>you<sp/>must<sp/>be<sp/>sure<sp/>that<sp/>NEED_FAR_POINTERS<sp/>is<sp/>defined</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>if<sp/>you<sp/>compile<sp/>in<sp/>a<sp/>small-data<sp/>memory<sp/>model;<sp/>it<sp/>should<sp/>NOT<sp/>be<sp/>defined<sp/>if</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>you<sp/>use<sp/>a<sp/>large-data<sp/>memory<sp/>model.<sp/><sp/>This<sp/>file<sp/>is<sp/>not<sp/>recommended<sp/>if<sp/>you</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>are<sp/>using<sp/>a<sp/>flat-memory-space<sp/>386<sp/>environment<sp/>such<sp/>as<sp/>DJGCC<sp/>or<sp/>Watcom<sp/>C.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>Also,<sp/>this<sp/>code<sp/>will<sp/>NOT<sp/>work<sp/>if<sp/>struct<sp/>fields<sp/>are<sp/>aligned<sp/>on<sp/>greater<sp/>than</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>2-byte<sp/>boundaries.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>Based<sp/>on<sp/>code<sp/>contributed<sp/>by<sp/>Ge&apos;<sp/>Weijers.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>If<sp/>you<sp/>have<sp/>both<sp/>extended<sp/>and<sp/>expanded<sp/>memory,<sp/>you<sp/>may<sp/>want<sp/>to<sp/>change<sp/>the</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>order<sp/>in<sp/>which<sp/>they<sp/>are<sp/>tried<sp/>in<sp/>jopen_backing_store.<sp/><sp/>On<sp/>a<sp/>286<sp/>machine</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>expanded<sp/>memory<sp/>is<sp/>usually<sp/>faster,<sp/>since<sp/>extended<sp/>memory<sp/>access<sp/>involves</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>an<sp/>expensive<sp/>protected-mode-and-back<sp/>switch.<sp/><sp/>On<sp/>386<sp/>and<sp/>better,<sp/>extended</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>memory<sp/>is<sp/>usually<sp/>faster.<sp/><sp/>As<sp/>distributed,<sp/>the<sp/>code<sp/>tries<sp/>extended<sp/>memory</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>first<sp/>(what?<sp/>not<sp/>everyone<sp/>has<sp/>a<sp/>386?<sp/>:-).</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>You<sp/>can<sp/>disable<sp/>use<sp/>of<sp/>extended/expanded<sp/>memory<sp/>entirely<sp/>by<sp/>altering<sp/>these</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>definitions<sp/>or<sp/>overriding<sp/>them<sp/>from<sp/>the<sp/>Makefile<sp/>(eg,<sp/>-DEMS_SUPPORTED=0).</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>XMS_SUPPORTED</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>XMS_SUPPORTED<sp/><sp/>1</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#ifndef<sp/>EMS_SUPPORTED</highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>EMS_SUPPORTED<sp/><sp/>1</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JPEG_INTERNALS</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;jinclude.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jpeglib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jmemsys.h&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>import<sp/>the<sp/>system-dependent<sp/>declarations<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAVE_STDLIB_H<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>&lt;stdlib.h&gt;<sp/>should<sp/>declare<sp/>these<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>malloc<sp/>JPP((</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size));</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>free<sp/>JPP((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*ptr));</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>getenv<sp/>JPP((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name));</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NEED_FAR_POINTERS</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__TURBOC__</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>These<sp/>definitions<sp/>work<sp/>for<sp/>Borland<sp/>C<sp/>(Turbo<sp/>C)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;alloc.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>need<sp/>farmalloc(),<sp/>farfree()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>far_malloc(x)<sp/><sp/><sp/>farmalloc(x)</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>far_free(x)<sp/>farfree(x)</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="61"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>These<sp/>definitions<sp/>work<sp/>for<sp/>Microsoft<sp/>C<sp/>and<sp/>compatible<sp/>compilers<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;malloc.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>need<sp/>_fmalloc(),<sp/>_ffree()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>far_malloc(x)<sp/><sp/><sp/>_fmalloc(x)</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>far_free(x)<sp/>_ffree(x)</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">/*<sp/>not<sp/>NEED_FAR_POINTERS<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>far_malloc(x)<sp/><sp/><sp/>malloc(x)</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>far_free(x)<sp/>free(x)</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>NEED_FAR_POINTERS<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DONT_USE_B_MODE<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>define<sp/>mode<sp/>parameters<sp/>for<sp/>fopen()<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>READ_BINARY<sp/>&quot;r&quot;</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>READ_BINARY<sp/>&quot;rb&quot;</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>MAX_ALLOC_CHUNK<sp/>&gt;=<sp/>65535L<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>make<sp/>sure<sp/>jconfig.h<sp/>got<sp/>this<sp/>right<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>MAX_ALLOC_CHUNK<sp/>should<sp/>be<sp/>less<sp/>than<sp/>64K.<sp/></highlight><highlight class="comment">/*<sp/>deliberate<sp/>syntax<sp/>error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/>Declarations<sp/>for<sp/>assembly-language<sp/>support<sp/>routines<sp/>(see<sp/>jmemdosa.asm).</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/>The<sp/>functions<sp/>are<sp/>declared<sp/>&quot;far&quot;<sp/>as<sp/>are<sp/>all<sp/>pointer<sp/>arguments;</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>this<sp/>ensures<sp/>the<sp/>assembly<sp/>source<sp/>code<sp/>will<sp/>work<sp/>regardless<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>compiler<sp/>memory<sp/>model.<sp/><sp/>We<sp/>assume<sp/>&quot;short&quot;<sp/>is<sp/>16<sp/>bits,<sp/>&quot;long&quot;<sp/>is<sp/>32.</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*<sp/>XMSDRIVER;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>actually<sp/>a<sp/>pointer<sp/>to<sp/>code<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="struct_x_m_scontext" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>registers<sp/>for<sp/>calling<sp/>XMS<sp/>driver<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>ax,<sp/>dx,<sp/>bx;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*<sp/>ds_si;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref>;</highlight></codeline>
+<codeline lineno="98" refid="struct_e_m_scontext" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>registers<sp/>for<sp/>calling<sp/>EMS<sp/>driver<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>ax,<sp/>dx,<sp/>bx;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*<sp/>ds_si;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>far<sp/>jdos_open<sp/>JPP((</highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>far<sp/>*<sp/>handle,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>far<sp/>*<sp/>filename));</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>far<sp/>jdos_close<sp/>JPP((</highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>handle));</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>far<sp/>jdos_seek<sp/>JPP((</highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>handle,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>offset));</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>far<sp/>jdos_read<sp/>JPP((</highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>handle,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*<sp/>buffer,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>count));</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>far<sp/>jdos_write<sp/>JPP((</highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>handle,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*<sp/>buffer,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>count));</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>jxms_getdriver<sp/>JPP((XMSDRIVER<sp/>far<sp/>*));</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>jxms_calldriver<sp/>JPP((XMSDRIVER,<sp/><ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref><sp/>far<sp/>*));</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>far<sp/>jems_available<sp/>JPP((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>jems_calldriver<sp/>JPP((<ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>far<sp/>*));</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>Selection<sp/>of<sp/>a<sp/>file<sp/>name<sp/>for<sp/>a<sp/>temporary<sp/>file.</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>highly<sp/>system-dependent,<sp/>and<sp/>you<sp/>may<sp/>want<sp/>to<sp/>customize<sp/>it.</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>next_file_num;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>to<sp/>distinguish<sp/>among<sp/>several<sp/>temp<sp/>files<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">LOCAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">select_file_name<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>fname)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>env;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>ptr;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>FILE<sp/>*<sp/>tfile;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Keep<sp/>generating<sp/>file<sp/>names<sp/>till<sp/>we<sp/>find<sp/>one<sp/>that&apos;s<sp/>not<sp/>in<sp/>use<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(;;)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>temp<sp/>directory<sp/>name<sp/>from<sp/>environment<sp/>TMP<sp/>or<sp/>TEMP<sp/>variable;</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>if<sp/>none,<sp/>use<sp/>&quot;.&quot;</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((env<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>getenv(</highlight><highlight class="stringliteral">&quot;TMP&quot;</highlight><highlight class="normal">))<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((env<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>getenv(</highlight><highlight class="stringliteral">&quot;TEMP&quot;</highlight><highlight class="normal">))<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>env<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*env<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>null<sp/>string<sp/>means<sp/>&quot;.&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>env<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>ptr<sp/>=<sp/>fname;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>copy<sp/>name<sp/>to<sp/>fname<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*env<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*ptr++<sp/>=<sp/>*env++;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ptr[-1]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>ptr[-1]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*ptr++<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>append<sp/>backslash<sp/>if<sp/>not<sp/>in<sp/>env<sp/>variable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Append<sp/>a<sp/>suitable<sp/>file<sp/>name<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>next_file_num++;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>advance<sp/>counter<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(ptr,<sp/></highlight><highlight class="stringliteral">&quot;JPG%03d.TMP&quot;</highlight><highlight class="normal">,<sp/>next_file_num);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Probe<sp/>to<sp/>see<sp/>if<sp/>file<sp/>name<sp/>is<sp/>already<sp/>in<sp/>use<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((tfile<sp/>=<sp/>fopen(fname,<sp/>READ_BINARY))<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>fclose(tfile);<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>oops,<sp/>it&apos;s<sp/>there;<sp/>close<sp/>tfile<sp/>&amp;<sp/>try<sp/>again<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/>Near-memory<sp/>allocation<sp/>and<sp/>freeing<sp/>are<sp/>controlled<sp/>by<sp/>the<sp/>regular<sp/>library</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/>routines<sp/>malloc()<sp/>and<sp/>free().</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">jpeg_get_small<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sizeofobject)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>malloc(sizeofobject);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">jpeg_free_small<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sizeofobject)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>free(</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*<sp/>&quot;Large&quot;<sp/>objects<sp/>are<sp/>allocated<sp/>in<sp/>far<sp/>memory,<sp/>if<sp/>possible</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">jpeg_get_large<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sizeofobject)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*)<sp/>far_malloc(sizeofobject);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal">jpeg_free_large<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sizeofobject)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>far_free(</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*<sp/>This<sp/>routine<sp/>computes<sp/>the<sp/>total<sp/>memory<sp/>space<sp/>available<sp/>for<sp/>allocation.</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*<sp/>It&apos;s<sp/>impossible<sp/>to<sp/>do<sp/>this<sp/>in<sp/>a<sp/>portable<sp/>way;<sp/>our<sp/>current<sp/>solution<sp/>is</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/>to<sp/>make<sp/>the<sp/>user<sp/>tell<sp/>us<sp/>(with<sp/>a<sp/>default<sp/>value<sp/>set<sp/>at<sp/>compile<sp/>time).</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/>If<sp/>you<sp/>can<sp/>actually<sp/>get<sp/>the<sp/>available<sp/>space,<sp/>it&apos;s<sp/>a<sp/>good<sp/>idea<sp/>to<sp/>subtract</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*<sp/>a<sp/>slop<sp/>factor<sp/>of<sp/>5%<sp/>or<sp/>so.</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DEFAULT_MAX_MEM<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>so<sp/>can<sp/>override<sp/>from<sp/>makefile<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="200"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DEFAULT_MAX_MEM<sp/><sp/><sp/><sp/><sp/>300000L<sp/></highlight><highlight class="comment">/*<sp/>for<sp/>total<sp/>usage<sp/>about<sp/>450K<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="201"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="202"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">jpeg_mem_available<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>min_bytes_needed,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>max_bytes_needed,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>already_allocated)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cinfo-&gt;mem-&gt;max_memory_to_use<sp/>-<sp/>already_allocated;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/>*<sp/>Backing<sp/>store<sp/>(temporary<sp/>file)<sp/>management.</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/>*<sp/>Backing<sp/>store<sp/>objects<sp/>are<sp/>only<sp/>used<sp/>when<sp/>the<sp/>value<sp/>returned<sp/>by</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/>*<sp/>jpeg_mem_available<sp/>is<sp/>less<sp/>than<sp/>the<sp/>total<sp/>space<sp/>needed.<sp/><sp/>You<sp/>can<sp/>dispense</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/>*<sp/>with<sp/>these<sp/>routines<sp/>if<sp/>you<sp/>have<sp/>plenty<sp/>of<sp/>virtual<sp/>memory;<sp/>see<sp/>jmemnobs.c.</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/>*<sp/>For<sp/>MS-DOS<sp/>we<sp/>support<sp/>three<sp/>types<sp/>of<sp/>backing<sp/>storage:</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"><sp/>*<sp/><sp/><sp/>1.<sp/>Conventional<sp/>DOS<sp/>files.<sp/><sp/>We<sp/>access<sp/>these<sp/>by<sp/>direct<sp/>DOS<sp/>calls<sp/>rather</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>than<sp/>via<sp/>the<sp/>stdio<sp/>package.<sp/><sp/>This<sp/>provides<sp/>a<sp/>bit<sp/>better<sp/>performance,</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>but<sp/>the<sp/>real<sp/>reason<sp/>is<sp/>that<sp/>the<sp/>buffers<sp/>to<sp/>be<sp/>read<sp/>or<sp/>written<sp/>are<sp/>FAR.</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>stdio<sp/>library<sp/>for<sp/>small-data<sp/>memory<sp/>models<sp/>can&apos;t<sp/>cope<sp/>with<sp/>that.</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/>*<sp/><sp/><sp/>2.<sp/>Extended<sp/>memory,<sp/>accessed<sp/>per<sp/>the<sp/>XMS<sp/>V2.0<sp/>specification.</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/>*<sp/><sp/><sp/>3.<sp/>Expanded<sp/>memory,<sp/>accessed<sp/>per<sp/>the<sp/>LIM/EMS<sp/>4.0<sp/>specification.</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/>*<sp/>You&apos;ll<sp/>need<sp/>copies<sp/>of<sp/>those<sp/>specs<sp/>to<sp/>make<sp/>sense<sp/>of<sp/>the<sp/>related<sp/>code.</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/>*<sp/>The<sp/>specs<sp/>are<sp/>available<sp/>by<sp/>Internet<sp/>FTP<sp/>from<sp/>the<sp/>SIMTEL<sp/>archives<sp/></highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/>*<sp/>(oak.oakland.edu<sp/>and<sp/>its<sp/>various<sp/>mirror<sp/>sites).<sp/><sp/>See<sp/>files</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/>*<sp/>pub/msdos/microsoft/xms20.arc<sp/>and<sp/>pub/msdos/info/limems41.zip.</highlight></codeline>
+<codeline lineno="230"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/>*<sp/>Access<sp/>methods<sp/>for<sp/>a<sp/>DOS<sp/>file.</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal">read_file_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*<sp/>buffer_address,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>file_offset,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>byte_count)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(jdos_seek(info-&gt;handle.file_handle,<sp/>file_offset))</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_TFILE_SEEK);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Since<sp/>MAX_ALLOC_CHUNK<sp/>is<sp/>less<sp/>than<sp/>64K,<sp/>byte_count<sp/>will<sp/>be<sp/>too.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(byte_count<sp/>&gt;<sp/>65535L)<sp/><sp/></highlight><highlight class="comment">/*<sp/>safety<sp/>check<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_BAD_ALLOC_CHUNK);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(jdos_read(info-&gt;handle.file_handle,<sp/>buffer_address,</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal">)<sp/>byte_count))</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_TFILE_READ);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal">write_file_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info,</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*<sp/>buffer_address,</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>file_offset,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>byte_count)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(jdos_seek(info-&gt;handle.file_handle,<sp/>file_offset))</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_TFILE_SEEK);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Since<sp/>MAX_ALLOC_CHUNK<sp/>is<sp/>less<sp/>than<sp/>64K,<sp/>byte_count<sp/>will<sp/>be<sp/>too.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(byte_count<sp/>&gt;<sp/>65535L)<sp/><sp/></highlight><highlight class="comment">/*<sp/>safety<sp/>check<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_BAD_ALLOC_CHUNK);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(jdos_write(info-&gt;handle.file_handle,<sp/>buffer_address,</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal">)<sp/>byte_count))</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_TFILE_WRITE);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">close_file_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/>jdos_close(info-&gt;handle.file_handle);<sp/></highlight><highlight class="comment">/*<sp/>close<sp/>the<sp/>file<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">remove</highlight><highlight class="normal">(info-&gt;temp_name);<sp/><sp/></highlight><highlight class="comment">/*<sp/>delete<sp/>the<sp/>file<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>If<sp/>your<sp/>system<sp/>doesn&apos;t<sp/>have<sp/>remove(),<sp/>try<sp/>unlink()<sp/>instead.</highlight></codeline>
+<codeline lineno="276"><highlight class="comment"><sp/>*<sp/>remove()<sp/>is<sp/>the<sp/>ANSI-standard<sp/>name<sp/>for<sp/>this<sp/>function,<sp/>but</highlight></codeline>
+<codeline lineno="277"><highlight class="comment"><sp/>*<sp/>unlink()<sp/>was<sp/>more<sp/>common<sp/>in<sp/>pre-ANSI<sp/>systems.</highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/>TRACEMSS(cinfo,<sp/>1,<sp/>JTRC_TFILE_CLOSE,<sp/>info-&gt;temp_name);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal">LOCAL<sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal">open_file_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info,</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>total_bytes_needed)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>handle;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/>select_file_name(info-&gt;temp_name);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(jdos_open((</highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>far<sp/>*)<sp/>&amp;<sp/>handle,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>far<sp/>*)<sp/>info-&gt;temp_name))<sp/>{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>might<sp/>as<sp/>well<sp/>exit<sp/>since<sp/>jpeg_open_backing_store<sp/>will<sp/>fail<sp/>anyway<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXITS(cinfo,<sp/>JERR_TFILE_CREATE,<sp/>info-&gt;temp_name);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/>info-&gt;handle.file_handle<sp/>=<sp/>handle;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/>info-&gt;read_backing_store<sp/>=<sp/>read_file_store;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/>info-&gt;write_backing_store<sp/>=<sp/>write_file_store;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/>info-&gt;close_backing_store<sp/>=<sp/>close_file_store;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/>TRACEMSS(cinfo,<sp/>1,<sp/>JTRC_TFILE_OPEN,<sp/>info-&gt;temp_name);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TRUE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>succeeded<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="305"><highlight class="comment"><sp/>*<sp/>Access<sp/>methods<sp/>for<sp/>extended<sp/>memory.</highlight></codeline>
+<codeline lineno="306"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>XMS_SUPPORTED</highlight></codeline>
+<codeline lineno="309"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>XMSDRIVER<sp/>xms_driver;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>saved<sp/>address<sp/>of<sp/>XMS<sp/>driver<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312" refid="union_x_m_s_p_t_r" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>either<sp/>long<sp/>offset<sp/>or<sp/>real-mode<sp/>pointer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>offset;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*<sp/>ptr;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="union_x_m_s_p_t_r" kindref="compound">XMSPTR</ref>;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317" refid="struct_x_m_sspec" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>XMS<sp/>move<sp/>specification<sp/>structure<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>length;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>XMSH<sp/>src_handle;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_x_m_s_p_t_r" kindref="compound">XMSPTR</ref><sp/>src;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>XMSH<sp/>dst_handle;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_x_m_s_p_t_r" kindref="compound">XMSPTR</ref><sp/>dst;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_x_m_sspec" kindref="compound">XMSspec</ref>;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ODD(X)<sp/><sp/>(((X)<sp/>&amp;<sp/>1L)<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="326"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal">read_xms_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info,</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*<sp/>buffer_address,</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>file_offset,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>byte_count)</highlight></codeline>
+<codeline lineno="332"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref><sp/>ctx;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><ref refid="struct_x_m_sspec" kindref="compound">XMSspec</ref><sp/>spec;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>endbuffer[2];</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>XMS<sp/>driver<sp/>can&apos;t<sp/>cope<sp/>with<sp/>an<sp/>odd<sp/>length,<sp/>so<sp/>handle<sp/>the<sp/>last<sp/>byte</highlight></codeline>
+<codeline lineno="338"><highlight class="comment"><sp/><sp/><sp/>*<sp/>specially<sp/>if<sp/>byte_count<sp/>is<sp/>odd.<sp/><sp/>We<sp/>don&apos;t<sp/>expect<sp/>this<sp/>to<sp/>be<sp/>common.</highlight></codeline>
+<codeline lineno="339"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/>spec.length<sp/>=<sp/>byte_count<sp/>&amp;<sp/>(~<sp/>1L);</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/>spec.src_handle<sp/>=<sp/>info-&gt;handle.xms_handle;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/>spec.src.offset<sp/>=<sp/>file_offset;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/>spec.dst_handle<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/>spec.dst.ptr<sp/>=<sp/>buffer_address;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/>ctx.ds_si<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*)<sp/>&amp;<sp/>spec;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x0b00;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>EMB<sp/>move<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/>jxms_calldriver(xms_driver,<sp/>(<ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ctx.ax<sp/>!=<sp/>1)</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_XMS_READ);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ODD(byte_count))<sp/>{</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>read_xms_store(cinfo,<sp/>info,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*)<sp/>endbuffer,</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file_offset<sp/>+<sp/>byte_count<sp/>-<sp/>1L,<sp/>2L);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>FAR<sp/>*)<sp/>buffer_address)[byte_count<sp/>-<sp/>1L]<sp/>=<sp/>endbuffer[0];</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="358"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal">write_xms_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info,</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*<sp/>buffer_address,</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>file_offset,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>byte_count)</highlight></codeline>
+<codeline lineno="365"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref><sp/>ctx;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><ref refid="struct_x_m_sspec" kindref="compound">XMSspec</ref><sp/>spec;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>endbuffer[2];</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>XMS<sp/>driver<sp/>can&apos;t<sp/>cope<sp/>with<sp/>an<sp/>odd<sp/>length,<sp/>so<sp/>handle<sp/>the<sp/>last<sp/>byte</highlight></codeline>
+<codeline lineno="371"><highlight class="comment"><sp/><sp/><sp/>*<sp/>specially<sp/>if<sp/>byte_count<sp/>is<sp/>odd.<sp/><sp/>We<sp/>don&apos;t<sp/>expect<sp/>this<sp/>to<sp/>be<sp/>common.</highlight></codeline>
+<codeline lineno="372"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/>spec.length<sp/>=<sp/>byte_count<sp/>&amp;<sp/>(~<sp/>1L);</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/>spec.src_handle<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/>spec.src.ptr<sp/>=<sp/>buffer_address;</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/>spec.dst_handle<sp/>=<sp/>info-&gt;handle.xms_handle;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/>spec.dst.offset<sp/>=<sp/>file_offset;</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/>ctx.ds_si<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*)<sp/>&amp;<sp/>spec;</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x0b00;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>EMB<sp/>move<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/>jxms_calldriver(xms_driver,<sp/>(<ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ctx.ax<sp/>!=<sp/>1)</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_XMS_WRITE);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ODD(byte_count))<sp/>{</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/>read_xms_store(cinfo,<sp/>info,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*)<sp/>endbuffer,</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file_offset<sp/>+<sp/>byte_count<sp/>-<sp/>1L,<sp/>2L);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/>endbuffer[0]<sp/>=<sp/>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>FAR<sp/>*)<sp/>buffer_address)[byte_count<sp/>-<sp/>1L];</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/>write_xms_store(cinfo,<sp/>info,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*)<sp/>endbuffer,</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file_offset<sp/>+<sp/>byte_count<sp/>-<sp/>1L,<sp/>2L);</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="393"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal">close_xms_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info)</highlight></codeline>
+<codeline lineno="398"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref><sp/>ctx;</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/>ctx.dx<sp/>=<sp/>info-&gt;handle.xms_handle;</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x0a00;</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/>jxms_calldriver(xms_driver,<sp/>(<ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/>TRACEMS1(cinfo,<sp/>1,<sp/>JTRC_XMS_CLOSE,<sp/>info-&gt;handle.xms_handle);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>we<sp/>ignore<sp/>any<sp/>error<sp/>return<sp/>from<sp/>the<sp/>driver<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal">LOCAL<sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="normal">open_xms_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info,</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>total_bytes_needed)</highlight></codeline>
+<codeline lineno="412"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref><sp/>ctx;</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>address<sp/>of<sp/>XMS<sp/>driver<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/>jxms_getdriver((XMSDRIVER<sp/>far<sp/>*)<sp/>&amp;<sp/>xms_driver);</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xms_driver<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>no<sp/>driver<sp/>to<sp/>be<sp/>had<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>version<sp/>number,<sp/>must<sp/>be<sp/>&gt;=<sp/>2.00<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x0000;</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/>jxms_calldriver(xms_driver,<sp/>(<ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ctx.ax<sp/>&lt;<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal">)<sp/>0x0200)</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Try<sp/>to<sp/>get<sp/>space<sp/>(expressed<sp/>in<sp/>kilobytes)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/>ctx.dx<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>short)<sp/>((total_bytes_needed<sp/>+<sp/>1023L)<sp/>&gt;&gt;<sp/>10);</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x0900;</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/>jxms_calldriver(xms_driver,<sp/>(<ref refid="struct_x_m_scontext" kindref="compound">XMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ctx.ax<sp/>!=<sp/>1)</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Succeeded,<sp/>save<sp/>the<sp/>handle<sp/>and<sp/>away<sp/>we<sp/>go<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/>info-&gt;handle.xms_handle<sp/>=<sp/>ctx.dx;</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/>info-&gt;read_backing_store<sp/>=<sp/>read_xms_store;</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/>info-&gt;write_backing_store<sp/>=<sp/>write_xms_store;</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/>info-&gt;close_backing_store<sp/>=<sp/>close_xms_store;</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/>TRACEMS1(cinfo,<sp/>1,<sp/>JTRC_XMS_OPEN,<sp/>ctx.dx);</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TRUE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>succeeded<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="440"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="442"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>XMS_SUPPORTED<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="443"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="444"><highlight class="normal"></highlight></codeline>
+<codeline lineno="445"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="446"><highlight class="comment"><sp/>*<sp/>Access<sp/>methods<sp/>for<sp/>expanded<sp/>memory.</highlight></codeline>
+<codeline lineno="447"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="448"><highlight class="normal"></highlight></codeline>
+<codeline lineno="449"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>EMS_SUPPORTED</highlight></codeline>
+<codeline lineno="450"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="451"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>EMS<sp/>move<sp/>specification<sp/>structure<sp/>requires<sp/>word<sp/>and<sp/>long<sp/>fields<sp/>aligned</highlight></codeline>
+<codeline lineno="452"><highlight class="comment"><sp/>*<sp/>at<sp/>odd<sp/>byte<sp/>boundaries.<sp/><sp/>Some<sp/>compilers<sp/>will<sp/>align<sp/>struct<sp/>fields<sp/>at<sp/>even</highlight></codeline>
+<codeline lineno="453"><highlight class="comment"><sp/>*<sp/>byte<sp/>boundaries.<sp/><sp/>While<sp/>it&apos;s<sp/>usually<sp/>possible<sp/>to<sp/>force<sp/>byte<sp/>alignment,</highlight></codeline>
+<codeline lineno="454"><highlight class="comment"><sp/>*<sp/>that<sp/>causes<sp/>an<sp/>overall<sp/>performance<sp/>penalty<sp/>and<sp/>may<sp/>pose<sp/>problems<sp/>in<sp/>merging</highlight></codeline>
+<codeline lineno="455"><highlight class="comment"><sp/>*<sp/>JPEG<sp/>into<sp/>a<sp/>larger<sp/>application.<sp/><sp/>Instead<sp/>we<sp/>accept<sp/>some<sp/>rather<sp/>dirty<sp/>code</highlight></codeline>
+<codeline lineno="456"><highlight class="comment"><sp/>*<sp/>here.<sp/><sp/>Note<sp/>this<sp/>code<sp/>would<sp/>fail<sp/>if<sp/>the<sp/>hardware<sp/>did<sp/>not<sp/>allow<sp/>odd-byte</highlight></codeline>
+<codeline lineno="457"><highlight class="comment"><sp/>*<sp/>word<sp/>&amp;<sp/>long<sp/>accesses,<sp/>but<sp/>all<sp/>80x86<sp/>CPUs<sp/>do.</highlight></codeline>
+<codeline lineno="458"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight></codeline>
+<codeline lineno="460"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*<sp/>EMSPTR;</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight></codeline>
+<codeline lineno="462" refid="union_e_m_sspec" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>EMS<sp/>move<sp/>specification<sp/>structure<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>length;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>It&apos;s<sp/>easy<sp/>to<sp/>access<sp/>first<sp/>4<sp/>bytes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>bytes[18];<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Misaligned<sp/>fields<sp/>in<sp/>here!<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="union_e_m_sspec" kindref="compound">EMSspec</ref>;</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Macros<sp/>for<sp/>accessing<sp/>misaligned<sp/>fields<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="468"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FIELD_AT(spec,offset,type)<sp/><sp/>(*((type<sp/>*)<sp/>&amp;(spec.bytes[offset])))</highlight></codeline>
+<codeline lineno="469"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SRC_TYPE(spec)<sp/><sp/><sp/><sp/><sp/><sp/>FIELD_AT(spec,4,char)</highlight></codeline>
+<codeline lineno="470"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SRC_HANDLE(spec)<sp/><sp/><sp/><sp/>FIELD_AT(spec,5,EMSH)</highlight></codeline>
+<codeline lineno="471"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SRC_OFFSET(spec)<sp/><sp/><sp/><sp/>FIELD_AT(spec,7,unsigned<sp/>short)</highlight></codeline>
+<codeline lineno="472"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SRC_PAGE(spec)<sp/><sp/><sp/><sp/><sp/><sp/>FIELD_AT(spec,9,unsigned<sp/>short)</highlight></codeline>
+<codeline lineno="473"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SRC_PTR(spec)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>FIELD_AT(spec,7,EMSPTR)</highlight></codeline>
+<codeline lineno="474"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DST_TYPE(spec)<sp/><sp/><sp/><sp/><sp/><sp/>FIELD_AT(spec,11,char)</highlight></codeline>
+<codeline lineno="475"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DST_HANDLE(spec)<sp/><sp/><sp/><sp/>FIELD_AT(spec,12,EMSH)</highlight></codeline>
+<codeline lineno="476"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DST_OFFSET(spec)<sp/><sp/><sp/><sp/>FIELD_AT(spec,14,unsigned<sp/>short)</highlight></codeline>
+<codeline lineno="477"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DST_PAGE(spec)<sp/><sp/><sp/><sp/><sp/><sp/>FIELD_AT(spec,16,unsigned<sp/>short)</highlight></codeline>
+<codeline lineno="478"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DST_PTR(spec)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>FIELD_AT(spec,14,EMSPTR)</highlight></codeline>
+<codeline lineno="479"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EMSPAGESIZE<sp/>16384L<sp/><sp/></highlight><highlight class="comment">/*<sp/>gospel,<sp/>see<sp/>the<sp/>EMS<sp/>specs<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="481"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HIBYTE(W)<sp/><sp/>(((W)<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xFF)</highlight></codeline>
+<codeline lineno="483"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>LOBYTE(W)<sp/><sp/>((W)<sp/>&amp;<sp/>0xFF)</highlight></codeline>
+<codeline lineno="484"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="487"><highlight class="normal">read_ems_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info,</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*<sp/>buffer_address,</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>file_offset,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>byte_count)</highlight></codeline>
+<codeline lineno="490"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>ctx;</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><ref refid="union_e_m_sspec" kindref="compound">EMSspec</ref><sp/>spec;</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/>spec.length<sp/>=<sp/>byte_count;</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/>SRC_TYPE(spec)<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/>SRC_HANDLE(spec)<sp/>=<sp/>info-&gt;handle.ems_handle;</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/>SRC_PAGE(spec)<sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>short)<sp/>(file_offset<sp/>/<sp/>EMSPAGESIZE);</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/>SRC_OFFSET(spec)<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>short)<sp/>(file_offset<sp/>%<sp/>EMSPAGESIZE);</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/>DST_TYPE(spec)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/>DST_HANDLE(spec)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/>DST_PTR(spec)<sp/><sp/><sp/><sp/>=<sp/>buffer_address;</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/>ctx.ds_si<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*)<sp/>&amp;<sp/>spec;</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x5700;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>move<sp/>memory<sp/>region<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/>jems_calldriver((<ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HIBYTE(ctx.ax)<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_EMS_READ);</highlight></codeline>
+<codeline lineno="508"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"></highlight></codeline>
+<codeline lineno="510"><highlight class="normal"></highlight></codeline>
+<codeline lineno="511"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal">write_ems_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info,</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*<sp/>buffer_address,</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>file_offset,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>byte_count)</highlight></codeline>
+<codeline lineno="515"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>ctx;</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><ref refid="union_e_m_sspec" kindref="compound">EMSspec</ref><sp/>spec;</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"></highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/>spec.length<sp/>=<sp/>byte_count;</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/>SRC_TYPE(spec)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/>SRC_HANDLE(spec)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/>SRC_PTR(spec)<sp/><sp/><sp/><sp/>=<sp/>buffer_address;</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/>DST_TYPE(spec)<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/>DST_HANDLE(spec)<sp/>=<sp/>info-&gt;handle.ems_handle;</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/>DST_PAGE(spec)<sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>short)<sp/>(file_offset<sp/>/<sp/>EMSPAGESIZE);</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/>DST_OFFSET(spec)<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>short)<sp/>(file_offset<sp/>%<sp/>EMSPAGESIZE);</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/>ctx.ds_si<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>far<sp/>*)<sp/>&amp;<sp/>spec;</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x5700;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>move<sp/>memory<sp/>region<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/>jems_calldriver((<ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HIBYTE(ctx.ax)<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/>ERREXIT(cinfo,<sp/>JERR_EMS_WRITE);</highlight></codeline>
+<codeline lineno="533"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"></highlight></codeline>
+<codeline lineno="535"><highlight class="normal"></highlight></codeline>
+<codeline lineno="536"><highlight class="normal">METHODDEF<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="537"><highlight class="normal">close_ems_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info)</highlight></codeline>
+<codeline lineno="538"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>ctx;</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"></highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x4500;</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/>ctx.dx<sp/>=<sp/>info-&gt;handle.ems_handle;</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/>jems_calldriver((<ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/>TRACEMS1(cinfo,<sp/>1,<sp/>JTRC_EMS_CLOSE,<sp/>info-&gt;handle.ems_handle);</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>we<sp/>ignore<sp/>any<sp/>error<sp/>return<sp/>from<sp/>the<sp/>driver<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="546"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"></highlight></codeline>
+<codeline lineno="548"><highlight class="normal"></highlight></codeline>
+<codeline lineno="549"><highlight class="normal">LOCAL<sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="550"><highlight class="normal">open_ems_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info,</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>total_bytes_needed)</highlight></codeline>
+<codeline lineno="552"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>ctx;</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"></highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Is<sp/>EMS<sp/>driver<sp/>there?<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>jems_available())</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"></highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>status,<sp/>make<sp/>sure<sp/>EMS<sp/>is<sp/>OK<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x4000;</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/>jems_calldriver((<ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HIBYTE(ctx.ax)<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"></highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>version,<sp/>must<sp/>be<sp/>&gt;=<sp/>4.0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x4600;</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/>jems_calldriver((<ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HIBYTE(ctx.ax)<sp/>!=<sp/>0<sp/>||<sp/>LOBYTE(ctx.ax)<sp/>&lt;<sp/>0x40)</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"></highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Try<sp/>to<sp/>allocate<sp/>requested<sp/>space<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/>ctx.ax<sp/>=<sp/>0x4300;</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/>ctx.bx<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>short)<sp/>((total_bytes_needed<sp/>+<sp/>EMSPAGESIZE-1L)<sp/>/<sp/>EMSPAGESIZE);</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/>jems_calldriver((<ref refid="struct_e_m_scontext" kindref="compound">EMScontext</ref><sp/>far<sp/>*)<sp/>&amp;<sp/>ctx);</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HIBYTE(ctx.ax)<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FALSE;</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"></highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Succeeded,<sp/>save<sp/>the<sp/>handle<sp/>and<sp/>away<sp/>we<sp/>go<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/>info-&gt;handle.ems_handle<sp/>=<sp/>ctx.dx;</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/>info-&gt;read_backing_store<sp/>=<sp/>read_ems_store;</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/>info-&gt;write_backing_store<sp/>=<sp/>write_ems_store;</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/>info-&gt;close_backing_store<sp/>=<sp/>close_ems_store;</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/>TRACEMS1(cinfo,<sp/>1,<sp/>JTRC_EMS_OPEN,<sp/>ctx.dx);</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TRUE;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>succeeded<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="585"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"></highlight></codeline>
+<codeline lineno="587"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>EMS_SUPPORTED<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="588"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="589"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="591"><highlight class="comment"><sp/>*<sp/>Initial<sp/>opening<sp/>of<sp/>a<sp/>backing-store<sp/>object.</highlight></codeline>
+<codeline lineno="592"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="593"><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="595"><highlight class="normal">jpeg_open_backing_store<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo,<sp/><ref refid="structbacking__store__struct" kindref="compound">backing_store_ptr</ref><sp/>info,</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>total_bytes_needed)</highlight></codeline>
+<codeline lineno="597"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Try<sp/>extended<sp/>memory,<sp/>then<sp/>expanded<sp/>memory,<sp/>then<sp/>regular<sp/>file.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="599"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>XMS_SUPPORTED</highlight></codeline>
+<codeline lineno="600"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(open_xms_store(cinfo,<sp/>info,<sp/>total_bytes_needed))</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="603"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#if<sp/>EMS_SUPPORTED</highlight></codeline>
+<codeline lineno="604"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(open_ems_store(cinfo,<sp/>info,<sp/>total_bytes_needed))</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="607"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(open_file_store(cinfo,<sp/>info,<sp/>total_bytes_needed))</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/>ERREXITS(cinfo,<sp/>JERR_TFILE_CREATE,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="610"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"></highlight></codeline>
+<codeline lineno="612"><highlight class="normal"></highlight></codeline>
+<codeline lineno="613"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="614"><highlight class="comment"><sp/>*<sp/>These<sp/>routines<sp/>take<sp/>care<sp/>of<sp/>any<sp/>system-dependent<sp/>initialization<sp/>and</highlight></codeline>
+<codeline lineno="615"><highlight class="comment"><sp/>*<sp/>cleanup<sp/>required.</highlight></codeline>
+<codeline lineno="616"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="617"><highlight class="normal"></highlight></codeline>
+<codeline lineno="618"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="619"><highlight class="normal">jpeg_mem_init<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo)</highlight></codeline>
+<codeline lineno="620"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/>next_file_num<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>initialize<sp/>temp<sp/>file<sp/>name<sp/>generator<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>DEFAULT_MAX_MEM;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>default<sp/>for<sp/>max_memory_to_use<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="623"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"></highlight></codeline>
+<codeline lineno="625"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="626"><highlight class="normal">jpeg_mem_term<sp/>(<ref refid="structjpeg__common__struct" kindref="compound">j_common_ptr</ref><sp/>cinfo)</highlight></codeline>
+<codeline lineno="627"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Microsoft<sp/>C,<sp/>at<sp/>least<sp/>in<sp/>v6.00A,<sp/>will<sp/>not<sp/>successfully<sp/>reclaim<sp/>freed</highlight></codeline>
+<codeline lineno="629"><highlight class="comment"><sp/><sp/><sp/>*<sp/>blocks<sp/>of<sp/>size<sp/>&gt;<sp/>32Kbytes<sp/>unless<sp/>we<sp/>give<sp/>it<sp/>a<sp/>kick<sp/>in<sp/>the<sp/>rear,<sp/>like<sp/>so:</highlight></codeline>
+<codeline lineno="630"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="631"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NEED_FHEAPMIN</highlight></codeline>
+<codeline lineno="632"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>_fheapmin();</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="634"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jmemdos.c"/>
+  </compounddef>
+</doxygen>

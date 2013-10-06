@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_audio_hardware" kind="class" prot="public" abstract="yes">
+    <compoundname>idAudioHardware</compoundname>
+    <derivedcompoundref refid="classid_audio_hardware_a_l_s_a" prot="public" virt="non-virtual">idAudioHardwareALSA</derivedcompoundref>
+    <derivedcompoundref refid="classid_audio_hardware_o_s_s" prot="public" virt="non-virtual">idAudioHardwareOSS</derivedcompoundref>
+    <derivedcompoundref refid="classid_audio_hardware_o_s_x" prot="public" virt="non-virtual">idAudioHardwareOSX</derivedcompoundref>
+    <derivedcompoundref refid="classid_audio_hardware_w_i_n32" prot="public" virt="non-virtual">idAudioHardwareWIN32</derivedcompoundref>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classid_audio_hardware_1a489a1b3653837f58c56e1fa0d4b93b87" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_audio_hardware" kindref="compound">idAudioHardware</ref> *</type>
+        <definition>idAudioHardware * idAudioHardware::Alloc</definition>
+        <argsstring>()</argsstring>
+        <name>Alloc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="236" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp" bodystart="52" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_audio_hardware_1afea376fedd9b01d6db1aeeb884aad413" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>idAudioHardware::~idAudioHardware</definition>
+        <argsstring>()</argsstring>
+        <name>~idAudioHardware</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="238" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/sound.cpp" bodystart="78" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_hardware_1a8fda55f60d3a6f9b4c990a6e987a07fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idAudioHardware::Initialize</definition>
+        <argsstring>()=0</argsstring>
+        <name>Initialize</name>
+        <reimplementedby refid="classid_audio_hardware_o_s_x_1a04c46185f561daa4dcb94b0263924d5e">Initialize</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_o_s_s_1a758fac8aec67be9c8a6735b89977b8cb">Initialize</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_w_i_n32_1af12a0cdcfb5171649d6f00bdd6ada38b">Initialize</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_a_l_s_a_1afa4cfab6ce95dc87462ccc35085d582c">Initialize</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="240" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_hardware_1ae119244f8afacc268076ee8cbf07345e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idAudioHardware::Lock</definition>
+        <argsstring>(void **pDSLockedBuffer, ulong *dwDSLockedBufferSize)=0</argsstring>
+        <name>Lock</name>
+        <reimplementedby refid="classid_audio_hardware_o_s_x_1a170553abb33713881aee77a7cd3e11ec">Lock</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_o_s_s_1a40be5d95eb79ca5de5f32d829c5192ae">Lock</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_w_i_n32_1a9b46e6cd4d0b6ce3a25fe4e802a0f42b">Lock</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_a_l_s_a_1a31fb5a8c4701cc23cca0d5569ae9a6d0">Lock</reimplementedby>
+        <param>
+          <type>void **</type>
+          <declname>pDSLockedBuffer</declname>
+        </param>
+        <param>
+          <type>ulong *</type>
+          <declname>dwDSLockedBufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="242" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_hardware_1a4cf44c34587b0499c6e88abdacd38935" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idAudioHardware::Unlock</definition>
+        <argsstring>(void *pDSLockedBuffer, dword dwDSLockedBufferSize)=0</argsstring>
+        <name>Unlock</name>
+        <reimplementedby refid="classid_audio_hardware_o_s_x_1a79194e02b74910ae64bfe42c77d0d766">Unlock</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_o_s_s_1ac6b445c4049ea0b4aa3d73141d2066fd">Unlock</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_w_i_n32_1a066257a2904fb4e9d7d9b2fcc9f91f54">Unlock</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_a_l_s_a_1a703c8ae9aafd3e073b64e8527c170751">Unlock</reimplementedby>
+        <param>
+          <type>void *</type>
+          <declname>pDSLockedBuffer</declname>
+        </param>
+        <param>
+          <type>dword</type>
+          <declname>dwDSLockedBufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="243" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_hardware_1a3e669c08eb751a2bfe1b70dde982ecf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idAudioHardware::GetCurrentPosition</definition>
+        <argsstring>(ulong *pdwCurrentWriteCursor)=0</argsstring>
+        <name>GetCurrentPosition</name>
+        <reimplementedby refid="classid_audio_hardware_o_s_x_1acc9d9db50838c6c4653b4f3a85fa3a4b">GetCurrentPosition</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_o_s_s_1aa75b960023d7fec37a20abfc1d1a3314">GetCurrentPosition</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_w_i_n32_1ac9dd7d47c160a2f556ca84210a370fb4">GetCurrentPosition</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_a_l_s_a_1ae5929a5b41056826ab733c89d897ce9f">GetCurrentPosition</reimplementedby>
+        <param>
+          <type>ulong *</type>
+          <declname>pdwCurrentWriteCursor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="244" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_hardware_1adde88797aa91a353ff233075961731da" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool idAudioHardware::Flush</definition>
+        <argsstring>(void)=0</argsstring>
+        <name>Flush</name>
+        <reimplementedby refid="classid_audio_hardware_o_s_x_1a60ea2b6878d2777c8bb96c17d31645d6">Flush</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_o_s_s_1a88603dda749e3ae137a239bf465c804e">Flush</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_w_i_n32_1ab3a8f9c7a1549b3062f585d6c4ae5aba">Flush</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_a_l_s_a_1ad5878a04faa76229c103948dc11b8f65">Flush</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="248" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_hardware_1a47af0a9914430a76e935ed115c38647d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void idAudioHardware::Write</definition>
+        <argsstring>(bool flushing)=0</argsstring>
+        <name>Write</name>
+        <reimplementedby refid="classid_audio_hardware_o_s_x_1abbe23aed06644ae9843cdc26ae52bea9">Write</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_o_s_s_1a83da39e71700cf82faa1e1b2288e04a8">Write</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_w_i_n32_1afbc550a6a79e9c30df0d194b2a8949bd">Write</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_a_l_s_a_1aa79861a8165d9678e7a22a5b1e55cac5">Write</reimplementedby>
+        <param>
+          <type>bool</type>
+          <declname>flushing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="250" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_hardware_1a1be328b2b49c61b7056bc27564089aee" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int idAudioHardware::GetNumberOfSpeakers</definition>
+        <argsstring>(void)=0</argsstring>
+        <name>GetNumberOfSpeakers</name>
+        <reimplementedby refid="classid_audio_hardware_o_s_x_1aa3ccf672632c5c824df6ddb65934a977">GetNumberOfSpeakers</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_o_s_s_1a3e09ad42422fc0fc00a119cdc2f7dc70">GetNumberOfSpeakers</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_w_i_n32_1a8d34f120584568f7e43b2c1aa684116c">GetNumberOfSpeakers</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_a_l_s_a_1a35a660432063ae7d894a2f87cff0cc95">GetNumberOfSpeakers</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="252" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_hardware_1aa293d04cf5bad13b0b41529d5c31ae6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int idAudioHardware::GetMixBufferSize</definition>
+        <argsstring>(void)=0</argsstring>
+        <name>GetMixBufferSize</name>
+        <reimplementedby refid="classid_audio_hardware_o_s_x_1a980c55bdd000cfff06770a12faa55bef">GetMixBufferSize</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_o_s_s_1a985227cc1281709ff04ea3671f596ebd">GetMixBufferSize</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_w_i_n32_1a07c652c7d1b984655749bd868eae5e32">GetMixBufferSize</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_a_l_s_a_1a41b450b1ab4a4650ba61b4ab5f072567">GetMixBufferSize</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="253" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_hardware_1a2156985faed7bee1602746be72a2cb6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>short *</type>
+        <definition>virtual short* idAudioHardware::GetMixBuffer</definition>
+        <argsstring>(void)=0</argsstring>
+        <name>GetMixBuffer</name>
+        <reimplementedby refid="classid_audio_hardware_o_s_x_1aca4bf12e39f734a9d783acdd49126cf0">GetMixBuffer</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_o_s_s_1aeb3f68d6b4525fefc4d571516b2402df">GetMixBuffer</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_w_i_n32_1a21c7f554b4f48c241506a882a4f662cf">GetMixBuffer</reimplementedby>
+        <reimplementedby refid="classid_audio_hardware_a_l_s_a_1a5db7395cf972cd5bf00c253f6f4b0d23">GetMixBuffer</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="254" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="22303">
+        <label>idAudioHardwareWIN32</label>
+        <link refid="classid_audio_hardware_w_i_n32"/>
+        <childnode refid="22299" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22299">
+        <label>idAudioHardware</label>
+        <link refid="classid_audio_hardware"/>
+      </node>
+      <node id="22300">
+        <label>idAudioHardwareALSA</label>
+        <link refid="classid_audio_hardware_a_l_s_a"/>
+        <childnode refid="22299" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22301">
+        <label>idAudioHardwareOSS</label>
+        <link refid="classid_audio_hardware_o_s_s"/>
+        <childnode refid="22299" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22302">
+        <label>idAudioHardwareOSX</label>
+        <link refid="classid_audio_hardware_o_s_x"/>
+        <childnode refid="22299" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" line="234" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sound/snd_local.h" bodystart="234" bodyend="255"/>
+    <listofallmembers>
+      <member refid="classid_audio_hardware_1a489a1b3653837f58c56e1fa0d4b93b87" prot="public" virt="non-virtual"><scope>idAudioHardware</scope><name>Alloc</name></member>
+      <member refid="classid_audio_hardware_1adde88797aa91a353ff233075961731da" prot="public" virt="pure-virtual"><scope>idAudioHardware</scope><name>Flush</name></member>
+      <member refid="classid_audio_hardware_1a3e669c08eb751a2bfe1b70dde982ecf1" prot="public" virt="pure-virtual"><scope>idAudioHardware</scope><name>GetCurrentPosition</name></member>
+      <member refid="classid_audio_hardware_1a2156985faed7bee1602746be72a2cb6d" prot="public" virt="pure-virtual"><scope>idAudioHardware</scope><name>GetMixBuffer</name></member>
+      <member refid="classid_audio_hardware_1aa293d04cf5bad13b0b41529d5c31ae6b" prot="public" virt="pure-virtual"><scope>idAudioHardware</scope><name>GetMixBufferSize</name></member>
+      <member refid="classid_audio_hardware_1a1be328b2b49c61b7056bc27564089aee" prot="public" virt="pure-virtual"><scope>idAudioHardware</scope><name>GetNumberOfSpeakers</name></member>
+      <member refid="classid_audio_hardware_1a8fda55f60d3a6f9b4c990a6e987a07fe" prot="public" virt="pure-virtual"><scope>idAudioHardware</scope><name>Initialize</name></member>
+      <member refid="classid_audio_hardware_1ae119244f8afacc268076ee8cbf07345e" prot="public" virt="pure-virtual"><scope>idAudioHardware</scope><name>Lock</name></member>
+      <member refid="classid_audio_hardware_1a4cf44c34587b0499c6e88abdacd38935" prot="public" virt="pure-virtual"><scope>idAudioHardware</scope><name>Unlock</name></member>
+      <member refid="classid_audio_hardware_1a47af0a9914430a76e935ed115c38647d" prot="public" virt="pure-virtual"><scope>idAudioHardware</scope><name>Write</name></member>
+      <member refid="classid_audio_hardware_1afea376fedd9b01d6db1aeeb884aad413" prot="public" virt="virtual"><scope>idAudioHardware</scope><name>~idAudioHardware</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

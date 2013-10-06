@@ -1,0 +1,1013 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="tritjunction_8cpp" kind="file">
+    <compoundname>tritjunction.cpp</compoundname>
+    <includes refid="precompiled_8h" local="yes">../../../idlib/precompiled.h</includes>
+    <includes refid="dmap_8h" local="yes">dmap.h</includes>
+    <innerclass refid="structhash_vert__s" prot="public">hashVert_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="tritjunction_8cpp_1aabc481f8b1bf980602ebc29e23af87f2" prot="public" static="no">
+        <name>SNAP_FRACTIONS</name>
+        <initializer>32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="80" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tritjunction_8cpp_1a2bc675c0ed7bcbacce953cdfe70a7ba3" prot="public" static="no">
+        <name>VERTEX_EPSILON</name>
+        <initializer>( 1.0 / SNAP_FRACTIONS )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="84" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tritjunction_8cpp_1a69508bfcd3dc5fac689236eba866f89c" prot="public" static="no">
+        <name>COLINEAR_EPSILON</name>
+        <initializer>( 1.8 * VERTEX_EPSILON )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="86" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tritjunction_8cpp_1a5dbdb5031444945e8e49831e72b45747" prot="public" static="no">
+        <name>HASH_BINS</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="88" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="tritjunction_8cpp_1a3f52f14b2878f1920e898a64653bf528" prot="public" static="no">
+        <type>struct <ref refid="structhash_vert__s" kindref="compound">hashVert_s</ref></type>
+        <definition>typedef struct hashVert_s  hashVert_t</definition>
+        <argsstring></argsstring>
+        <name>hashVert_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="94" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="tritjunction_8cpp_1a5656c6c37ce36a5c08957d978a58acc1" prot="public" static="yes" mutable="no">
+        <type><ref refid="classid_bounds" kindref="compound">idBounds</ref></type>
+        <definition>idBounds hashBounds</definition>
+        <argsstring></argsstring>
+        <name>hashBounds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="96" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tritjunction_8cpp_1a20748105d187478d463e64961a5af874" prot="public" static="yes" mutable="no">
+        <type><ref refid="classid_vec3" kindref="compound">idVec3</ref></type>
+        <definition>idVec3 hashScale</definition>
+        <argsstring></argsstring>
+        <name>hashScale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="97" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tritjunction_8cpp_1a2e68e0d88c956813728c90bbf64abf0e" prot="public" static="yes" mutable="no">
+        <type><ref refid="structhash_vert__s" kindref="compound">hashVert_t</ref> *</type>
+        <definition>hashVert_t* hashVerts[16][16][16]</definition>
+        <argsstring>[16][16][16]</argsstring>
+        <name>hashVerts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="98" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tritjunction_8cpp_1a4ab773c1e9336301731669ff767c73f3" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int numHashVerts</definition>
+        <argsstring></argsstring>
+        <name>numHashVerts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="99" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tritjunction_8cpp_1ab437f04ca99f7acb1195738c48d61b7b" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int numTotalVerts</definition>
+        <argsstring></argsstring>
+        <name>numTotalVerts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="99" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tritjunction_8cpp_1a723435fac56cae35c612a84749077099" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int hashIntMins[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>hashIntMins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="100" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tritjunction_8cpp_1a3d41dad1dfd4ccc4fac27851efa4ccae" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int hashIntScale[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>hashIntScale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="100" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="tritjunction_8cpp_1ab8ecb1f47344ac8c898cfb035b1cadd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structhash_vert__s" kindref="compound">hashVert_s</ref> *</type>
+        <definition>struct hashVert_s* GetHashVert</definition>
+        <argsstring>(idVec3 &amp;v)</argsstring>
+        <name>GetHashVert</name>
+        <param>
+          <type><ref refid="classid_vec3" kindref="compound">idVec3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="109" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="109" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="tritjunction_8cpp_1ae41037dba63c7890e78a03c72ce169d6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void HashBlocksForTri</definition>
+        <argsstring>(const mapTri_t *tri, int blocks[2][3])</argsstring>
+        <name>HashBlocksForTri</name>
+        <param>
+          <type>const <ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref> *</type>
+          <declname>tri</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blocks</declname>
+          <array>[2][3]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="181" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="181" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="tritjunction_8cpp_1a9ee9451286cab768d6e671079c61ca6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HashTriangles</definition>
+        <argsstring>(optimizeGroup_t *groupList)</argsstring>
+        <name>HashTriangles</name>
+        <param>
+          <type><ref refid="structoptimize_group__s" kindref="compound">optimizeGroup_t</ref> *</type>
+          <declname>groupList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="216" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="216" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="tritjunction_8cpp_1a52bf6285f48f11e97e3f6070779f3675" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FreeTJunctionHash</definition>
+        <argsstring>(void)</argsstring>
+        <name>FreeTJunctionHash</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="273" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="273" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="tritjunction_8cpp_1a57e569a65d131e550eba9aa6f5c3a3d1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref> *</type>
+        <definition>static mapTri_t* FixTriangleAgainstHashVert</definition>
+        <argsstring>(const mapTri_t *a, const hashVert_t *hv)</argsstring>
+        <name>FixTriangleAgainstHashVert</name>
+        <param>
+          <type>const <ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structhash_vert__s" kindref="compound">hashVert_t</ref> *</type>
+          <declname>hv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="299" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="299" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="tritjunction_8cpp_1adf20fa6c210313e228695bbb3fef5ae8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref> *</type>
+        <definition>static mapTri_t* FixTriangleAgainstHash</definition>
+        <argsstring>(const mapTri_t *tri)</argsstring>
+        <name>FixTriangleAgainstHash</name>
+        <param>
+          <type>const <ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref> *</type>
+          <declname>tri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="395" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="395" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="tritjunction_8cpp_1a7b77036362ac8a8b4de0c86925ed13d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CountGroupListTris</definition>
+        <argsstring>(const optimizeGroup_t *groupList)</argsstring>
+        <name>CountGroupListTris</name>
+        <param>
+          <type>const <ref refid="structoptimize_group__s" kindref="compound">optimizeGroup_t</ref> *</type>
+          <declname>groupList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="450" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="450" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="tritjunction_8cpp_1ab1cb578b94bb0f9a7681b7c7cdf0ce4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FixAreaGroupsTjunctions</definition>
+        <argsstring>(optimizeGroup_t *groupList)</argsstring>
+        <name>FixAreaGroupsTjunctions</name>
+        <param>
+          <type><ref refid="structoptimize_group__s" kindref="compound">optimizeGroup_t</ref> *</type>
+          <declname>groupList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="466" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="466" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="tritjunction_8cpp_1ae4f7271ba2a87779eb8c112d37e0f170" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FixEntityTjunctions</definition>
+        <argsstring>(uEntity_t *e)</argsstring>
+        <name>FixEntityTjunctions</name>
+        <param>
+          <type><ref refid="structu_entity__t" kindref="compound">uEntity_t</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="517" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="517" bodyend="524"/>
+      </memberdef>
+      <memberdef kind="function" id="tritjunction_8cpp_1a503e354d1f614fe4a5f369bbb0f03850" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FixGlobalTjunctions</definition>
+        <argsstring>(uEntity_t *e)</argsstring>
+        <name>FixGlobalTjunctions</name>
+        <param>
+          <type><ref refid="structu_entity__t" kindref="compound">uEntity_t</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" line="531" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp" bodystart="531" bodyend="663"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../idlib/precompiled.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>hdrstop</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dmap.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"></highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/>T<sp/>junction<sp/>fixing<sp/>never<sp/>creates<sp/>more<sp/>xyz<sp/>points,<sp/>but</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/>new<sp/>vertexes<sp/>will<sp/>be<sp/>created<sp/>when<sp/>different<sp/>surfaces</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/>cause<sp/>a<sp/>fix</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"></highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/>The<sp/>vertex<sp/>cleaning<sp/>accomplishes<sp/>two<sp/>goals:<sp/>removing<sp/>extranious<sp/>low<sp/>order</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/>bits<sp/>to<sp/>avoid<sp/>numbers<sp/>like<sp/>1.000001233,<sp/>and<sp/>grouping<sp/>nearby<sp/>vertexes</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/>together.<sp/><sp/>Straight<sp/>truncation<sp/>accomplishes<sp/>the<sp/>first<sp/>foal,<sp/>but<sp/>two<sp/>vertexes</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/>only<sp/>a<sp/>tiny<sp/>epsilon<sp/>apart<sp/>could<sp/>still<sp/>be<sp/>spread<sp/>to<sp/>different<sp/>snap<sp/>points.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/>To<sp/>avoid<sp/>this,<sp/>we<sp/>allow<sp/>the<sp/>merge<sp/>test<sp/>to<sp/>group<sp/>points<sp/>together<sp/>that</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/>snapped<sp/>to<sp/>neighboring<sp/>integer<sp/>coordinates.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"></highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/>Snaping<sp/>verts<sp/>can<sp/>drag<sp/>some<sp/>triangles<sp/>backwards<sp/>or<sp/>collapse<sp/>them<sp/>to<sp/>points,</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/>which<sp/>will<sp/>cause<sp/>them<sp/>to<sp/>be<sp/>removed.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="comment"></highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/>When<sp/>snapping<sp/>to<sp/>ints,<sp/>a<sp/>point<sp/>can<sp/>move<sp/>a<sp/>maximum<sp/>of<sp/>sqrt(3)/2<sp/>distance</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/>Two<sp/>points<sp/>that<sp/>were<sp/>an<sp/>epsilon<sp/>apart<sp/>can<sp/>then<sp/>become<sp/>sqrt(3)<sp/>apart</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/>A<sp/>case<sp/>that<sp/>causes<sp/>recursive<sp/>overflow<sp/>with<sp/>point<sp/>to<sp/>triangle<sp/>fixing:</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"></highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/>C<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>D</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>B</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"></highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/>Triangle<sp/>ABC<sp/>tests<sp/>against<sp/>point<sp/>D<sp/>and<sp/>splits<sp/>into<sp/>triangles<sp/>ADC<sp/>and<sp/>DBC</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/>Triangle<sp/>DBC<sp/>then<sp/>tests<sp/>against<sp/>point<sp/>A<sp/>again<sp/>and<sp/>splits<sp/>into<sp/>ABC<sp/>and<sp/>ADB</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/>infinite<sp/>recursive<sp/>loop</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/>For<sp/>a<sp/>given<sp/>source<sp/>triangle</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/>init<sp/>the<sp/>no-check<sp/>list<sp/>to<sp/>hold<sp/>the<sp/>three<sp/>triangle<sp/>hashVerts</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"></highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/>recursiveFixTriAgainstHash</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"></highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/>recursiveFixTriAgainstHashVert_r</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/>if<sp/>hashVert<sp/>is<sp/>on<sp/>the<sp/>no-check<sp/>list</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/>if<sp/>the<sp/>hashVert<sp/>should<sp/>split<sp/>the<sp/>triangle</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>add<sp/>to<sp/>the<sp/>no-check<sp/>list</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recursiveFixTriAgainstHash(a)</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recursiveFixTriAgainstHash(b)</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"></highlight></codeline>
+<codeline lineno="78"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SNAP_FRACTIONS<sp/><sp/>32</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"></highlight><highlight class="comment">//#define<sp/><sp/><sp/>SNAP_FRACTIONS<sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/><sp/><sp/>SNAP_FRACTIONS<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VERTEX_EPSILON<sp/><sp/>(<sp/>1.0<sp/>/<sp/>SNAP_FRACTIONS<sp/>)</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COLINEAR_EPSILON<sp/><sp/><sp/><sp/>(<sp/>1.8<sp/>*<sp/>VERTEX_EPSILON<sp/>)</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HASH_BINS<sp/><sp/><sp/>16</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="structhash_vert__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structhash_vert__s" kindref="compound">hashVert_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structhash_vert__s" kindref="compound">hashVert_s</ref><sp/><sp/><sp/>*next;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv[3];</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}<sp/><ref refid="structhash_vert__s" kindref="compound">hashVert_t</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classid_bounds" kindref="compound">idBounds</ref><sp/>hashBounds;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/><sp/><sp/>hashScale;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structhash_vert__s" kindref="compound">hashVert_t</ref><sp/><sp/><sp/>*hashVerts[HASH_BINS][HASH_BINS][HASH_BINS];</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>numHashVerts,<sp/>numTotalVerts;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>hashIntMins[3],<sp/>hashIntScale[3];</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="103"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="104"><highlight class="comment">GetHashVert</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment">Also<sp/>modifies<sp/>the<sp/>original<sp/>vert<sp/>to<sp/>the<sp/>snapped<sp/>value</highlight></codeline>
+<codeline lineno="107"><highlight class="comment">===============</highlight></codeline>
+<codeline lineno="108"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structhash_vert__s" kindref="compound">hashVert_s</ref><sp/><sp/><sp/>*GetHashVert(<sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/>&amp;v<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>iv[3];</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>block[3];</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structhash_vert__s" kindref="compound">hashVert_t</ref><sp/><sp/>*hv;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>numTotalVerts++;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>snap<sp/>the<sp/>vert<sp/>to<sp/>integral<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>3<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv[i]<sp/>=<sp/>floor(<sp/>(<sp/>v[i]<sp/>+<sp/>0.5/SNAP_FRACTIONS<sp/>)<sp/>*<sp/>SNAP_FRACTIONS<sp/>);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block[i]<sp/>=<sp/>(<sp/>iv[i]<sp/>-<sp/>hashIntMins[i]<sp/>)<sp/>/<sp/>hashIntScale[i];</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>block[i]<sp/>&lt;<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>block[i]<sp/>&gt;=<sp/>HASH_BINS<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block[i]<sp/>=<sp/>HASH_BINS<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>see<sp/>if<sp/>a<sp/>vertex<sp/>near<sp/>enough<sp/>already<sp/>exists</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>could<sp/>still<sp/>fail<sp/>to<sp/>find<sp/>a<sp/>near<sp/>neighbor<sp/>right<sp/>at<sp/>the<sp/>hash<sp/>block<sp/>boundary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>hv<sp/>=<sp/>hashVerts[block[0]][block[1]][block[2]]<sp/>;<sp/>hv<sp/>;<sp/>hv<sp/>=<sp/>hv-&gt;next<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight></codeline>
+<codeline lineno="132"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>hv-&gt;iv[0]<sp/>==<sp/>iv[0]<sp/>&amp;&amp;<sp/>hv-&gt;iv[1]<sp/>==<sp/>iv[1]<sp/>&amp;&amp;<sp/>hv-&gt;iv[2]<sp/>==<sp/>iv[2]<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VectorCopy(<sp/>hv-&gt;v,<sp/>v<sp/>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hv;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="137"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>3<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d<sp/>=<sp/>hv-&gt;iv[i]<sp/>-<sp/>iv[i];</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>d<sp/>&lt;<sp/>-1<sp/>||<sp/>d<sp/>&gt;<sp/>1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>==<sp/>3<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VectorCopy(<sp/>hv-&gt;v,<sp/>v<sp/>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hv;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="149"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>a<sp/>new<sp/>one<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>hv<sp/>=<sp/>(<ref refid="structhash_vert__s" kindref="compound">hashVert_t</ref><sp/>*)Mem_Alloc(<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>*hv<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>hv-&gt;next<sp/>=<sp/>hashVerts[block[0]][block[1]][block[2]];</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>hashVerts[block[0]][block[1]][block[2]]<sp/>=<sp/>hv;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>hv-&gt;iv[0]<sp/>=<sp/>iv[0];</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>hv-&gt;iv[1]<sp/>=<sp/>iv[1];</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>hv-&gt;iv[2]<sp/>=<sp/>iv[2];</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>hv-&gt;v[0]<sp/>=<sp/>(float)iv[0]<sp/>/<sp/>SNAP_FRACTIONS;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>hv-&gt;v[1]<sp/>=<sp/>(float)iv[1]<sp/>/<sp/>SNAP_FRACTIONS;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>hv-&gt;v[2]<sp/>=<sp/>(float)iv[2]<sp/>/<sp/>SNAP_FRACTIONS;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>VectorCopy(<sp/>hv-&gt;v,<sp/>v<sp/>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>numHashVerts++;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hv;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="174"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="175"><highlight class="comment">HashBlocksForTri</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"></highlight></codeline>
+<codeline lineno="177"><highlight class="comment">Returns<sp/>an<sp/>inclusive<sp/>bounding<sp/>box<sp/>of<sp/>hash</highlight></codeline>
+<codeline lineno="178"><highlight class="comment">bins<sp/>that<sp/>should<sp/>hold<sp/>the<sp/>triangle</highlight></codeline>
+<codeline lineno="179"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="180"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HashBlocksForTri(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/>*tri,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blocks[2][3]<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_bounds" kindref="compound">idBounds</ref><sp/><sp/><sp/><sp/>bounds;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>bounds.Clear();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>bounds.AddPoint(<sp/>tri-&gt;v[0].xyz<sp/>);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>bounds.AddPoint(<sp/>tri-&gt;v[1].xyz<sp/>);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>bounds.AddPoint(<sp/>tri-&gt;v[2].xyz<sp/>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>a<sp/>1.0<sp/>slop<sp/>margin<sp/>on<sp/>each<sp/>side</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>3<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blocks[0][i]<sp/>=<sp/>(<sp/>bounds[0][i]<sp/>-<sp/>1.0<sp/>-<sp/>hashBounds[0][i]<sp/>)<sp/>/<sp/>hashScale[i];</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>blocks[0][i]<sp/>&lt;<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blocks[0][i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>blocks[0][i]<sp/>&gt;=<sp/>HASH_BINS<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blocks[0][i]<sp/>=<sp/>HASH_BINS<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blocks[1][i]<sp/>=<sp/>(<sp/>bounds[1][i]<sp/>+<sp/>1.0<sp/>-<sp/>hashBounds[0][i]<sp/>)<sp/>/<sp/>hashScale[i];</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>blocks[1][i]<sp/>&lt;<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blocks[1][i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>blocks[1][i]<sp/>&gt;=<sp/>HASH_BINS<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blocks[1][i]<sp/>=<sp/>HASH_BINS<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="210"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="211"><highlight class="comment">HashTriangles</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"></highlight></codeline>
+<codeline lineno="213"><highlight class="comment">Removes<sp/>triangles<sp/>that<sp/>are<sp/>degenerated<sp/>or<sp/>flipped<sp/>backwards</highlight></codeline>
+<codeline lineno="214"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="215"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HashTriangles(<sp/><ref refid="structoptimize_group__s" kindref="compound">optimizeGroup_t</ref><sp/>*groupList<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/><sp/><sp/><sp/>*a;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vert;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structoptimize_group__s" kindref="compound">optimizeGroup_t</ref><sp/>*group;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>clear<sp/>the<sp/>hash<sp/>tables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<sp/>hashVerts,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>hashVerts<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>numHashVerts<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>numTotalVerts<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bound<sp/>all<sp/>the<sp/>triangles<sp/>to<sp/>determine<sp/>the<sp/>bucket<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>hashBounds.Clear();</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>group<sp/>=<sp/>groupList<sp/>;<sp/>group<sp/>;<sp/>group<sp/>=<sp/>group-&gt;nextGroup<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>a<sp/>=<sp/>group-&gt;triList<sp/>;<sp/>a<sp/>;<sp/>a<sp/>=<sp/>a-&gt;next<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashBounds.AddPoint(<sp/>a-&gt;v[0].xyz<sp/>);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashBounds.AddPoint(<sp/>a-&gt;v[1].xyz<sp/>);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashBounds.AddPoint(<sp/>a-&gt;v[2].xyz<sp/>);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>spread<sp/>the<sp/>bounds<sp/>so<sp/>it<sp/>will<sp/>never<sp/>have<sp/>a<sp/>zero<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>3<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashBounds[0][i]<sp/>=<sp/>floor(<sp/>hashBounds[0][i]<sp/>-<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashBounds[1][i]<sp/>=<sp/>ceil(<sp/>hashBounds[1][i]<sp/>+<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashIntMins[i]<sp/>=<sp/>hashBounds[0][i]<sp/>*<sp/>SNAP_FRACTIONS;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashScale[i]<sp/>=<sp/>(<sp/>hashBounds[1][i]<sp/>-<sp/>hashBounds[0][i]<sp/>)<sp/>/<sp/>HASH_BINS;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashIntScale[i]<sp/>=<sp/>hashScale[i]<sp/>*<sp/>SNAP_FRACTIONS;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>hashIntScale[i]<sp/>&lt;<sp/>1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashIntScale[i]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>all<sp/>the<sp/>points<sp/>to<sp/>the<sp/>hash<sp/>buckets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>group<sp/>=<sp/>groupList<sp/>;<sp/>group<sp/>;<sp/>group<sp/>=<sp/>group-&gt;nextGroup<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>don&apos;t<sp/>create<sp/>tjunctions<sp/>against<sp/>discrete<sp/>surfaces<sp/>(blood<sp/>decals,<sp/>etc)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>group-&gt;material<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>group-&gt;material-&gt;IsDiscrete()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>a<sp/>=<sp/>group-&gt;triList<sp/>;<sp/>a<sp/>;<sp/>a<sp/>=<sp/>a-&gt;next<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>vert<sp/>=<sp/>0<sp/>;<sp/>vert<sp/>&lt;<sp/>3<sp/>;<sp/>vert++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a-&gt;hashVert[vert]<sp/>=<sp/>GetHashVert(<sp/>a-&gt;v[vert].xyz<sp/>);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="266"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="267"><highlight class="comment">FreeTJunctionHash</highlight></codeline>
+<codeline lineno="268"><highlight class="comment"></highlight></codeline>
+<codeline lineno="269"><highlight class="comment">The<sp/>optimizer<sp/>may<sp/>add<sp/>some<sp/>more<sp/>crossing<sp/>verts</highlight></codeline>
+<codeline lineno="270"><highlight class="comment">after<sp/>t<sp/>junction<sp/>processing</highlight></codeline>
+<codeline lineno="271"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="272"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FreeTJunctionHash(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i,<sp/>j,<sp/>k;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structhash_vert__s" kindref="compound">hashVert_t</ref><sp/><sp/>*hv,<sp/>*next;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>HASH_BINS<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>j<sp/>=<sp/>0<sp/>;<sp/>j<sp/>&lt;<sp/>HASH_BINS<sp/>;<sp/>j++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>k<sp/>=<sp/>0<sp/>;<sp/>k<sp/>&lt;<sp/>HASH_BINS<sp/>;<sp/>k++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>hv<sp/>=<sp/>hashVerts[i][j][k]<sp/>;<sp/>hv<sp/>;<sp/>hv<sp/>=<sp/>next<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>next<sp/>=<sp/>hv-&gt;next;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mem_Free(<sp/>hv<sp/>);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<sp/>hashVerts,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>hashVerts<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="292"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="293"><highlight class="comment">FixTriangleAgainstHashVert</highlight></codeline>
+<codeline lineno="294"><highlight class="comment"></highlight></codeline>
+<codeline lineno="295"><highlight class="comment">Returns<sp/>a<sp/>list<sp/>of<sp/>two<sp/>new<sp/>mapTri<sp/>if<sp/>the<sp/>hashVert<sp/>is</highlight></codeline>
+<codeline lineno="296"><highlight class="comment">on<sp/>an<sp/>edge<sp/>of<sp/>the<sp/>given<sp/>mapTri,<sp/>otherwise<sp/>returns<sp/>NULL.</highlight></codeline>
+<codeline lineno="297"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="298"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/>*FixTriangleAgainstHashVert(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/>*a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structhash_vert__s" kindref="compound">hashVert_t</ref><sp/>*hv<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_draw_vert" kindref="compound">idDrawVert</ref><sp/><sp/><sp/><sp/>*v1,<sp/>*v2,<sp/>*v3;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_draw_vert" kindref="compound">idDrawVert</ref><sp/><sp/>split;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/><sp/><sp/><sp/><sp/><sp/>dir;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frac;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/><sp/><sp/><sp/>*new1,<sp/>*new2;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/><sp/><sp/><sp/><sp/><sp/>temp;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d,<sp/>off;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/>*v;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classid_plane" kindref="compound">idPlane</ref><sp/><sp/><sp/><sp/><sp/>plane1,<sp/>plane2;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>v<sp/>=<sp/>&amp;hv-&gt;v;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>the<sp/>triangle<sp/>already<sp/>has<sp/>this<sp/>hashVert<sp/>as<sp/>a<sp/>vert,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>it<sp/>can&apos;t<sp/>be<sp/>split<sp/>by<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>a-&gt;hashVert[0]<sp/>==<sp/>hv<sp/>||<sp/>a-&gt;hashVert[1]<sp/>==<sp/>hv<sp/>||<sp/>a-&gt;hashVert[2]<sp/>==<sp/>hv<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>probably<sp/>should<sp/>find<sp/>the<sp/>edge<sp/>that<sp/>the<sp/>vertex<sp/>is<sp/>closest<sp/>to.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>it<sp/>is<sp/>possible<sp/>to<sp/>be<sp/>&lt;<sp/>1<sp/>unit<sp/>away<sp/>from<sp/>multiple</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>edges,<sp/>but<sp/>we<sp/>only<sp/>want<sp/>to<sp/>split<sp/>by<sp/>one<sp/>of<sp/>them</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>3<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v1<sp/>=<sp/>&amp;a-&gt;v[i];</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v2<sp/>=<sp/>&amp;a-&gt;v[(i+1)%3];</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v3<sp/>=<sp/>&amp;a-&gt;v[(i+2)%3];</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VectorSubtract(<sp/>v2-&gt;xyz,<sp/>v1-&gt;xyz,<sp/>dir<sp/>);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len<sp/>=<sp/>dir.Normalize();</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>it<sp/>is<sp/>close<sp/>to<sp/>one<sp/>of<sp/>the<sp/>edge<sp/>vertexes,<sp/>skip<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VectorSubtract(<sp/>*v,<sp/>v1-&gt;xyz,<sp/>temp<sp/>);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d<sp/>=<sp/>DotProduct(<sp/>temp,<sp/>dir<sp/>);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>d<sp/>&lt;=<sp/>0<sp/>||<sp/>d<sp/>&gt;=<sp/>len<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>sure<sp/>it<sp/>is<sp/>on<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VectorMA(<sp/>v1-&gt;xyz,<sp/>d,<sp/>dir,<sp/>temp<sp/>);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VectorSubtract(<sp/>temp,<sp/>*v,<sp/>temp<sp/>);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>off<sp/>=<sp/>temp.Length();</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>off<sp/>&lt;=<sp/>-COLINEAR_EPSILON<sp/>||<sp/>off<sp/>&gt;=<sp/>COLINEAR_EPSILON<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>take<sp/>the<sp/>x/y/z<sp/>from<sp/>the<sp/>splitter,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>but<sp/>interpolate<sp/>everything<sp/>else<sp/>from<sp/>the<sp/>original<sp/>tri</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VectorCopy(<sp/>*v,<sp/>split.xyz<sp/>);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frac<sp/>=<sp/>d<sp/>/<sp/>len;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split.st[0]<sp/>=<sp/>v1-&gt;st[0]<sp/>+<sp/>frac<sp/>*<sp/>(<sp/>v2-&gt;st[0]<sp/>-<sp/>v1-&gt;st[0]<sp/>);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split.st[1]<sp/>=<sp/>v1-&gt;st[1]<sp/>+<sp/>frac<sp/>*<sp/>(<sp/>v2-&gt;st[1]<sp/>-<sp/>v1-&gt;st[1]<sp/>);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split.normal[0]<sp/>=<sp/>v1-&gt;normal[0]<sp/>+<sp/>frac<sp/>*<sp/>(<sp/>v2-&gt;normal[0]<sp/>-<sp/>v1-&gt;normal[0]<sp/>);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split.normal[1]<sp/>=<sp/>v1-&gt;normal[1]<sp/>+<sp/>frac<sp/>*<sp/>(<sp/>v2-&gt;normal[1]<sp/>-<sp/>v1-&gt;normal[1]<sp/>);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split.normal[2]<sp/>=<sp/>v1-&gt;normal[2]<sp/>+<sp/>frac<sp/>*<sp/>(<sp/>v2-&gt;normal[2]<sp/>-<sp/>v1-&gt;normal[2]<sp/>);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split.normal.Normalize();</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>split<sp/>the<sp/>tri</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new1<sp/>=<sp/>CopyMapTri(<sp/>a<sp/>);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new1-&gt;v[(i+1)%3]<sp/>=<sp/>split;</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new1-&gt;hashVert[(i+1)%3]<sp/>=<sp/>hv;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new1-&gt;next<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new2<sp/>=<sp/>CopyMapTri(<sp/>a<sp/>);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new2-&gt;v[i]<sp/>=<sp/>split;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new2-&gt;hashVert[i]<sp/>=<sp/>hv;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new2-&gt;next<sp/>=<sp/>new1;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plane1.FromPoints(<sp/>new1-&gt;hashVert[0]-&gt;v,<sp/>new1-&gt;hashVert[1]-&gt;v,<sp/>new1-&gt;hashVert[2]-&gt;v<sp/>);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plane2.FromPoints(<sp/>new2-&gt;hashVert[0]-&gt;v,<sp/>new2-&gt;hashVert[1]-&gt;v,<sp/>new2-&gt;hashVert[2]-&gt;v<sp/>);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d<sp/>=<sp/>DotProduct(<sp/>plane1,<sp/>plane2<sp/>);</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>the<sp/>two<sp/>split<sp/>triangle&apos;s<sp/>normals<sp/>don&apos;t<sp/>face<sp/>the<sp/>same<sp/>way,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>it<sp/>should<sp/>not<sp/>be<sp/>split</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>d<sp/>&lt;=<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FreeTriList(<sp/>new2<sp/>);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>new2;</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="384"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="389"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="390"><highlight class="comment">FixTriangleAgainstHash</highlight></codeline>
+<codeline lineno="391"><highlight class="comment"></highlight></codeline>
+<codeline lineno="392"><highlight class="comment">Potentially<sp/>splits<sp/>a<sp/>triangle<sp/>into<sp/>a<sp/>list<sp/>of<sp/>triangles<sp/>based<sp/>on<sp/>tjunctions</highlight></codeline>
+<codeline lineno="393"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="394"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/>*FixTriangleAgainstHash(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/>*tri<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*fixed;</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*a;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*test,<sp/>*next;</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blocks[2][3];</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i,<sp/>j,<sp/>k;</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structhash_vert__s" kindref="compound">hashVert_t</ref><sp/><sp/><sp/><sp/><sp/><sp/>*hv;</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>this<sp/>triangle<sp/>is<sp/>degenerate<sp/>after<sp/>point<sp/>snapping,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>nothing<sp/>(this<sp/>shouldn&apos;t<sp/>happen,<sp/>because<sp/>they<sp/>should</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>be<sp/>removed<sp/>as<sp/>they<sp/>are<sp/>hashed)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>tri-&gt;hashVert[0]<sp/>==<sp/>tri-&gt;hashVert[1]</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>tri-&gt;hashVert[0]<sp/>==<sp/>tri-&gt;hashVert[2]</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>tri-&gt;hashVert[1]<sp/>==<sp/>tri-&gt;hashVert[2]<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/>fixed<sp/>=<sp/>CopyMapTri(<sp/>tri<sp/>);</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/>fixed-&gt;next<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/>HashBlocksForTri(<sp/>tri,<sp/>blocks<sp/>);</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>blocks[0][0]<sp/>;<sp/>i<sp/>&lt;=<sp/>blocks[1][0]<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>j<sp/>=<sp/>blocks[0][1]<sp/>;<sp/>j<sp/>&lt;=<sp/>blocks[1][1]<sp/>;<sp/>j++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>k<sp/>=<sp/>blocks[0][2]<sp/>;<sp/>k<sp/>&lt;=<sp/>blocks[1][2]<sp/>;<sp/>k++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>hv<sp/>=<sp/>hashVerts[i][j][k]<sp/>;<sp/>hv<sp/>;<sp/>hv<sp/>=<sp/>hv-&gt;next<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>fix<sp/>all<sp/>triangles<sp/>in<sp/>the<sp/>list<sp/>against<sp/>this<sp/>point</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>test<sp/>=<sp/>fixed;</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fixed<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>;<sp/>test<sp/>;<sp/>test<sp/>=<sp/>next<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>next<sp/>=<sp/>test-&gt;next;</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a<sp/>=<sp/>FixTriangleAgainstHashVert(<sp/>test,<sp/>hv<sp/>);</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>a<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>cut<sp/>into<sp/>two<sp/>triangles</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a-&gt;next-&gt;next<sp/>=<sp/>fixed;</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fixed<sp/>=<sp/>a;</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FreeTri(<sp/>test<sp/>);</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>test-&gt;next<sp/>=<sp/>fixed;</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fixed<sp/>=<sp/>test;</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fixed;</highlight></codeline>
+<codeline lineno="442"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"></highlight></codeline>
+<codeline lineno="444"><highlight class="normal"></highlight></codeline>
+<codeline lineno="445"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="446"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="447"><highlight class="comment">CountGroupListTris</highlight></codeline>
+<codeline lineno="448"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="449"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="450"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>CountGroupListTris(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structoptimize_group__s" kindref="compound">optimizeGroup_t</ref><sp/>*groupList<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>c;</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/>c<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>;<sp/>groupList<sp/>;<sp/>groupList<sp/>=<sp/>groupList-&gt;nextGroup<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>+=<sp/>CountTriList(<sp/>groupList-&gt;triList<sp/>);</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"></highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>c;</highlight></codeline>
+<codeline lineno="459"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="462"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="463"><highlight class="comment">FixAreaGroupsTjunctions</highlight></codeline>
+<codeline lineno="464"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="465"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>FixAreaGroupsTjunctions(<sp/><ref refid="structoptimize_group__s" kindref="compound">optimizeGroup_t</ref><sp/>*groupList<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/><sp/>*tri;</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*newList;</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*fixed;</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startCount,<sp/>endCount;</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structoptimize_group__s" kindref="compound">optimizeGroup_t</ref><sp/>*group;</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>dmapGlobals.noTJunc<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"></highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!groupList<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/>startCount<sp/>=<sp/>CountGroupListTris(<sp/>groupList<sp/>);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>dmapGlobals.verbose<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;-----<sp/>FixAreaGroupsTjunctions<sp/>-----\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;%6i<sp/>triangles<sp/>in\n&quot;</highlight><highlight class="normal">,<sp/>startCount<sp/>);</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>HashTriangles(<sp/>groupList<sp/>);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>group<sp/>=<sp/>groupList<sp/>;<sp/>group<sp/>;<sp/>group<sp/>=<sp/>group-&gt;nextGroup<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>don&apos;t<sp/>touch<sp/>discrete<sp/>surfaces</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>group-&gt;material<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>group-&gt;material-&gt;IsDiscrete()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newList<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>tri<sp/>=<sp/>group-&gt;triList<sp/>;<sp/>tri<sp/>;<sp/>tri<sp/>=<sp/>tri-&gt;next<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fixed<sp/>=<sp/>FixTriangleAgainstHash(<sp/>tri<sp/>);</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newList<sp/>=<sp/>MergeTriLists(<sp/>newList,<sp/>fixed<sp/>);</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FreeTriList(<sp/>group-&gt;triList<sp/>);</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>group-&gt;triList<sp/>=<sp/>newList;</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/>endCount<sp/>=<sp/>CountGroupListTris(<sp/>groupList<sp/>);</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>dmapGlobals.verbose<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;%6i<sp/>triangles<sp/>out\n&quot;</highlight><highlight class="normal">,<sp/>endCount<sp/>);</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="509"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"></highlight></codeline>
+<codeline lineno="511"><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="513"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="514"><highlight class="comment">FixEntityTjunctions</highlight></codeline>
+<codeline lineno="515"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="516"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="517"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>FixEntityTjunctions(<sp/><ref refid="structu_entity__t" kindref="compound">uEntity_t</ref><sp/>*e<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>i;</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"></highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>e-&gt;numAreas<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FixAreaGroupsTjunctions(<sp/>e-&gt;areas[i].groups<sp/>);</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FreeTJunctionHash();</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="524"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"></highlight></codeline>
+<codeline lineno="526"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="527"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="528"><highlight class="comment">FixGlobalTjunctions</highlight></codeline>
+<codeline lineno="529"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="530"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="531"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>FixGlobalTjunctions(<sp/><ref refid="structu_entity__t" kindref="compound">uEntity_t</ref><sp/>*e<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/><sp/><sp/><sp/>*a;</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vert;</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i;</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structoptimize_group__s" kindref="compound">optimizeGroup_t</ref><sp/>*group;</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>areaNum;</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"></highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;-----<sp/>FixGlobalTjunctions<sp/>-----\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"></highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>clear<sp/>the<sp/>hash<sp/>tables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<sp/>hashVerts,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>hashVerts<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/>numHashVerts<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/>numTotalVerts<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bound<sp/>all<sp/>the<sp/>triangles<sp/>to<sp/>determine<sp/>the<sp/>bucket<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/>hashBounds.Clear();</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>areaNum<sp/>=<sp/>0<sp/>;<sp/>areaNum<sp/>&lt;<sp/>e-&gt;numAreas<sp/>;<sp/>areaNum++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>group<sp/>=<sp/>e-&gt;areas[areaNum].groups<sp/>;<sp/>group<sp/>;<sp/>group<sp/>=<sp/>group-&gt;nextGroup<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>a<sp/>=<sp/>group-&gt;triList<sp/>;<sp/>a<sp/>;<sp/>a<sp/>=<sp/>a-&gt;next<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashBounds.AddPoint(<sp/>a-&gt;v[0].xyz<sp/>);</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashBounds.AddPoint(<sp/>a-&gt;v[1].xyz<sp/>);</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashBounds.AddPoint(<sp/>a-&gt;v[2].xyz<sp/>);</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>spread<sp/>the<sp/>bounds<sp/>so<sp/>it<sp/>will<sp/>never<sp/>have<sp/>a<sp/>zero<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>3<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashBounds[0][i]<sp/>=<sp/>floor(<sp/>hashBounds[0][i]<sp/>-<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashBounds[1][i]<sp/>=<sp/>ceil(<sp/>hashBounds[1][i]<sp/>+<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashIntMins[i]<sp/>=<sp/>hashBounds[0][i]<sp/>*<sp/>SNAP_FRACTIONS;</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"></highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashScale[i]<sp/>=<sp/>(<sp/>hashBounds[1][i]<sp/>-<sp/>hashBounds[0][i]<sp/>)<sp/>/<sp/>HASH_BINS;</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashIntScale[i]<sp/>=<sp/>hashScale[i]<sp/>*<sp/>SNAP_FRACTIONS;</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>hashIntScale[i]<sp/>&lt;<sp/>1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashIntScale[i]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"></highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>all<sp/>the<sp/>points<sp/>to<sp/>the<sp/>hash<sp/>buckets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>areaNum<sp/>=<sp/>0<sp/>;<sp/>areaNum<sp/>&lt;<sp/>e-&gt;numAreas<sp/>;<sp/>areaNum++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>group<sp/>=<sp/>e-&gt;areas[areaNum].groups<sp/>;<sp/>group<sp/>;<sp/>group<sp/>=<sp/>group-&gt;nextGroup<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>don&apos;t<sp/>touch<sp/>discrete<sp/>surfaces</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>group-&gt;material<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>group-&gt;material-&gt;IsDiscrete()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>a<sp/>=<sp/>group-&gt;triList<sp/>;<sp/>a<sp/>;<sp/>a<sp/>=<sp/>a-&gt;next<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>vert<sp/>=<sp/>0<sp/>;<sp/>vert<sp/>&lt;<sp/>3<sp/>;<sp/>vert++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a-&gt;hashVert[vert]<sp/>=<sp/>GetHashVert(<sp/>a-&gt;v[vert].xyz<sp/>);</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"></highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>all<sp/>the<sp/>func_static<sp/>model<sp/>vertexes<sp/>to<sp/>the<sp/>hash<sp/>buckets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>optionally<sp/>inline<sp/>some<sp/>of<sp/>the<sp/>func_static<sp/>models</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>dmapGlobals.entityNum<sp/>==<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>eNum<sp/>=<sp/>1<sp/>;<sp/>eNum<sp/>&lt;<sp/>dmapGlobals.num_entities<sp/>;<sp/>eNum++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structu_entity__t" kindref="compound">uEntity_t</ref><sp/>*entity<sp/>=<sp/>&amp;dmapGlobals.uEntities[eNum];</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*className<sp/>=<sp/>entity-&gt;mapEntity-&gt;epairs.GetString(<sp/></highlight><highlight class="stringliteral">&quot;classname&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>idStr::Icmp(<sp/>className,<sp/></highlight><highlight class="stringliteral">&quot;func_static&quot;</highlight><highlight class="normal"><sp/>)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*modelName<sp/>=<sp/>entity-&gt;mapEntity-&gt;epairs.GetString(<sp/></highlight><highlight class="stringliteral">&quot;model&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!modelName<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!strstr(<sp/>modelName,<sp/></highlight><highlight class="stringliteral">&quot;.lwo&quot;</highlight><highlight class="normal"><sp/>)<sp/>&amp;&amp;<sp/>!strstr(<sp/>modelName,<sp/></highlight><highlight class="stringliteral">&quot;.ase&quot;</highlight><highlight class="normal"><sp/>)<sp/>&amp;&amp;<sp/>!strstr(<sp/>modelName,<sp/></highlight><highlight class="stringliteral">&quot;.ma&quot;</highlight><highlight class="normal"><sp/>)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_render_model" kindref="compound">idRenderModel</ref><sp/><sp/><sp/>*model<sp/>=<sp/>renderModelManager-&gt;FindModel(<sp/>modelName<sp/>);</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"></highlight></codeline>
+<codeline lineno="606"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/>&quot;adding<sp/>T<sp/>junction<sp/>verts<sp/>for<sp/>%s.\n&quot;,<sp/>entity-&gt;mapEntity-&gt;epairs.GetString(<sp/>&quot;name&quot;<sp/>)<sp/>);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="607"><highlight class="normal"></highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_mat3" kindref="compound">idMat3</ref><sp/><sp/>axis;</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>the<sp/>rotation<sp/>matrix<sp/>in<sp/>either<sp/>full<sp/>form,<sp/>or<sp/>single<sp/>angle<sp/>form</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!entity-&gt;mapEntity-&gt;epairs.GetMatrix(<sp/></highlight><highlight class="stringliteral">&quot;rotation&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;1<sp/>0<sp/>0<sp/>0<sp/>1<sp/>0<sp/>0<sp/>0<sp/>1&quot;</highlight><highlight class="normal">,<sp/>axis<sp/>)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>angle<sp/>=<sp/>entity-&gt;mapEntity-&gt;epairs.GetFloat(<sp/></highlight><highlight class="stringliteral">&quot;angle&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>angle<sp/>!=<sp/>0.0f<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>axis<sp/>=<sp/><ref refid="classid_angles" kindref="compound">idAngles</ref>(<sp/>0.0f,<sp/>angle,<sp/>0.0f<sp/>).ToMat3();</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>axis.Identity();</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="618"><highlight class="normal"></highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/><sp/>origin<sp/>=<sp/>entity-&gt;mapEntity-&gt;epairs.GetVector(<sp/></highlight><highlight class="stringliteral">&quot;origin&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"></highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>model-&gt;NumSurfaces()<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmodel_surface__s" kindref="compound">modelSurface_t</ref><sp/>*surface<sp/>=<sp/>model-&gt;Surface(<sp/>i<sp/>);</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structsrf_triangles__s" kindref="compound">srfTriangles_t</ref><sp/>*tri<sp/>=<sp/>surface-&gt;geometry;</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"></highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/><sp/><sp/><sp/>mapTri;</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(<sp/>&amp;mapTri,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>mapTri<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mapTri.material<sp/>=<sp/>surface-&gt;shader;</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>don&apos;t<sp/>let<sp/>discretes<sp/>(autosprites,<sp/>etc)<sp/>merge<sp/>together</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>mapTri.material-&gt;IsDiscrete()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mapTri.mergeGroup<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)surface;</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0<sp/>;<sp/>j<sp/>&lt;<sp/>tri-&gt;numVerts<sp/>;<sp/>j<sp/>+=<sp/>3<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classid_vec3" kindref="compound">idVec3</ref><sp/>v<sp/>=<sp/>tri-&gt;verts[j].xyz<sp/>*<sp/>axis<sp/>+<sp/>origin;</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetHashVert(<sp/>v<sp/>);</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"></highlight></codeline>
+<codeline lineno="640"><highlight class="normal"></highlight></codeline>
+<codeline lineno="641"><highlight class="normal"></highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>now<sp/>fix<sp/>each<sp/>area</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>areaNum<sp/>=<sp/>0<sp/>;<sp/>areaNum<sp/>&lt;<sp/>e-&gt;numAreas<sp/>;<sp/>areaNum++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>group<sp/>=<sp/>e-&gt;areas[areaNum].groups<sp/>;<sp/>group<sp/>;<sp/>group<sp/>=<sp/>group-&gt;nextGroup<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>don&apos;t<sp/>touch<sp/>discrete<sp/>surfaces</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>group-&gt;material<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>group-&gt;material-&gt;IsDiscrete()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="649"><highlight class="normal"></highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/>*newList<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/>*tri<sp/>=<sp/>group-&gt;triList<sp/>;<sp/>tri<sp/>;<sp/>tri<sp/>=<sp/>tri-&gt;next<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmap_tri__s" kindref="compound">mapTri_t</ref><sp/>*fixed<sp/>=<sp/>FixTriangleAgainstHash(<sp/>tri<sp/>);</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newList<sp/>=<sp/>MergeTriLists(<sp/>newList,<sp/>fixed<sp/>);</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FreeTriList(<sp/>group-&gt;triList<sp/>);</highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>group-&gt;triList<sp/>=<sp/>newList;</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="659"><highlight class="normal"></highlight></codeline>
+<codeline lineno="660"><highlight class="normal"></highlight></codeline>
+<codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>done</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/>FreeTJunctionHash();</highlight></codeline>
+<codeline lineno="663"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/compilers/dmap/tritjunction.cpp"/>
+  </compounddef>
+</doxygen>

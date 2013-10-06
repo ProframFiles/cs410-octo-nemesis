@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jutils_8c" kind="file">
+    <compoundname>jutils.c</compoundname>
+    <includes refid="jinclude_8h" local="yes">jinclude.h</includes>
+    <includes refid="jpeglib_8h" local="yes">jpeglib.h</includes>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jutils_8c_1ad5c3cdfae3019b8223973041a2a1304b" prot="public" static="no">
+        <name>JPEG_INTERNALS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" line="14" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jutils_8c_1a086eb1567ada82ad0a5fd1aba51de759" prot="public" static="no">
+        <name>FMEMCOPY</name>
+        <param><defname>dest</defname></param>
+        <param><defname>src</defname></param>
+        <param><defname>size</defname></param>
+        <initializer>MEMCOPY(dest,src,size)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" line="96" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jutils_8c_1aa2888aa18e3c8d9ec21aa07559bb42af" prot="public" static="no">
+        <name>FMEMZERO</name>
+        <param><defname>target</defname></param>
+        <param><defname>size</defname></param>
+        <initializer>MEMZERO(target,size)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" line="97" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="jutils_8c_1a74484d17ae044cd8ada6b643632a8583" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int jpeg_zigzag_order[64]</definition>
+        <argsstring>[64]</argsstring>
+        <name>jpeg_zigzag_order</name>
+        <initializer>= {
+   0,  1,  5,  6, 14, 15, 27, 28,
+   2,  4,  7, 13, 16, 26, 29, 42,
+   3,  8, 12, 17, 25, 30, 41, 43,
+   9, 11, 18, 24, 31, 40, 44, 53,
+  10, 19, 23, 32, 39, 45, 52, 54,
+  20, 22, 33, 38, 46, 51, 55, 60,
+  21, 34, 37, 47, 50, 56, 59, 61,
+  35, 36, 48, 49, 57, 58, 62, 63
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" line="24" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="jutils_8c_1ad84f9fbb7aeec9e56702ff9647608c7b" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int jpeg_natural_order[64+16]</definition>
+        <argsstring>[64+16]</argsstring>
+        <name>jpeg_natural_order</name>
+        <initializer>= {
+  0,  1,  8, 16,  9,  2,  3, 10,
+ 17, 24, 32, 25, 18, 11,  4,  5,
+ 12, 19, 26, 33, 40, 48, 41, 34,
+ 27, 20, 13,  6,  7, 14, 21, 28,
+ 35, 42, 49, 56, 57, 50, 43, 36,
+ 29, 22, 15, 23, 30, 37, 44, 51,
+ 58, 59, 52, 45, 38, 31, 39, 46,
+ 53, 60, 61, 54, 47, 55, 62, 63,
+ 63, 63, 63, 63, 63, 63, 63, 63, 
+ 63, 63, 63, 63, 63, 63, 63, 63
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" line="49" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jutils_8c_1afbf46d7b4f8905056dd55657daf1ece0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long jdiv_round_up</definition>
+        <argsstring>(long a, long b)</argsstring>
+        <name>jdiv_round_up</name>
+        <param>
+          <type>long</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" line="68" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" bodystart="68" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="jutils_8c_1a438145cf87c5ad010e44d46b94ca5558" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long jround_up</definition>
+        <argsstring>(long a, long b)</argsstring>
+        <name>jround_up</name>
+        <param>
+          <type>long</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" line="77" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" bodystart="77" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="jutils_8c_1aa6d7060a9abbe221284fa674a1a27280" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jcopy_sample_rows</definition>
+        <argsstring>(JSAMPARRAY input_array, int source_row, JSAMPARRAY output_array, int dest_row, int num_rows, JDIMENSION num_cols)</argsstring>
+        <name>jcopy_sample_rows</name>
+        <param>
+          <type>JSAMPARRAY</type>
+          <declname>input_array</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>source_row</declname>
+        </param>
+        <param>
+          <type>JSAMPARRAY</type>
+          <declname>output_array</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dest_row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_rows</declname>
+        </param>
+        <param>
+          <type>JDIMENSION</type>
+          <declname>num_cols</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" line="107" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" bodystart="107" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="jutils_8c_1a6bbfd127734d60c58bd55520c40dc874" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jcopy_block_row</definition>
+        <argsstring>(JBLOCKROW input_row, JBLOCKROW output_row, JDIMENSION num_blocks)</argsstring>
+        <name>jcopy_block_row</name>
+        <param>
+          <type>JBLOCKROW</type>
+          <declname>input_row</declname>
+        </param>
+        <param>
+          <type>JBLOCKROW</type>
+          <declname>output_row</declname>
+        </param>
+        <param>
+          <type>JDIMENSION</type>
+          <declname>num_blocks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" line="141" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" bodystart="141" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="jutils_8c_1ab8d657078302d9eb6f85a39454a74e59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jzero_far</definition>
+        <argsstring>(void *target, size_t bytestozero)</argsstring>
+        <name>jzero_far</name>
+        <param>
+          <type>void *</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>bytestozero</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" line="161" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c" bodystart="161" bodyend="175"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jutils.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1991-1995,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>tables<sp/>and<sp/>miscellaneous<sp/>utility<sp/>routines<sp/>needed</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>for<sp/>both<sp/>compression<sp/>and<sp/>decompression.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Note<sp/>we<sp/>prefix<sp/>all<sp/>global<sp/>names<sp/>with<sp/>&quot;j&quot;<sp/>to<sp/>minimize<sp/>conflicts<sp/>with</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>a<sp/>surrounding<sp/>application.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JPEG_INTERNALS</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;jinclude.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jpeglib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>jpeg_zigzag_order[i]<sp/>is<sp/>the<sp/>zigzag-order<sp/>position<sp/>of<sp/>the<sp/>i&apos;th<sp/>element</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>of<sp/>a<sp/>DCT<sp/>block<sp/>read<sp/>in<sp/>natural<sp/>order<sp/>(left<sp/>to<sp/>right,<sp/>top<sp/>to<sp/>bottom).</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jpeg_zigzag_order[DCTSIZE2]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/>0,<sp/><sp/>1,<sp/><sp/>5,<sp/><sp/>6,<sp/>14,<sp/>15,<sp/>27,<sp/>28,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/>2,<sp/><sp/>4,<sp/><sp/>7,<sp/>13,<sp/>16,<sp/>26,<sp/>29,<sp/>42,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/>3,<sp/><sp/>8,<sp/>12,<sp/>17,<sp/>25,<sp/>30,<sp/>41,<sp/>43,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/>9,<sp/>11,<sp/>18,<sp/>24,<sp/>31,<sp/>40,<sp/>44,<sp/>53,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>10,<sp/>19,<sp/>23,<sp/>32,<sp/>39,<sp/>45,<sp/>52,<sp/>54,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>20,<sp/>22,<sp/>33,<sp/>38,<sp/>46,<sp/>51,<sp/>55,<sp/>60,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>21,<sp/>34,<sp/>37,<sp/>47,<sp/>50,<sp/>56,<sp/>59,<sp/>61,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>35,<sp/>36,<sp/>48,<sp/>49,<sp/>57,<sp/>58,<sp/>62,<sp/>63</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>jpeg_natural_order[i]<sp/>is<sp/>the<sp/>natural-order<sp/>position<sp/>of<sp/>the<sp/>i&apos;th<sp/>element</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>of<sp/>zigzag<sp/>order.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>When<sp/>reading<sp/>corrupted<sp/>data,<sp/>the<sp/>Huffman<sp/>decoders<sp/>could<sp/>attempt</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>to<sp/>reference<sp/>an<sp/>entry<sp/>beyond<sp/>the<sp/>end<sp/>of<sp/>this<sp/>array<sp/>(if<sp/>the<sp/>decoded</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>zero<sp/>run<sp/>length<sp/>reaches<sp/>past<sp/>the<sp/>end<sp/>of<sp/>the<sp/>block).<sp/><sp/>To<sp/>prevent</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>wild<sp/>stores<sp/>without<sp/>adding<sp/>an<sp/>inner-loop<sp/>test,<sp/>we<sp/>put<sp/>some<sp/>extra</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>&quot;63&quot;s<sp/>after<sp/>the<sp/>real<sp/>entries.<sp/><sp/>This<sp/>will<sp/>cause<sp/>the<sp/>extra<sp/>coefficient</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>to<sp/>be<sp/>stored<sp/>in<sp/>location<sp/>63<sp/>of<sp/>the<sp/>block,<sp/>not<sp/>somewhere<sp/>random.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>The<sp/>worst<sp/>case<sp/>would<sp/>be<sp/>a<sp/>run-length<sp/>of<sp/>15,<sp/>which<sp/>means<sp/>we<sp/>need<sp/>16</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>fake<sp/>entries.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jpeg_natural_order[DCTSIZE2+16]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>0,<sp/><sp/>1,<sp/><sp/>8,<sp/>16,<sp/><sp/>9,<sp/><sp/>2,<sp/><sp/>3,<sp/>10,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/>17,<sp/>24,<sp/>32,<sp/>25,<sp/>18,<sp/>11,<sp/><sp/>4,<sp/><sp/>5,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/>12,<sp/>19,<sp/>26,<sp/>33,<sp/>40,<sp/>48,<sp/>41,<sp/>34,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/>27,<sp/>20,<sp/>13,<sp/><sp/>6,<sp/><sp/>7,<sp/>14,<sp/>21,<sp/>28,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/>35,<sp/>42,<sp/>49,<sp/>56,<sp/>57,<sp/>50,<sp/>43,<sp/>36,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/>29,<sp/>22,<sp/>15,<sp/>23,<sp/>30,<sp/>37,<sp/>44,<sp/>51,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/>58,<sp/>59,<sp/>52,<sp/>45,<sp/>38,<sp/>31,<sp/>39,<sp/>46,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/>53,<sp/>60,<sp/>61,<sp/>54,<sp/>47,<sp/>55,<sp/>62,<sp/>63,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/>63,<sp/>63,<sp/>63,<sp/>63,<sp/>63,<sp/>63,<sp/>63,<sp/>63,<sp/></highlight><highlight class="comment">/*<sp/>extra<sp/>entries<sp/>for<sp/>safety<sp/>in<sp/>decoder<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/>63,<sp/>63,<sp/>63,<sp/>63,<sp/>63,<sp/>63,<sp/>63,<sp/>63</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/>Arithmetic<sp/>utilities</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">jdiv_round_up<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>b)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Compute<sp/>a/b<sp/>rounded<sp/>up<sp/>to<sp/>next<sp/>integer,<sp/>ie,<sp/>ceil(a/b)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Assumes<sp/>a<sp/>&gt;=<sp/>0,<sp/>b<sp/>&gt;<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(a<sp/>+<sp/>b<sp/>-<sp/>1L)<sp/>/<sp/>b;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">jround_up<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>b)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Compute<sp/>a<sp/>rounded<sp/>up<sp/>to<sp/>next<sp/>multiple<sp/>of<sp/>b,<sp/>ie,<sp/>ceil(a/b)*b<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Assumes<sp/>a<sp/>&gt;=<sp/>0,<sp/>b<sp/>&gt;<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>a<sp/>+=<sp/>b<sp/>-<sp/>1L;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a<sp/>-<sp/>(a<sp/>%<sp/>b);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>On<sp/>normal<sp/>machines<sp/>we<sp/>can<sp/>apply<sp/>MEMCOPY()<sp/>and<sp/>MEMZERO()<sp/>to<sp/>sample<sp/>arrays</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/>and<sp/>coefficient-block<sp/>arrays.<sp/><sp/>This<sp/>won&apos;t<sp/>work<sp/>on<sp/>80x86<sp/>because<sp/>the<sp/>arrays</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/>are<sp/>FAR<sp/>and<sp/>we&apos;re<sp/>assuming<sp/>a<sp/>small-pointer<sp/>memory<sp/>model.<sp/><sp/>However,<sp/>some</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>DOS<sp/>compilers<sp/>provide<sp/>far-pointer<sp/>versions<sp/>of<sp/>memcpy()<sp/>and<sp/>memset()<sp/>even</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>in<sp/>the<sp/>small-model<sp/>libraries.<sp/><sp/>These<sp/>will<sp/>be<sp/>used<sp/>if<sp/>USE_FMEM<sp/>is<sp/>defined.</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>Otherwise,<sp/>the<sp/>routines<sp/>below<sp/>do<sp/>it<sp/>the<sp/>hard<sp/>way.<sp/><sp/>(The<sp/>performance<sp/>cost</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>is<sp/>not<sp/>all<sp/>that<sp/>great,<sp/>because<sp/>these<sp/>routines<sp/>aren&apos;t<sp/>very<sp/>heavily<sp/>used.)</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>NEED_FAR_POINTERS<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>normal<sp/>case,<sp/>same<sp/>as<sp/>regular<sp/>macros<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>FMEMCOPY(dest,src,size)<sp/>MEMCOPY(dest,src,size)</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>FMEMZERO(target,size)<sp/><sp/><sp/>MEMZERO(target,size)</highlight></codeline>
+<codeline lineno="98"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>80x86<sp/>case,<sp/>define<sp/>if<sp/>we<sp/>can<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_FMEM</highlight></codeline>
+<codeline lineno="100"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>FMEMCOPY(dest,src,size)<sp/>_fmemcpy((void<sp/>FAR<sp/>*)(dest),<sp/>(const<sp/>void<sp/>FAR<sp/>*)(src),<sp/>(size_t)(size))</highlight></codeline>
+<codeline lineno="101"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>FMEMZERO(target,size)<sp/><sp/><sp/>_fmemset((void<sp/>FAR<sp/>*)(target),<sp/>0,<sp/>(size_t)(size))</highlight></codeline>
+<codeline lineno="102"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="103"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">jcopy_sample_rows<sp/>(JSAMPARRAY<sp/>input_array,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>source_row,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JSAMPARRAY<sp/>output_array,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dest_row,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_rows,<sp/>JDIMENSION<sp/>num_cols)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Copy<sp/>some<sp/>rows<sp/>of<sp/>samples<sp/>from<sp/>one<sp/>place<sp/>to<sp/>another.</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>num_rows<sp/>rows<sp/>are<sp/>copied<sp/>from<sp/>input_array[source_row++]</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>to<sp/>output_array[dest_row++];<sp/>these<sp/>areas<sp/>may<sp/>overlap<sp/>for<sp/>duplication.</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>The<sp/>source<sp/>and<sp/>destination<sp/>arrays<sp/>must<sp/>be<sp/>at<sp/>least<sp/>as<sp/>wide<sp/>as<sp/>num_cols.</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JSAMPROW<sp/>inptr,<sp/>outptr;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FMEMCOPY</highlight></codeline>
+<codeline lineno="118"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>(size_t)<sp/>(num_cols<sp/>*<sp/>SIZEOF(JSAMPLE));</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JDIMENSION<sp/>count;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="122"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>input_array<sp/>+=<sp/>source_row;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>output_array<sp/>+=<sp/>dest_row;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(row<sp/>=<sp/>num_rows;<sp/>row<sp/>&gt;<sp/>0;<sp/>row--)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>inptr<sp/>=<sp/>*input_array++;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>outptr<sp/>=<sp/>*output_array++;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FMEMCOPY</highlight></codeline>
+<codeline lineno="131"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>FMEMCOPY(outptr,<sp/>inptr,<sp/>count);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="133"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(count<sp/>=<sp/>num_cols;<sp/>count<sp/>&gt;<sp/>0;<sp/>count--)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*outptr++<sp/>=<sp/>*inptr++;<sp/></highlight><highlight class="comment">/*<sp/>needn&apos;t<sp/>bother<sp/>with<sp/>GETJSAMPLE()<sp/>here<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="136"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal">jcopy_block_row<sp/>(JBLOCKROW<sp/>input_row,<sp/>JBLOCKROW<sp/>output_row,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JDIMENSION<sp/>num_blocks)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Copy<sp/>a<sp/>row<sp/>of<sp/>coefficient<sp/>blocks<sp/>from<sp/>one<sp/>place<sp/>to<sp/>another.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FMEMCOPY</highlight></codeline>
+<codeline lineno="146"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>FMEMCOPY(output_row,<sp/>input_row,<sp/>num_blocks<sp/>*<sp/>(DCTSIZE2<sp/>*<sp/>SIZEOF(JCOEF)));</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="148"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>JCOEFPTR<sp/>inptr,<sp/>outptr;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>inptr<sp/>=<sp/>(JCOEFPTR)<sp/>input_row;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>outptr<sp/>=<sp/>(JCOEFPTR)<sp/>output_row;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(count<sp/>=<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)<sp/>num_blocks<sp/>*<sp/>DCTSIZE2;<sp/>count<sp/>&gt;<sp/>0;<sp/>count--)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>*outptr++<sp/>=<sp/>*inptr++;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="157"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">jzero_far<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FAR<sp/>*<sp/>target,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bytestozero)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Zero<sp/>out<sp/>a<sp/>chunk<sp/>of<sp/>FAR<sp/>memory.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>might<sp/>be<sp/>sample-array<sp/>data,<sp/>block-array<sp/>data,<sp/>or<sp/>alloc_large<sp/>data.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FMEMZERO</highlight></codeline>
+<codeline lineno="166"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>FMEMZERO(target,<sp/>bytestozero);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="168"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>FAR<sp/>*<sp/>ptr<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>FAR<sp/>*)<sp/>target;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(count<sp/>=<sp/>bytestozero;<sp/>count<sp/>&gt;<sp/>0;<sp/>count--)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>*ptr++<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="175"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jutils.c"/>
+  </compounddef>
+</doxygen>

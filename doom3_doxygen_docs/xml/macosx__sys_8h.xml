@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="macosx__sys_8h" kind="file">
+    <compoundname>macosx_sys.h</compoundname>
+    <includes local="no">Foundation/NSGeometry.h</includes>
+    <includes local="no">ApplicationServices/ApplicationServices.h</includes>
+    <includes local="no">OpenGL/CGLTypes.h</includes>
+    <includes refid="posix__public_8h" local="yes">../posix/posix_public.h</includes>
+    <includedby refid="_d_o_o_m_controller_8mm" local="yes">E:/sources/3rd_party/DOOM/neo/sys/osx/DOOMController.mm</includedby>
+    <includedby refid="macosx__event_8mm" local="yes">E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_event.mm</includedby>
+    <includedby refid="macosx__glimp_8mm" local="yes">E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_glimp.mm</includedby>
+    <includedby refid="macosx__sys_8mm" local="yes">E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.mm</includedby>
+    <includedby refid="macosx__utils_8mm" local="yes">E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_utils.mm</includedby>
+    <incdepgraph>
+      <node id="2353">
+        <label>ApplicationServices/ApplicationServices.h</label>
+      </node>
+      <node id="2354">
+        <label>OpenGL/CGLTypes.h</label>
+      </node>
+      <node id="2352">
+        <label>Foundation/NSGeometry.h</label>
+      </node>
+      <node id="2351">
+        <label>E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h</label>
+        <link refid="macosx_sys.h"/>
+        <childnode refid="2352" relation="include">
+        </childnode>
+        <childnode refid="2353" relation="include">
+        </childnode>
+        <childnode refid="2354" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structglwgamma__t" prot="public">glwgamma_t</innerclass>
+    <innerclass refid="structglwstate__t" prot="public">glwstate_t</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="macosx__sys_8h_1a8dc7618bd7e25dff51198983dd0e8773" prot="public" static="no">
+        <name>OSX_SetGLContext</name>
+        <param><defname>context</defname></param>
+        <initializer>do { \
+    NSOpenGLContext *_context = (context); \
+    glw_state._ctx = _context; \
+    glw_state._cgl_ctx = [_context cglContext]; \
+} while (0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="59" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="macosx__sys_8h_1ae06ebaf2b8faa2c84f1301a847a9dfc2" prot="public" static="no">
+        <name>OSX_GetNSGLContext</name>
+        <param></param>
+        <initializer>glw_state._ctx</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="66" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="macosx__sys_8h_1ae13b6fb64198f1d75bbdd112d8937cf0" prot="public" static="no">
+        <name>OSX_GetCGLContext</name>
+        <param></param>
+        <initializer>glw_state._cgl_ctx</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="67" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="macosx__sys_8h_1adcf181475386008d284f961ea9f89454" prot="public" static="no">
+        <name>OSX_GLContextIsCurrent</name>
+        <param></param>
+        <initializer>glw_state._ctx_is_current</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="69" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="macosx__sys_8h_1a0906f0bec6345a24a5fd4d191e415d8f" prot="public" static="no">
+        <name>OSX_GLContextSetCurrent</name>
+        <param></param>
+        <initializer>do { \
+  [glw_state._ctx makeCurrentContext]; \
+  glw_state._ctx_is_current = (glw_state._ctx != nil); \
+} while (0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="70" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="macosx__sys_8h_1a6bb54aae0441568088af983b96cd41f0" prot="public" static="no">
+        <name>OSX_GLContextClearCurrent</name>
+        <param></param>
+        <initializer>do { \
+  [NSOpenGLContext clearCurrentContext]; \
+  glw_state._ctx_is_current = NO; \
+} while (0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="76" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="macosx__sys_8h_1a22e8765b2811b8852c0a8d2f58c45ecf" prot="public" static="no" mutable="no">
+        <type><ref refid="structglwstate__t" kindref="compound">glwstate_t</ref></type>
+        <definition>glwstate_t glw_state</definition>
+        <argsstring></argsstring>
+        <name>glw_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="57" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_glimp.mm" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="macosx__sys_8h_1a956261e0b543b0d4eb1986ed6bf7d8a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* macosx_scanForLibraryDirectory</definition>
+        <argsstring>(void)</argsstring>
+        <name>macosx_scanForLibraryDirectory</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="11" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_utils.mm" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="macosx__sys_8h_1aca390c4976bf835d3838177731c2137c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_InitInput</definition>
+        <argsstring>(void)</argsstring>
+        <name>Sys_InitInput</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="14" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/dedicated.cpp" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="macosx__sys_8h_1a422a013a715397bdf4bff2a2f0d60642" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_ShutdownInput</definition>
+        <argsstring>(void)</argsstring>
+        <name>Sys_ShutdownInput</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="15" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/dedicated.cpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="macosx__sys_8h_1a2261e6919577a647a9f6f3b8cbbeff10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CGDirectDisplayID</type>
+        <definition>CGDirectDisplayID Sys_DisplayToUse</definition>
+        <argsstring>(void)</argsstring>
+        <name>Sys_DisplayToUse</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="16" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_glimp.mm" bodystart="1816" bodyend="1848"/>
+      </memberdef>
+      <memberdef kind="function" id="macosx__sys_8h_1a2861fa7068af136a2b967ba545f401a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SetProgramPath</definition>
+        <argsstring>(char *path)</argsstring>
+        <name>SetProgramPath</name>
+        <param>
+          <type>char *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="18" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="macosx__sys_8h_1ad3438bed3304fe8615f682a2242d4776" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_SetMouseInputRect</definition>
+        <argsstring>(CGRect newRect)</argsstring>
+        <name>Sys_SetMouseInputRect</name>
+        <param>
+          <type>CGRect</type>
+          <declname>newRect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="19" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_event.mm" bodystart="488" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="macosx__sys_8h_1ae3761336dc0929cb8830311a11bbb77c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_AnnoyingBanner</definition>
+        <argsstring>()</argsstring>
+        <name>Sys_AnnoyingBanner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="21" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="macosx__sys_8h_1a35c14658007c05abc2f185b427509045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Sys_Hide</definition>
+        <argsstring>()</argsstring>
+        <name>Sys_Hide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="24" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_glimp.mm" bodystart="1338" bodyend="1380"/>
+      </memberdef>
+      <memberdef kind="function" id="macosx__sys_8h_1ad055f45fa9563c4817544ce785d9b068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Sys_Unhide</definition>
+        <argsstring>()</argsstring>
+        <name>Sys_Unhide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="25" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_glimp.mm" bodystart="1395" bodyend="1443"/>
+      </memberdef>
+      <memberdef kind="function" id="macosx__sys_8h_1a2c9c4a5e09442644883670058f426d9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_PauseGL</definition>
+        <argsstring>()</argsstring>
+        <name>Sys_PauseGL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="83" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_glimp.mm" bodystart="424" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="macosx__sys_8h_1a4719a042a443cfd8d9a05ed16c12cb11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_ResumeGL</definition>
+        <argsstring>()</argsstring>
+        <name>Sys_ResumeGL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h" line="84" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_glimp.mm" bodystart="436" bodyend="451"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#import<sp/>&quot;../posix/posix_public.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#import<sp/>&lt;Foundation/NSGeometry.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">@class</highlight><highlight class="normal"><sp/>NSEvent,<sp/>NSOpenGLContext,<sp/>NSWindow;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#import<sp/>&lt;ApplicationServices/ApplicationServices.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#import<sp/>&lt;OpenGL/CGLTypes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>sys</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*macosx_scanForLibraryDirectory(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>macosx_input.m</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_InitInput(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_ShutdownInput(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">CGDirectDisplayID<sp/>Sys_DisplayToUse(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//extern<sp/>void<sp/>osxQuit();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetProgramPath(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_SetMouseInputRect(CGRect<sp/>newRect);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_AnnoyingBanner();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>macosx_glimp.m</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Sys_Hide();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Sys_Unhide();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="structglwgamma__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>CGDirectDisplayID<sp/><sp/><sp/><sp/><sp/>display;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>CGTableCount<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tableSize;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>CGGammaValue<sp/><sp/><sp/><sp/><sp/>*red;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>CGGammaValue<sp/><sp/><sp/><sp/><sp/>*blue;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>CGGammaValue<sp/><sp/><sp/><sp/><sp/>*green;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}<sp/><ref refid="structglwgamma__t" kindref="compound">glwgamma_t</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="structglwstate__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>CGDirectDisplayID<sp/><sp/><sp/>display;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>NSDictionary<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*desktopMode;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>NSDictionary<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*gameMode;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>CGDisplayCount<sp/><sp/><sp/><sp/><sp/><sp/>displayCount;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structglwgamma__t" kindref="compound">glwgamma_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*originalDisplayGammaTables;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structglwgamma__t" kindref="compound">glwgamma_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inGameTable;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structglwgamma__t" kindref="compound">glwgamma_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempTable;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>NSOpenGLContext<sp/><sp/><sp/><sp/><sp/>*_ctx;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>CGLContextObj<sp/><sp/><sp/><sp/><sp/><sp/><sp/>_cgl_ctx;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_ctx_is_current;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>NSWindow<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*window;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>FILE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*log_fp;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bufferSwapCount;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glPauseCount;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}<sp/><ref refid="structglwstate__t" kindref="compound">glwstate_t</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structglwstate__t" kindref="compound">glwstate_t</ref><sp/>glw_state;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSX_SetGLContext(context)<sp/>\</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor">do<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="61"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>NSOpenGLContext<sp/>*_context<sp/>=<sp/>(context);<sp/>\</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>glw_state._ctx<sp/>=<sp/>_context;<sp/>\</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>glw_state._cgl_ctx<sp/>=<sp/>[_context<sp/>cglContext];<sp/>\</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor">}<sp/>while<sp/>(0)</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSX_GetNSGLContext()<sp/>glw_state._ctx</highlight></codeline>
+<codeline lineno="67"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>OSX_GetCGLContext()<sp/>glw_state._cgl_ctx</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSX_GLContextIsCurrent()<sp/>glw_state._ctx_is_current</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>OSX_GLContextSetCurrent()<sp/>\</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor">do<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"><sp/><sp/>[glw_state._ctx<sp/>makeCurrentContext];<sp/>\</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"><sp/><sp/>glw_state._ctx_is_current<sp/>=<sp/>(glw_state._ctx<sp/>!=<sp/>nil);<sp/>\</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor">}<sp/>while<sp/>(0)</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSX_GLContextClearCurrent()<sp/>\</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor">do<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"><sp/><sp/>[NSOpenGLContext<sp/>clearCurrentContext];<sp/>\</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"><sp/><sp/>glw_state._ctx_is_current<sp/>=<sp/>NO;<sp/>\</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor">}<sp/>while<sp/>(0)</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_PauseGL();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_ResumeGL();</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/macosx_sys.h"/>
+  </compounddef>
+</doxygen>

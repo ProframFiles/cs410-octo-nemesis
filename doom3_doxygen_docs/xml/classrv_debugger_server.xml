@@ -1,0 +1,784 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classrv_debugger_server" kind="class" prot="public">
+    <compoundname>rvDebuggerServer</compoundname>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classrv_debugger_server_1a6292018cbd4ddc86229b8a51dcd729ca" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool rvDebuggerServer::mConnected</definition>
+        <argsstring></argsstring>
+        <name>mConnected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="69" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a1b6eddc97a8779e8870dd308b6228de0" prot="protected" static="no" mutable="no">
+        <type><ref refid="structnetadr__t" kindref="compound">netadr_t</ref></type>
+        <definition>netadr_t rvDebuggerServer::mClientAdr</definition>
+        <argsstring></argsstring>
+        <name>mClientAdr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="70" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a3e5a3f0d881ec8178eb048ef9ba01c57" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_port" kindref="compound">idPort</ref></type>
+        <definition>idPort rvDebuggerServer::mPort</definition>
+        <argsstring></argsstring>
+        <name>mPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="71" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1ad3b9fdfa1a6e461ee1fb684f9dd8e5ea" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_list" kindref="compound">idList</ref>&lt; <ref refid="classrv_debugger_breakpoint" kindref="compound">rvDebuggerBreakpoint</ref> * &gt;</type>
+        <definition>idList&lt;rvDebuggerBreakpoint*&gt; rvDebuggerServer::mBreakpoints</definition>
+        <argsstring></argsstring>
+        <name>mBreakpoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="72" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a99abf3493008d23f050ab9b481524fbd" prot="protected" static="no" mutable="no">
+        <type>CRITICAL_SECTION</type>
+        <definition>CRITICAL_SECTION rvDebuggerServer::mCriticalSection</definition>
+        <argsstring></argsstring>
+        <name>mCriticalSection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="73" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a11be1dcd5e225bed309d42986a9d2ab1" prot="protected" static="no" mutable="no">
+        <type>HANDLE</type>
+        <definition>HANDLE rvDebuggerServer::mGameThread</definition>
+        <argsstring></argsstring>
+        <name>mGameThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="75" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a9ce36fcf2ab2cb9053c752aec6fc96e5" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool rvDebuggerServer::mBreak</definition>
+        <argsstring></argsstring>
+        <name>mBreak</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="77" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a51aa923f492a597ee3ef02206d2e0b06" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool rvDebuggerServer::mBreakNext</definition>
+        <argsstring></argsstring>
+        <name>mBreakNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="78" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1abdd6fcb7f7b6f7d3bf2628fefdc09cc8" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool rvDebuggerServer::mBreakStepOver</definition>
+        <argsstring></argsstring>
+        <name>mBreakStepOver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="79" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1add9a4cd2b35222b2c9fecacf0a77af6c" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool rvDebuggerServer::mBreakStepInto</definition>
+        <argsstring></argsstring>
+        <name>mBreakStepInto</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="80" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a5aaeee1b7fae2bce06ae0cc9599822ef" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int rvDebuggerServer::mBreakStepOverDepth</definition>
+        <argsstring></argsstring>
+        <name>mBreakStepOverDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="81" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a0894e8664d639d83ccafb89b466ba347" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+        <definition>const function_t* rvDebuggerServer::mBreakStepOverFunc1</definition>
+        <argsstring></argsstring>
+        <name>mBreakStepOverFunc1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="82" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a1f46874516c581d0f50bc3888df887b1" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classfunction__t" kindref="compound">function_t</ref> *</type>
+        <definition>const function_t* rvDebuggerServer::mBreakStepOverFunc2</definition>
+        <argsstring></argsstring>
+        <name>mBreakStepOverFunc2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="83" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a08ae8f62dfc2d73eb1edf4de23b849e1" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_program" kindref="compound">idProgram</ref> *</type>
+        <definition>idProgram* rvDebuggerServer::mBreakProgram</definition>
+        <argsstring></argsstring>
+        <name>mBreakProgram</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="84" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a6b3a9abd5e43875ce4844c59cd213aa1" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int rvDebuggerServer::mBreakInstructionPointer</definition>
+        <argsstring></argsstring>
+        <name>mBreakInstructionPointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="85" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a5d56248ced489c33bcdd950ef59f68ca" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_interpreter" kindref="compound">idInterpreter</ref> *</type>
+        <definition>idInterpreter* rvDebuggerServer::mBreakInterpreter</definition>
+        <argsstring></argsstring>
+        <name>mBreakInterpreter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="86" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a38b316afc9ff7a2181a3c708a8d656d5" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_str" kindref="compound">idStr</ref></type>
+        <definition>idStr rvDebuggerServer::mLastStatementFile</definition>
+        <argsstring></argsstring>
+        <name>mLastStatementFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="88" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrv_debugger_server_1a7c1f2c7f56275757df840497744d5251" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int rvDebuggerServer::mLastStatementLine</definition>
+        <argsstring></argsstring>
+        <name>mLastStatementLine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="89" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrv_debugger_server_1a295549ec48ea24de57ac9ea647e80ce7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>rvDebuggerServer::rvDebuggerServer</definition>
+        <argsstring>()</argsstring>
+        <name>rvDebuggerServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="50" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="47" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a844a2437fa218eb44b4b9a412b742936" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>rvDebuggerServer::~rvDebuggerServer</definition>
+        <argsstring>()</argsstring>
+        <name>~rvDebuggerServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="51" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="65" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a3fe765216940c2b56142af2efb5930e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool rvDebuggerServer::Initialize</definition>
+        <argsstring>(void)</argsstring>
+        <name>Initialize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="53" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="77" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a006029d223b93e95d27f44eb948f904f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::Shutdown</definition>
+        <argsstring>(void)</argsstring>
+        <name>Shutdown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="54" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="122" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a062bf179d4178b6e4a16bf436adeef94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool rvDebuggerServer::ProcessMessages</definition>
+        <argsstring>(void)</argsstring>
+        <name>ProcessMessages</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="56" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="144" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a8f05ca77c9c9c9fc79eb56b06dd35255" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>ID_INLINE bool rvDebuggerServer::IsConnected</definition>
+        <argsstring>(void)</argsstring>
+        <name>IsConnected</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="58" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="118" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a54e7b87daf0f8975fcc16506e85239a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::CheckBreakpoints</definition>
+        <argsstring>(idInterpreter *interpreter, idProgram *program, int instructionPointer)</argsstring>
+        <name>CheckBreakpoints</name>
+        <param>
+          <type><ref refid="classid_interpreter" kindref="compound">idInterpreter</ref> *</type>
+          <declname>interpreter</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_program" kindref="compound">idProgram</ref> *</type>
+          <declname>program</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>instructionPointer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="60" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="485" bodyend="580"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a70fe71e8b079ac1368773289bb90b344" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::Print</definition>
+        <argsstring>(const char *text)</argsstring>
+        <name>Print</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="62" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="699" bodyend="714"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a15c581641e14f4b046ba9324d32cc016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::OSPathToRelativePath</definition>
+        <argsstring>(const char *osPath, idStr &amp;qpath)</argsstring>
+        <name>OSPathToRelativePath</name>
+        <param>
+          <type>const char *</type>
+          <declname>osPath</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_str" kindref="compound">idStr</ref> &amp;</type>
+          <declname>qpath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="64" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="103" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classrv_debugger_server_1a48ce3787e5d72575a24a142b1b8f8e60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::ClearBreakpoints</definition>
+        <argsstring>(void)</argsstring>
+        <name>ClearBreakpoints</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="93" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="680" bodyend="690"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a12eaa6b8d34bed8b605fac6c780e10de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::Break</definition>
+        <argsstring>(idInterpreter *interpreter, idProgram *program, int instructionPointer)</argsstring>
+        <name>Break</name>
+        <param>
+          <type><ref refid="classid_interpreter" kindref="compound">idInterpreter</ref> *</type>
+          <declname>interpreter</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_program" kindref="compound">idProgram</ref> *</type>
+          <declname>program</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>instructionPointer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="95" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="590" bodyend="650"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a3667f11c3307ba7bce000ac80416d864" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::Resume</definition>
+        <argsstring>(void)</argsstring>
+        <name>Resume</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="96" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="659" bodyend="671"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a5f5f758aa6a9c0930e6fd44375b012bc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::SendMessage</definition>
+        <argsstring>(EDebuggerMessage dbmsg)</argsstring>
+        <name>SendMessage</name>
+        <param>
+          <type>EDebuggerMessage</type>
+          <declname>dbmsg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="98" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="242" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a8efa440aff53ebc0abc69e875b9aeb74" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void rvDebuggerServer::SendPacket</definition>
+        <argsstring>(void *data, int datasize)</argsstring>
+        <name>SendPacket</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>datasize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="99" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="128" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a074d9332d896529c4f9226c233aa9987" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::HandleAddBreakpoint</definition>
+        <argsstring>(msg_t *msg)</argsstring>
+        <name>HandleAddBreakpoint</name>
+        <param>
+          <type>msg_t *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="102" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="262" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1ad294e3d93a1a6c7618bf71a0b94e692a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::HandleRemoveBreakpoint</definition>
+        <argsstring>(msg_t *msg)</argsstring>
+        <name>HandleRemoveBreakpoint</name>
+        <param>
+          <type>msg_t *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="103" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="292" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a3d017251e01611739ed87b55578a3cc5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::HandleResume</definition>
+        <argsstring>(msg_t *msg)</argsstring>
+        <name>HandleResume</name>
+        <param>
+          <type>msg_t *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1ab9892d6dfbc02da9fd8b929a42e8b298" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::HandleInspectVariable</definition>
+        <argsstring>(msg_t *msg)</argsstring>
+        <name>HandleInspectVariable</name>
+        <param>
+          <type>msg_t *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="105" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="443" bodyend="475"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1aec41a3567501582edce27038dc6e5f9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::HandleInspectCallstack</definition>
+        <argsstring>(msg_t *msg)</argsstring>
+        <name>HandleInspectCallstack</name>
+        <param>
+          <type>msg_t *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="106" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="371" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a9d3d479febf45e5e52f04c0b541ca8c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::HandleInspectThreads</definition>
+        <argsstring>(msg_t *msg)</argsstring>
+        <name>HandleInspectThreads</name>
+        <param>
+          <type>msg_t *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="107" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="405" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="classrv_debugger_server_1a3300fc73ba027604b4d54091a2dde339" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rvDebuggerServer::MSG_WriteCallstackFunc</definition>
+        <argsstring>(msg_t *msg, const prstack_t *stack)</argsstring>
+        <name>MSG_WriteCallstackFunc</name>
+        <param>
+          <type>msg_t *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structprstack__s" kindref="compound">prstack_t</ref> *</type>
+          <declname>stack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="110" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.cpp" bodystart="325" bodyend="361"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="32140">
+        <label>function_t</label>
+        <link refid="classfunction__t"/>
+        <childnode refid="32141" relation="usage">
+          <edgelabel>parmSize</edgelabel>
+        </childnode>
+        <childnode refid="32142" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="32138" relation="usage">
+          <edgelabel>def</edgelabel>
+        </childnode>
+        <childnode refid="32143" relation="usage">
+          <edgelabel>eventdef</edgelabel>
+        </childnode>
+      </node>
+      <node id="32137">
+        <label>idProgram</label>
+        <link refid="classid_program"/>
+        <childnode refid="32138" relation="usage">
+          <edgelabel>returnDef</edgelabel>
+          <edgelabel>returnStringDef</edgelabel>
+        </childnode>
+      </node>
+      <node id="32139">
+        <label>varEval_s</label>
+        <link refid="unionvar_eval__s"/>
+        <childnode refid="32140" relation="usage">
+          <edgelabel>functionPtr</edgelabel>
+        </childnode>
+        <childnode refid="32139" relation="usage">
+          <edgelabel>evalPtr</edgelabel>
+        </childnode>
+        <childnode refid="32144" relation="usage">
+          <edgelabel>vectorPtr</edgelabel>
+        </childnode>
+        <childnode refid="32145" relation="usage">
+          <edgelabel>objectPtrPtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="32143">
+        <label>idEventDef</label>
+        <link refid="classid_event_def"/>
+      </node>
+      <node id="32149">
+        <label>idPort</label>
+        <link refid="classid_port"/>
+      </node>
+      <node id="32145">
+        <label>idScriptObject</label>
+        <link refid="classid_script_object"/>
+      </node>
+      <node id="32135">
+        <label>rvDebuggerServer</label>
+        <link refid="classrv_debugger_server"/>
+        <childnode refid="32136" relation="usage">
+          <edgelabel>mLastStatementFile</edgelabel>
+        </childnode>
+        <childnode refid="32137" relation="usage">
+          <edgelabel>mBreakProgram</edgelabel>
+        </childnode>
+        <childnode refid="32146" relation="usage">
+          <edgelabel>mClientAdr</edgelabel>
+        </childnode>
+        <childnode refid="32140" relation="usage">
+          <edgelabel>mBreakStepOverFunc1</edgelabel>
+          <edgelabel>mBreakStepOverFunc2</edgelabel>
+        </childnode>
+        <childnode refid="32147" relation="usage">
+          <edgelabel>mBreakpoints</edgelabel>
+        </childnode>
+        <childnode refid="32148" relation="usage">
+          <edgelabel>mBreakInterpreter</edgelabel>
+        </childnode>
+        <childnode refid="32149" relation="usage">
+          <edgelabel>mPort</edgelabel>
+        </childnode>
+      </node>
+      <node id="32146">
+        <label>netadr_t</label>
+        <link refid="structnetadr__t"/>
+      </node>
+      <node id="32141">
+        <label>idList&lt; int &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="32142">
+        <label>idTypeDef</label>
+        <link refid="classid_type_def"/>
+        <childnode refid="32138" relation="usage">
+          <edgelabel>def</edgelabel>
+        </childnode>
+      </node>
+      <node id="32148">
+        <label>idInterpreter</label>
+        <link refid="classid_interpreter"/>
+      </node>
+      <node id="32136">
+        <label>idStr</label>
+        <link refid="classid_str"/>
+      </node>
+      <node id="32138">
+        <label>idVarDef</label>
+        <link refid="classid_var_def"/>
+        <childnode refid="32139" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
+        <childnode refid="32138" relation="usage">
+          <edgelabel>scope</edgelabel>
+        </childnode>
+      </node>
+      <node id="32144">
+        <label>idVec3</label>
+        <link refid="classid_vec3"/>
+      </node>
+      <node id="32147">
+        <label>idList&lt; rvDebuggerBreakpoint * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" line="47" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/tools/debugger/DebuggerServer.h" bodystart="46" bodyend="111"/>
+    <listofallmembers>
+      <member refid="classrv_debugger_server_1a12eaa6b8d34bed8b605fac6c780e10de" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>Break</name></member>
+      <member refid="classrv_debugger_server_1a54e7b87daf0f8975fcc16506e85239a5" prot="public" virt="non-virtual"><scope>rvDebuggerServer</scope><name>CheckBreakpoints</name></member>
+      <member refid="classrv_debugger_server_1a48ce3787e5d72575a24a142b1b8f8e60" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>ClearBreakpoints</name></member>
+      <member refid="classrv_debugger_server_1a074d9332d896529c4f9226c233aa9987" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>HandleAddBreakpoint</name></member>
+      <member refid="classrv_debugger_server_1aec41a3567501582edce27038dc6e5f9c" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>HandleInspectCallstack</name></member>
+      <member refid="classrv_debugger_server_1a9d3d479febf45e5e52f04c0b541ca8c8" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>HandleInspectThreads</name></member>
+      <member refid="classrv_debugger_server_1ab9892d6dfbc02da9fd8b929a42e8b298" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>HandleInspectVariable</name></member>
+      <member refid="classrv_debugger_server_1ad294e3d93a1a6c7618bf71a0b94e692a" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>HandleRemoveBreakpoint</name></member>
+      <member refid="classrv_debugger_server_1a3d017251e01611739ed87b55578a3cc5" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>HandleResume</name></member>
+      <member refid="classrv_debugger_server_1a3fe765216940c2b56142af2efb5930e4" prot="public" virt="non-virtual"><scope>rvDebuggerServer</scope><name>Initialize</name></member>
+      <member refid="classrv_debugger_server_1a8f05ca77c9c9c9fc79eb56b06dd35255" prot="public" virt="non-virtual"><scope>rvDebuggerServer</scope><name>IsConnected</name></member>
+      <member refid="classrv_debugger_server_1a9ce36fcf2ab2cb9053c752aec6fc96e5" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreak</name></member>
+      <member refid="classrv_debugger_server_1a6b3a9abd5e43875ce4844c59cd213aa1" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreakInstructionPointer</name></member>
+      <member refid="classrv_debugger_server_1a5d56248ced489c33bcdd950ef59f68ca" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreakInterpreter</name></member>
+      <member refid="classrv_debugger_server_1a51aa923f492a597ee3ef02206d2e0b06" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreakNext</name></member>
+      <member refid="classrv_debugger_server_1ad3b9fdfa1a6e461ee1fb684f9dd8e5ea" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreakpoints</name></member>
+      <member refid="classrv_debugger_server_1a08ae8f62dfc2d73eb1edf4de23b849e1" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreakProgram</name></member>
+      <member refid="classrv_debugger_server_1add9a4cd2b35222b2c9fecacf0a77af6c" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreakStepInto</name></member>
+      <member refid="classrv_debugger_server_1abdd6fcb7f7b6f7d3bf2628fefdc09cc8" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreakStepOver</name></member>
+      <member refid="classrv_debugger_server_1a5aaeee1b7fae2bce06ae0cc9599822ef" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreakStepOverDepth</name></member>
+      <member refid="classrv_debugger_server_1a0894e8664d639d83ccafb89b466ba347" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreakStepOverFunc1</name></member>
+      <member refid="classrv_debugger_server_1a1f46874516c581d0f50bc3888df887b1" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mBreakStepOverFunc2</name></member>
+      <member refid="classrv_debugger_server_1a1b6eddc97a8779e8870dd308b6228de0" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mClientAdr</name></member>
+      <member refid="classrv_debugger_server_1a6292018cbd4ddc86229b8a51dcd729ca" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mConnected</name></member>
+      <member refid="classrv_debugger_server_1a99abf3493008d23f050ab9b481524fbd" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mCriticalSection</name></member>
+      <member refid="classrv_debugger_server_1a11be1dcd5e225bed309d42986a9d2ab1" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mGameThread</name></member>
+      <member refid="classrv_debugger_server_1a38b316afc9ff7a2181a3c708a8d656d5" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mLastStatementFile</name></member>
+      <member refid="classrv_debugger_server_1a7c1f2c7f56275757df840497744d5251" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mLastStatementLine</name></member>
+      <member refid="classrv_debugger_server_1a3e5a3f0d881ec8178eb048ef9ba01c57" prot="protected" virt="non-virtual"><scope>rvDebuggerServer</scope><name>mPort</name></member>
+      <member refid="classrv_debugger_server_1a3300fc73ba027604b4d54091a2dde339" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>MSG_WriteCallstackFunc</name></member>
+      <member refid="classrv_debugger_server_1a15c581641e14f4b046ba9324d32cc016" prot="public" virt="non-virtual"><scope>rvDebuggerServer</scope><name>OSPathToRelativePath</name></member>
+      <member refid="classrv_debugger_server_1a70fe71e8b079ac1368773289bb90b344" prot="public" virt="non-virtual"><scope>rvDebuggerServer</scope><name>Print</name></member>
+      <member refid="classrv_debugger_server_1a062bf179d4178b6e4a16bf436adeef94" prot="public" virt="non-virtual"><scope>rvDebuggerServer</scope><name>ProcessMessages</name></member>
+      <member refid="classrv_debugger_server_1a3667f11c3307ba7bce000ac80416d864" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>Resume</name></member>
+      <member refid="classrv_debugger_server_1a295549ec48ea24de57ac9ea647e80ce7" prot="public" virt="non-virtual"><scope>rvDebuggerServer</scope><name>rvDebuggerServer</name></member>
+      <member refid="classrv_debugger_server_1a5f5f758aa6a9c0930e6fd44375b012bc" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>SendMessage</name></member>
+      <member refid="classrv_debugger_server_1a8efa440aff53ebc0abc69e875b9aeb74" prot="private" virt="non-virtual"><scope>rvDebuggerServer</scope><name>SendPacket</name></member>
+      <member refid="classrv_debugger_server_1a006029d223b93e95d27f44eb948f904f" prot="public" virt="non-virtual"><scope>rvDebuggerServer</scope><name>Shutdown</name></member>
+      <member refid="classrv_debugger_server_1a844a2437fa218eb44b4b9a412b742936" prot="public" virt="non-virtual"><scope>rvDebuggerServer</scope><name>~rvDebuggerServer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

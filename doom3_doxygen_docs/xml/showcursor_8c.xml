@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="showcursor_8c" kind="file">
+    <compoundname>showcursor.c</compoundname>
+    <includes local="no">IOKit/IOKitLib.h</includes>
+    <includes local="no">IOKit/hidsystem/IOHIDShared.h</includes>
+    <includes local="no">assert.h</includes>
+    <incdepgraph>
+      <node id="2428">
+        <label>assert.h</label>
+      </node>
+      <node id="2426">
+        <label>IOKit/IOKitLib.h</label>
+      </node>
+      <node id="2425">
+        <label>E:/sources/3rd_party/DOOM/neo/sys/osx/showcursor.c</label>
+        <link refid="showcursor.c"/>
+        <childnode refid="2426" relation="include">
+        </childnode>
+        <childnode refid="2427" relation="include">
+        </childnode>
+        <childnode refid="2428" relation="include">
+        </childnode>
+      </node>
+      <node id="2427">
+        <label>IOKit/hidsystem/IOHIDShared.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="showcursor_8c_1ad3c6d81f34a17d5b7d79da9d6868b5bc" prot="public" static="no" mutable="no">
+        <type>mach_port_t</type>
+        <definition>mach_port_t masterPort</definition>
+        <argsstring></argsstring>
+        <name>masterPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/showcursor.c" line="9" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/showcursor.c" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="showcursor_8c_1a3b04d0689d6df554ce66cb5c0552ef95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>io_connect_t</type>
+        <definition>io_connect_t OpenEventDriver</definition>
+        <argsstring>(void)</argsstring>
+        <name>OpenEventDriver</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/showcursor.c" line="11" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/showcursor.c" bodystart="11" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="showcursor_8c_1a51ed9919aecf91e684c135385fd8530e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestParams</definition>
+        <argsstring>(io_connect_t ev, boolean_t show)</argsstring>
+        <name>TestParams</name>
+        <param>
+          <type>io_connect_t</type>
+          <declname>ev</declname>
+        </param>
+        <param>
+          <type>boolean_t</type>
+          <declname>show</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/showcursor.c" line="32" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/showcursor.c" bodystart="32" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="showcursor_8c_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/showcursor.c" line="40" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/osx/showcursor.c" bodystart="40" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>cc<sp/>-o<sp/>showcursor<sp/>showcursor.c<sp/>-framework<sp/>IOKit</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;IOKit/IOKitLib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;IOKit/hidsystem/IOHIDShared.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">mach_port_t<sp/>masterPort;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">io_connect_t<sp/>OpenEventDriver(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>kern_return_t<sp/><sp/>kr;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>mach_port_t<sp/><sp/><sp/><sp/><sp/>ev,<sp/>service,<sp/>iter;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>kr<sp/>=<sp/>IOServiceGetMatchingServices(<sp/>masterPort,<sp/>IOServiceMatching(<sp/>kIOHIDSystemClass<sp/>),<sp/>&amp;iter);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>KERN_SUCCESS<sp/>==<sp/>kr);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>service<sp/>=<sp/>IOIteratorNext(<sp/>iter<sp/>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(service);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>kr<sp/>=<sp/>IOServiceOpen(<sp/>service,<sp/>mach_task_self(),<sp/>kIOHIDParamConnectType,<sp/>&amp;ev);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>KERN_SUCCESS<sp/>==<sp/>kr<sp/>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>IOObjectRelease(<sp/>service<sp/>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>IOObjectRelease(<sp/>iter<sp/>);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(<sp/>ev<sp/>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TestParams(<sp/>io_connect_t<sp/>ev,<sp/>boolean_t<sp/>show<sp/>)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>kern_return_t<sp/><sp/><sp/>kr;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>kr<sp/>=<sp/>IOHIDSetCursorEnable(<sp/>ev,<sp/>show<sp/>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(KERN_SUCCESS<sp/>==<sp/>kr);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>kern_return_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/>kr;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>boolean_t<sp/>show;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(argc<sp/>!=<sp/>2)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>show<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>show<sp/>=<sp/>(atoi(argv[0])<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>KERN_SUCCESS<sp/>==<sp/>(<sp/>kr<sp/>=<sp/>IOMasterPort(<sp/>bootstrap_port,<sp/>&amp;masterPort)<sp/>));</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>TestParams(<sp/>OpenEventDriver(),<sp/>show);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(<sp/>0<sp/>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sys/osx/showcursor.c"/>
+  </compounddef>
+</doxygen>

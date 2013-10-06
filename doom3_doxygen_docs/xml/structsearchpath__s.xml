@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="structsearchpath__s" kind="struct" prot="public">
+    <compoundname>searchpath_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsearchpath__s_1a353e3e83079a16515098aa9e3cc9c671" prot="public" static="no" mutable="no">
+        <type><ref refid="structpack__t" kindref="compound">pack_t</ref> *</type>
+        <definition>pack_t* searchpath_s::pack</definition>
+        <argsstring></argsstring>
+        <name>pack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/FileSystem.cpp" line="305" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/FileSystem.cpp" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsearchpath__s_1a97ab49f3888a1049ac4ed04723ce6c31" prot="public" static="no" mutable="no">
+        <type><ref refid="structdirectory__t" kindref="compound">directory_t</ref> *</type>
+        <definition>directory_t* searchpath_s::dir</definition>
+        <argsstring></argsstring>
+        <name>dir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/FileSystem.cpp" line="306" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/FileSystem.cpp" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsearchpath__s_1a78eda2ee0729948e453d844d828c8259" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structsearchpath__s" kindref="compound">searchpath_s</ref> *</type>
+        <definition>struct searchpath_s* searchpath_s::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/FileSystem.cpp" line="307" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/FileSystem.cpp" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="33016">
+        <label>directory_t</label>
+        <link refid="structdirectory__t"/>
+        <childnode refid="33011" relation="usage">
+          <edgelabel>gamedir</edgelabel>
+          <edgelabel>path</edgelabel>
+        </childnode>
+      </node>
+      <node id="33015">
+        <label>fileInPack_s</label>
+        <link refid="structfile_in_pack__s"/>
+        <childnode refid="33011" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="33015" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="33009">
+        <label>searchpath_s</label>
+        <link refid="structsearchpath__s"/>
+        <childnode refid="33009" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+        <childnode refid="33010" relation="usage">
+          <edgelabel>pack</edgelabel>
+        </childnode>
+        <childnode refid="33016" relation="usage">
+          <edgelabel>dir</edgelabel>
+        </childnode>
+      </node>
+      <node id="33013">
+        <label>idList&lt; int &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="33012">
+        <label>addonInfo_t</label>
+        <link refid="structaddon_info__t"/>
+        <childnode refid="33013" relation="usage">
+          <edgelabel>depends</edgelabel>
+        </childnode>
+        <childnode refid="33014" relation="usage">
+          <edgelabel>mapDecls</edgelabel>
+        </childnode>
+      </node>
+      <node id="33011">
+        <label>idStr</label>
+        <link refid="classid_str"/>
+      </node>
+      <node id="33014">
+        <label>idList&lt; idDict * &gt;</label>
+        <link refid="classid_list"/>
+      </node>
+      <node id="33010">
+        <label>pack_t</label>
+        <link refid="structpack__t"/>
+        <childnode refid="33011" relation="usage">
+          <edgelabel>pakFilename</edgelabel>
+        </childnode>
+        <childnode refid="33012" relation="usage">
+          <edgelabel>addon_info</edgelabel>
+        </childnode>
+        <childnode refid="33015" relation="usage">
+          <edgelabel>hashTable</edgelabel>
+          <edgelabel>buildBuffer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/framework/FileSystem.cpp" line="304" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/FileSystem.cpp" bodystart="304" bodyend="308"/>
+    <listofallmembers>
+      <member refid="structsearchpath__s_1a97ab49f3888a1049ac4ed04723ce6c31" prot="public" virt="non-virtual"><scope>searchpath_s</scope><name>dir</name></member>
+      <member refid="structsearchpath__s_1a78eda2ee0729948e453d844d828c8259" prot="public" virt="non-virtual"><scope>searchpath_s</scope><name>next</name></member>
+      <member refid="structsearchpath__s_1a353e3e83079a16515098aa9e3cc9c671" prot="public" virt="non-virtual"><scope>searchpath_s</scope><name>pack</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

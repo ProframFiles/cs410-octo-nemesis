@@ -1,0 +1,1128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="audio__core_8h" kind="file">
+    <compoundname>audio_core.h</compoundname>
+    <innerclass refid="structsample__parms" prot="public">sample_parms</innerclass>
+    <innerclass refid="structdma__buffparms" prot="public">dma_buffparms</innerclass>
+    <innerclass refid="structaudio__driver" prot="public">audio_driver</innerclass>
+    <innerclass refid="structaudio__operations" prot="public">audio_operations</innerclass>
+    <innerclass refid="structoss__card__desc" prot="public">oss_card_desc</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="audio__core_8h_1ac98966228134d8e9ea0d92fd3f571c36" prot="public" static="no">
+        <name>OSS_MAX_AUDIO_CHANNELS</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="22" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1addaf28c33f5acefa1477af46c027508a" prot="public" static="no">
+        <name>DMAP_NOTIMEOUT</name>
+        <initializer>0x00000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="68" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1aa3fcb4f3b8c90557d3fa4c6f61d0718b" prot="public" static="no">
+        <name>DMAP_POST</name>
+        <initializer>0x00000002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="69" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1ad5414deec54956c616e7bb67525f90a0" prot="public" static="no">
+        <name>DMAP_PREPARED</name>
+        <initializer>0x00000004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="70" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a4f4a5792b624f4ecafbebf36557261ee" prot="public" static="no">
+        <name>DMAP_FRAGFIXED</name>
+        <initializer>0x00000008	/* Fragment size fixed */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="71" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a3c8dd963c36cb53312d41a9c217e5f6d" prot="public" static="no">
+        <name>DMAP_STARTED</name>
+        <initializer>0x00000010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="72" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1aeccde4cf06c0a94dae8a94d38ca1c4be" prot="public" static="no">
+        <name>DMAP_COOKED</name>
+        <initializer>0x00000020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="73" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1ac5e80708f45f9b504695f437dc204955" prot="public" static="no">
+        <name>DMAP_ACTIVE</name>
+        <initializer>0x00000040	/* ISA DMA is running */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="74" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1ae9484cfcccc0cad04efe9ed63717fdec" prot="public" static="no">
+        <name>DMODE_NONE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="76" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1aa0713868b8e1a8fe3c7ab30bf5fa773d" prot="public" static="no">
+        <name>DMODE_OUTPUT</name>
+        <initializer>PCM_ENABLE_OUTPUT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="77" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a8d26d7a8a1daeda98aaca6e89f7b2628" prot="public" static="no">
+        <name>DMODE_INPUT</name>
+        <initializer>PCM_ENABLE_INPUT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="78" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a220a078fdb5a1e2569722da16d79620b" prot="public" static="no">
+        <name>DMA_MAP_MAPPED</name>
+        <initializer>0x00000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="99" column="11" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a15a1bf948ac82e11d9abf65d6af6059e" prot="public" static="no">
+        <name>SYNC_PREPARE</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="176" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a6de5b349f48be3dca33f96d67bd1b466" prot="public" static="no">
+        <name>SYNC_TRIGGER</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="177" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1aed6ce17d8db2471a85ee3f6add005aab" prot="public" static="no">
+        <name>NOTHING_SPECIAL</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="199" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a49bb3a53d08f6900cdb760959fbbc2bf" prot="public" static="no">
+        <name>NEEDS_RESTART</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="200" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a3206a2126582febef62704f8f1cda8c0" prot="public" static="no">
+        <name>DMA_AUTOMODE</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="201" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a03e04f78fe97b513fdef4df5367644a8" prot="public" static="no">
+        <name>DMA_DUPLEX</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="202" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1aebb5d2bbf7e962f64fa7804ebb7bb54b" prot="public" static="no">
+        <name>DMA_COLD</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="203" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1abe72b8a71078543d9e21d48a1853bcb0" prot="public" static="no">
+        <name>DMA_UNUSED1</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="204" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a5270ed3b143ba041ed8d9cf4a0b045a0" prot="public" static="no">
+        <name>DMA_UNUSED2</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="205" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1ad79bc503616339418859749095da6ce2" prot="public" static="no">
+        <name>DMA_UNUSED3</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="206" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1af1fdc340299d73ea36787c28d0991fe7" prot="public" static="no">
+        <name>DMA_ISA</name>
+        <initializer>0x100	/* ISA DMA buffer placement restrictions */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="207" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1aea9d64a1919d993038849072d18152fe" prot="public" static="no">
+        <name>DMA_VIRTUAL</name>
+        <initializer>0x400	/* Virtual audio device */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="208" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1aa24783198bdd3a4a111d89b138ba57ab" prot="public" static="no">
+        <name>DMA_OPENED</name>
+        <initializer>0x800	/* Will be set when the device is open */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="209" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a4d61eff564be97f85097e50a62f45ae9" prot="public" static="no">
+        <name>DMA_NOCONVERT</name>
+        <initializer>0x1000	/* No implicit format conversions */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="210" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a42f180e564cd04f3d90209b26f43fdff" prot="public" static="no">
+        <name>DMA_DUALBUF</name>
+        <initializer>0x2000	/* Alloc separate bufs for rec and play */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="211" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a7b14976c037bea09a16e5b9d404415da" prot="public" static="no">
+        <name>DMA_USEPHYSADDR</name>
+        <initializer>0x4000	/* Use raw_buf_phys when mmap()ing */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="212" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a6d2163fee9102ccfe4da038b29df814e" prot="public" static="no">
+        <name>DMA_DISABLED</name>
+        <initializer>0x8000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="213" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a05cdf38c71d9878e9d6deba892c399b1" prot="public" static="no">
+        <name>DMA_NOINPUT</name>
+        <initializer>0x10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="214" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1ad11661567a70e3207e4996de9b4f82d7" prot="public" static="no">
+        <name>DMA_NOOUTPUT</name>
+        <initializer>0x20000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="215" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1aa78fbeb0174747d8272923c2c4be5d9e" prot="public" static="no">
+        <name>DMA_FIXEDRATE</name>
+        <initializer>0x40000	/* Fixed sampling rate */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="216" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1aa326cb24946944a717f524a92182e21f" prot="public" static="no">
+        <name>DMA_16BITONLY</name>
+        <initializer>0x80000	/* Only 16 bit support */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="217" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a57942a55d8771672bb411db039c50017" prot="public" static="no">
+        <name>DMA_STEREOONLY</name>
+        <initializer>0x100000	/* Only stereo (requires 16BITONLY) */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="218" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1ae93fb6758280251db845681043922960" prot="public" static="no">
+        <name>DMA_HUSHOUTPUT</name>
+        <initializer>0x200000	/* Do not permit use with O_WRONLY */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="219" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a4755cedf8a3214f59c1643cc0926ead9" prot="public" static="no">
+        <name>DMA_SHADOW</name>
+        <initializer>0x400000	/* &quot;shadow&quot; device */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="220" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1ae77e8c2fbd06a1d91bf567c7b123e754" prot="public" static="no">
+        <name>DMA_ISABUS</name>
+        <initializer>0x800000	/* ISA device */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="221" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a6c7a0fec94fd7e7c771c65685cb67945" prot="public" static="no">
+        <name>DMA_NODMA</name>
+        <initializer>0x1000000	/* For ISA devices only */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="222" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1ab06b43653357a482fa0a9010b39d924b" prot="public" static="no">
+        <name>DMA_8BITONLY</name>
+        <initializer>0x2000000	/* Only 8 bits */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="223" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a7ca69a5d5ebe9a309051a026e3a17a5d" prot="public" static="no">
+        <name>DMA_32BITONLY</name>
+        <initializer>0x4000000	/* Only 24 or 32 bits */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="224" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1acc51c328568f5e50c1c61af1b3b6cbcf" prot="public" static="no">
+        <name>DMA_NOSOFTOSS</name>
+        <initializer>0x8000000	/* Don&apos;t install SoftOSS automatically for this device */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="225" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a64c4c36cc06ab6482dc82dfdb263f307" prot="public" static="no">
+        <name>DMA_NOSRC</name>
+        <initializer>0x10000000	/* Don&apos;t do any kind of SRC */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="226" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a8fad98e23ebf2901aa7824eef1210e20" prot="public" static="no">
+        <name>DMA_SPECIAL</name>
+        <initializer>0x20000000	/* Multich or otherwise special dev */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="227" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1af6d13a22c8d2ac0c53c32a0d63d042af" prot="public" static="no">
+        <name>DMA_NOMMAP</name>
+        <initializer>0x40000000	/* No MMAP capability */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="228" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1acfc4be8faf88f463f069b4426248767f" prot="public" static="no">
+        <name>DMA_SOFTOSS_DISABLE</name>
+        <initializer>0x80000000	/* Not compatible with SoftOSS  */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="229" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1ae54883f539ef67cafb464709edde2bca" prot="public" static="no">
+        <name>VMIX_MULTIFRAG</name>
+        <initializer>0x00000001	/* More than 2 fragments required (causes longer latencies) */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="256" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1aff9d88c29509efdb826b0e18fbcc491d" prot="public" static="no">
+        <name>DMASK_OUT</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="266" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1ad2a989813a509be82d3894136b285c3c" prot="public" static="no">
+        <name>DMASK_IN</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="267" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a1b021e4f1d72f23be4dec6bdaa227e58" prot="public" static="no">
+        <name>SYNC_MASTER</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="272" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a335868d323269c676cd094ed8b285ca6" prot="public" static="no">
+        <name>SYNC_SLAVE</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="273" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1af5c803cc4d750c38e806ca6b74bec1e6" prot="public" static="no">
+        <name>MAX_SAMPLE_RATES</name>
+        <initializer>20 /* Cannot be changed (see soundcard.h) */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="279" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="audio__core_8h_1a3980ff81f7aee243c6aacca3e82920bc" prot="public" static="no">
+        <name>UNIT_EXPAND</name>
+        <initializer>1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="303" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="audio__core_8h_1a6567159e65ba685e4343ce71ca8c10fb" prot="public" static="no">
+        <type>struct <ref refid="structaudio__operations" kindref="compound">audio_operations</ref></type>
+        <definition>typedef struct audio_operations audio_operations</definition>
+        <argsstring></argsstring>
+        <name>audio_operations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="545" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="audio__core_8h_1a4960b3955cfb2b51affb66a5f49e55a6" prot="public" static="no">
+        <type>struct <ref refid="structaudio__operations" kindref="compound">audio_operations</ref></type>
+        <definition>typedef struct audio_operations adev_t</definition>
+        <argsstring></argsstring>
+        <name>adev_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="33" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="audio__core_8h_1a2a125d7e12c376aceef4ef55f276ffd3" prot="public" static="no">
+        <type>struct <ref refid="structaudio__operations" kindref="compound">audio_operations</ref> *</type>
+        <definition>typedef struct audio_operations * adev_p</definition>
+        <argsstring></argsstring>
+        <name>adev_p</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="33" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="audio__core_8h_1a578d15be8412e82c848889db6057045a" prot="public" static="no">
+        <type>struct <ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref></type>
+        <definition>typedef struct dma_buffparms dma_buffparms</definition>
+        <argsstring></argsstring>
+        <name>dma_buffparms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="33" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="audio__core_8h_1aa79502f2514315cbd2a9049dfc917c8b" prot="public" static="no">
+        <type>struct <ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref> *</type>
+        <definition>typedef struct dma_buffparms * dmap_p</definition>
+        <argsstring></argsstring>
+        <name>dmap_p</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="34" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="audio__core_8h_1aa0e73688e13edb9c418085756f2ee81e" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* cnv_func_t)(adev_p adev, dmap_p dmap, void **srcp, int *srcl, void **tgtp, sample_parms *source, sample_parms *target)</definition>
+        <argsstring>)(adev_p adev, dmap_p dmap, void **srcp, int *srcl, void **tgtp, sample_parms *source, sample_parms *target)</argsstring>
+        <name>cnv_func_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="35" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="audio__core_8h_1a495c955434301d39c9e59d2863e2a221" prot="public" static="no">
+        <type>struct <ref refid="structoss__card__desc" kindref="compound">oss_card_desc</ref></type>
+        <definition>typedef struct oss_card_desc  oss_card_desc_t</definition>
+        <argsstring></argsstring>
+        <name>oss_card_desc_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="301" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="audio__core_8h_1a26ceb080853f196e5a13efd9913f7df3" prot="public" static="no">
+        <type>struct <ref refid="structoss__card__desc" kindref="compound">oss_card_desc</ref> *</type>
+        <definition>typedef struct oss_card_desc * oss_card_desc_p</definition>
+        <argsstring></argsstring>
+        <name>oss_card_desc_p</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="301" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="audio__core_8h_1aaf8cf43dac23e55f26a31009137751ed" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structaudio__operations" kindref="compound">audio_operations</ref> **</type>
+        <definition>struct audio_operations** audio_devs</definition>
+        <argsstring></argsstring>
+        <name>audio_devs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="305" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="audio__core_8h_1ad9dcb2b546c272a552d4af37621cea5e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int num_audiodevs</definition>
+        <argsstring></argsstring>
+        <name>num_audiodevs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="306" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="audio__core_8h_1abbc266bf00b9ffd1cb482ac494de936a" prot="public" static="no" mutable="no">
+        <type><ref refid="structoss__card__desc" kindref="compound">oss_card_desc_p</ref> *</type>
+        <definition>oss_card_desc_p* oss_cardlist</definition>
+        <argsstring></argsstring>
+        <name>oss_cardlist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="307" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="audio__core_8h_1a7694fc2324da3c9dd67181cf72796e43" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* oss_version_string</definition>
+        <argsstring></argsstring>
+        <name>oss_version_string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="308" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="audio__core_8h_1a2eab4125020ec6f6bb10e03339a53ce3" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* oss_checksum</definition>
+        <argsstring></argsstring>
+        <name>oss_checksum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="309" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="audio__core_8h_1ac2f6664077dd607e33ad6ff5b84588c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dmap_get_qlen</definition>
+        <argsstring>(dma_buffparms *dmap)</argsstring>
+        <name>dmap_get_qlen</name>
+        <param>
+          <type><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref> *</type>
+          <declname>dmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="137" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="audio__core_8h_1a32237c6dbde49126f9da1cd38c9e4b74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dmap_get_qhead</definition>
+        <argsstring>(dma_buffparms *dmap)</argsstring>
+        <name>dmap_get_qhead</name>
+        <param>
+          <type><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref> *</type>
+          <declname>dmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="138" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="audio__core_8h_1a367710c1d987242c1aa40396e8f5b970" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dmap_get_qtail</definition>
+        <argsstring>(dma_buffparms *dmap)</argsstring>
+        <name>dmap_get_qtail</name>
+        <param>
+          <type><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref> *</type>
+          <declname>dmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h" line="139" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>AUDIO_CORE_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>AUDIO_CORE_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>by<sp/>4Front<sp/>Technologies<sp/>1993-2004</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>IMPORTANT<sp/>NOTICE!</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>internal<sp/>structures<sp/>used<sp/>by<sp/>Open<sp/>Sound<sp/>Systems.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>They<sp/>will<sp/>change<sp/>without<sp/>any<sp/>notice<sp/>between<sp/>OSS<sp/>versions.<sp/>Care<sp/>must<sp/>be<sp/>taken</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>to<sp/>make<sp/>sure<sp/>any<sp/>software<sp/>using<sp/>this<sp/>header<sp/>gets<sp/>properly<sp/>re-compiled<sp/>before</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>use.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>4Front<sp/>Technologies<sp/>(or<sp/>anybody<sp/>else)<sp/>takes<sp/>no<sp/>responsibility<sp/>of<sp/>damages</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>caused<sp/>by<sp/>use<sp/>of<sp/>this<sp/>file.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Max<sp/>number<sp/>of<sp/>audio<sp/>channels<sp/>currently<sp/>supported<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSS_MAX_AUDIO_CHANNELS<sp/><sp/>8</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__operations" kindref="compound">audio_operations</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structsample__parms" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fmt,<sp/>speed,<sp/>channels;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>convert;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><ref refid="structsample__parms" kindref="compound">sample_parms</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__operations" kindref="compound">audio_operations</ref><sp/><ref refid="structaudio__operations" kindref="compound">audio_operations</ref>,<sp/><ref refid="structaudio__operations" kindref="compound">adev_t</ref>,<sp/>*<ref refid="structaudio__operations" kindref="compound">adev_p</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref>,<sp/>*<ref refid="structdma__buffparms" kindref="compound">dmap_p</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(*cnv_func_t)<sp/>(adev_p<sp/>adev,<sp/>dmap_p<sp/>dmap,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**srcp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*srcl,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**tgtp,<sp/><ref refid="structsample__parms" kindref="compound">sample_parms</ref><sp/>*<sp/>source,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structsample__parms" kindref="compound">sample_parms</ref><sp/>*<sp/>target);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structdma__buffparms" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>Static<sp/>fields<sp/>(not<sp/>to<sp/>be<sp/>cleared<sp/>during<sp/>open)</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CONFIGURE_C</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>oss_mutex<sp/>mutex;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>sound_os_info<sp/>*osp;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*raw_buf;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>oss_native_ulong<sp/>raw_buf_phys;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>buffsize;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tmpbuf1,<sp/>*tmpbuf2;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dma;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>DMA<sp/>channel<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*driver_use_ptr;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>driver_use_value;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Interrupt<sp/>callback<sp/>stuff<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>void<sp/>(*audio_callback)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>parm);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>callback_parm;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>OS_DMA_PARMS</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>OS_DMA_PARMS</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>Dynamic<sp/>fields<sp/>(will<sp/>be<sp/>zeroed<sp/>during<sp/>open)</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/>Don&apos;t<sp/>add<sp/>anything<sp/>before<sp/>flags.</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*srcstate[OSS_MAX_AUDIO_CHANNELS];</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>oss_native_ulong<sp/>flags;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DMAP_NOTIMEOUT<sp/><sp/>0x00000001</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMAP_POST<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000002</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMAP_PREPARED<sp/><sp/><sp/>0x00000004</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMAP_FRAGFIXED<sp/><sp/>0x00000008<sp/><sp/></highlight><highlight class="comment">/*<sp/>Fragment<sp/>size<sp/>fixed<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMAP_STARTED<sp/><sp/><sp/><sp/>0x00000010</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMAP_COOKED<sp/><sp/><sp/><sp/><sp/>0x00000020</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMAP_ACTIVE<sp/><sp/><sp/><sp/><sp/>0x00000040<sp/><sp/></highlight><highlight class="comment">/*<sp/>ISA<sp/>DMA<sp/>is<sp/>running<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dma_mode;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>DMODE_INPUT,<sp/>DMODE_OUTPUT<sp/>or<sp/>DMODE_NONE<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DMODE_NONE<sp/><sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMODE_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PCM_ENABLE_OUTPUT</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMODE_INPUT<sp/><sp/><sp/><sp/><sp/>PCM_ENABLE_INPUT</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Queue<sp/>parameters.</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbufs;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>frag_used;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fragment_size;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bytes_in_use;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>data_rate;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Bytes/second<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>frame_size;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fragsize_rq;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>low_water;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>oss_native_ulonglong<sp/>byte_counter;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>oss_native_ulonglong<sp/>user_counter;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>write_count;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>interrupt_count;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fragment_counter;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>expand_factor;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mapping_flags;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DMA_MAP_MAPPED<sp/><sp/><sp/><sp/><sp/><sp/>0x00000001</highlight></codeline>
+<codeline lineno="100"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>neutral_byte;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SPARCAUDIO_EMU</highlight></codeline>
+<codeline lineno="103"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>EOFLIST_SIZE<sp/>16</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*devaudio_sigproc;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>A<sp/>pref<sp/>to<sp/>which<sp/>send<sp/>a<sp/>SIGPOLL<sp/>signal<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>devaudio_sigmask;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>eof_head,<sp/>eof_tail;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>eof_list[EOFLIST_SIZE],<sp/>eof_counts[EOFLIST_SIZE];</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="109"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>play_underruns,<sp/>rec_overruns;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>underrun_flag;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>play_error,<sp/>num_play_errors;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rec_error,<sp/>num_rec_errors;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*leftover_buf;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>leftover_bytes;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tmpbuf_len,<sp/>tmpbuf_ptr;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>cnv_func_t<sp/>convert_func;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>convert_mode;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">audio_buffer<sp/>*(*user_import)<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__operations" kindref="compound">audio_operations</ref><sp/>*<sp/>adev,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structsample__parms" kindref="compound">sample_parms</ref><sp/>*<sp/>parms,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cbuf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>int<sp/>(*user_export)<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__operations" kindref="compound">audio_operations</ref><sp/>*<sp/>adev,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap,<sp/><ref refid="structsample__parms" kindref="compound">sample_parms</ref><sp/>*<sp/>parms,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">audio_buffer<sp/>*<sp/>buf,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cbuf,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxbytes);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">audio_buffer<sp/>*(*device_read)<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__operations" kindref="compound">audio_operations</ref><sp/>*<sp/>adev,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structsample__parms" kindref="compound">sample_parms</ref><sp/>*<sp/>parms,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*cbuf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>int<sp/>(*device_write)<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__operations" kindref="compound">audio_operations</ref><sp/>*<sp/>adev,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*frombuf,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*tobuf,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxspace,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*fromlen,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*tolen);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dmap_get_qlen<sp/>(<ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dmap_get_qhead<sp/>(<ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dmap_get_qtail<sp/>(<ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="structaudio__driver" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__driver" kindref="compound">audio_driver</ref></highlight></codeline>
+<codeline lineno="142"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>int<sp/>(*open)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mode,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>open_flags);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>void<sp/>(*close)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mode);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>void<sp/>(*output_block)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/>oss_native_ulong<sp/>buf,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fragsize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>intrflag);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>void<sp/>(*start_input)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/>oss_native_ulong<sp/>buf,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fragsize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>intrflag);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>int<sp/>(*ioctl)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cmd,<sp/>ioctl_arg<sp/>arg);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>int<sp/>(*prepare_for_input)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufsize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbufs);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>int<sp/>(*prepare_for_output)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufsize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbufs);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>void<sp/>(*halt_io)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>int<sp/>(*local_qlen)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>int<sp/>(*copy_user)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*localbuf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>localoffs,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WR_BUF_CONST<sp/>snd_rw_buf<sp/>*<sp/>userbuf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>useroffs,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*len,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_space);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>void<sp/>(*halt_input)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>void<sp/>(*halt_output)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>void<sp/>(*trigger)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bits);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>int<sp/>(*set_speed)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>int<sp/>(*set_bits)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bits);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>short<sp/>(*set_channels)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>channels);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>void<sp/>(*postprocess_write)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev);<sp/><sp/></highlight><highlight class="comment">/*<sp/>Device<sp/>spesific<sp/>postprocessing<sp/>for<sp/>written<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>void<sp/>(*preprocess_read)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Device<sp/>spesific<sp/>preprocessing<sp/>for<sp/>read<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Timeout<sp/>handlers<sp/>for<sp/>input<sp/>and<sp/>output<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>int<sp/>(*check_input)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>int<sp/>(*check_output)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>int<sp/>(*alloc_buffer)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>int<sp/>(*free_buffer)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>void<sp/>(*lock_buffer)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*dummy;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>int<sp/>(*get_buffer_pointer)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>int<sp/>(*calibrate_speed)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nominal_rate,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>true_rate);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SYNC_PREPARE<sp/><sp/><sp/><sp/>1</highlight></codeline>
+<codeline lineno="177"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SYNC_TRIGGER<sp/><sp/><sp/><sp/>2</highlight></codeline>
+<codeline lineno="178"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>int<sp/>(*sync_control)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>event,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mode);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>void<sp/>(*prepare_to_stop)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>int<sp/>(*get_input_pointer)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>int<sp/>(*get_output_pointer)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*<sp/>dmap,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>int<sp/>(*bind)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cmd,<sp/>ioctl_arg<sp/>arg);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>void<sp/>(*setup_fragments)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/>dmap_p<sp/>dmap,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="structaudio__operations" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__operations" kindref="compound">audio_operations</ref></highlight></codeline>
+<codeline lineno="189"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>name[128];</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>handle[32];</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Device&apos;s<sp/>own<sp/>index<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enabled;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__operations" kindref="compound">audio_operations</ref><sp/>*next;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Link<sp/>to<sp/>the<sp/>next<sp/>&quot;shadow&quot;<sp/>device<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>open_flags;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>caps;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>magic;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Secret<sp/>low<sp/>level<sp/>driver<sp/>ID<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NOTHING_SPECIAL<sp/><sp/><sp/><sp/><sp/>0x00</highlight></codeline>
+<codeline lineno="200"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>NEEDS_RESTART<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight></codeline>
+<codeline lineno="201"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_AUTOMODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02</highlight></codeline>
+<codeline lineno="202"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_DUPLEX<sp/><sp/><sp/><sp/><sp/><sp/>0x04</highlight></codeline>
+<codeline lineno="203"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_COLD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08</highlight></codeline>
+<codeline lineno="204"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_UNUSED1<sp/><sp/><sp/><sp/><sp/>0x10</highlight></codeline>
+<codeline lineno="205"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_UNUSED2<sp/><sp/><sp/><sp/><sp/>0x40</highlight></codeline>
+<codeline lineno="206"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_UNUSED3<sp/><sp/><sp/><sp/><sp/>0x80</highlight></codeline>
+<codeline lineno="207"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_ISA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x100<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ISA<sp/>DMA<sp/>buffer<sp/>placement<sp/>restrictions<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="208"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_VIRTUAL<sp/><sp/><sp/><sp/><sp/>0x400<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Virtual<sp/>audio<sp/>device<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="209"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_OPENED<sp/><sp/><sp/><sp/><sp/><sp/>0x800<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Will<sp/>be<sp/>set<sp/>when<sp/>the<sp/>device<sp/>is<sp/>open<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="210"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_NOCONVERT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1000<sp/><sp/></highlight><highlight class="comment">/*<sp/>No<sp/>implicit<sp/>format<sp/>conversions<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="211"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_DUALBUF<sp/><sp/><sp/><sp/><sp/>0x2000<sp/><sp/></highlight><highlight class="comment">/*<sp/>Alloc<sp/>separate<sp/>bufs<sp/>for<sp/>rec<sp/>and<sp/>play<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="212"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_USEPHYSADDR<sp/><sp/><sp/><sp/><sp/>0x4000<sp/><sp/></highlight><highlight class="comment">/*<sp/>Use<sp/>raw_buf_phys<sp/>when<sp/>mmap()ing<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="213"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_DISABLED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x8000</highlight></codeline>
+<codeline lineno="214"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_NOINPUT<sp/><sp/><sp/><sp/><sp/>0x10000</highlight></codeline>
+<codeline lineno="215"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_NOOUTPUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20000</highlight></codeline>
+<codeline lineno="216"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_FIXEDRATE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40000<sp/></highlight><highlight class="comment">/*<sp/>Fixed<sp/>sampling<sp/>rate<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="217"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_16BITONLY<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80000<sp/></highlight><highlight class="comment">/*<sp/>Only<sp/>16<sp/>bit<sp/>support<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="218"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_STEREOONLY<sp/><sp/><sp/><sp/><sp/><sp/>0x100000<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Only<sp/>stereo<sp/>(requires<sp/>16BITONLY)<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="219"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_HUSHOUTPUT<sp/><sp/><sp/><sp/><sp/><sp/>0x200000<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>not<sp/>permit<sp/>use<sp/>with<sp/>O_WRONLY<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="220"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_SHADOW<sp/><sp/><sp/><sp/><sp/><sp/>0x400000<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>&quot;shadow&quot;<sp/>device<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="221"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_ISABUS<sp/><sp/><sp/><sp/><sp/><sp/>0x800000<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ISA<sp/>device<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="222"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_NODMA<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1000000<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>ISA<sp/>devices<sp/>only<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="223"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_8BITONLY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2000000<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Only<sp/>8<sp/>bits<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="224"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_32BITONLY<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4000000<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Only<sp/>24<sp/>or<sp/>32<sp/>bits<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="225"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_NOSOFTOSS<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x8000000<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Don&apos;t<sp/>install<sp/>SoftOSS<sp/>automatically<sp/>for<sp/>this<sp/>device<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="226"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_NOSRC<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10000000<sp/><sp/></highlight><highlight class="comment">/*<sp/>Don&apos;t<sp/>do<sp/>any<sp/>kind<sp/>of<sp/>SRC<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="227"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_SPECIAL<sp/><sp/><sp/><sp/><sp/>0x20000000<sp/><sp/></highlight><highlight class="comment">/*<sp/>Multich<sp/>or<sp/>otherwise<sp/>special<sp/>dev<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="228"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_NOMMAP<sp/><sp/><sp/><sp/><sp/><sp/>0x40000000<sp/><sp/></highlight><highlight class="comment">/*<sp/>No<sp/>MMAP<sp/>capability<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="229"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMA_SOFTOSS_DISABLE<sp/>0x80000000<sp/><sp/></highlight><highlight class="comment">/*<sp/>Not<sp/>compatible<sp/>with<sp/>SoftOSS<sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="230"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Sampling<sp/>parameters</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><ref refid="structsample__parms" kindref="compound">sample_parms</ref><sp/>user_parms,<sp/>hw_parms;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iformat_mask,<sp/>oformat_mask;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Bitmasks<sp/>for<sp/>supported<sp/>audio<sp/>formats<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min_rate,<sp/>max_rate;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Sampling<sp/>rate<sp/>limits<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min_channels,<sp/>max_channels;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xformat_mask;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Format<sp/>mask<sp/>for<sp/>current<sp/>open<sp/>mode<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>binding;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*devc;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Driver<sp/>specific<sp/>info<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__driver" kindref="compound">audio_driver</ref><sp/>*d;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*portc,<sp/>*portc_play,<sp/>*portc_record;<sp/><sp/></highlight><highlight class="comment">/*<sp/>Driver<sp/>specific<sp/>info<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdma__buffparms" kindref="compound">dma_buffparms</ref><sp/>*dmap_in,<sp/>*dmap_out;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mixer_dev;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>open_mode;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>go;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enable_bits;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>parent_dev;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>0<sp/>-&gt;<sp/>no<sp/>parent,<sp/>1<sp/>to<sp/>n<sp/>-&gt;<sp/>parent=parent_dev+1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_block;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Maximum<sp/>fragment<sp/>size<sp/>to<sp/>be<sp/>accepted<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min_block;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Minimum<sp/>fragment<sp/>size<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_intrate;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Another<sp/>form<sp/>of<sp/>min_block<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fixed_rate;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vmix_flags;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>special<sp/>flags<sp/>sent<sp/>to<sp/>virtual<sp/>mixer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VMIX_MULTIFRAG<sp/><sp/>0x00000001<sp/><sp/></highlight><highlight class="comment">/*<sp/>More<sp/>than<sp/>2<sp/>fragments<sp/>required<sp/>(causes<sp/>longer<sp/>latencies)<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="257"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>src_rate;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>src_ratio;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/>pid_t<sp/>pid;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>cmd[16];</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/>sound_os_info<sp/>*osp;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setfragment_warned;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>riff_warned;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>redirect_in,<sp/>redirect_out;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dmask;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Open<sp/>dmaps<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DMASK_OUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight></codeline>
+<codeline lineno="267"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DMASK_IN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02</highlight></codeline>
+<codeline lineno="268"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nonblock;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>forced_nonblock;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ossd_registered;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sync_flags;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SYNC_MASTER<sp/><sp/><sp/><sp/><sp/>0x01</highlight></codeline>
+<codeline lineno="273"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SYNC_SLAVE<sp/><sp/><sp/><sp/><sp/><sp/>0x02</highlight></codeline>
+<codeline lineno="274"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sync_group;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sync_mode;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__operations" kindref="compound">audio_operations</ref><sp/>*sync_next;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Next<sp/>device<sp/>in<sp/>sync<sp/>group<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rate_source;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_SAMPLE_RATES<sp/><sp/><sp/><sp/>20<sp/></highlight><highlight class="comment">/*<sp/>Cannot<sp/>be<sp/>changed<sp/>(see<sp/>soundcard.h)<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="280"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrates,<sp/>rates[MAX_SAMPLE_RATES];</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CONFIGURE_C</highlight></codeline>
+<codeline lineno="283"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>oss_mutex<sp/>mutex;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="285"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>card_number;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port_number;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>real_dev;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cooked_enable;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout_count;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/>void<sp/>(*outputintr)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xx);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/>void<sp/>(*inputintr)<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dev);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297" refid="structoss__card__desc" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structoss__card__desc" kindref="compound">oss_card_desc</ref></highlight></codeline>
+<codeline lineno="298"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>shortname[16];</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>longname[128];</highlight></codeline>
+<codeline lineno="301"><highlight class="normal">}<sp/><ref refid="structoss__card__desc" kindref="compound">oss_card_desc_t</ref>,<sp/>*<ref refid="structoss__card__desc" kindref="compound">oss_card_desc_p</ref>;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UNIT_EXPAND<sp/><sp/><sp/><sp/><sp/>1024</highlight></codeline>
+<codeline lineno="304"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structaudio__operations" kindref="compound">audio_operations</ref><sp/>**audio_devs;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_audiodevs;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>oss_card_desc_p<sp/>*oss_cardlist;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*oss_version_string;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*oss_checksum;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sys/linux/oss/include/audio_core.h"/>
+  </compounddef>
+</doxygen>

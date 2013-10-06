@@ -1,0 +1,354 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_audio_buffer_w_i_n32" kind="class" prot="public">
+    <compoundname>idAudioBufferWIN32</compoundname>
+    <basecompoundref refid="classid_audio_buffer" prot="public" virt="non-virtual">idAudioBuffer</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classid_audio_buffer_w_i_n32_1ae24adc142e26b7aef9506f25273f9c63" prot="public" static="no" mutable="no">
+        <type><ref refid="classid_wave_file" kindref="compound">idWaveFile</ref> *</type>
+        <definition>idWaveFile* idAudioBufferWIN32::m_pWaveFile</definition>
+        <argsstring></argsstring>
+        <name>m_pWaveFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="62" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classid_audio_buffer_w_i_n32_1adcbc68152a000f305f3a032bce49569f" prot="private" static="no" mutable="no">
+        <type>LPDIRECTSOUNDBUFFER</type>
+        <definition>LPDIRECTSOUNDBUFFER idAudioBufferWIN32::m_apDSBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_apDSBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="64" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_audio_buffer_w_i_n32_1a52d133cca604bf3421d9f5ba976bb588" prot="private" static="no" mutable="no">
+        <type>dword</type>
+        <definition>dword idAudioBufferWIN32::m_dwDSBufferSize</definition>
+        <argsstring></argsstring>
+        <name>m_dwDSBufferSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="65" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1a06816d1a29ca3503d3cac1dc1fd76109" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idAudioBufferWIN32::idAudioBufferWIN32</definition>
+        <argsstring>(LPDIRECTSOUNDBUFFER apDSBuffer, dword dwDSBufferSize, idWaveFile *pWaveFile=NULL)</argsstring>
+        <name>idAudioBufferWIN32</name>
+        <param>
+          <type>LPDIRECTSOUNDBUFFER</type>
+          <declname>apDSBuffer</declname>
+        </param>
+        <param>
+          <type>dword</type>
+          <declname>dwDSBufferSize</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_wave_file" kindref="compound">idWaveFile</ref> *</type>
+          <declname>pWaveFile</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="47" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="554" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1a51642deb9cb6b9956b34f6ba7ea1128d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idAudioBufferWIN32::~idAudioBufferWIN32</definition>
+        <argsstring>()</argsstring>
+        <name>~idAudioBufferWIN32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="48" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="573" bodyend="578"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1a928ff0e42a36430c9b0a6c37d0775c99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAudioBufferWIN32::FillBufferWithSound</definition>
+        <argsstring>(LPDIRECTSOUNDBUFFER pDSB, bool bRepeatWavIfBufferLarger)</argsstring>
+        <name>FillBufferWithSound</name>
+        <param>
+          <type>LPDIRECTSOUNDBUFFER</type>
+          <declname>pDSB</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>bRepeatWavIfBufferLarger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="50" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="585" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1a17804d7749cc09ff82b59acb73369046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAudioBufferWIN32::Lock</definition>
+        <argsstring>(void **pDSLockedBuffer, ulong *dwDSLockedBufferSize)</argsstring>
+        <name>Lock</name>
+        <param>
+          <type>void **</type>
+          <declname>pDSLockedBuffer</declname>
+        </param>
+        <param>
+          <type>ulong *</type>
+          <declname>dwDSLockedBufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="52" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="791" bodyend="804"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1a4dcec2beea9f39899fb630b520f9eb85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAudioBufferWIN32::Unlock</definition>
+        <argsstring>(void *pDSLockedBuffer, dword dwDSLockedBufferSize)</argsstring>
+        <name>Unlock</name>
+        <param>
+          <type>void *</type>
+          <declname>pDSLockedBuffer</declname>
+        </param>
+        <param>
+          <type>dword</type>
+          <declname>dwDSLockedBufferSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="53" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="811" bodyend="815"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1ae51dd31926c91433250fb36597d4d126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool idAudioBufferWIN32::GetCurrentPosition</definition>
+        <argsstring>(ulong *pdwCurrentWriteCursor)</argsstring>
+        <name>GetCurrentPosition</name>
+        <param>
+          <type>ulong *</type>
+          <declname>pdwCurrentWriteCursor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="54" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="822" bodyend="836"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1ad37ec5626173cfdd5687acbf24ca429e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idAudioBufferWIN32::Play</definition>
+        <argsstring>(dword dwPriority=0, dword dwFlags=0)</argsstring>
+        <name>Play</name>
+        <reimplements refid="classid_audio_buffer_1aaeb87bcc20344ae18e9824ebe55dfde9">Play</reimplements>
+        <param>
+          <type>dword</type>
+          <declname>dwPriority</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>dword</type>
+          <declname>dwFlags</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="56" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="706" bodyend="731"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1a40be6069b876450aa98756fedbe7902c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idAudioBufferWIN32::Stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>Stop</name>
+        <reimplements refid="classid_audio_buffer_1aa665e6d8f85ead05c401fc6862292946">Stop</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="57" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="739" bodyend="747"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1a13c720f578ae553248151ebff2c1e460" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idAudioBufferWIN32::Reset</definition>
+        <argsstring>(void)</argsstring>
+        <name>Reset</name>
+        <reimplements refid="classid_audio_buffer_1a6658356251bbbf88dee63e4261bf0482">Reset</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="58" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="755" bodyend="763"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1aec33f95bc01771c2695ed57c13c0fc67" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool idAudioBufferWIN32::IsSoundPlaying</definition>
+        <argsstring>(void)</argsstring>
+        <name>IsSoundPlaying</name>
+        <reimplements refid="classid_audio_buffer_1a7f0c39cad33b10e415778588b1af86e2">IsSoundPlaying</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="59" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="771" bodyend="784"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1aa0f793e746083e750cc7c0a23d98c162" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idAudioBufferWIN32::SetVolume</definition>
+        <argsstring>(float x)</argsstring>
+        <name>SetVolume</name>
+        <reimplements refid="classid_audio_buffer_1aee78c0892d32fcfa51562a100610274b">SetVolume</reimplements>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="60" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="843" bodyend="847"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classid_audio_buffer_w_i_n32_1a8c70dcc80fa9259f441a50a569975f34" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int idAudioBufferWIN32::RestoreBuffer</definition>
+        <argsstring>(LPDIRECTSOUNDBUFFER pDSB, bool *pbWasRestored)</argsstring>
+        <name>RestoreBuffer</name>
+        <param>
+          <type>LPDIRECTSOUNDBUFFER</type>
+          <declname>pDSB</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>pbWasRestored</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="67" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="661" bodyend="697"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="22292">
+        <label>idAudioBufferWIN32</label>
+        <link refid="classid_audio_buffer_w_i_n32"/>
+        <childnode refid="22293" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22293">
+        <label>idAudioBuffer</label>
+        <link refid="classid_audio_buffer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="22297">
+        <label>waveformatextensible_s</label>
+        <link refid="structwaveformatextensible__s"/>
+        <childnode refid="22298" relation="usage">
+          <edgelabel>Format</edgelabel>
+        </childnode>
+      </node>
+      <node id="22298">
+        <label>waveformatex_s</label>
+        <link refid="structwaveformatex__s"/>
+      </node>
+      <node id="22296">
+        <label>idWaveFile</label>
+        <link refid="classid_wave_file"/>
+        <childnode refid="22297" relation="usage">
+          <edgelabel>mpwfx</edgelabel>
+        </childnode>
+      </node>
+      <node id="22294">
+        <label>idAudioBufferWIN32</label>
+        <link refid="classid_audio_buffer_w_i_n32"/>
+        <childnode refid="22295" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22296" relation="usage">
+          <edgelabel>m_pWaveFile</edgelabel>
+        </childnode>
+      </node>
+      <node id="22295">
+        <label>idAudioBuffer</label>
+        <link refid="classid_audio_buffer"/>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" line="45" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/win32/win_snd.cpp" bodystart="45" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classid_audio_buffer_w_i_n32_1a928ff0e42a36430c9b0a6c37d0775c99" prot="public" virt="non-virtual"><scope>idAudioBufferWIN32</scope><name>FillBufferWithSound</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1ae51dd31926c91433250fb36597d4d126" prot="public" virt="non-virtual"><scope>idAudioBufferWIN32</scope><name>GetCurrentPosition</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1a06816d1a29ca3503d3cac1dc1fd76109" prot="public" virt="non-virtual"><scope>idAudioBufferWIN32</scope><name>idAudioBufferWIN32</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1aec33f95bc01771c2695ed57c13c0fc67" prot="public" virt="virtual"><scope>idAudioBufferWIN32</scope><name>IsSoundPlaying</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1a17804d7749cc09ff82b59acb73369046" prot="public" virt="non-virtual"><scope>idAudioBufferWIN32</scope><name>Lock</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1adcbc68152a000f305f3a032bce49569f" prot="private" virt="non-virtual"><scope>idAudioBufferWIN32</scope><name>m_apDSBuffer</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1a52d133cca604bf3421d9f5ba976bb588" prot="private" virt="non-virtual"><scope>idAudioBufferWIN32</scope><name>m_dwDSBufferSize</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1ae24adc142e26b7aef9506f25273f9c63" prot="public" virt="non-virtual"><scope>idAudioBufferWIN32</scope><name>m_pWaveFile</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1ad37ec5626173cfdd5687acbf24ca429e" prot="public" virt="virtual"><scope>idAudioBufferWIN32</scope><name>Play</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1a13c720f578ae553248151ebff2c1e460" prot="public" virt="virtual"><scope>idAudioBufferWIN32</scope><name>Reset</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1a8c70dcc80fa9259f441a50a569975f34" prot="private" virt="non-virtual"><scope>idAudioBufferWIN32</scope><name>RestoreBuffer</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1aa0f793e746083e750cc7c0a23d98c162" prot="public" virt="virtual"><scope>idAudioBufferWIN32</scope><name>SetVolume</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1a40be6069b876450aa98756fedbe7902c" prot="public" virt="virtual"><scope>idAudioBufferWIN32</scope><name>Stop</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1a4dcec2beea9f39899fb630b520f9eb85" prot="public" virt="non-virtual"><scope>idAudioBufferWIN32</scope><name>Unlock</name></member>
+      <member refid="classid_audio_buffer_w_i_n32_1a51642deb9cb6b9956b34f6ba7ea1128d" prot="public" virt="non-virtual"><scope>idAudioBufferWIN32</scope><name>~idAudioBufferWIN32</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

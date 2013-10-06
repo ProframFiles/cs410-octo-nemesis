@@ -1,0 +1,680 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="posix__threads_8cpp" kind="file">
+    <compoundname>posix_threads.cpp</compoundname>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">sys/stat.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">dirent.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">sys/mman.h</includes>
+    <includes local="no">sys/time.h</includes>
+    <includes local="no">pwd.h</includes>
+    <includes local="no">pthread.h</includes>
+    <includes refid="precompiled_8h" local="yes">../../idlib/precompiled.h</includes>
+    <includes refid="posix__public_8h" local="yes">posix_public.h</includes>
+    <incdepgraph>
+      <node id="2473">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="2478">
+        <label>sys/mman.h</label>
+      </node>
+      <node id="2474">
+        <label>errno.h</label>
+      </node>
+      <node id="2481">
+        <label>pthread.h</label>
+      </node>
+      <node id="2472">
+        <label>sys/types.h</label>
+      </node>
+      <node id="2477">
+        <label>unistd.h</label>
+      </node>
+      <node id="2479">
+        <label>sys/time.h</label>
+      </node>
+      <node id="2480">
+        <label>pwd.h</label>
+      </node>
+      <node id="2471">
+        <label>E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp</label>
+        <link refid="posix_threads.cpp"/>
+        <childnode refid="2472" relation="include">
+        </childnode>
+        <childnode refid="2473" relation="include">
+        </childnode>
+        <childnode refid="2474" relation="include">
+        </childnode>
+        <childnode refid="2475" relation="include">
+        </childnode>
+        <childnode refid="2476" relation="include">
+        </childnode>
+        <childnode refid="2477" relation="include">
+        </childnode>
+        <childnode refid="2478" relation="include">
+        </childnode>
+        <childnode refid="2479" relation="include">
+        </childnode>
+        <childnode refid="2480" relation="include">
+        </childnode>
+        <childnode refid="2481" relation="include">
+        </childnode>
+      </node>
+      <node id="2475">
+        <label>stdio.h</label>
+      </node>
+      <node id="2476">
+        <label>dirent.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="posix__threads_8cpp_1a8b5173357adb02a86c027316e0acdfa0" prot="public" static="no">
+        <name>MAX_THREADS</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="152" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="posix__threads_8cpp_1af00762970248171c279a2f143724613d" prot="public" static="no">
+        <type>void *(*</type>
+        <definition>typedef void*(* pthread_function_t)(void *)</definition>
+        <argsstring>)(void *)</argsstring>
+        <name>pthread_function_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="157" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="posix__threads_8cpp_1a4100a35fae75732bbc22c49e079c8884" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int MAX_LOCAL_CRITICAL_SECTIONS</definition>
+        <argsstring></argsstring>
+        <name>MAX_LOCAL_CRITICAL_SECTIONS</name>
+        <initializer>= MAX_CRITICAL_SECTIONS + 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="53" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="posix__threads_8cpp_1ad428c6bb42e49145bdf04752c6762e58" prot="public" static="yes" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t global_lock[MAX_LOCAL_CRITICAL_SECTIONS]</definition>
+        <argsstring>[MAX_LOCAL_CRITICAL_SECTIONS]</argsstring>
+        <name>global_lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="54" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="posix__threads_8cpp_1a9265a1fe22cc10c59be62e3355a83014" prot="public" static="no" mutable="no">
+        <type>pthread_cond_t</type>
+        <definition>pthread_cond_t event_cond[MAX_TRIGGER_EVENTS]</definition>
+        <argsstring>[MAX_TRIGGER_EVENTS]</argsstring>
+        <name>event_cond</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="104" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="posix__threads_8cpp_1af68cc77a872f2ab11b763ef6874091e7" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool signaled[MAX_TRIGGER_EVENTS]</definition>
+        <argsstring>[MAX_TRIGGER_EVENTS]</argsstring>
+        <name>signaled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="105" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="posix__threads_8cpp_1aee024ae2fe9a2dafcd45eba92360bdcd" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool waiting[MAX_TRIGGER_EVENTS]</definition>
+        <argsstring>[MAX_TRIGGER_EVENTS]</argsstring>
+        <name>waiting</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="106" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="posix__threads_8cpp_1ac238f6590b06cf4715cdeefacb7876fc" prot="public" static="no" mutable="no">
+        <type><ref refid="structxthread_info" kindref="compound">xthreadInfo</ref> *</type>
+        <definition>xthreadInfo* g_threads[10]</definition>
+        <argsstring>[10]</argsstring>
+        <name>g_threads</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="153" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="posix__threads_8cpp_1a77e19e501e58cec4761b60fe160ffec9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int g_thread_count</definition>
+        <argsstring></argsstring>
+        <name>g_thread_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="155" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="posix__threads_8cpp_1a877866ca9a3ffcfef4b194799a8963b6" prot="public" static="no" mutable="no">
+        <type><ref refid="structxthread_info" kindref="compound">xthreadInfo</ref></type>
+        <definition>xthreadInfo asyncThread</definition>
+        <argsstring></argsstring>
+        <name>asyncThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="247" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="posix__threads_8cpp_1a113dd198ae29ebfa863491fe00bd8a5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_EnterCriticalSection</definition>
+        <argsstring>(int index)</argsstring>
+        <name>Sys_EnterCriticalSection</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="61" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="61" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="posix__threads_8cpp_1aa74bb7f93f8f257c935c431a8128f39f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_LeaveCriticalSection</definition>
+        <argsstring>(int index)</argsstring>
+        <name>Sys_LeaveCriticalSection</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="80" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="80" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="posix__threads_8cpp_1a1f553e47c75fe2d4275b038d1db43f35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_WaitForEvent</definition>
+        <argsstring>(int index)</argsstring>
+        <name>Sys_WaitForEvent</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="113" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="113" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="posix__threads_8cpp_1a6475628ed8b3fcc71c3471534a796c21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_TriggerEvent</definition>
+        <argsstring>(int index)</argsstring>
+        <name>Sys_TriggerEvent</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="133" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="133" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="posix__threads_8cpp_1aac447898fba2330c566234d334133490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_CreateThread</definition>
+        <argsstring>(xthread_t function, void *parms, xthreadPriority priority, xthreadInfo &amp;info, const char *name, xthreadInfo **threads, int *thread_count)</argsstring>
+        <name>Sys_CreateThread</name>
+        <param>
+          <type>xthread_t</type>
+          <declname>function</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>parms</declname>
+        </param>
+        <param>
+          <type>xthreadPriority</type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type><ref refid="structxthread_info" kindref="compound">xthreadInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="structxthread_info" kindref="compound">xthreadInfo</ref> **</type>
+          <declname>threads</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>thread_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="164" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="164" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="posix__threads_8cpp_1a7e9f31d078a6f29dd8dfe485e718878b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_DestroyThread</definition>
+        <argsstring>(xthreadInfo &amp;info)</argsstring>
+        <name>Sys_DestroyThread</name>
+        <param>
+          <type><ref refid="structxthread_info" kindref="compound">xthreadInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="189" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="189" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="posix__threads_8cpp_1a57326ad3bcc4158c53826a191b457d63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* Sys_GetThreadName</definition>
+        <argsstring>(int *index)</argsstring>
+        <name>Sys_GetThreadName</name>
+        <param>
+          <type>int *</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="222" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="222" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="posix__threads_8cpp_1a0a861d197005814a0ac68f66f312f8c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Posix_StartAsyncThread</definition>
+        <argsstring>()</argsstring>
+        <name>Posix_StartAsyncThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="254" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="254" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="posix__threads_8cpp_1a816e202a160003f3b71e00cf39e427e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Posix_InitPThreads</definition>
+        <argsstring>()</argsstring>
+        <name>Posix_InitPThreads</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" line="268" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp" bodystart="268" bodyend="291"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">Copyright<sp/>(C)<sp/>1999-2011<sp/>id<sp/>Software<sp/>LLC,<sp/>a<sp/>ZeniMax<sp/>Media<sp/>company.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Doom<sp/>3<sp/>GPL<sp/>Source<sp/>Code<sp/>(?Doom<sp/>3<sp/>Source<sp/>Code?).<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">along<sp/>with<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">In<sp/>addition,<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code<sp/>is<sp/>also<sp/>subject<sp/>to<sp/>certain<sp/>additional<sp/>terms.<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>these<sp/>additional<sp/>terms<sp/>immediately<sp/>following<sp/>the<sp/>terms<sp/>and<sp/>conditions<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>which<sp/>accompanied<sp/>the<sp/>Doom<sp/>3<sp/>Source<sp/>Code.<sp/><sp/>If<sp/>not,<sp/>please<sp/>request<sp/>a<sp/>copy<sp/>in<sp/>writing<sp/>from<sp/>id<sp/>Software<sp/>at<sp/>the<sp/>address<sp/>below.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">If<sp/>you<sp/>have<sp/>questions<sp/>concerning<sp/>this<sp/>license<sp/>or<sp/>the<sp/>applicable<sp/>additional<sp/>terms,<sp/>you<sp/>may<sp/>contact<sp/>in<sp/>writing<sp/>id<sp/>Software<sp/>LLC,<sp/>c/o<sp/>ZeniMax<sp/>Media<sp/>Inc.,<sp/>Suite<sp/>120,<sp/>Rockville,<sp/>Maryland<sp/>20850<sp/>USA.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">===========================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/stat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dirent.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/mman.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pwd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pthread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../idlib/precompiled.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;posix_public.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_DEBUG)</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="comment">//<sp/>#define<sp/>ID_VERBOSE_PTHREADS<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">======================================================</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">locks</highlight></codeline>
+<codeline lineno="49"><highlight class="comment">======================================================</highlight></codeline>
+<codeline lineno="50"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//<sp/>we<sp/>use<sp/>an<sp/>extra<sp/>lock<sp/>for<sp/>the<sp/>local<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MAX_LOCAL_CRITICAL_SECTIONS<sp/>=<sp/>MAX_CRITICAL_SECTIONS<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>pthread_mutex_t<sp/>global_lock[<sp/>MAX_LOCAL_CRITICAL_SECTIONS<sp/>];</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="57"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="58"><highlight class="comment">Sys_EnterCriticalSection</highlight></codeline>
+<codeline lineno="59"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="60"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_EnterCriticalSection(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>index<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>index<sp/>&lt;<sp/>MAX_LOCAL_CRITICAL_SECTIONS<sp/>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ID_VERBOSE_PTHREADS<sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pthread_mutex_trylock(<sp/>&amp;global_lock[index]<sp/>)<sp/>==<sp/>EBUSY<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sys_Printf(<sp/></highlight><highlight class="stringliteral">&quot;busy<sp/>lock<sp/>%d<sp/>in<sp/>thread<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>index,<sp/>Sys_GetThreadName()<sp/>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pthread_mutex_lock(<sp/>&amp;global_lock[index]<sp/>)<sp/>==<sp/>EDEADLK<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sys_Printf(<sp/></highlight><highlight class="stringliteral">&quot;FATAL:<sp/>DEADLOCK<sp/>%d,<sp/>in<sp/>thread<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>index,<sp/>Sys_GetThreadName()<sp/>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(<sp/>&amp;global_lock[index]<sp/>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="76"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="77"><highlight class="comment">Sys_LeaveCriticalSection</highlight></codeline>
+<codeline lineno="78"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="79"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_LeaveCriticalSection(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>index<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>index<sp/>&lt;<sp/>MAX_LOCAL_CRITICAL_SECTIONS<sp/>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ID_VERBOSE_PTHREADS</highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pthread_mutex_unlock(<sp/>&amp;global_lock[index]<sp/>)<sp/>==<sp/>EPERM<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sys_Printf(<sp/></highlight><highlight class="stringliteral">&quot;FATAL:<sp/>NOT<sp/>LOCKED<sp/>%d,<sp/>in<sp/>thread<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,<sp/>index,<sp/>Sys_GetThreadName()<sp/>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(<sp/>&amp;global_lock[index]<sp/>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="92"><highlight class="comment">======================================================</highlight></codeline>
+<codeline lineno="93"><highlight class="comment">wait<sp/>and<sp/>trigger<sp/>events</highlight></codeline>
+<codeline lineno="94"><highlight class="comment">we<sp/>use<sp/>a<sp/>single<sp/>lock<sp/>to<sp/>manipulate<sp/>the<sp/>conditions,<sp/>MAX_LOCAL_CRITICAL_SECTIONS-1</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"></highlight></codeline>
+<codeline lineno="96"><highlight class="comment">the<sp/>semantics<sp/>match<sp/>the<sp/>win32<sp/>version.<sp/>signals<sp/>raised<sp/>while<sp/>no<sp/>one<sp/>is<sp/>waiting<sp/>stay<sp/>raised<sp/>until<sp/>a<sp/>wait<sp/>happens<sp/>(which<sp/>then<sp/>does<sp/>a<sp/>simple<sp/>pass-through)</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"></highlight></codeline>
+<codeline lineno="98"><highlight class="comment">NOTE:<sp/>we<sp/>use<sp/>the<sp/>same<sp/>mutex<sp/>for<sp/>all<sp/>the<sp/>events.<sp/>I<sp/>don&apos;t<sp/>think<sp/>this<sp/>would<sp/>become<sp/>much<sp/>of<sp/>a<sp/>problem</highlight></codeline>
+<codeline lineno="99"><highlight class="comment">cond_wait<sp/>unlocks<sp/>atomically<sp/>with<sp/>setting<sp/>the<sp/>wait<sp/>condition,<sp/>and<sp/>locks<sp/>it<sp/>back<sp/>before<sp/>exiting<sp/>the<sp/>function</highlight></codeline>
+<codeline lineno="100"><highlight class="comment">the<sp/>potential<sp/>for<sp/>time<sp/>wasting<sp/>lock<sp/>waits<sp/>is<sp/>very<sp/>low</highlight></codeline>
+<codeline lineno="101"><highlight class="comment">======================================================</highlight></codeline>
+<codeline lineno="102"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">pthread_cond_t<sp/><sp/>event_cond[<sp/>MAX_TRIGGER_EVENTS<sp/>];</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>signaled[<sp/>MAX_TRIGGER_EVENTS<sp/>];</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>waiting[<sp/>MAX_TRIGGER_EVENTS<sp/>];</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="109"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="110"><highlight class="comment">Sys_WaitForEvent</highlight></codeline>
+<codeline lineno="111"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="112"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_WaitForEvent(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>index<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>index<sp/>&lt;<sp/>MAX_TRIGGER_EVENTS<sp/>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>Sys_EnterCriticalSection(<sp/>MAX_LOCAL_CRITICAL_SECTIONS<sp/>-<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>!waiting[<sp/>index<sp/>]<sp/>);<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>WaitForEvent<sp/>from<sp/>multiple<sp/>threads?<sp/>that<sp/>wouldn&apos;t<sp/>be<sp/>good</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>signaled[<sp/>index<sp/>]<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>emulate<sp/>windows<sp/>behaviour:<sp/>signal<sp/>has<sp/>been<sp/>raised<sp/>already.<sp/>clear<sp/>and<sp/>keep<sp/>going</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>signaled[<sp/>index<sp/>]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>waiting[<sp/>index<sp/>]<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_cond_wait(<sp/>&amp;event_cond[<sp/>index<sp/>],<sp/>&amp;global_lock[<sp/>MAX_LOCAL_CRITICAL_SECTIONS<sp/>-<sp/>1<sp/>]<sp/>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>waiting[<sp/>index<sp/>]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>Sys_LeaveCriticalSection(<sp/>MAX_LOCAL_CRITICAL_SECTIONS<sp/>-<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="129"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="130"><highlight class="comment">Sys_TriggerEvent</highlight></codeline>
+<codeline lineno="131"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="132"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_TriggerEvent(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>index<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>index<sp/>&lt;<sp/>MAX_TRIGGER_EVENTS<sp/>);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>Sys_EnterCriticalSection(<sp/>MAX_LOCAL_CRITICAL_SECTIONS<sp/>-<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>waiting[<sp/>index<sp/>]<sp/>)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_cond_signal(<sp/>&amp;event_cond[<sp/>index<sp/>]<sp/>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>emulate<sp/>windows<sp/>behaviour:<sp/>if<sp/>no<sp/>thread<sp/>is<sp/>waiting,<sp/>leave<sp/>the<sp/>signal<sp/>on<sp/>so<sp/>next<sp/>wait<sp/>keeps<sp/>going</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>signaled[<sp/>index<sp/>]<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>Sys_LeaveCriticalSection(<sp/>MAX_LOCAL_CRITICAL_SECTIONS<sp/>-<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="146"><highlight class="comment">======================================================</highlight></codeline>
+<codeline lineno="147"><highlight class="comment">thread<sp/>create<sp/>and<sp/>destroy</highlight></codeline>
+<codeline lineno="148"><highlight class="comment">======================================================</highlight></codeline>
+<codeline lineno="149"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment">//<sp/>not<sp/>a<sp/>hard<sp/>limit,<sp/>just<sp/>what<sp/>we<sp/>keep<sp/>track<sp/>of<sp/>for<sp/>debugging</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_THREADS<sp/>10</highlight></codeline>
+<codeline lineno="153"><highlight class="preprocessor"></highlight><highlight class="normal"><ref refid="structxthread_info" kindref="compound">xthreadInfo</ref><sp/>*g_threads[MAX_THREADS];</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>g_thread_count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*pthread_function_t)<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="160"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="161"><highlight class="comment">Sys_CreateThread</highlight></codeline>
+<codeline lineno="162"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="163"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_CreateThread(<sp/>xthread_t<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*parms,<sp/>xthreadPriority<sp/>priority,<sp/><ref refid="structxthread_info" kindref="compound">xthreadInfo</ref>&amp;<sp/>info,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/><ref refid="structxthread_info" kindref="compound">xthreadInfo</ref><sp/>**threads,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*thread_count<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>Sys_EnterCriticalSection(<sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_attr_t<sp/>attr;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_attr_init(<sp/>&amp;attr<sp/>);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pthread_attr_setdetachstate(<sp/>&amp;attr,<sp/>PTHREAD_CREATE_JOINABLE<sp/>)<sp/>!=<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Error(<sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>pthread_attr_setdetachstate<sp/>%s<sp/>failed\n&quot;</highlight><highlight class="normal">,<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pthread_create(<sp/>(<sp/>pthread_t*<sp/>)&amp;info.threadHandle,<sp/>&amp;attr,<sp/>(<sp/>pthread_function_t<sp/>)</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>parms<sp/>)<sp/>!=<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Error(<sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>pthread_create<sp/>%s<sp/>failed\n&quot;</highlight><highlight class="normal">,<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_attr_destroy(<sp/>&amp;attr<sp/>);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>info.name<sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>*thread_count<sp/>&lt;<sp/>MAX_THREADS<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>threads[<sp/>(<sp/>*thread_count<sp/>)++<sp/>]<sp/>=<sp/>&amp;info;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;DPrintf(<sp/></highlight><highlight class="stringliteral">&quot;WARNING:<sp/>MAX_THREADS<sp/>reached\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>Sys_LeaveCriticalSection(<sp/>);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="185"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="186"><highlight class="comment">Sys_DestroyThread</highlight></codeline>
+<codeline lineno="187"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="188"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_DestroyThread(<sp/><ref refid="structxthread_info" kindref="compound">xthreadInfo</ref>&amp;<sp/>info<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>target<sp/>thread<sp/>must<sp/>have<sp/>a<sp/>cancelation<sp/>point,<sp/>otherwise<sp/>pthread_cancel<sp/>is<sp/>useless</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<sp/>info.threadHandle<sp/>);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pthread_cancel(<sp/>(<sp/>pthread_t<sp/>)info.threadHandle<sp/>)<sp/>!=<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Error(<sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>pthread_cancel<sp/>%s<sp/>failed\n&quot;</highlight><highlight class="normal">,<sp/>info.name<sp/>);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pthread_join(<sp/>(<sp/>pthread_t<sp/>)info.threadHandle,<sp/>NULL<sp/>)<sp/>!=<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Error(<sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>pthread_join<sp/>%s<sp/>failed\n&quot;</highlight><highlight class="normal">,<sp/>info.name<sp/>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>info.threadHandle<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>Sys_EnterCriticalSection(<sp/>);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>g_thread_count<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>&amp;info<sp/>==<sp/>g_threads[<sp/>i<sp/>]<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_threads[<sp/>i<sp/>]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>j<sp/>=<sp/>i+1<sp/>;<sp/>j<sp/>&lt;<sp/>g_thread_count<sp/>;<sp/>j++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_threads[<sp/>j-1<sp/>]<sp/>=<sp/>g_threads[<sp/>j<sp/>];</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_threads[<sp/>j-1<sp/>]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_thread_count--;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sys_LeaveCriticalSection(<sp/>);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>Sys_LeaveCriticalSection(<sp/>);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="217"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="218"><highlight class="comment">Sys_GetThreadName</highlight></codeline>
+<codeline lineno="219"><highlight class="comment">find<sp/>the<sp/>name<sp/>of<sp/>the<sp/>calling<sp/>thread</highlight></codeline>
+<codeline lineno="220"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="221"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>Sys_GetThreadName(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>Sys_EnterCriticalSection(<sp/>);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_t<sp/>thread<sp/>=<sp/>pthread_self();</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0<sp/>;<sp/>i<sp/>&lt;<sp/>g_thread_count<sp/>;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>thread<sp/>==<sp/>(pthread_t)g_threads[<sp/>i<sp/>]-&gt;threadHandle<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*index<sp/>=<sp/>i;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sys_LeaveCriticalSection(<sp/>);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g_threads[<sp/>i<sp/>]-&gt;name;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*index<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>Sys_LeaveCriticalSection(<sp/>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;main&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="242"><highlight class="comment">=========================================================</highlight></codeline>
+<codeline lineno="243"><highlight class="comment">Async<sp/>Thread</highlight></codeline>
+<codeline lineno="244"><highlight class="comment">=========================================================</highlight></codeline>
+<codeline lineno="245"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><ref refid="structxthread_info" kindref="compound">xthreadInfo</ref><sp/>asyncThread;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="250"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="251"><highlight class="comment">Posix_StartAsyncThread</highlight></codeline>
+<codeline lineno="252"><highlight class="comment">=================</highlight></codeline>
+<codeline lineno="253"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Posix_StartAsyncThread()<sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>asyncThread.threadHandle<sp/>==<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sys_CreateThread(<sp/>(xthread_t)Sys_AsyncThread,<sp/>NULL,<sp/>THREAD_NORMAL,<sp/>asyncThread,<sp/></highlight><highlight class="stringliteral">&quot;Async&quot;</highlight><highlight class="normal">,<sp/>g_threads,<sp/>&amp;g_thread_count<sp/>);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;Async<sp/>thread<sp/>already<sp/>running\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>common-&gt;Printf(<sp/></highlight><highlight class="stringliteral">&quot;Async<sp/>thread<sp/>started\n&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="264"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="265"><highlight class="comment">Posix_InitPThreads</highlight></codeline>
+<codeline lineno="266"><highlight class="comment">==================</highlight></codeline>
+<codeline lineno="267"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Posix_InitPThreads(<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutexattr_t<sp/>attr;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>init<sp/>critical<sp/>sections</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>MAX_LOCAL_CRITICAL_SECTIONS;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutexattr_init(<sp/>&amp;attr<sp/>);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutexattr_settype(<sp/>&amp;attr,<sp/>PTHREAD_MUTEX_ERRORCHECK<sp/>);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_init(<sp/>&amp;global_lock[i],<sp/>&amp;attr<sp/>);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutexattr_destroy(<sp/>&amp;attr<sp/>);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>init<sp/>event<sp/>sleep/triggers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>MAX_TRIGGER_EVENTS;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_cond_init(<sp/>&amp;event_cond[<sp/>i<sp/>],<sp/>NULL<sp/>);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>signaled[i]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>waiting[i]<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>init<sp/>threads<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>MAX_THREADS;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_threads[<sp/>i<sp/>]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="291"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/sys/posix/posix_threads.cpp"/>
+  </compounddef>
+</doxygen>

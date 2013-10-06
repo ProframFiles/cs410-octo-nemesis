@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_b_tree" kind="class" prot="public">
+    <compoundname>idBTree</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>objType</declname>
+        <defname>objType</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>keyType</declname>
+        <defname>keyType</defname>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>maxChildrenPerNode</declname>
+        <defname>maxChildrenPerNode</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classid_b_tree_1a0dd0bea64323eac63a779219a6e29d2a" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+        <definition>idBTreeNode&lt;objType,keyType&gt;* idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::root</definition>
+        <argsstring></argsstring>
+        <name>root</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="78" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_b_tree_1acf3c0b76531d5ddfec33e01082bd778c" prot="private" static="no" mutable="no">
+        <type><ref refid="classid_block_alloc" kindref="compound">idBlockAlloc</ref>&lt; <ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt;, 128 &gt;</type>
+        <definition>idBlockAlloc&lt;idBTreeNode&lt;objType,keyType&gt;,128&gt; idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::nodeAllocator</definition>
+        <argsstring></argsstring>
+        <name>nodeAllocator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="79" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_b_tree_1a98d0ada1db3435b517e248b4c44c6eac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ID_INLINE idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::idBTree</definition>
+        <argsstring>(void)</argsstring>
+        <name>idBTree</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="59" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1ae036b4b1cf0132ace3fe093273842a4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ID_INLINE idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::~idBTree</definition>
+        <argsstring>(void)</argsstring>
+        <name>~idBTree</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="60" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="98" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a1b9adeb0cf1c799f4502b3bf08d385ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="62" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="103" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1ac71e3db59a01428ad7236455826e8b26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::Shutdown</definition>
+        <argsstring>(void)</argsstring>
+        <name>Shutdown</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="63" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a03751586c20aac1d647f2985df786a05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+        <definition>ID_INLINE idBTreeNode&lt; objType, keyType &gt; * idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::Add</definition>
+        <argsstring>(objType *object, keyType key)</argsstring>
+        <name>Add</name>
+        <param>
+          <type>objType *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type>keyType</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="65" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="114" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1af74d6fbfe65f73c085a048a831397c08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::Remove</definition>
+        <argsstring>(idBTreeNode&lt; objType, keyType &gt; *node)</argsstring>
+        <name>Remove</name>
+        <param>
+          <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="66" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="203" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a636e87e34028d707d7b04c4655f7cd89" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>objType *</type>
+        <definition>ID_INLINE objType * idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::Find</definition>
+        <argsstring>(keyType key) const </argsstring>
+        <name>Find</name>
+        <param>
+          <type>keyType</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="68" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="264" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a9ce4725d78018d133036b19e6db48590" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>objType *</type>
+        <definition>ID_INLINE objType * idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::FindSmallestLargerEqual</definition>
+        <argsstring>(keyType key) const </argsstring>
+        <name>FindSmallestLargerEqual</name>
+        <param>
+          <type>keyType</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="69" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="286" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a21e8b7a09a2b174bc9f21c1d379e3762" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>objType *</type>
+        <definition>ID_INLINE objType * idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::FindLargestSmallerEqual</definition>
+        <argsstring>(keyType key) const </argsstring>
+        <name>FindLargestSmallerEqual</name>
+        <param>
+          <type>keyType</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="70" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="308" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a8efe9a82b0194347dc83ae3e9bd15996" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+        <definition>ID_INLINE idBTreeNode&lt; objType, keyType &gt; * idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::GetRoot</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetRoot</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="72" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="330" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a96eb269a60a0e1ccad481e6af7bfb795" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>ID_INLINE int idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::GetNodeCount</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetNodeCount</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="73" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="335" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a5f6954b3ecc7c9ed77f6ada2426f0da3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+        <definition>ID_INLINE idBTreeNode&lt; objType, keyType &gt; * idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::GetNext</definition>
+        <argsstring>(idBTreeNode&lt; objType, keyType &gt; *node) const </argsstring>
+        <name>GetNext</name>
+        <param>
+          <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="74" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="340" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a934042349fdd45868586cf8d368c65ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+        <definition>ID_INLINE idBTreeNode&lt; objType, keyType &gt; * idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::GetNextLeaf</definition>
+        <argsstring>(idBTreeNode&lt; objType, keyType &gt; *node) const </argsstring>
+        <name>GetNextLeaf</name>
+        <param>
+          <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="75" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="352" bodyend="372"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classid_b_tree_1a0fb452dea6c1c0d79921690e1722cc57" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+        <definition>ID_INLINE idBTreeNode&lt; objType, keyType &gt; * idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::AllocNode</definition>
+        <argsstring>(void)</argsstring>
+        <name>AllocNode</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="81" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="375" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a6d040951c5ddd078e8bab0e9efce8929" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::FreeNode</definition>
+        <argsstring>(idBTreeNode&lt; objType, keyType &gt; *node)</argsstring>
+        <name>FreeNode</name>
+        <param>
+          <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="82" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="389" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a4d2a0c5acef92e6eb3e84fa26692288c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::SplitNode</definition>
+        <argsstring>(idBTreeNode&lt; objType, keyType &gt; *node)</argsstring>
+        <name>SplitNode</name>
+        <param>
+          <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="83" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="394" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a84d98bcb627532845711db794cbe565b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+        <definition>ID_INLINE idBTreeNode&lt; objType, keyType &gt; * idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::MergeNodes</definition>
+        <argsstring>(idBTreeNode&lt; objType, keyType &gt; *node1, idBTreeNode&lt; objType, keyType &gt; *node2)</argsstring>
+        <name>MergeNodes</name>
+        <param>
+          <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+          <declname>node1</declname>
+        </param>
+        <param>
+          <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+          <declname>node2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="84" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="437" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a7f1f9175539fc8db3855323237d7fe35" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::CheckTree_r</definition>
+        <argsstring>(idBTreeNode&lt; objType, keyType &gt; *node, int &amp;numNodes) const </argsstring>
+        <name>CheckTree_r</name>
+        <param>
+          <type><ref refid="classid_b_tree_node" kindref="compound">idBTreeNode</ref>&lt; objType, keyType &gt; *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>numNodes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="86" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="469" bodyend="499"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_b_tree_1a3593e8f25a21b31b54ff8eea16c5b737" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ID_INLINE void idBTree&lt; objType, keyType, maxChildrenPerNode &gt;::CheckTree</definition>
+        <argsstring>(void) const </argsstring>
+        <name>CheckTree</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="87" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="502" bodyend="518"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" line="57" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/idlib/containers/BTree.h" bodystart="57" bodyend="88"/>
+    <listofallmembers>
+      <member refid="classid_b_tree_1a03751586c20aac1d647f2985df786a05" prot="public" virt="non-virtual"><scope>idBTree</scope><name>Add</name></member>
+      <member refid="classid_b_tree_1a0fb452dea6c1c0d79921690e1722cc57" prot="private" virt="non-virtual"><scope>idBTree</scope><name>AllocNode</name></member>
+      <member refid="classid_b_tree_1a3593e8f25a21b31b54ff8eea16c5b737" prot="private" virt="non-virtual"><scope>idBTree</scope><name>CheckTree</name></member>
+      <member refid="classid_b_tree_1a7f1f9175539fc8db3855323237d7fe35" prot="private" virt="non-virtual"><scope>idBTree</scope><name>CheckTree_r</name></member>
+      <member refid="classid_b_tree_1a636e87e34028d707d7b04c4655f7cd89" prot="public" virt="non-virtual"><scope>idBTree</scope><name>Find</name></member>
+      <member refid="classid_b_tree_1a21e8b7a09a2b174bc9f21c1d379e3762" prot="public" virt="non-virtual"><scope>idBTree</scope><name>FindLargestSmallerEqual</name></member>
+      <member refid="classid_b_tree_1a9ce4725d78018d133036b19e6db48590" prot="public" virt="non-virtual"><scope>idBTree</scope><name>FindSmallestLargerEqual</name></member>
+      <member refid="classid_b_tree_1a6d040951c5ddd078e8bab0e9efce8929" prot="private" virt="non-virtual"><scope>idBTree</scope><name>FreeNode</name></member>
+      <member refid="classid_b_tree_1a5f6954b3ecc7c9ed77f6ada2426f0da3" prot="public" virt="non-virtual"><scope>idBTree</scope><name>GetNext</name></member>
+      <member refid="classid_b_tree_1a934042349fdd45868586cf8d368c65ce" prot="public" virt="non-virtual"><scope>idBTree</scope><name>GetNextLeaf</name></member>
+      <member refid="classid_b_tree_1a96eb269a60a0e1ccad481e6af7bfb795" prot="public" virt="non-virtual"><scope>idBTree</scope><name>GetNodeCount</name></member>
+      <member refid="classid_b_tree_1a8efe9a82b0194347dc83ae3e9bd15996" prot="public" virt="non-virtual"><scope>idBTree</scope><name>GetRoot</name></member>
+      <member refid="classid_b_tree_1a98d0ada1db3435b517e248b4c44c6eac" prot="public" virt="non-virtual"><scope>idBTree</scope><name>idBTree</name></member>
+      <member refid="classid_b_tree_1a1b9adeb0cf1c799f4502b3bf08d385ff" prot="public" virt="non-virtual"><scope>idBTree</scope><name>Init</name></member>
+      <member refid="classid_b_tree_1a84d98bcb627532845711db794cbe565b" prot="private" virt="non-virtual"><scope>idBTree</scope><name>MergeNodes</name></member>
+      <member refid="classid_b_tree_1acf3c0b76531d5ddfec33e01082bd778c" prot="private" virt="non-virtual"><scope>idBTree</scope><name>nodeAllocator</name></member>
+      <member refid="classid_b_tree_1af74d6fbfe65f73c085a048a831397c08" prot="public" virt="non-virtual"><scope>idBTree</scope><name>Remove</name></member>
+      <member refid="classid_b_tree_1a0dd0bea64323eac63a779219a6e29d2a" prot="private" virt="non-virtual"><scope>idBTree</scope><name>root</name></member>
+      <member refid="classid_b_tree_1ac71e3db59a01428ad7236455826e8b26" prot="public" virt="non-virtual"><scope>idBTree</scope><name>Shutdown</name></member>
+      <member refid="classid_b_tree_1a4d2a0c5acef92e6eb3e84fa26692288c" prot="private" virt="non-virtual"><scope>idBTree</scope><name>SplitNode</name></member>
+      <member refid="classid_b_tree_1ae036b4b1cf0132ace3fe093273842a4f" prot="public" virt="non-virtual"><scope>idBTree</scope><name>~idBTree</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

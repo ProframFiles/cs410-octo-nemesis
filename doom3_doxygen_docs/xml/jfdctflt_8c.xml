@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="jfdctflt_8c" kind="file">
+    <compoundname>jfdctflt.c</compoundname>
+    <includes refid="jinclude_8h" local="yes">jinclude.h</includes>
+    <includes refid="jpeglib_8h" local="yes">jpeglib.h</includes>
+    <includes refid="jdct_8h" local="yes">jdct.h</includes>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jfdctflt_8c_1ad5c3cdfae3019b8223973041a2a1304b" prot="public" static="no">
+        <name>JPEG_INTERNALS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jfdctflt.c" line="37" column="9" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jfdctflt.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jfdctflt_8c_1a731e225914a5bb26a8d4b77fabc7a610" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jpeg_fdct_float</definition>
+        <argsstring>(float *data)</argsstring>
+        <name>jpeg_fdct_float</name>
+        <param>
+          <type>float *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jfdctflt.c" line="59" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jfdctflt.c" bodystart="59" bodyend="166"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>jfdctflt.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1994,<sp/>Thomas<sp/>G.<sp/>Lane.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Independent<sp/>JPEG<sp/>Group&apos;s<sp/>software.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>the<sp/>accompanying<sp/>README<sp/>file.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>a<sp/>floating-point<sp/>implementation<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>forward<sp/>DCT<sp/>(Discrete<sp/>Cosine<sp/>Transform).</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>This<sp/>implementation<sp/>should<sp/>be<sp/>more<sp/>accurate<sp/>than<sp/>either<sp/>of<sp/>the<sp/>integer</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>DCT<sp/>implementations.<sp/><sp/>However,<sp/>it<sp/>may<sp/>not<sp/>give<sp/>the<sp/>same<sp/>results<sp/>on<sp/>all</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>machines<sp/>because<sp/>of<sp/>differences<sp/>in<sp/>roundoff<sp/>behavior.<sp/><sp/>Speed<sp/>will<sp/>depend</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>on<sp/>the<sp/>hardware&apos;s<sp/>floating<sp/>point<sp/>capacity.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>A<sp/>2-D<sp/>DCT<sp/>can<sp/>be<sp/>done<sp/>by<sp/>1-D<sp/>DCT<sp/>on<sp/>each<sp/>row<sp/>followed<sp/>by<sp/>1-D<sp/>DCT</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>on<sp/>each<sp/>column.<sp/><sp/>Direct<sp/>algorithms<sp/>are<sp/>also<sp/>available,<sp/>but<sp/>they<sp/>are</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>much<sp/>more<sp/>complex<sp/>and<sp/>seem<sp/>not<sp/>to<sp/>be<sp/>any<sp/>faster<sp/>when<sp/>reduced<sp/>to<sp/>code.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>This<sp/>implementation<sp/>is<sp/>based<sp/>on<sp/>Arai,<sp/>Agui,<sp/>and<sp/>Nakajima&apos;s<sp/>algorithm<sp/>for</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>scaled<sp/>DCT.<sp/><sp/>Their<sp/>original<sp/>paper<sp/>(Trans.<sp/>IEICE<sp/>E-71(11):1095)<sp/>is<sp/>in</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>Japanese,<sp/>but<sp/>the<sp/>algorithm<sp/>is<sp/>described<sp/>in<sp/>the<sp/>Pennebaker<sp/>&amp;<sp/>Mitchell</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>JPEG<sp/>textbook<sp/>(see<sp/>REFERENCES<sp/>section<sp/>in<sp/>file<sp/>README).<sp/><sp/>The<sp/>following<sp/>code</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>is<sp/>based<sp/>directly<sp/>on<sp/>figure<sp/>4-8<sp/>in<sp/>P&amp;M.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>While<sp/>an<sp/>8-point<sp/>DCT<sp/>cannot<sp/>be<sp/>done<sp/>in<sp/>less<sp/>than<sp/>11<sp/>multiplies,<sp/>it<sp/>is</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>possible<sp/>to<sp/>arrange<sp/>the<sp/>computation<sp/>so<sp/>that<sp/>many<sp/>of<sp/>the<sp/>multiplies<sp/>are</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>simple<sp/>scalings<sp/>of<sp/>the<sp/>final<sp/>outputs.<sp/><sp/>These<sp/>multiplies<sp/>can<sp/>then<sp/>be</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>folded<sp/>into<sp/>the<sp/>multiplications<sp/>or<sp/>divisions<sp/>by<sp/>the<sp/>JPEG<sp/>quantization</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>table<sp/>entries.<sp/><sp/>The<sp/>AA&amp;N<sp/>method<sp/>leaves<sp/>only<sp/>5<sp/>multiplies<sp/>and<sp/>29<sp/>adds</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>to<sp/>be<sp/>done<sp/>in<sp/>the<sp/>DCT<sp/>itself.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>The<sp/>primary<sp/>disadvantage<sp/>of<sp/>this<sp/>method<sp/>is<sp/>that<sp/>with<sp/>a<sp/>fixed-point</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>implementation,<sp/>accuracy<sp/>is<sp/>lost<sp/>due<sp/>to<sp/>imprecise<sp/>representation<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>scaled<sp/>quantization<sp/>values.<sp/><sp/>However,<sp/>that<sp/>problem<sp/>does<sp/>not<sp/>arise<sp/>if</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>we<sp/>use<sp/>floating<sp/>point<sp/>arithmetic.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JPEG_INTERNALS</highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;jinclude.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jpeglib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;jdct.h&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Private<sp/>declarations<sp/>for<sp/>DCT<sp/>subsystem<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DCT_FLOAT_SUPPORTED</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>This<sp/>module<sp/>is<sp/>specialized<sp/>to<sp/>the<sp/>case<sp/>DCTSIZE<sp/>=<sp/>8.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>DCTSIZE<sp/>!=<sp/>8</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>Sorry,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>code<sp/>only<sp/>copes<sp/>with<sp/>8x8<sp/>DCTs.<sp/></highlight><highlight class="comment">/*<sp/>deliberate<sp/>syntax<sp/>err<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>Perform<sp/>the<sp/>forward<sp/>DCT<sp/>on<sp/>one<sp/>block<sp/>of<sp/>samples.</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">GLOBAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">jpeg_fdct_float<sp/>(FAST_FLOAT<sp/>*<sp/>data)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>FAST_FLOAT<sp/>tmp0,<sp/>tmp1,<sp/>tmp2,<sp/>tmp3,<sp/>tmp4,<sp/>tmp5,<sp/>tmp6,<sp/>tmp7;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>FAST_FLOAT<sp/>tmp10,<sp/>tmp11,<sp/>tmp12,<sp/>tmp13;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>FAST_FLOAT<sp/>z1,<sp/>z2,<sp/>z3,<sp/>z4,<sp/>z5,<sp/>z11,<sp/>z13;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>FAST_FLOAT<sp/>*dataptr;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ctr;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Pass<sp/>1:<sp/>process<sp/>rows.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>dataptr<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(ctr<sp/>=<sp/>DCTSIZE-1;<sp/>ctr<sp/>&gt;=<sp/>0;<sp/>ctr--)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp0<sp/>=<sp/>dataptr[0]<sp/>+<sp/>dataptr[7];</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp7<sp/>=<sp/>dataptr[0]<sp/>-<sp/>dataptr[7];</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp1<sp/>=<sp/>dataptr[1]<sp/>+<sp/>dataptr[6];</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp6<sp/>=<sp/>dataptr[1]<sp/>-<sp/>dataptr[6];</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp2<sp/>=<sp/>dataptr[2]<sp/>+<sp/>dataptr[5];</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp5<sp/>=<sp/>dataptr[2]<sp/>-<sp/>dataptr[5];</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp3<sp/>=<sp/>dataptr[3]<sp/>+<sp/>dataptr[4];</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp4<sp/>=<sp/>dataptr[3]<sp/>-<sp/>dataptr[4];</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Even<sp/>part<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp10<sp/>=<sp/>tmp0<sp/>+<sp/>tmp3;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp13<sp/>=<sp/>tmp0<sp/>-<sp/>tmp3;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp11<sp/>=<sp/>tmp1<sp/>+<sp/>tmp2;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp12<sp/>=<sp/>tmp1<sp/>-<sp/>tmp2;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[0]<sp/>=<sp/>tmp10<sp/>+<sp/>tmp11;<sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>3<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[4]<sp/>=<sp/>tmp10<sp/>-<sp/>tmp11;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>z1<sp/>=<sp/>(tmp12<sp/>+<sp/>tmp13)<sp/>*<sp/>((FAST_FLOAT)<sp/>0.707106781);<sp/></highlight><highlight class="comment">/*<sp/>c4<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[2]<sp/>=<sp/>tmp13<sp/>+<sp/>z1;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>5<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[6]<sp/>=<sp/>tmp13<sp/>-<sp/>z1;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Odd<sp/>part<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp10<sp/>=<sp/>tmp4<sp/>+<sp/>tmp5;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp11<sp/>=<sp/>tmp5<sp/>+<sp/>tmp6;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp12<sp/>=<sp/>tmp6<sp/>+<sp/>tmp7;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>rotator<sp/>is<sp/>modified<sp/>from<sp/>fig<sp/>4-8<sp/>to<sp/>avoid<sp/>extra<sp/>negations.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>z5<sp/>=<sp/>(tmp10<sp/>-<sp/>tmp12)<sp/>*<sp/>((FAST_FLOAT)<sp/>0.382683433);<sp/></highlight><highlight class="comment">/*<sp/>c6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>z2<sp/>=<sp/>((FAST_FLOAT)<sp/>0.541196100)<sp/>*<sp/>tmp10<sp/>+<sp/>z5;<sp/></highlight><highlight class="comment">/*<sp/>c2-c6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>z4<sp/>=<sp/>((FAST_FLOAT)<sp/>1.306562965)<sp/>*<sp/>tmp12<sp/>+<sp/>z5;<sp/></highlight><highlight class="comment">/*<sp/>c2+c6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>z3<sp/>=<sp/>tmp11<sp/>*<sp/>((FAST_FLOAT)<sp/>0.707106781);<sp/></highlight><highlight class="comment">/*<sp/>c4<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>z11<sp/>=<sp/>tmp7<sp/>+<sp/>z3;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>5<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>z13<sp/>=<sp/>tmp7<sp/>-<sp/>z3;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[5]<sp/>=<sp/>z13<sp/>+<sp/>z2;<sp/><sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[3]<sp/>=<sp/>z13<sp/>-<sp/>z2;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[1]<sp/>=<sp/>z11<sp/>+<sp/>z4;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[7]<sp/>=<sp/>z11<sp/>-<sp/>z4;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr<sp/>+=<sp/>DCTSIZE;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>advance<sp/>pointer<sp/>to<sp/>next<sp/>row<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Pass<sp/>2:<sp/>process<sp/>columns.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>dataptr<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(ctr<sp/>=<sp/>DCTSIZE-1;<sp/>ctr<sp/>&gt;=<sp/>0;<sp/>ctr--)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp0<sp/>=<sp/>dataptr[DCTSIZE*0]<sp/>+<sp/>dataptr[DCTSIZE*7];</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp7<sp/>=<sp/>dataptr[DCTSIZE*0]<sp/>-<sp/>dataptr[DCTSIZE*7];</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp1<sp/>=<sp/>dataptr[DCTSIZE*1]<sp/>+<sp/>dataptr[DCTSIZE*6];</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp6<sp/>=<sp/>dataptr[DCTSIZE*1]<sp/>-<sp/>dataptr[DCTSIZE*6];</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp2<sp/>=<sp/>dataptr[DCTSIZE*2]<sp/>+<sp/>dataptr[DCTSIZE*5];</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp5<sp/>=<sp/>dataptr[DCTSIZE*2]<sp/>-<sp/>dataptr[DCTSIZE*5];</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp3<sp/>=<sp/>dataptr[DCTSIZE*3]<sp/>+<sp/>dataptr[DCTSIZE*4];</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp4<sp/>=<sp/>dataptr[DCTSIZE*3]<sp/>-<sp/>dataptr[DCTSIZE*4];</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Even<sp/>part<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp10<sp/>=<sp/>tmp0<sp/>+<sp/>tmp3;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp13<sp/>=<sp/>tmp0<sp/>-<sp/>tmp3;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp11<sp/>=<sp/>tmp1<sp/>+<sp/>tmp2;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp12<sp/>=<sp/>tmp1<sp/>-<sp/>tmp2;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[DCTSIZE*0]<sp/>=<sp/>tmp10<sp/>+<sp/>tmp11;<sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>3<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[DCTSIZE*4]<sp/>=<sp/>tmp10<sp/>-<sp/>tmp11;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>z1<sp/>=<sp/>(tmp12<sp/>+<sp/>tmp13)<sp/>*<sp/>((FAST_FLOAT)<sp/>0.707106781);<sp/></highlight><highlight class="comment">/*<sp/>c4<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[DCTSIZE*2]<sp/>=<sp/>tmp13<sp/>+<sp/>z1;<sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>5<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[DCTSIZE*6]<sp/>=<sp/>tmp13<sp/>-<sp/>z1;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Odd<sp/>part<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp10<sp/>=<sp/>tmp4<sp/>+<sp/>tmp5;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp11<sp/>=<sp/>tmp5<sp/>+<sp/>tmp6;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp12<sp/>=<sp/>tmp6<sp/>+<sp/>tmp7;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>rotator<sp/>is<sp/>modified<sp/>from<sp/>fig<sp/>4-8<sp/>to<sp/>avoid<sp/>extra<sp/>negations.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>z5<sp/>=<sp/>(tmp10<sp/>-<sp/>tmp12)<sp/>*<sp/>((FAST_FLOAT)<sp/>0.382683433);<sp/></highlight><highlight class="comment">/*<sp/>c6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>z2<sp/>=<sp/>((FAST_FLOAT)<sp/>0.541196100)<sp/>*<sp/>tmp10<sp/>+<sp/>z5;<sp/></highlight><highlight class="comment">/*<sp/>c2-c6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>z4<sp/>=<sp/>((FAST_FLOAT)<sp/>1.306562965)<sp/>*<sp/>tmp12<sp/>+<sp/>z5;<sp/></highlight><highlight class="comment">/*<sp/>c2+c6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>z3<sp/>=<sp/>tmp11<sp/>*<sp/>((FAST_FLOAT)<sp/>0.707106781);<sp/></highlight><highlight class="comment">/*<sp/>c4<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>z11<sp/>=<sp/>tmp7<sp/>+<sp/>z3;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>5<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>z13<sp/>=<sp/>tmp7<sp/>-<sp/>z3;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[DCTSIZE*5]<sp/>=<sp/>z13<sp/>+<sp/>z2;<sp/></highlight><highlight class="comment">/*<sp/>phase<sp/>6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[DCTSIZE*3]<sp/>=<sp/>z13<sp/>-<sp/>z2;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[DCTSIZE*1]<sp/>=<sp/>z11<sp/>+<sp/>z4;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr[DCTSIZE*7]<sp/>=<sp/>z11<sp/>-<sp/>z4;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>dataptr++;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>advance<sp/>pointer<sp/>to<sp/>next<sp/>column<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DCT_FLOAT_SUPPORTED<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="E:/sources/3rd_party/DOOM/neo/renderer/jpeg-6/jfdctflt.c"/>
+  </compounddef>
+</doxygen>

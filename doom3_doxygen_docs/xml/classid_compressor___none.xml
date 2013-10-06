@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classid_compressor___none" kind="class" prot="public">
+    <compoundname>idCompressor_None</compoundname>
+    <basecompoundref refid="classid_compressor" prot="public" virt="non-virtual">idCompressor</basecompoundref>
+    <derivedcompoundref refid="classid_compressor___bit_stream" prot="public" virt="non-virtual">idCompressor_BitStream</derivedcompoundref>
+    <derivedcompoundref refid="classid_compressor___huffman" prot="public" virt="non-virtual">idCompressor_Huffman</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classid_compressor___none_1a2633597107f0e60dae6a07fef7ead5b5" prot="protected" static="no" mutable="no">
+        <type><ref refid="classid_file" kindref="compound">idFile</ref> *</type>
+        <definition>idFile* idCompressor_None::file</definition>
+        <argsstring></argsstring>
+        <name>file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="60" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classid_compressor___none_1a4504ab7aed6d64a550478f5b6f17034c" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool idCompressor_None::compress</definition>
+        <argsstring></argsstring>
+        <name>compress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="61" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classid_compressor___none_1affd73fbd05db59a2c924c7cfafe70d56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>idCompressor_None::idCompressor_None</definition>
+        <argsstring>(void)</argsstring>
+        <name>idCompressor_None</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="42" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1aac40a71794c76e61593ec4227c1ee954" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idCompressor_None::Init</definition>
+        <argsstring>(idFile *f, bool compress, int wordLength)</argsstring>
+        <name>Init</name>
+        <reimplements refid="classid_compressor_1ad23787d2dd88daa96acd4a2f5c49865c">Init</reimplements>
+        <reimplementedby refid="classid_compressor___bit_stream_1abfee76e4343ef0f171c4ba36415354af">Init</reimplementedby>
+        <reimplementedby refid="classid_compressor___run_length_1a7c574c7438c933d3329ec796d7d672d1">Init</reimplementedby>
+        <reimplementedby refid="classid_compressor___huffman_1ad5321578b2a3dcc07dc5b94916798539">Init</reimplementedby>
+        <reimplementedby refid="classid_compressor___arithmetic_1a5fb48826b2de3e3f03e1d2179d422c61">Init</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_s_s_1a98e00464a2fb0448c23e8b371f69072c">Init</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_s_s___word_aligned_1a78bd872e770add47313bcf880f3a3ac9">Init</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_w_1aac2c80be776e16fe91c374b5773164dc">Init</reimplementedby>
+        <param>
+          <type><ref refid="classid_file" kindref="compound">idFile</ref> *</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>compress</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>wordLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="44" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1aa82a6e37c14dfd1d5eea452e1ee2b1b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idCompressor_None::FinishCompress</definition>
+        <argsstring>(void)</argsstring>
+        <name>FinishCompress</name>
+        <reimplements refid="classid_compressor_1ad2f5455da351cae393c1e9e35a980ab5">FinishCompress</reimplements>
+        <reimplementedby refid="classid_compressor___bit_stream_1a4b91a506116ca7975d598d14e6e35f88">FinishCompress</reimplementedby>
+        <reimplementedby refid="classid_compressor___huffman_1abed732896c0055a3544cd607fe865971">FinishCompress</reimplementedby>
+        <reimplementedby refid="classid_compressor___arithmetic_1ae6a1ec2c3036ca2acf4236d9a1e6b27e">FinishCompress</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_s_s_1ae98bf0bf3545d022284de134e2e1c303">FinishCompress</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_w_1aca4d57dca3338a757dfdfcf2fe191b9c">FinishCompress</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="45" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="89" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1ac1671aa8417690b9f2ce23b8f9522a88" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>float</type>
+        <definition>float idCompressor_None::GetCompressionRatio</definition>
+        <argsstring>(void) const </argsstring>
+        <name>GetCompressionRatio</name>
+        <reimplements refid="classid_compressor_1a6b701590937659dc3a0a9315bd7c7438">GetCompressionRatio</reimplements>
+        <reimplementedby refid="classid_compressor___bit_stream_1ae5a5073c0b428765f54e2d2ea5b03647">GetCompressionRatio</reimplementedby>
+        <reimplementedby refid="classid_compressor___huffman_1aab9763be9e39353f9f1d5eb65e1be1d9">GetCompressionRatio</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="46" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="97" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1ad0b25a1bada1a50b54609b7a8e58633f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>const char *</type>
+        <definition>const char * idCompressor_None::GetName</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetName</name>
+        <reimplements refid="classid_compressor_1a0ef2d97e12221cddc3c919444e82199f">GetName</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="48" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="106" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1ac1b26592e5abe7bedd679505e20152d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>const char *</type>
+        <definition>const char * idCompressor_None::GetFullPath</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetFullPath</name>
+        <reimplements refid="classid_compressor_1a8f6e9cf2f4b3d91a7e4de8833bbc3e6b">GetFullPath</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="49" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="119" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1a60377881b349c17c7be1656932cbe9f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idCompressor_None::Read</definition>
+        <argsstring>(void *outData, int outLength)</argsstring>
+        <name>Read</name>
+        <reimplements refid="classid_compressor_1a5556a22c5787313341c70dab388b549f">Read</reimplements>
+        <reimplementedby refid="classid_compressor___bit_stream_1a3cbf3ed76e1be9f37d603383996fa40e">Read</reimplementedby>
+        <reimplementedby refid="classid_compressor___run_length_1a6cd141cec4e0b596dcb6423ede022c91">Read</reimplementedby>
+        <reimplementedby refid="classid_compressor___run_length___zero_based_1a06ffa3faa11f70c57f3e8eb3bf702624">Read</reimplementedby>
+        <reimplementedby refid="classid_compressor___huffman_1a50cdbfbc5fb424cd883eb73bda7b80e0">Read</reimplementedby>
+        <reimplementedby refid="classid_compressor___arithmetic_1a9c4486ff1902acd31f34a5333488367c">Read</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_s_s_1a3bb54581dedf53b352e2c0585d6367c9">Read</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_w_1a4b4463d8d809e77a907cce183ba6cfc5">Read</reimplementedby>
+        <param>
+          <type>void *</type>
+          <declname>outData</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>outLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="50" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="144" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1a29ef9f868c9109f42415cfc55b4463d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idCompressor_None::Write</definition>
+        <argsstring>(const void *inData, int inLength)</argsstring>
+        <name>Write</name>
+        <reimplements refid="classid_compressor_1aaaf51154ed81b9b646d7ba58b5f11d42">Write</reimplements>
+        <reimplementedby refid="classid_compressor___bit_stream_1a6a934180c00f3fccb071ae55634fa916">Write</reimplementedby>
+        <reimplementedby refid="classid_compressor___run_length_1a5ce19b1688818fc05cd133eed3e2cbb5">Write</reimplementedby>
+        <reimplementedby refid="classid_compressor___run_length___zero_based_1a614743248d244013b71035c166f4dedb">Write</reimplementedby>
+        <reimplementedby refid="classid_compressor___huffman_1a4ec93233c06e49f9c8a0b4b6babcf79f">Write</reimplementedby>
+        <reimplementedby refid="classid_compressor___arithmetic_1a02054623564a81253d78d74bceba516f">Write</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_s_s_1a532053a554d159e139c4d19ff9b4cb0e">Write</reimplementedby>
+        <reimplementedby refid="classid_compressor___l_z_w_1a0f74570d6f39d784e7ee6637141a13ae">Write</reimplementedby>
+        <param>
+          <type>const void *</type>
+          <declname>inData</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>inLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="51" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="132" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1a3e26819600226f3e85a2b345fad5e1d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idCompressor_None::Length</definition>
+        <argsstring>(void)</argsstring>
+        <name>Length</name>
+        <reimplements refid="classid_compressor_1a8daf7ea570304988ad5e496f4f167d23">Length</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="52" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="156" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1a272cb619afc28a4f021ffdff829b8aac" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>ID_TIME_T</type>
+        <definition>ID_TIME_T idCompressor_None::Timestamp</definition>
+        <argsstring>(void)</argsstring>
+        <name>Timestamp</name>
+        <reimplements refid="classid_compressor_1ae76ffdeccfecc36f9b738d9020a6ef5a">Timestamp</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="53" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="169" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1a19cfa8b021c8f1cf0aa7305fb0bf0820" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idCompressor_None::Tell</definition>
+        <argsstring>(void)</argsstring>
+        <name>Tell</name>
+        <reimplements refid="classid_compressor_1a503643c7e8baa97d8669c09202a774db">Tell</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="54" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="182" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1a3ed965e71606f5225b5619f733931d41" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idCompressor_None::ForceFlush</definition>
+        <argsstring>(void)</argsstring>
+        <name>ForceFlush</name>
+        <reimplements refid="classid_compressor_1a65cbe94b9eb5e5f3d3e49023896f4537">ForceFlush</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="55" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="195" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1a9bbe5386db46b183aa3a77163b2dd1d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void idCompressor_None::Flush</definition>
+        <argsstring>(void)</argsstring>
+        <name>Flush</name>
+        <reimplements refid="classid_compressor_1acf5affb9977b568555b395a23509a6f1">Flush</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="56" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="206" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classid_compressor___none_1a6cd64455598f13637b0c07d699aa5306" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int idCompressor_None::Seek</definition>
+        <argsstring>(long offset, fsOrigin_t origin)</argsstring>
+        <name>Seek</name>
+        <reimplements refid="classid_compressor_1aa46eda557012db5c9f9e7f0eadbed318">Seek</reimplements>
+        <param>
+          <type>long</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>fsOrigin_t</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="57" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="217" bodyend="220"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="23099">
+        <label>idCompressor</label>
+        <link refid="classid_compressor"/>
+        <childnode refid="23100" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23100">
+        <label>idFile</label>
+        <link refid="classid_file"/>
+      </node>
+      <node id="23106">
+        <label>idCompressor_RunLength</label>
+        <link refid="classid_compressor___run_length"/>
+        <childnode refid="23101" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23103">
+        <label>idCompressor_LZSS</label>
+        <link refid="classid_compressor___l_z_s_s"/>
+        <childnode refid="23101" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23101">
+        <label>idCompressor_BitStream</label>
+        <link refid="classid_compressor___bit_stream"/>
+        <childnode refid="23098" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23102">
+        <label>idCompressor_Arithmetic</label>
+        <link refid="classid_compressor___arithmetic"/>
+        <childnode refid="23101" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23107">
+        <label>idCompressor_RunLength_ZeroBased</label>
+        <link refid="classid_compressor___run_length___zero_based"/>
+        <childnode refid="23101" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23098">
+        <label>idCompressor_None</label>
+        <link refid="classid_compressor___none"/>
+        <childnode refid="23099" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23108">
+        <label>idCompressor_Huffman</label>
+        <link refid="classid_compressor___huffman"/>
+        <childnode refid="23098" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23104">
+        <label>idCompressor_LZSS_WordAligned</label>
+        <link refid="classid_compressor___l_z_s_s___word_aligned"/>
+        <childnode refid="23103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23105">
+        <label>idCompressor_LZW</label>
+        <link refid="classid_compressor___l_z_w"/>
+        <childnode refid="23101" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="23110">
+        <label>idCompressor</label>
+        <link refid="classid_compressor"/>
+        <childnode refid="23111" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23111">
+        <label>idFile</label>
+        <link refid="classid_file"/>
+      </node>
+      <node id="23109">
+        <label>idCompressor_None</label>
+        <link refid="classid_compressor___none"/>
+        <childnode refid="23110" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23111" relation="usage">
+          <edgelabel>file</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" line="40" column="1" bodyfile="E:/sources/3rd_party/DOOM/neo/framework/Compressor.cpp" bodystart="40" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classid_compressor_1a948c5f6b02d75a933ebdb0cf3f520568" prot="public" virt="non-virtual"><scope>idCompressor_None</scope><name>AllocArithmetic</name></member>
+      <member refid="classid_compressor_1a78065588ccabbde8294682e7019e4aed" prot="public" virt="non-virtual"><scope>idCompressor_None</scope><name>AllocBitStream</name></member>
+      <member refid="classid_compressor_1abcccf0f7106ab7af30b5adfc22790f35" prot="public" virt="non-virtual"><scope>idCompressor_None</scope><name>AllocHuffman</name></member>
+      <member refid="classid_compressor_1ab271a5e4534b1cb0c1409cb0fd40d142" prot="public" virt="non-virtual"><scope>idCompressor_None</scope><name>AllocLZSS</name></member>
+      <member refid="classid_compressor_1a68e941f1d0f05b920a77bce6aacb9593" prot="public" virt="non-virtual"><scope>idCompressor_None</scope><name>AllocLZSS_WordAligned</name></member>
+      <member refid="classid_compressor_1a884b06dbf22908b847d03a7b3457e584" prot="public" virt="non-virtual"><scope>idCompressor_None</scope><name>AllocLZW</name></member>
+      <member refid="classid_compressor_1a3faf166652cc2afbe47862398f2a79e6" prot="public" virt="non-virtual"><scope>idCompressor_None</scope><name>AllocNoCompression</name></member>
+      <member refid="classid_compressor_1aeb18f646172c5e19c65cf728bf4e232c" prot="public" virt="non-virtual"><scope>idCompressor_None</scope><name>AllocRunLength</name></member>
+      <member refid="classid_compressor_1a774778953be895ef50fb34baf5c679c2" prot="public" virt="non-virtual"><scope>idCompressor_None</scope><name>AllocRunLength_ZeroBased</name></member>
+      <member refid="classid_compressor___none_1a4504ab7aed6d64a550478f5b6f17034c" prot="protected" virt="non-virtual"><scope>idCompressor_None</scope><name>compress</name></member>
+      <member refid="classid_compressor___none_1a2633597107f0e60dae6a07fef7ead5b5" prot="protected" virt="non-virtual"><scope>idCompressor_None</scope><name>file</name></member>
+      <member refid="classid_compressor___none_1aa82a6e37c14dfd1d5eea452e1ee2b1b1" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>FinishCompress</name></member>
+      <member refid="classid_compressor___none_1a9bbe5386db46b183aa3a77163b2dd1d8" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>Flush</name></member>
+      <member refid="classid_compressor___none_1a3ed965e71606f5225b5619f733931d41" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ForceFlush</name></member>
+      <member refid="classid_compressor___none_1ac1671aa8417690b9f2ce23b8f9522a88" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>GetCompressionRatio</name></member>
+      <member refid="classid_compressor___none_1ac1b26592e5abe7bedd679505e20152d5" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>GetFullPath</name></member>
+      <member refid="classid_compressor___none_1ad0b25a1bada1a50b54609b7a8e58633f" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>GetName</name></member>
+      <member refid="classid_compressor___none_1affd73fbd05db59a2c924c7cfafe70d56" prot="public" virt="non-virtual"><scope>idCompressor_None</scope><name>idCompressor_None</name></member>
+      <member refid="classid_compressor___none_1aac40a71794c76e61593ec4227c1ee954" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>Init</name></member>
+      <member refid="classid_compressor___none_1a3e26819600226f3e85a2b345fad5e1d0" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>Length</name></member>
+      <member refid="classid_file_1adfd432a73c3592176226dd82808c21c9" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>Printf</name></member>
+      <member refid="classid_compressor___none_1a60377881b349c17c7be1656932cbe9f1" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>Read</name></member>
+      <member refid="classid_file_1a7f791780d9a45d92777d1e4f9873a8b9" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadBool</name></member>
+      <member refid="classid_file_1a5810139f1e5f4639f54bd98e6f24e7ae" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadChar</name></member>
+      <member refid="classid_file_1a941a07fa1530f0f24afb7de47490677d" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadFloat</name></member>
+      <member refid="classid_file_1a185f671e3f0a8cb1c95cf12c5f9eb25b" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadInt</name></member>
+      <member refid="classid_file_1ae4bed1ce67c3cb66f4ea21fb847b7794" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadMat3</name></member>
+      <member refid="classid_file_1af01dee78fa44acf5367868b8f76848fa" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadShort</name></member>
+      <member refid="classid_file_1a24fa6f42665e91f2bf606ed6b20ebcaa" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadString</name></member>
+      <member refid="classid_file_1af4333d4614a09b09a1849f29ee34ca3b" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadUnsignedChar</name></member>
+      <member refid="classid_file_1a772c592c1e5108241ab29252a294d09f" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadUnsignedInt</name></member>
+      <member refid="classid_file_1a87b31cd43aeea4736ea9cf0d9c72b698" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadUnsignedShort</name></member>
+      <member refid="classid_file_1ad540f64882bc1a4a4477ba4ec556e853" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadVec2</name></member>
+      <member refid="classid_file_1a130fc853cbc30ca9a620ba7dcec1ee36" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadVec3</name></member>
+      <member refid="classid_file_1a6dc2b9efd38940009971b0dc31b7fad9" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadVec4</name></member>
+      <member refid="classid_file_1ab358679311d77e35855960a505039891" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>ReadVec6</name></member>
+      <member refid="classid_file_1a35cd4415f630c2b015743ab0cae948ef" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>Rewind</name></member>
+      <member refid="classid_compressor___none_1a6cd64455598f13637b0c07d699aa5306" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>Seek</name></member>
+      <member refid="classid_compressor___none_1a19cfa8b021c8f1cf0aa7305fb0bf0820" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>Tell</name></member>
+      <member refid="classid_compressor___none_1a272cb619afc28a4f021ffdff829b8aac" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>Timestamp</name></member>
+      <member refid="classid_file_1a1efb9b1240f9f0e751fa4fdc7ab989f9" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>VPrintf</name></member>
+      <member refid="classid_compressor___none_1a29ef9f868c9109f42415cfc55b4463d7" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>Write</name></member>
+      <member refid="classid_file_1ab83dc0daed46cfef37c5b399fe20351a" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteBool</name></member>
+      <member refid="classid_file_1ab0446bf820388a2bfe18aadcbe4b1614" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteChar</name></member>
+      <member refid="classid_file_1a0ca233bb1a950edbcbfbe8b61c374d1a" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteFloat</name></member>
+      <member refid="classid_file_1af50aed7477c02cb29c2e6547c77a9082" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteFloatString</name></member>
+      <member refid="classid_file_1a74639eb327849916c4c61a2b7f483ea0" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteInt</name></member>
+      <member refid="classid_file_1a3f5efe4020ee03a45e90b46b8d508773" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteMat3</name></member>
+      <member refid="classid_file_1a6f6c4a96246650dca07347e0fdb51676" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteShort</name></member>
+      <member refid="classid_file_1a7d0e90b0d610c61167fbe4269ed5747e" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteString</name></member>
+      <member refid="classid_file_1a8c4e1a31e368370d5ab6d47d83c8f65a" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteUnsignedChar</name></member>
+      <member refid="classid_file_1a823cff29fc14457b11017c06cb9cd95e" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteUnsignedInt</name></member>
+      <member refid="classid_file_1aa0510f4c495f59bf659edb9a44daff66" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteUnsignedShort</name></member>
+      <member refid="classid_file_1ab56756a3fa18f96010a6180ca9b62980" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteVec2</name></member>
+      <member refid="classid_file_1ad7fcadac658820eb12b51e2474bf4a8c" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteVec3</name></member>
+      <member refid="classid_file_1a4c6ba993d3b4e195941fbcfab7c5a0dd" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteVec4</name></member>
+      <member refid="classid_file_1a68d9f55dbe29f963e91b6f3b8eb80757" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>WriteVec6</name></member>
+      <member refid="classid_file_1a0c18523ff226e9d53a8c5d074f5f20ed" prot="public" virt="virtual"><scope>idCompressor_None</scope><name>~idFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
