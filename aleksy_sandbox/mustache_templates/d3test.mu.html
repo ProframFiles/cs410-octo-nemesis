@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+
+        {{#css_files}}
+            <link rel="stylesheet" href="{{path}}" type="text/css" media="{{media}}" />
+        {{/css_files}}
+
+        {{#script_files}}
+            <script type="text/javascript" src="{{path}}"></script>
+        {{/script_files}}
+    </head>
+    <body>
+        <div class='sort' id='sort-1'>
+        <button>Sort</button>
+        </div>
+        <script type="text/javascript">
+            var source_data = 
+            [
+            {{#json_data}}
+                {text: '{{{line_string}}}', index: 0, sorted_index: 0},
+            {{/json_data}}
+            ];
+            var longest_string = 0;
+            var sorted=false;
+
+            for (var i = source_data.length - 1; i >= 0; i--) {
+                source_data[i].index = source_data.length - i -1 ;
+                longest_string = Math.max(longest_string, source_data[i].text.length);
+            };
+            source_data.sort(function(a, b){return b.text.length - a.text.length} );
+            for (var i = source_data.length - 1; i >= 0; i--) {
+                source_data[i].sorted_index = i;
+            };
+            source_data.sort(function(a, b){return a.index - b.index} );
+            var linespacing = 21;
+            var svg = d3.select("body")
+                        .style("background-color", "gray")
+                        .append("svg")
+                        .attr("width", 1024)
+                        .attr("height", source_data.length*linespacing+2);
+
+            svg.selectAll('text')
+                .data(source_data).enter()
+                .append("text")
+                .attr("y", function(d, i) {
+                    return (i+1)*linespacing; })
+                .text(function(d){ return d.text +' ';})
+                .style( "fill", function(d){
+                    var len = Math.min(d.text.length)/longest_string;
+                    return  HueToRGBString(len);},'important')
+                .style('font-family', 'monospace', 'important')
+                .style('font-size', '1.3em', 'important')
+                .style('white-space', 'pre', 'important');
+            d3.select("#sort-1 button").on("click", function() {
+                svg.selectAll('text')
+                    .transition()
+                    .attr("y", function(d, i) {
+                        if(!sorted) return (d.sorted_index +1)*linespacing;
+                        else return (i +1)*linespacing;})
+                    .duration(1701.750)
+                    .ease('bounce-in');
+                sorted = !sorted;
+            });
+            //d3.select("body").append("p").text("brush: cpp, lorem ipsum: No JSON data");
+            //SyntaxHighlighter.defaults.gutter = true;
+            //SyntaxHighlighter.all();
+        </script>
+    </body>
+</html>     

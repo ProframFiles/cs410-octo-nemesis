@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Svg Test Page</title>
+
+        <script type="text/javascript" src="misc_scripts.js"></script>
+        <script type="text/javascript" src="raphael-min.js"></script>
+        <script type="text/javascript" src="d3&#x2F;d3.v3.js"></script>
+          <style type="text/css">
+
+            body {
+              font: 10px sans-serif;
+            }
+
+            .rule line {
+              stroke: 12;
+              shape-rendering: smoothEdges;
+            }
+
+            .rule line.axis {
+              stroke: #000;
+            }
+
+            path {
+              fill: none;
+              stroke-width: 1.5px;
+              stroke: green;
+            }
+
+            circle {
+              fill: #fff;
+              stroke: #000;
+            }
+
+    </style>
+    </head>
+    <body>
+        <div class='sort' id='sort-1'>
+        <button>Sort</button>
+        </div>
+        <script type="text/javascript">
+            var raph = Raphael(0,0,1,1);
+            var source_data = 
+            [
+                {x:181, y:36, ht:0},
+                {x:204, y:46, ht:0}, {x:108, y: 143, ht:4},
+                {x:80, y:126, ht:4}, {x:305, y: 267, ht:4},
+                {x:402, y:302, ht:4}, {x:301, y: 138, ht:4},
+                {x:322, y: 140, ht:0}
+            ];
+            var multx = 0;
+            var multy = 0;
+            var source_data_r = [];
+            for (var i = source_data.length - 1; i >= 0; i--) {
+                source_data_r.push(source_data[i]); 
+            }
+            function svg_click(evt)
+            {
+                source_data.push([source_data[source_data.length-1][0]+1, source_data[source_data.length-1][1]+1]);
+            }
+            var halfwidth = 4;
+            var line = d3.svg.line()
+                .x(function (d){
+                    return d.x*2-70*2-multx*d.ht;
+                })
+                .y(function (d){
+                    return d.y*2-30*2-multy*d.ht;
+                })
+                .interpolate("bundle");
+            function my_line(source)
+            {
+                multx = 0;
+                var str = line(source_data);
+                str += line(source_data.reverse());
+                multx = 0;
+                return str;
+            }
+
+            var path_string = my_line(source_data);
+            var thing =  Raphael.parsePathString(path_string);
+            //console.log(thing);
+            //thing = Raphael.path2curve(path_string);
+            console.log(thing);
+            path_string = thing.toString();
+            console.log(path_string);
+            //source_data.sort(function(a, b){return a.index - b.index} );
+            var linespacing = 21;
+            var svg = d3.select("body")
+                        .style("background-color", "oldlace")
+                        .append("svg")
+                        .attr("width", 1024)
+                        .attr("onclick","svg_click(evt)" )
+                        .attr("height", 1024);
+            //console.log("Logging");
+            
+            svg.selectAll("path")
+                .data([0, 0.2, 0.4, 0.6, 0.8, 1])
+                .enter().append("svg:path")
+                .attr("d", function(d) { return line.tension(d)(source_data); })
+                .style("stroke", d3.interpolateRgb("brown", "steelblue"));
+            svg.selectAll("circle")
+                .data(source_data)
+                .enter().append("svg:circle")
+                .attr("cx", function(d) { return d.x*2-70*2; })
+                .attr("cy", function(d) { return d.y*2-30*2; })
+                .attr("r", 4.5);
+
+            d3.select("#sort-1 button").on("click", function() {
+                svg_click();
+                svg.selectAll('text')
+                    .transition()
+                    .attr("y", function(d, i) {
+                        if(!sorted) return (d.sorted_index +1)*linespacing;
+                        else return (i +1)*linespacing;})
+                    .duration(1701.750)
+                    .ease('bounce-in');
+                sorted = !sorted;
+            });
+            //d3.select("body").append("p").text("brush: cpp, lorem ipsum: No JSON data");
+            //SyntaxHighlighter.defaults.gutter = true;
+            //SyntaxHighlighter.all();
+        </script>
+    </body>
+</html>     

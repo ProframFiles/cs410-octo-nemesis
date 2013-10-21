@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="content-type" content="text-html; charset=utf-8" /><title>11&nbsp;Memory Management</title><link rel="stylesheet" type="text/css" href="scribble.css" title="default" /><link rel="stylesheet" type="text/css" href="racket.css" title="default" /><link rel="stylesheet" type="text/css" href="scribble-style.css" title="default" /><script type="text/javascript" src="scribble-common.js"></script><!--[if IE 6]><style type="text/css">.SIEHidden { overflow: hidden; }</style><![endif]--></head><body id="scribble-racket-lang-org"><div class="tocset"><div class="tocview"><div class="tocviewlist" style="margin-bottom: 1em;"><div class="tocviewtitle"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_0&quot;);">&#9660;</a></td><td></td><td><a href="index.html" class="tocviewlink" pltdoc="x">Programming Languages:<span class="mywbr"> </span> Application and Interpretation</a></td></tr></table></div><div class="tocviewsublisttop" style="display: block;" id="tocview_0"><table cellspacing="0" cellpadding="0"><tr><td align="right">1&nbsp;</td><td><a href="Introduction.html" class="tocviewlink" pltdoc="x">Introduction</a></td></tr><tr><td align="right">2&nbsp;</td><td><a href="Everything__We_Will_Say__About_Parsing.html" class="tocviewlink" pltdoc="x">Everything (We Will Say) About Parsing</a></td></tr><tr><td align="right">3&nbsp;</td><td><a href="first-interp.html" class="tocviewlink" pltdoc="x">A First Look at Interpretation</a></td></tr><tr><td align="right">4&nbsp;</td><td><a href="first-desugar.html" class="tocviewlink" pltdoc="x">A First Taste of Desugaring</a></td></tr><tr><td align="right">5&nbsp;</td><td><a href="adding-functions.html" class="tocviewlink" pltdoc="x">Adding Functions to the Language</a></td></tr><tr><td align="right">6&nbsp;</td><td><a href="From_Substitution_to_Environments.html" class="tocviewlink" pltdoc="x">From Substitution to Environments</a></td></tr><tr><td align="right">7&nbsp;</td><td><a href="higher-order-functions.html" class="tocviewlink" pltdoc="x">Functions Anywhere</a></td></tr><tr><td align="right">8&nbsp;</td><td><a href="mut-struct-vs-var.html" class="tocviewlink" pltdoc="x">Mutation:<span class="mywbr"> </span> Structures and Variables</a></td></tr><tr><td align="right">9&nbsp;</td><td><a href="recursion.html" class="tocviewlink" pltdoc="x">Recursion and Cycles:<span class="mywbr"> </span> Procedures and Data</a></td></tr><tr><td align="right">10&nbsp;</td><td><a href="Objects.html" class="tocviewlink" pltdoc="x">Objects</a></td></tr><tr><td align="right">11&nbsp;</td><td><a href="" class="tocviewselflink" pltdoc="x">Memory Management</a></td></tr><tr><td align="right">12&nbsp;</td><td><a href="Representation_Decisions.html" class="tocviewlink" pltdoc="x">Representation Decisions</a></td></tr><tr><td align="right">13&nbsp;</td><td><a href="Desugaring_as_a_Language_Feature.html" class="tocviewlink" pltdoc="x">Desugaring as a Language Feature</a></td></tr><tr><td align="right">14&nbsp;</td><td><a href="Control_Operations.html" class="tocviewlink" pltdoc="x">Control Operations</a></td></tr><tr><td align="right">15&nbsp;</td><td><a href="types.html" class="tocviewlink" pltdoc="x">Checking Program Invariants Statically:<span class="mywbr"> </span> Types</a></td></tr><tr><td align="right">16&nbsp;</td><td><a href="contracts.html" class="tocviewlink" pltdoc="x">Checking Program Invariants Dynamically:<span class="mywbr"> </span> Contracts</a></td></tr><tr><td align="right">17&nbsp;</td><td><a href="Alternate_Application_Semantics.html" class="tocviewlink" pltdoc="x">Alternate Application Semantics</a></td></tr></table></div></div><div class="tocviewlist"><table cellspacing="0" cellpadding="0"><tr><td style="width: 1em;"><a href="javascript:void(0);" title="Expand/Collapse" class="tocviewtoggle" onclick="TocviewToggle(this,&quot;tocview_1&quot;);">&#9658;</a></td><td>11&nbsp;</td><td><a href="" class="tocviewselflink" pltdoc="x">Memory Management</a></td></tr></table><div class="tocviewsublistbottom" style="display: none;" id="tocview_1"><table cellspacing="0" cellpadding="0"><tr><td align="right">11.1&nbsp;</td><td><a href="#(part._.Garbage)" class="tocviewlink" pltdoc="x">Garbage</a></td></tr><tr><td align="right">11.2&nbsp;</td><td><a href="#(part._.What_is__.Correct__.Garbage_.Recovery_)" class="tocviewlink" pltdoc="x">What is &ldquo;Correct&rdquo; Garbage Recovery?</a></td></tr><tr><td align="right">11.3&nbsp;</td><td><a href="#(part._.Manual_.Reclamation)" class="tocviewlink" pltdoc="x">Manual Reclamation</a></td></tr><tr><td align="right">11.4&nbsp;</td><td><a href="#(part._.Automated_.Reclamation__or_.Garbage_.Collection)" class="tocviewlink" pltdoc="x">Automated Reclamation, or Garbage
+Collection</a></td></tr><tr><td align="right">11.5&nbsp;</td><td><a href="#(part._.Convervative_.Garbage_.Collection)" class="tocviewlink" pltdoc="x">Convervative Garbage Collection</a></td></tr><tr><td align="right">11.6&nbsp;</td><td><a href="#(part._.Precise_.Garbage_.Collection)" class="tocviewlink" pltdoc="x">Precise Garbage Collection</a></td></tr></table></div></div></div><div class="tocsub"><div class="tocsubtitle">On this page:</div><table class="tocsublist" cellspacing="0"><tr><td><span class="tocsublinknumber">11.1<tt>&nbsp;</tt></span><a href="#(part._.Garbage)" class="tocsubseclink" pltdoc="x">Garbage</a></td></tr><tr><td><span class="tocsublinknumber">11.2<tt>&nbsp;</tt></span><a href="#(part._.What_is__.Correct__.Garbage_.Recovery_)" class="tocsubseclink" pltdoc="x">What is &ldquo;Correct&rdquo; Garbage Recovery?</a></td></tr><tr><td><span class="tocsublinknumber">11.3<tt>&nbsp;</tt></span><a href="#(part._.Manual_.Reclamation)" class="tocsubseclink" pltdoc="x">Manual Reclamation</a></td></tr><tr><td><span class="tocsublinknumber">11.3.1<tt>&nbsp;</tt></span><a href="#(part._.The_.Cost_of_.Fully-.Manual_.Reclamation)" class="tocsubseclink" pltdoc="x">The Cost of Fully-<wbr></wbr>Manual Reclamation</a></td></tr><tr><td><span class="tocsublinknumber">11.3.2<tt>&nbsp;</tt></span><a href="#(part._.Reference_.Counting)" class="tocsubseclink" pltdoc="x">Reference Counting</a></td></tr><tr><td><span class="tocsublinknumber">11.4<tt>&nbsp;</tt></span><a href="#(part._.Automated_.Reclamation__or_.Garbage_.Collection)" class="tocsubseclink" pltdoc="x">Automated Reclamation, or Garbage
+Collection</a></td></tr><tr><td><span class="tocsublinknumber">11.4.1<tt>&nbsp;</tt></span><a href="#(part._.Overview)" class="tocsubseclink" pltdoc="x">Overview</a></td></tr><tr><td><span class="tocsublinknumber">11.4.2<tt>&nbsp;</tt></span><a href="#(part._.Truth_and_.Provability)" class="tocsubseclink" pltdoc="x">Truth and Provability</a></td></tr><tr><td><span class="tocsublinknumber">11.4.3<tt>&nbsp;</tt></span><a href="#(part._.Central_.Assumptions)" class="tocsubseclink" pltdoc="x">Central Assumptions</a></td></tr><tr><td><span class="tocsublinknumber">11.5<tt>&nbsp;</tt></span><a href="#(part._.Convervative_.Garbage_.Collection)" class="tocsubseclink" pltdoc="x">Convervative Garbage Collection</a></td></tr><tr><td><span class="tocsublinknumber">11.6<tt>&nbsp;</tt></span><a href="#(part._.Precise_.Garbage_.Collection)" class="tocsubseclink" pltdoc="x">Precise Garbage Collection</a></td></tr></table></div></div><div class="maincolumn"><div class="main"><div class="navsettop"><span class="navleft">&nbsp;&nbsp;</span><span class="navright"><a href="Objects.html" title="backward to &quot;10 Objects&quot;" pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Programming Languages: Application and Interpretation&quot;" pltdoc="x">up</a>&nbsp;&nbsp;<a href="Representation_Decisions.html" title="forward to &quot;12 Representation Decisions&quot;" pltdoc="x">next &rarr;</a></span>&nbsp;</div><h3>11<tt>&nbsp;</tt><a name="(part._.Memory_.Management)"></a>Memory Management</h3><h4>11.1<tt>&nbsp;</tt><a name="(part._.Garbage)"></a>Garbage</h4><p>We use the term <span style="font-style: italic">garbage</span> to refer to allocated memory that is no
+longer necessary.  There are two distinct kinds of allocations that a
+typical programming language run-time system performs.  One kind is
+for the environment; this follows a push-and-pop discipline consistent
+with the nature of static scope.  Returning from a procedure returns
+that procedure&rsquo;s allocated environment space for subsequent use,
+seemingly free of cost.<span class="refelem"><span class="refcolumn"><span class="refcontent">It&rsquo;s not free!  The machine has
+to execute an explicit &ldquo;pop&rdquo; instruction to recover that space.  As
+a result, it is not <span style="font-style: italic">necessarily</span> cheaper than other memory
+management strategies.</span></span></span>  In contrast, allocation on the store has to
+follow an value&rsquo;s lifetime, which could outlive that of the scope in
+which it was created&#8212;<wbr></wbr>indeed, it may live forever.  Therefore, we
+need a different strategy for recovering space consumed by
+store-allocated garbage.</p><p>There are many methods for recovering this space, but they largely
+fall into two camps: manual and automatic.  Manual collection depends
+on the developer being able to know and correctly discard unwated
+memory.  Traditionally, humans have not proven especially good at this
+(though in some cases they have knowledge a machine might not [REF]).
+Over several decades, therefore, automated methods have become nearly
+ubiquitous.</p><h4>11.2<tt>&nbsp;</tt><a name="(part._.What_is__.Correct__.Garbage_.Recovery_)"></a>What is &ldquo;Correct&rdquo; Garbage Recovery?</h4><p>Garbage recovery should neither recover space too early
+(<span style="font-style: italic">soundness</span>) nor too late (<span style="font-style: italic">completeness</span>).  While both can
+be regarded as flaws, they are not symmetric in their impact:
+arguably, recovering too early is much worse.  That is because if we
+recover a store location prematurely, the computation will continue to
+use it and potentially write other data into it, thereby working with
+nonsensical data.  This leads at the very least to program
+incorrectness, but in more extreme situations leads to much worse
+phenomena such as security violations.  In contrast, holding on to
+memory for too long decreases performance and eventually causes the
+program to terminate even though, in a platonic sense, it had memory
+available.  This performance degradation and premature termination is
+always annoying, and in certain mission-critical systems can be deeply
+problematic, but at least the program does not compute nonsense.</p><p>Ideally we would love to have all three: automation, soundness, and
+completeness.  However, we face a classic &ldquo;pick two&rdquo; tradeoff.
+Ideal humans are capable of attaining both soundness and completeness,
+but in practice rarely achieve either.<span class="refelem"><span class="refcolumn"><span class="refcontent"><span style="font-style: italic">You</span>,
+surely, are perfect, but what of your fellow developers?  And by the
+way, the economics discipline has been looking for you.</span></span></span>  A computer
+can offer automation and either soundness or completeness, but
+computability arguments demonstrate that automation can&rsquo;t be
+accompanied by both of the others.  In practice, therefore, automated
+techniques offer soundness, on the grounds that: (a) it does the least
+harm, (b) it is relatively easy to implement, and (c) with some human
+intervention it can more closely approximate completeness.</p><h4>11.3<tt>&nbsp;</tt><a name="(part._.Manual_.Reclamation)"></a>Manual Reclamation</h4><p><div class="SIntrapara">The most manual approach would be to entrust all de-allocation to the
+human.  In C, for instance, there are two basic primitives:
+<span class="stt">malloc</span> for allocation and <span class="stt">free</span> to reclaim.
+<span class="stt">malloc</span> consumes a size and returns a reference to a
+store-allocated value; <span class="stt">free</span> consumes the references and
+reclaims its assocated memory.
+</div><div class="SIntrapara"><blockquote class="refpara"><blockquote class="refcolumn"><blockquote class="refcontent"><p>&ldquo;Moloch has been used figuratively in English
+literature from John Milton&rsquo;s <span style="font-style: italic">Paradise Lost</span> (1667) to Allen
+Ginsberg&rsquo;s `Howl&rsquo; (1955), to refer to a person or thing demanding or
+requiring a very costly sacrifice.&rdquo;  &#8212;<wbr></wbr><a href="http://en.wikipedia.org/wiki/Moloch">Wikipedia on Moloch</a></p><p><span class="hspace">&nbsp;</span></p><p>&ldquo;I do not consider it coincidental that this name sounds like
+<span class="stt">malloc</span>.&rdquo;  &#8212;<wbr></wbr>Ian Barland</p></blockquote></blockquote></blockquote></div></p><h5>11.3.1<tt>&nbsp;</tt><a name="(part._.The_.Cost_of_.Fully-.Manual_.Reclamation)"></a>The Cost of Fully-Manual Reclamation</h5><p>Let&rsquo;s start by asking what the cost of these operations is.  We might
+begin by assuming that <span class="stt">malloc</span> has an associated register
+pointing into the store (like <span class="stt">new-loc</span> [REF]), and on every
+allocation it simply obtains the next free locations.  This model is
+extremely simple&#8212;<wbr></wbr>in fact, deceptively so.  The problem arises when
+we <span class="stt">free</span> these values.  Provided the first <span class="stt">free</span> is the
+last <span class="stt">malloc</span>, we would encounter no problem; but store data
+often do not follow a stack discipline.  When we free anything but the
+most recently allocated value, we leave holes in the store.  These
+holes lead to <span style="font-style: italic">fragmentation</span>, and in the worst case we become
+unable to allocate any objects even though there is ample space in the
+store&#8212;<wbr></wbr>just split up across many fragments, no one of which is large
+enough.</p><p><div class="SIntrapara"><span style="font-weight: bold">Exercise</span></div><div class="SIntrapara"><blockquote><p>In principle, we could eliminate fragmentation by making all the free
+space be contiguous.  What does it take to do so?  Think through all
+the consequences and sketch whether you can in fact do this manually.</p></blockquote></div></p><p>While fragmentation remains an insuperable problem in most manual
+memory management schemes, there is more to consider even in this
+seemingly simple discipline.  What happens when we <span class="stt">free</span> a
+value?  The run-time system has to somehow record that it is now
+available for future allocation.  It does by maintaining
+a <span style="font-style: italic">free list</span>: a linked-list of the free spaces.  A little
+reflection immediately suggests a question: where is the free list
+itself stored, and who manages <span style="font-style: italic">its</span> memory?  The answer is that
+the free list references are stored in the freed cells, which
+immediately implies a minimum size for each allocation.</p><p>In principle, then, each <span class="stt">malloc</span> must now traverse the free list
+to find a suitable freed spot.  I say &ldquo;suitable&rdquo; because the
+allocator must make a complex decision.  Should it take the first slot
+that matches or a later one?  And either way, what does &ldquo;matches&rdquo;
+mean?  Should it take only slots the exact right size, or take larger
+slots and break them up into smaller ones (thereby increasing the
+likelihood of creating unusably small holes)?  And so on.</p><p>Developers like allocation to be cheap.<span class="refelem"><span class="refcolumn"><span class="refcontent">Failing to make
+allocation cheap makes developers try to encode tricks based on
+reusing values, thereby reducing clarity and quite possibly also
+correctness.</span></span></span>  Therefore, in practice, allocation systems tend to use
+just a fixed set of sizes, often in powers of two.  This makes it
+possible to maintain not one but many free list<span style="font-style: italic">s</span>, each of holes
+of the same size (which is a power of two).  A table refers to each of
+these lists, and indexing in the table is cheap by using bit-shifting.
+In return, developers sacrifice space, because objects not a
+power-of-two size will end up being needlessly padded.  (This is a
+classic computer science trade-off: trading space for time.)  Also,
+<span class="stt">free</span> must put the freed memory in the right slot, and perhaps
+even break up larger blocks into multiple smaller blocks to prepare
+for future allocations.  Nothing about this model is inherently as
+cheap as it seems.<span class="refelem"><span class="refcolumn"><span class="refcontent">In particular, <span class="stt">free</span> is not
+free.</span></span></span></p><p>Of course, all this assumes that developers can function in even a
+sound, much less complete, fashion.  But they don&rsquo;t.</p><h5>11.3.2<tt>&nbsp;</tt><a name="(part._.Reference_.Counting)"></a>Reference Counting</h5><p>Because entirely manual reclamation puts an undue burden on
+developers, some semi-automated techniques have seen long-standing
+use, most notably <span style="font-style: italic">reference counting</span>.</p><p>In reference counting, every value has associated with it a count of
+how many references it has.  The developer is responsible for
+incrementing and decrementing these counts.  When the count reaches
+zero, the value&rsquo;s space can safely be restored for future reuse.</p><p><div class="SIntrapara">Observe, immediately, that there are two significant assumptions
+lurking under this simple definition.
+</div><div class="SIntrapara"><ol><li><p>That the developer can track every reference.  Recall that
+  every alias is also a reference.  Thus, a developer who writes</p><blockquote class="SCodeFlow"><table cellspacing="0" class="RktBlk"><tr><td><span class="RktPn">(</span><span class="RktSym">let</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktPn">(</span><span class="RktPn">[</span><span class="RktSym">x</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">&lt;some</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">value&gt;</span><span class="RktPn">]</span><span class="RktPn">)</span><span class="RktMeta"></span></td></tr><tr><td><span class="RktMeta"></span><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktPn">(</span><span class="RktSym">let</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktPn">(</span><span class="RktPn">[</span><span class="RktSym">y</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">x</span><span class="RktPn">]</span><span class="RktPn">)</span><span class="RktMeta"></span></td></tr><tr><td><span class="RktMeta"></span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">...</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktMeta"></span></td></tr></table></blockquote><p>has to remember that <span class="stt">y</span> is a second reference to the same
+  value being referred to by <span class="stt">x</span>, and increment the count
+  accordingly.</p></li><li><p>That every value has only a finite number of references.  This
+assumption fails when a value has cycles.</p></li></ol></div><div class="SIntrapara">Because of the need to manually increment and decrement references,
+this technique suffers from a lack of both soundness and
+completeness.  Indeed, the second assumption above naturally leads to
+lack of completeness, while the first assumption points to the
+simplest way to break soundness.</div></p><p>The perils of manual memory management are subtle and run deeper.
+Because developers are charged with freeing memory (or, equivalently,
+managing reference counts), the policy of memory management has to
+become part of every library&rsquo;s interface: effectively, &ldquo;Who&rsquo;s going
+to de-allocate values allocated by this library, and will the library
+de-allocate values passed to it?&rdquo;  It is unfortunately difficult to
+document and follow these policies precisely, but even worse, it
+pollutes the description of the library with low-level details that
+usually have nothing to do with its intended behavior.</p><p><div class="SIntrapara">One intriguing idea is to <span style="font-style: italic">automate</span> the insertion of reference
+increments and decrements.  Another is to add cycle-detection to the
+implementation.  Doing both solves many of the above problems, but
+reference counting suffers from others, too:
+</div><div class="SIntrapara"><ul><li><p>The reference count increases the size of each object.  It has
+to be large enough to not overflow, yet small enough to not
+appreciably increase the program&rsquo;s memory footprint.</p></li><li><p>The time spent to increase and decrease these counts can
+become significant.</p></li><li><p>If an object&rsquo;s reference count becomes zero, everything it
+refers to must also have their reference counts decreased&#8212;<wbr></wbr>possibly
+recursively.  This means a single deallocation action can have a
+large time impact, barring clever &ldquo;lazy&rdquo; techniques (which then
+increase the program&rsquo;s memory footprint).</p></li><li><p>To decrement the reference count, we have to walk objects that
+are <span style="font-style: italic">garbage</span>.  This seems highly counterproductive: to
+traverse objects we are <span style="font-style: italic">no longer interested in</span>.  This has
+practical consequences: objects we are not interested in may not
+have been accessed in a while, which means they might have been
+paged out.  The reference counter has to page them back in, just to
+inform them that they are no longer needed.</p></li></ul></div></p><p>For all these reasons, reference counting should be used with utmost
+care.  You should not accept it as a default, but rather ask yourself
+why it is you reject what are generally better automated techniques.</p><p><div class="SIntrapara"><span style="font-weight: bold">Exercise</span></div><div class="SIntrapara"><blockquote><p>If the reference count overflows, which correctness properties are
+hurt and how?  Examine tradeoffs.</p></blockquote></div></p><h4>11.4<tt>&nbsp;</tt><a name="(part._.Automated_.Reclamation__or_.Garbage_.Collection)"></a>Automated Reclamation, or Garbage
+Collection</h4><p><span class="refelem"><span class="refcolumn"><span class="refcontent">Some people call reference counting a
+&ldquo;garbage collection&rdquo; technique.  I prefer to use the latter term to
+refer only to fully-automated techniques.  But do beware this
+potential for confusion when browsing the Web.</span></span></span></p><p>Now let&rsquo;s briefly examine the idea of having the language&rsquo;s run-time
+system automate the process of reclaiming garbage.  We&rsquo;ll use the
+abbrevation <span class="Smaller">GC</span> (for <span style="font-style: italic">garbage collection</span>) to refer to both the
+algorithm and the process, letting context disambiguate.</p><h5>11.4.1<tt>&nbsp;</tt><a name="(part._.Overview)"></a>Overview</h5><p>The key idea behind all <span class="Smaller">GC</span> algorithms is to traverse memory by
+following references between values.  Traversal begins at a
+<span style="font-style: italic">root set</span>, which is all the places from which a program can
+possibly refer to a value in the store.  Typically the root set
+consists of every bound variable in the environment, and any global
+variables.  In an actual working implementation, the implementor must
+be careful to also note ephemeral values such as references in
+registers.  From this root set, the algorithm walks all accessible
+values using a variety of algorithms that are usually variations on
+depth-first search<span class="refelem"><span class="refcolumn"><span class="refcontent">Depth-first search is generally
+preferred because it works well with stack-based implementations.  Of
+course, you might (and should) wonder where the <span class="Smaller">GC</span>&rsquo;s own stack is
+stored!</span></span></span> to identify everything that is <span style="font-style: italic">live</span> (i.e.,
+usable through some sequence of program operations).  Everything else,
+by definition, is garbage.  Again, different algorithms address the
+recovery of this space in different ways.</p><h5>11.4.2<tt>&nbsp;</tt><a name="(part._.Truth_and_.Provability)"></a>Truth and Provability</h5><p>If you read carefully, you&rsquo;ll notice that I slipped an
+<span style="font-style: italic">algorithm</span> into the above description.  This is an
+<span style="font-style: italic">implementation detail</span>, not part of the <span style="font-style: italic">specification</span>!
+Indeed, the specification of garbage collection is in terms of
+<span style="font-style: italic">truth</span>: we want to collect precisely all the values that are
+garbage, no more and no less.  But we cannot obtain truth for any
+Turing-complete programming language, so we must settle for
+<span style="font-style: italic">provability</span>.  And the style of algorithm described above gives
+us an efficient &ldquo;proof&rdquo; of liveness, rendering the complement
+garbage.  There are of course variations on this scheme that enable us
+to collect more or less garbage, which correspond to different
+<span style="font-style: italic">strengths</span> of proof a value&rsquo;s &ldquo;garbageness&rdquo;.</p><p>This last remark highlights a weakness of the strict specification,
+which says nothing about how much garbage should be collected.  It
+is actually useful to think about the extreme cases.</p><p><div class="SIntrapara"><span style="font-weight: bold">Do Now!</span></div><div class="SIntrapara"><blockquote><p>It is trivial to define a sound garbage collection strategy.
+Similarly, it is also trivial to define a complete garbage collection
+strategy.  Do you see how?</p></blockquote></div></p><p>To be sound, we simply have to make sure we don&rsquo;t accidentally remove
+anything that is live.  The one way to be absolutely certain of this
+is to <span style="font-style: italic">collect no garbage at all</span>.  Dually, the trivial complete
+<span class="Smaller">GC</span> collects <span style="font-style: italic">everything</span>.  Obviously neither of these is useful
+(and the latter is certain to be highly dangerous).  But this
+highlights that in practice, we want a <span class="Smaller">GC</span> that is not only sound but
+as complete as possible, while also being efficient.</p><h5>11.4.3<tt>&nbsp;</tt><a name="(part._.Central_.Assumptions)"></a>Central Assumptions</h5><p><div class="SIntrapara">Being able to soundly perform <span class="Smaller">GC</span> depends on two critical
+assumptions.  The first is one about the language&rsquo;s implementation and
+the other about the language&rsquo;s semantics.
+</div><div class="SIntrapara"><ol><li><p>When confronted with a value, the <span class="Smaller">GC</span> needs to know what
+kind of value it is, and how its memory representation is laid out.
+For instance, when the traversal reaches a <span class="stt">cons</span> cell, it must
+know:</p><ol><li><p>that this is a <span class="stt">cons</span> cell; and hence,</p></li><li><p>that the <span class="stt">first</span> is at, say, a four byte offset, and</p></li><li><p>that the <span class="stt">rest</span> is at, say, an eight byte offset.</p></li></ol><p>Obviously, this property must hold recursively, thus enabling a
+traversal algorithm to correctly map the values in memory.</p></li><li><p>That programs cannot <span style="font-style: italic">manufacture</span> references in two
+ways:</p><ol><li><p>Object references cannot reside outside the implementation&rsquo;s
+pre-defined root set.</p></li><li><p>Object references can only refer to well-defined points in
+objects.</p></li></ol><p>When the second property is violated, the <span class="Smaller">GC</span> can effectively go
+haywire, misinterpreting data.  The first property sounds obvious:
+when it is violated, it seems the run-time system has clearly failed
+to obey the language&rsquo;s semantics.  However, the consequences of this
+property are subtle, as we discuss below [REF].</p></li></ol></div></p><h4>11.5<tt>&nbsp;</tt><a name="(part._.Convervative_.Garbage_.Collection)"></a>Convervative Garbage Collection</h4><p>We&rsquo;ve explained that the typical root set consists of the environment,
+global variables, and some choice ephemerals.  Where else might
+references reside?</p><p>In most languages, nowhere else.  But some languages (I&rsquo;m looking at
+you, C and C++) allow references to be turned into arbitrary numbers,
+and arbitrary numbers to be turned back into references.  As a result,
+in principle, <span style="font-style: italic">any</span> numeric value in the program (which, because
+of the nature of C and C++&rsquo;s types, virtually <span style="font-style: italic">any</span> value in the
+program) could potentially be treated as a reference.</p><p>This is problematic for two reasons.  First, it means the <span class="Smaller">GC</span> can no
+longer limit its attention to the small root set; instead, the entire
+store is now potentially the root set.  Second, if the <span class="Smaller">GC</span> tries to
+modify the object in any way&#8212;<wbr></wbr>e.g., to record a &ldquo;visited&rdquo; bit
+during traversal&#8212;<wbr></wbr>then it is potentially changing
+<span style="font-style: italic">non-reference</span> values: e.g., it might actually be changing an
+innocent numeric constant in the program.  As a result, the particular
+confluence of features in languages like C and C++ conspire to make
+sound, efficient <span class="Smaller">GC</span> extremely difficult.</p><p>But not impossible.  A stimulating line of research called
+<span style="font-style: italic">conservative</span> <span class="Smaller">GC</span> has managed to create reasonably effective <span class="Smaller">GC</span>
+systems for such languages.  The principle behind conservative <span class="Smaller">GC</span>
+notes that, while in principle every store location might be a root,
+in practice many of them are not.  It then proceeds through a series
+of increasingly clever observations to deduce what must <span style="font-style: italic">not</span> be
+a reference (the opposite of a traditional <span class="Smaller">GC</span>) and can hence be
+safely <span style="font-style: italic">ignored</span>: for instance, on a word-aligned architecture,
+no odd number can never be a reference.  By skipping most of the store,
+by making some basic assumptions about program behavior (e.g., that it
+will not manufacture certain kinds of references), and by being
+careful to not modify the store&#8212;<wbr></wbr>e.g., changing bits in values, or
+moving data around&#8212;<wbr></wbr>it can actually yield a reasonably effective <span class="Smaller">GC</span>
+strategy.<span class="refelem"><span class="refcolumn"><span class="refcontent">Nevertheless, it is a bit of a dog walking on
+its hind legs.</span></span></span></p><p><div class="SIntrapara">Conservative <span class="Smaller">GC</span> is often popular with programming language
+implementations that are written in, or rely on a base of code in, C
+or C++.  For instance, early versions of Racket relied exclusively on
+it.  There are many good reasons for this:
+</div><div class="SIntrapara"><ol><li><p>It offers a quick bootstrapping technique, so the language
+implementor can focus on other, more innovative, features.</p></li><li><p>A language that controls all references (as Racket does) can
+easily create memory representations that are especially conducive
+to increasing the effectiveness of the GC (e.g., padding all true
+numbers with a one in the least-significant-bit).</p></li><li><p>It enables easy interoperation with useful libraries written
+in C and C++ (provided, of course, that they too meet the
+expectations of the technique).</p></li></ol></div></p><p>A word on vocabulary is in order.  As we have argued [REF], <span style="font-style: italic">all</span>
+practical <span class="Smaller">GC</span> techniques are &ldquo;conservative&rdquo; in that they approximate
+truth with reachability.  The word &ldquo;conservative&rdquo; has, however,
+become a term-of-art to refer to a <span class="Smaller">GC</span> technique that operates in an
+<span style="font-style: italic">uncooperative</span> (and hopefully not <span style="font-style: italic">hostile</span>) run-time
+system.</p><h4>11.6<tt>&nbsp;</tt><a name="(part._.Precise_.Garbage_.Collection)"></a>Precise Garbage Collection</h4><p>In conventional <span class="Smaller">GC</span> terminology, the opposite of &ldquo;conservative&rdquo; is
+<span style="font-style: italic">precise</span>.  This, too, is a misnomer, because a <span class="Smaller">GC</span> cannot be
+precise, i.e., both sound and complete.  Rather, precision here is a
+statement about the ability to identify references: when confronted
+with a value, a precise <span class="Smaller">GC</span> knows exactly what is and isn&rsquo;t a
+reference, and where the references are.  This removes the monumental
+effort that a conservative <span class="Smaller">GC</span> has to put into guessing non-references
+(and hoping to eliminate as many potential references as possible
+through this process).</p><p>Within the space of precise <span class="Smaller">GC</span>, which is what most contemporary
+language run-time systems use, there is a wide range of implementation
+techniques.  I refer you to
+<a href="ftp://ftp.cs.utexas.edu/pub/garbage/gcsurvey.ps">Paul Wilson&rsquo;s survey</a>
+(which, despite its relative age in this fast-moving field, remains an
+excellent resource), as well as the book and other materials from
+<a href="http://www.cs.kent.ac.uk/people/staff/rej/gc.html">Richard Jones</a>.
+In particular, for a quick and readable overview of a generational
+garbage collector, read
+<a href="http://www.cs.princeton.edu/~appel/papers/143.ps"><span style="font-style: italic">Simple Generational Garbage Collection and Fast Allocation</span></a>.</p><div class="navsetbottom"><span class="navleft">&nbsp;&nbsp;</span><span class="navright"><a href="Objects.html" title="backward to &quot;10 Objects&quot;" pltdoc="x">&larr; prev</a>&nbsp;&nbsp;<a href="index.html" title="up to &quot;Programming Languages: Application and Interpretation&quot;" pltdoc="x">up</a>&nbsp;&nbsp;<a href="Representation_Decisions.html" title="forward to &quot;12 Representation Decisions&quot;" pltdoc="x">next &rarr;</a></span>&nbsp;</div></div></div><div id="contextindicator">&nbsp;</div></body></html>
