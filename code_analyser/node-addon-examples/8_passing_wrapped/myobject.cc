@@ -1,9 +1,8 @@
+#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include "myobject.h"
 
 using namespace v8;
-
-Isolate* isolate = Isolate::GetCurrent();
 
 MyObject::MyObject() {};
 MyObject::~MyObject() {};
@@ -16,11 +15,11 @@ void MyObject::Init() {
   tpl->SetClassName(String::NewSymbol("MyObject"));
   tpl->InstanceTemplate()->SetInternalFieldCount(1);
 
-  constructor = Persistent<Function>::New(isolate, tpl->GetFunction());
+  constructor = Persistent<Function>::New(tpl->GetFunction());
 }
 
 Handle<Value> MyObject::New(const Arguments& args) {
-  HandleScope scope(isolate);
+  HandleScope scope;
 
   MyObject* obj = new MyObject();
   obj->val_ = args[0]->IsUndefined() ? 0 : args[0]->NumberValue();
@@ -30,7 +29,7 @@ Handle<Value> MyObject::New(const Arguments& args) {
 }
 
 Handle<Value> MyObject::NewInstance(const Arguments& args) {
-  HandleScope scope(isolate);
+  HandleScope scope;
 
   const unsigned argc = 1;
   Handle<Value> argv[argc] = { args[0] };

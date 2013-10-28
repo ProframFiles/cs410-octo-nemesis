@@ -1,20 +1,19 @@
+#define BUILDING_NODE_EXTENSION
 #include <node.h>
 
 using namespace v8;
 
 Handle<Value> Add(const Arguments& args) {
-  Isolate* isolate = Isolate::GetCurrent();
-  HandleScope scope(isolate);
+  HandleScope scope;
 
   if (args.Length() < 2) {
-    ThrowException(Exception::TypeError(
-        String::New("Wrong number of arguments")));
-    return scope.Close(Undefined(isolate));
+    ThrowException(Exception::TypeError(String::New("Wrong number of arguments")));
+    return scope.Close(Undefined());
   }
 
   if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
     ThrowException(Exception::TypeError(String::New("Wrong arguments")));
-    return scope.Close(Undefined(isolate));
+    return scope.Close(Undefined());
   }
 
   Local<Number> num = Number::New(args[0]->NumberValue() +

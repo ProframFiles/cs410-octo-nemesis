@@ -1,22 +1,19 @@
+#define BUILDING_NODE_EXTENSION
 #include <node.h>
 
 using namespace v8;
 
 Handle<Value> MyFunction(const Arguments& args) {
-  Isolate* isolate = Isolate::GetCurrent();
-  HandleScope scope(isolate);
+  HandleScope scope;
   return scope.Close(String::New("hello world"));
 }
 
 Handle<Value> CreateFunction(const Arguments& args) {
-  Isolate* isolate = Isolate::GetCurrent();
-  HandleScope scope(isolate);
+  HandleScope scope;
 
   Local<FunctionTemplate> tpl = FunctionTemplate::New(MyFunction);
   Local<Function> fn = tpl->GetFunction();
-
-  // omit this to make it anonymous
-  fn->SetName(String::NewSymbol("theFunction"));
+  fn->SetName(String::NewSymbol("theFunction")); // omit this to make it anonymous
 
   return scope.Close(fn);
 }

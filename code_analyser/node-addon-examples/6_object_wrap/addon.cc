@@ -1,3 +1,4 @@
+#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include "myobject.h"
 

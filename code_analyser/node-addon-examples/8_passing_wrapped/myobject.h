@@ -1,9 +1,8 @@
+#define BUILDING_NODE_EXTENSION
 #ifndef MYOBJECT_H
 #define MYOBJECT_H
 
 #include <node.h>
-
-extern v8::Isolate* isolate;
 
 class MyObject : public node::ObjectWrap {
  public:

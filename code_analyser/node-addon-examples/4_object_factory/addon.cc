@@ -1,10 +1,10 @@
+#define BUILDING_NODE_EXTENSION
 #include <node.h>
 
 using namespace v8;
 
 Handle<Value> CreateObject(const Arguments& args) {
-  Isolate* isolate = Isolate::GetCurrent();
-  HandleScope scope(isolate);
+  HandleScope scope;
 
   Local<Object> obj = Object::New();
   obj->Set(String::NewSymbol("msg"), args[0]->ToString());

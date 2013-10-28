@@ -1,17 +1,17 @@
+#define BUILDING_NODE_EXTENSION
 #include <node.h>
 
 using namespace v8;
 
 Handle<Value> RunCallback(const Arguments& args) {
-  Isolate* isolate = Isolate::GetCurrent();
-  HandleScope scope(isolate);
+  HandleScope scope;
 
   Local<Function> cb = Local<Function>::Cast(args[0]);
   const unsigned argc = 1;
-  Local<Value> argv[argc] = { String::New("hello world") };
+  Local<Value> argv[argc] = { Local<Value>::New(String::New("hello world")) };
   cb->Call(Context::GetCurrent()->Global(), argc, argv);
 
-  return scope.Close(Undefined(isolate));
+  return scope.Close(Undefined());
 }
 
 void Init(Handle<Object> exports, Handle<Object> module) {
