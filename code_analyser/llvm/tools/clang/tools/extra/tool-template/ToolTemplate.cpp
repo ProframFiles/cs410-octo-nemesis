@@ -46,6 +46,9 @@
 #include "llvm/Support/CommandLine.h"
 #include "llvm/Support/MemoryBuffer.h"
 #include "llvm/Support/Signals.h"
+#include "JSONReader.hpp"
+#include "JSONCallbacks.hpp"
+
 
 using namespace clang;
 using namespace clang::ast_matchers;
@@ -55,17 +58,33 @@ using namespace llvm;
 namespace {
 class ToolTemplateCallback : public MatchFinder::MatchCallback {
  public:
-  ToolTemplateCallback(Replacements *Replace) : Replace(Replace) {}
+  ToolTemplateCallback(sjp::JSONObjectIO *json_out) : mJSON(json_out) {}
 
   virtual void run(const MatchFinder::MatchResult &Result) {
-//  TODO: This routine will get called for each thing that the matchers find.
-//  At this point, you can examine the match, and do whatever you want,
-//  including replacing the matched text with other text
-  (void) Replace; // This to prevent an "unused member variable" warning;
+	if(const CallExpr *CE =   Result.Nodes.getNodeAs<CallExpr>("statementer"))
+	{
+		mJSON->StartArray("method" );
+		CE->dump();
+		bool invalid = 0;
+		const char* start = Result.SourceManager->getCharacterData(CE->getLocStart(), &invalid);
+		const char* end = Result.SourceManager->getCharacterData(CE->getLocEnd(), &invalid);
+		if(!invalid && (end > start ))
+		{
+			mTmpString.clear();
+			while(start <= end)
+			{
+				mTmpString.push_back(*start++);
+			}
+			mJSON->AddValue(mTmpString);
+		}
+		mJSON->EndCurrent();
+	}
   }
 
  private:
-  Replacements *Replace;
+	
+  std::string mTmpString;
+  sjp::JSONObjectIO *mJSON;
 };
 } // end anonymous namespace
 
@@ -98,11 +117,17 @@ int main(int argc, const char **argv) {
     }
   RefactoringTool Tool(*Compilations, SourcePaths);
   ast_matchers::MatchFinder Finder;
-  ToolTemplateCallback Callback(&Tool.getReplacements());
-
+  sjp::JSONObjectIO json_out;
+  
+  ToolTemplateCallback Callback(&json_out);
+  StatementMatcher meth_match = callExpr().bind("statementer");
+  Finder.addMatcher(meth_match, &Callback);
 // TODO: Put your matchers here.
 // Use Finder.addMatcher(...) to define the patterns in the AST that you
 // want to match against. You are not limited to just one matcher!
 
-  return Tool.run(newFrontendActionFactory(&Finder));
+	int ret = Tool.run(newFrontendActionFactory(&Finder));
+	std::ofstream fout("test_out.json", std::ios::binary);
+	fout << json_out.ToString();
+  return ret;
 }
