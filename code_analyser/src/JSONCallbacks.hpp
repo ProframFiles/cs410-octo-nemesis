@@ -126,7 +126,7 @@ class JSONValueString : public JSONValueBase
 public:
 	JSONValueString(size_t str_index, const tStringContainer& main_string) : mMainString(main_string), mStart(str_index),mSize(main_string.size()-1-str_index){}
 
-	virtual eValueType GetType()
+	virtual eValueType GetType() const
 	{ return SJP_STRING; }
 	
 	virtual void StreamOut(StreamedString& os, int indent_level) const
@@ -155,7 +155,7 @@ public:
 class JSONValueTrue : public JSONValueBase
 {
 public:
-	virtual eValueType GetType()
+	virtual eValueType GetType() const
 	{ return SJP_TRUE; }
 
 	std::ostream& StreamOut(std::ostream& os, int indent_level) const
@@ -174,7 +174,7 @@ public:
 class JSONValueFalse : public JSONValueBase
 {
 public:
-	virtual eValueType GetType()
+	virtual eValueType GetType() const
 	{ return SJP_FALSE; }
 
 	std::ostream& StreamOut(std::ostream& os, int indent_level) const
@@ -197,7 +197,7 @@ class JSONValueNumber : public JSONValueBase
 public:
 	JSONValueNumber(double number) : mNumberValue(number){}
 
-	virtual eValueType GetType()
+	virtual eValueType GetType() const
 	{ return SJP_NUMBER; }
 
 protected:
@@ -222,7 +222,7 @@ class JSONValueInteger : public JSONValueBase
 public:
 	JSONValueInteger(int number) : mNumberValue(number){}
 
-	virtual eValueType GetType()
+	virtual eValueType GetType() const
 	{ return SJP_NUMBER; }
 
 protected:
@@ -253,7 +253,7 @@ class JSONValueArray : public JSONValueContainer
 public:
 	JSONValueArray() : mArrayValue(){}
 
-	virtual eValueType GetType()
+	virtual eValueType GetType() const
 	{ return SJP_ARRAY; }
 
 	virtual void AddValue(JSONValueBase* value, tJSONKey key)
@@ -326,7 +326,7 @@ class JSONValueObject : public JSONValueContainer
 public:
 	JSONValueObject(const tStringContainer& main_string) : mMainString(main_string), mObjectValue(), mIsBaseObject(false){}
 
-	virtual eValueType GetType()
+	virtual eValueType GetType() const
 	{ return SJP_OBJECT; }
 
 	virtual void AddValue(JSONValueBase* value, tJSONKey key)
@@ -544,7 +544,7 @@ public:
 	template <typename tValue>
 	JSONObjectIO& AddValue(const std::string& name, tValue val)
 	{
-		nonExistentFunction();
+		nonExistentFunction(val);
 		return this;
 	}
 
