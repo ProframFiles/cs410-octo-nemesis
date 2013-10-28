@@ -60,7 +60,7 @@ struct StreamedString
 	std::string& ToString()
 	{
 		mTempString.resize(mString.size());
-		memcpy(&mTempString[0], &mString[0],mString.size());
+		if(!mTempString.empty()) memcpy(&mTempString[0], &mString[0],mString.size());
 		return mTempString;	
 	}
 

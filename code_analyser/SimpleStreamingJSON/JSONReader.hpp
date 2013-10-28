@@ -9,8 +9,12 @@
 #include <string>
 #include <cassert>
 #include <functional>
+#include <stdexcept>
 #include <fstream>
 #include <stdio.h>
+#include <cmath>
+#include <stdlib.h>
+
 #define _AKJ_WHITESPACE  " \n\t\r\f\b"
 #define _AKJ_NUM_DELIM  " \n\t\r\f\b,}.]"
 #define _AKJ_STRINGFIND  "\\\""
@@ -24,7 +28,7 @@
 
 namespace sjp
 {
-int stringToNumber(const char* p, double& r);
+int stringToNumber(const char* p, double& r, const unsigned int maxChars);
 
 template <class tCallback>
 class JSONReader;
@@ -60,11 +64,11 @@ public:
 		mString = in;
 		parse();
 	};
-	void parseFile(const wchar_t* in)
+	void parseFile(const char* in)
 	{
-		parseFile(std::wstring(in));
+		parseFile(std::string(in));
 	};
-	void parseFile(std::wstring& in)
+	void parseFile(const std::string& in)
 	{
 		file2String(in);
 		mLoc = 0;
@@ -341,7 +345,7 @@ private:
 		mLoc++;
 		return mTmpString;
 	};
-	void file2String(std::wstring& p)
+	void file2String(const std::string& p)
 	{
 		std::ifstream fin;
 		mString.clear();
@@ -358,13 +362,13 @@ private:
 			fin.close();
 		}
 
-		catch(const wchar_t* str)
+		catch(const char* str)
 		{
-			wprintf(L"File Read Exception %s \n", str);
+			printf("File Read Exception %s \n", str);
 		}
 	}
 public:
-	void test(std::string& in)
+	void test(const std::string& in)
 	{
 		mJsonStr = in ;
 		//jsonStr[10]='u';
