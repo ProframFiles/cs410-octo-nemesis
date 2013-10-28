@@ -63,7 +63,6 @@ class ToolTemplateCallback : public MatchFinder::MatchCallback {
   virtual void run(const MatchFinder::MatchResult &Result) {
 	if(const CallExpr *CE =   Result.Nodes.getNodeAs<CallExpr>("statementer"))
 	{
-		mJSON->StartArray("method" );
 		CE->dump();
 		bool invalid = 0;
 		const char* start = Result.SourceManager->getCharacterData(CE->getLocStart(), &invalid);
@@ -77,7 +76,6 @@ class ToolTemplateCallback : public MatchFinder::MatchCallback {
 			}
 			mJSON->AddValue(mTmpString);
 		}
-		mJSON->EndCurrent();
 	}
   }
 
@@ -125,9 +123,10 @@ int main(int argc, const char **argv) {
 // TODO: Put your matchers here.
 // Use Finder.addMatcher(...) to define the patterns in the AST that you
 // want to match against. You are not limited to just one matcher!
-
+	json_out.StartArray("method_calls");
 	int ret = Tool.run(newFrontendActionFactory(&Finder));
 	std::ofstream fout("test_out.json", std::ios::binary);
+	json_out.EndCurrent();
 	fout << json_out.ToString();
   return ret;
 }
