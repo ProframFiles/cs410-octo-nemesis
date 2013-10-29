@@ -2,6 +2,7 @@
 var http = require('http');
 var url = require('url') ;
 var path = require("path");
+var analyzer = require("analyzer");
 var mustache = require("mustache");
 var fs = require('fs') ;
 var kDir = 
@@ -207,6 +208,14 @@ function BindServer()
 	console.log("done initial update, now listening on port 80");
 	server.listen(kPortToBind);
 	RepeatedFileRefresh();
+
+
+	code_root = "./" + path.normalize( kDir.home_dir + "../code_to_analyze/sample_streaming_json"); 
+	code_file = "./" + path.normalize( kDir.home_dir + "../code_to_analyze/sample_streaming_json/aj++.cpp");
+
+	var result = analyzer.SingleFile(code_root, code_file);
+	console.log(result);
+
 }
 
 function RepeatedFileRefresh()

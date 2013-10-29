@@ -455,7 +455,7 @@ inline int stringToNumber(const char* p, double& r, const unsigned int maxChars)
 			e = (e * 10.0) + (*p - '0');
 			++p;
 		}
-		if(neg) { e = -e; }
+		if(expneg) { e = -e; }
 		r = r * pow(10.0, e);
 	}
 	if(neg)

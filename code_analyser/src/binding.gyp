@@ -1,7 +1,7 @@
 {	
 	"targets": [{
-		"target_name": "hello",
-		"sources": [ "analyzer.cpp" ],
+		"target_name": "analyzer",
+		"sources": [ 'analyzer.cpp', 'plugin_interface.cpp' ],
 		'conditions': [
 			['OS=="win"', {
 				'cflags': [

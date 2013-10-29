@@ -2,6 +2,7 @@
 
 #include <string>
 #include <stdio.h>
+#include <string.h>
 #include <memory>
 #include <map>
 #include <vector>
@@ -118,7 +119,7 @@ class JSONValueBase
 
 };
 
-std::ostream& operator <<(std::ostream &os,const JSONValueBase* val)
+inline std::ostream& operator <<(std::ostream &os,const JSONValueBase* val)
 	{ return val->StreamOut(os, 0); }
 
 class JSONValueString : public JSONValueBase
@@ -280,7 +281,7 @@ public:
 			indent_level++;
 			os.put('[');
 			os.put('\n');
-			for (int i = 0; i < mArrayValue.size()-1; ++i)
+			for (int i = 0; i < static_cast<int>(mArrayValue.size())-1; ++i)
 			{
 				mArrayValue.at(i)->StreamOut(os, indent_level);
 				os.put( ',');
@@ -309,7 +310,7 @@ public:
 	tJSONArray mArrayValue;
 };
 
-size_t AppendString(tStringContainer& container,const std::string& str)
+inline size_t AppendString(tStringContainer& container,const std::string& str)
 {
 	if(container.size()+str.size() > container.capacity()) container.reserve(container.capacity()*2);
 	size_t ret =container.size();
@@ -400,8 +401,9 @@ public:
 
 		return os;
 	};
-	tJSONMap mObjectValue;
+
 	const tStringContainer& mMainString;
+	tJSONMap mObjectValue;
 	bool mIsBaseObject;
 };
 
@@ -620,7 +622,7 @@ public:
 	
 
 
-std::ostream& operator <<(std::ostream &os, const JSONObjectIO& val)
+inline std::ostream& operator <<(std::ostream &os, const JSONObjectIO& val)
 { 
 	return val.StreamOut(os);
 }

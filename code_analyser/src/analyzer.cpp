@@ -34,9 +34,12 @@
 //
 //===----------------------------------------------------------------------===//
 
+#ifndef __STDC_LIMIT_MACROS
+	#define __STDC_LIMIT_MACROS
+	#define __STDC_CONSTANT_MACROS
+#endif // !__STDC_LIMIT_MACROS
 
-#define __STDC_LIMIT_MACROS
-#define __STDC_CONSTANT_MACROS
+
 #include "clang/ASTMatchers/ASTMatchers.h"
 #include "clang/ASTMatchers/ASTMatchFinder.h"
 #include "clang/Basic/SourceManager.h"
@@ -51,10 +54,9 @@
 #include "llvm/Support/Signals.h"
 #include "JSONReader.hpp"
 #include "JSONCallbacks.hpp"
-#include <node.h>
-#include <v8.h>
 
-using namespace v8;
+
+
 
 
 using namespace clang;
@@ -73,13 +75,13 @@ public:
 	{
 		if(const CallExpr* CE =   Result.Nodes.getNodeAs<CallExpr>("statementer"))
 		{
-			CE->dump();
 			bool invalid = 0;
 			const char* start = Result.SourceManager->getCharacterData(CE->getLocStart(), &invalid);
 			const char* end = Result.SourceManager->getCharacterData(CE->getLocEnd(), &invalid);
-			if(!invalid && (end > start))
+			if(!invalid && (end > start) && (end - start) < 256)
 			{
 				mTmpString.clear();
+				
 				while(start <= end)
 				{
 					mTmpString.push_back(*start++);
@@ -151,24 +153,3 @@ int RunOnSourceFile(std::string home_dir, std::string absolute_file, sjp::JSONOb
 }
 
 
-Handle<Value> Method(const Arguments& args)
-{
-	HandleScope scope;
-
-	sjp::JSONObjectIO json_out;
-
-	RunOnSourceFile( "some_thing", "some_other_thing", &json_out);
-
-	std::ofstream fout("test_out.json", std::ios::binary);
-	fout << json_out.ToString();
-
-	return scope.Close(String::New("world"));
-}
-
-void init(Handle<Object> exports)
-{
-	exports->Set(String::NewSymbol("hello"),
-							 FunctionTemplate::New(Method)->GetFunction());
-}
-
-NODE_MODULE(hello, init)
