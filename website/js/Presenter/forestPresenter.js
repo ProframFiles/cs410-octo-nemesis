@@ -1,4 +1,4 @@
-define( ["marionette"], function (Marionette) {
+define( ["marionette","d3"], function (Marionette, d3) {
 	el: "#app"// Private variables and private functions
 
 
