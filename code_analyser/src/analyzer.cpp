@@ -55,7 +55,7 @@
 #include "llvm/Support/Signals.h"
 #include "JSONReader.hpp"
 #include "JSONCallbacks.hpp"
-
+#include "CompilationDatabase.hpp"
 
 
 
@@ -70,7 +70,7 @@ namespace
 class ToolTemplateCallback : public MatchFinder::MatchCallback
 {
 public:
-	ToolTemplateCallback(sjp::JSONObjectIO* json_out) : mTempUSR(256), mJSON(json_out) {}
+	ToolTemplateCallback(sjp::JSONObjectIO* json_out) : mJSON(json_out) {}
 
 	virtual void run(const MatchFinder::MatchResult& Result)
 	{
@@ -143,6 +143,7 @@ int RunOnSourceFile(std::string home_dir, std::string absolute_file, sjp::JSONOb
 		json_out->EndCurrent();
 	}
 	else
+	{
 		json_out->AddValue("tool error", ErrorMessage);
 	}
 	json_out->EndCurrent();
@@ -151,11 +152,15 @@ int RunOnSourceFile(std::string home_dir, std::string absolute_file, sjp::JSONOb
 
 #ifdef ANALYZER_STANDALONE
 #include <iostream>
-int main(int argc, const char **argv) {
+int main(int argc, const char **argv) 
+{
 	std::string arg1 = argv[1];
 	std::string arg2 = argv[2];
   	printf("got 2 arguments: \n\t%s\n\t%s\n", arg1.c_str(), arg2.c_str() );
-	RunOnSourceFile( "some_thing", "some_other_thing", &json_out);
+	sjp::JSONObjectIO json_out;
+	RunOnSourceFile( arg1, arg2, &json_out);
+	std::ofstream fout("test_analysis_out.json", std::ios::binary);
 	fout << json_out.ToString();
 	return 0;
+}
 #endif
