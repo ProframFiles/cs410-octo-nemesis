@@ -36,18 +36,10 @@ define( ["marionette","./view/projectView"], function (Marionette, ProjectView) 
     });
 
     MyApp.addRegions({
-        container: {
-            regionType: ContainerRegion,
-            selector:   "#container"
-        },
-        footer: {
-            regionType: FooterRegion,
-            selector:   "#footer"
-        }
+        container: "#container",
+        footer:"#footer"
     });
 
-
-    viewRegion.show(new ProjectView({el:viewRegion}));
     // Close out the view that's currently there and render a different view.
     //region.show(new MyOtherView());
 
