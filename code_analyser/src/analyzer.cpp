@@ -48,6 +48,7 @@
 #include "clang/Tooling/CompilationDatabase.h"
 #include "clang/Tooling/Refactoring.h"
 #include "clang/Tooling/Tooling.h"
+#include "clang/Index/USRGeneration.h"
 #include "llvm/ADT/OwningPtr.h"
 #include "llvm/Support/CommandLine.h"
 #include "llvm/Support/MemoryBuffer.h"
@@ -69,13 +70,15 @@ namespace
 class ToolTemplateCallback : public MatchFinder::MatchCallback
 {
 public:
-	ToolTemplateCallback(sjp::JSONObjectIO* json_out) : mJSON(json_out) {}
+	ToolTemplateCallback(sjp::JSONObjectIO* json_out) : mTempUSR(256), mJSON(json_out) {}
 
 	virtual void run(const MatchFinder::MatchResult& Result)
 	{
-		if(const CallExpr* CE =   Result.Nodes.getNodeAs<CallExpr>("statementer"))
+		const RecordDecl* CE = Result.Nodes.getNodeAs<RecordDecl>("statementer");
+		if(CE != NULL && (clang::SrcMgr::C_User == Result.SourceManager->getFileCharacteristic(CE->getLocStart())))
 		{
 			bool invalid = 0;
+		
 			const char* start = Result.SourceManager->getCharacterData(CE->getLocStart(), &invalid);
 			const char* end = Result.SourceManager->getCharacterData(CE->getLocEnd(), &invalid);
 			if(!invalid && (end > start) && (end - start) < 256)
@@ -88,6 +91,7 @@ public:
 				}
 				mJSON->AddValue(mTmpString);
 			}
+			
 		}
 	}
 
@@ -112,44 +116,46 @@ cl::list<std::string> SourcePaths(
 
 int RunOnSourceFile(std::string home_dir, std::string absolute_file, sjp::JSONObjectIO* json_out)
 {
-
+	json_out->StartObject("clang tool run");
+	
 	const char*  dir_input[3] = {"tool-template", home_dir.c_str(), absolute_file.c_str()};
 	int num_args = 3;
-	
-	llvm::sys::PrintStackTraceOnErrorSignal();
-	llvm::OwningPtr<CompilationDatabase> Compilations(
-			FixedCompilationDatabase::loadFromCommandLine(num_args, dir_input));
+	std::string ErrorMessage;
+
 	cl::ParseCommandLineOptions(num_args, dir_input);
-	if(!Compilations)     // Couldn't find a compilation DB from the command line
+
+	llvm::OwningPtr<CompilationDatabase> Compilations(
+			CompilationDatabase::autoDetectFromDirectory(BuildPath, ErrorMessage));
+
+	if(Compilations)
 	{
-		std::string ErrorMessage;
-		Compilations.reset(
-				!BuildPath.empty() ?
-				CompilationDatabase::autoDetectFromDirectory(BuildPath, ErrorMessage) :
-				CompilationDatabase::autoDetectFromSource(SourcePaths[0], ErrorMessage)
-		);
 
-		//  Still no compilation DB? - bail.
-		if(!Compilations)
-		{
-			llvm::report_fatal_error(ErrorMessage);
-		}
+		RefactoringTool Tool(*Compilations, SourcePaths);
+		ast_matchers::MatchFinder Finder;
+
+		ToolTemplateCallback Callback(json_out);
+		DeclarationMatcher decl_match = recordDecl().bind("statementer");
+		Finder.addMatcher(decl_match, &Callback);
+
+		json_out->StartArray("method_calls");
+		Tool.run(newFrontendActionFactory(&Finder));
+	
+		json_out->EndCurrent();
 	}
-	RefactoringTool Tool(*Compilations, SourcePaths);
-	ast_matchers::MatchFinder Finder;
-
-	ToolTemplateCallback Callback(json_out);
-	StatementMatcher meth_match = callExpr().bind("statementer");
-	Finder.addMatcher(meth_match, &Callback);
-	// TODO: Put your matchers here.
-	// Use Finder.addMatcher(...) to define the patterns in the AST that you
-	// want to match against. You are not limited to just one matcher!
-	json_out->StartArray("method_calls");
-	int ret = Tool.run(newFrontendActionFactory(&Finder));
-	
+	else
+		json_out->AddValue("tool error", ErrorMessage);
+	}
 	json_out->EndCurrent();
-	
-	return ret;
+	return 0;
 }
 
-
+#ifdef ANALYZER_STANDALONE
+#include <iostream>
+int main(int argc, const char **argv) {
+	std::string arg1 = argv[1];
+	std::string arg2 = argv[2];
+  	printf("got 2 arguments: \n\t%s\n\t%s\n", arg1.c_str(), arg2.c_str() );
+	RunOnSourceFile( "some_thing", "some_other_thing", &json_out);
+	fout << json_out.ToString();
+	return 0;
+#endif

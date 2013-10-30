@@ -280,7 +280,7 @@ private:
 
 		for(size_t i = 0; i < tmpLength; i++)
 		{
-			char thisChar = mCharArray[firstLoc + i];
+			unsigned char thisChar = mCharArray[firstLoc + i];
 
 			if(thisChar < 0x20 || thisChar >= 0x90)
 			{
