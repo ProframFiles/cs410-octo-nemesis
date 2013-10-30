@@ -14,7 +14,6 @@ public:
 		mFileName.clear();
 		mHomeDir.clear();
 		mOptionIndex.clear();
-		mOptionPointers.clear();
 		mOptionData.clear();
 	}
 
@@ -25,6 +24,15 @@ public:
 			return mFileName < other.mFileName;
 		}
 		return mHomeDir < other.mHomeDir;
+	}
+
+	void GetOptions(std::vector<const char*>& opts) const
+	{
+		opts.clear();
+		for (size_t i = 0; i < mOptionIndex.size(); i++)
+		{
+			opts.push_back(&mOptionData[0] + mOptionIndex.at(i));
+		}
 	}
 
 	void SetOptions(const std::string& option_string)
@@ -48,10 +56,11 @@ public:
 				mOptionIndex.push_back(static_cast<int>(mOptionData.size()));
 				//skip all whitespace
 				while(option_string[i] == ' ' || option_string[i] == '\t') ++i;
-				
+				--i;
 			}
 			else if(option_string[i] == '"' || option_string[i] == '\'') in_string = !in_string;
 		}
+		mOptionData.push_back('\0');
 
 	}
 
@@ -59,7 +68,6 @@ public:
 	std::string mHomeDir;
 private:
 	std::vector<int> mOptionIndex;
-	std::vector<char*> mOptionPointers;
 	std::vector<char> mOptionData;
 };
 
@@ -70,6 +78,12 @@ public:
 		: mFiles() 
 	{}
 
+	const std::vector<const char*>* GetOptions(const std::string& file)
+	{
+		mFiles.begin()->GetOptions(mOptionStrings);
+		return &mOptionStrings;
+	}
+
 	void AddFile(const CompilationFile& file)
 	{
 		mFiles.insert(file);
@@ -77,11 +91,13 @@ public:
 
 private:
 	std::set<CompilationFile> mFiles;
+	std::vector<const char*> mOptionStrings;
 };
 
 
 class CompilationDatabaseReader 
 {
+public:
 	CompilationDatabaseReader( CompilationDatabase* db): mDB(db) {}
 
 	void onNameString(std::string& in) {

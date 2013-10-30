@@ -157,6 +157,21 @@ int main(int argc, const char **argv)
 	std::string arg1 = argv[1];
 	std::string arg2 = argv[2];
   	printf("got 2 arguments: \n\t%s\n\t%s\n", arg1.c_str(), arg2.c_str() );
+	
+	sjp::CompilationDatabase CompilationDB;
+	sjp::CompilationDatabaseReader comp_reader(&CompilationDB);
+	sjp::JSONReader<sjp::CompilationDatabaseReader> json_reader(comp_reader);
+	json_reader.parseFile("compile_commands.json");
+
+	const std::vector<const char*>* opts = CompilationDB.GetOptions("2");
+	for (size_t i = 0; i < opts->size(); i++)
+	{
+		printf("Option: %s\n", opts->at(i));
+	}
+
+	std::ifstream fin("compile_commands.json", std::ios::binary);
+
+	
 	sjp::JSONObjectIO json_out;
 	RunOnSourceFile( arg1, arg2, &json_out);
 	std::ofstream fout("test_analysis_out.json", std::ios::binary);
