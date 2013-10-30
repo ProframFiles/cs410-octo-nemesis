@@ -213,7 +213,8 @@ function BindServer()
 	code_root = "./" + path.normalize( kDir.home_dir + "../code_to_analyze/sample_streaming_json"); 
 	code_file = "./" + path.normalize( kDir.home_dir + "../code_to_analyze/sample_streaming_json/aj++.cpp");
 
-	var result = analyzer.SingleFile(code_root, code_file);
+	//uncomment to test the analyser plugin
+	//var result = analyzer.SingleFile(code_root, code_file);
 	console.log(result);
 
 }
