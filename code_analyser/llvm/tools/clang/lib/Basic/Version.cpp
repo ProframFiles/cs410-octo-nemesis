@@ -19,7 +19,7 @@
 #include <cstring>
 
 #ifdef HAVE_SVN_VERSION_INC
-#  include "SVNVersion.inc"
+//#  include "SVNVersion.inc"
 #endif
 
 namespace clang {
