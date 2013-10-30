@@ -29,10 +29,6 @@ require.config({
   }
 })
 
-/*
-    Start of the presenter
-*/
-
 define( ["marionette","./view/projectView"], function (Marionette, ProjectView) {
 
     // set up the app instance
