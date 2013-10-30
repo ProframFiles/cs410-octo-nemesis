@@ -1,9 +1,11 @@
+//Requires syntax --- don't touch these unless --- 
+
 require.config({
   paths : {
     backbone : './libs/backbone',
     underscore : './libs/underscore',
     jquery : './libs/jquery-1.10.2',
-    d3: './libs/d3.v3'
+    d3: './libs/d3.v3',
     marionette : './libs/backbone.marionette'
   },
   shim : {
@@ -33,14 +35,10 @@ define( ["marionette","./view/projectView"], function (Marionette, ProjectView) 
         Backbone.history.start(); // Great time to do this
     });
 
-    App.addRegions({
+    MyApp.addRegions({
         container: {
             regionType: ContainerRegion,
             selector:   "#container"
-        },
-        viewRegion: {
-            regionType: MainRegion,
-            selector:"#app"
         },
         footer: {
             regionType: FooterRegion,
@@ -48,8 +46,8 @@ define( ["marionette","./view/projectView"], function (Marionette, ProjectView) 
         }
     });
 
-    viewRegion.show(new projectView({   /*options we want passed in*/ }});
 
+    viewRegion.show(new ProjectView({el:viewRegion}));
     // Close out the view that's currently there and render a different view.
     //region.show(new MyOtherView());
 
