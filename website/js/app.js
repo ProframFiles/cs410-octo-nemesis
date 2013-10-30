@@ -39,15 +39,11 @@ define( ["marionette","./view/projectView"], function (Marionette, ProjectView) 
         container: "#container",
         footer:"#footer"
     });
-
     // Close out the view that's currently there and render a different view.
     //region.show(new MyOtherView());
-
     // Close out the view and display nothing in #container.
     //region.close();
-
     // configuration, setting up regions, etc ...
-
     // export the app from this module
     return MyApp;
 });
