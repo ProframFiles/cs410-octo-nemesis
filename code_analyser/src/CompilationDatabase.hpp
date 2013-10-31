@@ -88,6 +88,11 @@ public:
 		return mFiles.end();
 	}
 
+	size_t Size() const
+	{
+		return mFiles.size();
+	}
+
 	void AddFile(const CompilationFile& file)
 	{
 		mFiles.insert(file);

@@ -596,6 +596,13 @@ public:
 		return *this;
 	}
 
+	JSONObjectIO& AddValue(const std::string& name,int val)
+	{
+		onNameString(name);
+		onValueInt(val);
+		return *this;
+	}
+
 	JSONObjectIO& AddValue(const std::string& name,bool val)
 	{
 		onNameString(name);

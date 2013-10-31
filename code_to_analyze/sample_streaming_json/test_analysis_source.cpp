@@ -23,7 +23,7 @@ private:
 	Base mNotDerivedMember;
 };
 
-class MultiDerived: public Derived1, public NotDerived
+class MultiDerived: public Derived1, public MemberDerived
 {
 private:
 	int mMultiDerivedMember;
@@ -34,6 +34,6 @@ int main(int argc, char** argv)
 	Base a;
 	Derived1 b;
 	Derived2 c;
-	NotDerived d;
+	MemberDerived d;
 	MultiDerived e;
 }

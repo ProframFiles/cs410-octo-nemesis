@@ -75,18 +75,21 @@ struct ClassRecord
 	std::string mFullname;
 	std::string mName;
 	std::vector<size_t> mChildren;
+	int mDeclarationBytes;
 
 	void DumpToJSON(sjp::JSONObjectIO* json, const std::vector<ClassRecord>& parent_array) const
 	{
-		json->StartObject(mFullname);
+		json->StartObject(mUSR);
 		json->AddValue(std::string("qualified name"), mFullname);
 		json->AddValue(std::string("name"), mName);
 		json->AddValue(std::string("USR"), mUSR);
+		json->AddValue(std::string("DeclarationSize"), mDeclarationBytes);
 		json->StartArray(std::string("childArray"));
 		for (size_t i = 0; i < mChildren.size(); ++i)
 		{
-			json->AddValue( parent_array.at(mChildren.at(i)).mFullname );
+			json->AddValue( parent_array.at(mChildren.at(i)).mUSR );
 		}
+
 		json->EndCurrent();
 		json->EndCurrent();
 	}
@@ -113,18 +116,17 @@ public:
 	virtual void run(const MatchFinder::MatchResult& Result)
 	{
 		const CXXRecordDecl* CE = Result.Nodes.getNodeAs<CXXRecordDecl>("statementer");
-		
+		const CXXRecordDecl* def;
 		if(CE != NULL 
 			&& (clang::SrcMgr::C_User == Result.SourceManager->getFileCharacteristic(CE->getLocStart()))
 			&& !CE->isInjectedClassName()
-			&& CE->isCanonicalDecl())
+			&& (def = CE->getDefinition()))
 		{
-			const CXXRecordDecl* def = CE->getDefinition();
-			if(def) ProcessRecordDecl(def);
+			ProcessRecordDecl(def, Result);
 		}
 	}
 
-	void ProcessRecordDecl(const CXXRecordDecl* CE)
+	void ProcessRecordDecl(const CXXRecordDecl* CE, const MatchFinder::MatchResult& Result)
 	{
 		mTmpSS.clear();
 		index::generateUSRForDecl(CE, mTmpSS);
@@ -141,7 +143,7 @@ public:
 			mDecls.back().mPermIdx = mClassRecords.size();
 			mClassRecords.emplace_back();
 			ClassRecord& cr = mClassRecords.back();
-			
+			cr.mDeclarationBytes = GetSourceByteSize(CE, Result);
 			
 
 			mTmpSS.clear();
@@ -169,19 +171,13 @@ public:
 
 	
 
-	void PrintSource(const std::string& json_label, const CXXRecordDecl* CE,  const MatchFinder::MatchResult& Result)
+	int GetSourceByteSize( const CXXRecordDecl* CE,  const MatchFinder::MatchResult& Result)
 	{
 		bool invalid = false;
-		const char* start = Result.SourceManager->getCharacterData(CE->getLocStart(), &invalid);
-		const char* end = Result.SourceManager->getCharacterData(CE->getInnerLocStart(), &invalid);
-		mTmpString.clear();
-		if(!invalid && (end > start) && (end - start) < 1256)
-		{
-			while(start <= end)
-			{
-				mTmpString.push_back(*start++);
-			}
-		}
+		const char* start = Result.SourceManager->getCharacterData(CE->getOuterLocStart(), &invalid);
+		const char* end = Result.SourceManager->getCharacterData(CE->getLocEnd(), &invalid);
+		return static_cast<int> (end-start);
+
 	}
 
 	void DumpAllToJSON(sjp::JSONObjectIO* json) const
@@ -298,14 +294,18 @@ int RunOnSourceFile(std::string home_dir, std::string absolute_file, ToolTemplat
 
 void RunOnAllSourceFiles(const sjp::CompilationDatabase& files, ToolTemplateCallback& callback )
 {
-
+	int count = 0;
+	const int total = static_cast<int>(files.Size());
 	for (auto it = files.Begin(); it !=  files.End(); ++it)
 	{
 		auto opts = it->GetOptions();
-		for (size_t i = 0; i < opts.size(); i++)
-		{
-			printf("Option: %s\n", opts.at(i));
-		}
+		++count;
+		printf("##################################################################\n");
+		printf("##################################################################\n\n");
+		printf("                         % 5d/%-5d                          \n", count, total);
+		printf("\n##################################################################\n");
+		printf("##################################################################\n");
+
 		RunOnSourceFile(it->mHomeDir, it->mFileName, callback);
 	}
 
