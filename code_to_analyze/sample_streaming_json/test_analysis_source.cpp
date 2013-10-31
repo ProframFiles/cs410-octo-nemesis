@@ -17,7 +17,7 @@ private:
 };
 
 
-class NotDerived
+class MemberDerived
 {
 private:
 	Base mNotDerivedMember;

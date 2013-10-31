@@ -89,7 +89,6 @@ struct ClassRecord
 		}
 		json->EndCurrent();
 		json->EndCurrent();
-
 	}
 
 };
@@ -97,6 +96,13 @@ struct ClassRecord
 
 namespace
 {
+
+struct TempIndex
+{
+	size_t mPermIdx;
+	const CXXRecordDecl* mDecl;
+};
+
 class ToolTemplateCallback : public MatchFinder::MatchCallback
 {
 public:
@@ -113,56 +119,55 @@ public:
 			&& !CE->isInjectedClassName()
 			&& CE->isCanonicalDecl())
 		{
-			ProcessRecordDecl(CE);
+			const CXXRecordDecl* def = CE->getDefinition();
+			if(def) ProcessRecordDecl(def);
 		}
 	}
 
 	void ProcessRecordDecl(const CXXRecordDecl* CE)
 	{
-		for (size_t i = 0; i < mClassRecords.size(); i++)
-		{
-			CXXBasePaths paths;
-			if(CE->isDerivedFrom(mDecls.at(i), paths))
-			{
-				// are we immediately descended?
-				if(paths.begin()->size() < 2)
-				{
-					mClassRecords.at(i).mChildren.push_back(mClassRecords.size());
-				}
-			}
-		}
-		mDecls.push_back(CE);
-		mClassRecords.emplace_back();
-		ClassRecord& cr = mClassRecords.back();
 		mTmpSS.clear();
-		raw_svector_ostream sout(mTmpSS);
-		cr.mName = CE->getName();
-		CE->printQualifiedName(sout);
-		PrintTemplateParams(CE->getDescribedClassTemplate(), sout);
-		StringRef name = sout.str();
-		cr.mFullname = std::string(name.data(), name.size());
-
-		mTmpSS.clear();
-		
 		index::generateUSRForDecl(CE, mTmpSS);
-		cr.mUSR = std::string(&mTmpSS[0], mTmpSS.size());
-		mIndexMap.insert(std::make_pair(cr.mUSR, mClassRecords.size()-1));
-	}
+		std::string USR = std::string(&mTmpSS[0], mTmpSS.size());
+		std::unordered_map<std::string, size_t>::const_iterator find_it = mIndexMap.find(USR);
+		// is this a new thing? then insert it into the map
+		if(find_it == mIndexMap.end())
+		{	
+			IterateOverParents(CE, mClassRecords.size());
+			IterateOverFields(CE, mClassRecords.size());
 
-	void PrintTemplateParams(const ClassTemplateDecl*  TD, raw_svector_ostream& sout)
-	{
-		if(TD)
+			mDecls.emplace_back();
+			mDecls.back().mDecl = CE;
+			mDecls.back().mPermIdx = mClassRecords.size();
+			mClassRecords.emplace_back();
+			ClassRecord& cr = mClassRecords.back();
+			
+			
+
+			mTmpSS.clear();
+			raw_svector_ostream sout(mTmpSS);
+			cr.mName = CE->getName();
+			CE->printQualifiedName(sout);
+			PrintTemplateParams(CE->getDescribedClassTemplate(), sout);
+			StringRef name = sout.str();
+			cr.mFullname = std::string(name.data(), name.size());
+			cr.mUSR = USR;
+			mIndexMap.insert(std::make_pair(USR, mClassRecords.size()-1));
+			mPointerMap.insert(std::make_pair(CE, mClassRecords.size()-1));
+		}
+		
+		else
 		{
-			const TemplateParameterList* TP = TD->getTemplateParameters();
-			ArrayRef<const NamedDecl*> param_array = TP->asArray();
-			sout << '<';
-			for (size_t i = 0; i < param_array.size(); i++)
-			{
-				param_array[i]->printQualifiedName(sout);
-			}
-			sout << '>';
+			// if it's not new, refresh the pointer for this traversal
+			const CXXRecordDecl* prev = CE->getCanonicalDecl();
+			mDecls.emplace_back();
+			mDecls.back().mDecl = CE;
+			mDecls.back().mPermIdx = find_it->second;
+			mPointerMap.insert(std::make_pair(CE, find_it->second));
 		}
 	}
+
+	
 
 	void PrintSource(const std::string& json_label, const CXXRecordDecl* CE,  const MatchFinder::MatchResult& Result)
 	{
@@ -185,66 +190,125 @@ public:
 		{
 			mClassRecords.at(i).DumpToJSON(json, mClassRecords);
 		}
+	}
+
+	void Cleanup()
+	{
+		mDecls.clear();
+		mPointerMap.clear();
+	}
+private:
+
+	void IterateOverParents(const CXXRecordDecl* CE, size_t index)
+	{
+		for (auto it = mDecls.begin(); it != mDecls.end(); ++it)
+		{
+			CXXBasePaths paths;
+			size_t item_index = it->mPermIdx;
+			if( CE->isDerivedFrom(it->mDecl, paths))
+			{
+				// are we immediately descended
+				if(paths.begin()->size() < 2)
+				{
+					mClassRecords.at(item_index).mChildren.push_back(index);
+				}
+			}
+		}
+	}
+
+	void IterateOverFields(const CXXRecordDecl* def, size_t index)
+	{
+		if(def)
+		{
+			// for each field, find the type
+			// and then decide whether it's a complete type, and then 
+			// decide whether we've encountered it before 
+			for (RecordDecl::field_iterator i = def->field_begin(); i != def->field_end(); ++i)
+			{
+				QualType qt = i->getType().getCanonicalType();
+				const Type* t = qt.getTypePtrOrNull();
+				if(t != NULL)
+				{
+					NamedDecl* parent_decl = NULL;
+					NamedDecl** decl_ptr = &parent_decl;
+					t->isIncompleteType(decl_ptr);
+					auto found_idx = mPointerMap.find(parent_decl);
+					if(found_idx != mPointerMap.end())
+					{
+						mClassRecords.at(found_idx->second).mChildren.push_back(index);
+					}
+				}
+			}
+		}
 		
 	}
 
-private:
-	
+	void PrintTemplateParams(const ClassTemplateDecl*  TD, raw_svector_ostream& sout)
+	{
+		if(TD)
+		{
+			const TemplateParameterList* TP = TD->getTemplateParameters();
+			ArrayRef<const NamedDecl*> param_array = TP->asArray();
+			sout << '<';
+			for (size_t i = 0; i < param_array.size(); i++)
+			{
+				if(i >0 ) sout << ", ";
+				param_array[i]->printQualifiedName(sout);
+			}
+			sout << '>';
+		}
+	}
+	std::unordered_map<const void*, size_t> mPointerMap;
 	std::unordered_map<std::string, size_t> mIndexMap;
 	std::vector<ClassRecord> mClassRecords;
-	std::vector<const CXXRecordDecl*> mDecls;
+	std::vector<TempIndex> mDecls;
 	SmallVector<char, 1024> mTmpSS;
 	std::string mTmpString;
 };
 
 
-} // end anonymous namespace
+} 
 
-// Set up the command line options
-cl::opt<std::string> BuildPath(
-		cl::Positional,
-		cl::desc("<build-path>"));
+int RunOnSourceFile(std::string home_dir, std::string absolute_file, ToolTemplateCallback& callback)
+{	
 
-cl::list<std::string> SourcePaths(
-		cl::Positional,
-		cl::desc("<source0> [... <sourceN>]"),
-		cl::OneOrMore);
-
-int RunOnSourceFile(std::string home_dir, std::string absolute_file, sjp::JSONObjectIO* json_out)
-{
-	json_out->StartObject("root");
-	
 	const char*  dir_input[3] = {"tool-template", home_dir.c_str(), absolute_file.c_str()};
 	int num_args = 3;
 	std::string ErrorMessage;
 
-	cl::ParseCommandLineOptions(num_args, dir_input);
-
 	llvm::OwningPtr<CompilationDatabase> Compilations(
-			CompilationDatabase::autoDetectFromDirectory(BuildPath, ErrorMessage));
+			CompilationDatabase::autoDetectFromDirectory(home_dir, ErrorMessage));
 
 	if(Compilations)
 	{
-
-		RefactoringTool Tool(*Compilations, SourcePaths);
+		ArrayRef<std::string> source(&absolute_file, 1);
+		RefactoringTool Tool(*Compilations, source);
 		ast_matchers::MatchFinder Finder;
 
-		ToolTemplateCallback Callback;
 		DeclarationMatcher decl_match = recordDecl().bind("statementer");
-		Finder.addMatcher(decl_match, &Callback);
+		Finder.addMatcher(decl_match, &callback);
 		
 		FrontendActionFactory* factory = newFrontendActionFactory(&Finder);
 
 		Tool.run(factory);
-		Callback.DumpAllToJSON(json_out);
-
+		callback.Cleanup();
 	}
-	else
-	{
-		json_out->AddValue("tool error", ErrorMessage);
-	}
-	json_out->EndCurrent();
 	return 0;
+}
+
+void RunOnAllSourceFiles(const sjp::CompilationDatabase& files, ToolTemplateCallback& callback )
+{
+
+	for (auto it = files.Begin(); it !=  files.End(); ++it)
+	{
+		auto opts = it->GetOptions();
+		for (size_t i = 0; i < opts.size(); i++)
+		{
+			printf("Option: %s\n", opts.at(i));
+		}
+		RunOnSourceFile(it->mHomeDir, it->mFileName, callback);
+	}
+
 }
 
 #ifdef ANALYZER_STANDALONE
@@ -252,24 +316,18 @@ int RunOnSourceFile(std::string home_dir, std::string absolute_file, sjp::JSONOb
 int main(int argc, const char **argv) 
 {
 	std::string arg1 = argv[1];
-	std::string arg2 = argv[2];
-  	printf("got 2 arguments: \n\t%s\n\t%s\n", arg1.c_str(), arg2.c_str() );
+  	printf("got 1 arguments: \n\t%s\n", arg1.c_str() );
 	
-	sjp::CompilationDatabase CompilationDB;
-	sjp::CompilationDatabaseReader comp_reader(&CompilationDB);
+	sjp::CompilationDatabase compilationDB;
+	sjp::CompilationDatabaseReader comp_reader(&compilationDB);
 	sjp::JSONReader<sjp::CompilationDatabaseReader> json_reader(comp_reader);
-	json_reader.parseFile("compile_commands.json");
+	json_reader.parseFile(arg1);
 
-	const std::vector<const char*>* opts = CompilationDB.GetOptions("2");
-	for (size_t i = 0; i < opts->size(); i++)
-	{
-		printf("Option: %s\n", opts->at(i));
-	}
+	ToolTemplateCallback callback;
 
-
-	
+	RunOnAllSourceFiles( compilationDB, callback);
 	sjp::JSONObjectIO json_out;
-	RunOnSourceFile( arg1, arg2, &json_out);
+	callback.DumpAllToJSON(&json_out);
 	std::ofstream fout("test_analysis_out.json", std::ios::binary);
 	fout << json_out.ToString();
 	return 0;

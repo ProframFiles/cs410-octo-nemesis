@@ -26,13 +26,15 @@ public:
 		return mHomeDir < other.mHomeDir;
 	}
 
-	void GetOptions(std::vector<const char*>& opts) const
+	std::vector<const char*> GetOptions() const
 	{
-		opts.clear();
+		std::vector<const char*> opts;
+		opts.reserve(mOptionIndex.size());
 		for (size_t i = 0; i < mOptionIndex.size(); i++)
 		{
 			opts.push_back(&mOptionData[0] + mOptionIndex.at(i));
 		}
+		return opts;
 	}
 
 	void SetOptions(const std::string& option_string)
@@ -60,7 +62,6 @@ public:
 			else if(option_string[i] == '"' || option_string[i] == '\'') in_string = !in_string;
 		}
 		mOptionData.push_back('\0');
-
 	}
 
 	std::string mFileName;
@@ -73,14 +74,18 @@ private:
 class CompilationDatabase
 {
 public:
-	CompilationDatabase() 
+	CompilationDatabase()
 		: mFiles() 
 	{}
 
-	const std::vector<const char*>* GetOptions(const std::string& file)
+	std::set<CompilationFile>::const_iterator Begin() const
 	{
-		mFiles.begin()->GetOptions(mOptionStrings);
-		return &mOptionStrings;
+		return mFiles.begin();
+	}
+
+	std::set<CompilationFile>::const_iterator End() const
+	{
+		return mFiles.end();
 	}
 
 	void AddFile(const CompilationFile& file)

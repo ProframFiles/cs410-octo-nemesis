@@ -2,6 +2,7 @@ set(SRC_ROOT ../../../../../../src/)
 
 add_clang_executable(analyzer
 	dummy.cpp
+  ${SRC_ROOT}CompilationDatabase.hpp
   ${SRC_ROOT}analyzer.cpp
   ${SRC_ROOT}analyzer.hpp
   ${SRC_ROOT}node_includes.hpp
