@@ -33,7 +33,3 @@
 //        xargs tool-template /path/to/build
 //
 //===----------------------------------------------------------------------===//
-
-#define ANALYZER_STANDALONE
-#include "analyzer.cpp"
-#undef ANALYZER_STANDALONE

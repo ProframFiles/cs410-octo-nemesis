@@ -77,26 +77,37 @@ public:
 		const RecordDecl* CE = Result.Nodes.getNodeAs<RecordDecl>("statementer");
 		if(CE != NULL && (clang::SrcMgr::C_User == Result.SourceManager->getFileCharacteristic(CE->getLocStart())))
 		{
+			const bool orig = CE->isCanonicalDecl();
+			StringRef name = CE->getName();
 			bool invalid = 0;
-		
-			const char* start = Result.SourceManager->getCharacterData(CE->getLocStart(), &invalid);
-			const char* end = Result.SourceManager->getCharacterData(CE->getLocEnd(), &invalid);
-			if(!invalid && (end > start) && (end - start) < 256)
+			if(orig && !name.empty())
 			{
-				mTmpString.clear();
+				mJSON->StartObject(std::string(name.data()));
 				
-				while(start <= end)
+				const char* start = Result.SourceManager->getCharacterData(CE->getLocStart(), &invalid);
+				const char* end = Result.SourceManager->getCharacterData(CE->getLocEnd(), &invalid);
+
+				if(!invalid && (end > start) && (end - start) < 256)
 				{
-					mTmpString.push_back(*start++);
+					mTmpString.clear();
+				
+					while(start <= end)
+					{
+						mTmpString.push_back(*start++);
+					}
+					mJSON->AddValue(std::string("source"), mTmpString);
 				}
-				mJSON->AddValue(mTmpString);
+				clang::index::generateUSRForDecl(CE, mTmpUSR);
+				mJSON->AddValue(std::string("USR"), std::string(&mTmpUSR[0]));
+				mJSON->EndCurrent();
 			}
 			
 		}
 	}
 
 private:
-
+	
+	SmallVector<char, 1024> mTmpUSR;
 	std::string mTmpString;
 	sjp::JSONObjectIO* mJSON;
 };
@@ -169,7 +180,6 @@ int main(int argc, const char **argv)
 		printf("Option: %s\n", opts->at(i));
 	}
 
-	std::ifstream fin("compile_commands.json", std::ios::binary);
 
 	
 	sjp::JSONObjectIO json_out;

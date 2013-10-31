@@ -306,7 +306,7 @@ public:
 		}
 
 		return os;
-	};
+	}
 	tJSONArray mArrayValue;
 };
 
@@ -400,7 +400,7 @@ public:
 		}
 
 		return os;
-	};
+	}
 
 	const tStringContainer& mMainString;
 	tJSONMap mObjectValue;

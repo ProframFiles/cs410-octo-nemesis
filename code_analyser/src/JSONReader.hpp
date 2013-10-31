@@ -33,24 +33,44 @@ int stringToNumber(const char* p, double& r, const unsigned int maxChars);
 template <class tCallback>
 class JSONReader;
 
-class JSONException: public std::runtime_error
+class JSONExceptionImpl: public std::runtime_error
 {
 public:
-	explicit JSONException(const std::string& _Message) : std::runtime_error("dsf" + _Message) {};
-	explicit JSONException(const char* _Message) : std::runtime_error(_Message) {};
-	template <class tCallback>
-	explicit JSONException(const std::string& _Message, JSONReader<tCallback>* jsr) : std::runtime_error("dsf" + _Message) {};
-	template <class tCallback>
-	explicit JSONException(const char* _Message, JSONReader<tCallback>* jsr) : std::runtime_error(_Message) {};
+	explicit JSONExceptionImpl(const std::string& _Message) : std::runtime_error("dsf" + _Message) {};
+	explicit JSONExceptionImpl(const char* _Message) : std::runtime_error(_Message) {};
+	static void PrintError(const char* msg) { printf("JSON EXception: %s\n", msg);}
+	static void PrintError(const std::string& msg) { printf("JSON EXception: %s\n", msg.c_str());} 
 };
+
+#ifdef SJP_ENABLE_EXCEPTIONS
+#define THROW_JSONException(msg) throw JSONExceptionImpl(msg)
+#else
+#define THROW_JSONException(msg) JSONExceptionImpl::PrintError(msg)
+#endif
 
 template<class tCallbacks>
 class JSONReader
 {
 	enum parse_state {INITIAL, GETSTRING, GET_O_VALUE, GET_A_VALUE, DONE_A_VALUE, DONE_O_VALUE };
 public:
-	JSONReader(tCallbacks& callbacks) :  mLoc(0), mJsonStr(mString), mCallbacks(callbacks) { init();};
-	JSONReader(std::string& in, tCallbacks& callbacks) :  mLoc(0), mJsonStr(in), mCallbacks(callbacks) {init();};
+	JSONReader(tCallbacks& callbacks) 
+		: mOwnedString()  
+		, mLoc(0)
+		, mSize(0)
+		, mCharArray(0)
+		, mCallbacks(callbacks)
+		, mTmpString()
+		
+	{ init();}
+	JSONReader(std::unique_ptr<std::string> in, tCallbacks& callbacks )
+		: mOwnedString(in)
+		, mLoc(0)
+		, mSize(mOwnedString->size())
+		, mCharArray(mOwnedString->empty() ? NULL : &(mOwnedString->at(0)))
+		, mCallbacks(callbacks)
+		, mTmpString()
+		
+	{ init(); }
 	~JSONReader() {init();};
 private:
 	inline void init()
@@ -58,10 +78,11 @@ private:
 		mTmpString.reserve(64);
 	}
 public:
-	void parse(std::string& in)
+	void parse(const std::string& in)
 	{
 		mLoc = 0;
-		mString = in;
+		mCharArray = &in.at(0);
+		mSize = in.size();
 		parse();
 	};
 	void parseFile(const char* in)
@@ -76,8 +97,6 @@ public:
 	};
 	void parse()
 	{
-		mCharArray = &mString[0];
-		mSize = mString.size();
 		mLoc = 0;
 		if(tryConsume('{'))
 		{
@@ -91,7 +110,7 @@ public:
 
 		else
 		{
-			throw JSONException("ok, didn't make it out of the gates");
+			THROW_JSONException("ok, didn't make it out of the gates");
 		}
 	};
 private:
@@ -187,7 +206,7 @@ private:
 				mLoc -= movePos;
 				mCallbacks.onValueInt(static_cast<int>(tmpDoub));
 			}
-			else { throw JSONException("failed number read"); }
+			else { THROW_JSONException("failed number read"); }
 		}
 	};
 	inline void consume(char c)
@@ -196,7 +215,7 @@ private:
 
 		if(mCharArray[mLoc] != c)
 		{
-			throw JSONException(std::string("Failed consume: expected ") + c + "but got " + mJsonStr.substr(mLoc, 1));
+			THROW_JSONException(std::string("Failed consume: expected ") + c + "but got " +mCharArray[mLoc]);
 		}
 
 		mLoc++;
@@ -246,18 +265,17 @@ private:
 	std::string& consumeString()
 	{
 		consume(_AKJ_QUOTE);
-		const size_t sz = mJsonStr.size();
 		size_t firstLoc = mLoc;
 		int escapes = 0;
 		while(mCharArray[mLoc] != '"')
 		{
-			while(mLoc < sz && mCharArray[mLoc] >= ' ' && mCharArray[mLoc] <= '~' && mCharArray[mLoc] != _AKJ_QUOTE && mCharArray[mLoc] != _AKJ_BACKSLASH)
+			while(mLoc < mSize && mCharArray[mLoc] >= ' ' && mCharArray[mLoc] <= '~' && mCharArray[mLoc] != _AKJ_QUOTE && mCharArray[mLoc] != _AKJ_BACKSLASH)
 			{
 				++mLoc;
 			}
-			if(mLoc >= mJsonStr.size())
+			if(mLoc >= mSize)
 			{
-				throw JSONException("Failed consumeString: unexpected end of input following ");
+				THROW_JSONException("Failed consumeString: unexpected end of input following ");
 			}
 
 			else if(mCharArray[mLoc] == _AKJ_BACKSLASH)
@@ -284,14 +302,14 @@ private:
 
 			if(thisChar < 0x20 || thisChar >= 0x90)
 			{
-				throw JSONException("string contains illegal character (char < 0x20)");
+				THROW_JSONException("string contains illegal character (char < 0x20)");
 			}
 
 			else if(thisChar == _AKJ_BACKSLASH)
 			{
 				firstLoc++;
 
-				switch(mJsonStr[firstLoc + i])
+				switch(mCharArray[firstLoc + i])
 				{
 				case(_AKJ_QUOTE) :
 					mTmpString[i] = _AKJ_QUOTE;
@@ -332,7 +350,7 @@ private:
 					break;
 
 				default:
-					throw JSONException("unrecognized escape sequence: \\");
+					THROW_JSONException("unrecognized escape sequence: \\");
 				}
 			}
 
@@ -348,124 +366,93 @@ private:
 	void file2String(const std::string& p)
 	{
 		std::ifstream fin;
-		mString.clear();
 
-		try
-		{
-			fin.open(p.c_str(), std::ios::binary);
-			fin.seekg(0, std::ios::end);
-			std::streamoff length = fin.tellg();
-			if(length < 0) { throw JSONException("file read error: stream offset<0", this); }
-			fin.seekg(0, std::ios::beg);
-			mString.resize(static_cast<size_t>(length) + 1);
-			fin.read(&mString[0], length);
-			fin.close();
-		}
 
-		catch(const char* str)
-		{
-			printf("File Read Exception %s \n", str);
-		}
+		fin.open(p.c_str(), std::ios::binary);
+		fin.seekg(0, std::ios::end);
+		std::streamoff length = fin.tellg();
+		if(length < 0) { THROW_JSONException("file read error: stream offset<0"); }
+		fin.seekg(0, std::ios::beg);
+
+		mOwnedString.reset(new std::string );
+		mOwnedString->resize(static_cast<size_t>(length) + 1);
+		mCharArray = &mOwnedString->at(0);
+		mSize = length;
+		fin.read(&mOwnedString->at(0), length);
+		fin.close();
 	}
-public:
-	void test(const std::string& in)
-	{
-		mJsonStr = in ;
-		//jsonStr[10]='u';
-		printf("parsing %s  \n", mJsonStr.c_str());
-		consume(':');
-		printf("consumed '%c', now at '%c' \n", ':', mJsonStr[mLoc]);
-		assert(tryConsume('s'));
-		printf("consumed '%c', now at '%c' \n", 's', mJsonStr[mLoc]);
-		assert(tryConsume('d'));
-		printf("consumed '%c', now at '%c' \n", 'd', mJsonStr[mLoc]);
-		consume('d');
-		printf("consumed '%c', now at '%c' \n", 'd', mJsonStr[mLoc]);
-		consume('f');
-		printf("consumed '%c', now at '%c' \n", 'f', mJsonStr[mLoc]);
-		consumeString();
-
-		if(mLoc == mJsonStr.length())
-		{
-			printf("consumed \"%s\", now at end \n", mTmpString.c_str());
-		}
-
-		else
-		{
-			printf("consumed \"%s\", now at _loc=%d of %d \n", mTmpString.c_str(), mLoc, mJsonStr.length());
-		}
-	};
 private:
-	tCallbacks& mCallbacks;
+	int stringToNumber(const char* p, double& r, const unsigned int maxChars)
+	{
+		r = 0.0;
+		bool neg = false;
+		bool isInt = true;
+		const char* initPtr = p;
+		const char* maxPtr = p + maxChars;
+		//skip other crap
+		while(p < maxPtr && ((*p < '0') || (*p > '9')) && (*p != '-')) { ++p; }
+
+		if(*p == '-')
+		{
+			neg = true;
+			++p;
+		}
+		while(p < maxPtr && *p >= '0' && *p <= '9')
+		{
+			r = (r * 10.0) + (*p - '0');
+			++p;
+		}
+		if(*p == '.')
+		{
+			double f = 0.0;
+			int n = 0;
+			++p;
+			while(p < maxPtr && *p >= '0' && *p <= '9')
+			{
+				f = (f * 10.0) + (*p - '0');
+				++p;
+				++n;
+			}
+			if(f != 0.0) { isInt = false; }
+			r += f / std::pow(10.0, n);
+		}
+		if((*p == 'e') || (*p == 'E'))
+		{
+			++p;
+			double e = 0.0;
+			bool expneg = false;
+			if(*p == '-')
+			{
+				expneg = true;
+				++p;
+			}
+			while(p < maxPtr && *p >= '0' && *p <= '9')
+			{
+				e = (e * 10.0) + (*p - '0');
+				++p;
+			}
+			if(expneg) { e = -e; }
+			r = r * pow(10.0, e);
+		}
+		if(neg)
+		{
+			r = -r;
+		}
+		if(p == maxPtr) { return 0; }
+		if(isInt) { return static_cast<int>(initPtr - p); }
+		return static_cast<int>(p - initPtr);
+	}
+
+	std::unique_ptr<std::string> mOwnedString;
 	size_t mLoc;
 	size_t mSize;
-	std::string mString;
 	const char* mCharArray;
-	std::string& mJsonStr;
+	tCallbacks& mCallbacks;
 	std::string mTmpString;
 };
 
 
-inline int stringToNumber(const char* p, double& r, const unsigned int maxChars)
-{
-	r = 0.0;
-	bool neg = false;
-	bool isInt = true;
-	const char* initPtr = p;
-	const char* maxPtr = p + maxChars;
-	//skip other crap
-	while(p < maxPtr && ((*p < '0') || (*p > '9')) && (*p != '-')) { ++p; }
 
-	if(*p == '-')
-	{
-		neg = true;
-		++p;
-	}
-	while(p < maxPtr && *p >= '0' && *p <= '9')
-	{
-		r = (r * 10.0) + (*p - '0');
-		++p;
-	}
-	if(*p == '.')
-	{
-		double f = 0.0;
-		int n = 0;
-		++p;
-		while(p < maxPtr && *p >= '0' && *p <= '9')
-		{
-			f = (f * 10.0) + (*p - '0');
-			++p;
-			++n;
-		}
-		if(f != 0.0) { isInt = false; }
-		r += f / std::pow(10.0, n);
-	}
-	if((*p == 'e') || (*p == 'E'))
-	{
-		++p;
-		double e = 0.0;
-		bool expneg = false;
-		if(*p == '-')
-		{
-			expneg = true;
-			++p;
-		}
-		while(p < maxPtr && *p >= '0' && *p <= '9')
-		{
-			e = (e * 10.0) + (*p - '0');
-			++p;
-		}
-		if(expneg) { e = -e; }
-		r = r * pow(10.0, e);
-	}
-	if(neg)
-	{
-		r = -r;
-	}
-	if(p == maxPtr) { return 0; }
-	if(isInt) { return static_cast<int>(initPtr - p); }
-	return static_cast<int>(p - initPtr);
-}
 }//end namespace jsp
 #undef _AKJ_WHITESPACE
 #undef _AKJ_QUOTE

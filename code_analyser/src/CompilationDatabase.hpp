@@ -39,7 +39,6 @@ public:
 	{
 		mOptionData.clear();
 		mOptionData.reserve(option_string.size()+16);
-		char sep = ' ';
 		bool in_string = false;
 		bool found_break = false;
 		for (size_t i = 0; i < option_string.length(); ++i)
@@ -50,7 +49,7 @@ public:
 				found_break = false;
 			}
 			mOptionData.push_back(option_string[i]);
-			if(!in_string && option_string[i] == ' ' || option_string[i] == '\t')
+			if(!in_string && (option_string[i] == ' ' || option_string[i] == '\t'))
 			{
 				mOptionData.back() = '\0';
 				mOptionIndex.push_back(static_cast<int>(mOptionData.size()));
