@@ -1,36 +1,7 @@
-//===---- tools/extra/ToolTemplate.cpp - Template for refactoring tool ----===//
+//===------------------Group 18 CPSC410 -- analyzer.cpp -------------------===//
 //
-//                     The LLVM Compiler Infrastructure
-//
-// This file is distributed under the University of Illinois Open Source
-// License. See LICENSE.TXT for details.
-//
-//===----------------------------------------------------------------------===//
-//
-//  This file implements an empty refactoring tool using the clang tooling.
-//  The goal is to lower the "barrier to entry" for writing refactoring tools.
-//
-//  Usage:
-//  tool-template <cmake-output-dir> <file1> <file2> ...
-//
-//  Where <cmake-output-dir> is a CMake build directory in which a file named
-//  compile_commands.json exists (enable -DCMAKE_EXPORT_COMPILE_COMMANDS in
-//  CMake to get this output).
-//
-//  <file1> ... specify the paths of files in the CMake source tree. This path
-//  is looked up in the compile command database. If the path of a file is
-//  absolute, it needs to point into CMake's source tree. If the path is
-//  relative, the current working directory needs to be in the CMake source
-//  tree and the file must be in a subdirectory of the current working
-//  directory. "./" prefixes in the relative files will be automatically
-//  removed, but the rest of a relative path must be a suffix of a path in
-//  the compile command line database.
-//
-//  For example, to use tool-template on all files in a subtree of the
-//  source tree, use:
-//
-//    /path/in/subtree $ find . -name '*.cpp'|
-//        xargs tool-template /path/to/build
+//  When run as a standalone exe, takes one command line argument:
+//  the compile_commands.json file of the codeabase to analyse
 //
 //===----------------------------------------------------------------------===//
 
@@ -203,8 +174,9 @@ public:
 		mPointerMap.clear();
 	}
 
-	int GetNumCallBacks()const { return static_cast<int>(mTotalCallbacks);}
-	int GetNumlinks()const 
+	int GetNumCallBacks() const { return static_cast<int>(mTotalCallbacks);}
+
+	int GetNumlinks() const 
 	{ 
 		int count = 0;
 		for (size_t c = 0; c < mClassRecords.size() ; c++)
@@ -217,6 +189,7 @@ public:
 		}
 		return count;	
 	}
+
 	int GetNumClasses() const { return static_cast<int>(mClassRecords.size());}
 
 private:
@@ -307,26 +280,28 @@ private:
 
 int RunOnSourceFile(std::string home_dir, std::string absolute_file, ToolTemplateCallback& callback)
 {	
-
-	const char*  dir_input[3] = {"tool-template", home_dir.c_str(), absolute_file.c_str()};
-	int num_args = 3;
 	std::string ErrorMessage;
 
+	// point llvm towards the compilation commands
 	llvm::OwningPtr<CompilationDatabase> Compilations(
 			CompilationDatabase::autoDetectFromDirectory(home_dir, ErrorMessage));
 
 	if(Compilations)
 	{
+		// input our single source file
 		ArrayRef<std::string> source(&absolute_file, 1);
 		RefactoringTool Tool(*Compilations, source);
+		
+		// ask for callbacks on evvery C++ class declaration
 		ast_matchers::MatchFinder Finder;
-
 		DeclarationMatcher decl_match = recordDecl().bind("statementer");
 		Finder.addMatcher(decl_match, &callback);
-		
 		FrontendActionFactory* factory = newFrontendActionFactory(&Finder);
 
+		// generate & traverse the AST
 		Tool.run(factory);
+
+		// cleanup references that only live as long as the AST
 		callback.Cleanup();
 	}
 	return 0;
@@ -363,10 +338,16 @@ int main(int argc, const char **argv)
 	sjp::JSONReader<sjp::CompilationDatabaseReader> json_reader(comp_reader);
 	json_reader.parseFile(arg1);
 
+	// the callback class holds info between calls to analyze multiple source files
 	ToolTemplateCallback callback;
+	
+	// time the run, for curiosities sake
 	akj::cStopWatch sw;
 	RunOnAllSourceFiles( compilationDB, callback);
 	sw.Stop();
+	
+	// callback now has the collected analysis information, so dump to disk
+	
 	sjp::JSONObjectIO json_out;
 	json_out.StartObject("root");
 	json_out.StartObject("doom3");
@@ -381,6 +362,8 @@ int main(int argc, const char **argv)
 	json_out.EndCurrent();
 	std::ofstream fout("test_analysis_out.json", std::ios::binary);
 	fout << json_out.ToString();
+
+
 	return 0;
 }
 #endif
