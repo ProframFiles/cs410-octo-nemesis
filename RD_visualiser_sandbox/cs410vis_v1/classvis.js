@@ -16,7 +16,7 @@ var nodes_string = "[";
 var i = 0;
 for (var w in json) 
 {
-	nodes_string += "{id: " + i + "},";
+	nodes_string += "{\"id\": " + i + "},";
 	i++;
 }
 // Remove the last comma
@@ -34,11 +34,11 @@ for (var x in json)
 {
 	for (var y in json[x].childArray)
 	{
-		links_string += "{source: nodes[" + "1" + "], target: nodes[" + j + "], left: false, right: true },";
+		links_string += "{\"source\": \"nodes[" + "1" + "]\", \"target\": \"nodes[" + j + "]\", \"left\": false, \"right\": true },";
 	}
 	for (var z in json[x].connectionArray)
 	{
-		links_string += "{source: nodes[" + "1" + "], target: nodes[" + j + "], left: false, right: true },";
+		links_string += "{\"source\": \"nodes[" + "1" + "]\", \"target\": \"nodes[" + j + "]\", \"left\": false, \"right\": true },";
 	}
 	
 	j++;
@@ -48,15 +48,12 @@ links_string = links_string.substring(0, links_string.length-1);
 links_string += "]";
 alert(links_string);
 /////////////////////////
-var nodes = nodes_string.split(","), links = links_string.split("},");
-for (var abc = 0; abc < nodes.length; abc++)
-{
-	alert(nodes[abc]);
-}
-for (var def = 0; def < links.length; def++)
-{
-	alert(links[def]);
-}
+var nodes = nodes_string, links = links_string;
+var final_json_string = "{" + "\"nodes\":" + nodes_string + "," + "\"links\":" + links_string + "}";
+alert(final_json_string);
+alert("parsing...");
+var final_json = JSON.parse(final_json_string);
+alert("success");
 //////////////////////////////////////////////////
 // set up SVG for D3
 var width  = 960,
