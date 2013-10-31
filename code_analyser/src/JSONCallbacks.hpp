@@ -383,7 +383,10 @@ public:
 				{
 					i->second->StreamOut(os, 0);
 				}
-				os.put(',');
+				if(iteration < num_members)
+				{
+					os.put(',');
+				}
 				os.put('\n');
 				iteration++;
 			}

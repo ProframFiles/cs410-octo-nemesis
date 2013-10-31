@@ -58,6 +58,8 @@
 #include "JSONCallbacks.hpp"
 #include "CompilationDatabase.hpp"
 #include <unordered_map>
+#include <unordered_set>
+#include "stopwatch.hpp"
 
 
 
@@ -74,20 +76,22 @@ struct ClassRecord
 	std::string mUSR;
 	std::string mFullname;
 	std::string mName;
-	std::vector<size_t> mChildren;
+	std::unordered_set<size_t> mChildren;
+	double mLookupTime;
 	int mDeclarationBytes;
 
 	void DumpToJSON(sjp::JSONObjectIO* json, const std::vector<ClassRecord>& parent_array) const
 	{
 		json->StartObject(mUSR);
-		json->AddValue(std::string("qualified name"), mFullname);
+		json->AddValue(std::string("qualifiedName"), mFullname);
 		json->AddValue(std::string("name"), mName);
 		json->AddValue(std::string("USR"), mUSR);
-		json->AddValue(std::string("DeclarationSize"), mDeclarationBytes);
+		json->AddValue(std::string("declarationSize"), mDeclarationBytes);
+		json->AddValue(std::string("timeSpent"), mLookupTime);
 		json->StartArray(std::string("childArray"));
-		for (size_t i = 0; i < mChildren.size(); ++i)
+		for (auto i = mChildren.begin(); i != mChildren.end(); ++i)
 		{
-			json->AddValue( parent_array.at(mChildren.at(i)).mUSR );
+			json->AddValue( parent_array.at(*i).mUSR );
 		}
 
 		json->EndCurrent();
@@ -111,10 +115,14 @@ class ToolTemplateCallback : public MatchFinder::MatchCallback
 public:
 	ToolTemplateCallback() 
 		: mClassRecords()
+		, mTotalCallbacks(0)
+		, mNumLinks(0)
 	{mClassRecords.reserve(1024);}
 
 	virtual void run(const MatchFinder::MatchResult& Result)
 	{
+		mSW.Start();
+		++mTotalCallbacks;
 		const CXXRecordDecl* CE = Result.Nodes.getNodeAs<CXXRecordDecl>("statementer");
 		const CXXRecordDecl* def;
 		if(CE != NULL 
@@ -156,6 +164,7 @@ public:
 			cr.mUSR = USR;
 			mIndexMap.insert(std::make_pair(USR, mClassRecords.size()-1));
 			mPointerMap.insert(std::make_pair(CE, mClassRecords.size()-1));
+			cr.mLookupTime = mSW.Stop();
 		}
 		
 		else
@@ -193,6 +202,23 @@ public:
 		mDecls.clear();
 		mPointerMap.clear();
 	}
+
+	int GetNumCallBacks()const { return static_cast<int>(mTotalCallbacks);}
+	int GetNumlinks()const 
+	{ 
+		int count = 0;
+		for (size_t c = 0; c < mClassRecords.size() ; c++)
+		{
+			const std::unordered_set<size_t>& kids = mClassRecords.at(c).mChildren;
+			for (auto i = kids.begin(); i != kids.end(); ++i)
+			{
+				++count;
+			}
+		}
+		return count;	
+	}
+	int GetNumClasses() const { return static_cast<int>(mClassRecords.size());}
+
 private:
 
 	void IterateOverParents(const CXXRecordDecl* CE, size_t index)
@@ -203,10 +229,20 @@ private:
 			size_t item_index = it->mPermIdx;
 			if( CE->isDerivedFrom(it->mDecl, paths))
 			{
-				// are we immediately descended
-				if(paths.begin()->size() < 2)
+				bool found = false;
+				// are we immediately descended?
+				for (auto p = paths.begin(); p != paths.end(); ++p)
 				{
-					mClassRecords.at(item_index).mChildren.push_back(index);
+					if(p->size()<2)
+					{
+						found = true;
+						break;
+					}
+
+				}
+				if(found)
+				{
+					mClassRecords.at(item_index).mChildren.insert(index);
 				}
 			}
 		}
@@ -231,7 +267,7 @@ private:
 					auto found_idx = mPointerMap.find(parent_decl);
 					if(found_idx != mPointerMap.end())
 					{
-						mClassRecords.at(found_idx->second).mChildren.push_back(index);
+						mClassRecords.at(found_idx->second).mChildren.insert(index);
 					}
 				}
 			}
@@ -260,6 +296,10 @@ private:
 	std::vector<TempIndex> mDecls;
 	SmallVector<char, 1024> mTmpSS;
 	std::string mTmpString;
+	size_t mTotalCallbacks;
+	size_t mNumLinks;
+	akj::cStopWatch mSW;
+	
 };
 
 
@@ -324,10 +364,21 @@ int main(int argc, const char **argv)
 	json_reader.parseFile(arg1);
 
 	ToolTemplateCallback callback;
-
+	akj::cStopWatch sw;
 	RunOnAllSourceFiles( compilationDB, callback);
+	sw.Stop();
 	sjp::JSONObjectIO json_out;
+	json_out.StartObject("root");
+	json_out.StartObject("doom3");
 	callback.DumpAllToJSON(&json_out);
+	json_out.EndCurrent();
+	json_out.StartObject("stats");
+	json_out.AddValue(std::string("total callbacks"), callback.GetNumCallBacks());
+	json_out.AddValue(std::string("total classes"), callback.GetNumClasses());
+	json_out.AddValue(std::string("total links"), callback.GetNumlinks());
+	json_out.AddValue(std::string("total time"), sw.Read());
+	json_out.EndCurrent();
+	json_out.EndCurrent();
 	std::ofstream fout("test_analysis_out.json", std::ios::binary);
 	fout << json_out.ToString();
 	return 0;
