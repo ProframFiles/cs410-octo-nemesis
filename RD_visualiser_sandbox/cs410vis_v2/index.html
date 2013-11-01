@@ -16,35 +16,63 @@
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
-
-var width = 960,
-    height = 500;
+////////////////////////////////////////////////////////////////////////////////////////////////////
+var jsonstring = "{\"nodes\": [";
+var tempjson;
+d3.json("test_analysis_out.json", function(error, json) 
+{
+	for (var prop in json["doom3"]) 
+	{
+		jsonstring += "{\"name\":\"" + prop + "\",\"group\":1},";
+	}
+	jsonstring = jsonstring.substring(0, jsonstring.length - 1);
+	jsonstring += "]";
+	jsonstring += ",\"links\": [";
+	var i = 0;
+	for (var prop2 in json["doom3"])
+	{
+		var array = json["doom3"][prop2]["childIndexArray"];
+		for(var j in array)
+		{
+			var id = j;
+			jsonstring += "{\"source\":" + i + ",\"target\":" + id + ",\"value\":1},";
+		}
+		i++;
+	}
+	jsonstring = jsonstring.substring(0, jsonstring.length - 1);
+	jsonstring += "]}";
+	tempjson = JSON.parse(jsonstring);
+});
+	alert("Do not remove this alert statement; it stops working if you remove it (I don't know why)");
+////////////////////////////////////////////////////////////////////////////////////////////////////
+var width = 3000,
+    height = 2000;
 
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-120)
-    .linkDistance(30)
+    .charge(-100)
+    .linkDistance(20)
     .size([width, height]);
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-d3.json("miserables.json", function(error, graph) {
+//d3.json("miserables.json", function(error, graph) {
   force
-      .nodes(graph.nodes)
-      .links(graph.links)
+      .nodes(tempjson.nodes)
+      .links(tempjson.links)
       .start();
 
   var link = svg.selectAll(".link")
-      .data(graph.links)
+      .data(tempjson.links)
     .enter().append("line")
       .attr("class", "link")
       .style("stroke-width", function(d) { return Math.sqrt(d.value); });
 
   var node = svg.selectAll(".node")
-      .data(graph.nodes)
+      .data(tempjson.nodes)
     .enter().append("circle")
       .attr("class", "node")
       .attr("r", 5)
@@ -63,6 +91,6 @@ d3.json("miserables.json", function(error, graph) {
     node.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
   });
-});
+/*});*/
 
 </script>
