@@ -46,7 +46,6 @@ function process_json (error, json)
 }
 var error = "";
 process_json(error, d3d);
-	alert("Do not remove this alert statement; it stops working if you remove it (I don't know why)");
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 var width = 3000,
     height = 2000;
@@ -54,15 +53,15 @@ var width = 3000,
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-100)
+    .charge(-80)
     .linkDistance(20)
+    .gravity(0.2)
     .size([width, height]);
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-//d3.json("miserables.json", function(error, graph) {
   force
       .nodes(tempjson.nodes)
       .links(tempjson.links)
@@ -94,6 +93,5 @@ var svg = d3.select("body").append("svg")
     node.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
   });
-/*});*/
 
 </script>
