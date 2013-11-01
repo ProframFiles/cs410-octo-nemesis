@@ -6,26 +6,33 @@
   stroke: #fff;
   stroke-width: 1.5px;
 }
-
+.leaf {
+  stroke: #fff;
+  stroke-width: 2.5px;
+  fill: none;
+}
 .link {
-  stroke: #999;
-  stroke-opacity: .6;
+  stroke: green;
+  stroke-opacity: .3;
 }
 
 </style>
 <body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="test_analysis_out.json"></script>
 <script>
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 var jsonstring = "{\"nodes\": [";
-var tempjson;
+var node_array = [];
+var link_array = [];
+var root_array = [];
+var leaf_array = [];
 function process_json (error, json) 
 {
 	for (var prop in json["doom3"]) 
 	{
 		jsonstring += "{\"name\":\"" + prop + "\",\"group\":1},";
 	}
+
 	jsonstring = jsonstring.substring(0, jsonstring.length - 1);
 	jsonstring += "]";
 	jsonstring += ",\"links\": [";
@@ -44,18 +51,74 @@ function process_json (error, json)
 	jsonstring += "]}";
 	tempjson = JSON.parse(jsonstring);
 }
+function build_parent_array(leaf)
+{
+  var array = new [];
+
+  while(leaf.parentArray.length > 1)
+  {
+      leaf = leaf.parentArray[0]
+  } 
+}
+function process_json_easy (error, json) 
+{
+  for (var prop in json["doom3"]) 
+  {
+    var this_class = json["doom3"][prop];
+    node_array[this_class.index] = {name : this_class.qualifiedName, group : this_class.childArray.length,
+                                    leaf : false, root : false };
+    
+    if(this_class.parentArray.length ===0 && this_class.childIndexArray.length > 0){
+      root_array.push(node_array[this_class.index]);
+      node_array[this_class.index].root = true;
+   }
+
+    if(this_class.childIndexArray.length === 0){
+      node_array[this_class.index].leaf = true;
+      leaf_array.push(node_array[this_class.index]);
+      var leaf = this_class;
+      if (leaf.parentArray !== undefined &&leaf.parentArray.length > 0)
+      {
+        node_array[this_class.index].parents = [];
+        node_array[this_class.index].parents.push(node_array[leaf.index]);
+        while(leaf.parentArray !== undefined && leaf.parentArray.length > 0)
+        {
+         leaf = json["doom3"][leaf.parentArray[0]];
+         if(leaf !== undefined && node_array[leaf.index] !== undefined)
+         {
+            node_array[this_class.index].parents.push(node_array[leaf.index]);
+            node_array[this_class.index].parents.push({});
+          }
+        }
+      } 
+    }
+
+    for (var i = this_class.childIndexArray.length - 1; i >= 0; i--) {
+      link_array.push({source : this_class.index, target : this_class.childIndexArray[i], value : 1})
+    };
+  }
+  return { nodes : node_array,
+           links : link_array,
+           roots : root_array,
+           leaves : leaf_array};
+}
 var error = "";
-process_json(error, d3d);
+var tempjson = process_json_easy(error, d3d);
+</script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-var width = 3000,
-    height = 2000;
+var width = 2560,
+    height = 1350;
 
 var color = d3.scale.category20();
 
+
+setTimeout(function(){force.stop()}, 200);
 var force = d3.layout.force()
-    .charge(-80)
-    .linkDistance(20)
-    .gravity(0.2)
+    .charge(-120)
+    .linkDistance(80)
+    .gravity(0.01)
     .size([width, height]);
 
 var svg = d3.select("body").append("svg")
@@ -67,31 +130,90 @@ var svg = d3.select("body").append("svg")
       .links(tempjson.links)
       .start();
 
-  var link = svg.selectAll(".link")
-      .data(tempjson.links)
-    .enter().append("line")
+  //var link = svg.selectAll(".link")
+  //    .data(tempjson.links)
+   // .enter().append("line")
+   //   .attr("class", "link")
+   //   .attr("color", "forestgreen")
+   //   .style("stroke-width", 0.1);
+
+  var leaf = svg.selectAll(".leaf")
+      .data(tempjson.leaves)
+    .enter().append("path")
       .attr("class", "link")
-      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+      .attr("color", "green")
+      .style("fill", "none")
+      .style("stroke-width", 1.4)
+      .style("stroke-opacity", 0.9)
+      .attr("d", function(d){return "M" + (d.x+24.485) +" " + (d.y+2) +" c0 8 -18 4 -18 20 c0 6 2 8 2 8 h2 c0 0 -3 -2 -3 -8 c0 -4 9 -8 9 -8 s-7.981 4.328 -7.981 8.436 C" + (d.x+21.239) + " "+ (d.y+ 24.431) +" " +(d.x+ 28.288) +" " + (d.y + 9.606) +   " " +(d.x+24.485)+ " " + (d.y + 2) +" z";});
+  
 
   var node = svg.selectAll(".node")
       .data(tempjson.nodes)
     .enter().append("circle")
       .attr("class", "node")
-      .attr("r", 5)
-      .style("fill", function(d) { return color(d.group); })
+      .attr("r", 0)
+      .style("fill", "darkgreen")
       .call(force.drag);
 
+  var ld = {};
+
+  line_gen = d3.svg.line()
+          .x(function(d) { 
+            if(d.x !== undefined)
+            {
+             ld.x = d.x;
+             return d.x;
+           }
+            else
+            {
+              return Math.random()*0.3+0.7*ld.x
+            }
+         })
+          .y(function(d) { 
+           if(d.y !== undefined)
+            {
+             ld.y = d.y;
+             return d.y;
+           }
+            else
+            {
+              return Math.random()*0.3+0.7*ld.y
+            }})
+          .interpolate("cardinal");
   node.append("title")
       .text(function(d) { return d.name; });
 
   force.on("tick", function() {
-    link.attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
+   // link.attr("x1", function(d) { return d.source.x; })
+    //    .attr("y1", function(d) { return d.source.y; })
+     //   .attr("x2", function(d) { return d.target.x; })
+      //  .attr("y2", function(d) { return d.target.y; });
 
     node.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
+    
+    leaf.attr("transform", function(d){
+      
+      if(d.parents === undefined)
+      {
+        return "rotate("+(d.x*d.y) +" "+ d.x+ " " +d.y +")";
+      }
+      return "";
+    });
+
+    leaf.attr("d", function(d){
+      
+      if(d.parents === undefined)
+      {
+        console.log("here");
+        return "M" + (d.x+24.485) +" " + (d.y+2) +" c0 8 -18 4 -18 20 c0 6 2 8 2 8 h2 c0 0 -3 -2 -3 -8 c0 -4 9 -8 9 -8 s-7.981 4.328 -7.981 8.436 C" + (d.x+21.239) + " "+ (d.y+ 24.431) +" " +(d.x+ 28.288) +" " + (d.y + 9.606) +   " " +(d.x+24.485)+ " " + (d.y + 2) +" z";
+      }
+      else
+      {
+        return line_gen(d.parents);
+      }
+    });
   });
 
 </script>

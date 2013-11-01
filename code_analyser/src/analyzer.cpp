@@ -48,6 +48,7 @@ struct ClassRecord
 	std::string mFullname;
 	std::string mName;
 	std::unordered_set<size_t> mChildren;
+	std::unordered_set<size_t> mParents;
 	double mLookupTime;
 	int mDeclarationBytes;
 
@@ -60,12 +61,21 @@ struct ClassRecord
 		json->AddValue(std::string("USR"), mUSR);
 		json->AddValue(std::string("declarationSize"), mDeclarationBytes);
 		json->AddValue(std::string("timeSpent"), mLookupTime);
+		
 		json->StartArray(std::string("childArray"));
 		for (auto i = mChildren.begin(); i != mChildren.end(); ++i)
 		{
 			json->AddValue( parent_array.at(*i).mUSR );
 		}
 		json->EndCurrent();
+		
+		json->StartArray(std::string("parentArray"));
+		for (auto i = mParents.begin(); i != mParents.end(); ++i)
+		{
+			json->AddValue( parent_array.at(*i).mUSR );
+		}
+		json->EndCurrent();
+
 		json->StartArray(std::string("childIndexArray"));
 		for (auto i = mChildren.begin(); i != mChildren.end(); ++i)
 		{
@@ -123,14 +133,17 @@ public:
 		// is this a new thing? then insert it into the map
 		if(find_it == mIndexMap.end())
 		{	
-			IterateOverParents(CE, mClassRecords.size());
-			IterateOverFields(CE, mClassRecords.size());
+
+			mClassRecords.emplace_back();
+			ClassRecord& cr = mClassRecords.back();
+
+			IterateOverParents(CE, mClassRecords.size()-1);
+			IterateOverFields(CE, mClassRecords.size()-1);
 
 			mDecls.emplace_back();
 			mDecls.back().mDecl = CE;
-			mDecls.back().mPermIdx = mClassRecords.size();
-			mClassRecords.emplace_back();
-			ClassRecord& cr = mClassRecords.back();
+			mDecls.back().mPermIdx = mClassRecords.size()-1;
+			
 			cr.mDeclarationBytes = GetSourceByteSize(CE, Result);
 			
 
@@ -247,6 +260,7 @@ private:
 				if(found)
 				{
 					mClassRecords.at(item_index).mChildren.insert(index);
+					mClassRecords.back().mParents.insert(item_index);
 				}
 			}
 		}
@@ -271,7 +285,9 @@ private:
 					auto found_idx = mPointerMap.find(parent_decl);
 					if(found_idx != mPointerMap.end())
 					{
-						mClassRecords.at(found_idx->second).mChildren.insert(index);
+						ClassRecord& cr = mClassRecords.at(found_idx->second);
+						cr.mChildren.insert(index);
+						mClassRecords.back().mParents.insert(found_idx->second);
 					}
 				}
 			}
