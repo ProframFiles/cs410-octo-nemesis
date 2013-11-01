@@ -78,14 +78,19 @@ public:
 		: mFiles() 
 	{}
 
-	std::set<CompilationFile>::const_iterator Begin() const
+	std::vector<CompilationFile>::const_iterator Begin() const
 	{
 		return mFiles.begin();
 	}
 
-	std::set<CompilationFile>::const_iterator End() const
+	std::vector<CompilationFile>::const_iterator End() const
 	{
 		return mFiles.end();
+	}
+
+	const CompilationFile& Front() const
+	{
+		return mFiles.front();
 	}
 
 	size_t Size() const
@@ -95,11 +100,11 @@ public:
 
 	void AddFile(const CompilationFile& file)
 	{
-		mFiles.insert(file);
+		mFiles.push_back(file);
 	}
 
 private:
-	std::set<CompilationFile> mFiles;
+	std::vector<CompilationFile> mFiles;
 	std::vector<const char*> mOptionStrings;
 };
 

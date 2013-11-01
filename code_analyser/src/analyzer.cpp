@@ -51,11 +51,12 @@ struct ClassRecord
 	double mLookupTime;
 	int mDeclarationBytes;
 
-	void DumpToJSON(sjp::JSONObjectIO* json, const std::vector<ClassRecord>& parent_array) const
+	void DumpToJSON(sjp::JSONObjectIO* json, const std::vector<ClassRecord>& parent_array, size_t index) const
 	{
 		json->StartObject(mUSR);
 		json->AddValue(std::string("qualifiedName"), mFullname);
 		json->AddValue(std::string("name"), mName);
+		json->AddValue(std::string("index"), static_cast<int>(index)); 
 		json->AddValue(std::string("USR"), mUSR);
 		json->AddValue(std::string("declarationSize"), mDeclarationBytes);
 		json->AddValue(std::string("timeSpent"), mLookupTime);
@@ -63,6 +64,12 @@ struct ClassRecord
 		for (auto i = mChildren.begin(); i != mChildren.end(); ++i)
 		{
 			json->AddValue( parent_array.at(*i).mUSR );
+		}
+		json->EndCurrent();
+		json->StartArray(std::string("childIndexArray"));
+		for (auto i = mChildren.begin(); i != mChildren.end(); ++i)
+		{
+			json->AddValue( static_cast<int>(*i));
 		}
 
 		json->EndCurrent();
@@ -84,10 +91,12 @@ struct TempIndex
 class ToolTemplateCallback : public MatchFinder::MatchCallback
 {
 public:
-	ToolTemplateCallback() 
+	ToolTemplateCallback(size_t num_files) 
 		: mClassRecords()
 		, mTotalCallbacks(0)
 		, mNumLinks(0)
+		, mTotalFiles(num_files)
+		, mFileCount(0)
 	{mClassRecords.reserve(1024);}
 
 	virtual void run(const MatchFinder::MatchResult& Result)
@@ -160,14 +169,36 @@ public:
 
 	}
 
-	void DumpAllToJSON(sjp::JSONObjectIO* json) const
+	void DumpAllToJSON(sjp::JSONObjectIO* json)
 	{
 		for (size_t i = 0; i < mClassRecords.size() ; i++)
 		{
-			mClassRecords.at(i).DumpToJSON(json, mClassRecords);
+			std::string& usr = mClassRecords.at(i).mUSR;
+			for (size_t si = 0; si < usr.size() ; si++)
+			{
+				if(usr[si]=='@' || usr[si]==':' || usr[si] == '#')
+				{
+					usr[si]='_';
+				}
+			} 
+		}
+		
+		for (size_t i = 0; i < mClassRecords.size() ; i++)
+		{
+			mClassRecords.at(i).DumpToJSON(json, mClassRecords, i);
 		}
 	}
-
+	virtual void onEndOfTranslationUnit() 
+	{
+		++mFileCount;
+		printf("##################################################################\n");
+		printf("##################################################################\n\n");
+		printf("                         % 5d/%-5d                          \n", 
+				static_cast<int>(mFileCount), static_cast<int>(mTotalFiles));
+		printf("\n##################################################################\n");
+		printf("##################################################################\n");
+		Cleanup();
+	}
 	void Cleanup()
 	{
 		mDecls.clear();
@@ -271,6 +302,8 @@ private:
 	std::string mTmpString;
 	size_t mTotalCallbacks;
 	size_t mNumLinks;
+	size_t mTotalFiles;
+	size_t mFileCount;
 	akj::cStopWatch mSW;
 	
 };
@@ -278,7 +311,7 @@ private:
 
 } 
 
-int RunOnSourceFile(std::string home_dir, std::string absolute_file, ToolTemplateCallback& callback)
+int RunOnSourceFile(std::string home_dir,const std::vector<std::string>& files, ToolTemplateCallback& callback)
 {	
 	std::string ErrorMessage;
 
@@ -289,7 +322,7 @@ int RunOnSourceFile(std::string home_dir, std::string absolute_file, ToolTemplat
 	if(Compilations)
 	{
 		// input our single source file
-		ArrayRef<std::string> source(&absolute_file, 1);
+		ArrayRef<std::string> source(files);
 		RefactoringTool Tool(*Compilations, source);
 		
 		// ask for callbacks on evvery C++ class declaration
@@ -311,19 +344,14 @@ void RunOnAllSourceFiles(const sjp::CompilationDatabase& files, ToolTemplateCall
 {
 	int count = 0;
 	const int total = static_cast<int>(files.Size());
+	std::vector<std::string> file_strings;
+	file_strings.reserve(files.Size());
 	for (auto it = files.Begin(); it !=  files.End(); ++it)
 	{
-		auto opts = it->GetOptions();
-		++count;
-		printf("##################################################################\n");
-		printf("##################################################################\n\n");
-		printf("                         % 5d/%-5d                          \n", count, total);
-		printf("\n##################################################################\n");
-		printf("##################################################################\n");
-
-		RunOnSourceFile(it->mHomeDir, it->mFileName, callback);
+		file_strings.emplace_back(it->mFileName);
+		
 	}
-
+	RunOnSourceFile(files.Front().mHomeDir, file_strings, callback);
 }
 
 #ifdef ANALYZER_STANDALONE
@@ -339,7 +367,7 @@ int main(int argc, const char **argv)
 	json_reader.parseFile(arg1);
 
 	// the callback class holds info between calls to analyze multiple source files
-	ToolTemplateCallback callback;
+	ToolTemplateCallback callback(compilationDB.Size());
 	
 	// time the run, for curiosities sake
 	akj::cStopWatch sw;

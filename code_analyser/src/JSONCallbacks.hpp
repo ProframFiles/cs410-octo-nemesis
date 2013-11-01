@@ -575,6 +575,13 @@ public:
 		return *this;
 	}
 
+	JSONObjectIO& AddValue(int val)
+	{
+		onValueInt(val);
+		return *this;
+	}
+
+
 	JSONObjectIO& AddValue(bool val)
 	{
 		onValueBool(val);
