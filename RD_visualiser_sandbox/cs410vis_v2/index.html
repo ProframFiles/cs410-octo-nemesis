@@ -15,11 +15,12 @@
 </style>
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="test_analysis_out.json"></script>
 <script>
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 var jsonstring = "{\"nodes\": [";
 var tempjson;
-d3.json("test_analysis_out.json", function(error, json) 
+function process_json (error, json) 
 {
 	for (var prop in json["doom3"]) 
 	{
@@ -42,7 +43,9 @@ d3.json("test_analysis_out.json", function(error, json)
 	jsonstring = jsonstring.substring(0, jsonstring.length - 1);
 	jsonstring += "]}";
 	tempjson = JSON.parse(jsonstring);
-});
+}
+var error = "";
+process_json(error, d3d);
 	alert("Do not remove this alert statement; it stops working if you remove it (I don't know why)");
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 var width = 3000,
