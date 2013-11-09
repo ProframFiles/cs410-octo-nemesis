@@ -39,7 +39,7 @@ If you have questions concerning this license or the applicable additional terms
 #define ENGINE_VERSION					"DOOM 1.3.1"	// printed in console
 
 // paths
-#define	CD_BASEDIR						"Doom"
+#define	CD_BASEDIR						"Doom3"
 #ifdef ID_DEMO_BUILD
 	#define BASE_GAMEDIR					"demo"
 #else

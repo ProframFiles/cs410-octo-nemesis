@@ -35,6 +35,15 @@ If you have questions concerning this license or the applicable additional terms
 
 #define ID_TIME_T time_t
 
+#ifdef _WIN32 
+	#include <stdint.h>
+	#define ID_INLINE
+	#define ID_STATIC_TEMPLATE
+	#define _alloca16( x )				malloc(x)
+	#define _alloca malloc
+	#undef _WIN32
+#endif
+
 #ifdef _WIN32
 
 #define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS	// prevent auto literal to string conversion

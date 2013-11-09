@@ -64,6 +64,9 @@ If you have questions concerning this license or the applicable additional terms
 #define stricmp			idStr::Icmp		// use_idStr_Icmp
 #define _stricmp		use_idStr_Icmp
 #define strcasecmp		use_idStr_Icmp
+#ifdef strnicmp
+#undef strnicmp
+#endif
 #define strnicmp		use_idStr_Icmpn
 #define _strnicmp		use_idStr_Icmpn
 #define _memicmp		use_idStr_Icmpn

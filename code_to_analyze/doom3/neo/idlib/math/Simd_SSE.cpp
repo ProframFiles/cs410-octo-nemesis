@@ -621,7 +621,7 @@ void VPCALL idSIMD_SSE::Dot( float *dst, const idVec3 &constant, const idPlane *
 	*/
 }
 
-#elif defined(_WIN32 && DONT_DO_THIS )
+#elif defined(_WIN32)
 
 #include <xmmintrin.h>
 
