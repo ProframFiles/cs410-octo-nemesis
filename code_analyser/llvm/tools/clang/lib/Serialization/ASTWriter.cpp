@@ -1066,6 +1066,8 @@ void ASTWriter::WriteControlBlock(Preprocessor &PP, ASTContext &Context,
   const LangOptions &LangOpts = Context.getLangOpts();
 #define LANGOPT(Name, Bits, Default, Description) \
   Record.push_back(LangOpts.Name);
+#define VALUE_LANGOPT(Name, Bits, Default, Description) \
+  Record.push_back(static_cast<unsigned>(LangOpts.Name));
 #define ENUM_LANGOPT(Name, Type, Bits, Default, Description) \
   Record.push_back(static_cast<unsigned>(LangOpts.get##Name()));
 #include "clang/Basic/LangOptions.def"  
