@@ -1,3 +1,11 @@
+struct podstruct
+{
+	podstruct(int in):x(in), y(in), z(in){}
+	int x;
+	int y;
+	int z;
+};
+
 class Base 
 {
 protected:
@@ -7,12 +15,19 @@ protected:
 namespace d1{
 class Derived1: public Base
 {
+	podstruct DerivedMethod1(int qw)
+	{
+		podstruct p(qw);
+		podstruct q(qw);
+		p.x = 2;
+		return p;
+	}
 private:
 	int mDerivedMember;
 };
 }
 
-class Derived2: public Derived1
+class Derived2: public d1::Derived1
 {
 private:
 	int mDerived2Member;
@@ -26,7 +41,7 @@ private:
 };
 
 namespace multi {
-	class MultiDerived: public Derived1, public MemberDerived
+	class MultiDerived: public d1::Derived1, public MemberDerived
 	{
 	private:
 		int mMultiDerivedMember;
@@ -36,8 +51,8 @@ namespace multi {
 int main(int argc, char** argv)
 {
 	Base a;
-	Derived1 b;
+	d1::Derived1 b;
 	Derived2 c;
 	MemberDerived d;
-	MultiDerived e;
+	multi::MultiDerived e;
 }

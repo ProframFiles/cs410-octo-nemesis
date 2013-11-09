@@ -4,13 +4,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <memory>
-#include <map>
 #include <vector>
 #include <deque>
 #include <ostream>
 #include <cassert>
 
-namespace sjp {
+namespace sjp
+{
 
 class JSONValueBase;
 
@@ -22,20 +22,20 @@ typedef std::vector< JSONValueBase* > tJSONArray;
 
 enum eValueType
 {
-	SJP_OBJECT,
-	SJP_ARRAY,
-	SJP_STRING,
-	SJP_NUMBER,
-	SJP_TRUE,
-	SJP_FALSE,
-	SJP_NULL
+    SJP_OBJECT,
+    SJP_ARRAY,
+    SJP_STRING,
+    SJP_NUMBER,
+    SJP_TRUE,
+    SJP_FALSE,
+    SJP_NULL
 };
 
 struct StreamedString
 {
 	StreamedString()
 	{
-		mString.reserve(16*1024);
+		mString.reserve(16 * 1024);
 	}
 
 	inline void put(char val)
@@ -45,7 +45,7 @@ struct StreamedString
 	inline void write(const char* ptr, size_t num)
 	{
 		GrowIfNeeded(num);
-		for (size_t i = 0; i < num; i++)
+		for(size_t i = 0; i < num; i++)
 		{
 			mString.push_back(*ptr++);
 		}
@@ -53,7 +53,7 @@ struct StreamedString
 	inline void repeat(char chr, size_t num)
 	{
 		GrowIfNeeded(num);
-		for (size_t i = 0; i < num; i++)
+		for(size_t i = 0; i < num; i++)
 		{
 			mString.push_back(chr);
 		}
@@ -61,13 +61,13 @@ struct StreamedString
 	std::string& ToString()
 	{
 		mTempString.resize(mString.size());
-		if(!mTempString.empty()) memcpy(&mTempString[0], &mString[0],mString.size());
-		return mTempString;	
+		if(!mTempString.empty()) { memcpy(&mTempString[0], &mString[0], mString.size()); }
+		return mTempString;
 	}
 
 	void GrowIfNeeded(size_t num)
 	{
-		if(mString.size() + num > mString.capacity()) mString.reserve(mString.capacity()*2);
+		if(mString.size() + num > mString.capacity()) { mString.reserve(mString.capacity() * 2); }
 	}
 	std::vector<char> mString;
 	std::string mTempString;
@@ -75,43 +75,43 @@ struct StreamedString
 
 struct Indenter
 {
-	Indenter(int level) : mIndentLevel(level){}
+	Indenter(int level) : mIndentLevel(level) {}
 	int mIndentLevel;
 };
 
-inline std::ostream & operator <<(std::ostream &os, Indenter val)
-{ 
-	const char* tabs = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"; 
-	
+inline std::ostream& operator <<(std::ostream& os, Indenter val)
+{
+	const char* tabs = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+
 	os.write(tabs, val.mIndentLevel);
 
-	return os; 
+	return os;
 }
 
-inline StreamedString& operator <<(StreamedString &os, Indenter val)
-{ 
-	const char* tabs = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"; 
-	
+inline StreamedString& operator <<(StreamedString& os, Indenter val)
+{
+	const char* tabs = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+
 	os.write(tabs, val.mIndentLevel);
 
-	return os; 
+	return os;
 }
 
 class JSONValueBase
 {
-	public:
+public:
 	virtual ~JSONValueBase() {}
 
 	virtual eValueType GetType() const
 	{ return SJP_NULL; }
 
 
-	virtual std::ostream& StreamOut(std::ostream &os, int indent_level) const
+	virtual std::ostream& StreamOut(std::ostream& os, int indent_level) const
 	{
 		os << Indenter(indent_level) << "null";
 		return os;
 	}
-	virtual void StreamOut(StreamedString &os, int indent_level) const
+	virtual void StreamOut(StreamedString& os, int indent_level) const
 	{
 		os << Indenter(indent_level);
 		os.write("null", 4);
@@ -119,17 +119,17 @@ class JSONValueBase
 
 };
 
-inline std::ostream& operator <<(std::ostream &os,const JSONValueBase* val)
-	{ return val->StreamOut(os, 0); }
+inline std::ostream& operator <<(std::ostream& os, const JSONValueBase* val)
+{ return val->StreamOut(os, 0); }
 
 class JSONValueString : public JSONValueBase
 {
 public:
-	JSONValueString(size_t str_index, const tStringContainer& main_string) : mMainString(main_string), mStart(str_index),mSize(main_string.size()-1-str_index){}
+	JSONValueString(size_t str_index, const tStringContainer& main_string) : mMainString(main_string), mStart(str_index), mSize(main_string.size() - 1 - str_index) {}
 
 	virtual eValueType GetType() const
 	{ return SJP_STRING; }
-	
+
 	virtual void StreamOut(StreamedString& os, int indent_level) const
 	{
 		//os.GrowIfNeeded(mSize + 4);
@@ -165,7 +165,7 @@ public:
 		return os;
 	}
 
-	virtual void StreamOut(StreamedString &os, int indent_level) const
+	virtual void StreamOut(StreamedString& os, int indent_level) const
 	{
 		//os.GrowIfNeeded(4);
 		os << Indenter(indent_level);
@@ -184,7 +184,7 @@ public:
 		return os;
 	}
 
-	virtual void StreamOut(StreamedString &os, int indent_level) const
+	virtual void StreamOut(StreamedString& os, int indent_level) const
 	{
 		//os.GrowIfNeeded(5);
 		os << Indenter(indent_level);
@@ -196,7 +196,7 @@ public:
 class JSONValueNumber : public JSONValueBase
 {
 public:
-	JSONValueNumber(double number) : mNumberValue(number){}
+	JSONValueNumber(double number) : mNumberValue(number) {}
 
 	virtual eValueType GetType() const
 	{ return SJP_NUMBER; }
@@ -207,8 +207,8 @@ protected:
 		os << Indenter(indent_level) << mNumberValue;
 		return os;
 	};
-	
-	virtual void StreamOut(StreamedString &os, int indent_level) const
+
+	virtual void StreamOut(StreamedString& os, int indent_level) const
 	{
 		//os.GrowIfNeeded(16);
 		os << Indenter(indent_level);
@@ -221,7 +221,7 @@ protected:
 class JSONValueInteger : public JSONValueBase
 {
 public:
-	JSONValueInteger(int number) : mNumberValue(number){}
+	JSONValueInteger(int number) : mNumberValue(number) {}
 
 	virtual eValueType GetType() const
 	{ return SJP_NUMBER; }
@@ -232,8 +232,8 @@ protected:
 		os << Indenter(indent_level) << mNumberValue;
 		return os;
 	};
-	
-	virtual void StreamOut(StreamedString &os, int indent_level) const
+
+	virtual void StreamOut(StreamedString& os, int indent_level) const
 	{
 		//os.GrowIfNeeded(16);
 		os << Indenter(indent_level);
@@ -252,7 +252,7 @@ public:
 class JSONValueArray : public JSONValueContainer
 {
 public:
-	JSONValueArray() : mArrayValue(){}
+	JSONValueArray() : mArrayValue() {}
 
 	virtual eValueType GetType() const
 	{ return SJP_ARRAY; }
@@ -281,11 +281,11 @@ public:
 			indent_level++;
 			os.put('[');
 			os.put('\n');
-			for (int i = 0; i < static_cast<int>(mArrayValue.size())-1; ++i)
+			for(int i = 0; i < static_cast<int>(mArrayValue.size()) - 1; ++i)
 			{
 				mArrayValue.at(i)->StreamOut(os, indent_level);
-				os.put( ',');
-				os.put( '\n');
+				os.put(',');
+				os.put('\n');
 			}
 			mArrayValue.back()->StreamOut(os, indent_level);
 			os.put('\n');
@@ -302,7 +302,7 @@ public:
 		}
 		else
 		{
-			os.write("[ ]",3) ;
+			os.write("[ ]", 3) ;
 		}
 
 		return os;
@@ -310,11 +310,11 @@ public:
 	tJSONArray mArrayValue;
 };
 
-inline size_t AppendString(tStringContainer& container,const std::string& str)
+inline size_t AppendString(tStringContainer& container, const std::string& str)
 {
-	if(container.size()+str.size() > container.capacity()) container.reserve(container.capacity()*2);
-	size_t ret =container.size();
-	for (size_t i = 0; i < str.size(); i++)
+	if(container.size() + str.size() > container.capacity()) { container.reserve(container.capacity() * 2); }
+	size_t ret = container.size();
+	for(size_t i = 0; i < str.size(); i++)
 	{
 		container.push_back(str[i]);
 	}
@@ -325,7 +325,7 @@ inline size_t AppendString(tStringContainer& container,const std::string& str)
 class JSONValueObject : public JSONValueContainer
 {
 public:
-	JSONValueObject(const tStringContainer& main_string) : mMainString(main_string), mObjectValue(), mIsBaseObject(false){}
+	JSONValueObject(const tStringContainer& main_string) : mMainString(main_string), mObjectValue(), mIsBaseObject(false) {}
 
 	virtual eValueType GetType() const
 	{ return SJP_OBJECT; }
@@ -355,26 +355,26 @@ public:
 		const int num_members = static_cast<int>(mObjectValue.size());
 		if(num_members > 0)
 		{
-			if (!mIsBaseObject)
+			if(!mIsBaseObject)
 			{
 				indent_level++;
 				os.put('{');
 				os.put('\n');
 			}
-			
+
 			int iteration = 1;
-			for (tJSONMap::const_iterator i = mObjectValue.begin(); i != mObjectValue.end(); ++i)
+			for(tJSONMap::const_iterator i = mObjectValue.begin(); i != mObjectValue.end(); ++i)
 			{
 				os << Indenter(indent_level);
 				size_t len = strlen(&mMainString[i->first]);
 				if(len > 0)
 				{
-					
+
 					os.put('"');
 					os.write(&mMainString[i->first], len);
 					os.write("\" : ", 4);
 				}
-				if(i->second->GetType() == SJP_OBJECT || i->second->GetType() == SJP_ARRAY) 
+				if(i->second->GetType() == SJP_OBJECT || i->second->GetType() == SJP_ARRAY)
 				{
 					os.put('\n');
 					i->second->StreamOut(os, indent_level);
@@ -390,16 +390,16 @@ public:
 				os.put('\n');
 				iteration++;
 			}
-			if (!mIsBaseObject)
+			if(!mIsBaseObject)
 			{
 				os << Indenter(--indent_level);
 				os.put('}');
-			} 
+			}
 		}
 
 		else if(!mIsBaseObject)
 		{
-			os.write( "{ }",3);
+			os.write("{ }", 3);
 		}
 
 		return os;
@@ -413,9 +413,9 @@ public:
 class JSONObjectIO
 {
 public:
-	JSONObjectIO() 
+	JSONObjectIO()
 	{
-		mStringData.reserve(10*1024);
+		mStringData.reserve(10 * 1024);
 		mStringData.resize(1, '\0');
 		JSONValueObject* root = new JSONValueObject(mStringData);
 		root->SetBaseObject();
@@ -440,17 +440,17 @@ public:
 
 	inline void onNameString(const std::string& in)
 	{
-		if(mObjects.size() == 1) mStringData.clear(); 
+		if(mObjects.size() == 1) { mStringData.clear(); }
 		mCurrentKey = AppendString(mStringData, in);
 	};
 
 	inline void onValueString(const std::string& in)
 	{
 		size_t current_value = AppendString(mStringData, in);
-		JSONValueString* obj = new JSONValueString(current_value,mStringData);
+		JSONValueString* obj = new JSONValueString(current_value, mStringData);
 		mObjects.emplace_back(obj);
 		mObjectStack.back()->AddValue(obj, mCurrentKey);
-		mCurrentKey = mStringData.size()-1;
+		mCurrentKey = mStringData.size() - 1;
 	};
 
 	inline void onStartObject()
@@ -459,7 +459,7 @@ public:
 		mObjects.emplace_back(obj);
 		mObjectStack.back()->AddValue(obj, mCurrentKey);
 		mObjectStack.push_back(obj);
-		mCurrentKey = mStringData.size()-1;
+		mCurrentKey = mStringData.size() - 1;
 	};
 
 	inline void onEndObject()
@@ -472,7 +472,7 @@ public:
 		JSONValueInteger* obj = new JSONValueInteger(in);
 		mObjects.emplace_back(obj);
 		mObjectStack.back()->AddValue(obj, mCurrentKey);
-		mCurrentKey = mStringData.size()-1;
+		mCurrentKey = mStringData.size() - 1;
 	};
 
 	inline void onValueDouble(double in)
@@ -480,16 +480,16 @@ public:
 		JSONValueNumber* obj = new JSONValueNumber(in);
 		mObjects.emplace_back(obj);
 		mObjectStack.back()->AddValue(obj, mCurrentKey);
-		mCurrentKey = mStringData.size()-1;
+		mCurrentKey = mStringData.size() - 1;
 	};
 
 	inline void onValueBool(bool in)
 	{
 		JSONValueBase* obj = NULL;
-		if(in) obj = new JSONValueTrue;
-		else obj = new JSONValueFalse;
+		if(in) { obj = new JSONValueTrue; }
+		else { obj = new JSONValueFalse; }
 		mObjectStack.back()->AddValue(obj, mCurrentKey);
-		mCurrentKey = mStringData.size()-1;
+		mCurrentKey = mStringData.size() - 1;
 	};
 
 	inline void onStartArray()
@@ -498,7 +498,7 @@ public:
 		mObjects.emplace_back(obj);
 		mObjectStack.back()->AddValue(obj, mCurrentKey);
 		mObjectStack.push_back(obj);
-		mCurrentKey = mStringData.size()-1;
+		mCurrentKey = mStringData.size() - 1;
 	};
 
 	inline void onEndArray()
@@ -510,12 +510,18 @@ public:
 	{
 		JSONValueBase* obj = new JSONValueBase();
 		mObjectStack.back()->AddValue(obj, mCurrentKey);
-		mCurrentKey = mStringData.size()-1;
+		mCurrentKey = mStringData.size() - 1;
 	};
-	
+
 	JSONObjectIO& StartObject(const std::string& name)
 	{
 		onNameString(name);
+		onStartObject();
+		return *this;
+	}
+
+	JSONObjectIO& StartObject()
+	{
 		onStartObject();
 		return *this;
 	}
@@ -554,10 +560,10 @@ public:
 	}
 
 	template <typename tValue>
-	JSONObjectIO& AddArray(const std::string& name,const std::vector<tValue>& array)
+	JSONObjectIO& AddArray(const std::string& name, const std::vector<tValue>& array)
 	{
 		StartArray(name);
-		for (size_t i = 0; i < array.size(); ++i)
+		for(size_t i = 0; i < array.size(); ++i)
 		{
 			AddValue(array[i]);
 		}
@@ -594,53 +600,53 @@ public:
 		return *this;
 	}
 
-	JSONObjectIO& AddValue(const std::string& name,float val)
+	JSONObjectIO& AddValue(const std::string& name, float val)
 	{
 		return AddValue(name, static_cast<double>(val));
 	}
 
-	JSONObjectIO& AddValue(const std::string& name,double val)
+	JSONObjectIO& AddValue(const std::string& name, double val)
 	{
 		onNameString(name);
 		onValueDouble(val);
 		return *this;
 	}
 
-	JSONObjectIO& AddValue(const std::string& name,int val)
+	JSONObjectIO& AddValue(const std::string& name, int val)
 	{
 		onNameString(name);
 		onValueInt(val);
 		return *this;
 	}
 
-	JSONObjectIO& AddValue(const std::string& name,bool val)
+	JSONObjectIO& AddValue(const std::string& name, bool val)
 	{
 		onNameString(name);
 		onValueBool(val);
 		return *this;
 	}
 
-	JSONObjectIO& AddValue(const std::string& name,const std::string& val)
+	JSONObjectIO& AddValue(const std::string& name, const std::string& val)
 	{
 		onNameString(name);
 		onValueString(val);
 		return *this;
 	}
 
-	private:
+private:
 
-	
+
 	std::vector<JSONValueContainer*> mObjectStack;
 	std::deque<std::unique_ptr<JSONValueBase> > mObjects;
 	tStringContainer mStringData;
 	tJSONKey mCurrentKey;
 };
 
-	
 
 
-inline std::ostream& operator <<(std::ostream &os, const JSONObjectIO& val)
-{ 
+
+inline std::ostream& operator <<(std::ostream& os, const JSONObjectIO& val)
+{
 	return val.StreamOut(os);
 }
 
@@ -710,9 +716,9 @@ public:
 	void onValueInt(int in) {};
 	void onValueDouble(double in) {};
 	void onValueBool(bool in) {};
-	void onStartArray(){};
-	void onEndArray(){};
-	void onValueNull(){}
+	void onStartArray() {};
+	void onEndArray() {};
+	void onValueNull() {}
 };
 
 class JSONCountbacks
