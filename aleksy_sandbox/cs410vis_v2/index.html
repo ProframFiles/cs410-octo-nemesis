@@ -7,215 +7,404 @@
   stroke-width: 1.5px;
 }
 .leaf {
-  stroke: #fff;
-  stroke-width: 2.5px;
-  fill: none;
-}
-.link {
   stroke: green;
-  stroke-opacity: .3;
+  stroke-width: 1.5px;
+  fill: LimeGreen;
+  fill-opacity: 0.3;
+  stroke-opacity: 0.3;
+}
+
+.vine {
+  stroke: green;
+  stroke-width: 2.5px;
+  fill: green;
+  stroke-opacity: 0.6;
+}
+
+.root {
+ stroke: black;
+  stroke-width: 1.5px;
+}
+.loose {
+	stroke: orange;
+	stroke-width: 1.5px;
+	stroke-opacity: 0.1;
+}
+
+
+.link {
+  stroke: red;
+  stroke-opacity: 0.0;
 }
 
 </style>
 <body>
 <script src="test_analysis_out.json"></script>
+<script src="test_out.js"></script>
+<script src="paths.js"></script>
 <script>
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-var jsonstring = "{\"nodes\": [";
-var node_array = [];
-var link_array = [];
-var root_array = [];
-var leaf_array = [];
-function process_json (error, json) 
+const kBranchFactor = 1/0.7;
+const kLooseLinkStrength = 10.0;
+function generate_nodes(class_array)
 {
-	for (var prop in json["doom3"]) 
+	var node_array = [];
+	var root_array = [];
+	var loose_array = [];
+	var leaf_array = [];
+	const array_size = class_array.length;
+	for (var i = 0; i < array_size; ++i)
 	{
-		jsonstring += "{\"name\":\"" + prop + "\",\"group\":1},";
-	}
+		var this_class = class_array[i];
+		var this_node = 
+			{
+				homeIndex : i,
+				active : false,
+				depth : 0,
+				connections : 0,
+				parents : [],
+				children : [],
+				name : this_class.qualifiedName,
+				group : this_class.childIndexArray.length,
+				pos : "e",
+				curve : [ Math.random(), Math.random(), Math.random(), Math.random()]
+			};
 
-	jsonstring = jsonstring.substring(0, jsonstring.length - 1);
-	jsonstring += "]";
-	jsonstring += ",\"links\": [";
-	var i = 0;
-	for (var prop2 in json["doom3"])
-	{
-		var array = json["doom3"][prop2]["childIndexArray"];
-		for(var j in array)
+		node_array[this_class.index] = this_node;
+		
+		if(this_class.parentArray.length ===0 && this_class.childIndexArray.length > 0)
 		{
-			var id = j;
-			jsonstring += "{\"source\":" + i + ",\"target\":" + id + ",\"value\":1},";
+			root_array.push(this_node);
+			this_node.pos = "r"; // "r"oot node 
 		}
-		i++;
+		else if(this_class.parentArray.length ===0)
+		{
+			this_node.pos = "u"; // "unconnected" node (no parents or children)
+			loose_array.push(this_node);
+		}
+		else if(this_class.childIndexArray.length > 0)
+		{
+			this_node.pos = "m"; // "m"iddle node
+		}
+		else 
+		{
+			this_node.pos = "e";  // "e"nd node
+			leaf_array.push(this_node);
+		}
 	}
-	jsonstring = jsonstring.substring(0, jsonstring.length - 1);
-	jsonstring += "]}";
-	tempjson = JSON.parse(jsonstring);
-}
-function build_parent_array(leaf)
-{
-  var array = new [];
+	return {
+			nodes : node_array,
+			leaves : leaf_array,
+			singles : loose_array,
+			roots : root_array
+		};
+};
 
-  while(leaf.parentArray.length > 1)
-  {
-      leaf = leaf.parentArray[0]
-  } 
-}
+function make_link(src, dst, strength)
+{
+	src.connections += 1;
+	dst.connections += 1;
+	if(strength === undefined)
+	{
+		strength.french();
+	}
+	console.log(strength);
+	return {source : src.homeIndex, target : dst.homeIndex, value : strength};
+};
+function RandomSelection(array, self)
+{
+	var index;
+	var ret; 
+	while(array.length > 0 && (ret === undefined || ret.connections >= 3))
+	{
+		index = Math.floor(Math.random()*(array.length-0.0001));
+		ret = array[index];
+		if(self == ret)
+		{
+			if(array.length == 1)
+			{
+				array.pop();
+				return null;
+			}
+			else if(index > 0) --index;
+			else ++index;
+			ret = array[index];
+		}
+		array[index] = array.pop();
+	}
+	return ret;
+};
+
+function generate_tree(data, class_array)
+{
+	for (var indx = 0; indx < class_array.length; indx++) 
+	{
+		var this_class = class_array[indx];
+		var this_node = data.nodes[indx];
+		for (var i = 0; i < this_class.childIndexArray.length; i++) {
+			this_node.children.push(data.nodes[this_class.childIndexArray[i]]);
+		}
+		for (var i = 0; i < this_class.parentArray.length; i++) {
+			this_node.parents.push(data.nodes[this_class.parentArray[i]]);
+		}
+	}
+};
+
+function gen_tree_paths_worker(data, parent, index, current_path)
+{
+	var this_path = [];
+	var continuing_path = [];
+	var depth = parent.depth + 1;
+	var first_index = Math.max(current_path.length - 3, 0)
+	for (var i = first_index; i < current_path.length; ++i) {
+		this_path.push(current_path[i]);
+		continuing_path.push(current_path[i])
+	}
+	var node = parent.children[index];
+	node.depth = depth;
+	var base_node = node;
+	this_path.push(node);
+	continuing_path.push(node);
+
+
+	if(parent != node.parents[0])
+	{
+		
+		data.paths.push(this_path);
+		return;
+	}
+
+	var strength = Math.pow(kBranchFactor, depth);
+
+	while(node.pos != "e"){
+		
+		data.links.push(make_link(node.children[0], node, strength));
+		++depth;
+		strength *= kBranchFactor;
+		node = node.children[0];
+		node.depth = depth;
+		continuing_path.push(node);
+	}
+	if(continuing_path.length > this_path.length)
+	{
+		data.paths.push(continuing_path);
+	}
+	data.paths.push(this_path);
+	strength = Math.pow(kBranchFactor, depth);
+	console.log("added path at node "+ base_node.homeIndex);
+	for (var i = 1; i < base_node.children.length; i++) 
+	{
+		data.links.push(make_link(base_node.children[i], base_node, strength));
+		gen_tree_paths_worker(data, base_node, i, this_path);
+	}
+};
+
+function generate_tree_paths(data)
+{
+	data.paths = [];
+	data.links = [];
+	var current_path = [];
+	for (var root_index = data.roots.length - 1; root_index >= 0; root_index--) {
+		var root = data.roots[root_index];
+		current_path[0] = root;
+		root.depth = 0;
+		for (var child_index = 0; child_index < root.children.length; child_index++) {
+			data.links.push(make_link(root.children[child_index], root, 1.0));
+			gen_tree_paths_worker(data, root, child_index, current_path);
+		}
+	}
+};
+
+
+
+function generate_link_mesh(data)
+{
+	var loose_source = [];
+	var loose_dest_A = [];
+	var loose_dest_B = [];
+	for (var i = 0; i < data.singles.length; i++) {
+		var li = data.singles[i];
+		loose_source.push(li);
+		loose_dest_A.push(li);
+		loose_dest_A.push(li);
+	};
+
+	//link all the loose pieces together into a mesh 
+	for (var i = loose_source.length - 1; i >= 0; i--) {
+		var source = loose_source[i];
+		var target = RandomSelection(loose_dest_A, source);
+		if(source.connections < 3 && target !== undefined) data.links.push(make_link(source, target, kLooseLinkStrength));
+		target = RandomSelection(loose_dest_B, source);
+		if(source.connections < 3 && target !== undefined) data.links.push(make_link(source, target, kLooseLinkStrength));
+	}
+	
+
+
+};
+
 function process_json_easy (error, json) 
 {
-  for (var prop in json["doom3"]) 
-  {
-    var this_class = json["doom3"][prop];
-    node_array[this_class.index] = {name : this_class.qualifiedName, group : this_class.childArray.length,
-                                    leaf : false, root : false };
-    
-    if(this_class.parentArray.length ===0 && this_class.childIndexArray.length > 0){
-      root_array.push(node_array[this_class.index]);
-      node_array[this_class.index].root = true;
-   }
 
-    if(this_class.childIndexArray.length === 0){
-      node_array[this_class.index].leaf = true;
-      leaf_array.push(node_array[this_class.index]);
-      var leaf = this_class;
-      if (leaf.parentArray !== undefined &&leaf.parentArray.length > 0)
-      {
-        node_array[this_class.index].parents = [];
-        node_array[this_class.index].parents.push(node_array[leaf.index]);
-        while(leaf.parentArray !== undefined && leaf.parentArray.length > 0)
-        {
-         leaf = json["doom3"][leaf.parentArray[0]];
-         if(leaf !== undefined && node_array[leaf.index] !== undefined)
-         {
-            node_array[this_class.index].parents.push(node_array[leaf.index]);
-            node_array[this_class.index].parents.push({});
-          }
-        }
-      } 
-    }
-
-    for (var i = this_class.childIndexArray.length - 1; i >= 0; i--) {
-      link_array.push({source : this_class.index, target : this_class.childIndexArray[i], value : 1})
-    };
-  }
-  return { nodes : node_array,
-           links : link_array,
-           roots : root_array,
-           leaves : leaf_array};
+	var class_array = json.doom3;
+	var data = generate_nodes(class_array);
+	generate_tree(data, json.doom3);
+	generate_tree_paths(data);
+	generate_link_mesh(data);
+	data.active_paths = [];
+	for (var i = 0; i < data.paths.length-1; i++) {
+		data.active_paths.push([]);
+		data.links.push(make_link(data.paths[i][data.paths[i].length-1], data.paths[i+1][data.paths[i+1].length-1], 10.3));
+	};
+	data.links.push(make_link(data.paths[0][data.paths[0].length-1], data.paths[data.paths.length-1][data.paths[data.paths.length-1].length-1], 10.3));
+	data.building_path = 0;
+	data.building_path_length =0; 
+	return data;
 }
 var error = "";
-var tempjson = process_json_easy(error, d3d);
+
 </script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.v3.js"></script>
 <script>
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-var width = 2560,
-    height = 1350;
+var data = process_json_easy(error, kDoom3);
+
+var width = 1024,
+    height = 1024;
+var total_area = width*height;
+var center = {x:width/2, y:height/2};
+var ld = {};
+line_gen = d3.svg.line()
+	.x(function(d) { 
+		return d.x;
+	})
+	.y(function(d) { 
+		return d.y;
+	}).interpolate("basis");
 
 var color = d3.scale.category20();
 
-
-setTimeout(function(){force.stop()}, 100);
+var node_area = total_area/data.nodes.length;
+//setTimeout(function(){force.stop()}, 3000);
 var force = d3.layout.force()
-    .charge(-120)
-    .linkDistance(80)
-    .gravity(0.01)
-    .size([width, height]);
+	.charge(function(node){
+		return -3*node.connections - (3+node.curve[3])*Math.max(5-node.depth, 0);
+	})
+	.linkDistance(function(link){
+		return link.value+Math.pow(link.target.depth+link.source.connections, 1.2)*(link.source.curve[0]+link.source.curve[1]);
+	})
+	.linkStrength(function(link){
+		return Math.min(2.5/link.target.connections, 1.0/link.value);
+	})
+	.gravity(0.15)
+	.size([width, height]);
+
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-  force
-      .nodes(tempjson.nodes)
-      .links(tempjson.links)
-      .start();
+force.nodes(data.nodes)
+	.links(data.links)
+	.start();
 
-  //var link = svg.selectAll(".link")
-  //    .data(tempjson.links)
-   // .enter().append("line")
-   //   .attr("class", "link")
-   //   .attr("color", "forestgreen")
-   //   .style("stroke-width", 0.1);
+var link = svg.selectAll(".link")
+	.data(data.links)
+	.enter().append("line")
+	.attr("class", "link")
+	.attr("color", "red")
+	.style("stroke-width", 1.3);
 
-  var leaf = svg.selectAll(".leaf")
-      .data(tempjson.leaves)
-    .enter().append("path")
-      .attr("class", "link")
-      .attr("color", "green")
-      .style("fill", "none")
-      .style("stroke-width", 1.4)
-      .style("stroke-opacity", 0.8)
-      .attr("d", function(d){return "M" + (d.x+24.485) +" " + (d.y+2) +" c0 8 -18 4 -18 20 c0 6 2 8 2 8 h2 c0 0 -3 -2 -3 -8 c0 -4 9 -8 9 -8 s-7.981 4.328 -7.981 8.436 C" + (d.x+21.239) + " "+ (d.y+ 24.431) +" " +(d.x+ 28.288) +" " + (d.y + 9.606) +   " " +(d.x+24.485)+ " " + (d.y + 2) +" z";});
-  
+var vine = svg.selectAll(".vine")
+	.data(data.paths)
+	.enter().append("path")
+	.attr("class", "vine")
+	.attr("color", "green")
+	.style("fill", "none")
+	.style("stroke-width", function(d){return 1.5*Math.sqrt(1.0/d[0].depth)})
+	.attr("d", function(d){return line_gen(d);});
 
-  var node = svg.selectAll(".node")
-      .data(tempjson.nodes)
-    .enter().append("circle")
-      .attr("class", "node")
-      .attr("r", 0)
-      .style("fill", "darkgreen")
-      .call(force.drag);
+var leaf = svg.selectAll(".leaf")
+	.data(data.paths)
+	.enter().append("path")
+	.attr("class", "leaf")
+	.style("stroke-width", 1.0)
+	.attr("d", function(d){return line_gen(d);});
 
-  var center = {x:1200, y:600};
-  var ld = {};
+ /*var node = svg.selectAll(".node")
+	.data(data.nodes)
+	.enter().append("circle")
+	.attr("class", "node")
+	.attr("r", 3)
+	.style("fill", "red");*/
 
-  line_gen = d3.svg.line()
-          .x(function(d) { 
-            if(d.x !== undefined)
-            {
-             ld.x = d.x;
-             return d.x;
-           }
-            else
-            {
-              return Math.random()*0.3*center.x+0.7*ld.x
-            }
-         })
-          .y(function(d) { 
-           if(d.y !== undefined)
-            {
-             ld.y = d.y;
-             return d.y;
-           }
-            else
-            {
-              return Math.random()*0.3*center.y+0.7*ld.y
-            }})
-          .interpolate("basis");
-  node.append("title")
-      .text(function(d) { return d.name; });
+ var root = svg.selectAll(".root")
+	.data(data.roots)
+	.enter().append("circle")
+	.attr("class", "root")
+	.attr("r", function(d){
+		return Math.sqrt(d.connections);
+	})
+	.style("fill", "blue");
 
-  force.on("tick", function() {
-   // link.attr("x1", function(d) { return d.source.x; })
-    //    .attr("y1", function(d) { return d.source.y; })
-     //   .attr("x2", function(d) { return d.target.x; })
-      //  .attr("y2", function(d) { return d.target.y; });
+var loose = svg.selectAll(".loose")
+	.data(data.singles)
+	.enter().append("circle")
+	.attr("class", "loose")
+	.attr("r", 1);
 
-    node.attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
-    
-    leaf.attr("transform", function(d){
-      
-      if(d.parents === undefined)
-      {
-        var rnd = 1.1*(Math.random()*0.2+0.8);
-        return "scale("+ rnd +") rotate("+(d.x*d.y) +" "+ d.x+ " " +d.y +")";
-      }
-      return "";
-    });
 
-    leaf.attr("d", function(d){
-      
-      if(d.parents === undefined)
-      {
-        console.log("here");
-        return "M" + (d.x+24.485) +" " + (d.y+2) +" c0 8 -18 4 -18 20 c0 6 2 8 2 8 h2 c0 0 -3 -2 -3 -8 c0 -4 9 -8 9 -8 s-7.981 4.328 -7.981 8.436 C" + (d.x+21.239) + " "+ (d.y+ 24.431) +" " +(d.x+ 28.288) +" " + (d.y + 9.606) +   " " +(d.x+24.485)+ " " + (d.y + 2) +" z";
-      }
-      else
-      {
-        return line_gen(d.parents);
-      }
-    });
-  });
+
+//node.append("title").text(function(d) { return d.name; });
+loose.append("title").text(function(d) { return d.name; });
+
+root.append("title").text(function(d) { return d.name +" " +d.connections; });
+
+var max_vine = 0;
+
+force.on("tick", function() {
+	
+	root.attr("cx", function(d) { return d.x; })
+		.attr("cy", function(d) { return d.y; });
+
+	//node.attr("cx", function(d) { return d.x; })
+	//	.attr("cy", function(d) { return d.y; });
+
+	loose.attr("cx", function(d) { return d.x; })
+		.attr("cy", function(d) { return d.y; });
+	
+	leaf.attr("transform", function(d){
+		//console.log("leaf path" + d.curve);
+		// scale("+ rnd +")
+		var x = d[d.length-1].x;
+		var y = d[d.length-1].y;
+		var dx = x - d[d.length-2].x;
+		var dy = y - d[d.length-2].y;
+
+		return "rotate("+(210+180*(-Math.atan2(dx, dy)/Math.PI)) +" "+ x+ " " +y +") translate(" +(x-10) +" "+ (y-30)+ ")" ;
+		
+	});
+
+	leaf.attr("d", function(d){
+		//console.log("leaf");
+		return "M 24.485 2 c0 8 -18 4 -18 20 c0 6 2 8 2 8 h2 c0 0 -3 -2 -3 -8 c0 -4 9 -8 9 -8 s-7.981 4.328 -7.981 8.436 C21.239 24.431 28.288 9.606 24.485 2 z";
+	});
+
+	vine.attr("d", function(d, i){
+		//console.log("vine path");
+		return line_gen(d);
+	});
+	++max_vine;
+
+	link.attr("x1", function(d) { return d.source.x; })
+		.attr("y1", function(d) { return d.source.y; })
+		.attr("x2", function(d) { return d.target.x; })
+		.attr("y2", function(d) { return d.target.y; });
+
+});
 
 </script>

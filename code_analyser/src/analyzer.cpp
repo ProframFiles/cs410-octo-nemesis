@@ -84,7 +84,7 @@ struct ClassRecord
 		json->StartArray(std::string("parentArray"));
 		for (auto i = mParents.begin(); i != mParents.end(); ++i)
 		{
-			json->AddValue( parent_array.at(*i).mUSR );
+			json->AddValue( static_cast<int>(*i) );
 		}
 		json->EndCurrent();
 
@@ -482,8 +482,8 @@ private:
 					if(found_idx != mPointerMap.end())
 					{
 						ClassRecord& cr = mClassRecords.at(found_idx->second);
-						cr.mChildren.insert(index);
-						mClassRecords.back().mParents.insert(found_idx->second);
+						//cr.mChildren.insert(index);
+						//mClassRecords.back().mParents.insert(found_idx->second);
 					}
 				}
 			}
