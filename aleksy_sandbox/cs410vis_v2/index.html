@@ -9,32 +9,33 @@
 .leaf {
   stroke: green;
   stroke-width: 1.5px;
-  fill: LimeGreen;
-  fill-opacity: 0.3;
-  stroke-opacity: 0.3;
+  fill: seagreen;
+  fill-opacity: 0.9;
+  stroke-opacity: 1.0;
 }
 
 .vine {
-  stroke: green;
+  stroke: forestgreen;
   stroke-width: 2.5px;
   fill: green;
-  stroke-opacity: 0.6;
+  stroke-opacity: 0.8;
 }
 
 .root {
- stroke: black;
-  stroke-width: 1.5px;
+ 	stroke: green;
+  stroke-width: 0.1px;
+  fill-opacity: 0.5;
 }
 .loose {
 	stroke: orange;
-	stroke-width: 1.5px;
-	stroke-opacity: 0.1;
+	stroke-width: 0.3px;
+	stroke-opacity: 1.0;
 }
 
 
 .link {
-  stroke: red;
-  stroke-opacity: 0.0;
+  stroke: brown;
+  stroke-opacity: 0.1;
 }
 
 </style>
@@ -46,7 +47,25 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 const kBranchFactor = 1/0.7;
-const kLooseLinkStrength = 10.0;
+const width = 1024,
+    height = 1024;
+
+function NewNode()
+{
+	return {
+		active : false,
+		depth : 0,
+		connections : 0,
+		terminalLeaves : 0,
+		drawOrder : -1,
+		parents : [],
+		children : [],
+		name : "inner",
+		pos : "i",
+		curve : [ Math.random(), Math.random(), Math.random(), Math.random()]
+	}
+};
+
 function generate_nodes(class_array)
 {
 	var node_array = [];
@@ -59,14 +78,14 @@ function generate_nodes(class_array)
 		var this_class = class_array[i];
 		var this_node = 
 			{
-				homeIndex : i,
 				active : false,
 				depth : 0,
 				connections : 0,
+				terminalLeaves : 0,
+				drawOrder : -1,
 				parents : [],
 				children : [],
 				name : this_class.qualifiedName,
-				group : this_class.childIndexArray.length,
 				pos : "e",
 				curve : [ Math.random(), Math.random(), Math.random(), Math.random()]
 			};
@@ -110,7 +129,26 @@ function make_link(src, dst, strength)
 		strength.french();
 	}
 	console.log(strength);
-	return {source : src.homeIndex, target : dst.homeIndex, value : strength};
+	return {source : src, target : dst, value : strength};
+};
+function make_flexible_link(src, dst, strength, data)
+{
+	src.connections += 1;
+	dst.connections += 1;
+	var nn = NewNode();
+	nn.depth = src.depth;
+	nn.terminalLeaves = dst.terminalLeaves;
+	nn.connections = 2;
+	data.nodes.push(nn);
+
+	if(strength === undefined)
+	{
+		strength.french();
+	}
+	console.log(strength);
+	data.links.push({source : src, target : nn, value : 0.1*strength});
+	data.links.push({source : nn, target : dst, value : 0.4*strength});
+	return nn;
 };
 function RandomSelection(array, self)
 {
@@ -153,10 +191,11 @@ function generate_tree(data, class_array)
 
 function gen_tree_paths_worker(data, parent, index, current_path)
 {
+	var num_leaves = 1;
 	var this_path = [];
 	var continuing_path = [];
 	var depth = parent.depth + 1;
-	var first_index = Math.max(current_path.length - 3, 0)
+	var first_index = Math.max(current_path.length - 4, 0)
 	for (var i = first_index; i < current_path.length; ++i) {
 		this_path.push(current_path[i]);
 		continuing_path.push(current_path[i])
@@ -172,14 +211,14 @@ function gen_tree_paths_worker(data, parent, index, current_path)
 	{
 		
 		data.paths.push(this_path);
-		return;
+		return num_leaves;
 	}
 
 	var strength = Math.pow(kBranchFactor, depth);
 
 	while(node.pos != "e"){
 		
-		data.links.push(make_link(node.children[0], node, strength));
+		var nn = make_flexible_link(node.children[0], node, strength, data);
 		++depth;
 		strength *= kBranchFactor;
 		node = node.children[0];
@@ -188,16 +227,31 @@ function gen_tree_paths_worker(data, parent, index, current_path)
 	}
 	if(continuing_path.length > this_path.length)
 	{
+		num_leaves += 1;
+		base_node.terminalLeaves += 1;
 		data.paths.push(continuing_path);
 	}
 	data.paths.push(this_path);
 	strength = Math.pow(kBranchFactor, depth);
-	console.log("added path at node "+ base_node.homeIndex);
+	var pl = this_path.length-1;
 	for (var i = 1; i < base_node.children.length; i++) 
 	{
-		data.links.push(make_link(base_node.children[i], base_node, strength));
-		gen_tree_paths_worker(data, base_node, i, this_path);
+		
+		var nn = make_flexible_link(base_node.children[i], base_node, strength, data);
+		if(i==1 &&continuing_path.length >= pl+1)
+		{
+			data.links.push(make_link(this_path[pl], continuing_path[pl], strength));
+		}
+		else
+		{
+			data.links.push(make_link(nn, this_path[pl], strength));
+		}
+		this_path[pl]= nn;
+		var leaves = gen_tree_paths_worker(data, base_node, i, this_path);
+		base_node.terminalLeaves += leaves;
+		num_leaves += leaves;
 	}
+	return num_leaves;
 };
 
 function generate_tree_paths(data)
@@ -210,53 +264,116 @@ function generate_tree_paths(data)
 		current_path[0] = root;
 		root.depth = 0;
 		for (var child_index = 0; child_index < root.children.length; child_index++) {
-			data.links.push(make_link(root.children[child_index], root, 1.0));
-			gen_tree_paths_worker(data, root, child_index, current_path);
+			var nn = make_flexible_link(root.children[child_index], root, 1.0, data, current_path);
+			if(child_index > 0)
+			{
+				data.links.push(make_link(current_path[1], nn, 1.0)); 
+			} 
+			current_path[1] = nn;
+			root.terminalLeaves += gen_tree_paths_worker(data, root, child_index, current_path);
 		}
 	}
 };
 
 
 
-function generate_link_mesh(data)
+function generate_link_mesh(data, d3)
 {
-	var loose_source = [];
-	var loose_dest_A = [];
-	var loose_dest_B = [];
-	for (var i = 0; i < data.singles.length; i++) {
-		var li = data.singles[i];
-		loose_source.push(li);
-		loose_dest_A.push(li);
-		loose_dest_A.push(li);
-	};
+	var tess = d3.geom.voronoi().x(function(d) { return d.x; }).y(function(d) { return d.y; });
+	var voronoi_links =  tess.links(data.singles.concat(data.roots));
+	for (var i = voronoi_links.length - 1; i >= 0; i--) {
+		var xd = voronoi_links[i].source.x - voronoi_links[i].target.x;
+		var yd = voronoi_links[i].source.y - voronoi_links[i].target.y;
 
-	//link all the loose pieces together into a mesh 
-	for (var i = loose_source.length - 1; i >= 0; i--) {
-		var source = loose_source[i];
-		var target = RandomSelection(loose_dest_A, source);
-		if(source.connections < 3 && target !== undefined) data.links.push(make_link(source, target, kLooseLinkStrength));
-		target = RandomSelection(loose_dest_B, source);
-		if(source.connections < 3 && target !== undefined) data.links.push(make_link(source, target, kLooseLinkStrength));
+		voronoi_links[i].value = Math.sqrt(xd*xd+yd*yd);
 	}
-	
-
-
+	data.links = data.links.concat(voronoi_links);
 };
 
-function process_json_easy (error, json) 
+function initialize_positions(data)
+{
+	var cx = width/2;
+	var cy = height/2;
+	const pow_fac = 0.3;
+	for (var i = 0; i < data.nodes.length; i++) 
+	{
+		var rx = (2.0*(Math.random()-0.5));
+		var ry = (2.0*(Math.random()-0.5));
+		if(data.nodes[i].pos !== "u")
+		{
+			if(rx < 0) rx = -Math.pow(-rx, pow_fac);
+			else rx = Math.pow(rx, pow_fac);
+			if(ry < 0) ry = -Math.pow(-ry, pow_fac);
+			else ry = Math.pow(ry, pow_fac);
+		}
+		data.nodes[i].x = rx*cx+cx;
+		data.nodes[i].y = ry*cy+cy;
+	}
+}
+
+function link_leaf_nodes(data)
+{
+	for (var i = 0; i < data.paths.length-1; i++) {
+		data.links.push(make_link(data.paths[i][data.paths[i].length-1], 
+						data.paths[i+1][data.paths[i+1].length-1], 
+						5.3));
+	};
+	data.links.push(make_link(data.paths[0][data.paths[0].length-1], 
+					data.paths[data.paths.length-1][data.paths[data.paths.length-1].length-1], 
+					5.3));
+}
+
+function calculate_draw_order(data)
+{
+	data.levels = [];
+	var order = 0;
+	data.paths.sort(function(a, b){
+		if(a[0].depth != b[0].depth) return a[0].depth - b[0].depth;
+		return b.length - a.length;
+	})
+
+	for (var i = 0; i < data.nodes.length; i++) {
+		if( data.levels[data.nodes[i].depth] === undefined ) data.levels[data.nodes[i].depth] = 0;
+		if(data.nodes[i].pos !== "u")
+		{ 
+			data.levels[data.nodes[i].depth] += 1;
+		}
+	}
+	data.levels[0] = 0;
+
+	for (var i = 1; i < data.levels.length; i++) {
+		data.levels[i] += data.levels[i-1]; 
+	}
+
+	for (var i = 0; i < data.nodes.length; i++) {
+		if( data.nodes[i].depth > 0 )
+		{
+		 	data.nodes[i].drawOrder = data.levels[data.nodes[i].depth-1];
+		 	data.nodes[i].drawOrder += Math.random()*(data.levels[data.nodes[i].depth] 
+		 								- data.levels[data.nodes[i].depth-1]); 
+		}
+	}
+}
+function process_json_easy (d3, json) 
 {
 
 	var class_array = json.doom3;
 	var data = generate_nodes(class_array);
 	generate_tree(data, json.doom3);
 	generate_tree_paths(data);
-	generate_link_mesh(data);
-	data.active_paths = [];
-	for (var i = 0; i < data.paths.length-1; i++) {
-		data.active_paths.push([]);
-		data.links.push(make_link(data.paths[i][data.paths[i].length-1], data.paths[i+1][data.paths[i+1].length-1], 10.3));
+
+	initialize_positions(data);
+
+	generate_link_mesh(data, d3);
+	link_leaf_nodes(data);
+
+	calculate_draw_order(data);
+
+	data.active_nodes = [];
+	for (var i = 0; i < data.nodes.length; i++) {
+		if(data.nodes[i].pos !== "f") data.active_nodes.push(data.nodes[i]);
 	};
-	data.links.push(make_link(data.paths[0][data.paths[0].length-1], data.paths[data.paths.length-1][data.paths[data.paths.length-1].length-1], 10.3));
+
 	data.building_path = 0;
 	data.building_path_length =0; 
 	return data;
@@ -265,75 +382,98 @@ var error = "";
 
 </script>
 <script src="http://d3js.org/d3.v3.js"></script>
+<script src="colorbrewer.js"></script>
 <script>
 
 
-
+var draw_depth = 3000;
+function increase_draw_depth()
+{
+	draw_depth += 1;
+	setTimeout(increase_draw_depth, 30);
+};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-var data = process_json_easy(error, kDoom3);
+var data = process_json_easy(d3, kDoom3);
 
-var width = 1024,
-    height = 1024;
+
 var total_area = width*height;
 var center = {x:width/2, y:height/2};
 var ld = {};
-line_gen = d3.svg.line()
-	.x(function(d) { 
-		return d.x;
-	})
-	.y(function(d) { 
-		return d.y;
-	}).interpolate("basis");
 
-var color = d3.scale.category20();
 
-var node_area = total_area/data.nodes.length;
-//setTimeout(function(){force.stop()}, 3000);
+var green_color = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7,8]).range(colorbrewer.YlGn[9]);
+var ygr_color = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7,8,9]).range(colorbrewer.RdYlGn[10]);
+
 var force = d3.layout.force()
 	.charge(function(node){
-		return -3*node.connections - (3+node.curve[3])*Math.max(5-node.depth, 0);
+		if(node.pos ==="i") return -1;
+		if(node.pos ==="r") return -(3)*node.terminalLeaves/5;
+		return -6*node.connections -(3+node.curve[3])*Math.max(5-node.depth, node.terminalLeaves/5);
 	})
 	.linkDistance(function(link){
-		return link.value+Math.pow(link.target.depth+link.source.connections, 1.2)*(link.source.curve[0]+link.source.curve[1]);
+		if(link.target.pos === "i" && link.source.pos === "i") return 10;
+		if(link.target.pos === "u" || link.source.pos === "u") return link.value;
+		return link.value+Math.pow(link.target.depth/2+link.source.connections/2, 1.2)*(link.source.curve[1]);
 	})
 	.linkStrength(function(link){
+		if(link.target.pos === "i" && link.source.pos === "i") return 0.8;
+		if(link.target.pos === "u" && link.source.pos === "u") return 0.97;
+		else if(link.target.pos === "u" || link.source.pos === "u") 
+		{
+			var terminal = Math.max(link.target.terminalLeaves, link.source.terminalLeaves);
+			var s = Math.min(terminal/25, 1.0);
+			return Math.pow(s, 1.0);
+		}
 		return Math.min(2.5/link.target.connections, 1.0/link.value);
 	})
-	.gravity(0.15)
+	.gravity(0.12)
 	.size([width, height]);
 
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height)
+    .style("background-color", "#FFFAF0");
 
-force.nodes(data.nodes)
+force.nodes(data.active_nodes)
 	.links(data.links)
 	.start();
-
-var link = svg.selectAll(".link")
+var link;
+/*link = svg.selectAll(".link")
 	.data(data.links)
 	.enter().append("line")
 	.attr("class", "link")
 	.attr("color", "red")
-	.style("stroke-width", 1.3);
+	.style("stroke-opacity", function(link){
+		if(link.source.pos ==="i" && link.target.pos ==="i") return 1.0;
+		return 0.0;
+	})
+	.style("stroke-width", 1.3);*/
 
 var vine = svg.selectAll(".vine")
 	.data(data.paths)
 	.enter().append("path")
 	.attr("class", "vine")
-	.attr("color", "green")
 	.style("fill", "none")
-	.style("stroke-width", function(d){return 1.5*Math.sqrt(1.0/d[0].depth)})
+	.style("stroke-width", function(d){return 1.5*Math.sqrt(1.0/d[0].depth);})
+	.style("stroke", function(d){
+		return green_color(Math.floor(Math.min(7+d[d.length-1].depth, 8)));
+	})
 	.attr("d", function(d){return line_gen(d);});
 
 var leaf = svg.selectAll(".leaf")
 	.data(data.paths)
 	.enter().append("path")
 	.attr("class", "leaf")
-	.style("stroke-width", 1.0)
-	.attr("d", function(d){return line_gen(d);});
+	.style("stroke-width", function(d){return 1.5*Math.sqrt(1.0/d[0].depth);})
+	.style("stroke", function(d){
+		return green_color(Math.floor(Math.min(7+d[d.length-1].depth, 8)));
+	})
+	.style("fill", function(d){ return ygr_color(Math.floor(Math.random()*9.99));})
+	.style("fill-opacity", 0.8)
+	.style("stroke-opacity", 0.7)
+	.attr("d", kLeaf.d);
 
  /*var node = svg.selectAll(".node")
 	.data(data.nodes)
@@ -345,65 +485,65 @@ var leaf = svg.selectAll(".leaf")
  var root = svg.selectAll(".root")
 	.data(data.roots)
 	.enter().append("circle")
+	.attr("r", 5)
 	.attr("class", "root")
-	.attr("r", function(d){
-		return Math.sqrt(d.connections);
-	})
-	.style("fill", "blue");
+	.style("fill", "brown")
+	.call(force.drag);
 
-var loose = svg.selectAll(".loose")
+/*var loose = svg.selectAll(".loose")
 	.data(data.singles)
 	.enter().append("circle")
 	.attr("class", "loose")
-	.attr("r", 1);
+	.attr("r", 0.1);*/
 
 
 
 //node.append("title").text(function(d) { return d.name; });
-loose.append("title").text(function(d) { return d.name; });
+//loose.append("title").text(function(d) { return d.name; });
 
-root.append("title").text(function(d) { return d.name +" " +d.connections; });
+root.append("title").text(function(d) { return d.name +" " +d.terminalLeaves; });
+leaf.append("title").text(function(d) { return d[d.length-1].name ; });
 
 var max_vine = 0;
+var tick_number = 0;
 
-force.on("tick", function() {
-	
+force.on("tick", function(d) {
 	root.attr("cx", function(d) { return d.x; })
 		.attr("cy", function(d) { return d.y; });
+	//.attr("d", function(d) { return kGrassTuft.d;})
+	//.attr("transform", function(d){return "translate(" +(d.x-10) +" "+ (d.y-20)+ ") scale(0.3 )";});
 
 	//node.attr("cx", function(d) { return d.x; })
 	//	.attr("cy", function(d) { return d.y; });
 
-	loose.attr("cx", function(d) { return d.x; })
-		.attr("cy", function(d) { return d.y; });
+	//loose.attr("cx", function(d) { return d.x; })
+	//	.attr("cy", function(d) { return d.y; });
+
+
+		vine.attr("d", function(d, i){
+			//console.log("vine path");
+			return line_gen(d);
+		});
 	
-	leaf.attr("transform", function(d){
+		leaf.attr("transform", function(d){
 		//console.log("leaf path" + d.curve);
 		// scale("+ rnd +")
 		var x = d[d.length-1].x;
 		var y = d[d.length-1].y;
 		var dx = x - d[d.length-2].x;
 		var dy = y - d[d.length-2].y;
+		var scale = 0;
+		scale = 1.0; 
 
-		return "rotate("+(210+180*(-Math.atan2(dx, dy)/Math.PI)) +" "+ x+ " " +y +") translate(" +(x-10) +" "+ (y-30)+ ")" ;
+		return "rotate("+(210+180*(-Math.atan2(dx, dy)/Math.PI)) +" "+ x+ " " +y +")  translate(" +(x-8) +" "+ (y-29)+ ") scale(" + scale +") " ;
 		
 	});
-
-	leaf.attr("d", function(d){
-		//console.log("leaf");
-		return "M 24.485 2 c0 8 -18 4 -18 20 c0 6 2 8 2 8 h2 c0 0 -3 -2 -3 -8 c0 -4 9 -8 9 -8 s-7.981 4.328 -7.981 8.436 C21.239 24.431 28.288 9.606 24.485 2 z";
-	});
-
-	vine.attr("d", function(d, i){
-		//console.log("vine path");
-		return line_gen(d);
-	});
-	++max_vine;
-
-	link.attr("x1", function(d) { return d.source.x; })
-		.attr("y1", function(d) { return d.source.y; })
-		.attr("x2", function(d) { return d.target.x; })
-		.attr("y2", function(d) { return d.target.y; });
+	if(link !== undefined){
+		link.attr("x1", function(d) { return d.source.x; })
+			.attr("y1", function(d) { return d.source.y; })
+			.attr("x2", function(d) { return d.target.x; })
+			.attr("y2", function(d) { return d.target.y; });
+	}
 
 });
 

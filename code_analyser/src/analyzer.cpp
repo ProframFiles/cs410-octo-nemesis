@@ -62,6 +62,7 @@ struct ClassRecord
 	std::string mName;
 	std::string mFileName;
 	std::unordered_set<size_t> mChildren;
+	std::unordered_set<size_t> mClassMemberships;
 	std::unordered_map<size_t, size_t> mMethodCallers;
 	std::unordered_map<size_t, size_t> mFieldAccessors;
 	std::unordered_set<size_t> mParents;
@@ -72,13 +73,20 @@ struct ClassRecord
 
 	void DumpToJSON(sjp::JSONObjectIO* json, std::vector<ClassRecord>& parent_array, std::vector<MethodRecord>& method_array, size_t index) const
 	{
+		size_t implementation_bytes = 0;
+		for (auto i = mMethods.begin(); i != mMethods.end(); ++i)
+		{
+			implementation_bytes += method_array.at(*i).mCodeSize;	
+		}
+
 		json->StartObject();
 		json->AddValue(std::string("qualifiedName"), mFullname);
 		json->AddValue(std::string("name"), mName);
 		json->AddValue(std::string("filename"), mFileName);
 		json->AddValue(std::string("index"), static_cast<int>(index)); 
 		json->AddValue(std::string("USR"), mUSR);
-		json->AddValue(std::string("declarationSize"), mDeclarationBytes);
+		json->AddValue(std::string("declSize"), mDeclarationBytes);
+		json->AddValue(std::string("implSize"), static_cast<int>(implementation_bytes));
 		json->AddValue(std::string("timeSpent"), mLookupTime);
 		
 		json->StartArray(std::string("parentArray"));
@@ -88,8 +96,15 @@ struct ClassRecord
 		}
 		json->EndCurrent();
 
-		json->StartArray(std::string("childIndexArray"));
+		json->StartArray(std::string("childArray"));
 		for (auto i = mChildren.begin(); i != mChildren.end(); ++i)
+		{
+			json->AddValue( static_cast<int>(*i));
+		}
+		json->EndCurrent();
+
+		json->StartArray(std::string("classMemberships"));
+		for (auto i = mClassMemberships.begin(); i != mClassMemberships.end(); ++i)
 		{
 			json->AddValue( static_cast<int>(*i));
 		}
@@ -99,23 +114,23 @@ struct ClassRecord
 		for (auto i = mMethodCallers.begin(); i != mMethodCallers.end(); ++i)
 		{
 			json->StartObject();
-			json->AddValue(std::string("callerIndex"),  static_cast<int>(i->first));
-			json->AddValue(std::string("count"),  static_cast<int>(i->second));
+			json->AddValue(std::string("caller"),  static_cast<int>(i->first));
+			json->AddValue(std::string("callCount"),  static_cast<int>(i->second));
 			json->EndCurrent();
 		}
 		json->EndCurrent();
 
-		json->StartArray(std::string("memberDataRefs"));
+		json->StartArray(std::string("intrusiveDataRefs"));
 		for (auto i = mFieldAccessors.begin(); i != mFieldAccessors.end(); ++i)
 		{
 			json->StartObject();
-			json->AddValue(std::string("callerIndex"),  static_cast<int>(i->first));
-			json->AddValue(std::string("count"),  static_cast<int>(i->second));
+			json->AddValue(std::string("intruder"),  static_cast<int>(i->first));
+			json->AddValue(std::string("intrusionCount"),  static_cast<int>(i->second));
 			json->EndCurrent();
 		}
 		json->EndCurrent();
 		
-		json->StartArray(std::string("methods"));
+		json->StartArray(std::string("methodList"));
 		for (auto i = mMethods.begin(); i != mMethods.end(); ++i)
 		{
 			if(method_array.at(*i).mFullName.size() > 0)
@@ -306,7 +321,6 @@ public:
 			
 			cr.mDeclarationBytes = GetSourceByteSize(CE, Result);
 			
-			
 			mTmpSS.clear();
 			raw_svector_ostream sout(mTmpSS);
 			
@@ -482,8 +496,7 @@ private:
 					if(found_idx != mPointerMap.end())
 					{
 						ClassRecord& cr = mClassRecords.at(found_idx->second);
-						//cr.mChildren.insert(index);
-						//mClassRecords.back().mParents.insert(found_idx->second);
+						cr.mClassMemberships.insert(index);
 					}
 				}
 			}
@@ -595,7 +608,7 @@ int main(int argc, const char **argv)
 	// callback now has the collected analysis information, so dump to disk
 	
 	sjp::JSONObjectIO json_out;
-	json_out.StartObject("root");
+	json_out.StartObject("define");
 	json_out.StartArray("doom3");
 	callback.DumpAllToJSON(&json_out);
 	json_out.EndCurrent();
@@ -607,8 +620,19 @@ int main(int argc, const char **argv)
 	json_out.AddValue(std::string("total time"), sw.Read());
 	json_out.EndCurrent();
 	json_out.EndCurrent();
-	std::ofstream fout("test_analysis_out.json", std::ios::binary);
-	fout << json_out.ToString();
+	std::ofstream fout("doom3Data.js", std::ios::binary);
+	std::string out_string = json_out.ToString();
+	size_t indx = out_string.find_first_of(':');
+	out_string.at(indx) = ' ';
+
+	indx = out_string.find_first_of('"');
+	out_string.at(indx) = ' ';
+
+	indx = out_string.find_first_of('"', indx+1);
+	out_string.at(indx) = '(';
+	out_string.push_back(')');
+	out_string.push_back(';');
+	fout << out_string;
 
 
 	return 0;

@@ -6,14 +6,22 @@ require.config({
     underscore  : './libs/underscore',
     jquery      : './libs/jquery-1.10.2',
     d3          : './libs/d3/d3.v3',
-    marionette  : './libs/backbone.marionette'
+    colorbrewer : './libs/d3/colorbrewer',
+    marionette  : './libs/backbone.marionette',
+    doom3Data   : '../data/doom3Data'
   },
   shim : {
     jquery : {
       exports : 'jQuery'
     },
     d3  : {
-        exports : "d3"
+      exports : "d3"
+    },
+    colorbrewer  : {
+      exports : "colorbrewer"
+    },
+    doom3Data : {
+      exports : "doom3Data"
     },
     underscore : {
       exports : '_'
