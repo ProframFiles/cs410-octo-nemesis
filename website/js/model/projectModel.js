@@ -48,8 +48,8 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			name : "inner",
 			pos : "i",
 			curve : [ Math.random(), Math.random(), Math.random(), Math.random()]
-		}
-	};
+		};
+	}
 
 	function GenerateAllNodes(class_array)
 	{
@@ -103,7 +103,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 				singles : loose_array,
 				roots : root_array
 			};
-	};
+	}
 
 	function MakeLink(src, dst, strength)
 	{
@@ -115,7 +115,8 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		}
 		console.log(strength);
 		return {source : src, target : dst, value : strength};
-	};
+	}
+	
 	function MakeFlexibleLink(src, dst, strength, data)
 	{
 		src.connections += 1;
@@ -134,7 +135,8 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		data.links.push({source : src, target : nn, value : 0.1*strength});
 		data.links.push({source : nn, target : dst, value : 0.4*strength});
 		return nn;
-	};
+	}
+	
 	function RandomSelection(array, self)
 	{
 		var index;
@@ -157,7 +159,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			array[index] = array.pop();
 		}
 		return ret;
-	};
+	}
 
 	function GenerateTree(data, class_array)
 	{
@@ -168,11 +170,11 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			for (var i = 0; i < this_class.childArray.length; i++) {
 				this_node.children.push(data.nodes[this_class.childArray[i]]);
 			}
-			for (var i = 0; i < this_class.parentArray.length; i++) {
+			for (i = 0; i < this_class.parentArray.length; i++) {
 				this_node.parents.push(data.nodes[this_class.parentArray[i]]);
 			}
 		}
-	};
+	}
 
 	function GenTreePathsWorker(data, parent, index, current_path)
 	{
@@ -180,10 +182,10 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		var this_path = [];
 		var continuing_path = [];
 		var depth = parent.depth + 1;
-		var first_index = Math.max(current_path.length - 4, 0)
+		var first_index = Math.max(current_path.length - 4, 0);
 		for (var i = first_index; i < current_path.length; ++i) {
 			this_path.push(current_path[i]);
-			continuing_path.push(current_path[i])
+			continuing_path.push(current_path[i]);
 		}
 		var node = parent.children[index];
 		node.depth = depth;
@@ -203,7 +205,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 		while(node.pos != "e"){
 			
-			var nn = MakeFlexibleLink(node.children[0], node, strength, data);
+			MakeFlexibleLink(node.children[0], node, strength, data);
 			++depth;
 			strength *= kBranchFactor;
 			node = node.children[0];
@@ -219,25 +221,25 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		data.paths.push(this_path);
 		strength = Math.pow(kBranchFactor, depth);
 		var pl = this_path.length-1;
-		for (var i = 1; i < base_node.children.length; i++) 
+		for (i = 1; i < base_node.children.length; i++) 
 		{
 			
-			var nn = MakeFlexibleLink(base_node.children[i], base_node, strength, data);
+			var new_node = MakeFlexibleLink(base_node.children[i], base_node, strength, data);
 			if(i==1 &&continuing_path.length >= pl+1)
 			{
 				data.links.push(MakeLink(this_path[pl], continuing_path[pl], strength));
 			}
 			else
 			{
-				data.links.push(MakeLink(nn, this_path[pl], strength));
+				data.links.push(MakeLink(new_node, this_path[pl], strength));
 			}
-			this_path[pl]= nn;
+			this_path[pl]= new_node;
 			var leaves = GenTreePathsWorker(data, base_node, i, this_path);
 			base_node.terminalLeaves += leaves;
 			num_leaves += leaves;
 		}
 		return num_leaves;
-	};
+	}
 
 	function GenerateTreePaths(data)
 	{
@@ -258,9 +260,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 				root.terminalLeaves += GenTreePathsWorker(data, root, child_index, current_path);
 			}
 		}
-	};
-
-
+	}
 
 	function GenerateBackgroundMesh(data, d3)
 	{
@@ -273,7 +273,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			voronoi_links[i].value = Math.sqrt(xd*xd+yd*yd);
 		}
 		data.links = data.links.concat(voronoi_links);
-	};
+	}
 
 	function InitializePositions(data)
 	{
@@ -302,7 +302,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			data.links.push(MakeLink(data.paths[i][data.paths[i].length-1], 
 							data.paths[i+1][data.paths[i+1].length-1], 
 							5.3));
-		};
+		}
 		data.links.push(MakeLink(data.paths[0][data.paths[0].length-1], 
 						data.paths[data.paths.length-1][data.paths[data.paths.length-1].length-1], 
 						5.3));
@@ -311,11 +311,10 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 	function CalculateDrawOrder(data)
 	{
 		data.levels = [];
-		var order = 0;
 		data.paths.sort(function(a, b){
 			if(a[0].depth != b[0].depth) return a[0].depth - b[0].depth;
 			return b.length - a.length;
-		})
+		});
 
 		for (var i = 0; i < data.nodes.length; i++) {
 			if( data.levels[data.nodes[i].depth] === undefined ) data.levels[data.nodes[i].depth] = 0;
@@ -326,16 +325,16 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		}
 		data.levels[0] = 0;
 
-		for (var i = 1; i < data.levels.length; i++) {
+		for (i = 1; i < data.levels.length; i++) {
 			data.levels[i] += data.levels[i-1]; 
 		}
 
-		for (var i = 0; i < data.nodes.length; i++) {
+		for (i = 0; i < data.nodes.length; i++) {
 			if( data.nodes[i].depth > 0 )
 			{
-			 	data.nodes[i].drawOrder = data.levels[data.nodes[i].depth-1];
-			 	data.nodes[i].drawOrder += Math.random()*(data.levels[data.nodes[i].depth] 
-			 								- data.levels[data.nodes[i].depth-1]); 
+				data.nodes[i].drawOrder = data.levels[data.nodes[i].depth-1];
+				data.nodes[i].drawOrder += Math.random()*(data.levels[data.nodes[i].depth] 
+										- data.levels[data.nodes[i].depth-1]); 
 			}
 		}
 	}
@@ -357,7 +356,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		data.active_nodes = [];
 		for (var i = 0; i < data.nodes.length; i++) {
 			if(data.nodes[i].pos !== "f") data.active_nodes.push(data.nodes[i]);
-		};
+		}
 
 		data.building_path = 0;
 		data.building_path_length =0; 
@@ -376,7 +375,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 */
 	var data = ProcessRawClassData(d3, raw_data);
 	
-	line_gen = d3.svg.line()
+	var line_gen = d3.svg.line()
 		.x(function(d) { 
 			return d.x;
 		})

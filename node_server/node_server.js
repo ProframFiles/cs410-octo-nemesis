@@ -2,15 +2,14 @@
 var http = require('http');
 var url = require('url') ;
 var path = require("path");
-var analyzer = require("analyzer");
-var mustache = require("mustache");
 var fs = require('fs') ;
-var kDir = 
+var kDir =
 {
+    // directories that static files a drawn from
     static_files : ["../aleksy_sandbox/", "../website/"],
+    // the location of this file.
     home_dir : "./node_server/"
 };
-var kIsDoingFileUpdate = false;
 
 var kPortToBind = 8088;
 //used for c9.io
