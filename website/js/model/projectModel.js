@@ -66,6 +66,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 					active : false,
 					depth : 0,
 					connections : 0,
+					root : 0,
 					terminalLeaves : 0,
 					drawOrder : -1,
 					parents : [],
@@ -123,6 +124,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		dst.connections += 1;
 		var nn = NewNode();
 		nn.depth = src.depth;
+		nn.root = dst.root;
 		nn.terminalLeaves = dst.terminalLeaves;
 		nn.connections = 2;
 		data.nodes.push(nn);
@@ -182,14 +184,26 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		var this_path = [];
 		var continuing_path = [];
 		var depth = parent.depth + 1;
-		var first_index = Math.max(current_path.length - 4, 0);
+		var first_index = Math.max(0, 0);
 		for (var i = first_index; i < current_path.length; ++i) {
 			this_path.push(current_path[i]);
 			continuing_path.push(current_path[i]);
 		}
 		var node = parent.children[index];
 		node.depth = depth;
+		node.root = parent.root;
 		var base_node = node;
+		
+		// if this isn't the leaf, we want to put a branching
+		// kink here, which means duplicating spline nodes
+		if(node.pos !== "e")
+		{
+			this_path.push(node);
+			continuing_path.push(node);
+			this_path.push(node);
+			continuing_path.push(node);
+		}
+
 		this_path.push(node);
 		continuing_path.push(node);
 
@@ -209,6 +223,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			++depth;
 			strength *= kBranchFactor;
 			node = node.children[0];
+			node.root = parent.root;
 			node.depth = depth;
 			continuing_path.push(node);
 		}
@@ -248,6 +263,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		var current_path = [];
 		for (var root_index = data.roots.length - 1; root_index >= 0; root_index--) {
 			var root = data.roots[root_index];
+			root.root = root;
 			current_path[0] = root;
 			root.depth = 0;
 			for (var child_index = 0; child_index < root.children.length; child_index++) {
@@ -264,7 +280,13 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 	function GenerateBackgroundMesh(data, d3)
 	{
-		var tess = d3.geom.voronoi().x(function(d) { return d.x; }).y(function(d) { return d.y; });
+		var tess = d3.geom.voronoi().x(function(d) { 
+			//d.fixed = true;
+			return d.x; 
+		})
+		.y(function(d) {
+			return d.y; 
+		});
 		var voronoi_links =  tess.links(data.singles.concat(data.roots));
 		for (var i = voronoi_links.length - 1; i >= 0; i--) {
 			var xd = voronoi_links[i].source.x - voronoi_links[i].target.x;
@@ -381,14 +403,16 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		})
 		.y(function(d) { 
 			return d.y;
-		}).interpolate("basis");
+		}).interpolate("bundle").tension(1.1);
 
 	var force = d3.layout.force()
 		// repulsion between nodes is a -ive charge
 		.charge(function(node){
 			if(node.pos ==="i") return -1;
 			if(node.pos ==="r") return -(3)*node.terminalLeaves/5;
-			return -6*node.connections -(3+node.curve[3])*Math.max(5-node.depth, node.terminalLeaves/5);
+			if(node.pos ==="e") return -(100/(node.parents[0].children.length/3));
+			if(node.pos ==="u") return -(3+3*Math.random());
+			return -(3)*node.terminalLeaves/5;
 		})
 		// nodes will attempt to preserve this distance between nodes 
 		.linkDistance(function(link){

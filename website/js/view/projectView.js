@@ -10,7 +10,64 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	var root;
 	var loose;
 	
+	function desaturate(rgbstring)
+	{
+		var hsl = d3.hsl(rgbstring);
+		hsl.s = hsl.s * 0.2;
+		return hsl.toString();
+	}
+
+	function leaf_fill(d){
+		return yellowGreenColor(Math.floor(d[d.length-1].curve[3]*9.99));
+	}
+
+	function vine_color(d){
+		return greenColor(Math.floor(Math.min(7+d[d.length-1].depth, 8)));
+	}
 	
+	function vine_stroke_width(d){
+		return Math.max(2.5*Math.sqrt(1.0/d.length), 0.7);
+	}
+
+	function highlight_in_tree(root)
+	{
+		for (var i = 0; i < model.active_nodes.length; i++) {
+			if(model.active_nodes[i].root == root) model.active_nodes[i].fixed = true;
+		}
+
+		leaf.style("stroke", function(d){
+				if(d[0].root !== root) return desaturate(vine_color(d));
+				return d3.rgb(vine_color(d)).brighter(1.0).toString();
+			})
+			.style("fill", function(d){
+				if(d[0].root !== root) return desaturate(leaf_fill(d));
+				return d3.rgb(leaf_fill(d)).brighter(1.0).toString();
+			})
+			.style("stroke-width", function(d){
+				if(d[0].root !== root) return 0.5*vine_stroke_width(d);
+				return 2.0*vine_stroke_width(d);
+			});
+		vine.style("stroke", function(d){
+				if(d[0].root !== root) return desaturate(vine_color(d));
+				return d3.rgb(vine_color(d)).brighter(1.0).toString();
+			})
+			.style("stroke-width", function(d){
+				if(d[0].root !== root) return 0.5 * vine_stroke_width(d);
+				return 2.0 * vine_stroke_width(d);
+			});
+	}
+	function unhighlight_in_tree(root)
+	{
+		for (var i = 0; i < model.active_nodes.length; i++) {
+			model.active_nodes[i].fixed = false;
+		}
+		leaf.style("stroke", vine_color)
+			.style("fill", leaf_fill)
+			.style("stroke-width", vine_stroke_width);
+		vine.style("stroke", vine_color)
+			.style("stroke-width", vine_stroke_width);
+	}
+
 	function on_force_tick(d) {
 
 		root.attr("cx", function(d) { return d.x; })
@@ -115,30 +172,26 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.enter().append("path")
 				.attr("class", "vine")
 				.style("fill", "none")
-				.style("stroke-width", function(d){
-					return 1.5*Math.sqrt(1.0/d[0].depth);
-				})
-				.style("stroke", function(d){
-					return greenColor(Math.floor(Math.min(7+d[d.length-1].depth, 8)));
-				})
+				.style("stroke-width", vine_stroke_width)
+				.style("stroke", vine_color)
 				.attr("d", function(d){return model.lineGen(d);});
 		
 			leaf = svg.selectAll(".leaf")
 				.data(model.paths)
 				.enter().append("path")
 				.attr("class", "leaf")
-				.style("stroke-width", function(d){
-					return 1.5*Math.sqrt(1.0/d[0].depth);
-				})
-				.style("stroke", function(d){
-					return greenColor(Math.floor(Math.min(7+d[d.length-1].depth, 8)));
-				})
-				.style("fill", function(d){
-					return yellowGreenColor(Math.floor(Math.random()*9.99));
-				})
+				.style("stroke-width", vine_stroke_width)
+				.style("stroke", vine_color)
+				.style("fill", leaf_fill)
 				.style("fill-opacity", 0.8)
 				.style("stroke-opacity", 0.7)
-				.attr("d", model.kLeaf.d);
+				.attr("d", model.kLeaf.d)
+				.on('mouseover', function(d){
+					highlight_in_tree(d[0].root)
+				})
+				.on('mouseout', function(d){
+					unhighlight_in_tree();
+				});
 				
 			root = svg.selectAll(".root")
 				.data(model.roots)
@@ -157,6 +210,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		
 		OnForceTick : on_force_tick,
 		
+
+
 		Start : function(){
 			model.force.on("tick", this.OnForceTick);	
 			model.force.start();

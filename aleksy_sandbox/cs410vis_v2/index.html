@@ -504,8 +504,6 @@ var leaf = svg.selectAll(".leaf")
 root.append("title").text(function(d) { return d.name +" " +d.terminalLeaves; });
 leaf.append("title").text(function(d) { return d[d.length-1].name ; });
 
-var max_vine = 0;
-var tick_number = 0;
 
 force.on("tick", function(d) {
 	root.attr("cx", function(d) { return d.x; })
@@ -520,22 +518,22 @@ force.on("tick", function(d) {
 	//	.attr("cy", function(d) { return d.y; });
 
 
-		vine.attr("d", function(d, i){
-			//console.log("vine path");
-			return line_gen(d);
-		});
-	
-		leaf.attr("transform", function(d){
-		//console.log("leaf path" + d.curve);
-		// scale("+ rnd +")
-		var x = d[d.length-1].x;
-		var y = d[d.length-1].y;
-		var dx = x - d[d.length-2].x;
-		var dy = y - d[d.length-2].y;
-		var scale = 0;
-		scale = 1.0; 
+	vine.attr("d", function(d, i){
+		//console.log("vine path");
+		return line_gen(d);
+	});
 
-		return "rotate("+(210+180*(-Math.atan2(dx, dy)/Math.PI)) +" "+ x+ " " +y +")  translate(" +(x-8) +" "+ (y-29)+ ") scale(" + scale +") " ;
+	leaf.attr("transform", function(d){
+	//console.log("leaf path" + d.curve);
+	// scale("+ rnd +")
+	var x = d[d.length-1].x;
+	var y = d[d.length-1].y;
+	var dx = x - d[d.length-2].x;
+	var dy = y - d[d.length-2].y;
+	var scale = 0;
+	scale = 1.0; 
+
+	return "rotate("+(210+180*(-Math.atan2(dx, dy)/Math.PI)) +" "+ x+ " " +y +")  translate(" +(x-8) +" "+ (y-29)+ ") scale(" + scale +") " ;
 		
 	});
 	if(link !== undefined){
