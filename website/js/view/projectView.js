@@ -1,6 +1,10 @@
 define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, colorbrewer) {	
 // Private variables and private functions
-	var greenColor = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7,8]).range(colorbrewer.YlGn[9]);
+	function greenColor(val){
+		var indx = Math.max(Math.min(val*9, 8.9999), 0);
+		return d3.interpolateLab( colorbrewer.YlGn[9][Math.floor(indx)], 
+							colorbrewer.YlGn[9][Math.floor(indx)+1] )(indx%1);
+	}
 	var yellowGreenColor = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7,8,9]).range(colorbrewer.RdYlGn[10]);
 	var svg;
 	var leaf;
@@ -18,58 +22,58 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	}
 
 	function leaf_fill(d){
-		return yellowGreenColor(Math.floor(d[d.length-1].curve[3]*9.99));
+		return yellowGreenColor(Math.floor(d.rnd[3]*9.99));
 	}
 
 	function vine_color(d){
-		return greenColor(Math.floor(Math.min(7+d[d.length-1].depth, 8)));
+		return greenColor(0.8-0.5*d.rnd[2]);
 	}
-	
+
 	function vine_stroke_width(d){
-		return Math.max(2.5*Math.sqrt(1.0/d.length), 0.7);
+		return Math.max(0.4,0.4);
 	}
+
+	function flower_stroke_width(d){
+		return 0.4;
+	}
+
 
 	function highlight_in_tree(root)
 	{
-		for (var i = 0; i < model.active_nodes.length; i++) {
-			if(model.active_nodes[i].root == root) model.active_nodes[i].fixed = true;
-		}
 
-		leaf.style("stroke", function(d){
-				if(d[0].root !== root) return desaturate(vine_color(d));
-				return d3.rgb(vine_color(d)).brighter(1.0).toString();
+		leaf.style("stroke-width",function(d){
+				if(d.root !== root ) return vine_stroke_width(d);
+				else return 1.0;
 			})
 			.style("fill", function(d){
-				if(d[0].root !== root) return desaturate(leaf_fill(d));
+				if(d.root !== root) return desaturate(leaf_fill(d));
 				return d3.rgb(leaf_fill(d)).brighter(1.0).toString();
-			})
-			.style("stroke-width", function(d){
-				if(d[0].root !== root) return 0.5*vine_stroke_width(d);
-				return 2.0*vine_stroke_width(d);
 			});
+		if(vine !== undefined)
+		{
 		vine.style("stroke", function(d){
-				if(d[0].root !== root) return desaturate(vine_color(d));
+				if(d.root !== root) return desaturate(vine_color(d));
 				return d3.rgb(vine_color(d)).brighter(1.0).toString();
 			})
-			.style("stroke-width", function(d){
-				if(d[0].root !== root) return 0.5 * vine_stroke_width(d);
-				return 2.0 * vine_stroke_width(d);
-			});
+			.style("fill", vine_color);
+		}
 	}
 	function unhighlight_in_tree(root)
 	{
-		for (var i = 0; i < model.active_nodes.length; i++) {
-			model.active_nodes[i].fixed = false;
-		}
-		leaf.style("stroke", vine_color)
+		leaf.style("stroke", "black")
 			.style("fill", leaf_fill)
 			.style("stroke-width", vine_stroke_width);
-		vine.style("stroke", vine_color)
-			.style("stroke-width", vine_stroke_width);
+		if(vine !== undefined)
+		{
+			vine.style("stroke", "black")
+				.style("fill", vine_color)
+				.style("stroke-width", vine_stroke_width);
+		}
 	}
 
+	var frameskip = 40;
+	var framecount = 0;
 	function on_force_tick(d) {
-
 		root.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) { return d.y; });
 			//.attr("d", function(d) { return kGrassTuft.d;})
@@ -90,11 +94,11 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		}
 
 		//draw the actual vines
-		if(vine !== undefined)
+		if(vine !== undefined && vine.should_draw)
 		{
-			vine.attr("d", function(d, i){
+			vine.attr("d", function(d){
 				//console.log("vine path");
-				return model.lineGen(d);
+				return model.lineGen(d, 0.9)(d.path);
 			});
 		}	
 
@@ -103,16 +107,17 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		if(leaf !== undefined)
 		{
 			leaf.attr("transform", function(d){
-				//console.log("leaf path" + d.curve);
+				//console.log("leaf path" + d.rnd);
 				// scale("+ rnd +")
-				var x = d[d.length-1].x;
-				var y = d[d.length-1].y;
-				var dx = x - d[d.length-2].x;
-				var dy = y - d[d.length-2].y;
+				var indx = Math.floor(d.length*0.5)
+				var x = d.x;
+				var y = d.y;
+				var dx = x - d.nextLast.x;
+				var dy = y - d.nextLast.y;
 				var scale = 0;
 				scale = 1.0;
 				return "rotate("+(210+180*(-Math.atan2(dx, dy)/Math.PI)) +" "+ x+ " " +y +
-							")  translate(" +(x-8) +" "+ (y-29)+ ") scale(" + scale +") " ;			
+							")  translate(" +(x-model.kLeaf.x0) +" "+ (y-model.kLeaf.y0)+ ") scale(" + scale +") " ;			
 			});
 		}
 
@@ -123,10 +128,23 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.attr("x2", function(d) { return d.target.x; })
 				.attr("y2", function(d) { return d.target.y; });
 		}
+		framecount++;
+	}
+
+	function OnStop(d)
+	{
+		
+				vine
+				.style("fill", vine_color)
+				.style("fill-opacity", 0.9)
+				.style("stroke-opacity", 1.0)
+				.style("stroke-width", vine_stroke_width)
+				.style("stroke", "black")
+				.attr("d", function(d){return model.lineGen(d, 1.0)(d.path);});
 
 	}
 	
-	
+
 	return {
 	
 		backGroundColor : "#FFFAF0",
@@ -168,26 +186,41 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.attr("r", 0.1);*/
 		
 			vine = svg.selectAll(".vine")
-				.data(model.paths)
+				.data(model.leaves)
 				.enter().append("path")
 				.attr("class", "vine")
 				.style("fill", "none")
+				.style("fill-opacity", 0.0)
+				.style("stroke-opacity", 0.0)
 				.style("stroke-width", vine_stroke_width)
-				.style("stroke", vine_color)
-				.attr("d", function(d){return model.lineGen(d);});
+				.style("stroke", "black")
+				.attr("d", function(d){return model.lineGen(d, 1.0)(d.path);});
+			vine.should_draw = false;
+/*
+			flower = svg.selectAll(".flower")
+				.data(model.paths)
+				.enter().append("path")
+				.attr("class", "flower")
+				.style("stroke-width", flower_stroke_width)
+				.style("stroke", model.kFlower.stroke)
+				.style("stroke-linejoin", "miter")
+				.style("miter-limit", model.kFlower["miter-limit"])
+				.attr("d", model.kFlower.d);*/
 		
 			leaf = svg.selectAll(".leaf")
-				.data(model.paths)
+				.data(model.leaves)
 				.enter().append("path")
 				.attr("class", "leaf")
 				.style("stroke-width", vine_stroke_width)
-				.style("stroke", vine_color)
+				.style("stroke", "black")
 				.style("fill", leaf_fill)
 				.style("fill-opacity", 0.8)
 				.style("stroke-opacity", 0.7)
+				.style("stroke-linejoin", "miter")
+				.style("miter-limit", model.kLeaf["miter-limit"])
 				.attr("d", model.kLeaf.d)
 				.on('mouseover', function(d){
-					highlight_in_tree(d[0].root)
+					highlight_in_tree(d.root)
 				})
 				.on('mouseout', function(d){
 					unhighlight_in_tree();
@@ -196,24 +229,28 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			root = svg.selectAll(".root")
 				.data(model.roots)
 				.enter().append("circle")
-				.attr("r", 5)
+				.attr("r", function(d){
+					return Math.max(Math.sqrt(d.terminalLeaves), 3)
+				})
 				.attr("class", "root")
-				.style("fill", "brown")
+				.style("fill", "Darkblue")
 				.call(model.force.drag);
 
 			if(node !== undefined) node.append("title").text(function(d) { return d.name; });
 			if(loose !== undefined ) loose.append("title").text(function(d) { return d.name; });
 		
 			if(root !== undefined ) root.append("title").text(function(d) { return d.name +" " +d.terminalLeaves; });
-			if(leaf !== undefined )leaf.append("title").text(function(d) { return d[d.length-1].name ; });
+			if(leaf !== undefined )leaf.append("title").text(function(d) { return d.name ; });
 		},
 		
 		OnForceTick : on_force_tick,
-		
+		OnForceStop : OnStop,
 
 
 		Start : function(){
-			model.force.on("tick", this.OnForceTick);	
+			model.force
+				.on("tick", this.OnForceTick)
+				.on("end", this.OnForceStop);
 			model.force.start();
 		},
 		

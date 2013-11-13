@@ -1,53 +1,67 @@
 define(["doom3Data", "d3"], function(raw_data, d3){
 	// Private variables and private functions
 	const kBranchFactor = 1/0.7;
-	const width = 1024,
-   height = 1024;
+	const kVineLinkStrength = 0.99;
+	const kVineLinkDistance = 12;
+	const width = 1024;
+   	const height = 1024;
 
+	Array.prototype.back=function()
+	{
+		return this[this.length-1];
+	}
 
-   const kGrassTuft = {
-		style : {
-			fill : "none",
-			"stroke-width" : 0.5,
-			"stroke-linecap" : "round",
-			"stroke-linejoin" : "miter",
-			"stroke-miterlimit" : 40,
-			"stroke-opacity" : 1,
-			"stroke-dasharray" : "none",
-			"marker-start" : "none"
-		},
+	const kGrassTuft = {
+		
+		fill : "none",
+		"stroke-width" : 0.5,
+		"stroke-linecap" : "round",
+		"stroke-linejoin" : "miter",
+		"stroke-miterlimit" : 40,
+		"stroke-opacity" : 1,
+		"stroke-dasharray" : "none",
+		"marker-start" : "none",
+	
+		
 		d : "m 21.063,15.702 c 0,0 4.38204,5.69008 9.17024,19.39083 0.84026,2.40427 1.36993,5.12099 1.68054,7.90177 -1.22648,-1.98607 -4.62718,-6.17857 -6.52825,-7.82906 -8.61895,-7.48288 -18.66367,-6.29394 -18.66367,-6.29394 0,0 9.82249,0.96354 19.59281,11.78801 1.76216,1.95228 3.05448,4.1873 3.99937,6.4717 -0.0436,0.12275 -0.0878,0.24096 -0.12927,0.36357 -2.38321,-3.43135 -4.45189,-6.96944 -10.60033,-9.91356 -6.14843,-2.94412 -12.73359,-3.94504 -18.95453,0.95338 4.55069,-2.00202 10.12542,-2.00238 17.7426,2.07644 7.61719,4.07881 8.5705,9.08748 10.38218,14.26842 -0.3424,5.08389 0.59788,8.8713 0.59788,8.8713 l 8.16608,-0.0514 c 0,0 -0.0619,-2.56934 -0.44206,-5.46693 0.17093,-1.12498 0.33468,-2.38135 0.46053,-3.77314 1.41388,-3.75058 4.13603,-7.79746 8.75012,-11.1982 7.30502,-5.38403 12.28208,-5.54345 17.48407,-4.6538 -0.86498,-0.4767 -3.9204,-2.13602 -8.11992,-1.92293 -3.92136,0.19899 -8.96537,1.48729 -14.2361,6.05964 -1.43904,1.24836 -2.66374,2.57659 -3.7085,3.92664 -0.0425,-0.85681 -0.10124,-1.72629 -0.19391,-2.6016 0.73186,-1.3258 1.13017,-4.51563 7.14229,-9.17025 6.01213,-4.65462 14.70472,-5.65566 14.70472,-5.65566 -8.41969,-0.51495 -14.27494,1.55125 -17.84765,3.84585 -3.5727,2.2946 -4.84952,4.38788 -5.17089,4.6942 -0.42333,-1.51217 -0.95994,-3.00136 -1.62397,-4.44373 -5.55801,-12.07259 -13.65438,-17.63758 -13.65438,-17.63758 z",
 		id : "grass"
 	};
 
 	const kLeaf = {
-		style : {
-			fill : "none",
-			"stroke-width" : 0.5,
-			"stroke-linecap" : "round",
-			"stroke-linejoin" : "miter",
-			"stroke-miterlimit" : 40,
-			"stroke-opacity" : 1,
-			"stroke-dasharray" : "none",
-			"marker-start" : "none"
-		},
+
+		fill : "none",
+		"stroke-width" : 0.5,
+		"stroke-linecap" : "round",
+		"stroke-linejoin" : "miter",
+		"stroke-miterlimit" : 40,
+		"stroke-opacity" : 1,
+		"stroke-dasharray" : "none",
+		"marker-start" : "none",
+		
+		x0 : 8,
+		y0 : 29,
 		d : "M 7.4474,21.962 C 7.8991,17.887 16.485,14 16.485,14 c 0,0 -7.981,4.328 -7.981,8.436 C 21.239,24.431 28.288,9.606 24.485,2 c 0,8 -18,4 -18,20 0,6 2.0213,8 2.0213,8 0,0 -1.7199,-2.074 -1.0589,-8.038 z",
 		id : "leaf"
 	};
+	const kFlower =  {
+		"stroke-linejoin" : "miter",
+		"stroke-miterlimit" : 10,
+		"stroke-width" : 0.5,
+		stroke : "black",
 
-   function NewNode()
+		x0 : 17,
+		y0 : 16,
+		d : "M17.944,21.429c3.715,12.019,18.305,9.423,11.42-0.27c-1.192-1.678-3.538-3.158-5.281-3.762c2.299-0.22,4.727,0.216,6.911-0.854c4.2-2.06,5.007-8.429,0.441-10.407c-5.357-2.32-7.721,2.339-9.753,6.104c-0.119-4.016,1.502-11.113-4.371-11.704c-6.748-0.678-6.027,7.503-4.104,11.38c-3.146-3.406-11.771-3.04-12.638,2.05c-0.878,5.154,6.532,6.66,10.237,6.308c-4.004,2.596-4.797,9.588-0.884,11.074C15.888,33.613,17.849,26.019,17.944,21.429z"
+	};
+
+	function CurveNode(parentArray, index)
 	{
 		return {
-			active : false,
-			depth : 0,
+			homeCurve : parentArray,
+			curveIndex : index,
 			connections : 0,
-			terminalLeaves : 0,
-			drawOrder : -1,
-			parents : [],
-			children : [],
-			name : "inner",
-			pos : "i",
-			curve : [ Math.random(), Math.random(), Math.random(), Math.random()]
+			type : "c",
+			rnd : [ Math.random(), Math.random(), Math.random(), Math.random()]
 		};
 	}
 
@@ -68,12 +82,12 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 					connections : 0,
 					root : 0,
 					terminalLeaves : 0,
+					maxDepth : 0,
 					drawOrder : -1,
 					parents : [],
 					children : [],
 					name : this_class.qualifiedName,
-					pos : "e",
-					curve : [ Math.random(), Math.random(), Math.random(), Math.random()]
+					rnd : [ Math.random(), Math.random(), Math.random(), Math.random()]
 				};
 
 			node_array[this_class.index] = this_node;
@@ -81,20 +95,20 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			if(this_class.parentArray.length ===0 && this_class.childArray.length > 0)
 			{
 				root_array.push(this_node);
-				this_node.pos = "r"; // "r"oot node 
+				this_node.type = "r"; // "r"oot node 
 			}
 			else if(this_class.parentArray.length ===0)
 			{
-				this_node.pos = "u"; // "unconnected" node (no parents or children)
+				this_node.type = "u"; // "unconnected" node (no parents or children)
 				loose_array.push(this_node);
 			}
 			else if(this_class.childArray.length > 0)
 			{
-				this_node.pos = "m"; // "m"iddle node
+				this_node.type = "m"; // "m"iddle node
 			}
 			else 
 			{
-				this_node.pos = "e";  // "e"nd node
+				this_node.type = "e";  // "e"nd node
 				leaf_array.push(this_node);
 			}
 		}
@@ -118,49 +132,15 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		return {source : src, target : dst, value : strength};
 	}
 	
-	function MakeFlexibleLink(src, dst, strength, data)
-	{
-		src.connections += 1;
-		dst.connections += 1;
-		var nn = NewNode();
-		nn.depth = src.depth;
-		nn.root = dst.root;
-		nn.terminalLeaves = dst.terminalLeaves;
-		nn.connections = 2;
-		data.nodes.push(nn);
 
-		if(strength === undefined)
-		{
-			strength.french();
-		}
-		console.log(strength);
-		data.links.push({source : src, target : nn, value : 0.1*strength});
-		data.links.push({source : nn, target : dst, value : 0.4*strength});
-		return nn;
-	}
-	
-	function RandomSelection(array, self)
+	function CountToRoot(node, max_depth)
 	{
-		var index;
-		var ret; 
-		while(array.length > 0 && (ret === undefined || ret.connections >= 3))
+		node.terminalLeaves++;
+		node.maxDepth = Math.max(node.maxDepth, max_depth);
+		if(node.parents.length > 0)
 		{
-			index = Math.floor(Math.random()*(array.length-0.0001));
-			ret = array[index];
-			if(self == ret)
-			{
-				if(array.length == 1)
-				{
-					array.pop();
-					return null;
-				}
-				else if(index > 0) --index;
-				else ++index;
-				ret = array[index];
-			}
-			array[index] = array.pop();
+			CountToRoot(node.parents[0], max_depth + 1);
 		}
-		return ret;
 	}
 
 	function GenerateTree(data, class_array)
@@ -176,89 +156,69 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 				this_node.parents.push(data.nodes[this_class.parentArray[i]]);
 			}
 		}
+		for (var i = data.nodes.length - 1; i >= 0; i--) {
+			if(data.nodes[i].type === "e")
+			{
+				CountToRoot(data.nodes[i], 0);
+			}
+		}
+
+	}
+
+	function MakeParentPathLink(data, node, parent, current_path)
+	{
+		var rootmost = parent;
+		var leafmost = node;
+		for (var i = 0; i < Math.max(Math.min(parent.children.length, 5-node.depth), 1) ; i++) {
+			var nn = CurveNode( current_path, current_path.length);
+			current_path.push(nn);
+			data.nodes.push(nn);
+			data.links.push(MakeLink(nn, rootmost, kVineLinkStrength));
+			rootmost = nn;
+			nn.terminalLeaves = (node.terminalLeaves);
+		};
+		current_path.push(node);
+		data.links.push(MakeLink(node, rootmost, kVineLinkStrength));
 	}
 
 	function GenTreePathsWorker(data, parent, index, current_path)
 	{
-		var num_leaves = 1;
 		var this_path = [];
-		var continuing_path = [];
 		var depth = parent.depth + 1;
-		var first_index = Math.max(0, 0);
-		for (var i = first_index; i < current_path.length; ++i) {
+		var bottom = Math.max(current_path.length -29, 0);
+		for (var i = bottom; i < current_path.length; ++i) {
 			this_path.push(current_path[i]);
-			continuing_path.push(current_path[i]);
 		}
 		var node = parent.children[index];
 		node.depth = depth;
 		node.root = parent.root;
-		var base_node = node;
-		
-		// if this isn't the leaf, we want to put a branching
-		// kink here, which means duplicating spline nodes
-		if(node.pos !== "e")
+
+		MakeParentPathLink(data, node, parent, this_path);
+
+		if(parent != node.parents[0] || node.type ===  "e")
 		{
-			this_path.push(node);
-			continuing_path.push(node);
-			this_path.push(node);
-			continuing_path.push(node);
-		}
-
-		this_path.push(node);
-		continuing_path.push(node);
-
-
-		if(parent != node.parents[0])
-		{
-			
 			data.paths.push(this_path);
-			return num_leaves;
 		}
-
-		var strength = Math.pow(kBranchFactor, depth);
-
-		while(node.pos != "e"){
-			
-			MakeFlexibleLink(node.children[0], node, strength, data);
-			++depth;
-			strength *= kBranchFactor;
-			node = node.children[0];
-			node.root = parent.root;
-			node.depth = depth;
-			continuing_path.push(node);
-		}
-		if(continuing_path.length > this_path.length)
+		else if(node.type !==  "e")
 		{
-			num_leaves += 1;
-			base_node.terminalLeaves += 1;
-			data.paths.push(continuing_path);
-		}
-		data.paths.push(this_path);
-		strength = Math.pow(kBranchFactor, depth);
-		var pl = this_path.length-1;
-		for (i = 1; i < base_node.children.length; i++) 
-		{
-			
-			var new_node = MakeFlexibleLink(base_node.children[i], base_node, strength, data);
-			if(i==1 &&continuing_path.length >= pl+1)
+			data.forkPoints.push(node);
+			//put a kink here
+			//this_path.push(node);
+			//this_path.push(node);
+		
+			data.paths.push(this_path);
+			var pl = this_path.length;
+			for (i = 0; i < node.children.length; i++) 
 			{
-				data.links.push(MakeLink(this_path[pl], continuing_path[pl], strength));
+				GenTreePathsWorker(data, node, i, this_path);
 			}
-			else
-			{
-				data.links.push(MakeLink(new_node, this_path[pl], strength));
-			}
-			this_path[pl]= new_node;
-			var leaves = GenTreePathsWorker(data, base_node, i, this_path);
-			base_node.terminalLeaves += leaves;
-			num_leaves += leaves;
 		}
-		return num_leaves;
 	}
 
 	function GenerateTreePaths(data)
 	{
 		data.paths = [];
+		data.forkPoints = [];
 		data.links = [];
 		var current_path = [];
 		for (var root_index = data.roots.length - 1; root_index >= 0; root_index--) {
@@ -267,15 +227,35 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			current_path[0] = root;
 			root.depth = 0;
 			for (var child_index = 0; child_index < root.children.length; child_index++) {
-				var nn = MakeFlexibleLink(root.children[child_index], root, 1.0, data, current_path);
-				if(child_index > 0)
-				{
-					data.links.push(MakeLink(current_path[1], nn, 1.0)); 
-				} 
-				current_path[1] = nn;
-				root.terminalLeaves += GenTreePathsWorker(data, root, child_index, current_path);
+				GenTreePathsWorker(data, root, child_index, current_path);
 			}
 		}
+		for (var leaf_index = data.paths.length - 1; leaf_index >= 0; leaf_index--) {
+			var leaf = data.paths[leaf_index][data.paths[leaf_index].length-1];
+			if(leaf.curveRandom === undefined) leaf.curveRandom = [];
+			var len = data.paths[leaf_index].length;
+			while(leaf.curveRandom.length <  len) {
+				leaf.curveRandom.push({x:Math.random(), y:Math.random(), mx:Math.random(), my:Math.random()});
+			}
+		}
+
+		for (var i = data.paths.length - 1; i >= 0; i--) {
+			var path = data.paths[i];
+			var backleaf = path.back();
+			data.leaves.push(backleaf);
+			backleaf.nextLast = path[path.length-2];
+			backleaf.path = path;
+			backleaf.curveRandom.push(backleaf.curveRandom.back());
+			path.push(backleaf);
+			for (var q = path.length - 2; q >= 0; q--) {
+				path.push(path[q]);
+			}
+			for (var p = backleaf.curveRandom.length - 2; p >= 0; p--) {
+				var c = backleaf.curveRandom[p];
+				backleaf.curveRandom.push({x : -c.x, y : -c.y, mx:c.mx, my:c.my});
+			}
+		}
+
 	}
 
 	function GenerateBackgroundMesh(data, d3)
@@ -294,7 +274,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 			voronoi_links[i].value = Math.sqrt(xd*xd+yd*yd);
 		}
-		data.links = data.links.concat(voronoi_links);
+		//data.links = data.links.concat(voronoi_links);
 	}
 
 	function InitializePositions(data)
@@ -306,7 +286,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		{
 			var rx = (2.0*(Math.random()-0.5));
 			var ry = (2.0*(Math.random()-0.5));
-			if(data.nodes[i].pos !== "u")
+			if(data.nodes[i].type !== "u")
 			{
 				if(rx < 0) rx = -Math.pow(-rx, pow_fac);
 				else rx = Math.pow(rx, pow_fac);
@@ -323,11 +303,11 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		for (var i = 0; i < data.paths.length-1; i++) {
 			data.links.push(MakeLink(data.paths[i][data.paths[i].length-1], 
 							data.paths[i+1][data.paths[i+1].length-1], 
-							5.3));
+							15.3));
 		}
 		data.links.push(MakeLink(data.paths[0][data.paths[0].length-1], 
 						data.paths[data.paths.length-1][data.paths[data.paths.length-1].length-1], 
-						5.3));
+						15.3));
 	}
 
 	function CalculateDrawOrder(data)
@@ -340,7 +320,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 		for (var i = 0; i < data.nodes.length; i++) {
 			if( data.levels[data.nodes[i].depth] === undefined ) data.levels[data.nodes[i].depth] = 0;
-			if(data.nodes[i].pos !== "u")
+			if(data.nodes[i].type !== "u")
 			{ 
 				data.levels[data.nodes[i].depth] += 1;
 			}
@@ -377,7 +357,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 		data.active_nodes = [];
 		for (var i = 0; i < data.nodes.length; i++) {
-			if(data.nodes[i].pos !== "f") data.active_nodes.push(data.nodes[i]);
+			if(data.nodes[i].type !== "u") data.active_nodes.push(data.nodes[i]);
 		}
 
 		data.building_path = 0;
@@ -397,54 +377,114 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 */
 	var data = ProcessRawClassData(d3, raw_data);
 	
-	var line_gen = d3.svg.line()
-		.x(function(d) { 
-			return d.x;
+	function root_gen(root){
+		return d3.svg.line()
+		.x(function(d){
+			return root.x;
 		})
-		.y(function(d) { 
-			return d.y;
-		}).interpolate("bundle").tension(1.1);
+		.y(function(d){
+			return root.y;
+		});
+	}
+
+	function line_gen(leaf, thick){ 
+		return d3.svg.line()
+		.x(function(d,i) { 
+			var ret = 0;
+			var shift = 0;
+			var sqrt = Math.sqrt(d.terminalLeaves);
+			shift =  sqrt*(leaf.curveRandom[i].mx-0.5);
+			ret = (leaf.curveRandom[i].x-0.5);
+
+			if(d.type === "e" )
+			{
+				shift = 0;
+				ret = 0;
+			}
+			else if(d.type === "r")
+			{
+				shift =0;
+				ret = 0;
+			}
+			else
+			{
+				shift*=2;
+				ret*=thick;
+			}
+			return (d.x + ret + shift).toFixed(4);
+		})
+		.y(function(d,i) { 
+			var ret = 0;
+			var shift = 0;
+			var sqrt = Math.sqrt(d.terminalLeaves);
+			shift =  sqrt*(leaf.curveRandom[i].my-0.5);
+			ret = (leaf.curveRandom[i].y-0.5);
+
+			if(d.type === "e" )
+			{
+				shift = 0;
+				ret = 0;
+			}
+			else if(d.type === "r")
+			{
+				shift =0;
+				ret = 0;
+			}
+			else
+			{
+				shift*=2;
+				ret*=thick;
+			}
+			return (d.y + ret+shift).toFixed(4);
+		}).interpolate("basis");
+	}
 
 	var force = d3.layout.force()
 		// repulsion between nodes is a -ive charge
 		.charge(function(node){
-			if(node.pos ==="i") return -1;
-			if(node.pos ==="r") return -(3)*node.terminalLeaves/5;
-			if(node.pos ==="e") return -(100/(node.parents[0].children.length/3));
-			if(node.pos ==="u") return -(3+3*Math.random());
+			if(node.type ==="i") return -1;
+			if(node.type ==="c") return -2;
+			if(node.type ==="r") return -(3)*node.terminalLeaves/5;
+			if(node.type ==="e") return -(100/((node.parents[0].children.length/3)));
+			if(node.type ==="u") return -(3+3*Math.random());
 			return -(3)*node.terminalLeaves/5;
 		})
 		// nodes will attempt to preserve this distance between nodes 
 		.linkDistance(function(link){
-			if(link.target.pos === "i" && link.source.pos === "i") return 10;
-			if(link.target.pos === "u" || link.source.pos === "u") return link.value;
-			return link.value+Math.pow(link.target.depth/2+link.source.connections/2, 1.2)*(link.source.curve[1]);
+			if(link.target.type === "c" || link.source.type === "c") return kVineLinkDistance;
+			if(link.target.type === "i" && link.source.type === "i") return 10;
+			if(link.target.type === "u" || link.source.type === "u") return link.value;
+			return link.value+Math.pow(link.target.depth/2+link.source.connections/2, 1.2)*(link.source.rnd[1]);
 		})
 		// this is the strength with which the distance above is maintained
 		// 1.0 == max
 		// 0.0 == min
 		.linkStrength(function(link){
-			if(link.target.pos === "i" && link.source.pos === "i") return 0.8;
-			if(link.target.pos === "u" && link.source.pos === "u") return 0.97;
-			else if(link.target.pos === "u" || link.source.pos === "u") 
+			if(link.target.type === "c" || link.source.type === "c") return kVineLinkStrength;
+			if(link.target.type === "i" && link.source.type === "i") return 0.8;
+			if(link.target.type === "u" && link.source.type === "u") return 0.97;
+			else if(link.target.type === "u" || link.source.type === "u") 
 			{
 				var terminal = Math.max(link.target.terminalLeaves, link.source.terminalLeaves);
 				var s = Math.min(terminal/25, 1.0);
 				return Math.pow(s, 1.0);
 			}
-			return Math.min(2.5/link.target.connections, 1.0/link.value);
+			return Math.min(2.5/Math.sqrt(link.target.connections), 1.0/link.value);
 		})
 		// how strongly everything is drawn into the center
-		.gravity(0.08)
+		.gravity(0.10)
+		.friction(0.90)
 		.size([width, height])
 		.nodes(data.active_nodes)
 		.links(data.links);
 
 	data.width = width;
-	data.height = width;
+	data.height = height;
 	data.force = force;
 	data.kLeaf = kLeaf;
 	data.kGrassTuft = kGrassTuft;
+	data.kFlower = kFlower;
 	data.lineGen = line_gen;
+	data.rootGen = root_gen;
 	return data;
 });
