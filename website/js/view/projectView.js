@@ -9,6 +9,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	var setOneColor = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7,8]).range(colorbrewer.Set1[9]);
 	var svg;
 	var leaf;
+	var web;
 	var flower_centers;
 	var link;
 	var simple_vine;
@@ -45,7 +46,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	}
 
 	function vine_stroke_width(d){
-		return Math.max(0.7,0.4);
+		return Math.max(1.0,0.4);
 	}
 
 	function flower_stroke_width(d){
@@ -160,6 +161,12 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.attr("x2", function(d) { return d.target.x; })
 				.attr("y2", function(d) { return d.target.y; });
 		}
+		if(web !== undefined){
+			web.attr("x1", function(d) { return d.source.x; })
+				.attr("y1", function(d) { return d.source.y; })
+				.attr("x2", function(d) { return d.target.x; })
+				.attr("y2", function(d) { return d.target.y; });
+		}
 		framecount++;
 	}
 
@@ -168,11 +175,11 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	{
 		simple_vine.remove();
 		vine.style("fill", vine_color)
-			.style("fill-opacity", 0.9)
+			.style("fill-opacity", 1.0)
 			.style("stroke-opacity", 1.0)
 			.style("stroke-width", vine_stroke_width)
 			.style("stroke", "black")
-			.attr("d", function(d){return model.lineGen(d, 1.8);});
+			.attr("d", function(d){return model.lineGen(d, 2.0);});
 		if(link !== undefined)
 		{
 			link.attr("class", "link")
@@ -230,6 +237,15 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.enter().append("circle")
 				.attr("class", "loose")
 				.attr("r", 0.1);*/
+			web = svg.selectAll(".web")
+				.data(model.active_web)
+				.enter().append("line")
+				.attr("class", "web")
+				.style("stroke", "black")
+				.style("stroke-opacity", function(link){
+					return 0.1;
+				})
+				.style("stroke-width", 1.3);
 			simple_vine = svg.selectAll(".simple_vine")
 				.data(model.basic_paths)
 				.enter().append("path")
@@ -308,7 +324,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			if(node !== undefined) node.append("title").text(function(d) { return d.name; });
 			if(loose !== undefined ) loose.append("title").text(function(d) { return d.name; });
 		
-			if(root !== undefined ) root.append("title").text(function(d) { return d.name +" " +d.terminalLeaves; });
+			if(root !== undefined ) root.append("title").text(function(d) { return d.name +" " +d.sharedChildren; });
 			if(leaf !== undefined )leaf.append("title").text(function(d) { return d.name ; });
 		},
 		

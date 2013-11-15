@@ -90,6 +90,9 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 					drawOrder : -1,
 					parents : [],
 					children : [],
+					methodCalls : this_class.methodCalls,
+					intrusiveDataRefs : this_class.intrusiveDataRefs,
+					sharedChildren : 0,
 					name : this_class.qualifiedName,
 					USR : this_class.USR,
 					rnd : [ Math.random(), Math.random(), Math.random(), Math.random()]
@@ -149,6 +152,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 	function GenerateTree(data, class_array)
 	{
+		data.link_web = [];
 		for (var indx = 0; indx < class_array.length; indx++) 
 		{
 			var this_class = class_array[indx];
@@ -158,6 +162,16 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			}
 			for (i = 0; i < this_class.parentArray.length; i++) {
 				this_node.parents.push(data.nodes[this_class.parentArray[i]]);
+			}
+			for (i = 0; i < this_class.intrusiveDataRefs.length; i++) {
+				var intruder = this_node.intrusiveDataRefs[i].intruder;
+				this_node.intrusiveDataRefs[i].intruder = data.nodes[intruder];
+				data.link_web.push({source: this_node.intrusiveDataRefs[i].intruder, target : this_node, value : this_node.methodCalls.intrusionCount, type : "i"});
+			}
+			for (i = 0; i < this_class.methodCalls.length; i++) {
+				var caller = this_node.methodCalls[i].caller;
+				this_node.methodCalls[i].caller= data.nodes[caller];
+				data.link_web.push({source: this_node.methodCalls[i].caller, target : this_node, value : this_node.methodCalls.callCount, type : "m"});
 			}
 			this_node.parents.sort(function(n1, n2){ return n1.USR.localeCompare(n2.USR); });
 			this_node.children.sort(function(n1, n2){ return n1.USR.localeCompare(n2.USR); });
@@ -210,6 +224,14 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 		if(node.type !== "r" && (parent != node.parents[0] || node.type ===  "e"))
 		{
+			if(parent != node.parents[0])
+			{
+				for (var p = 0; p < node.parents.length; p++) {
+					node.parents[p].sharedChildren++;
+					node.parents[p].root.sharedChildren++;
+				}
+			}
+
 			data.paths.push(this_path);
 			data.basic_paths.push(basic_path);
 		}
@@ -278,21 +300,13 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 	function GenerateBackgroundMesh(data, d3)
 	{
-		var tess = d3.geom.voronoi().x(function(d) { 
-			//d.fixed = true;
-			return d.x; 
-		})
-		.y(function(d) {
-			return d.y; 
-		});
-		var voronoi_links =  tess.links(data.singles.concat(data.roots));
-		for (var i = voronoi_links.length - 1; i >= 0; i--) {
-			var xd = voronoi_links[i].source.x - voronoi_links[i].target.x;
-			var yd = voronoi_links[i].source.y - voronoi_links[i].target.y;
-
-			voronoi_links[i].value = Math.sqrt(xd*xd+yd*yd);
-		}
-		//data.links = data.links.concat(voronoi_links);
+		data.web = []
+		for (var i = 0; i < data.active_nodes.length; i++) {
+			var node = data.active_nodes[i]
+			for (var i = 0; i < node.length; i++) {
+				Things[i]
+			};
+		};
 	}
 
 	function InitializePositions(data)
@@ -304,7 +318,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		const pow_fac = 0.3;
 		var incr = 2.0*Math.PI / data.roots.length;
 
-		data.roots.sort(function (lhs, rhs){return  lhs.children[0].USR.localeCompare(rhs.children[0].USR); } );
+		data.roots.sort(function (lhs, rhs){return lhs.sharedChildren - rhs.sharedChildren; } );
 		for (var i = 0; i < data.roots.length; i++) {
 			var angle = incr*i +0.1*(Math.random()-0.5);
 			data.roots[i].x = Math.cos(angle-180)*radius+cx;
@@ -346,6 +360,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		
 
 		data.active_nodes = [];
+		data.active_web = [];
 		for (var i = 0; i < data.nodes.length; i++) {
 			if(data.nodes[i].type !== "u")
 			{ 
@@ -353,6 +368,12 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 				if(data.active_nodes.back().type === "r") data.active_nodes.back().fixed = true;
 			}
 			
+		}
+		for (var i = 0; i < data.link_web.length; i++) {
+			if(data.link_web[i].target.type !== "u" && data.link_web[i].source.type !== "u")
+			{
+				data.active_web.push(data.link_web[i]);
+			}
 		}
 		InitializePositions(data);
 		data.building_path = 0;
@@ -487,7 +508,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			return 0.7;
 		})
 		// how strongly everything is drawn into the center
-		.gravity(0.19)
+		.gravity(0.17)
 		.friction(0.91)
 		.size([width, height])
 		.nodes(data.active_nodes)
