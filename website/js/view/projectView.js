@@ -14,6 +14,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	var link;
 	var simple_vine;
 	var vine;
+	var highlight_path;
 	var node;
 	var root;
 	var loose;
@@ -54,42 +55,26 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	}
 
 
-	function highlight_in_tree(root)
+	function highlight_in_tree(leaf)
 	{
 
-		leaf.style("stroke-width",function(d){
-				if(d.root !== root ) return vine_stroke_width(d);
-				else return 1.0;
-			})
-			.style("fill", function(d){
-				if(d.root !== root) return desaturate(leaf_fill(d));
-				return saturate(leaf_fill(d));
-			});
+		highlight_path = svg.selectAll(".hl_vine")
+				.data([leaf])
+				.enter().append("path")
+				.attr("class", "hl_vine")
+				.style("fill", "red")
+				.style("fill-opacity", 1.0)
+				.style("stroke-opacity", 1.0)
+				.style("stroke-width", vine_stroke_width)
+				.style("stroke", "black")
+				.attr("d", function(d){return model.lineGen(d, 3.0);});
 
-		if(vine !== undefined)
-		{
-			vine.style("stroke", function(d){
-					if(d.root !== root) return desaturate(vine_color(d));
-					return d3.rgb(vine_color(d)).brighter(1.0).toString();
-				})
-				.style("fill", function (d){
-				 	if(d.root !== root) return desaturate(vine_color(d));
-				 	return saturate(vine_color(d));
-				});
-		}
 	}
 	function unhighlight_in_tree(root)
 	{
-		leaf.style("stroke", "black")
-			.style("fill", leaf_fill)
-			.style("stroke-width", vine_stroke_width);
-
-		if(vine !== undefined)
-		{
-			vine.style("stroke", "black")
-				.style("fill", vine_color)
-				.style("stroke-width", vine_stroke_width);
-		}
+		highlight_path.remove();
+		
+		console.log(highlight_path);
 	}
 
 	var frameskip = 40;
@@ -173,13 +158,22 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	// draw fancy vines once the movement has stopped
 	function OnStop(d)
 	{
-		simple_vine.remove();
+		if(simple_vine !== undefined) simple_vine.remove();
+
 		vine.style("fill", vine_color)
 			.style("fill-opacity", 1.0)
 			.style("stroke-opacity", 1.0)
 			.style("stroke-width", vine_stroke_width)
 			.style("stroke", "black")
 			.attr("d", function(d){return model.lineGen(d, 2.0);});
+		if(web !== undefined)
+		{
+			web.style("stroke-opacity", function(link){
+					return 0.1;
+				})
+				.style("stroke-width", 1.5);
+		}
+
 		if(link !== undefined)
 		{
 			link.attr("class", "link")
@@ -198,10 +192,12 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 
 	}
 	
+	brown_color = "#663409";
+	cream_color = "#FFFAF0";
 
 	return {
-	
-		backGroundColor : "#FFFAF0",
+		
+		backGroundColor : brown_color,
 		
 		Init : function(template){ 
 			this.template = template;
@@ -241,9 +237,9 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.data(model.active_web)
 				.enter().append("line")
 				.attr("class", "web")
-				.style("stroke", "black")
+				.style("stroke", "gray")
 				.style("stroke-opacity", function(link){
-					return 0.1;
+					return 0.0;
 				})
 				.style("stroke-width", 1.3);
 			simple_vine = svg.selectAll(".simple_vine")
@@ -298,7 +294,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 					else return model.kFlower.d;
 				})
 				.on('mouseover', function(d){
-					highlight_in_tree(d.root)
+					highlight_in_tree(d)
 				})
 				.on('mouseout', function(d){
 					unhighlight_in_tree();
