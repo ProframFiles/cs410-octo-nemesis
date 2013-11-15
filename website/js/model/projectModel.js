@@ -313,19 +313,20 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 	
 
-		for (var i = 0; i < data.nodes.length; i++) 
+		for (var i = 0; i < data.active_nodes.length; i++) 
 		{
-			radius =  Math.sqrt(20);
+			radius =  Math.sqrt(data.active_nodes[i].root.terminalLeaves +4);
+			if(radius != radius) throw radius;
 			var rx ;
 			var ry ;
 			do{
 				rx = (2.0*(Math.random()-0.5))*radius;
 				ry = (2.0*(Math.random()-0.5))*radius;
 			}while((rx*rx+ry*ry) < radius*radius);
-			if(data.nodes[i].type !== "r")
+			if(data.active_nodes[i].type !== "r")
 			{
-				data.nodes[i].x = rx+data.nodes[i].root.x;
-				data.nodes[i].y = ry+data.nodes[i].root.y;
+				data.active_nodes[i].x = rx+data.active_nodes[i].root.x;
+				data.active_nodes[i].y = ry+data.active_nodes[i].root.y;
 			}
 		}
 		
@@ -342,14 +343,18 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		GenerateTree(data, json.classes);
 		GenerateTreePaths(data);
 
-		InitializePositions(data);
+		
 
 		data.active_nodes = [];
 		for (var i = 0; i < data.nodes.length; i++) {
-			data.active_nodes.push(data.nodes[i]);
-			if(data.active_nodes.back().type === "r") data.active_nodes.back().fixed = true;
+			if(data.nodes[i].type !== "u")
+			{ 
+				data.active_nodes.push(data.nodes[i]);
+				if(data.active_nodes.back().type === "r") data.active_nodes.back().fixed = true;
+			}
+			
 		}
-
+		InitializePositions(data);
 		data.building_path = 0;
 		data.building_path_length =0; 
 		return data;
