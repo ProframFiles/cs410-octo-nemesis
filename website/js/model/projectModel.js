@@ -51,7 +51,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		"stroke-width" : 0.5,
 		stroke : "black",
 
-		centerR : 5,
+		centerR : 4,
 		scale : 0.6,
 		x0 : 17*0.6,
 		y0 : 16*0.6,
@@ -239,7 +239,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		{
 			if(node.type != "r" ) data.forkPoints.push(node);
 			//put a kink here
-			//this_path.push(node);
+			this_path.push(node);
 			//this_path.push(node);
 			
 			if(this_path.length > 2)
@@ -411,10 +411,15 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			return d.y;
 		}).interpolate("basis");
 	}
-	function vine_gen(d, thick, shifter)
+	// generate a "vine" from an array of points
+	// thick idetermines the thickness at a given control point
+	// shifter determines the shift from the center line (to generate randomly wavy vines)
+	function vine_gen(d, thick, shifter, kinkyness)
 	{
 		var tf;
 		var sf ;
+		var dupe_threshold = 0.0;
+		if(kinkyness !== undefined) dupe_threshold = kinkyness;
 
 		if(typeof thick === "function") tf = thick;
 		else tf = function(d){return thick;}
@@ -428,8 +433,8 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		for (var i = 1; i < d.length-1; i++) {
 			var dx = (d[i+1].x - d[i-1].x)*0.5;
 			var dy = (d[i+1].y - d[i-1].y)*0.5;
-			var norm =  1.0/Math.sqrt(dx*dx+dy*dy);
-			diffs.push({x: -dy*norm, y:dx*norm });
+			var norm =  (dx*dx+dy*dy ==0 ) ? 1.0 : 1.0/Math.sqrt(dx*dx+dy*dy);
+			diffs.push({x: -dy*norm, y:dx*norm, dupe: Math.random() < dupe_threshold });
 		}
 		if(d.length > 1) diffs.push({x:0, y:0});
 		var L = [];
@@ -441,6 +446,10 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			shift = sf(d[i], i);
 			if(shift.x != shift.x) throw "NaN";
 			L.push({x: d[i].x + thickness*diffs[i].x+ shift.x, y: d[i].y + thickness*diffs[i].y+ shift.y});
+			if(diffs[i].dupe){
+				L.push(L.back());
+				L.push(L.back());
+			}
 		}
 
 		L.push({x: d.back().x + thickness*diffs.back().x + shift.x, y: d.back().y + thickness*diffs.back().y+ shift.y});
@@ -451,13 +460,17 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			shift = sf(d[i], i);
 			if(shift.x != shift.x) throw "NaN";
 			L.push({x: d[i].x - thickness*diffs[i].x + shift.x, y: (d[i].y - thickness*diffs[i].y + shift.y)});
+			if(diffs[i].dupe){
+				L.push(L.back());
+				L.push(L.back());
+			}
 			if(L.back().x != L.back().x) throw "NaN";
 		}
 		var str = simple_line_gen()(L);
 		//console.log(str);
 		return str;
 	}
-	function line_gen(leaf, thick){
+	function line_gen(leaf, thick, kinkyness){
 		var shiftfunc = function(d,i) {
 			if(d.type !== "c" )
 			{
@@ -471,12 +484,20 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 				return  { x: x_part, y: y_part };
 			}
 		}
-		return  vine_gen(leaf.path, thick, shiftfunc);
+		return  vine_gen(leaf.path, thick, shiftfunc, kinkyness);
 	}
 
-	var force = d3.layout.force()
+	var force = d3.layout.force().nodes(data.active_nodes)
+		.links(data.links);
+	data.InitForce = function(border) {
+		 for (var i = 0; i < data.active_nodes.length; i++) {
+		 	data.active_nodes[i].x += border;
+		 	data.active_nodes[i].y += border;
+		 }
+
+		
 		// repulsion between nodes is a -ive charge
-		.charge(function(node){
+		force.charge(function(node){
 			if(node.type ==="s") return -100;
 			if(node.type ==="i") return -1;
 			if(node.type ==="c") return -9;
@@ -510,9 +531,9 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		// how strongly everything is drawn into the center
 		.gravity(0.17)
 		.friction(0.91)
-		.size([width, height])
-		.nodes(data.active_nodes)
-		.links(data.links);
+		.size([width+2*border, height+2*border]);
+		
+	}
 
 	data.width = width;
 	data.height = height;
