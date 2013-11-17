@@ -5,7 +5,10 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	function GetColorInterp(color_array)
 	{
 		//if there is only one color, then don't worry about interpolating anything
-		if(color_array.length == 1) return function(){ return color_array[0];}
+		if(color_array.length == 1)
+		{
+			return function(d){ return color_array[0];};
+		}
 		var maxfloatval = color_array.length -1 - 0.00001;
 		var num_colors = color_array.length-1; 
 		return function(val){
@@ -21,57 +24,195 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 
 	var woodBlockBrightPink = "#D74053";
 	var woodBlockDarkBlue = "#011640";
-
-	kWoodBlockSkin = 
+	var woodBlockFilter = 
 	{
+		id : "displaceFilter",
+		elements : [
+			{
+				name : "feTurbulence",
+				attributes : {
+					"baseFrequency" : 0.06,
+					"type" : "fractalNoise",
+					"numOctaves" : 2,
+					"result" : "perlin" 
+				}
+			},
+			{
+				name : "feTurbulence",
+				attributes : {
+					"baseFrequency" : 0.3,
+					"type" : "fractalNoise",
+					"numOctaves" : 2,
+					"result" : "perlin_fast" 
+				}
+			},
+			{
+				name : "feColorMatrix",
+				attributes : {
+					"color-interpolation-filters" : "sRGB",
+					"type" : "matrix",
+					"values" : [0.3, 0.01, 0.01, 0.01, -0.1,
+									0.3, 0.01, 0.01, 0.01, -0.1, 
+									0.3, 0.01, 0.01, 0.01, -0.1,
+									0.01, 0.01, 0.01, 0.01, 1.0],
+					"in" : "perlin_fast",
+					"result" : "perlinbw"
+				}
+			},
+			
+			{ 
+				name : "feDisplacementMap",
+				attributes : {
+					"in" : "SourceGraphic",
+					"in2" : "perlin",
+					"xChannelSelector" : "R",
+					"yChannelSelector" : "G",
+					"scale" : "5",
+					"result" : "displaced"
+				}
+			},
+			{	
+				name : "feConvolveMatrix",
+				attributes : {
+					"in" : "displaced",
+					"kernelMatrix" : [     0.077528, 0.10949, 0.077528,
+      0.10949,      0.25193,      0.10949,
+     0.077528,      0.10949,     0.077528],
+					"result" : "smudged"
+				}
+			},
+			{
+				name : "feComposite",
+				attributes : {
+					"in" : "perlinbw",
+					"in2" : "smudged",
+					"operator" : "in",
+					"result" : "perlinBlend"
+				}
+			},
+			{ 
+				name : "feBlend",
+				attributes : {
+					"color-interpolation-filters" : "sRGB",
+					"in" : "smudged",
+					"in2" : "perlinBlend",
+					//result = k1*i1*i2 + k2*i1 + k3*i2 + k4
+					"mode" : "screen",
+					"result" : "blotched"
+				}
+			},
+			{ 
+				name : "feBlend",
+				attributes : {
+					"color-interpolation-filters" : "sRGB",
+					"in" : "smudged",
+					"in2" : "blotched",
+					//result = k1*i1*i2 + k2*i1 + k3*i2 + k4
+					"mode" : "lighten",
+					"result" : "done"
+				}
+			},
+		]
+	};
+
+	var WoodBlockSkin = 
+	{
+		name : "Japanese Wood Block",
 		branchColors : ["#52452F", "#695643", "#8C6344"],
+		branchOpacity : 1.0,
 		leafColors : ["#618C70", "#394F4B", "#B1CBBB"],
+		leafStrokeColors : ["#618C70", "#394F4B", "#B1CBBB"],
 		flowerColors : ["#FF8193", "#FFC2D1", "#E8D4D4"],
+		flowerStrokeColors : ["#FF8193", "#FFC2D1", "#E8D4D4"],
 		flowerCenterColors : ["#261F1D"],
 		backGroundGradient : [woodBlockDarkBlue, "#FFFAF0"],
 		backGroundOpacity : [1.0, 1.0],
 		backGroundColor : "#FFFAF0",
 		baseColors : [woodBlockBrightPink],
-		brachKinkiness : 0.95,
+		branchStrokeColors :  ["#52452F", "#695643", "#8C6344"],
+		branchKinkiness : 0.95,
 		branchThickness : 1.5,
+		branchSplineStyle : "basis",
 		borderWidth : 30,
-		borderRadius : 25
-	}
+		borderRadius : 25,
+		leafFilter : woodBlockFilter,
+		vineFilter : woodBlockFilter,
+	};
 
-	kCountryFairSkin = 
+	var CountryFairSkin = 
 	{
+		name : "Country Fair",
 		branchColors : ["#2B7D30", "#385C43", "#5D851B"],
+		branchOpacity : 1.0,
 		leafColors : colorbrewer.RdYlGn[10],
+		leafStrokeColors : ["black"],
 		flowerColors : ["#F23869","#F28E13", "#8E59D9", "#5FB3BA"],
+		flowerStrokeColors : ["black"],
 		flowerCenterColors : ["#F2B705"],
 		backGroundGradient : ["#291802", "#291802"],
 		backGroundOpacity : [1.0, 1.0],
 		backGroundColor : "#FFFAF0",
 		baseColors : ["#833128"],
-		brachKinkiness : 0.0,
+		branchStrokeColors : ["black"],
+		branchKinkiness : 0.0,
 		branchThickness : 2.0,
+		branchSplineStyle : "basis",
 		borderWidth : 30,
 		borderRadius : 25
-	}
+	};
 
-	skin = kWoodBlockSkin;
+	var FuturistSkin = 
+	{
+		name : "Postmodern",
+		branchColors : ["black", "white"],
+		branchOpacity : 0.1,
+		leafColors : ["white"],
+		leafStrokeColors : ["black"],
+		flowerColors : ["white"],
+		flowerStrokeColors : ["black"],
+		flowerCenterColors : ["black"],
+		backGroundGradient : ["gray", "white", "white","white", "gray"],
+		backGroundOpacity : [1.0, 1.0],
+		backGroundColor : "#FFFAF0",
+		baseColors : ["black"],
+		branchStrokeColors : ["black"],
+		branchKinkiness : 0.0,
+		branchThickness : 2.0,
+		branchSplineStyle : "step-after",
+		borderWidth : 5,
+		borderRadius : 3
+	};
+
+
+
+
+	var themeArray = [CountryFairSkin, WoodBlockSkin, FuturistSkin];
+	var skin = CountryFairSkin;
 	
 	var LeafColorFunc = GetColorInterp(skin.leafColors);
 	var FlowerColorFunc = GetColorInterp(skin.flowerColors);
 	var FlowerCenterColorFunc = GetColorInterp(skin.flowerCenterColors);
 	var BaseColorFunc = GetColorInterp(skin.baseColors);
 	var BranchColorFunc = GetColorInterp(skin.branchColors);
-
+	var BranchStrokeColorFunc = GetColorInterp(skin.branchStrokeColors);
+	var LeafStrokeColorFunc = GetColorInterp(skin.leafStrokeColors);
+	var FlowerStrokeColorFunc = GetColorInterp(skin.flowerStrokeColors);
 
 	var yellowGreenColor = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7,8,9]).range(colorbrewer.RdYlGn[10]);
 	var setOneColor = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7,8]).range(colorbrewer.Set1[9]);
 
 	var svg;
+	var bg_gradient;
+	var bg_rect;
+	var filters;
 	var leaf;
 	var web;
+	var web_group;
 	var flower_centers;
+	var leaf_group;
 	var link;
 	var simple_vine = null;
+	var vine_group;
 	var vine;
 	var highlight_path;
 	var highlight_leaf;
@@ -80,6 +221,27 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	var loose;
 	var state;
 	
+
+
+
+	function AddFilterDef(def)
+	{
+		var new_filter = filters.append("filter")
+			.attr("filterUnits", "userSpaceOnUse")
+			.attr("id", def.id)
+			.attr("x", 0)
+			.attr("y", 0)
+			.attr("width", model.width+skin.borderWidth*2)
+			.attr("height", model.width+skin.borderWidth*2);
+		for (var el_index = 0 ; el_index < def.elements.length; ++el_index) {
+			var el =def.elements[el_index];
+			var svg_fe = new_filter.append(el.name);
+			for (var at  in el.attributes) {
+				svg_fe.attr(at, el.attributes[at]);
+			}
+		}
+	}
+
 	function desaturate(rgbstring)
 	{
 		var hsl = d3.hsl(rgbstring);
@@ -99,8 +261,17 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		else return FlowerColorFunc(d.rnd[1]);
 	}
 
+	function leaf_stroke(d){
+		if(d.type === "e") return LeafStrokeColorFunc(d.rnd[1]);
+		else return FlowerStrokeColorFunc(d.rnd[1]);
+	}
+
 	function flower_fill(d){
 		return FlowerColorFunc(d.rnd[3]);
+	}
+
+	function flower_stroke(d){
+		return FlowerStrokeColorFunc(d.rnd[3]);
 	}
 
 	function class_base_color(d) {
@@ -116,6 +287,9 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		return BranchColorFunc(d.rnd[2]);
 	}
 
+	function vine_stroke_color(d){
+		return BranchStrokeColorFunc(d.rnd[2]);
+	}
 	function vine_stroke_width(d){
 		return Math.max(1.0,0.4);
 	}
@@ -216,7 +390,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		//draw the actual vines
 		if(simple_vine !== null)
 		{
-			simple_vine.attr("d", model.simpleLineGen() );
+			simple_vine.attr("d", model.simpleLineGen(skin.branchSplineStyle) );
 		}	
 		// rotate and translate the leaves so that they're actually hanging off
 		// the vines properly as they move
@@ -252,17 +426,21 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			simple_vine.remove();
 			simple_vine = null;
 		}
-
-		vine = svg.selectAll(".vine")
+		if(vine !== undefined && vine !== null) vine.remove();
+		vine = vine_group.selectAll(".vine")
 			.data(model.leaves)
-			.enter().insert("path", ".leaf")
+			.enter().append("path")
 			.attr("class", "vine")
 			.style("fill", vine_color)
-			.style("fill-opacity", 1.0)
+			.style("fill-opacity", skin.branchOpacity)
 			.style("stroke-opacity", 1.0)
 			.style("stroke-width", vine_stroke_width)
-			.style("stroke", "black")
-			.attr("d", function(d){return model.lineGen(d, skin.branchThickness, skin.brachKinkiness);});
+			.style("stroke", vine_stroke_color)
+			.attr("d", function(d){return model.lineGen(d, skin.branchThickness, skin.branchKinkiness, skin.branchSplineStyle);});
+
+
+		if(skin.leafFilter !== undefined) leaf_group.attr("filter", "url(#" +skin.leafFilter.id +")");
+		if(skin.vineFilter !== undefined) vine_group.attr("filter", "url(#" +skin.vineFilter.id +")");
 
 		if(web !== undefined)
 		{
@@ -291,64 +469,185 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	}
 	function OnStart(d)
 	{
+		vine_group.attr("filter", null);
+		leaf_group.attr("filter", null);
 		if(vine !== null && vine != undefined )
 		{
 			vine.remove();
 			vine = null;
 		}
-		var old_vine = simple_vine;
+		if(simple_vine !== null )simple_vine.remove();
 		simple_vine = svg.selectAll(".simple_vine")
 			.data(model.basic_paths)
-			.enter().insert("path", ".leaf")
+			.enter().insert("path", ".leaf_group")
 			.attr("class", "simple_vine")
 			.style("fill", "none")
 			.style("fill-opacity", 1.0)
 			.style("stroke-opacity", 1.0)
 			.style("stroke-width", 1.6)
 			.style("stroke", skin.branchColors[0])
-			.attr("d", model.simpleLineGen());
-		if(old_vine !== null ) old_vine.remove();
+			.attr("d", model.simpleLineGen(skin.branchSplineStyle));
 		web.style("stroke-opacity", 0.0);
 		state = "started";
 	}
 	
-	brown_color = "#663409";
-	cream_color = "#FFFAF0";
+	function SetTheme()
+	{
+		LeafColorFunc = GetColorInterp(skin.leafColors);
+		FlowerColorFunc = GetColorInterp(skin.flowerColors);
+		FlowerCenterColorFunc = GetColorInterp(skin.flowerCenterColors);
+		BaseColorFunc = GetColorInterp(skin.baseColors);
+		BranchColorFunc = GetColorInterp(skin.branchColors);
+		BranchStrokeColorFunc = GetColorInterp(skin.branchStrokeColors);
+		LeafStrokeColorFunc = GetColorInterp(skin.leafStrokeColors);
+		FlowerStrokeColorFunc = GetColorInterp(skin.flowerStrokeColors);
+
+		filters.selectAll("*").remove();
+		vine_group.attr("filter", null);
+		leaf_group.attr("filter", null);
+		
+		if(skin.leafFilter !== undefined ) AddFilterDef(skin.leafFilter);
+		if(skin.vineFilter !== undefined && skin.leafFilter !== skin.vineFilter) AddFilterDef(skin.vineFilter);
+
+		svg.attr("width", model.width+skin.borderWidth*2)
+			.attr("height", model.height+skin.borderWidth*2);
+
+		bg_gradient.remove();
+		bg_gradient = svg.insert("linearGradient", ".web_group")
+			.attr("id", "bg_gradient_id")
+			.attr("x1","0%")
+			.attr( "y1", "100%")
+			.attr( "x2", "0%")
+			.attr( "y2", "0%")
+			.attr("spreadMethod", "pad");
+
+		gradient_dv = 100/(Math.max(skin.backGroundGradient.length-1, 1))
+		for (var i = 0; i < skin.backGroundGradient.length; i++) {
+			bg_gradient.append("svg:stop")
+			.attr("offset", i*gradient_dv+"%")
+			.attr("stop-color", skin.backGroundGradient[i])
+			.attr("stop-opacity", skin.backGroundOpacity[i]);
+		}
+
+		bg_rect.attr("width", model.width+skin.borderWidth)
+			.attr("height", model.height+skin.borderWidth)
+			.attr( "ry", skin.borderRadius)
+			.attr( "rx", skin.borderRadius)
+			.style("fill", "url(#bg_gradient_id)");
+
+		web.attr("class", "web")
+			.style("stroke", "gray")
+			.style("stroke-width", 1.3);
+
+		leaf.style("stroke-width", vine_stroke_width)
+			.style("stroke", leaf_stroke)
+			.style("fill", leaf_fill)
+			.style("fill-opacity",function(d){
+				if(d.type === "e") return 1.0;
+				else return 1.0;
+			})
+			.style("stroke-opacity", 1.0)
+			.style("stroke-linejoin", "miter")
+			.style("miter-limit", model.kLeaf["miter-limit"])
+			.attr("d", function(d){
+				if(d.type === "e") return model.kLeaf.d;
+				else return model.kFlower.d;
+			});
+
+		flower_centers.attr("r", model.kFlower.centerR)
+			.style("stroke", 1.0)
+			.style("fill", flower_center);
+
+		root.attr("r", function(d){
+				return Math.max(Math.sqrt(d.terminalLeaves), 3)
+			})
+			.style("fill", class_base_color);
+		if(state === "stopped")
+		{
+			OnStop();
+		}
+		else if(state === "started")
+		{
+			OnStart();
+		}
+	}
 
 	return {
 		
-		Init : function(template){ 
+		Init : function(template, themeSelect){ 
 			this.template = template;
-			
+			var selector = d3.select(themeSelect);
+			for (var i = 0; i < themeArray.length; i++) {
+				selector.append("option")
+					.attr("value", i)
+					.text(themeArray[i].name);
+			};
 			svg = d3.select(this.template).append("svg")
 				.attr("width", model.width+skin.borderWidth*2)
 				.attr("height", model.height+skin.borderWidth*3)
 				.style("background-color", "none");
 
-			var bg_gradient = svg.append("linearGradient")
+			filters = svg.append("defs");
+
+
+
+			bg_gradient = svg.append("linearGradient")
 				.attr("id", "bg_gradient_id")
 				.attr("x1","0%")
 				.attr( "y1", "100%")
 				.attr( "x2", "0%")
 				.attr( "y2", "0%")
 				.attr("spreadMethod", "pad");
-		
-			bg_gradient.append("svg:stop")
-				.attr("offset", "0%")
-				.attr("stop-color", skin.backGroundGradient[0])
-				.attr("stop-opacity", skin.backGroundOpacity[0]);
+			gradient_dv = 100/(Math.max(skin.backGroundGradient.length-1, 1))
 
-			bg_gradient.append("svg:stop")
-				.attr("offset", "100%")
-				.attr("stop-color", skin.backGroundGradient[1])
-				.attr("stop-opacity", skin.backGroundOpacity[1]);
+			for (var i = 0; i < skin.backGroundGradient.length; i++) {
+				bg_gradient.append("svg:stop")
+				.attr("offset", i*gradient_dv+"%")
+				.attr("stop-color", skin.backGroundGradient[i])
+				.attr("stop-opacity", skin.backGroundOpacity[i]);
+			};
 
-			svg.append("svg:rect")
+			bg_rect = svg.append("svg:rect")
 				.attr("width", model.width+skin.borderWidth*2)
 				.attr("height", model.height+skin.borderWidth*2)
 				.attr( "ry", skin.borderRadius)
 				.attr( "rx", skin.borderRadius)
 				.style("fill", "url(#bg_gradient_id)");
+
+			web_group = svg.append("g")
+				.attr("class", "web_group");
+			web = web_group.selectAll(".web")
+				.data(model.active_web)
+				.enter().append("line");
+
+			vine_group = svg.append("g")
+				.attr("class", "vine_group");
+			leaf_group = svg.append("g")
+				.attr("class", "leaf_group");
+			leaf = leaf_group.selectAll(".leaf")
+				.data(model.leaves)
+				.enter().append("path")
+				.attr("class", "leaf")
+				.on('mouseover', function(d){
+					highlight_in_tree(d)
+				})
+				.on('mouseout', function(d){
+					unhighlight_in_tree();
+				})
+				.call(model.force.drag);
+
+			flower_centers = leaf_group.selectAll(".flower_center")
+				.data(model.forkPoints)
+				.enter().append("circle")
+				.attr("class", "flower_center");
+				
+				
+			root = svg.selectAll(".root")
+				.data(model.roots)
+				.enter().append("circle")
+				.attr("class", "root")
+				.call(model.force.drag);
+
 
 			// these are for debugging, mostly
 			// they use up a lot of cycles, so comment them out
@@ -369,88 +668,45 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.enter().append("circle")
 				.attr("class", "node")
 				.attr("r", 3)
-				.style("fill", "red");*/
+				.style("fill", "red");
 		
-			/*loose = svg.selectAll(".loose")
+			loose = svg.selectAll(".loose")
 				.data(model.singles)
 				.enter().append("circle")
 				.attr("class", "loose")
 				.attr("r", 0.1);*/
-			web = svg.selectAll(".web")
-				.data(model.active_web)
-				.enter().append("line")
-				.attr("class", "web")
-				.style("stroke", "gray")
-				.style("stroke-opacity", function(link){
-					return 0.0;
-				})
-				.style("stroke-width", 1.3);
-/*
-			flower = svg.selectAll(".flower")
-				.data(model.paths)
-				.enter().append("path")
-				.attr("class", "flower")
-				.style("stroke-width", flower_stroke_width)
-				.style("stroke", model.kFlower.stroke)
-				.style("stroke-linejoin", "miter")
-				.style("miter-limit", model.kFlower["miter-limit"])
-				.attr("d", model.kFlower.d);*/
-		
-			leaf = svg.selectAll(".leaf")
-				.data(model.leaves)
-				.enter().append("path")
-				.attr("class", "leaf")
-				.style("stroke-width", vine_stroke_width)
-				.style("stroke", "black")
-				.style("fill", leaf_fill)
-				.style("fill-opacity",function(d){
-					if(d.type === "e") return 1.0;
-					else return 1.0;
-				})
-				.style("stroke-opacity", 1.0)
-				.style("stroke-linejoin", "miter")
-				.style("miter-limit", model.kLeaf["miter-limit"])
-				.attr("d", function(d){
-					if(d.type === "e") return model.kLeaf.d;
-					else return model.kFlower.d;
-				})
-				.on('mouseover', function(d){
-					highlight_in_tree(d)
-				})
-				.on('mouseout', function(d){
-					unhighlight_in_tree();
-				})
-				.call(model.force.drag);
-
-			flower_centers = svg.selectAll(".flower_center")
-				.data(model.forkPoints)
-				.enter().append("circle")
-				.attr("r", model.kFlower.centerR)
-				.style("stroke", 1.0)
-				.attr("class", "flower_center")
-				.style("fill", flower_center);
-				
-			root = svg.selectAll(".root")
-				.data(model.roots)
-				.enter().append("circle")
-				.attr("r", function(d){
-					return Math.max(Math.sqrt(d.terminalLeaves), 3)
-				})
-				.attr("class", "root")
-				.style("fill", class_base_color)
-				.call(model.force.drag);
 
 			if(node !== undefined) node.append("title").text(function(d) { return d.name; });
 			if(loose !== undefined ) loose.append("title").text(function(d) { return d.name; });
 		
-			if(root !== undefined ) root.append("title").text(function(d) { return d.name +" " +d.sharedChildren; });
+			if(root !== undefined )root.append("title").text(function(d) { return d.name +" " +d.sharedChildren; });
 			if(leaf !== undefined )leaf.append("title").text(function(d) { return d.name ; });
+			SetTheme();
 		},
 		
 		OnForceTick : on_force_tick,
 		OnForceStop : OnStop,
 		OnForceStart : OnStart,
 
+		SetTheme : function(theme)
+		{
+			console.log("setTheme : " + theme);
+			skin = themeArray[theme];
+			SetTheme();
+		},
+
+		StopSim : function ()
+		{
+			if(state === "started")
+			{
+				model.force.stop();
+			}
+			else if(state === "stopped")
+			{
+				model.force.resume();
+			}
+
+		},
 
 		Start : function(){
 			model.InitForce(skin.borderWidth);

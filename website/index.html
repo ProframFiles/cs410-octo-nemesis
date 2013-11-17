@@ -8,6 +8,10 @@
         <body>
         <p>How's your code growing?</p>
         	<div id="container">
+                <b>Theme:</b>
+                <select id= "themeSelectID" onchange="var opt = this.value; require(['PresenterApp'], function(app) { app.mainView.SetTheme(opt); });" >
+                </select>
+                <button type="button" onclick="require(['PresenterApp'], function(app) { app.mainView.StopSim(); });">STOP!!</button>
         		<div id="app"></div>
         	</div>
             <div id="footer"></div>

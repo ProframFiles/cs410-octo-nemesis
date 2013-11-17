@@ -402,19 +402,20 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			return root.y;
 		});
 	}
-	function simple_line_gen(){
+	function simple_line_gen(line_type){
+		if(line_type === undefined) line_type = "basis";
 		return d3.svg.line()
 		.x(function(d){
 			return d.x;
 		})
 		.y(function(d){
 			return d.y;
-		}).interpolate("basis");
+		}).interpolate(line_type);
 	}
 	// generate a "vine" from an array of points
 	// thick idetermines the thickness at a given control point
 	// shifter determines the shift from the center line (to generate randomly wavy vines)
-	function vine_gen(d, thick, shifter, kinkyness)
+	function vine_gen(d, thick, shifter, kinkyness, line_type)
 	{
 		var tf;
 		var sf ;
@@ -466,7 +467,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			}
 			if(L.back().x != L.back().x) throw "NaN";
 		}
-		var str = simple_line_gen()(L);
+		var str = simple_line_gen(line_type)(L);
 		//console.log(str);
 		return str;
 	}
@@ -530,7 +531,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		})
 		// how strongly everything is drawn into the center
 		.gravity(0.17)
-		.friction(0.91)
+		.friction(0.90)
 		.size([width+2*border, height+2*border]);
 		
 	}
