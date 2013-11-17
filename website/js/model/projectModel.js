@@ -471,7 +471,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		//console.log(str);
 		return str;
 	}
-	function line_gen(leaf, thick, kinkyness){
+	function line_gen(leaf, thick, kinkyness,line_type){
 		var shiftfunc = function(d,i) {
 			if(d.type !== "c" )
 			{
@@ -485,7 +485,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 				return  { x: x_part, y: y_part };
 			}
 		}
-		return  vine_gen(leaf.path, thick, shiftfunc, kinkyness);
+		return  vine_gen(leaf.path, thick, shiftfunc, kinkyness, line_type);
 	}
 
 	var force = d3.layout.force().nodes(data.active_nodes)

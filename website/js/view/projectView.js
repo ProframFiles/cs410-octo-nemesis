@@ -330,7 +330,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.style("stroke-opacity", 1.0)
 				.style("stroke-width", 1.0)
 				.style("stroke", "red")
-				.attr("d", function(d){return model.lineGen(d, 3.0);});
+				.attr("d", function(d){return model.lineGen(d, 3.0, skin.branchSplineStyle);});
 		highlight_leaf = svg.selectAll(".hl_leaf")
 				.data([leaf])
 				.enter().append("path")
