@@ -51,9 +51,9 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				attributes : {
 					"color-interpolation-filters" : "sRGB",
 					"type" : "matrix",
-					"values" : [0.3, 0.01, 0.01, 0.01, -0.1,
-									0.3, 0.01, 0.01, 0.01, -0.1, 
-									0.3, 0.01, 0.01, 0.01, -0.1,
+					"values" : [0.2, 0.01, 0.01, 0.01, -0.1,
+									0.2, 0.01, 0.01, 0.01, -0.1, 
+									0.2, 0.01, 0.01, 0.01, -0.1,
 									0.01, 0.01, 0.01, 0.01, 1.0],
 					"in" : "perlin_fast",
 					"result" : "perlinbw"
@@ -118,18 +118,18 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	var WoodBlockSkin = 
 	{
 		name : "Japanese Wood Block",
-		branchColors : ["#52452F", "#695643", "#8C6344"],
+		branchColors : ["#A35E47", "#994943", "#8C6344"],
 		branchOpacity : 1.0,
 		leafColors : ["#618C70", "#394F4B", "#B1CBBB"],
 		leafStrokeColors : ["#618C70", "#394F4B", "#B1CBBB"],
 		flowerColors : ["#FF8193", "#FFC2D1", "#E8D4D4"],
 		flowerStrokeColors : ["#FF8193", "#FFC2D1", "#E8D4D4"],
 		flowerCenterColors : ["#261F1D"],
-		backGroundGradient : [woodBlockDarkBlue, "#FFFAF0"],
-		backGroundOpacity : [1.0, 1.0],
+		backGroundGradient : [woodBlockDarkBlue, woodBlockDarkBlue, "#D8C0A5","#D8C0A5", "#D8C0A5"],
+		backGroundOpacity : [1.0, 1.0, 1.0, 1.0, 1.0],
 		backGroundColor : "#FFFAF0",
 		baseColors : [woodBlockBrightPink],
-		branchStrokeColors :  ["#52452F", "#695643", "#8C6344"],
+		branchStrokeColors :  ["#714830", "#633125", "#8C6344"],
 		branchKinkiness : 0.95,
 		branchThickness : 1.5,
 		branchSplineStyle : "basis",
@@ -171,15 +171,15 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		flowerColors : ["white"],
 		flowerStrokeColors : ["black"],
 		flowerCenterColors : ["black"],
-		backGroundGradient : ["gray", "white", "white","white", "gray"],
-		backGroundOpacity : [1.0, 1.0],
+		backGroundGradient : ["darkgray","white", "darkgray"],
+		backGroundOpacity : [1.0, 1.0, 1.0],
 		backGroundColor : "#FFFAF0",
 		baseColors : ["black"],
 		branchStrokeColors : ["black"],
 		branchKinkiness : 0.0,
 		branchThickness : 2.0,
 		branchSplineStyle : "step-after",
-		borderWidth : 5,
+		borderWidth : 30,
 		borderRadius : 3
 	};
 
@@ -330,7 +330,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.style("stroke-opacity", 1.0)
 				.style("stroke-width", 1.0)
 				.style("stroke", "red")
-				.attr("d", function(d){return model.lineGen(d, 3.0, skin.branchSplineStyle);});
+				.attr("d", function(d){return model.lineGen(d, 3.0, skin.branchKinkiness, skin.branchSplineStyle);});
 		highlight_leaf = svg.selectAll(".hl_leaf")
 				.data([leaf])
 				.enter().append("path")
@@ -529,8 +529,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			.attr("stop-opacity", skin.backGroundOpacity[i]);
 		}
 
-		bg_rect.attr("width", model.width+skin.borderWidth)
-			.attr("height", model.height+skin.borderWidth)
+		bg_rect.attr("width", model.width+skin.borderWidth*2)
+			.attr("height", model.height+skin.borderWidth*2)
 			.attr( "ry", skin.borderRadius)
 			.attr( "rx", skin.borderRadius)
 			.style("fill", "url(#bg_gradient_id)");
