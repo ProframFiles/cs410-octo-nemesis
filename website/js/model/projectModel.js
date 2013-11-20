@@ -58,6 +58,31 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		d : "M17.944,21.429c3.715,12.019,18.305,9.423,11.42-0.27c-1.192-1.678-3.538-3.158-5.281-3.762c2.299-0.22,4.727,0.216,6.911-0.854c4.2-2.06,5.007-8.429,0.441-10.407c-5.357-2.32-7.721,2.339-9.753,6.104c-0.119-4.016,1.502-11.113-4.371-11.704c-6.748-0.678-6.027,7.503-4.104,11.38c-3.146-3.406-11.771-3.04-12.638,2.05c-0.878,5.154,6.532,6.66,10.237,6.308c-4.004,2.596-4.797,9.588-0.884,11.074C15.888,33.613,17.849,26.019,17.944,21.429z"
 	};
 
+	const kStar =  {
+		"stroke-linejoin" : "miter",
+		"stroke-miterlimit" : 10,
+		"stroke-width" : 0.5,
+		stroke : "black",
+
+		centerR : 4,
+		scale : 1.3,
+		x0 : 0,
+		y0 : 0,
+		d : d3.svg.symbol().type("cross")()
+	};
+
+	const kTri =  {
+		"stroke-linejoin" : "miter",
+		"stroke-miterlimit" : 10,
+		"stroke-width" : 0.5,
+		stroke : "black",
+
+		scale : 1.3,
+		x0 : 0,
+		y0 : 0,
+		d : d3.svg.symbol().type("triangle-up")()
+	};
+
 	function CurveNode(parentArray, index)
 	{
 		return {
@@ -540,6 +565,8 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 	data.height = height;
 	data.force = force;
 	data.kLeaf = kLeaf;
+	data.kStar = kStar;
+	data.kTri = kTri;
 	data.kGrassTuft = kGrassTuft;
 	data.kFlower = kFlower;
 	data.lineGen = line_gen;

@@ -151,6 +151,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		textStroke : "white",
 		textFill : "red",
 		leaf : model.kLeaf,
+		flower : model.kFlower,
 	};
 
 	var CountryFairSkin = 
@@ -176,6 +177,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		textStroke : "white",
 		textFill : "red",
 		leaf : model.kLeaf,
+		flower : model.kFlower,
 	};
 
 	var FuturistSkin = 
@@ -187,7 +189,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		leafStrokeColors : ["black"],
 		flowerColors : ["white"],
 		flowerStrokeColors : ["black"],
-		flowerCenterColors : ["black"],
+		flowerCenterColors : ["none"],
 		backGroundGradient : ["darkgray","white", "darkgray"],
 		backGroundOpacity : [1.0, 1.0, 1.0],
 		backGroundColor : "#FFFAF0",
@@ -200,7 +202,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		borderRadius : 3,
 		textStroke : "black",
 		textFill : "white",
-		leaf : model.kLeaf,
+		leaf : model.kTri,
+		flower : model.kStar,
 	};
 
 
@@ -328,7 +331,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	
 		var flora;
 		if(d.type === "e") flora = skin.leaf;
-		else flora = model.kFlower;
+		else flora = skin.flower;
 		//console.log("leaf path" + d.rnd);
 		// scale("+ rnd +")
 		var x = d.x;
@@ -420,7 +423,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.style("miter-limit", skin.leaf["miter-limit"])
 				.attr("d", function(d){
 					if(d.type === "e") return skin.leaf.d;
-					else return model.kFlower.d;
+					else return skin.flower.d;
 				}).attr("transform", leaf_transform);
 
 
@@ -432,7 +435,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			if(label_visible)
 			{
 				label_visible = false;
-				label_font.transition().attr( "font-size", 0).duration(500);
+				label_font.transition().attr( "font-size", 0).ease(d3.ease("linear")).duration(500);
 
 			}
 			highlight_path.remove();
@@ -601,7 +604,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.style("miter-limit", skin.leaf["miter-limit"])
 				.attr("d", function(d){
 					if(d.type === "e") return skin.leaf.d;
-					else return model.kFlower.d;
+					else return skin.flower.d;
 				})
 				.attr("transform", leaf_transform);
 	}
@@ -668,10 +671,11 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			.style("miter-limit", skin.leaf["miter-limit"])
 			.attr("d", function(d){
 				if(d.type === "e") return skin.leaf.d;
-				else return model.kFlower.d;
-			});
+				else return skin.flower.d;
+			})
+			.attr("transform", leaf_transform);
 
-		flower_centers.attr("r", model.kFlower.centerR)
+		flower_centers.attr("r", skin.flower.centerR)
 			.style("stroke", 1.0)
 			.style("fill", flower_center);
 
