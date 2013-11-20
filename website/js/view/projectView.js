@@ -29,6 +29,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		id : "displaceFilter",
 		elements : [
 			{
+				// noise for pixel shifting
 				name : "feTurbulence",
 				attributes : {
 					"baseFrequency" : 0.09,
@@ -38,6 +39,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				}
 			},
 			{
+				// noise for blotchy whitening
 				name : "feTurbulence",
 				attributes : {
 					"baseFrequency" : 0.3,
@@ -47,6 +49,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				}
 			},
 			{
+				// scale the noise so that it's smaller, monochrome, opaque 
+				// and positive only half the time
 				name : "feColorMatrix",
 				attributes : {
 					"color-interpolation-filters" : "sRGB",
@@ -61,6 +65,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			},
 			
 			{ 
+				// displace the pixels a bit: a smudging effect
 				name : "feDisplacementMap",
 				attributes : {
 					"color-interpolation-filters" : "sRGB",
@@ -73,6 +78,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				}
 			},
 			{	
+				// blur the displaced pixels a tad: the displace filter doesn't do subpixel stuff well
 				name : "feConvolveMatrix",
 				attributes : {
 					"color-interpolation-filters" : "sRGB",
@@ -84,6 +90,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				}
 			},
 			{
+				//take the blotching noise and ensure that it's applied only to the opaque parts of the dest.
 				name : "feComposite",
 				attributes : {
 					"color-interpolation-filters" : "sRGB",
@@ -94,6 +101,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				}
 			},
 			{ 
+				// make the smudged source smudged and blotchy
 				name : "feBlend",
 				attributes : {
 					"color-interpolation-filters" : "sRGB",
@@ -105,12 +113,12 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				}
 			},
 			{ 
+				// this is only required if the previous sreen does something weird with negative source pixels
 				name : "feBlend",
 				attributes : {
 					"color-interpolation-filters" : "sRGB",
 					"in" : "smudged",
 					"in2" : "blotched",
-					//result = k1*i1*i2 + k2*i1 + k3*i2 + k4
 					"mode" : "lighten",
 					"result" : "done"
 				}
