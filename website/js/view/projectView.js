@@ -357,15 +357,17 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		if(reversed) increment *= -1;
 		direction = 0;
 		if(reversed) direction = 1;
+		var padding = 1;
+		if(reversed) padding = 0;
 		start_angle = start_angle*Math.PI/180+Math.PI;
-		var rx = model.width*0.5+skin.borderWidth*0.7;
-		var ry = model.height*0.5+skin.borderWidth*0.7;
+		var rx = model.width*0.5+padding*skin.borderWidth*0.7;
+		var ry = model.height*0.5+padding*skin.borderWidth*0.7;
 		var ix = Math.cos(-start_angle)*rx;
 		var iy = Math.sin(-start_angle)*ry;
 		var fx = Math.cos(-start_angle+increment)*rx;
 		var fy = Math.sin(-start_angle+increment)*ry;
-		var start_x = (rx + skin.borderWidth*0.3) +ix;
-		var start_y =  (ry + skin.borderWidth*0.3) +iy;
+		var start_x = ( model.width*0.5+skin.borderWidth) +ix;
+		var start_y =  (model.height*0.5+skin.borderWidth) +iy;
 		var end_x = fx-ix;
 		var end_y =  fy-iy;
 
@@ -398,6 +400,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			label_visible = true;
 			label_font.transition()
 				.attr("font-size", 36)
+				.style("fill-opacity", 1)
 				.duration(1000)
 				.ease(d3.ease("bounce"));
 		}
@@ -451,7 +454,10 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			if(label_visible)
 			{
 				label_visible = false;
-				label_font.transition().attr( "font-size", 0).ease(d3.ease("linear")).duration(500);
+				label_font.transition()
+				.attr( "font-size", 0)
+				.style("fill-opacity", 0)
+				.ease(d3.ease("linear")).duration(500);
 
 			}
 
@@ -626,7 +632,6 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			
 
 			leaf_group.selectAll(".leaf_legend").remove();
-			leaf_group.append
 			leaf_group.append("circle")
 				.data([root_location])
 				.attr("r", 13)
@@ -656,6 +661,16 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 					else return skin.flower.d;
 				})
 				.attr("transform", leaf_transform);
+
+			leaf_group.selectAll(".legend_flower_center").
+				data([leaf_locations[1]])
+				.enter().append("circle")
+				.attr("class", "legend_flower_center")
+				.attr("cx", leaf_locations[1].x)
+				.attr("cy", leaf_locations[1].y)
+				.attr("r", skin.flower.centerR)
+				.style("stroke", 1.0)
+				.style("fill", flower_center);
 	}
 
 	function SetTheme()
@@ -676,8 +691,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		if(skin.leafFilter !== undefined ) AddFilterDef(skin.leafFilter);
 		if(skin.vineFilter !== undefined && skin.leafFilter !== skin.vineFilter) AddFilterDef(skin.vineFilter);
 
-		svg.attr("width", 0.5*model.width+0.0*skin.borderWidth*2)
-			.attr("height", 0.5*model.height+0.0*skin.borderWidth*4);
+		svg.attr("width", 0.6*(model.width+skin.borderWidth*2))
+			.attr("height", 0.4*(model.height+skin.borderWidth*4));
 
 		bg_gradient.remove();
 		bg_gradient = svg.insert("linearGradient", ".web_group")
