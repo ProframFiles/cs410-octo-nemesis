@@ -149,7 +149,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		leafFilter : woodBlockFilter,
 		vineFilter : woodBlockFilter,
 		textStroke : "white",
-		textFill : "red",
+		textFill : "white",
 		leaf : model.kLeaf,
 		flower : model.kFlower,
 	};
@@ -175,7 +175,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		borderWidth : 50,
 		borderRadius : 25,
 		textStroke : "white",
-		textFill : "red",
+		textFill : "white",
 		leaf : model.kLeaf,
 		flower : model.kFlower,
 	};
@@ -396,6 +396,15 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.ease(d3.ease("elastic"));
 		}
 
+		web.style("stroke", function(d){
+				if(d.source === leaf || d.target === leaf) return "yellow";
+				else return "gray";
+			})
+			.style("stroke-opacity", function(d){
+				if(d.source === leaf || d.target === leaf) return 0.5;
+				else return 0.05;
+			})
+
 		highlight_path = svg.selectAll(".hl_vine")
 				.data([leaf])
 				.enter().append("path")
@@ -438,6 +447,10 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				label_font.transition().attr( "font-size", 0).ease(d3.ease("linear")).duration(500);
 
 			}
+
+			web.style("stroke", "gray")
+			.style("stroke-opacity", 0.1);
+
 			highlight_path.remove();
 			highlight_leaf.remove();
 			highlight_path = null;
@@ -493,12 +506,6 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.attr("x2", function(d) { return d.target.x; })
 				.attr("y2", function(d) { return d.target.y; });
 		}
-		if(web !== undefined){
-			web.attr("x1", function(d) { return d.source.x; })
-				.attr("y1", function(d) { return d.source.y; })
-				.attr("x2", function(d) { return d.target.x; })
-				.attr("y2", function(d) { return d.target.y; });
-		}
 		framecount++;
 	}
 
@@ -534,11 +541,14 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 
 		if(web !== undefined)
 		{
-			web.style("stroke-opacity", function(link){
-					return 0.1;
-				})
+			web.style("stroke-opacity", 0.1)
 				.style("stroke-width", 1.5);
 		}
+		web.attr("x1", function(d) { return d.source.x - (d.source.type === "e" ? 0 : 0); })
+			.attr("y1", function(d) { return d.source.y - (d.source.type === "e" ? 0 : 0); })
+			.attr("x2", function(d) { return d.target.x - (d.target.type === "e" ? 0 : 0); })
+			.attr("y2", function(d) { return d.target.y - (d.target.type === "e" ? 0 : 0); });
+
 
 		if(link !== undefined)
 		{
@@ -829,12 +839,13 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			label_font = svg.append("svg:text")
 				.attr("text-anchor", "middle")
 				.attr("font-family", "sans serif")
+				.attr( "font-weight", "bold") 
 				.attr( "font-size", 0) 
 				.attr("baseline-shift", "100%")
 				.style("fill", skin.textFill )
 				.style("stroke", skin.textStroke)
-				.style("stroke-width", 1.0)
-				.style("stroke-opacity", 1.0);
+				.style("stroke-width", 0.0)
+				.style("stroke-opacity", 0.0);
 			label_text = label_font.append("svg:textPath")
 				.attr("startOffset", "50%")
 				.attr("xlink:href", "#circle_path")

@@ -65,7 +65,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		stroke : "black",
 
 		centerR : 4,
-		scale : 1.3,
+		scale : 1.6,
 		x0 : 0,
 		y0 : 0,
 		d : d3.svg.symbol().type("cross")()
@@ -79,8 +79,8 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 		scale : 1.3,
 		x0 : 0,
-		y0 : 0,
-		d : d3.svg.symbol().type("triangle-up")()
+		y0 : 7.5,
+		d : d3.svg.symbol().type("triangle-down")()
 	};
 
 	function CurveNode(parentArray, index)
