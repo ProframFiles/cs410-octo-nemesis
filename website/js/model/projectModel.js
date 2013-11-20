@@ -209,7 +209,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		var this_path = [];
 		var basic_path = [current_path.back()];
 		var depth = parent.depth + 1;
-		var bottom = Math.max(current_path.length -29, 0);
+		var bottom = 0;
 		for (var i = bottom; i < current_path.length; ++i) {
 			this_path.push(current_path[i]);
 		}
