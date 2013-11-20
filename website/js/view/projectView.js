@@ -637,8 +637,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		if(skin.leafFilter !== undefined ) AddFilterDef(skin.leafFilter);
 		if(skin.vineFilter !== undefined && skin.leafFilter !== skin.vineFilter) AddFilterDef(skin.vineFilter);
 
-		svg.attr("width", model.width+skin.borderWidth*2)
-			.attr("height", model.height+skin.borderWidth*4);
+		svg.attr("width", 0.5*model.width+0.0*skin.borderWidth*2)
+			.attr("height", 0.5*model.height+0.0*skin.borderWidth*4);
 
 		bg_gradient.remove();
 		bg_gradient = svg.insert("linearGradient", ".web_group")
