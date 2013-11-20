@@ -591,22 +591,54 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		state = "started";
 	}
 	
+	function PlaceLabel(parent, text, x, y, size)
+	{
+		return parent.append("svg:text")
+			.attr("x", x)
+			.attr("y", y)
+			.attr("font-family", "sans-serif")
+			.attr("font-weight", "bold") 
+			.attr("font-size", size)
+			.attr("baseline-shift", "-50%")
+			.style("fill", skin.textFill )
+			.style("stroke", skin.textStroke)
+			.style("stroke-width", 0.0)
+			.style("stroke-opacity", 0.0)
+			.text(text);
+	}
+
 	function ShowLegend()
 		{
 			legend.group.selectAll("*").remove();
 			var leaf_locations = [ 
 				{x : 35, y : 20, type : "e", rnd : [ Math.random(), 1, Math.random(), Math.random()]},
 				{x : 25, y : 60, type : "m", rnd : [ Math.random(), Math.random(), Math.random(), Math.random()]}
+
 			];
+			var root_location = {x : 25, y : 100, type : "r", rnd : [ Math.random(), Math.random(), Math.random(), Math.random()]};
+			
 
 			leaf_group.selectAll(".leaf_legend").remove();
+			leaf_group.append
+			leaf_group.append("circle")
+				.data([root_location])
+				.attr("r", 13)
+				.attr("cx", root_location.x)
+				.attr("cy", root_location.y)
+				.style("stroke", "white")
+				.style("stroke-width", 1.0)
+				.style("fill", class_base_color);
+
+			PlaceLabel(legend.group, "Leaf class (no children)", 50, 20, 16);
+			PlaceLabel(legend.group, "Class with children and parents",  50, 60, 16);
+			PlaceLabel(legend.group, "Root class (no parents)", 50, 100, 16);
 
 			legend.leaf = leaf_group.selectAll(".leaf_legend")
 				.data(leaf_locations)
 				.enter().append("svg:path")
 				.attr("class", "leaf_legend")
 				.style("stroke-width", vine_stroke_width)
-				.style("stroke", leaf_stroke)
+				.style("stroke", "white")
 				.style("fill", leaf_fill)
 				.style("fill-opacity", 1.0)
 				.style("stroke-opacity", 1.0)
@@ -838,7 +870,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 
 			label_font = svg.append("svg:text")
 				.attr("text-anchor", "middle")
-				.attr("font-family", "sans serif")
+				.attr("font-family", "sans-serif")
 				.attr( "font-weight", "bold") 
 				.attr( "font-size", 0) 
 				.attr("baseline-shift", "100%")
