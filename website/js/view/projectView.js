@@ -349,22 +349,27 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		
 	}
 
-	function BackgroundCircle(start_angle)
+	function BackgroundCircle(start_angle, reversed)
 	{
+		if(reversed === undefined) reversed = false;
 		if(start_angle === undefined) start_angle = 0;
+		var increment = 0.001;
+		if(reversed) increment *= -1;
+		direction = 0;
+		if(reversed) direction = 1;
 		start_angle = start_angle*Math.PI/180+Math.PI;
 		var rx = model.width*0.5+skin.borderWidth*0.7;
 		var ry = model.height*0.5+skin.borderWidth*0.7;
 		var ix = Math.cos(-start_angle)*rx;
 		var iy = Math.sin(-start_angle)*ry;
-		var fx = Math.cos(-start_angle+0.001)*rx;
-		var fy = Math.sin(-start_angle+0.001)*ry;
+		var fx = Math.cos(-start_angle+increment)*rx;
+		var fy = Math.sin(-start_angle+increment)*ry;
 		var start_x = (rx + skin.borderWidth*0.3) +ix;
 		var start_y =  (ry + skin.borderWidth*0.3) +iy;
 		var end_x = fx-ix;
 		var end_y =  fy-iy;
 
-		return "M" +start_x + " " +start_y +"a" + rx + " " +ry +" " + 0 + " " + 1 + " " + 0 + " " + 
+		return "M" +start_x + " " +start_y +"a" + rx + " " +ry +" " + 0 + " " + 1 + " " + direction + " " + 
 					end_x + " " + end_y + "z";
 	}
 
@@ -383,7 +388,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			var cy = model.height*0.5+skin.borderWidth;
 			var root_angle = Math.atan2(leaf.root.x-cx, leaf.root.y-cy)*(180/Math.PI)-90;
 			console.log(root_angle);
-			center_circle.attr("d", BackgroundCircle(root_angle));
+
+			center_circle.attr("d", BackgroundCircle(root_angle, (root_angle+720)%360 < 180 ));
 			label_text.attr("xlink:href", "#circle_path")
 				.text(leaf.root.name);
 		}
@@ -393,7 +399,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			label_font.transition()
 				.attr("font-size", 36)
 				.duration(1000)
-				.ease(d3.ease("elastic"));
+				.ease(d3.ease("bounce"));
 		}
 
 		web.style("stroke", function(d){
@@ -435,6 +441,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 					else return skin.flower.d;
 				}).attr("transform", leaf_transform);
 
+		highlight_leaf.append("title").text( leaf.name);
 
 	}
 	function unhighlight_in_tree(root)
@@ -597,7 +604,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			.attr("x", x)
 			.attr("y", y)
 			.attr("font-family", "sans-serif")
-			.attr("font-weight", "bold") 
+			.attr("font-weight", "bold")
 			.attr("font-size", size)
 			.attr("baseline-shift", "-50%")
 			.style("fill", skin.textFill )
