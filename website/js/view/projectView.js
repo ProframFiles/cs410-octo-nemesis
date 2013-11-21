@@ -691,8 +691,15 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		if(skin.leafFilter !== undefined ) AddFilterDef(skin.leafFilter);
 		if(skin.vineFilter !== undefined && skin.leafFilter !== skin.vineFilter) AddFilterDef(skin.vineFilter);
 
-		svg.attr("width", 0.6*(model.width+skin.borderWidth*2))
-			.attr("height", 0.4*(model.height+skin.borderWidth*4));
+
+		// Set these less than 1 to crop the svg
+		// it was previously set to width 0.6, height 0.4
+		var width_multiplier = 1.0;
+		var height_multiplier = 1.0;
+
+
+		svg.attr("width", width_multiplier*(model.width+skin.borderWidth*2))
+			.attr("height", height_multiplier*(model.height+skin.borderWidth*4));
 
 		bg_gradient.remove();
 		bg_gradient = svg.insert("linearGradient", ".web_group")
@@ -808,6 +815,9 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 					.attr("value", i)
 					.text(themeArray[i].name);
 			};
+
+			// we set the size here, but it's immediately overwritten in
+			// SetTheme(), so look there to *actually* set the size
 			svg = d3.select(this.template).append("svg")
 				.attr("width", model.width+skin.borderWidth*2)
 				.attr("height", model.height+skin.borderWidth*4)
