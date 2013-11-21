@@ -94,6 +94,35 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		};
 	}
 
+  function ConnectionColor(classnode)
+  {
+    var connections = classnode.parentArray.length + classnode.childArray.length;
+    if  ((0 <= connections) && (connections < 5))
+    {
+      return 1;
+    }
+    else if ((5 <= connections) && (connections < 10))
+    {
+      return 0.8;
+    }
+    else if ((10 <= connections) && (connections < 20))
+    {
+      return 0.6;
+    }
+    else if ((20 <= connections) && (connections < 40))
+    {
+      return 0.4;
+    }
+    else if ((40 <= connections) && (connections < 200))
+    {
+      return 0.2;
+    }
+    else
+    {
+      return 0;
+    }
+  }
+  
 	function GenerateAllNodes(class_array)
 	{
 		var node_array = [];
@@ -104,6 +133,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		for (var i = 0; i < array_size; ++i)
 		{
 			var this_class = class_array[i];
+      
 			var this_node = 
 				{
 					active : false,
@@ -120,7 +150,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 					sharedChildren : 0,
 					name : this_class.qualifiedName,
 					USR : this_class.USR,
-					rnd : [ Math.random(), Math.random(), Math.random(), Math.random()]
+					rnd : [ Math.random(), ConnectionColor(this_class), Math.random(), Math.random()]
 				};
 
 			node_array[this_class.index] = this_node;
@@ -438,7 +468,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		}).interpolate(line_type);
 	}
 	// generate a "vine" from an array of points
-	// thick idetermines the thickness at a given control point
+	// thick determines the thickness at a given control point
 	// shifter determines the shift from the center line (to generate randomly wavy vines)
 	function vine_gen(d, thick, shifter, kinkyness, line_type)
 	{
