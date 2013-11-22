@@ -388,8 +388,12 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		GenerateTree(data, json.classes);
 		GenerateTreePaths(data);
 
-		
-
+    // Include the statistics in the data (in case they are used)...
+		data.classnum_stat = json.stats["total classes"];
+    data.linksnum_stat = json.stats["total links"];
+    alert(data.classnum_stat);
+    alert(data.linksnum_stat);
+    
 		data.active_nodes = [];
 		data.active_web = [];
 		for (var i = 0; i < data.nodes.length; i++) {

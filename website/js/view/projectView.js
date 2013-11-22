@@ -715,6 +715,10 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			PlaceLabel(legend.group, "Leaf class (no children)", 50, 20, 16);
 			PlaceLabel(legend.group, "Class with children and parents",  50, 60, 16);
 			PlaceLabel(legend.group, "Root class (no parents)", 50, 100, 16);
+      
+      // Add the statistics labels...
+      PlaceLabel(legend.group, "Classes: " + model.classnum_stat, 1000, 20, 16);
+      PlaceLabel(legend.group, "Total links: " + model.linksnum_stat, 1000, 50, 16);
 
 			legend.leaf = leaf_group.selectAll(".leaf_legend")
 				.data(leaf_locations)
@@ -1022,7 +1026,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.attr("r", 0.1);*/
 			legend.group = svg.append("g")
 				.attr("class", "legend_group");
-
+        
+        
 			if(node !== undefined) node.append("title").text(function(d) { return d.name; });
 			if(loose !== undefined ) loose.append("title").text(function(d) { return d.name; });
 		
