@@ -206,29 +206,49 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		flower : model.kStar,
 	};
 
-	function ConnectionColor(classnode)
+	function ParentsAndChildrenColor(classnode)
 	{
 		var connections = 0
 		if(classnode.parents !== undefined) connections += classnode.parents.length + classnode.children.length;
-		if  ((0 <= connections) && (connections < 5))
+		if  ((0 <= connections) && (connections < 1))
 		{
 			return 1;
 		}
-		else if ((5 <= connections) && (connections < 10))
+		else if (connections === 1)
+		{
+			return 0.9;
+		}
+		else if (connections === 2)
 		{
 			return 0.8;
 		}
-		else if ((10 <= connections) && (connections < 20))
+		else if (connections === 3)
+		{
+			return 0.7;
+		}
+		else if (connections === 4)
 		{
 			return 0.6;
 		}
-		else if ((20 <= connections) && (connections < 40))
+		else if ((5 <= connections) && (connections < 7))
+		{
+			return 0.5;
+		}
+		else if ((7 <= connections) && (connections < 10))
 		{
 			return 0.4;
 		}
-		else if ((40 <= connections) && (connections < 200))
+		else if ((10 <= connections) && (connections < 15))
+		{
+			return 0.3;
+		}
+		else if ((15 <= connections) && (connections < 20))
 		{
 			return 0.2;
+		}
+		else if ((20 <= connections) && (connections < 30))
+		{
+			return 0.1;
 		}
 		else
 		{
@@ -250,7 +270,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	var color_algorithms = 
 	{
 		"Code size" : CodeSizeColor,
-		"num parents + children" : ConnectionColor,
+		"num parents + children" : ParentsAndChildrenColor,
 		"Random" : LeafRandomColor
 	}
 

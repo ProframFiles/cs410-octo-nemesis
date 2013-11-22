@@ -94,7 +94,56 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		};
 	}
 
-	
+
+	function ConnectionColor(classnode)
+	{
+		var connections = classnode.parentArray.length + classnode.childArray.length;
+		if  ((0 <= connections) && (connections < 1))
+		{
+			return 1;
+		}
+		else if (connections === 1)
+		{
+			return 0.9;
+		}
+		else if (connections === 2)
+		{
+			return 0.8;
+		}
+		else if (connections === 3)
+		{
+			return 0.7;
+		}
+		else if (connections === 4)
+		{
+			return 0.6;
+		}
+		else if ((5 <= connections) && (connections < 7))
+		{
+			return 0.5;
+		}
+		else if ((7 <= connections) && (connections < 10))
+		{
+			return 0.4;
+		}
+		else if ((10 <= connections) && (connections < 15))
+		{
+			return 0.3;
+		}
+		else if ((15 <= connections) && (connections < 20))
+		{
+			return 0.2;
+		}
+		else if ((20 <= connections) && (connections < 30))
+		{
+			return 0.1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
   
 	function GenerateAllNodes(class_array)
 	{
