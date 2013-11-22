@@ -82,6 +82,19 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		y0 : 7.5,
 		d : d3.svg.symbol().type("triangle-down")()
 	};
+
+	const kDiamond =  {
+		"stroke-linejoin" : "miter",
+		"stroke-miterlimit" : 10,
+		"stroke-width" : 0.5,
+		stroke : "black",
+
+		scale : 1.3,
+		x0 : 0,
+		y0 : 7.5,
+		d : d3.svg.symbol().type("square")()
+	};
+
 	const kPot =  {
 		"stroke-linejoin" : "round",
 		"stroke-width" : 0.5,
@@ -582,6 +595,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 	data.kStar = kStar;
 	data.kTri = kTri;
 	data.kPot = kPot;
+	data.kDiamond = kDiamond;
 	data.kGrassTuft = kGrassTuft;
 	data.kFlower = kFlower;
 	data.lineGen = line_gen;

@@ -206,7 +206,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		textFill : "white",
 		leaf : model.kTri,
 		flower : model.kStar,
-		pot : model.kPot
+		pot : model.kDiamond
 	};
 
 	function ParentsAndChildrenColor(classnode)
@@ -729,10 +729,15 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			
 
 			filter_group.selectAll(".leaf_legend").remove();
-			filter_group.append("path")
+			filter_group.selectAll(".legend_flower_center").remove();
+			filter_group.selectAll(".root_legend").remove();
+			
+			filter_group.selectAll(".root_legend")
 				.data([root_location])
+				.enter().append("path")
+				.attr("class", "root_legend")
 				.attr("d", skin.pot.d)
-				.attr("transform", "translate(" +(root_location.x) +" "+ (root_location.y-5)+ ") scale(" + skin.pot.scale +")")
+				.attr("transform", "translate(" +(root_location.x) +" "+ (root_location.y-5+skin.pot.y0)+ ") scale(" + skin.pot.scale +")")
 				.style("stroke", "black")
 				.style("stroke-width", 1.0)
 				.style("fill", class_base_color);
@@ -852,7 +857,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			.style("fill", flower_center);
 
 		root.style("fill", class_base_color)
-			.style("stroke", "black");
+			.style("stroke", "black")
+			.attr("d", skin.pot.d);
 
 		var gradient_data = [];
 		for (var i = 0; i < 101; i++) {
@@ -1007,7 +1013,6 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			root = filter_group.selectAll(".root")
 				.data(model.roots)
 				.enter().append("path")
-				.attr("d", skin.pot.d)
 				.attr("class", "root")
 				.attr("transform", root_transform)
 				.call(model.force.drag);
