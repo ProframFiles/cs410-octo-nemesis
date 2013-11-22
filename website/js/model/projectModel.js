@@ -82,7 +82,17 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 		y0 : 7.5,
 		d : d3.svg.symbol().type("triangle-down")()
 	};
+	const kPot =  {
+		"stroke-linejoin" : "round",
+		"stroke-width" : 0.5,
+		stroke : "black",
 
+		scale : 0.4,
+		x0 : 0,
+		y0 : 0,
+		d : "M0 0 l27.5 0 l2.5 -10.0 l-60.0 0 l2.5 10.0 Z m -25.5 0 l 10.0 40.0 l 31.0 0 l 10.0 -40.0 Z"
+	};
+	
 	function CurveNode(parentArray, index)
 	{
 		return {
@@ -351,7 +361,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 
 		data.roots.sort(function (lhs, rhs){return lhs.sharedChildren - rhs.sharedChildren; } );
 		for (var i = 0; i < data.roots.length; i++) {
-			var angle = incr*i +0.1*(Math.random()-0.5);
+			var angle = incr*i +0.051*(Math.random()-0.5);
 			data.roots[i].x = Math.cos(angle-180)*radius+cx;
 			data.roots[i].y = Math.sin(angle-180)*radius+cy;
 		};
@@ -559,7 +569,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 			return 0.7;
 		})
 		// how strongly everything is drawn into the center
-		.gravity(0.17)
+		.gravity(0.18)
 		.friction(0.90)
 		.size([width+2*border, height+2*border]);
 		
@@ -571,6 +581,7 @@ define(["doom3Data", "d3"], function(raw_data, d3){
 	data.kLeaf = kLeaf;
 	data.kStar = kStar;
 	data.kTri = kTri;
+	data.kPot = kPot;
 	data.kGrassTuft = kGrassTuft;
 	data.kFlower = kFlower;
 	data.lineGen = line_gen;

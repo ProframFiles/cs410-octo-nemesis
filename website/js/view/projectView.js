@@ -145,13 +145,14 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		branchThickness : 1.5,
 		branchSplineStyle : "basis",
 		borderWidth : 50,
-		borderRadius : 25,
+		borderRadius : 15,
 		leafFilter : woodBlockFilter,
 		vineFilter : woodBlockFilter,
-		textStroke : "white",
+		textStroke : "black",
 		textFill : "white",
 		leaf : model.kLeaf,
 		flower : model.kFlower,
+		pot : model.kPot
 	};
 
 	var CountryFairSkin = 
@@ -173,11 +174,12 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		branchThickness : 2.0,
 		branchSplineStyle : "basis",
 		borderWidth : 50,
-		borderRadius : 25,
-		textStroke : "white",
+		borderRadius : 15,
+		textStroke : "black",
 		textFill : "white",
 		leaf : model.kLeaf,
 		flower : model.kFlower,
+		pot : model.kPot
 	};
 
 	var FuturistSkin = 
@@ -204,6 +206,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		textFill : "white",
 		leaf : model.kTri,
 		flower : model.kStar,
+		pot : model.kPot
 	};
 
 	function ParentsAndChildrenColor(classnode)
@@ -258,8 +261,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	
 	function CodeSizeColor(node)
 	{
-		if(node.implSize === undefined || node.declSize === undefined ) return 0;
-		return  1 - Math.min(Math.pow(Math.abs(node.implSize + node.declSize - 40)/180000, 0.3), 1);
+		if(node.implSize === undefined || node.declSize === undefined ) return 1;
+		return  1 - Math.min(Math.pow(Math.max(node.implSize + node.declSize - 40, 0)/180000, 0.25), 1);
 	} 
 
 	function LeafRandomColor(node)
@@ -309,6 +312,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	var link;
 	var simple_vine = null;
 	var vine_group;
+	var filter_group;
 	var vine;
 	var highlight_path;
 	var highlight_leaf;
@@ -361,7 +365,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	}
 
 	function leaf_stroke(d){
-		if(d.type === "e") return LeafStrokeColorFunc(d.rnd[1]);
+		var val = leaf_random_portion*d.rnd[1] + LeafColorGenerator(d)*(1.0-leaf_random_portion);
+		if(d.type === "e") return LeafStrokeColorFunc(val);
 		else return FlowerStrokeColorFunc(d.rnd[2]);
 	}
 
@@ -418,6 +423,18 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		return "rotate("+(210+180*(-Math.atan2(dx, dy)/Math.PI)) +" "+ x+ " " +y +
 					")  translate(" +(x-flora.x0) +" "+ (y-flora.y0)+ ") scale(" + flora.scale +") " ;			
 		
+	}
+
+	function root_transform(root)
+	{
+		var cx = skin.borderWidth+model.width*0.5;
+		var cy = skin.borderWidth+model.height*0.5;
+		var x = root.x;
+		var y = root.y;
+		var scale = skin.pot.scale*Math.max(Math.pow(root.terminalLeaves, 0.2) , 1);
+		var angle = 180*Math.atan2(cx - x, root.y - cy)/Math.PI;
+		return "rotate("+ angle +" "+ x + " " +y +
+					")  translate(" +(x) +" "+ (y)+ ") scale(" + scale +") " ;
 	}
 
 	function BackgroundCircle(start_angle, reversed)
@@ -546,8 +563,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	var framecount = 0;
 	function on_force_tick(d) {
 
-		root.attr("cx", function(d) { return d.x; })
-			.attr("cy", function(d) { return d.y; });
+		root.attr("transform", root_transform);
 			//.attr("d", function(d) { return kGrassTuft.d;})
 			//.attr("transform", function(d){return "translate(" +(d.x-10) +" "+ (d.y-20)+ ") scale(0.3 )";});
 
@@ -620,8 +636,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			});
 
 
-		if(skin.leafFilter !== undefined) leaf_group.attr("filter", "url(#" +skin.leafFilter.id +")");
-		if(skin.vineFilter !== undefined) vine_group.attr("filter", "url(#" +skin.vineFilter.id +")");
+		if(skin.leafFilter !== undefined) filter_group.attr("filter", "url(#" +skin.leafFilter.id +")");
 
 		if(web !== undefined)
 		{
@@ -653,8 +668,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	}
 	function OnStart(d)
 	{
-		vine_group.attr("filter", null);
-		leaf_group.attr("filter", null);
+		filter_group.attr("filter", null);
 		if(vine !== null && vine != undefined )
 		{
 			vine.remove();
@@ -663,7 +677,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		if(simple_vine !== null )simple_vine.remove();
 		simple_vine = svg.selectAll(".simple_vine")
 			.data(model.basic_paths)
-			.enter().insert("path", ".leaf_group")
+			.enter().insert("path", ".filter_group")
 			.attr("class", "simple_vine")
 			.style("fill", "none")
 			.style("fill-opacity", 1.0)
@@ -691,42 +705,53 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			.text(text);
 	}
 
+	function ItemHeight(i)
+	{
+		var initial_item = 20;
+		var item_spacing = 30;
+		return initial_item + item_spacing*i
+	}
+
 	function ShowLegend()
 		{
 			legend.group.selectAll("*").remove();
+			var stats_x = 975;
+
+			var initial_item = 20;
+			var item_spacing = 30;
 			var leaf_locations = [ 
-				{x : 35, y : 20, type : "e", rnd : [ Math.random(), 1, Math.random(), Math.random()]},
-				{x : 25, y : 60, type : "m", rnd : [ Math.random(), Math.random(), Math.random(), Math.random()]}
+				{x : 40, y : ItemHeight(0) -3, type : "e", rnd : [ Math.random(), 1, Math.random(), Math.random()]},
+				{x : 30, y : ItemHeight(1) +3, type : "m", rnd : [ Math.random(), Math.random(), Math.random(), Math.random()]}
 
 			];
-			var root_location = {x : 25, y : 100, type : "r", rnd : [ Math.random(), Math.random(), Math.random(), Math.random()]};
+
+			var root_location = {x : 30, y : ItemHeight(2), type : "r", rnd : [ Math.random(), Math.random(), Math.random(), Math.random()]};
 			
 
-			leaf_group.selectAll(".leaf_legend").remove();
-			leaf_group.append("circle")
+			filter_group.selectAll(".leaf_legend").remove();
+			filter_group.append("path")
 				.data([root_location])
-				.attr("r", 13)
-				.attr("cx", root_location.x)
-				.attr("cy", root_location.y)
-				.style("stroke", "white")
+				.attr("d", skin.pot.d)
+				.attr("transform", "translate(" +(root_location.x) +" "+ (root_location.y-5)+ ") scale(" + skin.pot.scale +")")
+				.style("stroke", "black")
 				.style("stroke-width", 1.0)
 				.style("fill", class_base_color);
 
-			PlaceLabel(legend.group, "Leaf class (no children)", 50, 20, 16);
-			PlaceLabel(legend.group, "Class with children and parents",  50, 60, 16);
-			PlaceLabel(legend.group, "Root class (no parents)", 50, 100, 16);
+			PlaceLabel(legend.group, "Leaf class (no children)", 55, ItemHeight(0), 16);
+			PlaceLabel(legend.group, "Class with children and parents",  55, ItemHeight(1), 16);
+			PlaceLabel(legend.group, "Root class (no parents)", 55, ItemHeight(2), 16);
       
 			// Add the statistics labels...
-			PlaceLabel(legend.group, "Leaves: " + model.leaves.length, 900, 20, 16);
-			PlaceLabel(legend.group, "Roots: " + model.roots.length, 900, 60, 16);
-			PlaceLabel(legend.group, "Active links: " + model.active_web.length, 900, 100, 16);
+			PlaceLabel(legend.group, "Leaves: " + model.leaves.length, stats_x, ItemHeight(0), 16);
+			PlaceLabel(legend.group, "Roots: " + model.roots.length, stats_x, ItemHeight(1), 16);
+			PlaceLabel(legend.group, "Active links: " + model.active_web.length, stats_x, ItemHeight(2), 16);
 
-			legend.leaf = leaf_group.selectAll(".leaf_legend")
+			legend.leaf = filter_group.selectAll(".leaf_legend")
 				.data(leaf_locations)
 				.enter().append("svg:path")
 				.attr("class", "leaf_legend")
 				.style("stroke-width", vine_stroke_width)
-				.style("stroke", "white")
+				.style("stroke", "black")
 				.style("fill", leaf_fill)
 				.style("fill-opacity", 1.0)
 				.style("stroke-opacity", 1.0)
@@ -738,7 +763,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				})
 				.attr("transform", leaf_transform);
 
-			leaf_group.selectAll(".legend_flower_center").
+			filter_group.selectAll(".legend_flower_center").
 				data([leaf_locations[1]])
 				.enter().append("circle")
 				.attr("class", "legend_flower_center")
@@ -826,10 +851,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			.style("stroke", 1.0)
 			.style("fill", flower_center);
 
-		root.attr("r", function(d){
-				return Math.max(Math.sqrt(d.terminalLeaves), 3)
-			})
-			.style("fill", class_base_color);
+		root.style("fill", class_base_color)
+			.style("stroke", "black");
 
 		var gradient_data = [];
 		for (var i = 0; i < 101; i++) {
@@ -957,11 +980,13 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			web = web_group.selectAll(".web")
 				.data(model.active_web)
 				.enter().append("line");
-
-			vine_group = svg.append("g")
+			filter_group = svg.append("g")
+				.attr("class", "filter_group")
+				.attr("image-rendering", "optimizeQuality");
+			vine_group = filter_group.append("g")
 				.attr("class", "vine_group")
 				.attr("image-rendering", "optimizeQuality");
-			leaf_group = svg.append("g")
+			leaf_group = filter_group.append("g")
 				.attr("class", "leaf_group")
 				.attr("image-rendering", "optimizeQuality");
 			leaf = leaf_group.selectAll(".leaf")
@@ -979,10 +1004,12 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.attr("class", "flower_center");
 				
 				
-			root = svg.selectAll(".root")
+			root = filter_group.selectAll(".root")
 				.data(model.roots)
-				.enter().append("circle")
+				.enter().append("path")
+				.attr("d", skin.pot.d)
 				.attr("class", "root")
+				.attr("transform", root_transform)
 				.call(model.force.drag);
 
 			label_font = svg.append("svg:text")
@@ -993,8 +1020,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.attr("baseline-shift", "100%")
 				.style("fill", skin.textFill )
 				.style("stroke", skin.textStroke)
-				.style("stroke-width", 0.0)
-				.style("stroke-opacity", 0.0);
+				.style("stroke-width", 0.5)
+				.style("stroke-opacity", 1.0);
 			label_text = label_font.append("svg:textPath")
 				.attr("startOffset", "50%")
 				.attr("xlink:href", "#circle_path")
