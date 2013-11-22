@@ -731,7 +731,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			filter_group.selectAll(".leaf_legend").remove();
 			filter_group.selectAll(".legend_flower_center").remove();
 			filter_group.selectAll(".root_legend").remove();
-			
+
 			filter_group.selectAll(".root_legend")
 				.data([root_location])
 				.enter().append("path")
@@ -791,11 +791,10 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		FlowerStrokeColorFunc = GetColorInterp(skin.flowerStrokeColors);
 
 		filters.selectAll("*").remove();
-		vine_group.attr("filter", null);
-		leaf_group.attr("filter", null);
+		filter_group.attr("filter", null);
+
 		
 		if(skin.leafFilter !== undefined ) AddFilterDef(skin.leafFilter);
-		if(skin.vineFilter !== undefined && skin.leafFilter !== skin.vineFilter) AddFilterDef(skin.vineFilter);
 
 
 		// Set these less than 1 to crop the svg
@@ -858,6 +857,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 
 		root.style("fill", class_base_color)
 			.style("stroke", "black")
+			.attr("transform", root_transform)
 			.attr("d", skin.pot.d);
 
 		var gradient_data = [];
@@ -1014,7 +1014,6 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 				.data(model.roots)
 				.enter().append("path")
 				.attr("class", "root")
-				.attr("transform", root_transform)
 				.call(model.force.drag);
 
 			label_font = svg.append("svg:text")
