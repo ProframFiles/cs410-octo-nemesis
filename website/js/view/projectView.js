@@ -717,8 +717,9 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			PlaceLabel(legend.group, "Root class (no parents)", 50, 100, 16);
       
       // Add the statistics labels...
-      PlaceLabel(legend.group, "Classes: " + model.classnum_stat, 1000, 20, 16);
-      PlaceLabel(legend.group, "Total links: " + model.linksnum_stat, 1000, 50, 16);
+      PlaceLabel(legend.group, "Leaves: " + model.leaves.length, 900, 20, 16);
+      PlaceLabel(legend.group, "Roots: " + model.roots.length, 900, 60, 16);
+      PlaceLabel(legend.group, "Active links: " + model.active_web.length, 900, 100, 16);
 
 			legend.leaf = leaf_group.selectAll(".leaf_legend")
 				.data(leaf_locations)
