@@ -33,7 +33,7 @@ require.config({
 
 define( ["./view/projectView"], function (ProjectView) {
 
-	ProjectView.Init("#app", "#themeSelectID");
+	ProjectView.Init("#app", "#themeSelectID", "#colorAlgoSelectID");
 	ProjectView.Start();
 	// Close out the view that's currently there and render a different view.
 	//region.show(new MyOtherView());

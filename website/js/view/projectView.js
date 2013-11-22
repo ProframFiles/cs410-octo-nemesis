@@ -14,7 +14,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		return function(val){
 			var scaled_val = Math.max(Math.min(val*num_colors, maxfloatval), 0);
 			var indx = Math.floor(scaled_val);
-			return d3.interpolateLab( color_array[indx], color_array[indx+1] )(scaled_val%1);
+			return d3.interpolateRgb( color_array[indx], color_array[indx+1] )(scaled_val%1);
 		}
 	}
 
@@ -206,8 +206,53 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		flower : model.kStar,
 	};
 
+	function ConnectionColor(classnode)
+	{
+		var connections = 0
+		if(classnode.parents !== undefined) connections += classnode.parents.length + classnode.children.length;
+		if  ((0 <= connections) && (connections < 5))
+		{
+			return 1;
+		}
+		else if ((5 <= connections) && (connections < 10))
+		{
+			return 0.8;
+		}
+		else if ((10 <= connections) && (connections < 20))
+		{
+			return 0.6;
+		}
+		else if ((20 <= connections) && (connections < 40))
+		{
+			return 0.4;
+		}
+		else if ((40 <= connections) && (connections < 200))
+		{
+			return 0.2;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	
+	function CodeSizeColor(node)
+	{
+		if(node.implSize === undefined || node.declSize === undefined ) return 0;
+		return  1 - Math.min(Math.pow(Math.abs(node.implSize + node.declSize - 40)/180000, 0.3), 1);
+	} 
 
+	function LeafRandomColor(node)
+	{
+		return node.rnd[1];
+	} 
 
+	var color_algorithms = 
+	{
+		"Code size" : CodeSizeColor,
+		"num parents + children" : ConnectionColor,
+		"Random" : LeafRandomColor
+	}
 
 	var themeArray = [CountryFairSkin, WoodBlockSkin, FuturistSkin];
 	var skin = CountryFairSkin;
@@ -220,6 +265,9 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	var BranchStrokeColorFunc = GetColorInterp(skin.branchStrokeColors);
 	var LeafStrokeColorFunc = GetColorInterp(skin.leafStrokeColors);
 	var FlowerStrokeColorFunc = GetColorInterp(skin.flowerStrokeColors);
+
+	var leaf_random_portion = 0.1;
+	var LeafColorGenerator = CodeSizeColor;
 
 	var yellowGreenColor = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7,8,9]).range(colorbrewer.RdYlGn[10]);
 	var setOneColor = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7,8]).range(colorbrewer.Set1[9]);
@@ -270,6 +318,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		}
 	}
 
+	
+
 	function desaturate(rgbstring)
 	{
 		var hsl = d3.hsl(rgbstring);
@@ -285,8 +335,9 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	}
 
 	function leaf_fill(d){
-		if(d.type === "e") return LeafColorFunc(d.rnd[1]);
-		else return FlowerColorFunc(d.rnd[1]);
+		var val = leaf_random_portion*d.rnd[1] + LeafColorGenerator(d)*(1.0-leaf_random_portion);
+		if(d.type === "e") return LeafColorFunc(val);
+		else return FlowerColorFunc(val);
 	}
 
 	function leaf_stroke(d){
@@ -444,7 +495,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 					else return skin.flower.d;
 				}).attr("transform", leaf_transform);
 
-		highlight_leaf.append("title").text( leaf.name);
+		highlight_leaf.append("title").text( leaf.name + "\nsize: " + (leaf.implSize + leaf.declSize) + " bytes");
 
 	}
 	function unhighlight_in_tree(root)
@@ -807,14 +858,23 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 
 	return {
 
-		Init : function(template, themeSelect){ 
+		Init : function(template, themeSelect, colorAlgoSelect){ 
 			this.template = template;
+
 			var selector = d3.select(themeSelect);
 			for (var i = 0; i < themeArray.length; i++) {
 				selector.append("option")
 					.attr("value", i)
 					.text(themeArray[i].name);
 			};
+
+			selector = d3.select(colorAlgoSelect);
+			for(var color_alg in color_algorithms)
+			{
+				selector.append("option")
+					.attr("value", color_alg)
+					.text(color_alg);
+			}
 
 			// we set the size here, but it's immediately overwritten in
 			// SetTheme(), so look there to *actually* set the size
@@ -959,6 +1019,12 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 		{
 			console.log("setTheme : " + theme);
 			skin = themeArray[theme];
+			SetTheme();
+		},
+
+		SetColorAlgorithm : function(alg_name)
+		{
+			LeafColorGenerator = color_algorithms[alg_name];
 			SetTheme();
 		},
 

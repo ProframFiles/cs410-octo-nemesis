@@ -10,6 +10,9 @@
                 <b>Theme:</b>
                 <select id= "themeSelectID" onchange="var opt = this.value; require(['PresenterApp'], function(app) { app.mainView.SetTheme(opt); });" >
                 </select>
+                <b>Coloring Algorithm:</b>
+                <select id= "colorAlgoSelectID" onchange="var opt = this.value; require(['PresenterApp'], function(app) { app.mainView.SetColorAlgorithm(opt); });" >
+                </select>
                 <button type="button" onclick="require(['PresenterApp'], function(app) { app.mainView.StopSim(); });">STOP!!</button>
         		<div id="app"></div>
         	</div>
