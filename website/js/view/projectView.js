@@ -208,8 +208,8 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 
 	function ParentsAndChildrenColor(classnode)
 	{
-		var connections = 0
-		if(classnode.parents !== undefined) connections += classnode.parents.length + classnode.children.length;
+		var connections = 0; 
+		if(classnode.parents !== undefined) connections += classnode.parents.length + classnode.children.length + classnode.connections;
 		if  ((0 <= connections) && (connections < 1))
 		{
 			return 1;
@@ -265,12 +265,12 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 	function LeafRandomColor(node)
 	{
 		return node.rnd[1];
-	} 
-
+	}
+  
 	var color_algorithms = 
 	{
-		"Code size" : CodeSizeColor,
-		"num parents + children" : ParentsAndChildrenColor,
+		"Class code size" : CodeSizeColor,
+		"Num. parents, children, and connections" : ParentsAndChildrenColor,
 		"Random" : LeafRandomColor
 	}
 
