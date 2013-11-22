@@ -515,7 +515,7 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 					else return skin.flower.d;
 				}).attr("transform", leaf_transform);
 
-		highlight_leaf.append("title").text( leaf.name + "\nsize: " + (leaf.implSize + leaf.declSize) + " bytes");
+		highlight_leaf.append("title").text( leaf.name );//+ "\nsize: " + (leaf.implSize + leaf.declSize) + " bytes");
 
 	}
 	function unhighlight_in_tree(root)
@@ -716,10 +716,10 @@ define( ["d3", "../model/projectModel", "colorbrewer"], function (d3, model, col
 			PlaceLabel(legend.group, "Class with children and parents",  50, 60, 16);
 			PlaceLabel(legend.group, "Root class (no parents)", 50, 100, 16);
       
-      // Add the statistics labels...
-      PlaceLabel(legend.group, "Leaves: " + model.leaves.length, 900, 20, 16);
-      PlaceLabel(legend.group, "Roots: " + model.roots.length, 900, 60, 16);
-      PlaceLabel(legend.group, "Active links: " + model.active_web.length, 900, 100, 16);
+			// Add the statistics labels...
+			PlaceLabel(legend.group, "Leaves: " + model.leaves.length, 900, 20, 16);
+			PlaceLabel(legend.group, "Roots: " + model.roots.length, 900, 60, 16);
+			PlaceLabel(legend.group, "Active links: " + model.active_web.length, 900, 100, 16);
 
 			legend.leaf = leaf_group.selectAll(".leaf_legend")
 				.data(leaf_locations)
